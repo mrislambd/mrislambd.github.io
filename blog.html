@@ -1,0 +1,101 @@
+<head>
+    <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no"/>
+        <meta name="description" content="" />
+        <meta name="author" content=""/>
+        <title> Mohammad Rafiqul Islam</title>
+        <link rel="icon" href="assets/icon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet">
+    <link href="style2.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <span class="d-block d-lg-none">Mohammad Rafiqul Islam</span>
+            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/profile.jpg" alt="" /></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#skills" target="_blank">Research</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html#awards">Awards and Affiliation</a></li>
+                <li class="nav-item"><a class="nav-link " href="assets/Resume.pdf" target="_blank">Resume</a></li>
+                <li class="nav-item"><a class="nav-link " href="blog.html" target="_blank">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <section class="resume-section" id="blogs">
+        <div class="resume-section-content">
+            <h3 class="title toc-ignore">MAP5932 Stochastic Analysis, Spring
+                2023</h3>
+                <p align="left">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a 
+                    type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions 
+                    of Lorem Ipsum.
+                    <h3>Problem 1</h3> 
+                    <p>Let <span class="math inline">\((X_n)\)</span> be a sequence of random variables. We say that</p>
+                    <ul> 
+                        <li><span class="math inline">\((X_n)\)</span> converges in probability to <span class="math inline">\(X\)</span> if, for all <span class="math inline">\(\epsilon &gt;0\)</span><br />
+                            <span class="math display">\[\lim_n \mathbb{P}(|X_n-X|&gt;\epsilon)=0\]</span><br /></li>
+                        <li><span class="math inline">\((X_n)\)</span> converges to <span class="math inline">\(X\)</span> almost surely if,<br /> <span class="math display">\[\mathbb{P}\left(\{\lim_n X_n\ne X\}\right)=0\]</span><br /></li>
+                        <li><span class="math inline">\((X_n)\)</span> converges to <span class="math inline">\(X\)</span> in <span class="math inline">\(L^p(\mathbb{P})\)</span> (for <span class="math inline">\(p\ge 1\)</span>) if,<br /><span class="math display">\[\lim_n\mathbb{E}\left[|X_n-X|^p\right]=0\]</span><br /></li>
+                        <li><span class="math inline">\((X_n)\)</span> converges to <span class="math inline">\(X\)</span> monotonically if <span class="math inline">\((X_n)\)</span> is either increasing or decreasing
+                            to <span class="math inline">\(X\)</span> a.s.</li>
+                    </ul>
+                    <p>Now prove that all the convergence above imply the convergence in probability.</p>
+                    <div id="solution" class="section level2">
+                    <h3>Solution:</h3>
+                    <p>First we show that </p>
+                    <p>By the definition of almost surely convergence, we have<br />
+                    <span class="math display">\[\mathbb{P}\left(\{\lim_n X_n\ne
+                    X\}\right)=0\]</span><br />
+                    which can be rephrased as, <span class="math inline">\((X_n)\)</span>
+                    converges to <span class="math inline">\(X\)</span> almost surely, for
+                    any <span class="math inline">\(\epsilon&gt;0,\exists N \ni \forall
+                    n&gt;N\)</span>,<br />
+                    <span class="math display">\[\mathbb{P}\left(|X_n-X|&gt;\epsilon\right)=0;\implies
+                    \lim_n \mathbb{P}\left(|X_n-X|&gt;\epsilon\right)=0\]</span><br />
+                    Therefore, </p>
+                    <p>Next, we want to show </p>
+                    <p>Since <span class="math inline">\((X_n)\)</span> converges to <span class="math inline">\(X\)</span> in <span class="math inline">\(L^p\)</span> (for <span class="math inline">\(p&gt;1\)</span>) we have, for any <span class="math inline">\(\epsilon&gt;0\)</span>,</p>
+                    <p><span class="math display">\[\lim_n
+                    \mathbb{E}\left[|X_n-X|^p\right]=0;\implies \frac{\lim_n
+                    \mathbb{E}\left[|X_n-X|^p\right]}{\epsilon^n}=0;\hspace{2mm} \implies
+                    \lim_n
+                    \frac{\mathbb{E}\left[|X_n-X|^p\right]}{\epsilon^n}=0\]</span><br />
+                    By the Chebyshev’s inequality we have, for any <span class="math inline">\(\epsilon&gt;0\)</span>, if <span class="math inline">\(X\)</span> is integrable then,<br />
+                    <span class="math display">\[\begin{align*}
+                    \mathbb{P}\left(|X_n|&gt;\epsilon\right)&amp;\le
+                    \frac{\mathbb{E}\left[|X_n|\right]}{\epsilon}
+                    \end{align*}\]</span><br />
+                    Thus, we have<br />
+                    <span class="math display">\[\lim_n
+                    \frac{\mathbb{E}\left[|X_n-X|^p\right]}{\epsilon^n}\ge \lim_n
+                    \mathbb{P}\left[|X_n-X|^p\right]=0;\hspace{2mm}\implies \lim_n
+                    \mathbb{P}\left[|X_n-X|^p\right]=0\]</span><br />
+                    Lastly, we want to show that </p>
+                    <p>Let <span class="math inline">\((X_n)\)</span> converges to a finite
+                    limit <span class="math inline">\(X\)</span> increasingly and almost
+                    surely. Then for any <span class="math inline">\(\epsilon&gt;0,\exists N
+                    \ni \forall n&gt;N\)</span> we have, <span class="math inline">\(X_n&lt;X+\epsilon\)</span>.<br />
+                    Then, for all <span class="math inline">\(n&gt;N\)</span>,<br />
+                    <span class="math display">\[\mathbb{P}\left(|X_n-X|\right)=\mathbb{P}\left(X_n-X&gt;\epsilon\right)=\mathbb{P}\left(X_n&gt;X+\epsilon\right)=0\implies
+                    \lim_n \mathbb{P}\left(|X_n-X|\right)=0\]</span><br />
+                    Similar arguments can be drawn for monotonically decreasing
+                    sequences.</p>
+                    </div>
+    </section>
+  </body>
