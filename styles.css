@@ -10063,6 +10063,16 @@ p.lead {
     display: block;
   }
 }
+.image {
+  float: right;
+}
+.container {
+  padding: 10px;
+}
+.text {
+  margin: 10px 0 0 10px;
+}
+
 .social-icons .social-icon {
   display: inline-flex;
   align-items: center;
