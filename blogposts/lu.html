@@ -40,23 +40,23 @@
     <section class="resume-section" id="blogs">
         <div class="resume-section-content">
             <h3 class="title toc-ignore">How to perform LU factorization of a full rank matrix in FORTRAN</h3>
-            <p>LU factorization is a method for decomposing a matrix into the product of two matrices, a lower 
-                triangular matrix L and an upper triangular matrix U. The LU factorization of a matrix A can be 
-                written as follows: 
-                 $A=LU$
-                where $L$ is a lower triangular matrix with all diagonal elements equal to $1$, and $U$ is an upper triangular matrix.
-
-                The $LU$ factorization of a full rank matrix can be used to solve systems of linear equations, to compute the 
-                determinant of a matrix, and to invert a matrix.
-                
-                To perform $LU$ factorization, we can use the following steps:
-                
-                1. Initialize $L$ to the identity matrix.
-                2. For each row $i$, from top to bottom, do the following:
-                    Subtract the product of row $i$ and the first column of $U$ from all rows below row $i$.
-                    Divide row $i$ by the diagonal element of $U$.
-                3. The resulting matrices $L$ and $U$ are the $LU$ factorization of $A$.
-            </p>
+            <pre>
+                <code class="language-fortran">
+                    ! This program factors a full rank matrix A into lower triangular (or trapezoidal) L and upper
+                    ! triangular matrix U
+                    program LU_decompostion
+                        implicit none
+                        !############# #################List of main program variable##################################
+                        integer::m,n
+                        ! m is the # of rows of the matrix that we are working with
+                        ! n is the # of columns that we are working with
+                        doubleprecision, allocatable,dimension(:,:)::A,A1
+                        ! A is the working matrix, A1 is the original matrix preserved to check correctness of factoring
+                        integer,allocatable,dimension(:):: P,Q
+                        ! P, Q are the row and column permutation vectors for partial and complete pivoting
+                        character::method
+                </code>
+              </pre>
         </div>
     </section>
   </body>
