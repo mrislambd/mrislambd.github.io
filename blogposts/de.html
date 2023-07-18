@@ -1,0 +1,155 @@
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no"/>
+    <meta name="description" content="" />
+    <meta name="author" content=""/>
+    <title> Mohammad Rafiqul Islam</title>
+    <link rel="icon" href="../assets/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icon.ico" type="image/x-icon">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    <link href="../styles.css" rel="stylesheet">
+    <link href="../style2.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <span class="d-block d-lg-none">Mohammad Rafiqul Islam</span>
+            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../assets/profile.jpg" alt="" /></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html#skills" target="_blank">Research</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html#awards">Awards and Affiliation</a></li>
+                <li class="nav-item"><a class="nav-link " href="../assets/Resume.pdf" target="_blank">Resume</a></li>
+                <li class="nav-item"><a class="nav-link " href="../blog.html" target="_blank">Blog</a></li>
+                <li class="nav-item"><a class="nav-link " href="../photo.html" target="_blank">Photos</a></li>
+            </ul>
+        </div>
+    </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <section class="resume-section" id="blogs">
+        <div class="resume-section-content">
+            <div class="container-fluid main-container">
+
+
+
+
+                <div class="fluid-row" id="header">
+                
+                
+                
+                <h1 class="title toc-ignore">Homogeneous and non-homogeneous higher order ordinary differential equations</h1>
+                <h4 class="author">Mohammad R. Islam</h4>
+                <h4 class="date">2/26/2021</h4>
+                
+                </div>
+                
+                
+                <div id="example-1" class="section level1">
+                <h1>Example 1</h1>
+                <p>Solve the ODE below:<br />
+                <span class="math display">\[\begin{align*}
+                x^{(4)}-5x&#39;&#39;+4x&amp;=0
+                \end{align*}\]</span></p>
+                <div id="solution" class="section level2">
+                <h2>Solution:</h2>
+                <p>The characteristic equation and its solution is given as<br />
+                <span class="math display">\[\begin{align*}
+                  \lambda^4-5\lambda^2+4&amp;=0\\
+                  \implies (\lambda^2-4)(\lambda^2-1)&amp;=0\\
+                  \implies (\lambda^2-4)&amp;=0 &amp; (\lambda^2-1)&amp;=0\\
+                  \implies \lambda&amp;=\pm 2 &amp; \lambda&amp;=\pm 1
+                \end{align*}\]</span></p>
+                <p>Therefore, the solution of the given ODE is</p>
+                <p><span class="math display">\[\begin{align*}
+                x(t)&amp;=c_1e^{-t}+c_2e^{t}+c_3e^{-2t}+c_4e^{2t} &amp; c_1,\cdots ,c_4 \in \mathbb{R}
+                \end{align*}\]</span></p>
+                </div>
+                </div>
+                <div id="example-2" class="section level1">
+                <h1>Example 2</h1>
+                <p>Solve the ODE below:<br />
+                <span class="math display">\[\begin{equation*}
+                  x&#39;&#39;+2x&#39;+10x=0
+                \end{equation*}\]</span></p>
+                <div id="solution-1" class="section level2">
+                <h2>Solution:</h2>
+                <p>The characteristic equation and its solution is given as<br />
+                <span class="math display">\[\begin{align*}
+                  \lambda^2+2\lambda+10&amp;=0\\
+                  \implies (\lambda+1)^2&amp;=-9\\
+                  \implies \lambda&amp;=-1\pm 3i
+                \end{align*}\]</span></p>
+                <p>Therefore, the solution of the given ODE is</p>
+                <p><span class="math display">\[\begin{align*}
+                  x(t)&amp;=c_1e^{-t}\cos{3t}+c_2e^{-t}\sin{3t}; &amp; c_1,c_2 \in \mathbb{R}
+                \end{align*}\]</span></p>
+                </div>
+                </div>
+                <div id="example-3" class="section level1">
+                <h1>Example 3</h1>
+                <p>Solve the ODE below:<br />
+                <span class="math display">\[\begin{align*}
+                  \frac{d^2x}{dt^2}-a^2x&amp;=t+1
+                \end{align*}\]</span></p>
+                <div id="solution-2" class="section level2">
+                <h2>Solution:</h2>
+                <p>The characteristic equation of the homogeneous ODE <span class="math inline">\(\frac{d^2x}{dt^2}-a^2x=0\)</span> is <span class="math inline">\(\lambda^2-a^2=0\)</span> and its roots are <span class="math inline">\(\lambda_1=a,\lambda_2=-a\)</span>. Hence the complementary solution of the ODE is<br />
+                <span class="math display">\[\begin{align*}
+                  x_c&amp;=c_1e^a+c_2e^{-a}&amp; c_1,c_2 \in \mathbb{R}
+                \end{align*}\]</span></p>
+                <p>Since for the non-homogeneous part <span class="math inline">\(\lambda=0\)</span> and <span class="math inline">\(0\)</span> is not a solution of the characteristic equation hence <span class="math inline">\(k=0\)</span>. So the particular solution has the form <span class="math inline">\(x_p=A+Bt\)</span>. Then<br />
+                <span class="math display">\[\begin{align*}
+                \frac{dx_p}{dt}&amp;=B&amp; \frac{d^2x_p}{dt^2}=0
+                \end{align*}\]</span></p>
+                <p>Plugging these values we have <span class="math inline">\(-a^2(A+Bt)=t+1\)</span>. That is <span class="math inline">\(-a^2A=1 \implies A=-\frac{1}{a^2}\)</span> and <span class="math inline">\(-a^2B=1\implies B=-\frac{1}{a^2}\)</span> if <span class="math inline">\(a\ne 0\)</span>. So <span class="math inline">\(x_p=-\frac{1}{a^2}(1+t)\)</span>. Therefore, the solution of the given ODE is<br />
+                <span class="math display">\[\begin{align*}
+                 x=x_c+x_p&amp;\implies x=c_1e^a+c_2e^{-a}-\frac{1}{a^2}(1+t);&amp; c_1,c_2 \in \mathbb{R}, a\ne 0
+                \end{align*}\]</span></p>
+                </div>
+                </div>
+                <div id="example-4" class="section level1">
+                <h1>Example 4</h1>
+                <p>Solve the ODE below:<br />
+                <span class="math display">\[\begin{align*}
+                  \frac{d^3x}{dt^3}+3\frac{d^2x}{dt^2}+3\frac{dx}{dt}+x&amp;=e^{-t}(t-5)
+                \end{align*}\]</span></p>
+                <div id="solution-3" class="section level2">
+                <h2>Solution:</h2>
+                <p>The characteristic equation of the homogeneous ODE <span class="math inline">\(\frac{d^3x}{dt^3}+3\frac{d^2x}{dt^2}+3\frac{dx}{dt}+x=0\)</span> is <span class="math inline">\((\lambda+1)^3=0\)</span> and its root is <span class="math inline">\(\lambda=-1\)</span> with multiplicity <span class="math inline">\(k=3\)</span>. Hence the complementary solution is<br />
+                <span class="math display">\[\begin{align*}
+                  x_c&amp;=c_1e^{-t}+c_2te^{-t}+c_3t^2e^{-t}; &amp; c_1,c_2,c_3\in \mathbb{R}
+                \end{align*}\]</span></p>
+                <p>Now for the non-homogeneous part we see that <span class="math inline">\(\lambda=-1\)</span> which is also a root of the characteristic equation and <span class="math inline">\(k=3\)</span>. So we can try with the particular solution <span class="math inline">\(x_p=t^3(At+B)e^{-t}\)</span>. Then<br />
+                <span class="math display">\[\begin{align*}
+                \frac{dx_p}{dt}&amp;=(4At^3+3Bt^2)e^{-t}-(At^4+Bt^3)e^{-t}\\
+                &amp;=(-At^4+(4A-B)t^3+3Bt^2)e^{-t}\\
+                \frac{d^2x_p}{dt^2}&amp;=(-4At^3+3(4A-B)t^2+6Bt)e^{-t}-(-At^4+(4A-B)t^3+3Bt^2)e^{-t}\\
+                &amp;=(At^4+(-8A+B)t^3+(12A-6B)t^2+6B)e^{-t}\\
+                \frac{d^3x_p}{dt^3}&amp;=(4At^3+(-24A+3B)t^2+(24A-12B)t)e^{-t}-(At^4+(-8A+B)t^3+(12A-6B)t^2+6B)e^{-t}\\
+                &amp;=(-At^4+(12A-B)t^3+(-36A+3B)t^2+(24A-12B)t-6B)e^{-t}\\
+                \end{align*}\]</span></p>
+                <p>Plugging these in the non-homogeneous ODE we have <span class="math inline">\(A=\frac{1}{24}, B=-\frac{5}{6}\)</span>. So <span class="math inline">\(x_p=\frac{1}{24}t^4e^{-t}-\frac{5}{6}t^3e^{-t}\)</span>. Hence the general solution of the given non-homogeneous ODE is<br />
+                <span class="math display">\[\begin{align*}
+                x=x_c+x_p &amp;\implies x=c_1e^{-t}+c_2te^{-t}+c_3t^2e^{-t}+\frac{1}{24}t^4e^{-t}-\frac{5}{6}t^3e^{-t}; &amp; c_1,c_2,c_3\in \mathbb{R}
+                \end{align*}\]</span></p>
+                </div>
+                </div>
+                
+                
+                
+                
+                </div>
+        </div>
+    </section>
+        
