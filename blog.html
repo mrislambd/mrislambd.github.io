@@ -41,21 +41,28 @@
         <div class="resume-section-content">
             <h3 class="title toc-ignore">How to perform LU factorization of a full rank matrix in FORTRAN</h3>
             <p>\(LU\) factorization is a method for decomposing a matrix into the product of two matrices, a lower 
-                triangular matrix \(L\) and an upper triangular matrix U. The LU factorization of a matrix A can be 
-                written as follows: 
-                 $A=LU$
-                where $L$ is a lower triangular matrix with all diagonal elements equal to $1$, and $U$ is an upper triangular matrix.
+                triangular matrix \(L\) and an upper triangular matrix \(U\). The \(LU\) factorization of a matrix \(A\) can be 
+                written as follows: <br>
 
-                The $LU$ factorization of a full rank matrix can be used to solve systems of linear equations, to compute the 
+                 \(A=LU\)
+                 <br>
+                where \(\L) is a lower triangular matrix with all diagonal elements equal to \(1\), and \(U\) is an upper triangular matrix.
+                <br>
+
+                The \(LU\) factorization of a full rank matrix can be used to solve systems of linear equations, to compute the 
                 determinant of a matrix, and to invert a matrix.
                 
-                To perform $LU$ factorization, we can use the following steps:
-                
-                1. Initialize $L$ to the identity matrix.
-                2. For each row $i$, from top to bottom, do the following:
-                    Subtract the product of row $i$ and the first column of $U$ from all rows below row $i$.
-                    Divide row $i$ by the diagonal element of $U$.
-                3. The resulting matrices $L$ and $U$ are the $LU$ factorization of $A$.
+                To perform \(LU\) factorization, we can use the following steps:<br>
+                <ol>
+                    <li>Initialize \(L\) to the identity matrix.</li>
+                    <li>For each row \(i\), from top to bottom, do the following:</li>
+                    <ul>
+                        <li>Subtract the product of row \(i\) and the first column of \(U\) from all rows below row \(i\).</li>
+                        <li>Divide row \(i\) by the diagonal element of \(U\).</li>
+                      </ul>
+                    <li>The resulting matrices \(L\) and \(U\) are the \(LU\) factorization of \(A\).</li>
+                  </ol>
+                The full code with output is given <a href="blogposts/lu.html" target="_blank">here</a> 
             </p>
         </div>
     </section>
