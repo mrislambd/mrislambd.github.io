@@ -1,0 +1,119 @@
+body{
+    margin: 0px;
+    background-color: #ede5d3;
+}
+main{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+.container {
+    display: flex;
+}
+
+.left-column {
+    width: 20%;
+    padding: 20px;
+    background-color: #782f40;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.profile-container {
+    margin-bottom: 20px; /* Add vertical space below the picture */
+    position: relative; /* Position for adding a border */
+}
+
+.profile-picture {
+    max-width: 50%;
+    border-radius: 50%;
+    border: 3px solid #ffd700; /* Golden color border */
+    display: block; /* Make the image a block element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.contact-details {
+    margin-top: 20px;
+    
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #ece098;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.right-column {
+    width: 80%;
+    padding: 20px;
+    margin-left: 22%;
+}
+
+.navbar ul{
+    list-style-type: none;
+    background-color: #782f40;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+.navbar a:hover{
+    background-color: #4e252f;
+}
+.navbar li{
+    float: left;
+}
+
+a {
+    color: #782f40;
+    text-decoration: none;
+}
+
+.image-container {
+    margin-bottom: 20px; /* Add vertical space below the picture */
+    position: relative; /* Position for adding a border */
+}
+
+.image-picture {
+    max-width: 50%;
+    display: block; /* Make the image a block element */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.h-fill{
+    margin-right: auto;
+}
+
+.side-by-side-lists {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .side-by-side-lists li {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed for spacing between lists */
+  }
