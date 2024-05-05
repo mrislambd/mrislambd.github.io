@@ -1,14 +1,8 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
-# server process.
+
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Rafiq Islam | Ph.D. Candidate"
+title                    : "MRI Online"
 title_separator          : "-"
 name                     : &name "Rafiq Islam"
 description              : &description "personal description"
@@ -22,32 +16,31 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  name             : "Mohammad Rafiqul Islam"
+  pronouns         : "He/Him"
+  bio              : "Ph.D. Candidate in Financial Mathematics"
+  location         : "Tallahassee, Florida"
+  employer         : "Florda State University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "mislam@math.fsu.edu" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=gTz5r68AAAAJ&hl=en"
   impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
+  orcid            : "https://orcid.org/0000-0002-4376-8971"
+  pubmed           : #URL
+  researchgate     : "https://www.researchgate.net/profile/Mohammad-Rafiqul-Islam-5"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
-  kaggle           : # Username  
+  github           : "mrislambd"
+  kaggle           : "rafiqislamfromfsu" 
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -56,7 +49,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "mohammad-rafiqul-islam"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
