@@ -114,6 +114,8 @@ yandex_site_verification :
 # Social Sharing
 twitter:
   username               : &twitter
+linkedin:
+  username               : &linkedin
 facebook:
   username               :
   app_id                 :
@@ -260,7 +262,7 @@ defaults:
     values:
       layout: talk
       author_profile: true
-      share: true
+      share: false
 
 
 # Sass/SCSS
