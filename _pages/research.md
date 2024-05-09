@@ -4,7 +4,7 @@ title: "Research"
 permalink: /research/
 author_profile: true
 ---  
-Currently I am working under the supervision of professor [Lingjiong Zhu](https://sites.google.com/view/lingjiongzhu). My ongoing research project is on the topic "EXTRA decentralized stochastic gradient Langevin dynamics".
+Currently I am working under the supervision of professor [Lingjiong Zhu](https://sites.google.com/view/lingjiongzhu){:target="_blank"}. My ongoing research project is on the topic "EXTRA decentralized stochastic gradient Langevin dynamics".
 
 ## Research Interest 
 - Theoretical Machine Learning: Centralized and Decentralized Stochastic Gradient Descent (SGD);Algorithmic Stability in SGD; Differential Privacy in machine learning algorithms
