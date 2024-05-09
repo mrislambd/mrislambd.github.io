@@ -5,7 +5,13 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
----
+---  
+
+<p align="center">
+    <img src="/images/galaxy-3468_256.gif" alt="galaxy">
+</p>
+
+
 
 <div style="text-align: justify">
 Welcome to my website! I am a Ph.D. candidate in the mathematics department at Florida State University. I also work as a graduate teaching assistant in this department. Before joining FSU, I obtained my second master's degree in mathematics from the Youngstown State University, Ohio, USA.  
