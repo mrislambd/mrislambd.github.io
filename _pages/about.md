@@ -8,9 +8,8 @@ redirect_from:
 ---  
 
 <p align="center">
-    <img src="/images/galaxy-3468_256.gif" alt="galaxy">
+    <img src="/images/giphy.gif" alt="galaxy">
 </p>
-
 
 
 <div style="text-align: justify">
