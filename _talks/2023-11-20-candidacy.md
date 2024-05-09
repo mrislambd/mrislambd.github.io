@@ -16,4 +16,4 @@ location: "Tallahassee, Florida"
      <br>
 </div>
 
-A copy of the presentation can be found [here](/files/files_talks/Candidacy_Paper_by_Rafiq_Islam__Copy_.pdf)
+A copy of the presentation can be found [here](/files/files_talks/Candidacy_Paper_by_Rafiq_Islam__Copy_.pdf){:target="_blank"}
