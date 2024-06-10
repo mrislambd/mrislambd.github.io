@@ -13,13 +13,12 @@ redirect_from:
 
 
 <div style="text-align: justify">
-Welcome to my website! I am a Ph.D. candidate in the mathematics department at Florida State University. I also work as a graduate teaching assistant in this department. Before joining FSU, I obtained my second master's degree in mathematics from the Youngstown State University, Ohio, USA.  
+Welcome to my website! I am currently a Ph.D. candidate in the Mathematics Department at Florida State University, where I also serve as a Graduate Teaching Assistant. My academic journey has been both diverse and enriching, spanning multiple institutions and fields of study. <br>
 <br>
+Before joining FSU, I earned a second master’s degree in Mathematics from Youngstown State University in Ohio, USA. Prior to that, I completed my undergraduate degree in Mathematics at the University of Dhaka (DU), Bangladesh, followed by a one-year integrated master’s program in Applied Mathematics at the same institution.<br>
 <br>
-I finished my undergraduate degree in mathematics from the University of Dhaka (DU), Bangladesh. Then I pursued a one-year integrated master's program in applied mathematics. After graduating from DU, I worked for two years in the life insurance industry in Dhaka, Bangladesh. Then I aimed for higher studies and migrated to the US in August 2018.
+After graduating from DU, I gained valuable industry experience by working for two years in the life insurance sector in Dhaka, Bangladesh. In pursuit of higher education and advanced research opportunities, I relocated to the United States in August 2018.<br>
 <br>
-<br>
-I am a lifelong student and researcher of mathematics. My research interests are mainly <i>Theoretical Machine Learning, Computational Finance </i>, and other areas in applied mathematics.  
-
+As a lifelong student and researcher of mathematics, my research interests are centered around Theoretical Machine Learning, Computational Finance, and various other areas of applied mathematics. I am passionate about advancing knowledge in these fields and contributing to their practical applications.
 
 </div>
