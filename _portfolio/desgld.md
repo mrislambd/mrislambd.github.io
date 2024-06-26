@@ -2,7 +2,7 @@
 title: "Python Application Library: desgld packaging"
 date: 2024-05-03
 collection: portfolio
-excerpt: "<img src='/images/Portfolio_images/desgld/pypi.png' width='150' height='150'> <br/> It is a 'pip' installable python package to implement DeSGLD algorithm in Bayesian linear and logistic regression"
+excerpt: "<img src='/images/pypi.png' width='150' height='150'> <br/> It is a 'pip' installable python package to implement DeSGLD algorithm in Bayesian linear and logistic regression"
 ---  
 
 ![desgld](/images/Portfolio_images/desgld/pypi.png)
