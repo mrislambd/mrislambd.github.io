@@ -2,6 +2,7 @@
 title: 'Understanding Stochastic Gradient Descent Using Simple Linear Regression'
 date: 2024-05-25
 permalink: /posts/2024/05/sgd-linreg/
+excerpt: "<img src='/images/blogposts/height_weight_data.png' width='400' height=250> <br/>Linear regression is a fundamental algorithm in machine learning used for predicting a continuous dependent variable based on one or more independent variables. The objective is to find the best-fit line that minimizes the difference between the predicted and actual values."
 tags:
   - data science
   - machine learning
