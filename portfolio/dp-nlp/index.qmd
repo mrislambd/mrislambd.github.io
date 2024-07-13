@@ -6,19 +6,6 @@ collection: portfolio
 citation: true
 search: true
 lightbox: true
-filters:
-  - social-share
-share:
-  permalink: /portfolio/dp-nlp/
-  description: "disease prediction"
-  twitter: true
-  facebook: true
-  reddit: true
-  stumble: true
-  tumblr: true
-  linkedin: true
-  email: true
-  mastodon: true
 ---  
 
 **Team Members**  
