@@ -4,7 +4,7 @@ project:
 
 website:
   page-navigation: true
-  favicon: "_assets/images/favicon.ico"
+  favicon: "/_assets/images/favicon.ico"
   open-graph: true
   bread-crumbs: true
   back-to-top-navigation: true
@@ -13,7 +13,7 @@ website:
   navbar:
     tools-collapse: true
     pinned: true
-    logo: "_assets/images/fsu-logo.png"
+    logo: "/_assets/images/fsu-logo.png"
     logo-alt: "Florida State University"
     logo-href: index.qmd
     background: "#782F40"

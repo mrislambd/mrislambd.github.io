@@ -10,5 +10,9 @@ citation: true
 ---  
 
 
-Time series analysis of daily stock data and building predictive models are complicated. This project presents a comparative study for stock price prediction using three different methods, namely autoregressive integrated moving average, artificial neural network, and stochastic process-geometric Brownian motion. Each of the methods is used to build predictive models using historical stock data collected from Yahoo Finance. Finally, output from each of the models is compared to the actual stock price. Empirical results show that the conventional statistical model and the stochastic model provide better approximation for next-day stock price prediction compared to the neural network model.
+<p style="align: justify">
+ Time series analysis of daily stock data and building predictive models are complicated. This project presents a comparative study for stock price prediction using three different methods, namely autoregressive integrated moving average, artificial neural network, and stochastic process-geometric Brownian motion. Each of the methods is used to build predictive models using historical stock data collected from Yahoo Finance. Finally, output from each of the models is compared to the actual stock price. Empirical results show that the conventional statistical model and the stochastic model provide better approximation for next-day stock price prediction compared to the neural network model.
+</p>  
+
+Download a pdf from [here](/publication/paper1.pdf)
 
