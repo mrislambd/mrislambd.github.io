@@ -9,7 +9,7 @@ lightbox: true
 filters:
   - social-share
 share:
-  permalink: 
+  permalink: "https://mrislambd.github.io/blog/welcome"
   description: "Blog welcome page"
   twitter: true
   facebook: true
