@@ -7,6 +7,13 @@ citation: true
 search: true
 lightbox: true
 image: matmul.jpeg
+listing: 
+    contents: "/../../posts"
+    max-items: 3
+    type: grid
+    categories: false
+    date-format: full
+    fields: [image, date, title, author, reading-time]
 ---  
 
 
@@ -197,9 +204,13 @@ May be some other day we can talk about these algorithms.
 **Share on**  
 
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/matmul/" data-layout=""       data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fmatmul%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>  
-<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="https://mrislambd.github.io/posts/matmul/"></script>  
+ <div class="fb-share-button" data-href="https://mrislambd.github.io/posts/matmul/" data-layout=""       data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fmatmul%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>  
+ 
+ <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>  
+ <script type="IN/Share" data-url="https://mrislambd.github.io/posts/matmul/"></script>  
+ 
+ <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"  data-url="https://mrislambd.github.io/posts/matmul/" data-show-count="false">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
 
@@ -207,7 +218,7 @@ May be some other day we can talk about these algorithms.
 
 
 
-
+**You may also like**
 
 
 

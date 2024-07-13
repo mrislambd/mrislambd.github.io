@@ -6,6 +6,14 @@ categories: [Data Science, Machine Learning, Stochastic Gradient Descent, Linear
 citation: true
 search: true
 lightbox: true
+image: height_weight_data.png
+listing: 
+    contents: "/../../posts"
+    max-items: 3
+    type: grid
+    categories: false
+    date-format: full
+    fields: [image, date, title, author, reading-time]
 ---
 
 Linear regression is a fundamental algorithm in machine learning used for predicting a continuous dependent variable based on one or more independent variables. The objective is to find the best-fit line that minimizes the difference between the predicted and actual values.  
@@ -121,6 +129,12 @@ To be continued in the next post...
 
   <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
   <script type="IN/Share" data-url="https://mrislambd.github.io/posts/sgd-linreg/"></script>  
+
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"  data-url="https://mrislambd.github.io/posts/sgd-linreg/" data-show-count="false">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
 </div>
 
-<div class="fb-comments" data-href="https://mrislambd.github.io/posts/sgd-linreg/" data-width="650" data-numposts="5"></div>
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/sgd-linreg/" data-width="650" data-numposts="5"></div>  
+
+**You may also like**  
+

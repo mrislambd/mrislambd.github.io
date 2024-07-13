@@ -7,11 +7,18 @@ citation: true
 search: true
 lightbox: true
 image: ada.png
+listing: 
+    contents: "/../../posts"
+    max-items: 3
+    type: grid
+    categories: false
+    date-format: full
+    fields: [image, date, title, author, reading-time]
 ---
 
-Here is a demo picture
+Here is a demo picture  
 
-![](/_assets/images/ada.png){.preview-class}  
+![](/posts/welcome/ada.png){.preview-class}  
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="Ke3klkvy"></script>
@@ -34,3 +41,6 @@ Here is a demo picture
 </div>
 
 <div class="fb-comments" data-href="https://mrislambd.github.io/posts/welcome/" data-width="" data-numposts="5"></div>  
+
+
+**You may also like**  
