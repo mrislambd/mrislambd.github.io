@@ -48,3 +48,11 @@
 .navbar a {
   padding-left: 240px; /* Adjust the value as needed */
 }
+
+.share-buttons {
+  display: flex;
+  align-items: left;
+}
+.share-buttons > div, .share-buttons > a {
+  margin-right: 25px; /* Adjust the value as needed */
+}

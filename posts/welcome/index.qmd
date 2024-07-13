@@ -6,34 +6,31 @@ categories: [News]
 citation: true
 search: true
 lightbox: true
-filters:
-  - social-share
-share:
-  permalink: "https://mrislambd.github.io/blog/posts/welcome"
-  description: "Blog welcome page"
-  twitter: true
-  facebook: true
-  reddit: true
-  stumble: true
-  tumblr: true
-  linkedin: true
-  email: true
-  mastodon: true
+image: ada.png
 ---
+
+Here is a demo picture
+
+![](/_assets/images/ada.png){.preview-class}  
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="Ke3klkvy"></script>
 
 
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="6JywAW9T"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="6JywAW9T"></script>  
 
-Here is a demo picture
 
-![](/_assets/images/ada.png){.preview-class}
+**Share on**  
 
+<div class="share-buttons">
+  <div class="fb-share-button" data-href="https://mrislambd.github.io/posts/welcome/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fwelcome%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> 
+  
+  <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>  
+  <script type="IN/Share" data-url="https://mrislambd.github.io/posts/welcom/"></script>  
+  
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"  data-url="https://mrislambd.github.io/posts/welcome/" data-show-count="false">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 <div class="fb-comments" data-href="https://mrislambd.github.io/posts/welcome/" data-width="" data-numposts="5"></div>  
-
-
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/welcome/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fwelcome%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>  

@@ -7,20 +7,8 @@ citation: true
 search: true
 lightbox: true
 image: matmul.jpeg
-filters:
-  - social-share
-share:
-  permalink: /blog/posts/matmul/ 
-  description: "Matrix Multiplication"
-  twitter: true
-  facebook: true
-  reddit: true
-  stumble: true
-  tumblr: true
-  linkedin: true
-  email: true
-  mastodon: true
 ---  
+
 
 Have you ever wondered why your code takes forever to run? Sometimes a simple code may take significant time because of an inefficient implementation approach. Let's take a simple example of matrix multiplication, and explore the time and space complexity, specifically focusing on multiplying matrices where one of the matrices is formed as an outer product of a vector with itself.  
 
@@ -192,13 +180,35 @@ Naive Multiplication Time: 27.198208 seconds
 Optimized Multiplication Time: 0.001841 seconds
 ```  
 
-What about when $ \mathbf{A} $ is not given as $ \mathbf{A}=\mathbf{aa}^T $ (i.e., it's not a rank-1 matrix)? We simply cannot exploit the same optimization based on the outer product. In this case, we have to use the general matrix multiplication approach, which typically has a time complexity of $O(n^3)$ for naive multiplication. However, there are optimized algorithms that can reduce the time complexity: 
+What about when $\mathbf{A}$ is not given as $\mathbf{A}=\mathbf{aa}^T$ (i.e., it's not a rank-1 matrix)? We simply cannot exploit the same optimization based on the outer product. In this case, we have to use the general matrix multiplication approach, which typically has a time complexity of $O(n^3)$ for naive multiplication. However, there are optimized algorithms that can reduce the time complexity: 
 
 1. Strassen's Algorithm: Reduces the time complexity to approximately $O(n^{2.81})$  
 2. Coppersmith-Winograd Algorithm: Further reduces the time complexity to approximately $O(n^{2.376})$  
 3. Parallel Algorithms: Use parallel computing techniques to perform matrix multiplication more efficiently.  
 
-May be some other day we can talk about these algorithms. 
+May be some other day we can talk about these algorithms.  
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="6uoW7pC8"></script>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="xi3MqdlY"></script>  
+
+**Share on**  
+
+<div class="share-buttons">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/matmul/" data-layout=""       data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fmatmul%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>  
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/matmul/"></script>  
+</div>
+
+
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/matmul/" data-width="650" data-numposts="5"></div>  
+
+
+
+
+
 
 
 

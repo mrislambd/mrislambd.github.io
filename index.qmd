@@ -1,5 +1,6 @@
 ---
 title: "Welcome"
+image: "/_assets/images/giphy.gif"
 ---
 <p align="center">
     <img src="_assets/images/giphy.gif" alt="galaxy">

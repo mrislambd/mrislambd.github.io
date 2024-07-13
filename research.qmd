@@ -1,5 +1,6 @@
 ---
 title: "Research"
+image: "/_assets/images/research.webp"
 listing: 
   contents: talks
   type: table

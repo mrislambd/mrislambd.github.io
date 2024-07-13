@@ -6,19 +6,6 @@ categories: [Data Science, Machine Learning, Stochastic Gradient Descent, Linear
 citation: true
 search: true
 lightbox: true
-filters:
-  - social-share
-share:
-  permalink: "https://mrislambd.github.io/blog/posts/sgd" 
-  description: "SGD with Linear Regression"
-  twitter: true
-  facebook: true
-  reddit: true
-  stumble: true
-  tumblr: true
-  linkedin: true
-  email: true
-  mastodon: true
 ---
 
 Linear regression is a fundamental algorithm in machine learning used for predicting a continuous dependent variable based on one or more independent variables. The objective is to find the best-fit line that minimizes the difference between the predicted and actual values.  
@@ -118,4 +105,22 @@ To be continued in the next post...
 
 ## References  
 
-- [1] [James, Gareth, et al. An introduction to statistical learning: With applications in python. Springer Nature, 2023.](https://www.statlearning.com/){target="_blank"} 
+- [1] [James, Gareth, et al. An introduction to statistical learning: With applications in python. Springer Nature, 2023.](https://www.statlearning.com/){target="_blank"}  
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="EdCwlZYo"></script>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="xi3MqdlY"></script>  
+
+**Share on**  
+
+<div class="share-buttons">
+  <div class="fb-share-button" data-href="https://mrislambd.github.io/posts/sgd-linreg/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsgd-linreg%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+  <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+  <script type="IN/Share" data-url="https://mrislambd.github.io/posts/sgd-linreg/"></script>  
+</div>
+
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/sgd-linreg/" data-width="650" data-numposts="5"></div>
