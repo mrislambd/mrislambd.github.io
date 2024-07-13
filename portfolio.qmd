@@ -1,0 +1,12 @@
+---
+title: Portfolio
+listing: 
+  contents: portfolio
+  sort: "date desc"
+  type: grid
+  date-format: full
+  fields: [image, date, title, author, reading-time]
+  sort-ui: [title, date]
+  feed: true
+---  
+

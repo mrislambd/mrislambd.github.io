@@ -1,19 +1,104 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "mrislambd.github.io"
+  page-navigation: true
+  favicon: "_assets/images/favicon.ico"
+  open-graph: true
+  bread-crumbs: true
+  back-to-top-navigation: true
+  site-url: "https://mrislambd.github.io/" 
+  twitter-card: true
   navbar:
+    tools-collapse: true
+    pinned: true
+    logo: "_assets/images/fsu-logo.png"
+    logo-alt: "Florida State University"
+    logo-href: index.qmd
+    background: "#782F40"
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - research.qmd
+      - teaching.qmd
+      - portfolio.qmd
+      - blog.qmd
+      - cv.qmd
+  sidebar: 
+    style: floating
+    alignment: left
+    background: "#f4f4f4"
+    contents: 
+      - text: "<img src='/_assets/images/profile.png' class='oval-image' alt='Profile Picture' style='align-center; margin-bottom: 10px;'>" 
+      - text: "<span style='font-size: 1.5em; font-weight: bold; margin-bottom: 10px;'>Mohammad Rafiqul Islam</span>"
+      - text: "<span style='margin-bottom: 10px;'>Ph.D. Candidate in Mathematics</span>"
+      - text: "<span style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/univ.png' height='15' width='15' alt='University' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle; color: #782F40;'><a href='https://fsu.edu' target='_blank' style='color: #782F40;'>Florida State University</a></span>"
+      - icon: geo-alt
+        text: " Tallahassee, Florida"
+      - text: "<span style='font-size: 1.1em; font-weight: bold; margin-top: 50px; margin-bottom: 50px;color: #782F40'>Contact</span>"
+      - icon: envelope-arrow-down
+        text: "Email: mi21b@fsu.edu"
+        href: "mailto:mi21b@fsu.edu"
+      - icon: building
+        text: "Office: MCH 406 F"
+      - icon: calender-check
+        text: "Office Hour: TBD"
+      - text: "<span style='font-size: 1.1em; font-weight: bold; margin-top: 10px; margin-bottom: 50px; color: #782F40'>Find me on</span>"
+      - text: "<a href='https://scholar.google.com/citations?user=gTz5r68AAAAJ&hl=en' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/gs.png' height='15' width='15' alt='Google Scholar' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Google Scholar</span></a>"
+      - icon: linkedin
+        text: LinkedIn
+        href: "https://www.linkedin.com/in/mohammad-rafiqul-islam/"
+        target: _blank
+      - icon: github
+        text: "GitHub"
+        href: "https://github.com/mrislambd"
+        target: _blank
+      - text: "<a href='https://orcid.org/0000-0002-4376-8971' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/orcid.png' height='15' width='15' alt='Orcid' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Orcid</span></a>"
+      - text: "<a href='https://www.kaggle.com/rafiqislamfromfsu' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/kag.png' height='15' width='15' alt='Kaggle' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Kaggle</span></a>"
+  page-footer: 
+    left: "Copyright 2024 @ Rafiq Islam"
+    right: 
+      - icon: github
+        href: "https://github.com/mrislambd"
+      - icon: twitter 
+        href: https://twitter.com/rafiqr35 
+        target: _blank
+    border: true
+    background: "#f4f4f4"
+  reader-mode: true
+
+
+  # Google stuffs
+  cookie-consent: 
+    type: express
+    style: simple
+    palette: light
+  google-analytics: 
+    tracking-id: "G-Z5NP67GHFC"
+    anonymize-ip: true
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+    grid: 
+      sidebar-width: 360px
+    backgroundcolor: "#f4f4f4"
+    linkcolor: "#782F40"
+    code-copy: true
+    code-overflow: wrap
+    mainfont: lualatex
+    code-fold: true 
+    code-line-numbers: false
+    code-tools: true
+    minimal: false
+    anchor-sections: true
+    smooth-scroll: true
+    
+    
+    
 
 
 

@@ -1,0 +1,9 @@
+---
+title: Teaching
+listing: 
+  contents: teaching
+  type: table
+  fields: [title,description]
+  sort: "date desc"
+  feed: true
+---  

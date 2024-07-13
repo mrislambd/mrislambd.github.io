@@ -1,0 +1,15 @@
+---
+title: "Spring 2023: MAC1140 PreCalculus Algebra"
+collection: teaching
+type: "Instructor of Record"
+permalink: /teaching/2023-spring-teaching
+venue: "Department of Mathematics, Florida State University"
+date: 2023-05-04
+location: "Tallahassee, Florida"
+---
+
+<div style="text-align: justify">
+PreCalculus and Algebra are one of the many important foundation math courses that open doors to many upper-level math and science courses. The topic of this course includes but not is limited to Complex Numbers, Piecewise Functions, Quadratic Functions, Polynomial Functions, Polynomial Division, Zeros of Polynomials, Rational Functions, Polynomial and Rational Inequalities, Inverse Functions, Exponential Functions, Logarithmic Functions, Properties of Logarithms, Exponential and Logarithmic Equations, and so on.<br>
+<br>
+As an Instructor of Record for this course, I taught a class of 27 undergraduate students from different majors. I also proctor their lab classes where they take their quizzes and tests online and other application based lab activities.
+</div>
