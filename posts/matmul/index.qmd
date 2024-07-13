@@ -6,6 +6,7 @@ categories: [Data Science, Machine Learning, Computational Mathematics, Algorith
 citation: true
 search: true
 lightbox: true
+image: matmul.jpeg
 filters:
   - social-share
 share:

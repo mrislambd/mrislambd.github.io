@@ -1,19 +1,15 @@
 ---
 title: 'Understanding Stochastic Gradient Descent Using Simple Linear Regression'
-date: 2024-05-25
 author: "Rafiq Islam"
-categories: 
-  - Data Science
-  - Machine Learning
-  - Stochastic Gradient Descent
-  - Linear Regression
+date: 2024-05-25
+categories: [Data Science, Machine Learning, Stochastic Gradient Descent, Linear Regression]
 citation: true
 search: true
 lightbox: true
 filters:
   - social-share
 share:
-  permalink: /blog/posts/sgd-linreg/ 
+  permalink: "https://mrislambd.github.io/blog/posts/sgd" 
   description: "SGD with Linear Regression"
   twitter: true
   facebook: true
