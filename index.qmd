@@ -1,5 +1,4 @@
 ---
-title: "Welcome"
 image: "/_assets/images/giphy.gif"
 ---
 <p align="center">

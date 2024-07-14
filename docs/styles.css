@@ -1,0 +1,56 @@
+/* css styles */
+
+.oval-image {
+    border-radius: 50%;
+    height: 220px;
+    width: 180px;
+    border: 2px solid #CEB888;
+  }
+
+  .sidebar-item {
+    margin-bottom: 10px; /* Adjust the value as needed */
+  }
+
+  .social-sharing {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-sharing img {
+  width: 32px;
+  height: 32px;
+}
+
+/* New style for the navigation bar */
+.navbar {
+  position: fixed; /* Fixed positioning */
+  top: 0; /* Stick to the top of the viewport */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it's above other content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow */
+}
+
+/* Adjust styles for content to avoid overlap with fixed navbar */
+.content {
+  margin-top: 60px; /* Adjust based on the height of your navbar */
+  /* Other styles for your content */
+}
+
+.sidebar {
+  /* Adjust the sidebar positioning and margins */
+  top: 1;
+  margin-top: 110px; /* Adjust based on your navbar's height */
+  width: 350px; /* Adjust as needed */
+}
+
+
+
+.share-buttons {
+  display: flex;
+  align-items: left;
+}
+.share-buttons > div, .share-buttons > a {
+  margin-right: 25px; /* Adjust the value as needed */
+}

@@ -1,0 +1,69 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/welcome/index.html",
+      "/posts/matmul/index.html",
+      "/posts/sgd-linreg/index.html",
+      "/posts/mathbiology/index.html"
+    ]
+  },
+  {
+    "listing": "/teaching.html",
+    "items": [
+      "/teaching/sp24.html",
+      "/teaching/fall23.html",
+      "/teaching/sp23.html",
+      "/teaching/fall22.html",
+      "/teaching/fall21.html",
+      "/teaching/f18-f21.html"
+    ]
+  },
+  {
+    "listing": "/research.html",
+    "items": [
+      "/talks/2023-11-20-candi.html",
+      "/talks/2023-10-05-st-op.html",
+      "/talks/2020-04-26-project.html"
+    ]
+  },
+  {
+    "listing": "/portfolio.html",
+    "items": [
+      "/portfolio/dp-nlp/index.html",
+      "/portfolio/desgld/desgld.html"
+    ]
+  },
+  {
+    "listing": "/posts/sgd-linreg/index.html",
+    "items": [
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/matmul/index.html",
+    "items": [
+      "/posts/mathbiology/index.html",
+      "/posts/sgd-linreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/mathbiology/index.html",
+    "items": [
+      "/posts/matmul/index.html",
+      "/posts/sgd-linreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/welcome/index.html",
+    "items": [
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/sgd-linreg/index.html"
+    ]
+  }
+]
