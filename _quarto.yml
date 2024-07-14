@@ -20,19 +20,20 @@ website:
     background: "#782F40"
     right:
       - href: index.qmd
-        text: HOME
+        text: Home
       - href: research.qmd
-        text: RESEARCH
+        text: Research
       - href: teaching.qmd
-        text: TEACHING
+        text: Teaching
       - href: portfolio.qmd
-        text: PORTFOLIO
+        text: Portfolio
       - href: cv.qmd
         text: CV
       - href: blog.qmd
-        text: BLOG
+        text: Blog
   sidebar: 
     style: floating
+    border: false
     alignment: left
     background: "#f4f4f4"
     contents: 
@@ -52,6 +53,7 @@ website:
         text: "Office Hour: TBD"
       - text: "<span style='font-size: 1.1em; font-weight: bold; margin-top: 10px; margin-bottom: 50px; color: #782F40'>Find me on</span>"
       - text: "<a href='https://scholar.google.com/citations?user=gTz5r68AAAAJ&hl=en' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/gs.png' height='15' width='15' alt='Google Scholar' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Google Scholar</span></a>"
+      - text: "<a href='https://www.researchgate.net/profile/Mohammad-Rafiqul-Islam-5' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/rg.png' height='15' width='15' alt='ResearchGate' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> ResearchGate</span></a>"
       - icon: linkedin
         text: LinkedIn
         href: "https://www.linkedin.com/in/mohammad-rafiqul-islam/"
@@ -63,9 +65,7 @@ website:
       - text: "<a href='https://orcid.org/0000-0002-4376-8971' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/orcid.png' height='15' width='15' alt='Orcid' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Orcid</span></a>"
       - text: "<a href='https://www.kaggle.com/rafiqislamfromfsu' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/kag.png' height='15' width='15' alt='Kaggle' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Kaggle</span></a>"
   page-footer: 
-    left: |
-      Proudly supported by
-      [![](https://www.rstudio.com/assets/img/posit-logo-fullcolor-TM.svg){fig-alt="Posit" width=65px}](https://posit.co)
+    left: "Powered by [Quarto](https://quarto.org/) <?quarto.version?>"
     center:
       - text: "Copyright 2024 @ Rafiq Islam"
       - text: "License"
@@ -93,14 +93,16 @@ website:
   google-analytics: 
     tracking-id: "G-Z5NP67GHFC"
     anonymize-ip: true
-
+filters:
+  - quarto-version.lua
+  
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
     grid: 
-      sidebar-width: 360px
+      sidebar-width: 330px
     backgroundcolor: "#f4f4f4"
     linkcolor: "#782F40"
     code-copy: true
