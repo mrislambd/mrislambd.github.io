@@ -16,6 +16,9 @@ listing:
     fields: [image, date, title, author, reading-time]
 ---  
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
+     crossorigin="anonymous"></script>
+
 
 Have you ever wondered why your code takes forever to run? Sometimes a simple code may take significant time because of an inefficient implementation approach. Let's take a simple example of matrix multiplication, and explore the time and space complexity, specifically focusing on multiplying matrices where one of the matrices is formed as an outer product of a vector with itself.  
 

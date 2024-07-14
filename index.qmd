@@ -1,6 +1,10 @@
 ---
 image: "/_assets/images/giphy.gif"
----
+---  
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
+     crossorigin="anonymous"></script>  
+     
 <p align="center">
     <img src="_assets/images/giphy.gif" alt="galaxy">
 </p>

@@ -8,6 +8,8 @@ date: 2020-08-14
 venue: 'Journal of Risk and Financial Management'  
 citation: true
 ---  
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
+     crossorigin="anonymous"></script>  
 
 
 <p style="align: justify">

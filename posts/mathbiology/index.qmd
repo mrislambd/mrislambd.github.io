@@ -15,7 +15,10 @@ listing:
     categories: false
     date-format: full
     fields: [image, date, title, author, reading-time]
----
+---  
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
+     crossorigin="anonymous"></script>  
 
 Consider the spreading of a highly communicable disease on an isolated island
 with population size $N$. A portion of the population travels abroad and returns

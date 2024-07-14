@@ -6,7 +6,10 @@ permalink: /teaching/2021-fall-2022-spring
 venue: "Department of Mathematics, Florida State University"
 date: 2022-05-04
 location: "Tallahassee, Florida"
----
+---  
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
+     crossorigin="anonymous"></script>  
 
 
 <div style="text-align: justify">
