@@ -20,17 +20,17 @@ website:
     background: "#782F40"
     right:
       - href: index.qmd
-        text: Home
+        text: HOME
       - href: research.qmd
-        text: Research
+        text: RESEARCH
       - href: teaching.qmd
-        text: Teaching
+        text: TEACHING
       - href: portfolio.qmd
-        text: Portfolio
+        text: PORTFOLIO
       - href: cv.qmd
         text: CV
       - href: blog.qmd
-        text: Blog
+        text: BLOG
   sidebar: 
     style: floating
     alignment: left
@@ -63,7 +63,13 @@ website:
       - text: "<a href='https://orcid.org/0000-0002-4376-8971' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/orcid.png' height='15' width='15' alt='Orcid' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Orcid</span></a>"
       - text: "<a href='https://www.kaggle.com/rafiqislamfromfsu' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/kag.png' height='15' width='15' alt='Kaggle' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Kaggle</span></a>"
   page-footer: 
-    left: "Copyright 2024 @ Rafiq Islam"
+    left: |
+      Proudly supported by
+      [![](https://www.rstudio.com/assets/img/posit-logo-fullcolor-TM.svg){fig-alt="Posit" width=65px}](https://posit.co)
+    center:
+      - text: "Copyright 2024 @ Rafiq Islam"
+      - text: "License"
+        href: license.txt
     right: 
       - icon: github
         href: "https://github.com/mrislambd"
