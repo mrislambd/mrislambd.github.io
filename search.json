@@ -128,35 +128,35 @@
   {
     "objectID": "research.html",
     "href": "research.html",
-    "title": "Research",
+    "title": "",
     "section": "",
-    "text": "Currently I am working under the supervision of professor Lingjiong Zhu. My ongoing research project is on the topic “EXTRA decentralized stochastic gradient Langevin dynamics”."
+    "text": "Code\nCurrently I am working under the supervision of professor Lingjiong Zhu. My ongoing research project is on the topic “EXTRA decentralized stochastic gradient Langevin dynamics”."
   },
   {
     "objectID": "research.html#research-interest",
     "href": "research.html#research-interest",
-    "title": "Research",
+    "title": "",
     "section": "Research Interest",
     "text": "Research Interest\n\nTheoretical Machine Learning: Centralized and Decentralized Stochastic Gradient Descent (SGD);Algorithmic Stability in SGD; Differential Privacy in machine learning algorithms\nApplied Data Science\nFinancial Mathematics"
   },
   {
     "objectID": "research.html#publications",
     "href": "research.html#publications",
-    "title": "Research",
+    "title": "",
     "section": "Publications",
     "text": "Publications\n\nYou can also find my articles on my Google Scholar profile.\n\n\nGJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies \nMostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management.\nComparison of Financial Models for Stock Price Prediction \nIslam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management."
   },
   {
     "objectID": "research.html#course-projects",
     "href": "research.html#course-projects",
-    "title": "Research",
+    "title": "",
     "section": "Course Projects",
     "text": "Course Projects\n\nOption pricing techniques: A performance-based comparative study of the randomized quasi-Monte Carlo method and Fourier cosine method\nAdvisor: Prof. Giray Ökten\n\nPricing financial derivatives such as options with desired accuracy can be hard due to the nature of the functions and complicated integrals required by the pricing techniques. In this paper we investigate the pricing methodology of the European style options using two advanced numerical methods, namely, Quasi-Monte Carlo and Fourier Cosine (COS). For the RQMC method, we use the random-start Halton sequence. We use the Black-Scholes-Merton model to measure the pricing quality of both of the methods. For the numerical results we compute the option price of the call option and we found a few reasons to prefer the RQMC method over the COS method to approximate the European style options.\n\nThe Relationship Between Forced Sexual Activities And Suicidal Attempts Of The Victims\nAdvisor: Dr. Andy Chang\n\nIn project, we apply data-analytic methods to further explore the relationship between forced sexual activities and suicidal behavior among adolescents in the United States. Our findings build on existing literature that explores this relationship. The sample of the study was taken from the Youth Risk Behavior Surveillance System survey 2017. We used a chi-squared test to find the association of forced sexual activities and suicidal behavior, and we found a strong association. Then we used bi-variate logistic regression analysis to ascertain the association of race, age, sex, and education with suicidal attempts after experiencing forced sexual activity (sexual assault). The results of the following paper provide greater insight into the relationship between forced sexual activities and suicide attempts by the adolescents.\n\nStudy of Runge-Kutta Method of Higher orders and its Applications\nAdvisor: Dr. Md. Abdus Samad \n\nThis project is concerned with the study on Runge-Kutta method to apply on different order of differential equation and solve different types of problem such as initial value problem and boundary value problem in ordinary differential equation. At first we discuss about the definition and generation of differential equation specially based on partial differential equation and then definition of Runge-kutta method and the derivation of midpoint method and the formula of Runge-Kutta metod of fourth order and sixth order. We also write FORTRAN 90/95 program for different order of Runge-Kutta methods. We have solved some examples of fourth order R-K method and sixth order R-K method to get the application of R-K method. We also compared the solution of R-K method with exact solution for different step sizes. Then we have given simultaneous first order differential equation and second order differential equation and then solved them by fourth order Runge-Kutta method. At last we have discussed the boundary value problem which we have solved by fourth and sixth order R-K method. After that we have written the algorithm of shooting method and showed computer results with the difference between two answer along with percentages of error."
   },
   {
     "objectID": "research.html#talks-and-presentations",
     "href": "research.html#talks-and-presentations",
-    "title": "Research",
+    "title": "",
     "section": "Talks and Presentations",
     "text": "Talks and Presentations"
   },
