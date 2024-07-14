@@ -45,9 +45,7 @@
   width: 350px; /* Adjust as needed */
 }
 
-.navbar a {
-  padding-left: 240px; /* Adjust the value as needed */
-}
+
 
 .share-buttons {
   display: flex;
