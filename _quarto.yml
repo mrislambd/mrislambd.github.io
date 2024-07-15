@@ -65,6 +65,7 @@ website:
       - text: "<a href='https://orcid.org/0000-0002-4376-8971' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/orcid.png' height='15' width='15' alt='Orcid' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Orcid</span></a>"
       - text: "<a href='https://www.kaggle.com/rafiqislamfromfsu' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/kag.png' height='15' width='15' alt='Kaggle' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Kaggle</span></a>"
   page-footer: 
+    background: "#782F40"
     left: "Powered by [Quarto](https://quarto.org/) <?quarto.version?>"
     center:
       - text: "Copyright 2024 @ Rafiq Islam"
@@ -81,7 +82,6 @@ website:
       
 
     border: true
-    background: "#f4f4f4"
   reader-mode: true
 
 
