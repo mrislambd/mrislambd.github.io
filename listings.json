@@ -3,23 +3,35 @@
     "listing": "/portfolio.html",
     "items": [
       "/portfolio/dp-nlp/index.html",
-      "/portfolio/desgld/desgld.html"
+      "/portfolio/desgld/desgld.html",
+      "/portfolio/desgld/index.html"
     ]
   },
   {
     "listing": "/posts/matmul/index.html",
     "items": [
+      "/posts/social-share/index.html",
       "/posts/mathbiology/index.html",
       "/posts/sgd-linreg/index.html",
       "/posts/welcome/index.html"
     ]
   },
   {
-    "listing": "/posts/welcome/index.html",
+    "listing": "/posts/mathbiology/index.html",
     "items": [
+      "/posts/social-share/index.html",
+      "/posts/matmul/index.html",
+      "/posts/sgd-linreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/sgd-linreg/index.html",
+    "items": [
+      "/posts/social-share/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/sgd-linreg/index.html"
+      "/posts/welcome/index.html"
     ]
   },
   {
@@ -31,17 +43,19 @@
     ]
   },
   {
-    "listing": "/posts/sgd-linreg/index.html",
+    "listing": "/posts/welcome/index.html",
     "items": [
+      "/posts/social-share/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/welcome/index.html"
+      "/posts/sgd-linreg/index.html"
     ]
   },
   {
-    "listing": "/posts/mathbiology/index.html",
+    "listing": "/posts/social-share/index.html",
     "items": [
       "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
       "/posts/sgd-linreg/index.html",
       "/posts/welcome/index.html"
     ]
@@ -60,6 +74,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/social-share/index.html",
       "/posts/welcome/index.html",
       "/posts/matmul/index.html",
       "/posts/sgd-linreg/index.html",

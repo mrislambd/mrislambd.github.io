@@ -10,7 +10,360 @@
 <atom:link href="https://mrislambd.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.54</generator>
-<lastBuildDate>Fri, 12 Jul 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 17 Jul 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>How to generate social share buttons</title>
+  <dc:creator>Rafiq Islam</dc:creator>
+  <link>https://mrislambd.github.io/posts/social-share/</link>
+  <description><![CDATA[ 
+
+
+
+
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528" crossorigin="anonymous"></script>
+<p style="align: justify">
+If you want to share any blog posts on social media, you can have a share button at the bottom of each post so that the reader can easily share this on their preferred social media such as Facebook, LinkedIn, and X. Here I am showing only three but can be added more.
+</p>
+<p><a href="../../posts/social-share/ss.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="preview-class img-fluid"></a></p>
+<div id="3cf1dc02" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Library you need</span></span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> urllib.parse</span>
+<span id="cb1-3"></span>
+<span id="cb1-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Define the function to parse facebook sharable link</span></span>
+<span id="cb1-5"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> fblink(link):</span>
+<span id="cb1-6">    base_url <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://www.facebook.com/sharer/sharer.php"</span></span>
+<span id="cb1-7">    encoded_url <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> urllib.parse.quote(link, safe<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>)</span>
+<span id="cb1-8">    full_url<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>base_url<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">?u=</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>encoded_url<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&amp;amp;src=sdkpreparse"</span></span>
+<span id="cb1-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> full_url  </span>
+<span id="cb1-10"></span>
+<span id="cb1-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Suppose this is the link you want to share. Replace with your own link  </span></span>
+<span id="cb1-12">link<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://mrislambd.github.io/posts/social-share/"</span></span>
+<span id="cb1-13"></span>
+<span id="cb1-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Then you can use this template</span></span>
+<span id="cb1-15"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;div id="fb-root"&gt;&lt;/div&gt;'</span>)</span>
+<span id="cb1-16"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;script async defer crossorigin="anonymous"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"&gt;&lt;/script&gt;'</span>)</span>
+<span id="cb1-17"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">' '</span>)</span>
+<span id="cb1-18"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;div class="share-buttons"&gt;'</span>)</span>
+<span id="cb1-19"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;div class="fb-share-button" data-href="</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"'</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(link))</span>
+<span id="cb1-20"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'data-layout="button_count" data-size="small"&gt;&lt;a target="_blank" </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> href="</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> class="fb-xfbml-parse-ignore"&gt;Share&lt;/a&gt;&lt;/div&gt;'</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(fblink(link)))</span>
+<span id="cb1-21"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>)</span>
+<span id="cb1-22"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;script src="https://platform.linkedin.com/in.js" type="text/javascript"&gt;lang: en_US&lt;/script&gt;'</span>)</span>
+<span id="cb1-23"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;script type="IN/Share" data-url="</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"&gt;&lt;/script&gt; '</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(link)) </span>
+<span id="cb1-24"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">' '</span>)</span>
+<span id="cb1-25"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;a href="https://twitter.com/share?ref_src=twsrc</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%5E</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">tfw" class="twitter-share-button" </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> data-url="</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" data-show-count="true"&gt;Tweet&lt;/a&gt;'</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(link))</span>
+<span id="cb1-26"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;'</span>)</span>
+<span id="cb1-27"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;/div&gt;'</span>)</span>
+<span id="cb1-28"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>)</span>
+<span id="cb1-29"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'&lt;div class="fb-comments" data-href="</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> data-width="" data-numposts="5"&gt;&lt;/div&gt;'</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(link)) </span>
+<span id="cb1-30"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Then you can directly post the following output at the bottom of your page </span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;div id="fb-root"&gt;&lt;/div&gt;
+&lt;script async defer crossorigin="anonymous"
+ src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"&gt;&lt;/script&gt;
+ 
+&lt;div class="share-buttons"&gt;
+&lt;div class="fb-share-button" data-href="https://mrislambd.github.io/posts/social-share/"
+data-layout="button_count" data-size="small"&gt;&lt;a target="_blank" 
+ href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsocial-share%2F&amp;amp;src=sdkpreparse" 
+ class="fb-xfbml-parse-ignore"&gt;Share&lt;/a&gt;&lt;/div&gt;
+
+&lt;script src="https://platform.linkedin.com/in.js" type="text/javascript"&gt;lang: en_US&lt;/script&gt;
+&lt;script type="IN/Share" data-url="https://mrislambd.github.io/posts/social-share/"&gt;&lt;/script&gt; 
+ 
+&lt;a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" 
+ data-url="https://mrislambd.github.io/posts/social-share/" data-show-count="true"&gt;Tweet&lt;/a&gt;
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;div class="fb-comments" data-href="https://mrislambd.github.io/posts/social-share/"
+ data-width="" data-numposts="5"&gt;&lt;/div&gt;</code></pre>
+</div>
+</div>
+<p><strong>Share on</strong></p>
+<div id="fb-root">
+
+</div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
+<div class="share-buttons">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/social-share/" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsocial-share%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+</div>
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/social-share/"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/social-share/" data-show-count="true">Tweet</a>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/social-share/" data-width="" data-numposts="5">
+
+</div>
+<p><strong>You may also like</strong></p>
+
+
+
+<!-- -->
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity" data-listing-date-sort="1719792000000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
+<a href="../../posts/matmul/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/matmul/matmul.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Matrix multiplication: Let’s make it less expensive!
+</h5>
+<div class="listing-reading-time card-text text-muted">
+6 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Monday, July 1, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Applied Mathematics,Math Biology,Mathematical Modeling" data-listing-date-sort="1614038400000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589">
+<a href="../../posts/mathbiology/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/mathbiology/b1.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Modeling viral disease
+</h5>
+<div class="listing-reading-time card-text text-muted">
+3 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Tuesday, February 23, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Linear Regression" data-listing-date-sort="1716595200000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
+<a href="../../posts/sgd-linreg/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/sgd-linreg/height_weight_data.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Understanding Stochastic Gradient Descent Using Simple Linear Regression
+</h5>
+<div class="listing-reading-time card-text text-muted">
+5 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Saturday, May 25, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
+  author = {Islam, Rafiq},
+  title = {How to Generate Social Share Buttons},
+  date = {2024-07-17},
+  url = {https://mrislambd.github.io/posts/social-share/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
+Islam, Rafiq. 2024. <span>“How to Generate Social Share Buttons.”</span>
+July 17, 2024. <a href="https://mrislambd.github.io/posts/social-share/">https://mrislambd.github.io/posts/social-share/</a>.
+</div></div></section></div> ]]></description>
+  <category>News</category>
+  <category>Technology</category>
+  <category>Website</category>
+  <guid>https://mrislambd.github.io/posts/social-share/</guid>
+  <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://mrislambd.github.io/posts/social-share/ss.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Welcome to my blog</title>
   <dc:creator>Rafiq Islam</dc:creator>
@@ -53,7 +406,32 @@
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity" data-listing-date-sort="1719792000000" data-listing-file-modified-sort="1721079024157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
+<div class="g-col-1" data-index="0" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1721266358528" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+How to generate social share buttons
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, July 17, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity" data-listing-date-sort="1719792000000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
 <a href="../../posts/matmul/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -78,7 +456,7 @@ Monday, July 1, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Applied Mathematics,Math Biology,Mathematical Modeling" data-listing-date-sort="1614038400000" data-listing-file-modified-sort="1721079024157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589">
+<div class="g-col-1" data-index="2" data-categories="Applied Mathematics,Math Biology,Mathematical Modeling" data-listing-date-sort="1614038400000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589">
 <a href="../../posts/mathbiology/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -97,31 +475,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Tuesday, February 23, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Linear Regression" data-listing-date-sort="1716595200000" data-listing-file-modified-sort="1721079024157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
-<a href="../../posts/sgd-linreg/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/sgd-linreg/height_weight_data.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Understanding Stochastic Gradient Descent Using Simple Linear Regression
-</h5>
-<div class="listing-reading-time card-text text-muted">
-5 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Saturday, May 25, 2024
 </div>
 </div>
 </div>
@@ -358,7 +711,7 @@ font-style: inherit;">0.001841</span> seconds</span></code></pre></div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0" nonce="xi3MqdlY"></script>
 <p><strong>Share on</strong></p>
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/matmul/" data-layout="" data-size="large">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/matmul/" data-layout="button_count" data-size="small">
 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fmatmul%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
 </div>
 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -379,7 +732,32 @@ font-style: inherit;">0.001841</span> seconds</span></code></pre></div>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Applied Mathematics,Math Biology,Mathematical Modeling" data-listing-date-sort="1614038400000" data-listing-file-modified-sort="1721079024157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589">
+<div class="g-col-1" data-index="0" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1721266358528" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+How to generate social share buttons
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, July 17, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Applied Mathematics,Math Biology,Mathematical Modeling" data-listing-date-sort="1614038400000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589">
 <a href="../../posts/mathbiology/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -404,7 +782,7 @@ Tuesday, February 23, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Linear Regression" data-listing-date-sort="1716595200000" data-listing-file-modified-sort="1721079024157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Linear Regression" data-listing-date-sort="1716595200000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
 <a href="../../posts/sgd-linreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -423,31 +801,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Saturday, May 25, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="News" data-listing-date-sort="1720742400000" data-listing-file-modified-sort="1721079024161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="88">
-<a href="../../posts/welcome/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/welcome/ada.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Welcome to my blog
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Friday, July 12, 2024
 </div>
 </div>
 </div>
@@ -596,7 +949,7 @@ font-style: inherit;">5.84</span>  </span></code></pre></div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0" nonce="xi3MqdlY"></script>
 <p><strong>Share on</strong></p>
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/sgd-linreg/" data-layout="" data-size="">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/sgd-linreg/" data-layout="button_count" data-size="small">
 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsgd-linreg%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
 </div>
 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -617,7 +970,32 @@ font-style: inherit;">5.84</span>  </span></code></pre></div>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity" data-listing-date-sort="1719792000000" data-listing-file-modified-sort="1721079024157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
+<div class="g-col-1" data-index="0" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1721266358528" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+How to generate social share buttons
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, July 17, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity" data-listing-date-sort="1719792000000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
 <a href="../../posts/matmul/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -642,7 +1020,7 @@ Monday, July 1, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Applied Mathematics,Math Biology,Mathematical Modeling" data-listing-date-sort="1614038400000" data-listing-file-modified-sort="1721079024157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589">
+<div class="g-col-1" data-index="2" data-categories="Applied Mathematics,Math Biology,Mathematical Modeling" data-listing-date-sort="1614038400000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589">
 <a href="../../posts/mathbiology/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -661,31 +1039,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Tuesday, February 23, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="News" data-listing-date-sort="1720742400000" data-listing-file-modified-sort="1721079024161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="88">
-<a href="../../posts/welcome/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/welcome/ada.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Welcome to my blog
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Friday, July 12, 2024
 </div>
 </div>
 </div>
@@ -817,7 +1170,7 @@ So, <img src="https://latex.codecogs.com/png.latex?X(12)%5Capprox%204945"></p>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0" nonce="xi3MqdlY"></script>
 <p><strong>Share on</strong></p>
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/mathbiology/" data-layout="" data-size="">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/mathbiology/" data-layout="button_count" data-size="small">
 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fmathbiology%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
 </div>
 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
@@ -837,7 +1190,32 @@ So, <img src="https://latex.codecogs.com/png.latex?X(12)%5Capprox%204945"></p>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity" data-listing-date-sort="1719792000000" data-listing-file-modified-sort="1721079024157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
+<div class="g-col-1" data-index="0" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1721266358528" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+How to generate social share buttons
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, July 17, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity" data-listing-date-sort="1719792000000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
 <a href="../../posts/matmul/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -862,7 +1240,7 @@ Monday, July 1, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Linear Regression" data-listing-date-sort="1716595200000" data-listing-file-modified-sort="1721079024157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Linear Regression" data-listing-date-sort="1716595200000" data-listing-file-modified-sort="1721266358524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
 <a href="../../posts/sgd-linreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -881,31 +1259,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Saturday, May 25, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="News" data-listing-date-sort="1720742400000" data-listing-file-modified-sort="1721079024161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="88">
-<a href="../../posts/welcome/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/welcome/ada.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Welcome to my blog
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Friday, July 12, 2024
 </div>
 </div>
 </div>
