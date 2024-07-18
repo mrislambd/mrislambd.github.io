@@ -52,7 +52,7 @@ Using Classification and NLP.”</span> June 18, 2024. <a href="https://mrislamb
 <item>
   <title>Python Application Library: desgld packaging</title>
   <dc:creator>Rafiq Islam</dc:creator>
-  <link>https://mrislambd.github.io/portfolio/desgld/desgld.html</link>
+  <link>https://mrislambd.github.io/portfolio/desgld/</link>
   <description><![CDATA[ 
 
 
@@ -61,6 +61,16 @@ Using Classification and NLP.”</span> June 18, 2024. <a href="https://mrislamb
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528" crossorigin="anonymous"></script>
 <p><a href="pypi.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/portfolio/desgld/pypi.png" class="img-fluid"></a></p>
 <p>This package is related to my ongoing project “EXTRA decentralized stochastic gradient Langevin dynamics”. The detail of the package can be found <a href="https://mrislambd.github.io/desgld_package/desgld/" target="_blank">here</a></p>
+<p><strong>Share on</strong></p>
+<div class="share-buttons">
+     <div id="fb-root"></div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0" nonce="Z9VpOKne"></script>
+<div class="fb-share-button" data-href="https://mrislambd.github.io/portfolio/desgld/desgld.html" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fportfolio%2Fdesgld%2Fdesgld.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>  
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>  
+<script type="IN/Share" data-url="https://mrislambd.github.io/portfolio/desgld/desgld.html"></script>  
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/portfolio/desgld/desgld.html" data-show-count="false">Tweet</a>  
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 
 <!-- -->
@@ -70,15 +80,16 @@ Using Classification and NLP.”</span> June 18, 2024. <a href="https://mrislamb
   author = {Islam, Rafiq},
   title = {Python {Application} {Library:} Desgld Packaging},
   date = {2024-05-03},
-  url = {https://mrislambd.github.io/portfolio/desgld/desgld.html},
+  url = {https://mrislambd.github.io/portfolio/desgld/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
 Islam, Rafiq. 2024. <span>“Python Application Library: Desgld
-Packaging.”</span> May 3, 2024. <a href="https://mrislambd.github.io/portfolio/desgld/desgld.html">https://mrislambd.github.io/portfolio/desgld/desgld.html</a>.
+Packaging.”</span> May 3, 2024. <a href="https://mrislambd.github.io/portfolio/desgld/">https://mrislambd.github.io/portfolio/desgld/</a>.
 </div></div></section></div> ]]></description>
-  <guid>https://mrislambd.github.io/portfolio/desgld/desgld.html</guid>
+  <guid>https://mrislambd.github.io/portfolio/desgld/</guid>
   <pubDate>Fri, 03 May 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://mrislambd.github.io/portfolio/desgld/pypi.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
 </rss>
