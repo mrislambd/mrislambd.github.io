@@ -2,102 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mrislambd.github.io/publication/paper2.html</loc>
-    <lastmod>2024-07-18T01:56:37.593Z</lastmod>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/index.html</loc>
-    <lastmod>2024-07-18T01:56:37.565Z</lastmod>
+    <lastmod>2024-07-18T05:18:29.223Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/portfolio.html</loc>
-    <lastmod>2024-07-18T01:56:37.565Z</lastmod>
+    <lastmod>2024-07-18T05:18:29.223Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/posts/matmul/index.html</loc>
-    <lastmod>2024-07-18T01:56:37.565Z</lastmod>
+    <loc>https://mrislambd.github.io/posts/lu/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.231Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/posts/mathbiology/index.html</loc>
-    <lastmod>2024-07-18T01:56:37.565Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/sgd-linreg/index.html</loc>
-    <lastmod>2024-07-18T01:56:37.569Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/portfolio/dp-nlp/index.html</loc>
-    <lastmod>2024-07-18T01:56:37.565Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/about.html</loc>
-    <lastmod>2024-07-18T01:56:37.453Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching/fall21.html</loc>
-    <lastmod>2024-07-18T01:56:37.597Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching/fall22.html</loc>
-    <lastmod>2024-07-18T01:56:37.597Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching/sp23.html</loc>
-    <lastmod>2024-07-18T01:56:37.597Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/talks/2020-04-26-project.html</loc>
-    <lastmod>2024-07-18T01:56:37.593Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/talks/2023-10-05-st-op.html</loc>
-    <lastmod>2024-07-18T01:56:37.593Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/talks/2023-11-20-candi.html</loc>
-    <lastmod>2024-07-18T01:56:37.593Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/research.html</loc>
-    <lastmod>2024-07-18T01:56:37.593Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching/sp24.html</loc>
-    <lastmod>2024-07-18T01:56:37.597Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching/f18-f21.html</loc>
-    <lastmod>2024-07-18T01:56:37.597Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching/fall23.html</loc>
-    <lastmod>2024-07-18T01:56:37.597Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/cv.html</loc>
-    <lastmod>2024-07-18T01:56:37.453Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/portfolio/desgld/index.html</loc>
-    <lastmod>2024-07-18T01:56:37.565Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/welcome/index.html</loc>
-    <lastmod>2024-07-18T01:56:37.573Z</lastmod>
+    <loc>https://mrislambd.github.io/posts/matrix-rep/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.235Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/social-share/index.html</loc>
-    <lastmod>2024-07-18T01:56:37.569Z</lastmod>
+    <lastmod>2024-07-18T05:18:29.243Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/welcome/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.251Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/some-proofs/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.247Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/portfolio/dp-nlp/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.223Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/about.html</loc>
+    <lastmod>2024-07-18T05:18:29.087Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/teaching/fall21.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/teaching/fall22.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/teaching/sp23.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/talks/2020-04-26-project.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/talks/2023-10-05-st-op.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/talks/2023-11-20-candi.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/research.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/teaching/sp24.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/teaching/f18-f21.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/teaching/fall23.html</loc>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/cv.html</loc>
+    <lastmod>2024-07-18T05:18:29.087Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/portfolio/desgld/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.223Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/sgd-linreg/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.243Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/mathbiology/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.231Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/matmul/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.231Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/eigen/index.html</loc>
+    <lastmod>2024-07-18T05:18:29.223Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/teaching.html</loc>
-    <lastmod>2024-07-18T01:56:37.593Z</lastmod>
+    <lastmod>2024-07-18T05:18:29.275Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/blog.html</loc>
-    <lastmod>2024-07-18T01:56:37.453Z</lastmod>
+    <lastmod>2024-07-18T05:18:29.087Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/publication/paper1.html</loc>
-    <lastmod>2024-07-18T01:56:37.581Z</lastmod>
+    <lastmod>2024-07-18T05:18:29.259Z</lastmod>
   </url>
 </urlset>
