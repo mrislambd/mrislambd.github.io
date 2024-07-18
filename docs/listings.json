@@ -87,9 +87,12 @@
   {
     "listing": "/posts/lu/index.html",
     "items": [
+      "/posts/eigen/index.html",
       "/posts/social-share/index.html",
+      "/posts/matrix-rep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
+      "/posts/some-proofs/index.html",
       "/posts/sgd-linreg/index.html",
       "/posts/welcome/index.html"
     ]

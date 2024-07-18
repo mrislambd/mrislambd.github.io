@@ -73,12 +73,16 @@ website:
         href: license.txt
     right: 
       - icon: github
-        href: "https://github.com/mrislambd"
+        href: "https://github.com/mrislambd/mrislambd.github.io"
       - icon: twitter 
         href: https://twitter.com/rafiqr35 
         target: _blank
       - icon: rss
         href: https://mrislambd.github.io/docs/index.xml
+      - icon: instagram
+        href: https://mrislambd.github.io/404
+      - icon: facebook
+        href: https://mrislambd.github.io/404
       
 
     border: true
