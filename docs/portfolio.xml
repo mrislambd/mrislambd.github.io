@@ -52,6 +52,36 @@ Using Classification and NLP.”</span> June 18, 2024. <a href="https://mrislamb
 <item>
   <title>Python Application Library: desgld packaging</title>
   <dc:creator>Rafiq Islam</dc:creator>
+  <link>https://mrislambd.github.io/portfolio/desgld/desgld.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><a href="pypi.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/portfolio/desgld/pypi.png" class="img-fluid"></a></p>
+<p>This package is related to my ongoing project “EXTRA decentralized stochastic gradient Langevin dynamics”. The detail of the package can be found <a href="https://mrislambd.github.io/desgld_package/desgld/" target="_blank">here</a></p>
+
+
+<!-- -->
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
+  author = {Islam, Rafiq},
+  title = {Python {Application} {Library:} Desgld Packaging},
+  date = {2024-05-03},
+  url = {https://mrislambd.github.io/portfolio/desgld/desgld.html},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
+Islam, Rafiq. 2024. <span>“Python Application Library: Desgld
+Packaging.”</span> May 3, 2024. <a href="https://mrislambd.github.io/portfolio/desgld/desgld.html">https://mrislambd.github.io/portfolio/desgld/desgld.html</a>.
+</div></div></section></div> ]]></description>
+  <guid>https://mrislambd.github.io/portfolio/desgld/desgld.html</guid>
+  <pubDate>Fri, 03 May 2024 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Python Application Library: desgld packaging</title>
+  <dc:creator>Rafiq Islam</dc:creator>
   <link>https://mrislambd.github.io/portfolio/desgld/</link>
   <description><![CDATA[ 
 

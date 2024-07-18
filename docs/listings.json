@@ -10,14 +10,21 @@
     ]
   },
   {
-    "listing": "/teaching.html",
+    "listing": "/posts/welcome/index.html",
     "items": [
-      "/teaching/sp24.html",
-      "/teaching/fall23.html",
-      "/teaching/sp23.html",
-      "/teaching/fall22.html",
-      "/teaching/fall21.html",
-      "/teaching/f18-f21.html"
+      "/posts/social-share/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/sgd-linreg/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/sgd-linreg/index.html",
+    "items": [
+      "/posts/social-share/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/welcome/index.html"
     ]
   },
   {
@@ -29,17 +36,31 @@
     ]
   },
   {
-    "listing": "/portfolio.html",
+    "listing": "/teaching.html",
     "items": [
-      "/portfolio/dp-nlp/index.html",
-      "/portfolio/desgld/index.html"
+      "/teaching/sp24.html",
+      "/teaching/fall23.html",
+      "/teaching/sp23.html",
+      "/teaching/fall22.html",
+      "/teaching/fall21.html",
+      "/teaching/f18-f21.html"
     ]
   },
   {
-    "listing": "/posts/sgd-linreg/index.html",
+    "listing": "/posts/mathbiology/index.html",
+    "items": [
+      "/posts/social-share/index.html",
+      "/posts/matmul/index.html",
+      "/posts/sgd-linreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/social-share/index.html",
     "items": [
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
+      "/posts/sgd-linreg/index.html",
       "/posts/welcome/index.html"
     ]
   },
@@ -53,29 +74,11 @@
     ]
   },
   {
-    "listing": "/posts/mathbiology/index.html",
+    "listing": "/portfolio.html",
     "items": [
-      "/posts/matmul/index.html",
-      "/posts/sgd-linreg/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/welcome/index.html",
-    "items": [
-      "/posts/social-share/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/sgd-linreg/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/social-share/index.html",
-    "items": [
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/sgd-linreg/index.html",
-      "/posts/welcome/index.html"
+      "/portfolio/dp-nlp/index.html",
+      "/portfolio/desgld/desgld.html",
+      "/portfolio/desgld/index.html"
     ]
   }
 ]

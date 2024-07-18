@@ -14,9 +14,6 @@ listing:
     categories: false
     date-format: full
     fields: [image, date, title, author, reading-time]
-format:
-  html:
-    code-fold: false
 ---  
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
