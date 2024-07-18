@@ -18,7 +18,7 @@
     "href": "portfolio.html",
     "title": "Portfolio",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\n\nDisease diagnosis using classification and NLP\n\n\n1 min\n\n\n\nRebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya\n\n\nTuesday, June 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nPython Application Library: desgld packaging\n\n\n1 min\n\n\n\nRafiq Islam\n\n\nFriday, May 3, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Application Library: desgld packaging\n\n\n1 min\n\n\n\nRafiq Islam\n\n\nFriday, May 3, 2024\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\n\nDisease diagnosis using classification and NLP\n\n\n1 min\n\n\n\nRebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya\n\n\nTuesday, June 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Application Library: desgld packaging\n\n\n1 min\n\n\n\nRafiq Islam\n\n\nFriday, May 3, 2024\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "posts/matmul/index.html",
@@ -56,11 +56,116 @@
     "text": "References\n\n[1] James, Gareth, et al. An introduction to statistical learning: With applications in python. Springer Nature, 2023.\n\n\n\n\n\n\n\n\n\nShare on\n\n\nShare\n\n\n\nTweet\n\n\n\n\n\nYou may also like"
   },
   {
-    "objectID": "portfolio/desgld/desgld.html",
-    "href": "portfolio/desgld/desgld.html",
-    "title": "Python Application Library: desgld packaging",
+    "objectID": "portfolio/dp-nlp/index.html",
+    "href": "portfolio/dp-nlp/index.html",
+    "title": "Disease diagnosis using classification and NLP",
     "section": "",
-    "text": "This package is related to my ongoing project “EXTRA decentralized stochastic gradient Langevin dynamics”. The detail of the package can be found here\n\n\n\n\n\n Back to topCitationBibTeX citation:@online{islam2024,\n  author = {Islam, Rafiq},\n  title = {Python {Application} {Library:} Desgld Packaging},\n  date = {2024-05-03},\n  url = {https://mrislambd.github.io/portfolio/desgld/desgld.html},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nIslam, Rafiq. 2024. “Python Application Library: Desgld\nPackaging.” May 3, 2024. https://mrislambd.github.io/portfolio/desgld/desgld.html."
+    "text": "Team Members\nRebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya\nAutomatic Symptom Detection (ASD) and Automatic Diagnosis (AD) have seen several advances in recent years. Patients and medical professionals would benefit from tools that can aid in diagnosing diseases based on antecedents and presenting symptoms. The lack of quality healthcare in many parts of the world makes solving this problem a matter of utmost urgency. The aim of this project is to build a tool that can diagnose a disease based on a list of symptoms and contribute to our understanding of automatic diagnosis.\nProject Details\nSlides\nExecutive Summary\nGitHub Repo\n\n\n\n\n\n Back to topCitationBibTeX citation:@online{ceppas_de_castro,_fulya_tastan,_philip_barron,_mohammad_rafiqul_islam,_nina_adhikari,_viraj_meruliya_2024,\n  author = {Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad\n    Rafiqul Islam, Nina Adhikari, Viraj Meruliya , Rebecca},\n  title = {Disease Diagnosis Using Classification and {NLP}},\n  date = {2024-06-18},\n  url = {https://mrislambd.github.io/portfolio/dp-nlp/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nCeppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam,\nNina Adhikari, Viraj Meruliya, Rebecca. 2024. “Disease Diagnosis\nUsing Classification and NLP.” June 18, 2024. https://mrislambd.github.io/portfolio/dp-nlp/."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "teaching/fall21.html",
+    "href": "teaching/fall21.html",
+    "title": "Fall 2021 and Spring 2022: PreCalculus and Algebra",
+    "section": "",
+    "text": "As a lecture TA, my job was to facilitate the instructor during the class. This included helping students in class activities such as answering short questions that counted as class attendance, checking students’ eligibility forms for taking this course, and others as needed by the instructor.  As a lab TA I worked in a computer lab where students take their weekly quizzes and midterm tests.\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "teaching/fall22.html",
+    "href": "teaching/fall22.html",
+    "title": "Fall 2022: MAC2311 Calculus and Analytic Geometry I",
+    "section": "",
+    "text": "Students who have substantial knowledge of precalculus and algebra may require to take this course as a mathematics requirement depending on their majors. The topic of this course includes but is not limited to Foundation for calculus: Functions and Limits, Derivative, The Definite Integral, and Constructing Antiderivatives.  As a recitation instructor for this course, I ran two poster presentation sessions of 30 students in each group where they presented mathematical problems and their solutions step by step to their peer classmates followed by a group activity where they solved another set of problems. I also graded their exam scripts and weekly posters.\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "teaching/sp23.html",
+    "href": "teaching/sp23.html",
+    "title": "Spring 2023: MAC1140 PreCalculus Algebra",
+    "section": "",
+    "text": "PreCalculus and Algebra are one of the many important foundation math courses that open doors to many upper-level math and science courses. The topic of this course includes but not is limited to Complex Numbers, Piecewise Functions, Quadratic Functions, Polynomial Functions, Polynomial Division, Zeros of Polynomials, Rational Functions, Polynomial and Rational Inequalities, Inverse Functions, Exponential Functions, Logarithmic Functions, Properties of Logarithms, Exponential and Logarithmic Equations, and so on.  As an Instructor of Record for this course, I taught a class of 27 undergraduate students from different majors. I also proctor their lab classes where they take their quizzes and tests online and other application based lab activities.\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "talks/2020-04-26-project.html",
+    "href": "talks/2020-04-26-project.html",
+    "title": "Sensitivity analysis for Monte Carlo and Quasi Monte Carlo option pricing",
+    "section": "",
+    "text": "A copy of the presentation can be found  here \n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "talks/2023-10-05-st-op.html",
+    "href": "talks/2023-10-05-st-op.html",
+    "title": "Decentralized Stochastic Gradient Langevin Dynamics andHamiltonian Monte Carlo",
+    "section": "",
+    "text": "This presentation is based on the paper Decentralized Stochastic Gradient Langevin Dynamics andHamiltonian Monte Carlo by Dr. Lingjiong Zhu\nA copy of the presentation can be found here\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "talks/2023-11-20-candi.html",
+    "href": "talks/2023-11-20-candi.html",
+    "title": "The Heavy-Tail Phenomenon in Decentralized Stochastic Gradient Descent",
+    "section": "",
+    "text": "Stochastic Gradient Descent (SGD) method is one of the most popular optimization techniques in machine learning, particularly in Deep Neural Network (DNN). The gradient noise in this method is often modeled by Gaussian or assumed to have finite variance. However, empirical evidence suggests that the gradient noises can be highly non-Gaussian and often exhibit heavy tails in nature. This heaviness has a direct relationship to the generalization performance of the algorithm.\n\n\nIn this candidacy paper we discuss materials from three papers where we first present the tail-index analysis in SGD that shows empirically that gradient noise can have heavy tails, and through metastability analysis, the heavy-tailed SGD validates the wide minima phenomenon. We then present the paper about the heavy-tail phenomenon in SGD and investigates the origins of the heavy tails. We show that the heaviness of the tail is related to the choice of stepsize, batch-size and other hyperparameters of the algorithm. Finally, we discuss the heavy-tail phenomenon in decentralized SGD. We conclude the candidacy paper by proposing a few future research directions.\n\nA copy of the presentation can be found here\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "",
+    "section": "",
+    "text": "Code\nCurrently I am working under the supervision of professor Lingjiong Zhu. My ongoing research project is on the topic “EXTRA decentralized stochastic gradient Langevin dynamics”."
+  },
+  {
+    "objectID": "research.html#research-interest",
+    "href": "research.html#research-interest",
+    "title": "",
+    "section": "Research Interest",
+    "text": "Research Interest\n\nTheoretical Machine Learning: Centralized and Decentralized Stochastic Gradient Descent (SGD);Algorithmic Stability in SGD; Differential Privacy in machine learning algorithms\nApplied Data Science\nFinancial Mathematics"
+  },
+  {
+    "objectID": "research.html#publications",
+    "href": "research.html#publications",
+    "title": "",
+    "section": "Publications",
+    "text": "Publications\n\nYou can also find my articles on my Google Scholar profile.\n\n\nGJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies \nMostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management.\nComparison of Financial Models for Stock Price Prediction \nIslam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management."
+  },
+  {
+    "objectID": "research.html#course-projects",
+    "href": "research.html#course-projects",
+    "title": "",
+    "section": "Course Projects",
+    "text": "Course Projects\n\nOption pricing techniques: A performance-based comparative study of the randomized quasi-Monte Carlo method and Fourier cosine method\nAdvisor: Prof. Giray Ökten\n\nPricing financial derivatives such as options with desired accuracy can be hard due to the nature of the functions and complicated integrals required by the pricing techniques. In this paper we investigate the pricing methodology of the European style options using two advanced numerical methods, namely, Quasi-Monte Carlo and Fourier Cosine (COS). For the RQMC method, we use the random-start Halton sequence. We use the Black-Scholes-Merton model to measure the pricing quality of both of the methods. For the numerical results we compute the option price of the call option and we found a few reasons to prefer the RQMC method over the COS method to approximate the European style options.\n\nThe Relationship Between Forced Sexual Activities And Suicidal Attempts Of The Victims\nAdvisor: Dr. Andy Chang\n\nIn project, we apply data-analytic methods to further explore the relationship between forced sexual activities and suicidal behavior among adolescents in the United States. Our findings build on existing literature that explores this relationship. The sample of the study was taken from the Youth Risk Behavior Surveillance System survey 2017. We used a chi-squared test to find the association of forced sexual activities and suicidal behavior, and we found a strong association. Then we used bi-variate logistic regression analysis to ascertain the association of race, age, sex, and education with suicidal attempts after experiencing forced sexual activity (sexual assault). The results of the following paper provide greater insight into the relationship between forced sexual activities and suicide attempts by the adolescents.\n\nStudy of Runge-Kutta Method of Higher orders and its Applications\nAdvisor: Dr. Md. Abdus Samad \n\nThis project is concerned with the study on Runge-Kutta method to apply on different order of differential equation and solve different types of problem such as initial value problem and boundary value problem in ordinary differential equation. At first we discuss about the definition and generation of differential equation specially based on partial differential equation and then definition of Runge-kutta method and the derivation of midpoint method and the formula of Runge-Kutta metod of fourth order and sixth order. We also write FORTRAN 90/95 program for different order of Runge-Kutta methods. We have solved some examples of fourth order R-K method and sixth order R-K method to get the application of R-K method. We also compared the solution of R-K method with exact solution for different step sizes. Then we have given simultaneous first order differential equation and second order differential equation and then solved them by fourth order Runge-Kutta method. At last we have discussed the boundary value problem which we have solved by fourth and sixth order R-K method. After that we have written the algorithm of shooting method and showed computer results with the difference between two answer along with percentages of error."
+  },
+  {
+    "objectID": "research.html#talks-and-presentations",
+    "href": "research.html#talks-and-presentations",
+    "title": "",
+    "section": "Talks and Presentations",
+    "text": "Talks and Presentations"
+  },
+  {
+    "objectID": "teaching/sp24.html",
+    "href": "teaching/sp24.html",
+    "title": "Spring 2024: MAP4170 Introduction to Actuarial Mathematics",
+    "section": "",
+    "text": "One of the course objectives is for each student to develop a mastery of financial mathematics used by actuaries, based on the mathematics of interest theory. Other course objectives are for each student to understand the long-term individual study commitment necessary to achieve a designation within one of the actuarial societies and for each student to increase their knowledge of the actuarial profession\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "teaching/f18-f21.html",
+    "href": "teaching/f18-f21.html",
+    "title": "Fall 2018 to Spring 2020: College Algebra, Trigonometry",
+    "section": "",
+    "text": "Responsible for the preparation and delivery of all lectures, making question paper for all exams, and the grading of tests and homework assignments for the following courses: - College Algebra, Fall 2018 - Trigonometry, Fall 2019 and Spring 2020\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "teaching/fall23.html",
+    "href": "teaching/fall23.html",
+    "title": "Fall 2023: MAP4170 Introduction to Actuarial Mathematics",
+    "section": "",
+    "text": "Worked as a greader for this course.\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "cv.html",
@@ -117,118 +222,6 @@
     "title": "CV",
     "section": "Awards and Affiliations",
     "text": "Awards and Affiliations\n\nAwards\n\nBettye Anne Busbee Case Graduate Fellowship & Doctoral Mentorship Recognition 2024\n\nOutstanding Graduate Student in Statistics Award for the 2019-2020 academic year, Youngstown State University.\n\nGraduate College Premiere Scholarship, Youngstown State University.\n\nMetLife Bangladesh Actuarial Study Program 2015\n\n\n\nAffiliations\n\nBangladesh Mathematical Society: Life Member\nSociety of Actuaries, SOA: Student Member\nAmerican Mathematical Society, AMS\nSociety for Industrial and Applied Mathematics"
-  },
-  {
-    "objectID": "teaching/fall23.html",
-    "href": "teaching/fall23.html",
-    "title": "Fall 2023: MAP4170 Introduction to Actuarial Mathematics",
-    "section": "",
-    "text": "Worked as a greader for this course.\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "teaching/f18-f21.html",
-    "href": "teaching/f18-f21.html",
-    "title": "Fall 2018 to Spring 2020: College Algebra, Trigonometry",
-    "section": "",
-    "text": "Responsible for the preparation and delivery of all lectures, making question paper for all exams, and the grading of tests and homework assignments for the following courses: - College Algebra, Fall 2018 - Trigonometry, Fall 2019 and Spring 2020\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "teaching/sp24.html",
-    "href": "teaching/sp24.html",
-    "title": "Spring 2024: MAP4170 Introduction to Actuarial Mathematics",
-    "section": "",
-    "text": "One of the course objectives is for each student to develop a mastery of financial mathematics used by actuaries, based on the mathematics of interest theory. Other course objectives are for each student to understand the long-term individual study commitment necessary to achieve a designation within one of the actuarial societies and for each student to increase their knowledge of the actuarial profession\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "",
-    "section": "",
-    "text": "Code\nCurrently I am working under the supervision of professor Lingjiong Zhu. My ongoing research project is on the topic “EXTRA decentralized stochastic gradient Langevin dynamics”."
-  },
-  {
-    "objectID": "research.html#research-interest",
-    "href": "research.html#research-interest",
-    "title": "",
-    "section": "Research Interest",
-    "text": "Research Interest\n\nTheoretical Machine Learning: Centralized and Decentralized Stochastic Gradient Descent (SGD);Algorithmic Stability in SGD; Differential Privacy in machine learning algorithms\nApplied Data Science\nFinancial Mathematics"
-  },
-  {
-    "objectID": "research.html#publications",
-    "href": "research.html#publications",
-    "title": "",
-    "section": "Publications",
-    "text": "Publications\n\nYou can also find my articles on my Google Scholar profile.\n\n\nGJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies \nMostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management.\nComparison of Financial Models for Stock Price Prediction \nIslam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management."
-  },
-  {
-    "objectID": "research.html#course-projects",
-    "href": "research.html#course-projects",
-    "title": "",
-    "section": "Course Projects",
-    "text": "Course Projects\n\nOption pricing techniques: A performance-based comparative study of the randomized quasi-Monte Carlo method and Fourier cosine method\nAdvisor: Prof. Giray Ökten\n\nPricing financial derivatives such as options with desired accuracy can be hard due to the nature of the functions and complicated integrals required by the pricing techniques. In this paper we investigate the pricing methodology of the European style options using two advanced numerical methods, namely, Quasi-Monte Carlo and Fourier Cosine (COS). For the RQMC method, we use the random-start Halton sequence. We use the Black-Scholes-Merton model to measure the pricing quality of both of the methods. For the numerical results we compute the option price of the call option and we found a few reasons to prefer the RQMC method over the COS method to approximate the European style options.\n\nThe Relationship Between Forced Sexual Activities And Suicidal Attempts Of The Victims\nAdvisor: Dr. Andy Chang\n\nIn project, we apply data-analytic methods to further explore the relationship between forced sexual activities and suicidal behavior among adolescents in the United States. Our findings build on existing literature that explores this relationship. The sample of the study was taken from the Youth Risk Behavior Surveillance System survey 2017. We used a chi-squared test to find the association of forced sexual activities and suicidal behavior, and we found a strong association. Then we used bi-variate logistic regression analysis to ascertain the association of race, age, sex, and education with suicidal attempts after experiencing forced sexual activity (sexual assault). The results of the following paper provide greater insight into the relationship between forced sexual activities and suicide attempts by the adolescents.\n\nStudy of Runge-Kutta Method of Higher orders and its Applications\nAdvisor: Dr. Md. Abdus Samad \n\nThis project is concerned with the study on Runge-Kutta method to apply on different order of differential equation and solve different types of problem such as initial value problem and boundary value problem in ordinary differential equation. At first we discuss about the definition and generation of differential equation specially based on partial differential equation and then definition of Runge-kutta method and the derivation of midpoint method and the formula of Runge-Kutta metod of fourth order and sixth order. We also write FORTRAN 90/95 program for different order of Runge-Kutta methods. We have solved some examples of fourth order R-K method and sixth order R-K method to get the application of R-K method. We also compared the solution of R-K method with exact solution for different step sizes. Then we have given simultaneous first order differential equation and second order differential equation and then solved them by fourth order Runge-Kutta method. At last we have discussed the boundary value problem which we have solved by fourth and sixth order R-K method. After that we have written the algorithm of shooting method and showed computer results with the difference between two answer along with percentages of error."
-  },
-  {
-    "objectID": "research.html#talks-and-presentations",
-    "href": "research.html#talks-and-presentations",
-    "title": "",
-    "section": "Talks and Presentations",
-    "text": "Talks and Presentations"
-  },
-  {
-    "objectID": "talks/2023-11-20-candi.html",
-    "href": "talks/2023-11-20-candi.html",
-    "title": "The Heavy-Tail Phenomenon in Decentralized Stochastic Gradient Descent",
-    "section": "",
-    "text": "Stochastic Gradient Descent (SGD) method is one of the most popular optimization techniques in machine learning, particularly in Deep Neural Network (DNN). The gradient noise in this method is often modeled by Gaussian or assumed to have finite variance. However, empirical evidence suggests that the gradient noises can be highly non-Gaussian and often exhibit heavy tails in nature. This heaviness has a direct relationship to the generalization performance of the algorithm.\n\n\nIn this candidacy paper we discuss materials from three papers where we first present the tail-index analysis in SGD that shows empirically that gradient noise can have heavy tails, and through metastability analysis, the heavy-tailed SGD validates the wide minima phenomenon. We then present the paper about the heavy-tail phenomenon in SGD and investigates the origins of the heavy tails. We show that the heaviness of the tail is related to the choice of stepsize, batch-size and other hyperparameters of the algorithm. Finally, we discuss the heavy-tail phenomenon in decentralized SGD. We conclude the candidacy paper by proposing a few future research directions.\n\nA copy of the presentation can be found here\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "talks/2023-10-05-st-op.html",
-    "href": "talks/2023-10-05-st-op.html",
-    "title": "Decentralized Stochastic Gradient Langevin Dynamics andHamiltonian Monte Carlo",
-    "section": "",
-    "text": "This presentation is based on the paper Decentralized Stochastic Gradient Langevin Dynamics andHamiltonian Monte Carlo by Dr. Lingjiong Zhu\nA copy of the presentation can be found here\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "talks/2020-04-26-project.html",
-    "href": "talks/2020-04-26-project.html",
-    "title": "Sensitivity analysis for Monte Carlo and Quasi Monte Carlo option pricing",
-    "section": "",
-    "text": "A copy of the presentation can be found  here \n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "teaching/sp23.html",
-    "href": "teaching/sp23.html",
-    "title": "Spring 2023: MAC1140 PreCalculus Algebra",
-    "section": "",
-    "text": "PreCalculus and Algebra are one of the many important foundation math courses that open doors to many upper-level math and science courses. The topic of this course includes but not is limited to Complex Numbers, Piecewise Functions, Quadratic Functions, Polynomial Functions, Polynomial Division, Zeros of Polynomials, Rational Functions, Polynomial and Rational Inequalities, Inverse Functions, Exponential Functions, Logarithmic Functions, Properties of Logarithms, Exponential and Logarithmic Equations, and so on.  As an Instructor of Record for this course, I taught a class of 27 undergraduate students from different majors. I also proctor their lab classes where they take their quizzes and tests online and other application based lab activities.\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "teaching/fall22.html",
-    "href": "teaching/fall22.html",
-    "title": "Fall 2022: MAC2311 Calculus and Analytic Geometry I",
-    "section": "",
-    "text": "Students who have substantial knowledge of precalculus and algebra may require to take this course as a mathematics requirement depending on their majors. The topic of this course includes but is not limited to Foundation for calculus: Functions and Limits, Derivative, The Definite Integral, and Constructing Antiderivatives.  As a recitation instructor for this course, I ran two poster presentation sessions of 30 students in each group where they presented mathematical problems and their solutions step by step to their peer classmates followed by a group activity where they solved another set of problems. I also graded their exam scripts and weekly posters.\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "teaching/fall21.html",
-    "href": "teaching/fall21.html",
-    "title": "Fall 2021 and Spring 2022: PreCalculus and Algebra",
-    "section": "",
-    "text": "As a lecture TA, my job was to facilitate the instructor during the class. This included helping students in class activities such as answering short questions that counted as class attendance, checking students’ eligibility forms for taking this course, and others as needed by the instructor.  As a lab TA I worked in a computer lab where students take their weekly quizzes and midterm tests.\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "portfolio/dp-nlp/index.html",
-    "href": "portfolio/dp-nlp/index.html",
-    "title": "Disease diagnosis using classification and NLP",
-    "section": "",
-    "text": "Team Members\nRebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya\nAutomatic Symptom Detection (ASD) and Automatic Diagnosis (AD) have seen several advances in recent years. Patients and medical professionals would benefit from tools that can aid in diagnosing diseases based on antecedents and presenting symptoms. The lack of quality healthcare in many parts of the world makes solving this problem a matter of utmost urgency. The aim of this project is to build a tool that can diagnose a disease based on a list of symptoms and contribute to our understanding of automatic diagnosis.\nProject Details\nSlides\nExecutive Summary\nGitHub Repo\n\n\n\n\n\n Back to topCitationBibTeX citation:@online{ceppas_de_castro,_fulya_tastan,_philip_barron,_mohammad_rafiqul_islam,_nina_adhikari,_viraj_meruliya_2024,\n  author = {Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad\n    Rafiqul Islam, Nina Adhikari, Viraj Meruliya , Rebecca},\n  title = {Disease Diagnosis Using Classification and {NLP}},\n  date = {2024-06-18},\n  url = {https://mrislambd.github.io/portfolio/dp-nlp/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nCeppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam,\nNina Adhikari, Viraj Meruliya, Rebecca. 2024. “Disease Diagnosis\nUsing Classification and NLP.” June 18, 2024. https://mrislambd.github.io/portfolio/dp-nlp/."
   },
   {
     "objectID": "portfolio/desgld/index.html",
