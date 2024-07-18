@@ -39,7 +39,7 @@ def fblink(link):
     full_url= f"{base_url}?u={encoded_url}&amp;src=sdkpreparse"
     return full_url  
 
-# Suppose this is the link you want to share  
+# Suppose this is the link you want to share. Replace with your own link  
 link="https://mrislambd.github.io/posts/social-share/"
 
 # Then you can use this template
