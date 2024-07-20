@@ -34,7 +34,7 @@ Here is a demo picture
 **Share on**  
 
 <div class="share-buttons">
-  <div class="fb-share-button" data-href="https://mrislambd.github.io/posts/welcome/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fwelcome%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> 
+  <div class="fb-share-button" data-href="https://mrislambd.github.io/posts/welcome/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fwelcome%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> 
   
   <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>  
   <script type="IN/Share" data-url="https://mrislambd.github.io/posts/welcom/"></script>  
