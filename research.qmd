@@ -25,9 +25,9 @@ Currently I am working under the supervision of professor <a href="https://sites
 
 <div class="wordwrap">You can also find my articles on <a href="https://scholar.google.com/citations?user=gTz5r68AAAAJ&hl=en">my Google Scholar profile</a>.</div>  
 
-- <a href="/publication/paper2.qmd">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
+- <a href="/publication/pub2/index.qmd">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
   Mostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) "Comparison of financial models for stock price prediction." *Journal of Risk and Financial Management*.
-- <a href="/publication/paper1.qmd">Comparison of Financial Models for Stock Price Prediction </a>  
+- <a href="/publication/pub1/index.qmd">Comparison of Financial Models for Stock Price Prediction </a>  
   Islam, Mohammad R.; Nguyen, N. (2020) "Comparison of financial models for stock price prediction." *Journal of Risk and Financial Management*. 
 
 ## Course Projects  
