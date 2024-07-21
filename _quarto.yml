@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources: 
+    - ads.txt
 
 website:
   page-navigation: true
@@ -97,7 +99,10 @@ website:
   google-analytics: 
     tracking-id: "G-Z5NP67GHFC"
     anonymize-ip: true
+adsense: 
+  publisher-id: "ca-pub-6878992848042528"
 filters:
+  - adsense
   - quarto-version.lua
   
 format:

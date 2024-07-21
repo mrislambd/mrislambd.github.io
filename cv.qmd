@@ -80,9 +80,9 @@ cv:
 
 ## Publications
 
-- <a href="/publication/paper2.qmd">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
+- <a href="/publication/pub2/index.qmd">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
   Mostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) "Comparison of financial models for stock price prediction." *Journal of Risk and Financial Management*.
-- <a href="/publication/paper1.qmd">Comparison of Financial Models for Stock Price Prediction </a>  
+- <a href="/publication/pub1/index.qmd">Comparison of Financial Models for Stock Price Prediction </a>  
   Islam, Mohammad R.; Nguyen, N. (2020) "Comparison of financial models for stock price prediction." *Journal of Risk and Financial Management*. 
 
   

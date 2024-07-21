@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/cv.html</loc>
-    <lastmod>2024-07-14T07:26:55.063Z</lastmod>
+    <lastmod>2024-07-21T21:16:24.441Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/portfolio/desgld/index.html</loc>
@@ -37,12 +37,20 @@
     <lastmod>2024-07-14T07:31:42.800Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/publication/paper2.html</loc>
-    <lastmod>2024-07-14T07:31:27.675Z</lastmod>
+    <loc>https://mrislambd.github.io/publication/pub1/index.html</loc>
+    <lastmod>2024-07-21T06:27:41.278Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/matmul/index.html</loc>
     <lastmod>2024-07-17T23:12:51.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/welcome/index.html</loc>
+    <lastmod>2024-07-20T07:18:43.967Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/matrix-rep/index.html</loc>
+    <lastmod>2024-07-18T05:14:28.501Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/social-share/index.html</loc>
@@ -65,12 +73,20 @@
     <lastmod>2024-07-17T23:33:14.131Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/posts/welcome/index.html</loc>
-    <lastmod>2024-07-20T07:18:43.967Z</lastmod>
+    <loc>https://mrislambd.github.io/posts/some-proofs/index.html</loc>
+    <lastmod>2024-07-18T05:27:41.388Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/publication/paper1.html</loc>
-    <lastmod>2024-07-14T07:31:16.288Z</lastmod>
+    <loc>https://mrislambd.github.io/posts/eigen/index.html</loc>
+    <lastmod>2024-07-18T05:16:27.991Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/lu/index.html</loc>
+    <lastmod>2024-07-18T03:49:37.172Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/publication/pub2/index.html</loc>
+    <lastmod>2024-07-21T06:00:20.468Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/talks/2023-11-20-candi.html</loc>
@@ -103,29 +119,5 @@
   <url>
     <loc>https://mrislambd.github.io/portfolio.html</loc>
     <lastmod>2024-07-14T07:27:17.691Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/lu/index.html</loc>
-    <lastmod>2024-07-18T03:49:37.172Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/matrix-rep/index.html</loc>
-    <lastmod>2024-07-18T05:14:28.501Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/eigen/index.html</loc>
-    <lastmod>2024-07-18T05:16:27.991Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/some-proofs/index.html</loc>
-    <lastmod>2024-07-18T05:27:41.388Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/publication/pub1/index.html</loc>
-    <lastmod>2024-07-21T06:27:41.278Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/publication/pub2/index.html</loc>
-    <lastmod>2024-07-21T06:00:20.468Z</lastmod>
   </url>
 </urlset>
