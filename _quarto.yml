@@ -100,7 +100,7 @@ website:
     tracking-id: "G-Z5NP67GHFC"
     anonymize-ip: true
 adsense: 
-  publisher-id: "ca-pub-6878992848042528"
+  publisher-id: ca-pub-6878992848042528
 filters:
   - adsense
   - quarto-version.lua
