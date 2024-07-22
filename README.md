@@ -79,5 +79,5 @@ If you find any issues or have suggestions for improvements, feel free to open a
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for more details.
 
