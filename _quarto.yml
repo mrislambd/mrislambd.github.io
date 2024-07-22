@@ -82,9 +82,11 @@ website:
       - icon: rss
         href: https://mrislambd.github.io/docs/index.xml
       - icon: instagram
-        href: https://mrislambd.github.io/404
-      - icon: facebook
-        href: https://mrislambd.github.io/404
+        href: https://instagram.com
+        target: _blank
+      - icon: youtube
+        href: https://youtube.com/@quanttube
+        target: _blank
       
 
     border: true
@@ -92,10 +94,6 @@ website:
 
 
   # Google stuffs
-  cookie-consent: 
-    type: express
-    style: simple
-    palette: light
   google-analytics: 
     tracking-id: "G-Z5NP67GHFC"
     anonymize-ip: true
