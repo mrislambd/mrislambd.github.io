@@ -1,12 +1,5 @@
 [
   {
-    "listing": "/portfolio.html",
-    "items": [
-      "/portfolio/dp-nlp/index.html",
-      "/portfolio/desgld/index.html"
-    ]
-  },
-  {
     "listing": "/posts/lu/index.html",
     "items": [
       "/posts/eigen/index.html",
@@ -20,12 +13,12 @@
     ]
   },
   {
-    "listing": "/posts/matrix-rep/index.html",
+    "listing": "/posts/matmul/index.html",
     "items": [
       "/posts/eigen/index.html",
       "/posts/social-share/index.html",
       "/posts/lu/index.html",
-      "/posts/matmul/index.html",
+      "/posts/matrix-rep/index.html",
       "/posts/mathbiology/index.html",
       "/posts/some-proofs/index.html",
       "/posts/sgd-linreg/index.html",
@@ -59,16 +52,23 @@
     ]
   },
   {
-    "listing": "/posts/some-proofs/index.html",
+    "listing": "/posts/matrix-rep/index.html",
     "items": [
       "/posts/eigen/index.html",
       "/posts/social-share/index.html",
       "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
+      "/posts/some-proofs/index.html",
       "/posts/sgd-linreg/index.html",
       "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/portfolio.html",
+    "items": [
+      "/portfolio/dp-nlp/index.html",
+      "/portfolio/desgld/index.html"
     ]
   },
   {
@@ -80,16 +80,14 @@
     ]
   },
   {
-    "listing": "/posts/sgd-linreg/index.html",
+    "listing": "/teaching.html",
     "items": [
-      "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/welcome/index.html"
+      "/teaching/sp24.html",
+      "/teaching/fall23.html",
+      "/teaching/sp23.html",
+      "/teaching/fall22.html",
+      "/teaching/fall21.html",
+      "/teaching/f18-f21.html"
     ]
   },
   {
@@ -106,15 +104,28 @@
     ]
   },
   {
-    "listing": "/posts/matmul/index.html",
+    "listing": "/posts/some-proofs/index.html",
     "items": [
       "/posts/eigen/index.html",
       "/posts/social-share/index.html",
       "/posts/lu/index.html",
       "/posts/matrix-rep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/sgd-linreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/sgd-linreg/index.html",
+    "items": [
+      "/posts/eigen/index.html",
+      "/posts/social-share/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrix-rep/index.html",
+      "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
       "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
       "/posts/welcome/index.html"
     ]
   },
@@ -129,17 +140,6 @@
       "/posts/some-proofs/index.html",
       "/posts/sgd-linreg/index.html",
       "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/teaching.html",
-    "items": [
-      "/teaching/sp24.html",
-      "/teaching/fall23.html",
-      "/teaching/sp23.html",
-      "/teaching/fall22.html",
-      "/teaching/fall21.html",
-      "/teaching/f18-f21.html"
     ]
   },
   {
