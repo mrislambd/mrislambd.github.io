@@ -2,10 +2,11 @@
 title: "Bayesian Inference in Machine Learning: Part 1"
 date: "2024-07-28"
 author: "Rafiq Islam"
-image: ven.png
+image: pancake.jpeg
 categories: [Machine Learning, Data Science, Bayesian Inference, Bayesian Statistics, Statistics]
 citation: true
 lightbox: true
+search: true
 listing: 
     contents: "/../../posts"
     max-items: 3
@@ -13,8 +14,11 @@ listing:
     categories: false
     date-format: full
     fields: [image, date, title, author, reading-time]
----  
+---    
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
+     crossorigin="anonymous"></script>  
+     
 ## Introduction  
 
 <p style="text-align: left"><img align="right" width="420" height="300" src="/posts/Bayesian-inference/ven.png">
@@ -162,6 +166,7 @@ data-layout="button_count" data-size="small"><a target="_blank"
 </div>
 
 <div class="fb-comments" data-href="https://mrislambd.github.io/posts/Bayesian-inference/"
- data-width="" data-numposts="5"></div>  
+ data-width="" data-numposts="5"></div>
+
 
  **You may also like**  
