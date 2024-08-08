@@ -10,238 +10,7 @@
 <atom:link href="https://mrislambd.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.54</generator>
-<lastBuildDate>Sun, 28 Jul 2024 04:00:00 GMT</lastBuildDate>
-<item>
-  <title>Bayesian Inference in Machine Learning: Part 1</title>
-  <dc:creator>Rafiq Islam</dc:creator>
-  <link>https://mrislambd.github.io/posts/Bayesian-inference/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p style="text-align: left">
-<img align="right" width="420" height="300" src="https://mrislambd.github.io/posts/Bayesian-inference/ven.png"> Bayesian inference is a powerful statistical method that applies the principles of Bayes’s theorem to update the probability of a hypothesis as more evidence or information becomes available. It is widely used in various fields, including machine learning, to make predictions and decisions under uncertainty.
-</p>
-<p>Bayes’s theorem is a fundamental result in probability theory that relates the conditional and marginal probabilities of random events. Mathematically,<br>
-<img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(A%7CB)=%5Cfrac%7B%5Cmathbb%7BP%7D(B%7CA)%5Cmathbb%7BP%7D(A)%7D%7B%5Cmathbb%7BP%7D(B)%7D%5Chspace%7B4mm%7D%20%5Cimplies%20%5Cmathbb%7BP%7D(A%7CB)%20%5Cpropto%20%5Cmathbb%7BP%7D(B%7CA)%5Cmathbb%7BP%7D(A)"></p>
-<p>where, <img src="https://latex.codecogs.com/png.latex?A"> and <img src="https://latex.codecogs.com/png.latex?B"> are events and <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(B)%5Cne%200">.</p>
-<ul>
-<li><img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(A%7CB)"> is a conditional probability which states the probability of occuring the event <img src="https://latex.codecogs.com/png.latex?A"> when the event <img src="https://latex.codecogs.com/png.latex?B"> is given or true. The other name of this quantity is called <em><span style="color: red">posterior probability</span></em> of <img src="https://latex.codecogs.com/png.latex?A"> given the event <img src="https://latex.codecogs.com/png.latex?B"> or simply, <em><span style="color: red">posterior distribution.</span></em><br>
-</li>
-<li><img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(B%7CA)"> is a conditional probability which states the probability of occuring the event <img src="https://latex.codecogs.com/png.latex?B"> when the event <img src="https://latex.codecogs.com/png.latex?A"> is given or true. In other terms, <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(B%7CA)"> is the likelihood: the probability of evidence <img src="https://latex.codecogs.com/png.latex?B"> given that <img src="https://latex.codecogs.com/png.latex?A"> is true.<br>
-</li>
-<li><img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(A)"> or <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(B)"> are the probabilities of occuring <img src="https://latex.codecogs.com/png.latex?A"> and <img src="https://latex.codecogs.com/png.latex?B"> respectively, without any dependence on each other. <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(A)"> is called the <em>prior</em> probability or prior distribution and <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(B)"> is called the marginal likelihood or marginal probabilities.</li>
-</ul>
-<section id="example-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
-<p>Consider a medical example where we want to diagnose a disease based on a test result. Let:</p>
-<ul>
-<li><img src="https://latex.codecogs.com/png.latex?D"> be the event that a patient has the disease.<br>
-</li>
-<li><img src="https://latex.codecogs.com/png.latex?T"> be the event that the test result is positive.</li>
-</ul>
-<p>We are interested in finding the probability that a patient has the disease given a positive test result, <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(D%7CT)">.</p>
-<p>Given:</p>
-<ul>
-<li><img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(T%7CD)%20=%200.99"> (the probability of a positive test result given the patient has the disease).<br>
-</li>
-<li><img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(D)%20=%200.01"> (the prior probability of the disease).<br>
-</li>
-<li><img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(T%7CD')%20=%200.05"> (the probability of a positive test result given the patient does not have the disease).</li>
-</ul>
-<p>First, we need to calculate the marginal likelihood <img src="https://latex.codecogs.com/png.latex?P(T)">: <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(T)%20&amp;=%20%5Cmathbb%7BP%7D(T%7CD)%20%5Ccdot%20%5Cmathbb%7BP%7D(D)%20+%20%5Cmathbb%7BP%7D(T%7CD')%20%5Ccdot%20%5Cmathbb%7BP%7D(D')%20%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(T)%20&amp;=%200.99%20%5Ccdot%200.01%20+%200.05%20%5Ccdot%200.99%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(T)%20&amp;=%200.0099%20+%200.0495%20%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(T)%20&amp;=%200.0594%0A%5Cend%7Balign*%7D"></p>
-<p>Now, we can apply Bayes’s theorem:<br>
-<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(D%7CT)%20&amp;=%20%5Cfrac%7B%5Cmathbb%7BP%7D(T%7CD)%20%5Ccdot%20%5Cmathbb%7BP%7D(D)%7D%7B%5Cmathbb%7BP%7D(T)%7D%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(D%7CT)%20&amp;=%20%5Cfrac%7B0.99%20%5Ccdot%200.01%7D%7B0.0594%7D%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(D%7CT)%20&amp;%5Capprox%200.1667%0A%5Cend%7Balign*%7D"></p>
-<p>So, the probability that the patient has the disease given a positive test result is approximately <img src="https://latex.codecogs.com/png.latex?16.67%5C%25">.</p>
-</section>
-<section id="example-2" class="level3">
-<h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
-<p style="text-align: left">
-<img align="right" width="420" height="300" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg"> Assume that you are in a restuarant and you ordered a plate of 3 pancakes. The chef made three pancakes with one in perfect condition, that is not burnt in any side, one with one side burnt, and the last one burnt in both sides. The waiter wanted to stack the pancakes so that the burnt side does not show up when served. However, the chef recommended not to hide the burnt side and asked her to stack the pancakes randomly. What is the likelyhood that the fully burnt pancake will be on the top?
-</p>
-<p>To solve this problem, we can use Bayesian approach. We denote the event <img src="https://latex.codecogs.com/png.latex?X"> as the pancake without any burnt, <img src="https://latex.codecogs.com/png.latex?Y"> with one side burnt, and <img src="https://latex.codecogs.com/png.latex?Z"> both side burnt. Then we have the following conditional probabilities</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%20%7C%20X)&amp;=0%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%20%7C%20Y)&amp;=%5Cfrac%7B1%7D%7B2%7D%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%20%7C%20Z)&amp;=1%5C%5C%0A%5Cend%7Balign*%7D"></p>
-<p>The probability of picking a pancake irrespective of their burnt condition is <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B1%7D%7B3%7D">. So,<br>
-<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bequation%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(X)=%5Cmathbb%7BP%7D(Y)=%5Cmathbb%7BP%7D(Z)=%5Cfrac%7B1%7D%7B3%7D%0A%5Cend%7Bequation%7D"><br>
-The marginal probability of having burnt side in the top position<br>
-<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D)&amp;=%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CX)%5Cmathbb%7BP%7D(X)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%5C%5C%0A%20%20%20%20&amp;=0%5Ccdot%20%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2%7D%5Ccdot%5Cfrac%7B1%7D%7B3%7D+1%5Ccdot%5Cfrac%7B1%7D%7B3%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B1%7D%7B2%7D%0A%5Cend%7Balign*%7D"></p>
-<p>Now, we can only have a burnt side on top if either <img src="https://latex.codecogs.com/png.latex?Z"> is placed in the top or the burnt side of <img src="https://latex.codecogs.com/png.latex?Y"> is placed in the top. <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(Y%7C%5Ctext%7Btop-burnt%7D)&amp;=%5Cfrac%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)%7D%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D)%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)%7D%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CX)%5Cmathbb%7BP%7D(X)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B%5Cfrac%7B1%7D%7B2%7D%5Ccdot%5Cfrac%7B1%7D%7B3%7D%7D%7B%5Cfrac%7B1%7D%7B2%7D%7D=%5Cfrac%7B1%7D%7B3%7D%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(Z%7C%5Ctext%7Btop-burnt%7D)&amp;=%5Cfrac%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%7D%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D)%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%7D%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CX)%5Cmathbb%7BP%7D(X)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B%5Cfrac%7B1%7D%7B3%7D%7D%7B%5Cfrac%7B1%7D%7B2%7D%7D=%5Cfrac%7B2%7D%7B3%7D%0A%5Cend%7Balign*%7D"></p>
-<p>So the probability of having the fully burnt pancake on the top is <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B2%7D%7B3%7D">.</p>
-</section>
-</section>
-<section id="why-bayesian-inference-in-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="why-bayesian-inference-in-machine-learning">Why Bayesian Inference in Machine Learning?</h2>
-<p>Bayesian inference plays a crucial role in machine learning, particularly in areas involving uncertainty and probabilistic reasoning. It allows us to incorporate prior knowledge and update beliefs based on new data, which is especially useful in the following applications:</p>
-<section id="bayesian-networks" class="level3">
-<h3 class="anchored" data-anchor-id="bayesian-networks">Bayesian Networks</h3>
-<p>Bayesian networks are graphical models that represent the probabilistic relationships among a set of variables. Each node in the network represents a random variable, and the edges represent conditional dependencies. Bayesian networks are used for various tasks such as classification, prediction, and anomaly detection.</p>
-</section>
-<section id="bayesian-regression" class="level3">
-<h3 class="anchored" data-anchor-id="bayesian-regression">Bayesian Regression</h3>
-<p>Bayesian regression extends linear regression by incorporating prior distributions on the model parameters. This approach provides a probabilistic framework for regression analysis, allowing for uncertainty in the parameter estimates. The posterior distribution of the parameters is computed using Bayes’s theorem, and predictions are made by averaging over this distribution.</p>
-</section>
-<section id="sampling-methods" class="level3">
-<h3 class="anchored" data-anchor-id="sampling-methods">Sampling Methods</h3>
-<p>In Bayesian inference, exact computation of the posterior distribution is often intractable. Therefore, sampling methods such as Markov Chain Monte Carlo (MCMC) and Variational Inference are used to approximate the posterior distribution. These methods generate samples from the posterior distribution, allowing us to estimate various statistical properties and make inferences.</p>
-<section id="markov-chain-monte-carlo-mcmc" class="level4">
-<h4 class="anchored" data-anchor-id="markov-chain-monte-carlo-mcmc">Markov Chain Monte Carlo (MCMC)</h4>
-<p>MCMC methods generate a sequence of samples from the posterior distribution by constructing a Markov chain that has the desired distribution as its equilibrium distribution. Common MCMC algorithms include the Underdamped and Overdamped Langevin dynamics, Metropolis-Hastings algorithm and the Gibbs sampler.</p>
-</section>
-<section id="example-metropolis-hastings-algorithm" class="level4">
-<h4 class="anchored" data-anchor-id="example-metropolis-hastings-algorithm">Example: Metropolis-Hastings Algorithm</h4>
-<p>Consider a posterior distribution <img src="https://latex.codecogs.com/png.latex?P(%5Ctheta%7CD)"> where <img src="https://latex.codecogs.com/png.latex?%5Ctheta"> represents the model parameters and <img src="https://latex.codecogs.com/png.latex?D"> represents the data. The Metropolis-Hastings algorithm proceeds as follows:</p>
-<ol type="1">
-<li>Initialize the parameters <img src="https://latex.codecogs.com/png.latex?%5Ctheta_0">.</li>
-<li>For <img src="https://latex.codecogs.com/png.latex?t%20=%201"> to <img src="https://latex.codecogs.com/png.latex?T">:
-<ul>
-<li>Propose a new state <img src="https://latex.codecogs.com/png.latex?%5Ctheta'"> from a proposal distribution <img src="https://latex.codecogs.com/png.latex?Q(%5Ctheta'%7C%5Ctheta_t)">.</li>
-<li>Compute the acceptance ratio <img src="https://latex.codecogs.com/png.latex?%5Calpha%20=%20%5Cfrac%7BP(%5Ctheta'%7CD)%20%5Ccdot%20Q(%5Ctheta_t%7C%5Ctheta')%7D%7BP(%5Ctheta_t%7CD)%20%5Ccdot%20Q(%5Ctheta'%7C%5Ctheta_t)%7D">.</li>
-<li>Accept the new state with probability <img src="https://latex.codecogs.com/png.latex?%5Cmin(1,%20%5Calpha)">. If accepted, set <img src="https://latex.codecogs.com/png.latex?%5Ctheta_%7Bt+1%7D%20=%20%5Ctheta'">; otherwise, set <img src="https://latex.codecogs.com/png.latex?%5Ctheta_%7Bt+1%7D%20=%20%5Ctheta_t">.</li>
-</ul></li>
-</ol>
-<p>The samples <img src="https://latex.codecogs.com/png.latex?%5Ctheta_1,%20%5Ctheta_2,%20%5Cldots,%20%5Ctheta_T"> form a Markov chain whose stationary distribution is the posterior distribution <img src="https://latex.codecogs.com/png.latex?P(%5Ctheta%7CD)">.</p>
-</section>
-</section>
-<section id="bayesian-inference-in-neural-networks" class="level3">
-<h3 class="anchored" data-anchor-id="bayesian-inference-in-neural-networks">Bayesian Inference in Neural Networks</h3>
-<p>Bayesian methods are also applied to neural networks, resulting in Bayesian Neural Networks (BNNs). BNNs incorporate uncertainty in the network weights by placing a prior distribution over them and using Bayes’s theorem to update this distribution based on the observed data. This allows BNNs to provide not only point estimates but also uncertainty estimates for their predictions.</p>
-<p>In the next parts, we will talk about different applications of the Bayesian inferences, specifically, sampling problem using Langevin dynamics.</p>
-</section>
-<section id="reference" class="level3">
-<h3 class="anchored" data-anchor-id="reference">Reference</h3>
-<ul>
-<li><a href="https://math.stackexchange.com/q/660788">Pancake problems on mathstackexchance</a></li>
-</ul>
-<p><strong>Share on</strong></p>
-<div id="fb-root">
-
-</div>
-<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
-<div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/Bayesian-inference/" data-layout="button_count" data-size="small">
-<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2FBayesian-inference%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
-</div>
-<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="https://mrislambd.github.io/posts/Bayesian-inference/"></script>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/Bayesian-inference/" data-show-count="true">Tweet</a>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-<div class="fb-comments" data-href="https://mrislambd.github.io/posts/Bayesian-inference/" data-width="" data-numposts="5">
-
-</div>
-<p><strong>You may also like</strong></p>
-
-
-
-<!-- -->
-
-</section>
-</section>
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
-<a href="../../posts/eigen/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/eigen/lin3.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Generalized eigenvectors and eigenspaces
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Monday, January 25, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1721266125000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-How to generate social share buttons
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Wednesday, July 17, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636434000000" data-listing-file-modified-sort="1721274577000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
-<a href="../../posts/lu/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/lu/lu.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-LU Factorization of a Full rank Matrix using Fortran
-</h5>
-<div class="listing-reading-time card-text text-muted">
-26 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Tuesday, November 9, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
-  author = {Islam, Rafiq},
-  title = {Bayesian {Inference} in {Machine} {Learning:} {Part} 1},
-  date = {2024-07-28},
-  url = {https://mrislambd.github.io/posts/Bayesian-inference/},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
-Islam, Rafiq. 2024. <span>“Bayesian Inference in Machine Learning: Part
-1.”</span> July 28, 2024. <a href="https://mrislambd.github.io/posts/Bayesian-inference/">https://mrislambd.github.io/posts/Bayesian-inference/</a>.
-</div></div></section></div> ]]></description>
-  <category>Machine Learning</category>
-  <category>Data Science</category>
-  <category>Bayesian Inference</category>
-  <category>Bayesian Statistics</category>
-  <category>Statistics</category>
-  <guid>https://mrislambd.github.io/posts/Bayesian-inference/</guid>
-  <pubDate>Sun, 28 Jul 2024 04:00:00 GMT</pubDate>
-  <media:content url="https://mrislambd.github.io/posts/Bayesian-inference/ven.png" medium="image" type="image/png" height="96" width="144"/>
-</item>
+<lastBuildDate>Wed, 17 Jul 2024 04:00:00 GMT</lastBuildDate>
 <item>
   <title>How to generate social share buttons</title>
   <dc:creator>Rafiq Islam</dc:creator>
@@ -1196,32 +965,7 @@ font-style: inherit;">5.84</span>  </span></code></pre></div>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722139200000" data-listing-file-modified-sort="1722213110973" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="957">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/ven.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Bayesian Inference in Machine Learning: Part 1
-</h5>
-<div class="listing-reading-time card-text text-muted">
-5 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Sunday, July 28, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1246,7 +990,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1721266125000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1721266125000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/social-share/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1265,6 +1009,31 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Wednesday, July 17, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636434000000" data-listing-file-modified-sort="1721274577000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<a href="../../posts/lu/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/lu/lu.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+LU Factorization of a Full rank Matrix using Fortran
+</h5>
+<div class="listing-reading-time card-text text-muted">
+26 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Tuesday, November 9, 2021
 </div>
 </div>
 </div>
@@ -3340,6 +3109,25 @@ Basis.”</span> January 21, 2021. <a href="https://mrislambd.github.io/posts/ma
   <guid>https://mrislambd.github.io/posts/matrix-rep/</guid>
   <pubDate>Thu, 21 Jan 2021 05:00:00 GMT</pubDate>
   <media:content url="https://mrislambd.github.io/posts/matrix-rep/lin2.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Bayesian Inference</title>
+  <dc:creator>Rafiq Islam</dc:creator>
+  <link>https://mrislambd.github.io/posts/Bayesian-inference/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<!-- -->
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://mrislambd.github.io/posts/Bayesian-inference/</guid>
+  <pubDate>Sun, 28 Jul 2024 22:05:18 GMT</pubDate>
+  <media:content url="https://mrislambd.github.io/posts/Bayesian-inference/ven.png" medium="image" type="image/png" height="113" width="144"/>
 </item>
 </channel>
 </rss>

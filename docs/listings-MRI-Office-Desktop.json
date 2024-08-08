@@ -102,7 +102,6 @@
   {
     "listing": "/posts/sgd-linreg/index.html",
     "items": [
-      "/posts/Bayesian-inference/index.html",
       "/posts/eigen/index.html",
       "/posts/social-share/index.html",
       "/posts/lu/index.html",
@@ -161,20 +160,6 @@
   },
   {
     "listing": "/posts/sampling/index.html",
-    "items": [
-      "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/Bayesian-inference/index.html",
     "items": [
       "/posts/eigen/index.html",
       "/posts/social-share/index.html",
