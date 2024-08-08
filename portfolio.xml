@@ -9,7 +9,7 @@
 <link>https://mrislambd.github.io/portfolio.html</link>
 <atom:link href="https://mrislambd.github.io/portfolio.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.5.55</generator>
+<generator>quarto-1.5.56</generator>
 <lastBuildDate>Tue, 18 Jun 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Disease diagnosis using classification and NLP</title>
