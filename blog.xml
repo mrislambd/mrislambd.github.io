@@ -14,7 +14,7 @@
 <item>
   <title>Bayesian Inference in Machine Learning: Part 1</title>
   <dc:creator>Rafiq Islam</dc:creator>
-  <link>https://mrislambd.github.io/posts/Bayesian-inference/</link>
+  <link>https://mrislambd.github.io/posts/bayesianinference/</link>
   <description><![CDATA[ 
 
 
@@ -24,7 +24,7 @@
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p style="text-align: left">
-<img align="right" width="420" height="300" src="https://mrislambd.github.io/posts/Bayesian-inference/ven.png"> Bayesian inference is a powerful statistical method that applies the principles of Bayes’s theorem to update the probability of a hypothesis as more evidence or information becomes available. It is widely used in various fields, including machine learning, to make predictions and decisions under uncertainty.
+<img align="right" width="420" height="300" src="https://mrislambd.github.io/posts/bayesianinference/ven.png"> Bayesian inference is a powerful statistical method that applies the principles of Bayes’s theorem to update the probability of a hypothesis as more evidence or information becomes available. It is widely used in various fields, including machine learning, to make predictions and decisions under uncertainty.
 </p>
 <p>Bayes’s theorem is a fundamental result in probability theory that relates the conditional and marginal probabilities of random events. Mathematically,<br>
 <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(A%7CB)=%5Cfrac%7B%5Cmathbb%7BP%7D(B%7CA)%5Cmathbb%7BP%7D(A)%7D%7B%5Cmathbb%7BP%7D(B)%7D%5Chspace%7B4mm%7D%20%5Cimplies%20%5Cmathbb%7BP%7D(A%7CB)%20%5Cpropto%20%5Cmathbb%7BP%7D(B%7CA)%5Cmathbb%7BP%7D(A)"></p>
@@ -61,7 +61,7 @@
 <section id="example-2" class="level3">
 <h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
 <p style="text-align: left">
-<img align="right" width="420" height="300" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg"> Assume that you are in a restuarant and you ordered a plate of 3 pancakes. The chef made three pancakes with one in perfect condition, that is not burnt in any side, one with one side burnt, and the last one burnt in both sides. The waiter wanted to stack the pancakes so that the burnt side does not show up when served. However, the chef recommended not to hide the burnt side and asked her to stack the pancakes randomly. What is the likelyhood that the fully burnt pancake will be on the top?
+<img align="right" width="420" height="300" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg"> Assume that you are in a restuarant and you ordered a plate of 3 pancakes. The chef made three pancakes with one in perfect condition, that is not burnt in any side, one with one side burnt, and the last one burnt in both sides. The waiter wanted to stack the pancakes so that the burnt side does not show up when served. However, the chef recommended not to hide the burnt side and asked her to stack the pancakes randomly. What is the likelyhood that the fully burnt pancake will be on the top?
 </p>
 <p>To solve this problem, we can use Bayesian approach. We denote the event <img src="https://latex.codecogs.com/png.latex?X"> as the pancake without any burnt, <img src="https://latex.codecogs.com/png.latex?Y"> with one side burnt, and <img src="https://latex.codecogs.com/png.latex?Z"> both side burnt. Then we have the following conditional probabilities</p>
 <p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%20%7C%20X)&amp;=0%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%20%7C%20Y)&amp;=%5Cfrac%7B1%7D%7B2%7D%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%20%7C%20Z)&amp;=1%5C%5C%0A%5Cend%7Balign*%7D"></p>
@@ -122,15 +122,15 @@ The marginal probability of having burnt side in the top position<br>
 </div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/Bayesian-inference/" data-layout="button_count" data-size="small">
-<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2FBayesian-inference%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/bayesianinference/" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fbayesianinference%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
 </div>
 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="https://mrislambd.github.io/posts/Bayesian-inference/"></script>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/Bayesian-inference/" data-show-count="true">Tweet</a>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/bayesianinference/"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/bayesianinference/" data-show-count="true">Tweet</a>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-<div class="fb-comments" data-href="https://mrislambd.github.io/posts/Bayesian-inference/" data-width="" data-numposts="5">
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/bayesianinference/" data-width="" data-numposts="5">
 
 </div>
 <p><strong>You may also like</strong></p>
@@ -144,7 +144,7 @@ The marginal probability of having burnt side in the top position<br>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -169,11 +169,11 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723160390518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -194,7 +194,7 @@ Wednesday, July 17, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723160390502" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723164971979" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -227,26 +227,26 @@ No matching items
   author = {Islam, Rafiq},
   title = {Bayesian {Inference} in {Machine} {Learning:} {Part} 1},
   date = {2024-07-28},
-  url = {https://mrislambd.github.io/posts/Bayesian-inference/},
+  url = {https://mrislambd.github.io/posts/bayesianinference/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
 Islam, Rafiq. 2024. <span>“Bayesian Inference in Machine Learning: Part
-1.”</span> July 28, 2024. <a href="https://mrislambd.github.io/posts/Bayesian-inference/">https://mrislambd.github.io/posts/Bayesian-inference/</a>.
+1.”</span> July 28, 2024. <a href="https://mrislambd.github.io/posts/bayesianinference/">https://mrislambd.github.io/posts/bayesianinference/</a>.
 </div></div></section></div> ]]></description>
   <category>Machine Learning</category>
   <category>Data Science</category>
   <category>Bayesian Inference</category>
   <category>Bayesian Statistics</category>
   <category>Statistics</category>
-  <guid>https://mrislambd.github.io/posts/Bayesian-inference/</guid>
+  <guid>https://mrislambd.github.io/posts/bayesianinference/</guid>
   <pubDate>Sun, 28 Jul 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>How to generate social share buttons</title>
   <dc:creator>Rafiq Islam</dc:creator>
-  <link>https://mrislambd.github.io/posts/social-share/</link>
+  <link>https://mrislambd.github.io/posts/socialshare/</link>
   <description><![CDATA[ 
 
 
@@ -257,7 +257,7 @@ Islam, Rafiq. 2024. <span>“Bayesian Inference in Machine Learning: Part
 If you want to share any blog posts on social media, you can have a share button at the bottom of each post so that the reader can easily share this on their preferred social media such as Facebook, LinkedIn, and X. Here I am showing only three but can be added more.
 </p>
 <p><a href="../../posts/social-share/ss.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="preview-class img-fluid"></a></p>
-<div id="e9863d02" class="cell" data-execution_count="1">
+<div id="caf8ce88" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Library you need</span></span>
@@ -479,15 +479,15 @@ data-layout="button_count" data-size="small"&gt;&lt;a target="_blank"
 </div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/social-share/" data-layout="button_count" data-size="small">
-<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsocial-share%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/socialshare/" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsocialshare%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
 </div>
 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="https://mrislambd.github.io/posts/social-share/"></script>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/social-share/" data-show-count="true">Tweet</a>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/socialshare/"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/socialshare/" data-show-count="true">Tweet</a>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-<div class="fb-comments" data-href="https://mrislambd.github.io/posts/social-share/" data-width="" data-numposts="5">
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/socialshare/" data-width="" data-numposts="5">
 
 </div>
 <p><strong>You may also like</strong></p>
@@ -499,11 +499,11 @@ data-layout="button_count" data-size="small"&gt;&lt;a target="_blank"
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -524,7 +524,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -549,7 +549,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723160390502" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723164971979" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -582,19 +582,19 @@ No matching items
   author = {Islam, Rafiq},
   title = {How to Generate Social Share Buttons},
   date = {2024-07-17},
-  url = {https://mrislambd.github.io/posts/social-share/},
+  url = {https://mrislambd.github.io/posts/socialshare/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
 Islam, Rafiq. 2024. <span>“How to Generate Social Share Buttons.”</span>
-July 17, 2024. <a href="https://mrislambd.github.io/posts/social-share/">https://mrislambd.github.io/posts/social-share/</a>.
+July 17, 2024. <a href="https://mrislambd.github.io/posts/socialshare/">https://mrislambd.github.io/posts/socialshare/</a>.
 </div></div></section></div> ]]></description>
   <category>News</category>
   <category>Technology</category>
   <category>Website</category>
-  <guid>https://mrislambd.github.io/posts/social-share/</guid>
+  <guid>https://mrislambd.github.io/posts/socialshare/</guid>
   <pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://mrislambd.github.io/posts/social-share/ss.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://mrislambd.github.io/posts/socialshare/ss.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Welcome to my blog</title>
@@ -638,11 +638,11 @@ July 17, 2024. <a href="https://mrislambd.github.io/posts/social-share/">https:/
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -663,7 +663,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -688,11 +688,11 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723160390518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -964,11 +964,11 @@ font-style: inherit;">0.001841</span> seconds</span></code></pre></div>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -989,7 +989,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1014,11 +1014,11 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723160390518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -1065,7 +1065,7 @@ Expensive!”</span> July 1, 2024. <a href="https://mrislambd.github.io/posts/ma
 <item>
   <title>Understanding Stochastic Gradient Descent Using Simple Linear Regression</title>
   <dc:creator>Rafiq Islam</dc:creator>
-  <link>https://mrislambd.github.io/posts/sgd-linreg/</link>
+  <link>https://mrislambd.github.io/posts/sgdlinreg/</link>
   <description><![CDATA[ 
 
 
@@ -1180,16 +1180,20 @@ font-style: inherit;">5.84</span>  </span></code></pre></div>
 </div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0" nonce="xi3MqdlY"></script>
 <p><strong>Share on</strong></p>
+<div id="fb-root">
+
+</div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/sgd-linreg/" data-layout="button_count" data-size="small">
-<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsgd-linreg%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/sgdlinreg/" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsgdlinreg%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
 </div>
 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="https://mrislambd.github.io/posts/sgd-linreg/"></script>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/sgd-linreg/" data-show-count="false">Tweet</a>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/sgdlinreg/"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/sgdlinreg/" data-show-count="true">Tweet</a>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-<div class="fb-comments" data-href="https://mrislambd.github.io/posts/sgd-linreg/" data-width="650" data-numposts="5">
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/sgdlinreg/" data-width="" data-numposts="5">
 
 </div>
 <p><strong>You may also like</strong></p>
@@ -1202,11 +1206,11 @@ font-style: inherit;">5.84</span>  </span></code></pre></div>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -1227,7 +1231,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1252,11 +1256,11 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723160390518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -1286,20 +1290,20 @@ No matching items
   title = {Understanding {Stochastic} {Gradient} {Descent} {Using}
     {Simple} {Linear} {Regression}},
   date = {2024-05-25},
-  url = {https://mrislambd.github.io/posts/sgd-linreg/},
+  url = {https://mrislambd.github.io/posts/sgdlinreg/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
 Islam, Rafiq. 2024. <span>“Understanding Stochastic Gradient Descent
-Using Simple Linear Regression.”</span> May 25, 2024. <a href="https://mrislambd.github.io/posts/sgd-linreg/">https://mrislambd.github.io/posts/sgd-linreg/</a>.
+Using Simple Linear Regression.”</span> May 25, 2024. <a href="https://mrislambd.github.io/posts/sgdlinreg/">https://mrislambd.github.io/posts/sgdlinreg/</a>.
 </div></div></section></div> ]]></description>
   <category>Data Science</category>
   <category>Machine Learning</category>
   <category>Stochastic Gradient Descent</category>
   <category>Linear Regression</category>
-  <guid>https://mrislambd.github.io/posts/sgd-linreg/</guid>
+  <guid>https://mrislambd.github.io/posts/sgdlinreg/</guid>
   <pubDate>Sat, 25 May 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://mrislambd.github.io/posts/sgd-linreg/height_weight_data.png" medium="image" type="image/png" height="108" width="144"/>
+  <media:content url="https://mrislambd.github.io/posts/sgdlinreg/height_weight_data.png" medium="image" type="image/png" height="108" width="144"/>
 </item>
 <item>
   <title>LU Factorization of a Full rank Matrix using Fortran</title>
@@ -2136,11 +2140,11 @@ c
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -2161,7 +2165,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2186,11 +2190,11 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723160390518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -2357,11 +2361,11 @@ So, <img src="https://latex.codecogs.com/png.latex?X(12)%5Capprox%204945"></p>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -2382,7 +2386,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2407,11 +2411,11 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723160390518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -2558,11 +2562,11 @@ Hence, <img src="https://latex.codecogs.com/png.latex?%5C%7Bv,(%5Calpha-%5Clambd
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -2583,11 +2587,11 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723160390518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -2608,7 +2612,7 @@ Wednesday, July 17, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723160390502" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723164971979" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2657,7 +2661,7 @@ Eigenspaces.”</span> January 25, 2021. <a href="https://mrislambd.github.io/po
 <item>
   <title></title>
   <dc:creator>Rafiq Islam</dc:creator>
-  <link>https://mrislambd.github.io/posts/some-proofs/</link>
+  <link>https://mrislambd.github.io/posts/someproofs/</link>
   <description><![CDATA[ <div class="quarto-title-block"><div class="quarto-title-tools-only"><h1></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 
 
@@ -2929,22 +2933,21 @@ Now,
 <p style="text-align: justify;">
 <img src="https://latex.codecogs.com/png.latex?%5Cimplies%20%7C%5Clambda%7C%20%5Cle%201">
 </p>
-<strong>Share on</strong><br>
-
+<p><strong>Share on</strong></p>
 <div id="fb-root">
 
 </div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/some-proofs/" data-layout="button_count" data-size="small">
-<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsome-proofs%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/someproofs/" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsomeproofs%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
 </div>
 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="https://mrislambd.github.io/posts/some-proofs/"></script>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/some-proofs/" data-show-count="true">Tweet</a>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/someproofs/"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/someproofs/" data-show-count="true">Tweet</a>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-<div class="fb-comments" data-href="https://mrislambd.github.io/posts/some-proofs/" data-width="" data-numposts="5">
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/someproofs/" data-width="" data-numposts="5">
 
 </div>
 <p><strong>You may also like</strong></p>
@@ -2958,11 +2961,11 @@ Now,
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -2983,7 +2986,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3008,11 +3011,11 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723160390518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -3040,22 +3043,22 @@ No matching items
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2021,
   author = {Islam, Rafiq},
   date = {2021-01-24},
-  url = {https://mrislambd.github.io/posts/some-proofs/},
+  url = {https://mrislambd.github.io/posts/someproofs/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2021" class="csl-entry quarto-appendix-citeas">
-Islam, Rafiq. 2021. January 24, 2021. <a href="https://mrislambd.github.io/posts/some-proofs/">https://mrislambd.github.io/posts/some-proofs/</a>.
+Islam, Rafiq. 2021. January 24, 2021. <a href="https://mrislambd.github.io/posts/someproofs/">https://mrislambd.github.io/posts/someproofs/</a>.
 </div></div></section></div> ]]></description>
   <category>Linear Algebra</category>
   <category>Mathematics</category>
-  <guid>https://mrislambd.github.io/posts/some-proofs/</guid>
+  <guid>https://mrislambd.github.io/posts/someproofs/</guid>
   <pubDate>Sun, 24 Jan 2021 00:00:00 GMT</pubDate>
-  <media:content url="https://mrislambd.github.io/posts/some-proofs/lin1.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://mrislambd.github.io/posts/someproofs/lin1.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Matrix Representation: Change of Basis</title>
   <dc:creator>Rafiq Islam</dc:creator>
-  <link>https://mrislambd.github.io/posts/matrix-rep/</link>
+  <link>https://mrislambd.github.io/posts/matrixrep/</link>
   <description><![CDATA[ 
 
 
@@ -3224,22 +3227,21 @@ and
 <p>
 </p>
 <p><br></p>
-<strong>Share on</strong><br>
-
+<p><strong>Share on</strong></p>
 <div id="fb-root">
 
 </div>
 <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/matrix-rep/index.html" data-layout="button_count" data-size="small">
-<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fmatrix-rep%2Findex.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/matrixrep/index.html" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fmatrixrep%2Findex.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
 </div>
 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="https://mrislambd.github.io/posts/matrix-rep/index.html"></script>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/matrix-rep/index.html" data-show-count="true">Tweet</a>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/matrixrep/index.html"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/matrixrep/index.html" data-show-count="true">Tweet</a>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-<div class="fb-comments" data-href="https://mrislambd.github.io/posts/matrix-rep/index.html" data-width="" data-numposts="5">
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/matrixrep/index.html" data-width="" data-numposts="5">
 
 </div>
 <p><strong>You may also like</strong></p>
@@ -3251,11 +3253,11 @@ and
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
-<a href="../../posts/Bayesian-inference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/Bayesian-inference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -3276,7 +3278,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723160390494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3301,11 +3303,11 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723160390518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/social-share/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -3334,18 +3336,18 @@ No matching items
   author = {Islam, Rafiq},
   title = {Matrix {Representation:} {Change} of {Basis}},
   date = {2021-01-21},
-  url = {https://mrislambd.github.io/posts/matrix-rep/},
+  url = {https://mrislambd.github.io/posts/matrixrep/},
   langid = {en}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2021" class="csl-entry quarto-appendix-citeas">
 Islam, Rafiq. 2021. <span>“Matrix Representation: Change of
-Basis.”</span> January 21, 2021. <a href="https://mrislambd.github.io/posts/matrix-rep/">https://mrislambd.github.io/posts/matrix-rep/</a>.
+Basis.”</span> January 21, 2021. <a href="https://mrislambd.github.io/posts/matrixrep/">https://mrislambd.github.io/posts/matrixrep/</a>.
 </div></div></section></div> ]]></description>
   <category>Linear Algebra</category>
   <category>Mathematics</category>
-  <guid>https://mrislambd.github.io/posts/matrix-rep/</guid>
+  <guid>https://mrislambd.github.io/posts/matrixrep/</guid>
   <pubDate>Thu, 21 Jan 2021 00:00:00 GMT</pubDate>
-  <media:content url="https://mrislambd.github.io/posts/matrix-rep/lin2.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://mrislambd.github.io/posts/matrixrep/lin2.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
