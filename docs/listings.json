@@ -68,6 +68,7 @@
     "listing": "/posts/socialshare/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/bayesianlearning/index.html",
       "/posts/eigen/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
@@ -82,6 +83,7 @@
     "listing": "/posts/eigen/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/bayesianlearning/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
@@ -109,6 +111,7 @@
   {
     "listing": "/posts/matmul/index.html",
     "items": [
+      "/posts/bayesianlearning/index.html",
       "/posts/bayesianinference/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
@@ -155,6 +158,21 @@
   {
     "listing": "/posts/bayesianinference/index.html",
     "items": [
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/bayesianlearning/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",

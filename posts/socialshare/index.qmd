@@ -21,7 +21,7 @@ listing:
 
 <p style="align: justify">If you want to share any blog posts on social media, you can have a share button at the bottom of each post so that the reader can easily share this on their preferred social media such as Facebook, LinkedIn, and X. Here I am showing only three but can be added more.  </p>
 
-![](/posts/social-share/ss.jpg){.preview-class}  
+![](/posts/socialshare/ss.jpg){.preview-class}  
 
 ```{python}
 #| code-fold: false

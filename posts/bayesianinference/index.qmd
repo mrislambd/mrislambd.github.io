@@ -35,7 +35,7 @@ where, $A$ and $B$ are events and $\mathbb{P}(B)\ne 0$.
 - $\mathbb{P}(B|A)$ is a conditional probability which states the probability of occuring the event $B$ when the event $A$ is given or true. In other terms, $\mathbb{P}(B|A)$ is the likelihood: the probability of evidence $B$ given that $A$ is true.  
 - $\mathbb{P}(A)$ or $\mathbb{P}(B)$ are the probabilities of occuring $A$ and $B$ respectively, without any dependence on each other. $\mathbb{P}(A)$ is called the *prior* probability or prior distribution and $\mathbb{P}(B)$ is called the marginal likelihood or marginal probabilities.  
 
-### Example 1    
+**Example 1**    
 Consider a medical example where we want to diagnose a disease based on a test result. Let:  
 
 - $D$ be the event that a patient has the disease.  
@@ -66,7 +66,7 @@ Now, we can apply Bayes's theorem:
 
 So, the probability that the patient has the disease given a positive test result is approximately $16.67\%$.  
 
-### Example 2  
+**Example 2**   
 
 <p style="text-align: left"><img align="right" width="420" height="300" src="/posts/bayesianinference/pancake.jpeg">
     Assume that you are in a restuarant and you ordered a plate of 3 pancakes. The chef made three pancakes with one in perfect condition, that is not burnt in any side, one with one side burnt, and the last one burnt in both sides. The waiter wanted to stack the pancakes so that the burnt side does not show up when served. However, the chef recommended not to hide the burnt side and asked her to stack the pancakes randomly. What is the likelyhood that the fully burnt pancake will be on the top?
@@ -118,11 +118,11 @@ Bayesian regression extends linear regression by incorporating prior distributio
 
 In Bayesian inference, exact computation of the posterior distribution is often intractable. Therefore, sampling methods such as Markov Chain Monte Carlo (MCMC) and Variational Inference are used to approximate the posterior distribution. These methods generate samples from the posterior distribution, allowing us to estimate various statistical properties and make inferences.
 
-#### Markov Chain Monte Carlo (MCMC)
+**Markov Chain Monte Carlo (MCMC)**
 
 MCMC methods generate a sequence of samples from the posterior distribution by constructing a Markov chain that has the desired distribution as its equilibrium distribution. Common MCMC algorithms include the Underdamped and Overdamped Langevin dynamics, Metropolis-Hastings algorithm and the Gibbs sampler.
 
-#### Example: Metropolis-Hastings Algorithm
+**Example: Metropolis-Hastings Algorithm**
 
 Consider a posterior distribution $P(\theta|D)$ where $\theta$ represents the model parameters and $D$ represents the data. The Metropolis-Hastings algorithm proceeds as follows:
 
@@ -167,6 +167,7 @@ data-layout="button_count" data-size="small"><a target="_blank"
 
 <div class="fb-comments" data-href="https://mrislambd.github.io/posts/bayesianinference/"
  data-width="" data-numposts="5"></div>
+
 
 
 
