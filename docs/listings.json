@@ -1,83 +1,144 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/research.html",
     "items": [
-      "/posts/Bayesian-inference/index.html",
-      "/posts/social-share/index.html",
-      "/posts/welcome/index.html",
-      "/posts/matmul/index.html",
-      "/posts/sgd-linreg/index.html",
-      "/posts/lu/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/eigen/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/matrix-rep/index.html"
+      "/talks/2023-11-20-candi.html",
+      "/talks/2023-10-05-st-op.html",
+      "/talks/2020-04-26-project.html"
     ]
   },
   {
-    "listing": "/posts/matmul/index.html",
+    "listing": "/blog.html",
     "items": [
-      "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
+      "/posts/bayesianinference/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/welcome/index.html",
+      "/posts/matmul/index.html",
+      "/posts/sgdlinreg/index.html",
       "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
+      "/posts/eigen/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/matrixrep/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/sgdlinreg/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/lu/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
       "/posts/welcome/index.html"
     ]
   },
   {
     "listing": "/posts/welcome/index.html",
     "items": [
+      "/posts/bayesianinference/index.html",
       "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
+      "/posts/socialshare/index.html",
       "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
+      "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html"
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html"
     ]
   },
   {
-    "listing": "/posts/matrix-rep/index.html",
+    "listing": "/posts/socialshare/index.html",
     "items": [
+      "/posts/bayesianinference/index.html",
       "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
       "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
       "/posts/welcome/index.html"
     ]
   },
   {
-    "listing": "/posts/social-share/index.html",
+    "listing": "/posts/eigen/index.html",
     "items": [
-      "/posts/Bayesian-inference/index.html",
-      "/posts/eigen/index.html",
+      "/posts/bayesianinference/index.html",
+      "/posts/socialshare/index.html",
       "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
+      "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
       "/posts/welcome/index.html"
     ]
   },
   {
-    "listing": "/posts/mathbiology/index.html",
+    "listing": "/posts/someproofs/index.html",
     "items": [
+      "/posts/bayesianinference/index.html",
       "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
+      "/posts/socialshare/index.html",
       "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
+      "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/sgdlinreg/index.html",
       "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/matmul/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/matrixrep/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/lu/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/portfolio.html",
+    "items": [
+      "/portfolio/dp-nlp/index.html",
+      "/portfolio/desgld/index.html"
     ]
   },
   {
@@ -92,98 +153,16 @@
     ]
   },
   {
-    "listing": "/research.html",
-    "items": [
-      "/talks/2023-11-20-candi.html",
-      "/talks/2023-10-05-st-op.html",
-      "/talks/2020-04-26-project.html"
-    ]
-  },
-  {
-    "listing": "/posts/sgd-linreg/index.html",
-    "items": [
-      "/posts/Bayesian-inference/index.html",
-      "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/some-proofs/index.html",
+    "listing": "/posts/bayesianinference/index.html",
     "items": [
       "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
+      "/posts/socialshare/index.html",
       "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
+      "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/sgd-linreg/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/eigen/index.html",
-    "items": [
-      "/posts/social-share/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/lu/index.html",
-    "items": [
-      "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
-      "/posts/matrix-rep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/portfolio.html",
-    "items": [
-      "/portfolio/dp-nlp/index.html",
-      "/portfolio/desgld/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/sampling/index.html",
-    "items": [
-      "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/Bayesian-inference/index.html",
-    "items": [
-      "/posts/eigen/index.html",
-      "/posts/social-share/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrix-rep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/some-proofs/index.html",
-      "/posts/sgd-linreg/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
       "/posts/welcome/index.html"
     ]
   }
