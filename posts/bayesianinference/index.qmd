@@ -21,7 +21,7 @@ listing:
      
 ## Introduction  
 
-<p style="text-align: left"><img align="right" width="420" height="300" src="/posts/Bayesian-inference/ven.png">
+<p style="text-align: left"><img align="right" width="420" height="300" src="/posts/bayesianinference/ven.png">
     Bayesian inference is a powerful statistical method that applies the principles of Bayes's theorem to update the probability of a hypothesis as more evidence or information becomes available. It is widely used in various fields, including machine learning, to make predictions and decisions under uncertainty.
 </p>
 
@@ -68,7 +68,7 @@ So, the probability that the patient has the disease given a positive test resul
 
 ### Example 2  
 
-<p style="text-align: left"><img align="right" width="420" height="300" src="/posts/Bayesian-inference/pancake.jpeg">
+<p style="text-align: left"><img align="right" width="420" height="300" src="/posts/bayesianinference/pancake.jpeg">
     Assume that you are in a restuarant and you ordered a plate of 3 pancakes. The chef made three pancakes with one in perfect condition, that is not burnt in any side, one with one side burnt, and the last one burnt in both sides. The waiter wanted to stack the pancakes so that the burnt side does not show up when served. However, the chef recommended not to hide the burnt side and asked her to stack the pancakes randomly. What is the likelyhood that the fully burnt pancake will be on the top?
 </p>  
 To solve this problem, we can use Bayesian approach. We denote the event $X$ as the pancake without any burnt, $Y$ with one side burnt, and $Z$ both side burnt. Then we have the following conditional probabilities  
@@ -152,21 +152,22 @@ In the next parts, we will talk about different applications of the Bayesian inf
  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
  
 <div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/Bayesian-inference/"
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/bayesianinference/"
 data-layout="button_count" data-size="small"><a target="_blank" 
- href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2FBayesian-inference%2F&amp;src=sdkpreparse" 
+ href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fbayesianinference%2F&amp;src=sdkpreparse" 
  class="fb-xfbml-parse-ignore">Share</a></div>
 
 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="https://mrislambd.github.io/posts/Bayesian-inference/"></script> 
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/bayesianinference/"></script> 
  
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" 
- data-url="https://mrislambd.github.io/posts/Bayesian-inference/" data-show-count="true">Tweet</a>
+ data-url="https://mrislambd.github.io/posts/bayesianinference/" data-show-count="true">Tweet</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
-<div class="fb-comments" data-href="https://mrislambd.github.io/posts/Bayesian-inference/"
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/bayesianinference/"
  data-width="" data-numposts="5"></div>
+
 
 
  **You may also like**  
