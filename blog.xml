@@ -36,9 +36,8 @@
 </li>
 <li><img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(A)"> or <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(B)"> are the probabilities of occuring <img src="https://latex.codecogs.com/png.latex?A"> and <img src="https://latex.codecogs.com/png.latex?B"> respectively, without any dependence on each other. <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(A)"> is called the <em>prior</em> probability or prior distribution and <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BP%7D(B)"> is called the marginal likelihood or marginal probabilities.</li>
 </ul>
-<section id="example-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
-<p>Consider a medical example where we want to diagnose a disease based on a test result. Let:</p>
+<p><strong>Example 1</strong><br>
+Consider a medical example where we want to diagnose a disease based on a test result. Let:</p>
 <ul>
 <li><img src="https://latex.codecogs.com/png.latex?D"> be the event that a patient has the disease.<br>
 </li>
@@ -57,9 +56,7 @@
 <p>Now, we can apply Bayes’s theorem:<br>
 <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(D%7CT)%20&amp;=%20%5Cfrac%7B%5Cmathbb%7BP%7D(T%7CD)%20%5Ccdot%20%5Cmathbb%7BP%7D(D)%7D%7B%5Cmathbb%7BP%7D(T)%7D%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(D%7CT)%20&amp;=%20%5Cfrac%7B0.99%20%5Ccdot%200.01%7D%7B0.0594%7D%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(D%7CT)%20&amp;%5Capprox%200.1667%0A%5Cend%7Balign*%7D"></p>
 <p>So, the probability that the patient has the disease given a positive test result is approximately <img src="https://latex.codecogs.com/png.latex?16.67%5C%25">.</p>
-</section>
-<section id="example-2" class="level3">
-<h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
+<p><strong>Example 2</strong></p>
 <p style="text-align: left">
 <img align="right" width="420" height="300" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg"> Assume that you are in a restuarant and you ordered a plate of 3 pancakes. The chef made three pancakes with one in perfect condition, that is not burnt in any side, one with one side burnt, and the last one burnt in both sides. The waiter wanted to stack the pancakes so that the burnt side does not show up when served. However, the chef recommended not to hide the burnt side and asked her to stack the pancakes randomly. What is the likelyhood that the fully burnt pancake will be on the top?
 </p>
@@ -71,7 +68,6 @@ The marginal probability of having burnt side in the top position<br>
 <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D)&amp;=%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CX)%5Cmathbb%7BP%7D(X)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%5C%5C%0A%20%20%20%20&amp;=0%5Ccdot%20%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2%7D%5Ccdot%5Cfrac%7B1%7D%7B3%7D+1%5Ccdot%5Cfrac%7B1%7D%7B3%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B1%7D%7B2%7D%0A%5Cend%7Balign*%7D"></p>
 <p>Now, we can only have a burnt side on top if either <img src="https://latex.codecogs.com/png.latex?Z"> is placed in the top or the burnt side of <img src="https://latex.codecogs.com/png.latex?Y"> is placed in the top. <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20%5Cmathbb%7BP%7D(Y%7C%5Ctext%7Btop-burnt%7D)&amp;=%5Cfrac%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)%7D%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D)%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)%7D%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CX)%5Cmathbb%7BP%7D(X)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B%5Cfrac%7B1%7D%7B2%7D%5Ccdot%5Cfrac%7B1%7D%7B3%7D%7D%7B%5Cfrac%7B1%7D%7B2%7D%7D=%5Cfrac%7B1%7D%7B3%7D%5C%5C%0A%20%20%20%20%5Cmathbb%7BP%7D(Z%7C%5Ctext%7Btop-burnt%7D)&amp;=%5Cfrac%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%7D%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D)%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%7D%7B%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CX)%5Cmathbb%7BP%7D(X)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CY)%5Cmathbb%7BP%7D(Y)+%5Cmathbb%7BP%7D(%5Ctext%7Btop-burnt%7D%7CZ)%5Cmathbb%7BP%7D(Z)%7D%5C%5C%0A%20%20%20%20&amp;=%5Cfrac%7B%5Cfrac%7B1%7D%7B3%7D%7D%7B%5Cfrac%7B1%7D%7B2%7D%7D=%5Cfrac%7B2%7D%7B3%7D%0A%5Cend%7Balign*%7D"></p>
 <p>So the probability of having the fully burnt pancake on the top is <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B2%7D%7B3%7D">.</p>
-</section>
 </section>
 <section id="why-bayesian-inference-in-machine-learning" class="level2">
 <h2 class="anchored" data-anchor-id="why-bayesian-inference-in-machine-learning">Why Bayesian Inference in Machine Learning?</h2>
@@ -87,12 +83,9 @@ The marginal probability of having burnt side in the top position<br>
 <section id="sampling-methods" class="level3">
 <h3 class="anchored" data-anchor-id="sampling-methods">Sampling Methods</h3>
 <p>In Bayesian inference, exact computation of the posterior distribution is often intractable. Therefore, sampling methods such as Markov Chain Monte Carlo (MCMC) and Variational Inference are used to approximate the posterior distribution. These methods generate samples from the posterior distribution, allowing us to estimate various statistical properties and make inferences.</p>
-<section id="markov-chain-monte-carlo-mcmc" class="level4">
-<h4 class="anchored" data-anchor-id="markov-chain-monte-carlo-mcmc">Markov Chain Monte Carlo (MCMC)</h4>
+<p><strong>Markov Chain Monte Carlo (MCMC)</strong></p>
 <p>MCMC methods generate a sequence of samples from the posterior distribution by constructing a Markov chain that has the desired distribution as its equilibrium distribution. Common MCMC algorithms include the Underdamped and Overdamped Langevin dynamics, Metropolis-Hastings algorithm and the Gibbs sampler.</p>
-</section>
-<section id="example-metropolis-hastings-algorithm" class="level4">
-<h4 class="anchored" data-anchor-id="example-metropolis-hastings-algorithm">Example: Metropolis-Hastings Algorithm</h4>
+<p><strong>Example: Metropolis-Hastings Algorithm</strong></p>
 <p>Consider a posterior distribution <img src="https://latex.codecogs.com/png.latex?P(%5Ctheta%7CD)"> where <img src="https://latex.codecogs.com/png.latex?%5Ctheta"> represents the model parameters and <img src="https://latex.codecogs.com/png.latex?D"> represents the data. The Metropolis-Hastings algorithm proceeds as follows:</p>
 <ol type="1">
 <li>Initialize the parameters <img src="https://latex.codecogs.com/png.latex?%5Ctheta_0">.</li>
@@ -104,7 +97,6 @@ The marginal probability of having burnt side in the top position<br>
 </ul></li>
 </ol>
 <p>The samples <img src="https://latex.codecogs.com/png.latex?%5Ctheta_1,%20%5Ctheta_2,%20%5Cldots,%20%5Ctheta_T"> form a Markov chain whose stationary distribution is the posterior distribution <img src="https://latex.codecogs.com/png.latex?P(%5Ctheta%7CD)">.</p>
-</section>
 </section>
 <section id="bayesian-inference-in-neural-networks" class="level3">
 <h3 class="anchored" data-anchor-id="bayesian-inference-in-neural-networks">Bayesian Inference in Neural Networks</h3>
@@ -144,7 +136,7 @@ The marginal probability of having burnt side in the top position<br>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -169,7 +161,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723167136324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -194,7 +186,7 @@ Wednesday, July 17, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723164971979" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723167136308" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -256,8 +248,8 @@ Islam, Rafiq. 2024. <span>“Bayesian Inference in Machine Learning: Part
 <p style="align: justify">
 If you want to share any blog posts on social media, you can have a share button at the bottom of each post so that the reader can easily share this on their preferred social media such as Facebook, LinkedIn, and X. Here I am showing only three but can be added more.
 </p>
-<p><a href="../../posts/social-share/ss.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/posts/social-share/ss.jpg" class="preview-class img-fluid"></a></p>
-<div id="caf8ce88" class="cell" data-execution_count="1">
+<p><a href="../../posts/socialshare/ss.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="preview-class img-fluid"></a></p>
+<div id="c07b9e47" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Library you need</span></span>
@@ -499,7 +491,7 @@ data-layout="button_count" data-size="small"&gt;&lt;a target="_blank"
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -510,7 +502,7 @@ data-layout="button_count" data-size="small"&gt;&lt;a target="_blank"
 Bayesian Inference in Machine Learning: Part 1
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+6 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -524,7 +516,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -549,7 +541,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723164971979" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723167136308" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -638,7 +630,7 @@ July 17, 2024. <a href="https://mrislambd.github.io/posts/socialshare/">https://
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -649,7 +641,7 @@ July 17, 2024. <a href="https://mrislambd.github.io/posts/socialshare/">https://
 Bayesian Inference in Machine Learning: Part 1
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+6 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -663,7 +655,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -688,7 +680,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723167136324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -964,7 +956,7 @@ font-style: inherit;">0.001841</span> seconds</span></code></pre></div>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -975,7 +967,7 @@ font-style: inherit;">0.001841</span> seconds</span></code></pre></div>
 Bayesian Inference in Machine Learning: Part 1
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+6 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -989,7 +981,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1014,7 +1006,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723167136324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1206,7 +1198,7 @@ font-style: inherit;">5.84</span>  </span></code></pre></div>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1217,7 +1209,7 @@ font-style: inherit;">5.84</span>  </span></code></pre></div>
 Bayesian Inference in Machine Learning: Part 1
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+6 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -1231,7 +1223,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1256,7 +1248,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723167136324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2140,7 +2132,7 @@ c
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2151,7 +2143,7 @@ c
 Bayesian Inference in Machine Learning: Part 1
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+6 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -2165,7 +2157,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2190,7 +2182,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723167136324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2361,7 +2353,7 @@ So, <img src="https://latex.codecogs.com/png.latex?X(12)%5Capprox%204945"></p>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2372,7 +2364,7 @@ So, <img src="https://latex.codecogs.com/png.latex?X(12)%5Capprox%204945"></p>
 Bayesian Inference in Machine Learning: Part 1
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+6 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -2386,7 +2378,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2411,7 +2403,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723167136324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2562,7 +2554,7 @@ Hence, <img src="https://latex.codecogs.com/png.latex?%5C%7Bv,(%5Calpha-%5Clambd
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2573,7 +2565,7 @@ Hence, <img src="https://latex.codecogs.com/png.latex?%5C%7Bv,(%5Calpha-%5Clambd
 Bayesian Inference in Machine Learning: Part 1
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+6 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -2587,7 +2579,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723167136324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2612,7 +2604,7 @@ Wednesday, July 17, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723164971979" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1723167136308" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2961,7 +2953,7 @@ Now,
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2972,7 +2964,7 @@ Now,
 Bayesian Inference in Machine Learning: Part 1
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+6 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -2986,7 +2978,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3011,7 +3003,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723167136324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3253,7 +3245,7 @@ and
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1202">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3264,7 +3256,7 @@ and
 Bayesian Inference in Machine Learning: Part 1
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+6 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -3278,7 +3270,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723164971971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1723167136300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3303,7 +3295,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723164971991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1723167136324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
