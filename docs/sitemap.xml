@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/socialshare/index.html</loc>
-    <lastmod>2024-08-09T00:50:32.983Z</lastmod>
+    <lastmod>2024-08-09T01:03:32.401Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/eigen/index.html</loc>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/matmul/index.html</loc>
-    <lastmod>2024-07-17T23:12:51.000Z</lastmod>
+    <lastmod>2024-08-09T01:23:03.964Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/matrixrep/index.html</loc>
@@ -114,6 +114,10 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/bayesianinference/index.html</loc>
-    <lastmod>2024-08-09T00:38:16.491Z</lastmod>
+    <lastmod>2024-08-09T01:28:41.694Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/bayesianlearning/index.html</loc>
+    <lastmod>2024-08-09T01:18:29.975Z</lastmod>
   </url>
 </urlset>
