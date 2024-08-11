@@ -287,7 +287,11 @@ rglwidget()
 rgl.close()
 ```  
 
-That's all for this post. 
+That's all for this post.  
+
+## Reference  
+
+- [Okten, G. (1999). Contributions to the theory of Monte Carlo and quasi-Monte Carlo methods. Universal-Publishers.](https://www.amazon.com/Contributions-Theory-Monte-Quasi-Monte-Methods/dp/1581120419){target="_blank"}  
 
 
 **Share on**  
