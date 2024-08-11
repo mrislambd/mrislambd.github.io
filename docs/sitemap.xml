@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mrislambd.github.io/research.html</loc>
-    <lastmod>2024-07-21T05:38:24.000Z</lastmod>
-  </url>
-  <url>
     <loc>https://mrislambd.github.io/blog.html</loc>
     <lastmod>2024-07-14T07:26:40.000Z</lastmod>
   </url>
@@ -57,6 +53,26 @@
     <lastmod>2024-08-09T01:03:32.401Z</lastmod>
   </url>
   <url>
+    <loc>https://mrislambd.github.io/posts/montecarlo1/index.html</loc>
+    <lastmod>2024-08-11T08:37:46.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/research.html</loc>
+    <lastmod>2024-07-21T05:38:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/teaching.html</loc>
+    <lastmod>2024-07-14T07:27:48.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/mathbiology/index.html</loc>
+    <lastmod>2024-07-17T22:49:02.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/bayesianinference/index.html</loc>
+    <lastmod>2024-08-09T01:28:41.694Z</lastmod>
+  </url>
+  <url>
     <loc>https://mrislambd.github.io/posts/eigen/index.html</loc>
     <lastmod>2024-07-18T05:16:27.000Z</lastmod>
   </url>
@@ -107,21 +123,5 @@
   <url>
     <loc>https://mrislambd.github.io/portfolio.html</loc>
     <lastmod>2024-07-21T21:59:00.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching.html</loc>
-    <lastmod>2024-07-14T07:27:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/bayesianinference/index.html</loc>
-    <lastmod>2024-08-09T01:28:41.694Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/bayesianlearning/index.html</loc>
-    <lastmod>2024-08-09T01:18:29.975Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/montecarlo1/index.html</loc>
-    <lastmod>2024-08-11T08:24:09.442Z</lastmod>
   </url>
 </urlset>
