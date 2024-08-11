@@ -1,6 +1,6 @@
 ---
 title: "Monte-Carlo Methods: PRNGs"
-date: "2020-01-27"
+date: "2024-08-11"
 author: Rafiq Islam
 categories: [Data Science, Computational Mathematics, Number Theory]
 citation: true
