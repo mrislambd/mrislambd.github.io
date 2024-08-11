@@ -232,10 +232,9 @@ Using RANDU generate $u_1,u_2,\cdots, u_{20,002}$ where $u=\frac{x_n}{M}$. For a
 #| warning: false
 #| message: false
 #| echo: false
-options(repos=c(CRAN="<something sensible near you>"))
-install.packages("dplyr")
-library(dplyr)
-N=20002
+
+# Set the seed and generate random numbers
+N = 20002
 A = matrix(0, ncol=3, nrow=N)
 seed <- as.double(1)
 
@@ -245,12 +244,19 @@ RANDU <- function() {
 }
 
 for (i in 1:N) {
-  A[i,]<-c(RANDU(),RANDU(),RANDU())
+  A[i,] <- c(RANDU(), RANDU(), RANDU())
 }
-B=as.data.frame(A)
-C<-B %>% filter(V2>=0.5, V2<=0.51)
-par(bg= "#f4f4f4")
-plot(C$V1,C$V3,xlab = "u_i",ylab = "u_(i+3)")
+
+B = as.data.frame(A)
+
+# Filter data where V2 is between 0.5 and 0.51
+C = B[B$V2 >= 0.5 & B$V2 <= 0.51, ]
+
+# Set the background color to #f4f4f4
+par(bg = "#f4f4f4")
+
+# Create the plot
+plot(C$V1, C$V3, xlab = "u_i", ylab = "u_(i+3)")
 ```
 
 
