@@ -10,7 +10,919 @@
 <atom:link href="https://mrislambd.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.54</generator>
-<lastBuildDate>Sun, 11 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 14 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Data collection through Webscraping</title>
+  <dc:creator>Rafiq Islam</dc:creator>
+  <link>https://mrislambd.github.io/posts/datacollection/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Collecting data and preparing it for a project is one of the most important tasks in any data science or machine learning project. There are many sources from where we can collect data for a project, such as</p>
+<ul>
+<li>Connecting to a SQL database server<br>
+</li>
+<li>Data Source Websites such as <a href="https://www.kaggle.com" target="_blank">Kaggle</a>, <a href="https://datasetsearch.research.google.com" target="_blank">Google Dataset Search</a>, <a href="https://archive.ics.uci.edu/datasets" target="_blank">UCI Machine Learning Repo</a> etc<br>
+</li>
+<li>Web Scraping with Beautiful Soup</li>
+<li>Using Python API</li>
+</ul>
+</section>
+<section id="data-source-websites" class="level2">
+<h2 class="anchored" data-anchor-id="data-source-websites">Data Source Websites</h2>
+<p>Data source websites mainly falls into two categories such as data repositories and data science competitions. There are many such websites.</p>
+<ol type="1">
+<li>The <a href="https://archive.ics.uci.edu/datasets" target="_blank">UCI Machine Learning Repository</a><br>
+</li>
+<li>The <a href="https://dataverse.harvard.edu" target="_blank">Harvard Dataverse</a></li>
+<li>The <a href="https://data.mendeley.com" target="_blank">Mendeley Data Repository</a></li>
+<li>The <a href="https://github.com/fivethirtyeight/data" target="_blank">538</a></li>
+<li>The <a href="https://github.com/nytimes" target="_blank">New Yourk Times</a><br>
+</li>
+<li>The <a href="https://www.competitionsciences.org/competitions/international-data-analysis-olympiad/" target="_blank">International Data Analysis Olympiad</a></li>
+<li><a href="https://www.kaggle.com" target="_blank">Kaggle Competition</a></li>
+</ol>
+<p>Example of collecting data from <a href="https://archive.ics.uci.edu/datasets" target="_blank">UCI Machine Learning Repository</a></p>
+<div id="0f2ae103" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> ucimlrepo <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> fetch_ucirepo </span>
+<span id="cb1-2">  </span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># fetch dataset </span></span>
+<span id="cb1-4">iris <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> fetch_ucirepo(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">id</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">53</span>) </span>
+<span id="cb1-5">  </span>
+<span id="cb1-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># data (as pandas dataframes) </span></span>
+<span id="cb1-7">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> iris.data.features </span>
+<span id="cb1-8">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> iris.data.targets </span>
+<span id="cb1-9">  </span>
+<span id="cb1-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># metadata </span></span>
+<span id="cb1-11"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(iris.metadata) </span>
+<span id="cb1-12">  </span>
+<span id="cb1-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># variable information </span></span>
+<span id="cb1-14"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(iris.variables) </span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'uci_id': 53, 'name': 'Iris', 'repository_url': 'https://archive.ics.uci.edu/dataset/53/iris', 'data_url': 'https://archive.ics.uci.edu/static/public/53/data.csv', 'abstract': 'A small classic dataset from Fisher, 1936. One of the earliest known datasets used for evaluating classification methods.\n', 'area': 'Biology', 'tasks': ['Classification'], 'characteristics': ['Tabular'], 'num_instances': 150, 'num_features': 4, 'feature_types': ['Real'], 'demographics': [], 'target_col': ['class'], 'index_col': None, 'has_missing_values': 'no', 'missing_values_symbol': None, 'year_of_dataset_creation': 1936, 'last_updated': 'Tue Sep 12 2023', 'dataset_doi': '10.24432/C56C76', 'creators': ['R. A. Fisher'], 'intro_paper': {'title': 'The Iris data set: In search of the source of virginica', 'authors': 'A. Unwin, K. Kleinman', 'published_in': 'Significance, 2021', 'year': 2021, 'url': 'https://www.semanticscholar.org/paper/4599862ea877863669a6a8e63a3c707a787d5d7e', 'doi': '1740-9713.01589'}, 'additional_info': {'summary': 'This is one of the earliest datasets used in the literature on classification methods and widely used in statistics and machine learning.  The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.  One class is linearly separable from the other 2; the latter are not linearly separable from each other.\n\nPredicted attribute: class of iris plant.\n\nThis is an exceedingly simple domain.\n\nThis data differs from the data presented in Fishers article (identified by Steve Chadwick,  spchadwick@espeedaz.net ).  The 35th sample should be: 4.9,3.1,1.5,0.2,"Iris-setosa" where the error is in the fourth feature. The 38th sample: 4.9,3.6,1.4,0.1,"Iris-setosa" where the errors are in the second and third features.  ', 'purpose': 'N/A', 'funded_by': None, 'instances_represent': 'Each instance is a plant', 'recommended_data_splits': None, 'sensitive_data': None, 'preprocessing_description': None, 'variable_info': None, 'citation': None}}
+           name     role         type demographic  \
+0  sepal length  Feature   Continuous        None   
+1   sepal width  Feature   Continuous        None   
+2  petal length  Feature   Continuous        None   
+3   petal width  Feature   Continuous        None   
+4         class   Target  Categorical        None   
+
+                                         description units missing_values  
+0                                               None    cm             no  
+1                                               None    cm             no  
+2                                               None    cm             no  
+3                                               None    cm             no  
+4  class of iris plant: Iris Setosa, Iris Versico...  None             no  </code></pre>
+</div>
+</div>
+<p>you may need to install the <a href="https://archive.ics.uci.edu/datasets" target="_blank">UCI Machine Learning Repository</a> as a package using pip.</p>
+<pre><code>pip install ucimlrepo</code></pre>
+<div id="b26a6cd6" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">X.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="497">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sepal length</th>
+<th data-quarto-table-cell-role="th">sepal width</th>
+<th data-quarto-table-cell-role="th">petal length</th>
+<th data-quarto-table-cell-role="th">petal width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>5.1</td>
+<td>3.5</td>
+<td>1.4</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>4.9</td>
+<td>3.0</td>
+<td>1.4</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>4.7</td>
+<td>3.2</td>
+<td>1.3</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.6</td>
+<td>3.1</td>
+<td>1.5</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>3.6</td>
+<td>1.4</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="web-scraping" class="level2">
+<h2 class="anchored" data-anchor-id="web-scraping">Web Scraping</h2>
+<p>We scrapping is another way of collecting the data for the research if the data is not available in any repositiory. We can collect the data from a website using a library called <code>BeautifulSoup</code> if the website has permision for other people to collect data from the website.</p>
+<div id="f9715e24" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> bs4                      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># library for BeautifulSoup</span></span>
+<span id="cb5-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> bs4 <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> BeautifulSoup   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># import the BeautifulSoup object</span></span>
+<span id="cb5-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb5-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb5-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> seaborn <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> sns</span>
+<span id="cb5-6"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb5-7"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> seaborn <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> set_style</span>
+<span id="cb5-8">set_style(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"whitegrid"</span>)</span></code></pre></div>
+</div>
+<p>Now let’s make a html object using <code>BeautifulSoup</code>. Let’s say we have a html website that looks like below</p>
+<div id="0412f749" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">html_doc<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb6-2"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;!DOCTYPE html&gt;</span></span>
+<span id="cb6-3"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;html lang="en"&gt;</span></span>
+<span id="cb6-4"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;head&gt;</span></span>
+<span id="cb6-5"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    &lt;title&gt;My Dummy HTML Document&lt;/title&gt;</span></span>
+<span id="cb6-6"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;/head&gt;</span></span>
+<span id="cb6-7"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;body&gt;</span></span>
+<span id="cb6-8"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    &lt;h1&gt;Welcome to My Dummy HTML Document&lt;/h1&gt;</span></span>
+<span id="cb6-9"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    &lt;p&gt;This is a paragraph in my dummy HTML document.&lt;/p&gt;</span></span>
+<span id="cb6-10"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    &lt;a href="https://mrislambd.github.io/blog" class="blog" id="blog"&gt; Blog &lt;/a&gt;</span></span>
+<span id="cb6-11"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    &lt;a href="htpps://mrislambd.github.io/research" class="research" id="research"&gt; Research &lt;/a&gt;</span></span>
+<span id="cb6-12"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;/body&gt;</span></span>
+<span id="cb6-13"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;/html&gt;</span></span>
+<span id="cb6-14"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span></span></code></pre></div>
+</div>
+<p>Now we want to grab information from the dummy html documnet above.</p>
+<div id="c51cea02" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">soup<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>BeautifulSoup(html_doc, features<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'html.parser'</span>)</span></code></pre></div>
+</div>
+<p>Now that we have the object <code>soup</code> we can walk through each elements in this object. For example, if we want to grab the title element,</p>
+<div id="94babee4" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">soup.html.head.title</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="501">
+<pre><code>&lt;title&gt;My Dummy HTML Document&lt;/title&gt;</code></pre>
+</div>
+</div>
+<p>Since the html document has only one title, therefore, we can simply use the following command</p>
+<div id="853ebc9f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">soup.title </span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="502">
+<pre><code>&lt;title&gt;My Dummy HTML Document&lt;/title&gt;</code></pre>
+</div>
+</div>
+<p>or this command to get the text only</p>
+<div id="149b74a0" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">soup.title.text</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="503">
+<pre><code>'My Dummy HTML Document'</code></pre>
+</div>
+</div>
+<p>This <code>soup</code> object is like a family tree. It has parents, children, greatgrand parents etc.</p>
+<div id="a9e9910f" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">soup.title.parent</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="504">
+<pre><code>&lt;head&gt;
+&lt;title&gt;My Dummy HTML Document&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+</div>
+</div>
+<p>Now to grab an attribute from the <code>soup</code> object we can use</p>
+<div id="2bb03804" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">soup.a</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="505">
+<pre><code>&lt;a class="blog" href="https://mrislambd.github.io/blog" id="blog"&gt; Blog &lt;/a&gt;</code></pre>
+</div>
+</div>
+<p>or any particular thing from the attribute</p>
+<div id="7ad8a9e1" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">soup.a[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'class'</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="506">
+<pre><code>['blog']</code></pre>
+</div>
+</div>
+<p>We can also find multiple attribute of the same kind</p>
+<div id="e50ea305" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1">soup.findAll(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="507">
+<pre><code>[&lt;a class="blog" href="https://mrislambd.github.io/blog" id="blog"&gt; Blog &lt;/a&gt;,
+ &lt;a class="research" href="htpps://mrislambd.github.io/research" id="research"&gt; Research &lt;/a&gt;]</code></pre>
+</div>
+</div>
+<p>Then if we want any particular object from all <code>a</code> attribute</p>
+<div id="b7a4e617" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">soup.findAll(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span>)[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>][<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="508">
+<pre><code>'blog'</code></pre>
+</div>
+</div>
+<p>For any <code>p</code> tag</p>
+<div id="2eeb153b" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1">soup.p.text </span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="509">
+<pre><code>'This is a paragraph in my dummy HTML document.'</code></pre>
+</div>
+</div>
+<p>Similarly, if we want to grab all the <code>href</code>s from the <code>a</code> tags</p>
+<div id="515ff009" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1">[h[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'href'</span>] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> h <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> soup.findAll(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span>)]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="510">
+<pre><code>['https://mrislambd.github.io/blog', 'htpps://mrislambd.github.io/research']</code></pre>
+</div>
+</div>
+</section>
+<section id="example-of-webscraping-from-a-real-website" class="level2">
+<h2 class="anchored" data-anchor-id="example-of-webscraping-from-a-real-website">Example of Webscraping from a real website</h2>
+<p>In this example we want to obtain some information from <a href="https://research.nvidia.com/graduate-fellowships/archive" target="_blank">NVIDIA Graduate Fellowship Program</a>. Before accessing this website we need to know if we have permision to access their data through webscraping.</p>
+<div id="468c23d5" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> requests</span>
+<span id="cb28-2">response <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> requests.get(url<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://research.nvidia.com/graduate-fellowships/archive"</span>)</span>
+<span id="cb28-3">response.status_code</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="511">
+<pre><code>200</code></pre>
+</div>
+</div>
+<p>The <code>status_code</code> <img src="https://latex.codecogs.com/png.latex?200"> ensures that we have enough permision to acccess their website data. However, if we obtain <code>status_code</code> of <img src="https://latex.codecogs.com/png.latex?403,%20400,"> or <img src="https://latex.codecogs.com/png.latex?500"> then we do not permision or a <code>bad request</code>. For more about the status codes <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">click here</a>.</p>
+<div id="01a7c21c" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1">soup <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> BeautifulSoup(response.text, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'html.parser'</span>)</span></code></pre></div>
+</div>
+<p>We want to make an analysis based on the institution of the past graduate fellows. Insepecting the elements in <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">this website</a> we see that the <code>div</code> those have <code>class="archive-group"</code> contains the information of the past graduate fellows.</p>
+<div id="d16cdc30" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1">pf <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> soup.find_all(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"div"</span>, class_<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"archive-group"</span>)</span></code></pre></div>
+</div>
+<p>and the first element of this <code>pf</code> contains the information of the graduate fellows in the year of 2021.</p>
+<div id="2995676b" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1">pf[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="514">
+<pre><code>&lt;div class="archive-group"&gt;
+&lt;h4 class="archive-group__title"&gt;2021 Grad Fellows&lt;/h4&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Alexander Sax&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;University of California, Berkeley&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Hanrui Wang&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;Massachusetts Institute of Technology&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Ji Lin&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;Massachusetts Institute of Technology&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Krishna Murthy Jatavallabhula&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;University of Montreal&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Rohan Sawhney&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;Carnegie Mellon University&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Sana Damani&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;Georgia Institute of Technology&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Thierry Tambe&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;Harvard University&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Ye Yuan&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;Carnegie Mellon University&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Yunzhu Li&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;Massachusetts Institute of Technology&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Zhiqin Chen&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;Simon Fraser University&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<p>Now let’s make a <code>pandas</code> dataframe using the information in this page. We can make an use of the output from the above chunk. To grab the year, we see that <code>archive-group__title</code> class with a <code>h4</code> tag contains the year for all years. With <code>strip=True</code>, the text is cleaned by removing extra whitespace from the beginning and end. We need the first element so a <code>split()[0]</code> will do the job. Then we make another group called <code>fellows</code> that contains the fellows in a certian year by using the <code>div</code> and <code>class"views-row"</code>. Once the new group created, we then iterate through this group to extract their names and corresponding institutions.</p>
+<div id="9776ba66" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode python code-overflow-scroll code-with-copy"><code class="sourceCode python"><span id="cb34-1">data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[]</span>
+<span id="cb34-2"></span>
+<span id="cb34-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> group <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> pf:</span>
+<span id="cb34-4">    year <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> group.find(</span>
+<span id="cb34-5">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"h4"</span>,class_<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"archive-group__title"</span></span>
+<span id="cb34-6">        ).get_text(strip<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>).split()[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb34-7"></span>
+<span id="cb34-8">    fellows <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> group.find_all(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"div"</span>, class_<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"views-row"</span>)</span>
+<span id="cb34-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> fellow <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> fellows:</span>
+<span id="cb34-10">        name <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> fellow.find(</span>
+<span id="cb34-11">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"div"</span>, class_<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"views-field-title"</span></span>
+<span id="cb34-12">            ).get_text(strip<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>) </span>
+<span id="cb34-13">        institute <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> fellow.find(</span>
+<span id="cb34-14">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"div"</span>, class_<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"views-field-field-grad-fellow-institution"</span></span>
+<span id="cb34-15">            ).get_text(strip<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb34-16"></span>
+<span id="cb34-17">        data.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Name"</span>: name, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Year"</span>: year, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Institute"</span>: institute})</span>
+<span id="cb34-18"></span>
+<span id="cb34-19">data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>pd.DataFrame(data)</span>
+<span id="cb34-20">data.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="515">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Institute</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Alexander Sax</td>
+<td>2021</td>
+<td>University of California, Berkeley</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Hanrui Wang</td>
+<td>2021</td>
+<td>Massachusetts Institute of Technology</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Ji Lin</td>
+<td>2021</td>
+<td>Massachusetts Institute of Technology</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Krishna Murthy Jatavallabhula</td>
+<td>2021</td>
+<td>University of Montreal</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Rohan Sawhney</td>
+<td>2021</td>
+<td>Carnegie Mellon University</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Now let’s perform some Exploratory Data Analysis (EDA). First, we analyze the unique values and distributions.</p>
+<div id="1357b7ff" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Count the number of fellows each year</span></span>
+<span id="cb35-2">year_counts <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>].value_counts().sort_values(ascending<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb35-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a DataFrame where years are columns and counts are values in the next row</span></span>
+<span id="cb35-4">year_data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb35-5">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>: year_counts.index,</span>
+<span id="cb35-6">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Count'</span>: year_counts.values</span>
+<span id="cb35-7">}</span>
+<span id="cb35-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create the DataFrame</span></span>
+<span id="cb35-9">year_data_counts <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame(year_data)</span>
+<span id="cb35-10"></span>
+<span id="cb35-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Transpose the DataFrame and reset index to get years as columns</span></span>
+<span id="cb35-12">year_data_counts <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> year_data_counts.set_index(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>).T</span>
+<span id="cb35-13"></span>
+<span id="cb35-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the DataFrame</span></span>
+<span id="cb35-15"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(year_data_counts)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Year   2006  2018  2017  2007  2013  2012  2011  2008  2019  2021  2003  2009  \
+Count    12    11    11    11    11    11    11    10    10    10    10    10   
+
+Year   2010  2005  2015  2004  2016  2002  2020  2014  
+Count     9     8     7     7     6     6     5     5  </code></pre>
+</div>
+</div>
+<p>Next we see that most represented universities</p>
+<div id="0583adba" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1">university_counts <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Institute'</span>].value_counts()</span>
+<span id="cb37-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(university_counts.head(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>))  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the top 10 universities</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Institute
+Stanford University                          24
+Massachusetts Institute of Technology        15
+University of California, Berkeley           14
+Carnegie Mellon University                   13
+University of Utah                           10
+University of Washington                      9
+University of Illinois, Urbana-Champaign      9
+University of California, Davis               8
+Georgia Institute of Technology               8
+University of North Carolina, Chapel Hill     6
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>To visualize the award distributions per year,</p>
+<div id="24ef9f81" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>))</span>
+<span id="cb39-2">sns.countplot(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>, data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>data, order<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sorted</span>(data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>].unique()))</span>
+<span id="cb39-3">plt.gca().set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>) </span>
+<span id="cb39-4">plt.gcf().patch.set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>)</span>
+<span id="cb39-5">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Number of Fellows Per Year'</span>)</span>
+<span id="cb39-6">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-24-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/posts/datacollection/index_files/figure-html/cell-24-output-1.png" width="730" height="447" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Top 10 universities visualization</p>
+<div id="b53ae947" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb40" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>))</span>
+<span id="cb40-2">top_universities <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Institute'</span>].value_counts().head(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span>
+<span id="cb40-3">sns.barplot(y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>top_universities.index, x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>top_universities.values)</span>
+<span id="cb40-4">plt.gca().set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>) </span>
+<span id="cb40-5">plt.gcf().patch.set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>)</span>
+<span id="cb40-6">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Top 10 Universities by Number of Fellows'</span>)</span>
+<span id="cb40-7">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Number of Fellows'</span>)</span>
+<span id="cb40-8">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'University'</span>)</span>
+<span id="cb40-9">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-25-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://mrislambd.github.io/posts/datacollection/index_files/figure-html/cell-25-output-1.png" width="734" height="373" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Trend over time</p>
+<div id="bfb392ae" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>))</span>
+<span id="cb41-2">data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>].astype(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>)  </span>
+<span id="cb41-3">yearly_trend <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>).size()</span>
+<span id="cb41-4">yearly_trend.plot(kind<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'line'</span>, marker<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'o'</span>)</span>
+<span id="cb41-5">plt.gca().set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>) </span>
+<span id="cb41-6">plt.gcf().patch.set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>)</span>
+<span id="cb41-7">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Trend of Fellows Over Time'</span>)</span>
+<span id="cb41-8">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>)</span>
+<span id="cb41-9">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Number of Fellows'</span>)</span>
+<span id="cb41-10">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-26-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://mrislambd.github.io/posts/datacollection/index_files/figure-html/cell-26-output-1.png" width="730" height="447" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This is just a simple example of collecting data through webscraping. This <code>BeautifulSoup</code> has endless potentials to use in many projects to collect the data that are not publicly available in cleaned or organized form. Thank you for reading.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://doi.org/10.24432/C56C76." target="_blank">Fisher,R. A.. (1988). Iris. UCI Machine Learning Repository.</a></li>
+</ul>
+<strong>Share on</strong><br>
+
+<div id="fb-root">
+
+</div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
+<div class="share-buttons">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/datacollection/index.html" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fdatacollection%2Findex.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+</div>
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/datacollection/index.html"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/datacollection/index.html" data-show-count="true">Tweet</a>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/datacollection/index.html" data-width="" data-numposts="5">
+
+</div>
+<p><strong>You may also like</strong></p>
+
+
+
+<!-- -->
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722139200000" data-listing-file-modified-sort="1723166921694" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Bayesian Inference in Machine Learning: Part 1
+</h5>
+<div class="listing-reading-time card-text text-muted">
+6 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Sunday, July 28, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<a href="../../posts/eigen/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/eigen/lin3.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Generalized eigenvectors and eigenspaces
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Monday, January 25, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+How to generate social share buttons
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, July 17, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
+  author = {Islam, Rafiq},
+  title = {Data Collection Through {Webscraping}},
+  date = {2024-08-14},
+  url = {https://mrislambd.github.io/posts/datacollection/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
+Islam, Rafiq. 2024. <span>“Data Collection Through Webscraping.”</span>
+August 14, 2024. <a href="https://mrislambd.github.io/posts/datacollection/">https://mrislambd.github.io/posts/datacollection/</a>.
+</div></div></section></div> ]]></description>
+  <category>Data Science</category>
+  <category>Machine Learning</category>
+  <category>Artificial Intelligence</category>
+  <guid>https://mrislambd.github.io/posts/datacollection/</guid>
+  <pubDate>Wed, 14 Aug 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://mrislambd.github.io/posts/datacollection/ws.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Monte-Carlo Methods: PRNGs</title>
   <dc:creator>Rafiq Islam</dc:creator>
@@ -1148,7 +2060,32 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1723654446210" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="208">
+<a href="../../posts/datacollection/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/datacollection/data.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data collection and process for data science and machine learning projects
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, August 14, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1167,31 +2104,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Monday, January 25, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636434000000" data-listing-file-modified-sort="1721274577000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
-<a href="../../posts/lu/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/lu/lu.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-LU Factorization of a Full rank Matrix using Fortran
-</h5>
-<div class="listing-reading-time card-text text-muted">
-26 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Tuesday, November 9, 2021
 </div>
 </div>
 </div>

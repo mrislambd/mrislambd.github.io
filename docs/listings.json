@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/datacollection/index.html",
       "/posts/montecarlo1/index.html",
       "/posts/bayesianinference/index.html",
       "/posts/socialshare/index.html",
@@ -64,6 +65,7 @@
     "listing": "/posts/socialshare/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/eigen/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
@@ -204,6 +206,39 @@
     "items": [
       "/portfolio/dp-nlp/index.html",
       "/portfolio/desgld/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/datacollection/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/montecarlo1/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/webtemplate/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/montecarlo1/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
+      "/posts/welcome/index.html"
     ]
   }
 ]
