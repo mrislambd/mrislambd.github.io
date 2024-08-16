@@ -181,3 +181,4 @@ wrapt==1.16.0
 xxhash==3.4.1
 yarl==1.9.4
 ucimlrepo==0.0.7
+seaborn==0.13.2
