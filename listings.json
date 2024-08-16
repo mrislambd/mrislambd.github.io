@@ -3,6 +3,7 @@
     "listing": "/posts/socialshare/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/eigen/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
@@ -15,9 +16,10 @@
     ]
   },
   {
-    "listing": "/posts/eigen/index.html",
+    "listing": "/posts/datacollection/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
@@ -30,29 +32,15 @@
     ]
   },
   {
-    "listing": "/posts/sgdlinreg/index.html",
+    "listing": "/posts/bayesianinference/index.html",
     "items": [
-      "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/montecarlo1/index.html",
-      "/posts/someproofs/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/mathbiology/index.html",
-    "items": [
-      "/posts/bayesianinference/index.html",
-      "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/matmul/index.html",
       "/posts/montecarlo1/index.html",
       "/posts/someproofs/index.html",
       "/posts/sgdlinreg/index.html",
@@ -60,15 +48,49 @@
     ]
   },
   {
-    "listing": "/posts/montecarlo1/index.html",
+    "listing": "/posts/lu/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/montecarlo1/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/matrixrep/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/lu/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/montecarlo1/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/webtemplate/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
+      "/posts/montecarlo1/index.html",
       "/posts/someproofs/index.html",
       "/posts/sgdlinreg/index.html",
       "/posts/welcome/index.html"
@@ -103,6 +125,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/datacollection/index.html",
       "/posts/montecarlo1/index.html",
       "/posts/bayesianinference/index.html",
       "/posts/socialshare/index.html",
@@ -120,6 +143,7 @@
     "listing": "/posts/matmul/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",
@@ -132,14 +156,31 @@
     ]
   },
   {
-    "listing": "/posts/matrixrep/index.html",
+    "listing": "/posts/montecarlo1/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/sgdlinreg/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/mathbiology/index.html",
+    "items": [
+      "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
       "/posts/montecarlo1/index.html",
       "/posts/someproofs/index.html",
       "/posts/sgdlinreg/index.html",
@@ -147,24 +188,26 @@
     ]
   },
   {
-    "listing": "/posts/lu/index.html",
+    "listing": "/posts/sgdlinreg/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
+      "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
       "/posts/montecarlo1/index.html",
       "/posts/someproofs/index.html",
-      "/posts/sgdlinreg/index.html",
       "/posts/welcome/index.html"
     ]
   },
   {
-    "listing": "/posts/bayesianinference/index.html",
+    "listing": "/posts/eigen/index.html",
     "items": [
-      "/posts/eigen/index.html",
+      "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
@@ -180,6 +223,7 @@
     "listing": "/posts/welcome/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",
@@ -195,6 +239,7 @@
     "listing": "/posts/someproofs/index.html",
     "items": [
       "/posts/bayesianinference/index.html",
+      "/posts/datacollection/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/lu/index.html",
