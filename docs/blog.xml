@@ -10,7 +10,848 @@
 <atom:link href="https://mrislambd.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.54</generator>
-<lastBuildDate>Wed, 14 Aug 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 23 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Understanding Decision Tree Classifier: A Mathematical Approach</title>
+  <dc:creator>Rafiq Islam</dc:creator>
+  <link>https://mrislambd.github.io/posts/decisiontree/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="decision-tree" class="level2">
+<h2 class="anchored" data-anchor-id="decision-tree">Decision Tree</h2>
+<p style="text-align:justify">
+The Decision Tree Classifier is a powerful, interpretable, and widely-used algorithm in machine learning for binary or multi-class classification problems. Its simplicity and visual appeal make it a go-to choice for classification tasks. However, behind this simplicity lies a series of mathematical decisions that guide how the tree is constructed.<br>
+</p>
+<hr>
+</section>
+<section id="the-core-idea-behind-decision-trees" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-idea-behind-decision-trees">The Core Idea Behind Decision Trees</h2>
+<p style="text-align: justify">
+Decision Tree contains two main type of nodes, decision nodes and leaf nodes. A decision node is a node where a condition is applied to split the data and a leaf node contains the class of a data point. At its heart, a decision tree works by recursively splitting the dataset based on feature values. The goal of each split is to increase the homogeneity of the resulting subgroups, ideally separating the different classes as much as possible. The splitting process relies on a measure of impurity or disorder. The two most common metrics used for this purpose are <strong>Gini Impurity</strong> and <strong>Entropy</strong> (used in Information Gain).
+</p>
+<p><strong>Gini Impurity</strong></p>
+<p>The Gini Impurity measures the likelihood of misclassifying a randomly chosen element from the dataset if it were labeled according to the distribution of classes in that subset. Mathematically, the Gini Impurity for a node <img src="https://latex.codecogs.com/png.latex?t"> is calculated as:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0AG(t)%20&amp;=%201%20-%20%5Csum_%7Bi=1%7D%5E%7Bn%7D%20p_i%5E2%0A%5Cend%7Balign*%7D"></p>
+<p>where <img src="https://latex.codecogs.com/png.latex?p_i"> is the proportion of samples belonging to class <img src="https://latex.codecogs.com/png.latex?i"> at node <img src="https://latex.codecogs.com/png.latex?t">.</p>
+<p><strong>Entropy and Information Gain</strong></p>
+<p>Entropy, borrowed from information theory, measures the disorder or uncertainty in the dataset. It is defined as:</p>
+<p><img src="https://latex.codecogs.com/png.latex?H(t)%20=%20-%5Csum_%7Bi=1%7D%5E%7Bn%7D%20p_i%20%5Clog_2(p_i)"></p>
+<div id="13395349" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> math</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt </span>
+<span id="cb1-4"></span>
+<span id="cb1-5">x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>np.arange(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.99</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.0001</span>)</span>
+<span id="cb1-6">y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>math.log(p,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>p)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>math.log(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>p,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> p <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> x]</span>
+<span id="cb1-7">plt.plot(x,y)</span>
+<span id="cb1-8">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'$p_{\oplus}$'</span>)</span>
+<span id="cb1-9">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'$H(t)$'</span>)</span>
+<span id="cb1-10">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Entropy'</span>)</span>
+<span id="cb1-11">plt.gca().set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>) </span>
+<span id="cb1-12">plt.gcf().patch.set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>)</span>
+<span id="cb1-13">plt.show()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-2-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/posts/decisiontree/index_files/figure-html/cell-2-output-1.png" width="590" height="449" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Information Gain is the reduction in entropy after a dataset is split on a feature. It is calculated as:</p>
+<p><img src="https://latex.codecogs.com/png.latex?IG(D,%20A)%20=%20H(D)%20-%20%5Csum_%7Bv%20%5Cin%20%5Ctext%7BValues%7D(A)%7D%20%5Cfrac%7B%7CD_v%7C%7D%7B%7CD%7C%7D%20H(D_v)"></p>
+<p>where:</p>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?D"> is the dataset,</li>
+<li><img src="https://latex.codecogs.com/png.latex?A"> is the feature on which the split is made,</li>
+<li><img src="https://latex.codecogs.com/png.latex?D_v"> is the subset of <img src="https://latex.codecogs.com/png.latex?D"> for which feature <img src="https://latex.codecogs.com/png.latex?A"> has value <img src="https://latex.codecogs.com/png.latex?v">.</li>
+</ul>
+<hr>
+<p>Let’s explain the math with following example.</p>
+<p>Say, I have the data set like this</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><img src="https://latex.codecogs.com/png.latex?x_0"></th>
+<th><img src="https://latex.codecogs.com/png.latex?x_1"></th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>8</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cvdots"></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Cvdots"></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Cvdots"></td>
+</tr>
+</tbody>
+</table>
+<p>Total 20 data points and the scatter plot looks like this</p>
+<div id="07cb4f2d" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [</span>
+<span id="cb2-2">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>],</span>
+<span id="cb2-3">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>],</span>
+<span id="cb2-4">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">13</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">14</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>],</span>
+<span id="cb2-5">    [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">13</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb2-6">]</span>
+<span id="cb2-7"></span>
+<span id="cb2-8">x0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [row[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> row <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> data]</span>
+<span id="cb2-9">x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [row[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> row <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> data]</span>
+<span id="cb2-10">classes <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [row[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> row <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> data]</span>
+<span id="cb2-11"></span>
+<span id="cb2-12">colors <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'red'</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> c <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'blue'</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> c <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> classes]</span>
+<span id="cb2-13"></span>
+<span id="cb2-14">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>))</span>
+<span id="cb2-15">plt.grid(<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb2-16"></span>
+<span id="cb2-17">plt.scatter(x0, x1, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>colors, s<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, edgecolor<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'black'</span>)</span>
+<span id="cb2-18"></span>
+<span id="cb2-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Label points with class values</span></span>
+<span id="cb2-20"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(x0)):</span>
+<span id="cb2-21">    plt.text(x0[i] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>, x1[i] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(classes[i]), fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>)</span>
+<span id="cb2-22"></span>
+<span id="cb2-23"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Set limits for the axes</span></span>
+<span id="cb2-24">plt.xlim(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">16</span>)</span>
+<span id="cb2-25">plt.ylim(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">16</span>)</span>
+<span id="cb2-26">plt.gca().set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>) </span>
+<span id="cb2-27">plt.gcf().patch.set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>)</span>
+<span id="cb2-28"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Label axes and show plot</span></span>
+<span id="cb2-29">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'$x_0$'</span>)</span>
+<span id="cb2-30">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'$x_1$'</span>)</span>
+<span id="cb2-31">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Figure 1: Scatter Plot of $x_0$ vs $x_1$ '</span>)</span>
+<span id="cb2-32">plt.show()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-3-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://mrislambd.github.io/posts/decisiontree/index_files/figure-html/cell-3-output-1.png" width="593" height="450" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>At this point, we see that the classes are not linearly separable, meaning, we can not draw any line that separate the two classes. Notice that the minimum and maximum of feature <img src="https://latex.codecogs.com/png.latex?x_0"> is 1 and 15, respectively. So, let’s pick a few numbers in between these two numbers. Say, our first number is <img src="https://latex.codecogs.com/png.latex?3.5">. In the first node, that is the root node, we divide the data based on the feature <img src="https://latex.codecogs.com/png.latex?x_0%5Cle%203.5"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../posts/decisiontree/root.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 2: First Split"><img src="https://mrislambd.github.io/posts/decisiontree/root.png" class="img-fluid figure-img" alt="Figure 2: First Split"></a></p>
+<figcaption>Figure 2: First Split</figcaption>
+</figure>
+</div>
+<p>At the root node, we have equal number of blue and red points so the proportion of the data class is <img src="https://latex.codecogs.com/png.latex?p_1=p_2=0.5">, so the entropy</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20H(%5Ctext%7Broot%20node%7D)&amp;=-(0.5)%5Clog_2(0.5)-(0.5)%5Clog_2(0.5)=1%5C%5C%0A%5Cend%7Balign*%7D"><br>
+Based on the condition <img src="https://latex.codecogs.com/png.latex?x_0%5Cle%203.5">, the left and right child recieves 5 and 15 feature points <img src="https://latex.codecogs.com/png.latex?X=(x_0,x_1)">, respectively. We see that the left node is a pure node, because it contains only the red points. Therefore, the entropies at these child nodes</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20H(%5Ctext%7Bleft%20child%7D)&amp;=-1%5Clog_2(1)-0%5Clog_2(0)=0%5C%5C%0A%20%20%20%20H(%5Ctext%7Bright%20child%7D)&amp;=-%5Cfrac%7B5%7D%7B15%7D%5Clog_2%5Cleft(%5Cfrac%7B5%7D%7B15%7D%5Cright)-%5Cfrac%7B10%7D%7B15%7D%5Clog_2%5Cleft(%5Cfrac%7B10%7D%7B15%7D%5Cright)=0.92%5C%5C%0A%5Cend%7Balign*%7D"></p>
+<p>and the information gain at this split</p>
+<p><img src="https://latex.codecogs.com/png.latex?IG(split_1)=1-%5Cleft(%5Cfrac%7B5%7D%7B20%7D%5Ccdot%200+%5Cfrac%7B15%7D%7B20%7D%5Ccdot%200.92%5Cright)=0.31"></p>
+<p>Now the burning question is how did we select the condition <img src="https://latex.codecogs.com/png.latex?x_0%5Cle%203.5">? It could have been any other number, say we set <img src="https://latex.codecogs.com/png.latex?x_0%5Cle%206.5">. Then</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../posts/decisiontree/op1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure 3: Alternative Split"><img src="https://mrislambd.github.io/posts/decisiontree/op1.png" class="img-fluid figure-img" alt="Figure 3: Alternative Split"></a></p>
+<figcaption>Figure 3: Alternative Split</figcaption>
+</figure>
+</div>
+<p>Based on the condition <img src="https://latex.codecogs.com/png.latex?x_0%5Cle%206.5">, the left and right child recieves 11 and 9 feature points <img src="https://latex.codecogs.com/png.latex?X=(x_0,x_1)">, respectively. But in this case we don’t see any pure nodes and the entropies at these child nodes</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%20%20%20%20H(%5Ctext%7Bleft%20child%7D)&amp;=-%5Cfrac%7B7%7D%7B11%7D%5Clog_2%5Cleft(%5Cfrac%7B7%7D%7B11%7D%5Cright)-%5Cfrac%7B4%7D%7B11%7D%5Clog_2%5Cleft(%5Cfrac%7B4%7D%7B11%7D%5Cright)=0.95%5C%5C%0A%20%20%20%20H(%5Ctext%7Bright%20child%7D)&amp;=-%5Cfrac%7B3%7D%7B9%7D%5Clog_2%5Cleft(%5Cfrac%7B3%7D%7B9%7D%5Cright)-%5Cfrac%7B6%7D%7B9%7D%5Clog_2%5Cleft(%5Cfrac%7B6%7D%7B9%7D%5Cright)=0.92%5C%5C%0A%5Cend%7Balign*%7D"></p>
+<p>and the information gain at this split</p>
+<p><img src="https://latex.codecogs.com/png.latex?IG(split_1)=1-%5Cleft(%5Cfrac%7B11%7D%7B20%7D%5Ccdot%200.95+%5Cfrac%7B9%7D%7B20%7D%5Ccdot%200.92%5Cright)=0.06"></p>
+<p>Note that the information gain is much lower than the first option. Therefore, the first split is better than this alternative split. Because the goal is to have minimum entropy value and/or the maximum information gain. This is where the machine learning gets in the game. The algorithm finds the optimal split based on each feature values.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../posts/decisiontree/tree.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure 4: Second Split"><img src="https://mrislambd.github.io/posts/decisiontree/tree.png" class="img-fluid figure-img" alt="Figure 4: Second Split"></a></p>
+<figcaption>Figure 4: Second Split</figcaption>
+</figure>
+</div>
+<p>Now say we have a new set of feature values <img src="https://latex.codecogs.com/png.latex?(x_0,x_1,Class)=(10,7,1)">. Based on our tree above, since <img src="https://latex.codecogs.com/png.latex?x_0"> is NOT less than or equal to <img src="https://latex.codecogs.com/png.latex?3.5"> so it goes to the right first child. Then it satisfies <img src="https://latex.codecogs.com/png.latex?x_0%5Cle%2010">. So it moves to the left grand child gradually traverse through the tree and ended up to the very bottom layer left leaf node.</p>
+</section>
+<section id="building-a-decision-tree" class="level2">
+<h2 class="anchored" data-anchor-id="building-a-decision-tree">Building a Decision Tree</h2>
+<ol type="1">
+<li><strong>Choose the best feature to split on</strong>: Calculate Gini impurity or Information Gain for each feature and select the feature that results in the highest Information Gain or lowest Gini impurity.</li>
+<li><strong>Split the dataset</strong>: Partition the data based on the chosen feature and repeat the process for each partition.</li>
+<li><strong>Stop conditions</strong>: The tree stops growing when all samples in a node belong to the same class, the maximum depth is reached, or further splitting doesn’t add value.</li>
+</ol>
+</section>
+<section id="implementation-of-decision-tree-scikit-learn" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-of-decision-tree-scikit-learn">Implementation of Decision Tree: Scikit-learn</h2>
+<div id="bf474fe2" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb3-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb3-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.tree <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> DecisionTreeClassifier,plot_tree</span>
+<span id="cb3-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.metrics <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> accuracy_score</span>
+<span id="cb3-5"></span>
+<span id="cb3-6">X<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>pd.DataFrame({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Feature 1'</span>:x0, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Feature 2'</span>:x1})</span>
+<span id="cb3-7">y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>classes</span>
+<span id="cb3-8"></span>
+<span id="cb3-9"></span>
+<span id="cb3-10">clf<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> DecisionTreeClassifier(criterion<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"entropy"</span>)</span>
+<span id="cb3-11">clf.fit(X,y)</span>
+<span id="cb3-12"></span>
+<span id="cb3-13"></span>
+<span id="cb3-14">X_test<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>pd.DataFrame({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Feature 1'</span>:[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>],<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Feature 2'</span>:[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>]})</span>
+<span id="cb3-15">y_test<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>pd.DataFrame({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Class'</span>:[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]})</span>
+<span id="cb3-16"></span>
+<span id="cb3-17">test_data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>pd.concat([X_test,y_test], axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb3-18"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Test Data </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb3-19"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(test_data)</span>
+<span id="cb3-20"></span>
+<span id="cb3-21"></span>
+<span id="cb3-22">y_prediction<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>clf.predict(X_test)</span>
+<span id="cb3-23">prediction<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>pd.DataFrame({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Predicted_Class'</span>:y_prediction})</span>
+<span id="cb3-24">prediction<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>pd.concat([test_data,prediction],axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb3-25"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb3-26"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Result </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb3-27"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(prediction)</span>
+<span id="cb3-28"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb3-29"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Accuracy score:'</span>,<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">round</span>(accuracy_score(y_prediction,y_test),<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>))</span>
+<span id="cb3-30"></span>
+<span id="cb3-31">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>))</span>
+<span id="cb3-32">plot_tree(clf, filled<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, </span>
+<span id="cb3-33">          feature_names<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'$x_0$'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'$x_1$'</span>], </span>
+<span id="cb3-34">          class_names<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'R'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'B'</span>], impurity<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb3-35">          )</span>
+<span id="cb3-36">plt.gca().set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>) </span>
+<span id="cb3-37">plt.gcf().patch.set_facecolor(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#f4f4f4'</span>)</span>
+<span id="cb3-38">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Test Data 
+
+   Feature 1  Feature 2  Class
+0         10          7      1
+1          9          9      0
+2         11          5      1
+
+
+Result 
+
+   Feature 1  Feature 2  Class  Predicted_Class
+0         10          7      1                1
+1          9          9      0                0
+2         11          5      1                0
+
+
+Accuracy score: 0.67</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-4-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="https://mrislambd.github.io/posts/decisiontree/index_files/figure-html/cell-4-output-2.png" width="838" height="537" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="discussion-on-decision-tree" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-on-decision-tree">Discussion on Decision Tree</h2>
+<p style="text-align:justify">
+Being a simple algorithm, it has both pros and cons. It is robust to training data and the training data can contain missing values. However, it is a greedy algorithm, a problem-solving technique that chooses the best option in the current situation, without considering the overall outcome. It also face the overfitting issue. The Decision Tree Classifier is a versatile and intuitive model, but it’s crucial to understand the mathematics that drive its decisions. By implementing it from scratch, you not only gain a deeper understanding but also appreciate the balance between model complexity and interpretability.
+</p>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<p><a href="https://www.youtube.com/watch?v=ZVR2Way4nwQ">Decision Tree Classification Clearly Explained by Normalized Nerd</a></p>
+<p><strong>Share on</strong></p>
+<div id="fb-root">
+
+</div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
+<div class="share-buttons">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/decisiontree/" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fdecisiontree%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+</div>
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/decisiontree/"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/decisiontree/" data-show-count="true">Tweet</a>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/decisiontree/" data-width="" data-numposts="5">
+
+</div>
+<p><strong>You may also like</strong></p>
+
+
+
+<!-- -->
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722139200000" data-listing-file-modified-sort="1723166921694" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Bayesian Inference in Machine Learning: Part 1
+</h5>
+<div class="listing-reading-time card-text text-muted">
+6 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Sunday, July 28, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1723767539127" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<a href="../../posts/datacollection/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/datacollection/ws.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data collection through Webscraping
+</h5>
+<div class="listing-reading-time card-text text-muted">
+7 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, August 14, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<a href="../../posts/eigen/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/eigen/lin3.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Generalized eigenvectors and eigenspaces
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Monday, January 25, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
+  author = {Islam, Rafiq},
+  title = {Understanding {Decision} {Tree} {Classifier:} {A}
+    {Mathematical} {Approach}},
+  date = {2024-08-23},
+  url = {https://mrislambd.github.io/posts/decisiontree/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
+Islam, Rafiq. 2024. <span>“Understanding Decision Tree Classifier: A
+Mathematical Approach.”</span> August 23, 2024. <a href="https://mrislambd.github.io/posts/decisiontree/">https://mrislambd.github.io/posts/decisiontree/</a>.
+</div></div></section></div> ]]></description>
+  <category>Data Science</category>
+  <category>Machine Learning</category>
+  <category>Artificial Intelligence</category>
+  <category>Algorithms</category>
+  <guid>https://mrislambd.github.io/posts/decisiontree/</guid>
+  <pubDate>Fri, 23 Aug 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://mrislambd.github.io/posts/decisiontree/dtree.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Data collection through Webscraping</title>
   <dc:creator>Rafiq Islam</dc:creator>
@@ -851,7 +1692,30 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Computer Science" data-listing-date-sort="1724212800000" data-listing-file-modified-sort="1724282962779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
+<a href="../../posts/dsa/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data Structure and Algorithms: Quick Notes
+</h5>
+<div class="listing-reading-time card-text text-muted">
+1 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, August 21, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -870,31 +1734,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Monday, January 25, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-How to generate social share buttons
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Wednesday, July 17, 2024
 </div>
 </div>
 </div>
@@ -1483,50 +2322,48 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
-<a href="../../posts/eigen/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Computer Science" data-listing-date-sort="1724212800000" data-listing-file-modified-sort="1724282962779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
+<a href="../../posts/dsa/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/eigen/lin3.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Generalized eigenvectors and eigenspaces
+Data Structure and Algorithms: Quick Notes
 </h5>
 <div class="listing-reading-time card-text text-muted">
-2 min
+1 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Rafiq Islam
 </div>
 <div class="listing-date">
-Monday, January 25, 2021
+Wednesday, August 21, 2024
 </div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1723767539127" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<a href="../../posts/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="https://mrislambd.github.io/posts/datacollection/ws.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-How to generate social share buttons
+Data collection through Webscraping
 </h5>
 <div class="listing-reading-time card-text text-muted">
-2 min
+7 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Rafiq Islam
 </div>
 <div class="listing-date">
-Wednesday, July 17, 2024
+Wednesday, August 14, 2024
 </div>
 </div>
 </div>
@@ -1680,7 +2517,55 @@ The marginal probability of having burnt side in the top position<br>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Computer Science" data-listing-date-sort="1724212800000" data-listing-file-modified-sort="1724282962779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="36">
+<a href="../../posts/dsa/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data Structure and Algorithms: Quick Notes
+</h5>
+<div class="listing-reading-time card-text text-muted">
+1 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, August 21, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1723767539127" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<a href="../../posts/datacollection/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/datacollection/ws.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data collection through Webscraping
+</h5>
+<div class="listing-reading-time card-text text-muted">
+7 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, August 14, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1699,56 +2584,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Monday, January 25, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-How to generate social share buttons
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Wednesday, July 17, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636434000000" data-listing-file-modified-sort="1721274577000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
-<a href="../../posts/lu/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/lu/lu.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-LU Factorization of a Full rank Matrix using Fortran
-</h5>
-<div class="listing-reading-time card-text text-muted">
-26 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Tuesday, November 9, 2021
 </div>
 </div>
 </div>
