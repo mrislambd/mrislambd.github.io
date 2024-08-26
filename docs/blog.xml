@@ -39,7 +39,7 @@ Decision Tree contains two main type of nodes, decision nodes and leaf nodes. A 
 <p><strong>Entropy and Information Gain</strong></p>
 <p>Entropy, borrowed from information theory, measures the disorder or uncertainty in the dataset. It is defined as:</p>
 <p><img src="https://latex.codecogs.com/png.latex?H(t)%20=%20-%5Csum_%7Bi=1%7D%5E%7Bn%7D%20p_i%20%5Clog_2(p_i)"></p>
-<div id="13395349" class="cell" data-execution_count="1">
+<div id="993e4fbe" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -173,7 +173,7 @@ font-style: inherit;">'#f4f4f4'</span>)</span>
 </tbody>
 </table>
 <p>Total 20 data points and the scatter plot looks like this</p>
-<div id="07cb4f2d" class="cell" data-execution_count="2">
+<div id="ffadabad" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">data <span class="op" style="color: #5E5E5E;
@@ -500,7 +500,7 @@ Based on the condition <img src="https://latex.codecogs.com/png.latex?x_0%5Cle%2
 </section>
 <section id="implementation-of-decision-tree-scikit-learn" class="level2">
 <h2 class="anchored" data-anchor-id="implementation-of-decision-tree-scikit-learn">Implementation of Decision Tree: Scikit-learn</h2>
-<div id="bf474fe2" class="cell" data-execution_count="3">
+<div id="ce729ce9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -720,7 +720,7 @@ Accuracy score: 0.67</code></pre>
 <section id="discussion-on-decision-tree" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-on-decision-tree">Discussion on Decision Tree</h2>
 <p style="text-align:justify">
-Being a simple algorithm, it has both pros and cons. It is robust to training data and the training data can contain missing values. However, it is a greedy algorithm, a problem-solving technique that chooses the best option in the current situation, without considering the overall outcome. It also face the overfitting issue. The Decision Tree Classifier is a versatile and intuitive model, but it’s crucial to understand the mathematics that drive its decisions. By implementing it from scratch, you not only gain a deeper understanding but also appreciate the balance between model complexity and interpretability.
+Being a simple algorithm, it has both pros and cons. It is robust to training data and the training data can contain missing values. However, it is a greedy algorithm, a problem-solving technique that chooses the best option in the current situation, without considering the overall outcome. It also face the overfitting issue.
 </p>
 </section>
 <section id="reference" class="level2">

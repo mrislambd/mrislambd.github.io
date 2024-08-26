@@ -508,7 +508,7 @@
     "href": "posts/decisiontree/index.html#discussion-on-decision-tree",
     "title": "Understanding Decision Tree Classifier: A Mathematical Approach",
     "section": "Discussion on Decision Tree",
-    "text": "Discussion on Decision Tree\n\nBeing a simple algorithm, it has both pros and cons. It is robust to training data and the training data can contain missing values. However, it is a greedy algorithm, a problem-solving technique that chooses the best option in the current situation, without considering the overall outcome. It also face the overfitting issue. The Decision Tree Classifier is a versatile and intuitive model, but it’s crucial to understand the mathematics that drive its decisions. By implementing it from scratch, you not only gain a deeper understanding but also appreciate the balance between model complexity and interpretability."
+    "text": "Discussion on Decision Tree\n\nBeing a simple algorithm, it has both pros and cons. It is robust to training data and the training data can contain missing values. However, it is a greedy algorithm, a problem-solving technique that chooses the best option in the current situation, without considering the overall outcome. It also face the overfitting issue."
   },
   {
     "objectID": "posts/decisiontree/index.html#conclusion",
