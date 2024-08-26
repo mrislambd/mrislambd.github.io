@@ -1,0 +1,29 @@
+---
+title: "Data Structure and Algorithms: Quick Notes"
+date: "2024-08-21"
+author: Rafiq Islam
+categories: [Data Science, Machine Learning, Computer Science]
+citation: true
+search: true
+draft: true
+lightbox: true
+listing: 
+    contents: "/../../posts"
+    max-items: 3
+    type: grid
+    categories: false
+    date-format: full
+    fields: [image, date, title, author, reading-time]
+---  
+
+## Binary Search  
+
+```{python}
+def binary_search(arr, k):
+    """
+    arr:: sorted array
+    k:: search item; float or integer
+    """
+    low, high=0, len(arr)-1
+    
+```
