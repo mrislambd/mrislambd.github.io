@@ -224,7 +224,7 @@ plt.show()
 
 ## Discussion on Decision Tree  
 
-<p style="text-align:justify">Being a simple algorithm, it has both pros and cons. It is robust to training data and the training data can contain missing values. However, it is a greedy algorithm, a problem-solving technique that chooses the best option in the current situation, without considering the overall outcome. It also face the overfitting issue. The Decision Tree Classifier is a versatile and intuitive model, but it’s crucial to understand the mathematics that drive its decisions. By implementing it from scratch, you not only gain a deeper understanding but also appreciate the balance between model complexity and interpretability.</p>
+<p style="text-align:justify">Being a simple algorithm, it has both pros and cons. It is robust to training data and the training data can contain missing values. However, it is a greedy algorithm, a problem-solving technique that chooses the best option in the current situation, without considering the overall outcome. It also face the overfitting issue.</p>
 
 ## Reference  
 [Decision Tree Classification Clearly Explained by Normalized Nerd](https://www.youtube.com/watch?v=ZVR2Way4nwQ)
