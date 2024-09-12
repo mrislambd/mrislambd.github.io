@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Rebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya">
-<meta name="dcterms.date" content="2024-06-18">
+<meta name="author" content="Rafiq Islam">
+<meta name="dcterms.date" content="2024-08-29">
 
-<title>Disease diagnosis using classification and NLP – Mohammad Rafiqul Islam</title>
+<title>Python Implementation of General Machine Learning Algorithms – Mohammad Rafiqul Islam</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,6 +66,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../..//_assets/images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -102,6 +104,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 18,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z5NP67GHFC"></script>
 
 <script type="text/javascript">
@@ -114,29 +146,58 @@ gtag('config', 'G-Z5NP67GHFC', { 'anonymize_ip': true});
 <style>html{ scroll-behavior: smooth; }</style>
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528" crossorigin="anonymous"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Disease diagnosis using classification and NLP – Mohammad Rafiqul Islam">
+<meta property="og:title" content="Python Implementation of General Machine Learning Algorithms – Mohammad Rafiqul Islam">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://mrislambd.github.io/portfolio/dp-nlp/dpnlp.jpg">
+<meta property="og:image" content="https://mrislambd.github.io/posts/machinelearning/ml.jpeg">
 <meta property="og:site_name" content="Mohammad Rafiqul Islam">
-<meta name="twitter:title" content="Disease diagnosis using classification and NLP – Mohammad Rafiqul Islam">
+<meta name="twitter:title" content="Python Implementation of General Machine Learning Algorithms – Mohammad Rafiqul Islam">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://mrislambd.github.io/portfolio/dp-nlp/dpnlp.jpg">
+<meta name="twitter:image" content="https://mrislambd.github.io/posts/machinelearning/ml.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../portfolio/dp-nlp/index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../posts/machinelearning/index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../_assets/images/fsu-logo.png" alt="Florida State University" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../portfolio/dp-nlp/index.html">
+    <a class="navbar-brand" href="../../posts/machinelearning/index.html">
     <span class="navbar-title">Mohammad Rafiqul Islam</span>
     </a>
   </div>
@@ -155,10 +216,6 @@ gtag('config', 'G-Z5NP67GHFC', { 'anonymize_ip': true});
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../teaching.html"> 
-<span class="menu-text">Teaching</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../portfolio.html"> 
 <span class="menu-text">Portfolio</span></a>
   </li>  
@@ -169,6 +226,16 @@ gtag('config', 'G-Z5NP67GHFC', { 'anonymize_ip': true});
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/mohammad-rafiqul-islam/" target="_blank"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/mrislambd" target="_blank"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
               <div class="quarto-navbar-tools">
@@ -181,106 +248,40 @@ gtag('config', 'G-Z5NP67GHFC', { 'anonymize_ip': true});
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Disease diagnosis using classification and NLP</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
- <span class="menu-text"><img src="../../_assets/images/profile.png" class="oval-image" alt="Profile Picture" style="align-center; margin-bottom: 10px;"></span>
-  </li>
-        <li class="sidebar-item">
- <span class="menu-text"><span style="font-size: 1.5em; font-weight: bold; margin-bottom: 10px;">Rafiq Islam</span></span>
-  </li>
-        <li class="sidebar-item">
- <span class="menu-text"><span style="margin-bottom: 10px;">Ph.D. Candidate in Mathematics</span></span>
-  </li>
-        <li class="sidebar-item">
- <span class="menu-text"><span style="display: inline-block; vertical-align: middle;"><img src="../../_assets/images/univ.png" height="15" width="15" alt="University" style="margin-right: 5px;"></span><span style="display: inline-block; vertical-align: middle; color: #782F40;"><a href="https://fsu.edu" target="_blank" style="color: #782F40;">Florida State University</a></span></span>
-  </li>
-        <li class="sidebar-item">
-    <i class="bi bi-geo-alt" role="img">
-</i> 
- <span class="menu-text"> Tallahassee, Florida</span>
-  </li>
-        <li class="sidebar-item">
- <span class="menu-text"><span style="font-size: 1.1em; font-weight: bold; margin-top: 50px; margin-bottom: 50px;color: #782F40">Contact</span></span>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="mailto:mi21b@fsu.edu" class="sidebar-item-text sidebar-link"><i class="bi bi-envelope-arrow-down" role="img">
-</i> 
- <span class="menu-text">Email: mi21b@fsu.edu</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://maps.app.goo.gl/p25RvKR6jiecRYsG9" class="sidebar-item-text sidebar-link" target="_blank"><i class="bi bi-building" role="img">
-</i> 
- <span class="menu-text">Office: Love 331</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-    <i class="bi bi-calender-check" role="img">
-</i> 
- <span class="menu-text">Office Hour: TBD</span>
-  </li>
-        <li class="sidebar-item">
- <span class="menu-text"><span style="font-size: 1.1em; font-weight: bold; margin-top: 10px; margin-bottom: 50px; color: #782F40">Find me on</span></span>
-  </li>
-        <li class="sidebar-item">
- <span class="menu-text"><a href="https://scholar.google.com/citations?user=gTz5r68AAAAJ&amp;hl=en" target="_blank" style="display: inline-block; vertical-align: middle;"><img src="../../_assets/images/gs.png" height="15" width="15" alt="Google Scholar" style="margin-right: 5px;"></a></span><a href="https://scholar.google.com/citations?user=gTz5r68AAAAJ&amp;hl=en" target="_blank" style="display: inline-block; vertical-align: middle;"><span style="display: inline-block; vertical-align: middle;"> Google Scholar</span></a>
-  </li>
-        <li class="sidebar-item">
- <span class="menu-text"><a href="https://www.researchgate.net/profile/Mohammad-Rafiqul-Islam-5" target="_blank" style="display: inline-block; vertical-align: middle;"><img src="../../_assets/images/rg.png" height="15" width="15" alt="ResearchGate" style="margin-right: 5px;"></a></span><a href="https://www.researchgate.net/profile/Mohammad-Rafiqul-Islam-5" target="_blank" style="display: inline-block; vertical-align: middle;"><span style="display: inline-block; vertical-align: middle;"> ResearchGate</span></a>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://www.linkedin.com/in/mohammad-rafiqul-islam/" class="sidebar-item-text sidebar-link" target="_blank"><i class="bi bi-linkedin" role="img">
-</i> 
- <span class="menu-text">LinkedIn</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://github.com/mrislambd" class="sidebar-item-text sidebar-link" target="_blank"><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text">GitHub</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
- <span class="menu-text"><a href="https://orcid.org/0000-0002-4376-8971" target="_blank" style="display: inline-block; vertical-align: middle;"><img src="../../_assets/images/orcid.png" height="15" width="15" alt="Orcid" style="margin-right: 5px;"></a></span><a href="https://orcid.org/0000-0002-4376-8971" target="_blank" style="display: inline-block; vertical-align: middle;"><span style="display: inline-block; vertical-align: middle;"> Orcid</span></a>
-  </li>
-        <li class="sidebar-item">
- <span class="menu-text"><a href="https://www.kaggle.com/rafiqislamfromfsu" target="_blank" style="display: inline-block; vertical-align: middle;"><img src="../../_assets/images/kag.png" height="15" width="15" alt="Kaggle" style="margin-right: 5px;"></a></span><a href="https://www.kaggle.com/rafiqislamfromfsu" target="_blank" style="display: inline-block; vertical-align: middle;"><span style="display: inline-block; vertical-align: middle;"> Kaggle</span></a>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#regressions" id="toc-regressions" class="nav-link active" data-scroll-target="#regressions">Regressions</a>
+  <ul class="collapse">
+  <li><a href="#parametric-regressions" id="toc-parametric-regressions" class="nav-link" data-scroll-target="#parametric-regressions">Parametric Regressions</a></li>
+  <li><a href="#non-parametric-regressions" id="toc-non-parametric-regressions" class="nav-link" data-scroll-target="#non-parametric-regressions">Non-Parametric Regressions</a></li>
+  </ul></li>
+  <li><a href="#classifications" id="toc-classifications" class="nav-link" data-scroll-target="#classifications">Classifications</a></li>
+  <li><a href="#time-series" id="toc-time-series" class="nav-link" data-scroll-target="#time-series">Time Series</a></li>
+  <li><a href="#ensemble-learning" id="toc-ensemble-learning" class="nav-link" data-scroll-target="#ensemble-learning">Ensemble Learning</a></li>
+  <li><a href="#neural-networks" id="toc-neural-networks" class="nav-link" data-scroll-target="#neural-networks">Neural Networks</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Disease diagnosis using classification and NLP</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-</div>
+<div class="quarto-title-block"><div><h1 class="title">Python Implementation of General Machine Learning Algorithms</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+  <div class="quarto-categories">
+    <div class="quarto-category">Data Science</div>
+    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Artificial Intelligence</div>
+  </div>
+  </div>
 
 
 
@@ -289,14 +290,14 @@ gtag('config', 'G-Z5NP67GHFC', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Rebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya </p>
+             <p>Rafiq Islam </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 18, 2024</p>
+      <p class="date">August 29, 2024</p>
     </div>
   </div>
   
@@ -308,32 +309,129 @@ gtag('config', 'G-Z5NP67GHFC', { 'anonymize_ip': true});
 </header>
 
 
-<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528" crossorigin="anonymous"></script>
-<p><strong>Team Members</strong><br>
-Rebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya</p>
-<p>Automatic Symptom Detection (ASD) and Automatic Diagnosis (AD) have seen several advances in recent years. Patients and medical professionals would benefit from tools that can aid in diagnosing diseases based on antecedents and presenting symptoms. The lack of quality healthcare in many parts of the world makes solving this problem a matter of utmost urgency. The aim of this project is to build a tool that can diagnose a disease based on a list of symptoms and contribute to our understanding of automatic diagnosis.</p>
-<p><strong>Project Details</strong></p>
-<p><a href="https://www.erdosinstitute.org/_files/ugd/161362_010d1152780f45b6b684df1fee5c4d8c.pdf" target="_blank">Slides</a><br>
-<a href="https://www.erdosinstitute.org/_files/ugd/161362_7030bf123ec149a4876e5b65e2c09a00.pdf" target="_blank">Executive Summary</a><br>
-<a href="https://github.com/nina-adhikari/disease_prediction" target="_blank">GitHub Repo</a></p>
+<p align="center">
+<img src="../../_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400">
+</p>
+<p style="text-align: justify">
+This blog post is my personal repository of most common and useful machine learning algorithms using Python. In summer 2024, I participated in a <a href="https://www.erdosinstitute.org/" target="_blank" style="text-decoration:none">Data Science Boot Camp by the Erdos Institute</a>. Therefore, the topics listed here mostly align with their bootcamp syllabus. Note that, I did not copy their materials directly that affects the copyright issues. I wrote evrything in my own words and used new dataset.
+</p>
+<section id="regressions" class="level2">
+<h2 class="anchored" data-anchor-id="regressions">Regressions</h2>
+<section id="parametric-regressions" class="level3">
+<h3 class="anchored" data-anchor-id="parametric-regressions">Parametric Regressions</h3>
+<ol type="1">
+<li><a href="../../machinelearning/simplelinreg/index.html">Simple Linear Regression</a></li>
+<li><a href="../../machinelearning/multiplelinreg/index.html">Multiple Linear Regression</a></li>
+</ol>
+</section>
+<section id="non-parametric-regressions" class="level3">
+<h3 class="anchored" data-anchor-id="non-parametric-regressions">Non-Parametric Regressions</h3>
+<ol type="1">
+<li><a href="../../machinelearning/knn/index.html">K Nearest Neighbors: Regression and Classification</a></li>
+</ol>
+</section>
+</section>
+<section id="classifications" class="level2">
+<h2 class="anchored" data-anchor-id="classifications">Classifications</h2>
+</section>
+<section id="time-series" class="level2">
+<h2 class="anchored" data-anchor-id="time-series">Time Series</h2>
+</section>
+<section id="ensemble-learning" class="level2">
+<h2 class="anchored" data-anchor-id="ensemble-learning">Ensemble Learning</h2>
+</section>
+<section id="neural-networks" class="level2">
+<h2 class="anchored" data-anchor-id="neural-networks">Neural Networks</h2>
+<p><strong>You may also like</strong></p>
+
 
 
 <!-- -->
 
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ceppas_de_castro,_fulya_tastan,_philip_barron,_mohammad_rafiqul_islam,_nina_adhikari,_viraj_meruliya_2024,
-  author = {Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad
-    Rafiqul Islam, Nina Adhikari, Viraj Meruliya , Rebecca},
-  title = {Disease Diagnosis Using Classification and {NLP}},
-  date = {2024-06-18},
-  url = {https://mrislambd.github.io/portfolio/dp-nlp/},
-  langid = {en}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-ceppas_de_castro,_fulya_tastan,_philip_barron,_mohammad_rafiqul_islam,_nina_adhikari,_viraj_meruliya_2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam,
-Nina Adhikari, Viraj Meruliya, Rebecca. 2024. <span>“Disease Diagnosis
-Using Classification and NLP.”</span> June 18, 2024. <a href="https://mrislambd.github.io/portfolio/dp-nlp/">https://mrislambd.github.io/portfolio/dp-nlp/</a>.
-</div></div></section></div></main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1726101856716" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../../posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Bayesian Inference in Machine Learning: Part 1
+</h5>
+<div class="listing-reading-time card-text text-muted">
+6 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Sunday, July 28, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA" data-listing-date-sort="1726012800000" data-listing-file-modified-sort="1726101856720" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="934">
+<a href="../../posts/dsa/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../../posts/dsa/dsa.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data Structure and Algorithms: Basic Programming Hacks
+</h5>
+<div class="listing-reading-time card-text text-muted">
+5 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, September 11, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1726101856716" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<a href="../../posts/datacollection/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../../posts/datacollection/ws.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data collection through Webscraping
+</h5>
+<div class="listing-reading-time card-text text-muted">
+7 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, August 14, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -806,35 +904,54 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Disease diagnosis using classification and NLP"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Rebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya "</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-06-18</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">collection:</span><span class="co"> portfolio</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span><span class="co"> true</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">search:</span><span class="co"> true</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">lightbox:</span><span class="co"> true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> dpnlp.jpg</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span>  </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>&lt;script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>     crossorigin="anonymous"&gt;&lt;/script&gt;  </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>**Team Members**  </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Rebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya  </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Python Implementation of General Machine Learning Algorithms"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-08-29"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Rafiq Islam</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Data Science, Machine Learning, Artificial Intelligence]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">search:</span><span class="co"> true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">lightbox:</span><span class="co"> true</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ml.jpeg</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co"> </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: "/../../posts"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    max-items: 3</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    categories: false</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: full</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    fields: [image, date, title, author, reading-time]</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span>  </span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Automatic Symptom Detection (ASD) and Automatic Diagnosis (AD) have seen several advances in recent years. Patients and medical professionals would benefit from tools that can aid in diagnosing diseases based on antecedents and presenting symptoms. The lack of quality healthcare in many parts of the world makes solving this problem a matter of utmost urgency. The aim of this project is to build a tool that can diagnose a disease based on a list of symptoms and contribute to our understanding of automatic diagnosis.  </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>**Project Details**  </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>&lt;p align="center"&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  &lt;img src="/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400"/&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>&lt;/p&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.erdosinstitute.org/_files/ugd/161362_010d1152780f45b6b684df1fee5c4d8c.pdf" target="_blank"&gt;Slides&lt;/a&gt;  </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.erdosinstitute.org/_files/ugd/161362_7030bf123ec149a4876e5b65e2c09a00.pdf" target="_blank"&gt;Executive Summary&lt;/a&gt;  </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://github.com/nina-adhikari/disease_prediction" target="_blank"&gt;GitHub Repo&lt;/a&gt;  </span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    This blog post is my personal repository of most common and useful machine learning algorithms using Python. In summer 2024, I participated in a <span class="co">[</span><span class="ot">Data Science Boot Camp by the Erdos Institute</span><span class="co">](https://www.erdosinstitute.org/)</span>{target="_blank" style="text-decoration:none"}. Therefore, the topics listed here mostly align with their bootcamp syllabus. Note that, I did not copy their materials directly that affects the copyright issues. I wrote evrything in my own words and used new dataset.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>&lt;/p&gt;</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regressions  </span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Parametric Regressions  </span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="co">[</span><span class="ot">Simple Linear Regression</span><span class="co">](/machinelearning/simplelinreg/index.qmd)</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="co">[</span><span class="ot">Multiple Linear Regression</span><span class="co">](/machinelearning/multiplelinreg/index.qmd)</span>  </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Non-Parametric Regressions  </span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="co">[</span><span class="ot">K Nearest Neighbors: Regression and Classification</span><span class="co">](/machinelearning/knn/index.qmd)</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Classifications  </span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Time Series  </span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ensemble Learning    </span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Neural Networks  </span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>**You may also like**</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Powered by <a href="https://quarto.org/">Quarto</a> 1.5.56</p>
+<p>Powered by <a href="https://quarto.org/">Quarto</a> 1.5.57</p>
 </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
@@ -851,26 +968,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mrislambd/mrislambd.github.io">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
     <a class="nav-link" href="https://twitter.com/rafiqr35" target="_blank">
       <i class="bi bi-twitter" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://mrislambd.github.io/docs/index.xml">
-      <i class="bi bi-rss" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://instagram.com" target="_blank">
-      <i class="bi bi-instagram" role="img">
 </i> 
     </a>
   </li>  
