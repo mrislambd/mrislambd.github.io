@@ -300,9 +300,7 @@ rgl.close()
 A circle with radius $r=1$ has the area $A=\pi r^2= \pi$ and a square with length $l=1$ has the area $B=1$. Now if we consider the following situation, where a quarter of a unit circle is inscribed inside a unit square like this  
 
 
-```{python}
-#| echo: true
-#| output: false
+```python
 # I used python to generate this plot. Else everywhere the codes are in R
 import matplotlib.pyplot as plt
 import numpy as np 
