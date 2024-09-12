@@ -1,0 +1,18 @@
+{
+  "listing": "/posts/lu/index.html",
+  "items": [
+    "/posts/bayesianinference/index.html",
+    "/posts/datacollection/index.html",
+    "/posts/eigen/index.html",
+    "/posts/socialshare/index.html",
+    "/posts/matrixrep/index.html",
+    "/posts/matmul/index.html",
+    "/posts/mathbiology/index.html",
+    "/posts/montecarlo1/index.html",
+    "/posts/machinelearning/index.html",
+    "/posts/someproofs/index.html",
+    "/posts/decisiontree/index.html",
+    "/posts/sgdlinreg/index.html",
+    "/posts/welcome/index.html"
+  ]
+}

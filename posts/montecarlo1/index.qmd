@@ -180,9 +180,11 @@ $R_n=(\frac{X_n}{8}+\frac{Y_n}{7}) \mod 1$
 \end{center}
 where $X_0=0, Y_0=1, X_{n+1}=(9X_n+3) \mod 8$ and $Y_{n+1}=3Y_n \mod 7$ for $n=0,1,2,\cdots$.  Calculate $R_0,R_1,R_2, \cdots , R_5.$. What is the period of the generator $\{R_n\}$?  
 
-**Solution**  
+**Solution**   
+
 
 ```{r, echo=T}
+#| code-fold: false
 rand.gen<-function(n){
   RN<-vector(length = n)
   x<-rep(n)
@@ -292,6 +294,82 @@ play3d(spin, duration = 10)
 rglwidget()
 rgl.close()
 ```  
+
+#### Problem 4 Approximation of pi using Monte-Carlo Method  
+
+A circle with radius $r=1$ has the area $A=\pi r^2= \pi$ and a square with length $l=1$ has the area $B=1$. Now if we consider the following situation, where a quarter of a unit circle is inscribed inside a unit square like this  
+
+
+```{python}
+#| echo: true
+#| output: false
+# I used python to generate this plot. Else everywhere the codes are in R
+import matplotlib.pyplot as plt
+import numpy as np 
+
+num_points = 100
+pts = np.random.rand(num_points,2)
+
+fig, axes = plt.subplots()
+theta = np.linspace(0, np.pi/2,100)
+x = np.cos(theta)
+y = np.sin(theta)
+
+axes.plot(x, y, 'b')
+axes.plot([0,1],[0,0],'k')
+axes.plot([1,1],[0,1],'k')
+axes.plot([1,0],[1,1],'k')
+axes.plot([0,0],[1,0],'k')
+
+for p in pts:
+    if p[0]**2+p[1]**2 <=1:
+        axes.plot(p[0], p[1], 'go')
+    else:
+        axes.plot(p[0], p[1], 'ro')
+axes.set_aspect('equal')
+plt.gca().set_facecolor('#f4f4f4') 
+plt.gcf().patch.set_facecolor('#f4f4f4')
+plt.show()
+```  
+
+<p align="center">
+  <img src="/posts/montecarlo1/pi.png" alt="Quarter circle inscribe in a unit square" width="600" height="400"/>
+</p>
+
+
+we get,   
+
+
+\begin{align*}
+\frac{\text{Area of the quarter of a unit circle: C}}{\text{Area of a unit square: S}}&= \frac{\frac{\pi}{4}}{1}=\frac{\pi}{4}\hspace{4mm}\implies \pi = \frac{4C}{S}
+\end{align*}  
+
+  
+
+<p style="text-align: justify">
+    The above relation tells us some interesting fact. If we uniformly create as many points as possible inside the square then the number of points inside the circle will be approximately 4 times the number of the points outside the circular region.
+</p>
+
+```{r}
+#| code-fold: false
+monte_carlo_pi <- function(n) {
+  inside_circle <- 0
+  for (i in 1:n) {
+    x <- runif(1)
+    y <- runif(1)
+    if (x^2 + y^2 <= 1) {
+      inside_circle <- inside_circle + 1
+    }
+  }
+  pi_estimate <- (inside_circle / n) * 4
+  return(pi_estimate)
+}
+
+n <- 10000
+cat(sprintf("Monte Carlo estimated value of π from %d points = %f\n", n, monte_carlo_pi(n)))
+
+```  
+
 
 That's all for this post.  
 

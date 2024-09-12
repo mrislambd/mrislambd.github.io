@@ -1,21 +1,27 @@
 ---
-image: "/_assets/images/giphy.gif"
+toc: false
 ---  
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
      crossorigin="anonymous"></script>  
-     
-<p align="center">
-    <img src="_assets/images/giphy.gif" alt="galaxy">
-</p>
 
-<div style="text-align: justify">
-Welcome to my website! I am currently a Ph.D. candidate in the Mathematics Department at Florida State University, where I also serve as a Graduate Teaching Assistant. My academic journey has been both diverse and enriching, spanning multiple institutions and fields of study. <br>
-<br>
-Before joining FSU, I earned a second master’s degree in Mathematics from Youngstown State University in Ohio, USA. Prior to that, I completed my undergraduate degree in Mathematics at the University of Dhaka (DU), Bangladesh, followed by a one-year integrated master’s program in Applied Mathematics at the same institution.<br>
-<br>
-After graduating from DU, I gained valuable industry experience by working for two years in the life insurance sector in Dhaka, Bangladesh. In pursuit of higher education and advanced research opportunities, I relocated to the United States in August 2018.<br>
-<br>
-As a lifelong student and researcher of mathematics, my research interests are centered around Theoretical Machine Learning, Computational Finance, and various other areas of applied mathematics. I am passionate about advancing knowledge in these fields and contributing to their practical applications.
+## Rafiq Islam  
+<p style="text-align: justify"><img align="right" src='/_assets/images/profile.png' class='oval-image' alt='Profile Picture' style='align-right; margin-left: 25px; margin-bottom: 10px;'><br>
+    Ph.D. Candidate in Mathematics  
+    <a href='https://fsu.edu' target='_blank' style='color: #782F40; text-decoration:none'>Florida State University</a><br>
+    <br>
+    <span style='font-size: 1.1em; font-weight: bold; margin-top: 50px; margin-bottom: 50px;color: #782F40'>Contact</span>  
+    Email: <a href="mailto:mislam@math.fsu.edu" style="text-decoration:none"> mislam@math.fsu.edu</a>  
+    Office: <a href="https://maps.app.goo.gl/p25RvKR6jiecRYsG9" target="_blank" style="text-decoration:none"> James J. Love Building: Room 331A</a>  
+    Office Hours: On appointments
+</p>  
 
-</div>
+<br>
+
+---  
+
+<p style="text-align: justify">    
+    I am currently a Ph.D. candidate and a Graduate Teaching Assistant (GTA) in the Mathematics Department at Florida State University. I am actively involved in research in the area of Data Science, Machine Learning, and Financial Mathematics under the supervision of professor <a href="https://www.math.fsu.edu/DepartmentNews/Articles/Fac_Zhu.math" style="text-decoration:none" target="_blank"> Lingjiong Zhu</a>.<br>
+    <br>
+     My academic journey has been both diverse and enriching, spanning multiple institutions and fields of study. Before joining FSU, I obtained a master’s degree in Mathematics from Youngstown State University in Ohio, USA. Prior to that, I completed my undergraduate degree in Mathematics at the University of Dhaka (DU), Bangladesh, followed by a one-year integrated master’s program in Applied Mathematics at the same institution.
+</p>  

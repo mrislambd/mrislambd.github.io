@@ -1,0 +1,43 @@
+---
+title: "Python Implementation of General Machine Learning Algorithms"
+date: "2024-08-29"
+author: Rafiq Islam
+categories: [Data Science, Machine Learning, Artificial Intelligence]
+search: true
+lightbox: true
+image: ml.jpeg
+listing: 
+    contents: "/../../posts"
+    max-items: 3
+    type: grid
+    categories: false
+    date-format: full
+    fields: [image, date, title, author, reading-time]
+---  
+
+<p align="center">
+  <img src="/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400"/>
+</p>
+
+<p style="text-align: justify">
+    This blog post is my personal repository of most common and useful machine learning algorithms using Python. In summer 2024, I participated in a [Data Science Boot Camp by the Erdos Institute](https://www.erdosinstitute.org/){target="_blank" style="text-decoration:none"}. Therefore, the topics listed here mostly align with their bootcamp syllabus. Note that, I did not copy their materials directly that affects the copyright issues. I wrote evrything in my own words and used new dataset.
+</p>
+
+## Regressions  
+### Parametric Regressions  
+1. [Simple Linear Regression](/machinelearning/simplelinreg/index.qmd)
+2. [Multiple Linear Regression](/machinelearning/multiplelinreg/index.qmd)  
+
+### Non-Parametric Regressions  
+1. [K Nearest Neighbors: Regression and Classification](/machinelearning/knn/index.qmd)
+
+## Classifications  
+
+## Time Series  
+
+## Ensemble Learning    
+
+## Neural Networks  
+
+
+**You may also like**

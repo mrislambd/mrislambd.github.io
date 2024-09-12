@@ -2,142 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mrislambd.github.io/blog.html</loc>
-    <lastmod>2024-07-14T07:26:40.000Z</lastmod>
+    <lastmod>2024-08-29T16:23:33.036Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/cv.html</loc>
     <lastmod>2024-07-21T21:16:24.000Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/portfolio/desgld/index.html</loc>
-    <lastmod>2024-07-21T22:05:59.000Z</lastmod>
+    <loc>https://mrislambd.github.io/portfolio/dsp/medicalcost/notebook.html</loc>
+    <lastmod>2024-08-30T20:01:00.360Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/teaching/fall21.html</loc>
-    <lastmod>2024-07-14T07:33:18.000Z</lastmod>
+    <loc>https://mrislambd.github.io/portfolio/dsp/dp-nlp/index.html</loc>
+    <lastmod>2024-07-21T21:58:08.000Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/teaching/fall22.html</loc>
-    <lastmod>2024-07-14T07:33:08.000Z</lastmod>
+    <loc>https://mrislambd.github.io/portfolio.html</loc>
+    <lastmod>2024-09-02T03:06:45.644Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/codepages/medicalcost/index.html</loc>
+    <lastmod>2024-09-11T23:07:45.669Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/research.html</loc>
+    <lastmod>2024-09-10T13:54:36.904Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/index.html</loc>
+    <lastmod>2024-08-31T00:18:57.446Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/teaching/sp24.html</loc>
     <lastmod>2024-07-14T07:32:32.000Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/index.html</loc>
-    <lastmod>2024-07-14T07:27:06.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/talks/2023-11-20-candi.html</loc>
-    <lastmod>2024-07-14T07:32:05.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/publication/pub2/index.html</loc>
-    <lastmod>2024-07-21T06:00:20.000Z</lastmod>
+    <loc>https://mrislambd.github.io/teaching.html</loc>
+    <lastmod>2024-07-14T07:27:48.000Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/sgdlinreg/index.html</loc>
     <lastmod>2024-08-08T23:53:17.939Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/posts/lu/index.html</loc>
-    <lastmod>2024-07-18T03:49:37.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/welcome/index.html</loc>
-    <lastmod>2024-07-20T07:18:43.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/socialshare/index.html</loc>
-    <lastmod>2024-08-09T01:03:32.401Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/montecarlo1/index.html</loc>
-    <lastmod>2024-08-11T09:02:13.379Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/research.html</loc>
-    <lastmod>2024-07-21T05:38:24.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching.html</loc>
-    <lastmod>2024-07-14T07:27:48.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/mathbiology/index.html</loc>
-    <lastmod>2024-07-17T22:49:02.000Z</lastmod>
-  </url>
-  <url>
     <loc>https://mrislambd.github.io/posts/bayesianinference/index.html</loc>
     <lastmod>2024-08-09T01:28:41.694Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/posts/eigen/index.html</loc>
-    <lastmod>2024-07-18T05:16:27.000Z</lastmod>
+    <loc>https://mrislambd.github.io/posts/machinelearning/index.html</loc>
+    <lastmod>2024-09-11T23:13:29.013Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/posts/someproofs/index.html</loc>
-    <lastmod>2024-08-08T23:55:12.205Z</lastmod>
+    <loc>https://mrislambd.github.io/publication/pub2/index.html</loc>
+    <lastmod>2024-07-21T06:00:20.000Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/posts/matmul/index.html</loc>
-    <lastmod>2024-08-09T01:23:03.964Z</lastmod>
+    <loc>https://mrislambd.github.io/machinelearning/simplelinreg/index.html</loc>
+    <lastmod>2024-08-29T16:38:14.869Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/posts/matrixrep/index.html</loc>
-    <lastmod>2024-08-08T23:52:23.287Z</lastmod>
+    <loc>https://mrislambd.github.io/teaching/fall22.html</loc>
+    <lastmod>2024-07-14T07:33:08.000Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/publication/pub1/index.html</loc>
-    <lastmod>2024-07-21T06:27:41.000Z</lastmod>
+    <loc>https://mrislambd.github.io/machinelearning/multiplelinreg/index.html</loc>
+    <lastmod>2024-09-03T07:13:52.407Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/talks/2020-04-26-project.html</loc>
-    <lastmod>2024-07-14T07:31:42.000Z</lastmod>
+    <loc>https://mrislambd.github.io/machinelearning/knn/index.html</loc>
+    <lastmod>2024-09-02T18:07:24.844Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/talks/2023-10-05-st-op.html</loc>
-    <lastmod>2024-07-14T07:31:55.000Z</lastmod>
+    <loc>https://mrislambd.github.io/posts/dsa/index.html</loc>
+    <lastmod>2024-09-11T23:17:05.456Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/about.html</loc>
-    <lastmod>2024-07-12T03:22:46.000Z</lastmod>
+    <loc>https://mrislambd.github.io/portfolio/dsp/medicalcost/index.html</loc>
+    <lastmod>2024-09-11T23:06:45.294Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/teaching/sp23.html</loc>
-    <lastmod>2024-07-14T07:32:43.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching/fall23.html</loc>
-    <lastmod>2024-07-14T07:32:53.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/teaching/f18-f21.html</loc>
-    <lastmod>2024-07-14T07:33:28.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/portfolio/dp-nlp/index.html</loc>
-    <lastmod>2024-07-21T21:58:08.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/portfolio.html</loc>
-    <lastmod>2024-07-21T21:59:00.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/datacollection/index.html</loc>
-    <lastmod>2024-08-16T00:18:59.127Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mrislambd.github.io/posts/webtemplate/index.html</loc>
-    <lastmod>2024-08-15T17:11:22.055Z</lastmod>
+    <loc>https://mrislambd.github.io/posts/statisticaltalk/index.html</loc>
+    <lastmod>2024-09-12T00:17:42.299Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/decisiontree/index.html</loc>
     <lastmod>2024-08-26T05:33:59.037Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/posts/dsa/index.html</loc>
-    <lastmod>2024-08-21T23:29:22.779Z</lastmod>
+    <loc>https://mrislambd.github.io/posts/probability/index.html</loc>
+    <lastmod>2024-09-11T23:14:55.654Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/montecarlo1/index.html</loc>
+    <lastmod>2024-09-12T00:15:48.352Z</lastmod>
   </url>
 </urlset>

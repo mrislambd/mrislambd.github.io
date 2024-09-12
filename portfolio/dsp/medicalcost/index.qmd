@@ -1,0 +1,37 @@
+---
+title: "Insurance Cost Forecast by using Linear Regression"
+author: "Rafiq Islam"
+date: 2024-08-30
+collection: portfolio
+citation: true
+search: true
+lightbox: true
+image: ins.jpeg
+---  
+
+<p align="center">
+  <img src="/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400"/>
+</p>
+
+[Notebook](/codepages/medicalcost/index.qmd){target="_blank" style="text-decoration:none"}  
+
+This is a general template of how a data science project should be done. It should contain the following attributes.
+
+## Project Overview  
+
+<p style="text-align: justify">
+    This predictive modeling project involves personal medical data to predict the medical insurance cost by using a linear regression model.
+</p>
+
+## Dataset  
+The dataset used in this project is collected from [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance)
+
+## Stakeholders  
+
+## Key Performance Indicators (KPIs)  
+
+## Modeling  
+
+## Results and Outcomes  
+
+## Future Directions  
