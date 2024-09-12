@@ -606,7 +606,7 @@
     "href": "codepages/medicalcost/index.html#final-model",
     "title": "Insurance Cost Forecast by using Linear Regression",
     "section": "Final Model",
-    "text": "Final Model\n\nmodel = LinearRegression()\nmodel.fit(insurance_train[['age','bmi']],insurance_train.charges.values)\nprint(\"RMSE on the training set: \",\n    np.round(np.sqrt(mean_squared_error(insurance_train.charges.values, model.predict(insurance_train[['age','bmi']]))),2)\n)\n\nprint(\"RMSE on the test set: \",\n    np.round(np.sqrt(mean_squared_error(insurance_test.charges.values, model.predict(insurance_test[['age','bmi']]))),2)\n)\n\nRMSE on the training set:  11444.53\nRMSE on the test set:  11392.1"
+    "text": "Final Model\nThis part needs to be updated\n\nmodel = LinearRegression()\nmodel.fit(insurance_train[['age','bmi']],insurance_train.charges.values)\nprint(\"RMSE on the training set: \",\n    np.round(np.sqrt(mean_squared_error(insurance_train.charges.values, model.predict(insurance_train[['age','bmi']]))),2)\n)\n\nprint(\"RMSE on the test set: \",\n    np.round(np.sqrt(mean_squared_error(insurance_test.charges.values, model.predict(insurance_test[['age','bmi']]))),2)\n)\n\nRMSE on the training set:  11444.53\nRMSE on the test set:  11392.1"
   },
   {
     "objectID": "posts/dsa/index.html#arrays-and-lists",

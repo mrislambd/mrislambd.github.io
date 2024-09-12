@@ -167,6 +167,16 @@ gtag('config', 'G-Z5NP67GHFC', { 'anonymize_ip': true});
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/mohammad-rafiqul-islam/" target="_blank"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/mrislambd" target="_blank"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
               <div class="quarto-navbar-tools">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -260,7 +270,7 @@ gtag('config', 'G-Z5NP67GHFC', { 'anonymize_ip': true});
 <h1>Data Gathering, Defining Stakeholders and KPIs</h1>
 <section id="data-loading" class="level2">
 <h2 class="anchored" data-anchor-id="data-loading">Data Loading</h2>
-<div id="2d9c68d5" class="cell" data-execution_count="1">
+<div id="2c32c65c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>insurance <span class="op">=</span> pd.read_csv(<span class="st">'insurance.csv'</span>)</span>
@@ -345,7 +355,7 @@ gtag('config', 'G-Z5NP67GHFC', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h2>
 <section id="data-information" class="level3">
 <h3 class="anchored" data-anchor-id="data-information">Data Information</h3>
-<div id="742caf09" class="cell" data-execution_count="2">
+<div id="6d432fa6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>insurance.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -369,7 +379,7 @@ memory usage: 73.3+ KB</code></pre>
 <section id="data-description" class="level3">
 <h3 class="anchored" data-anchor-id="data-description">Data Description</h3>
 <p>Statistical properties of the non-categorical variables</p>
-<div id="a802364c" class="cell" data-execution_count="3">
+<div id="a06171ed" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(insurance.describe().T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           count          mean           std        min         25%       50%  \
@@ -388,7 +398,7 @@ charges   16639.912515  63770.42801  </code></pre>
 </section>
 <section id="analyis-of-the-continuous-variables" class="level3">
 <h3 class="anchored" data-anchor-id="analyis-of-the-continuous-variables">Analyis of the continuous variables</h3>
-<div id="2813a719" class="cell" data-execution_count="4">
+<div id="a1a13f3a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -412,7 +422,7 @@ charges   16639.912515  63770.42801  </code></pre>
 </section>
 <section id="analysis-of-the-categorical-variables" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-of-the-categorical-variables">Analysis of the categorical variables</h3>
-<div id="6bcee2ad" class="cell" data-execution_count="5">
+<div id="5495da03" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">12</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>grid <span class="op">=</span> fig.add_gridspec(<span class="dv">3</span>, <span class="dv">2</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -450,7 +460,7 @@ charges   16639.912515  63770.42801  </code></pre>
 </section>
 <section id="analysis-of-the-correlation-of-continuous-variables" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-of-the-correlation-of-continuous-variables">Analysis of the correlation of continuous variables</h3>
-<div id="128d35b8" class="cell" data-execution_count="6">
+<div id="7ee314ac" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>corr_matrix <span class="op">=</span> insurance[[<span class="st">'age'</span>,<span class="st">'bmi'</span>,<span class="st">'children'</span>,<span class="st">'charges'</span>]].corr()</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, linewidths<span class="op">=</span><span class="fl">0.5</span>)</span>
@@ -469,7 +479,7 @@ charges   16639.912515  63770.42801  </code></pre>
 </section>
 <section id="relationsship-between-features-and-target" class="level3">
 <h3 class="anchored" data-anchor-id="relationsship-between-features-and-target">Relationsship Between Features and Target</h3>
-<div id="7b0905b8" class="cell" data-execution_count="7">
+<div id="3a11c4f1" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">5</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">25</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'age'</span>, y<span class="op">=</span><span class="st">'charges'</span>, data<span class="op">=</span>insurance, hue<span class="op">=</span><span class="st">'sex'</span> ,ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Age vs Charges'</span>)</span>
@@ -496,7 +506,7 @@ charges   16639.912515  63770.42801  </code></pre>
 </section>
 <section id="check-for-outliers" class="level3">
 <h3 class="anchored" data-anchor-id="check-for-outliers">Check for Outliers</h3>
-<div id="3d519bf8" class="cell" data-execution_count="8">
+<div id="07968d60" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(y<span class="op">=</span><span class="st">'charges'</span>, data<span class="op">=</span>insurance)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of Charges'</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.gca().set_facecolor(<span class="st">'#f4f4f4'</span>) </span>
@@ -516,7 +526,7 @@ charges   16639.912515  63770.42801  </code></pre>
 <h2 class="anchored" data-anchor-id="data-pre-processing-for-modeling">Data Pre-processing for Modeling</h2>
 <section id="categorical-variables" class="level3">
 <h3 class="anchored" data-anchor-id="categorical-variables">Categorical Variables</h3>
-<div id="a911edcb" class="cell" data-execution_count="9">
+<div id="261b1071" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Binary Encoding for the variables with two categories</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>insurance[<span class="st">'sex'</span>] <span class="op">=</span> insurance[<span class="st">'sex'</span>].<span class="bu">map</span>({<span class="st">'male'</span>:<span class="dv">1</span>, <span class="st">'female'</span>:<span class="dv">0</span>})</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>insurance[<span class="st">'smoker'</span>] <span class="op">=</span> insurance[<span class="st">'smoker'</span>].<span class="bu">map</span>({<span class="st">'yes'</span>:<span class="dv">1</span>, <span class="st">'no'</span>:<span class="dv">0</span>})</span>
@@ -531,7 +541,7 @@ charges   16639.912515  63770.42801  </code></pre>
 </section>
 <section id="continuous-variable" class="level3">
 <h3 class="anchored" data-anchor-id="continuous-variable">Continuous Variable</h3>
-<div id="b47578e0" class="cell" data-execution_count="10">
+<div id="219f63b6" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Round the continuous charge variable to 2 decimal places</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>insurance[<span class="st">'charges'</span>] <span class="op">=</span> insurance[<span class="st">'charges'</span>].<span class="bu">round</span>(<span class="dv">2</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -630,7 +640,7 @@ charges   16639.912515  63770.42801  </code></pre>
 </section>
 <section id="check-for-multicollinearity" class="level3">
 <h3 class="anchored" data-anchor-id="check-for-multicollinearity">Check for Multicollinearity</h3>
-<div id="88072e56" class="cell" data-execution_count="11">
+<div id="1d135d5e" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.stats.outliers_influence <span class="im">import</span> variance_inflation_factor</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> insurance.drop(<span class="st">'charges'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -654,7 +664,7 @@ charges   16639.912515  63770.42801  </code></pre>
 </section>
 <section id="residual-adjustment" class="level3">
 <h3 class="anchored" data-anchor-id="residual-adjustment">Residual Adjustment</h3>
-<div id="9dd92105" class="cell" data-execution_count="12">
+<div id="6c6b1bf5" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>reg <span class="op">=</span> LinearRegression()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>reg.fit(insurance.age.values.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>), insurance.bmi.values)</span>
@@ -663,13 +673,13 @@ charges   16639.912515  63770.42801  </code></pre>
 </section>
 <section id="interaction-term-adjustment" class="level3">
 <h3 class="anchored" data-anchor-id="interaction-term-adjustment">Interaction Term Adjustment</h3>
-<div id="16b45adc" class="cell" data-execution_count="13">
+<div id="8fa82bac" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>insurance[<span class="st">'bmi_age_interact'</span>] <span class="op">=</span> insurance[<span class="st">'bmi'</span>]<span class="op">*</span>insurance[<span class="st">'age'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="z-score-normalization" class="level3">
 <h3 class="anchored" data-anchor-id="z-score-normalization">Z-Score Normalization</h3>
-<div id="cd3f0b6e" class="cell" data-execution_count="14">
+<div id="55b6795f" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> [<span class="dv">18</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">70</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'18-30'</span>,<span class="st">'31-40'</span>,<span class="st">'41-50'</span>,<span class="st">'51-60'</span>,<span class="st">'61-70'</span>]</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>insurance[<span class="st">'age_group'</span>] <span class="op">=</span> pd.cut(insurance[<span class="st">'age'</span>], bins<span class="op">=</span> bins, labels<span class="op">=</span>labels)</span>
@@ -786,7 +796,7 @@ charges   16639.912515  63770.42801  </code></pre>
 </div>
 </div>
 <p>To check any missing values</p>
-<div id="46cede9f" class="cell" data-execution_count="15">
+<div id="4dec1c7d" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>insurance.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -812,7 +822,7 @@ memory usage: 127.1 KB</code></pre>
 </div>
 </div>
 <p>Therefore, there are some missing data.</p>
-<div id="0c470e15" class="cell" data-execution_count="16">
+<div id="7a6f6611" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>insurance <span class="op">=</span> insurance.dropna()</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>insurance.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -845,20 +855,20 @@ memory usage: 130.3 KB</code></pre>
 <h1>Model</h1>
 <section id="modelling-approaches" class="level2">
 <h2 class="anchored" data-anchor-id="modelling-approaches">Modelling Approaches</h2>
-<div id="87caa769" class="cell" data-execution_count="17">
+<div id="fbc05ee3" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split, KFold</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsRegressor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1d85d4cc" class="cell" data-execution_count="18">
+<div id="83dcc60d" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>insurance_train, insurance_test <span class="op">=</span> train_test_split(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    insurance, test_size<span class="op">=</span><span class="fl">0.2</span>,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    random_state<span class="op">=</span><span class="dv">111</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="389fb49d" class="cell" data-execution_count="19">
+<div id="3a322596" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-overflow-scroll code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>kfold <span class="op">=</span> KFold(<span class="dv">9</span>, shuffle<span class="op">=</span><span class="va">True</span>, random_state<span class="op">=</span><span class="dv">111</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>mses <span class="op">=</span> np.zeros((<span class="dv">9</span>,<span class="dv">9</span>))</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">12</span></span>
@@ -958,7 +968,7 @@ memory usage: 130.3 KB</code></pre>
 <span id="cb24-97"><a href="#cb24-97" aria-hidden="true" tabindex="-1"></a>    mses[<span class="dv">7</span>,i] <span class="op">=</span> mean_squared_error(insurance_train_test.charges.values, prediction7)</span>
 <span id="cb24-98"><a href="#cb24-98" aria-hidden="true" tabindex="-1"></a>    mses[<span class="dv">8</span>,i] <span class="op">=</span> mean_squared_error(insurance_train_test.charges.values, prediction8)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="34a91fd8" class="cell" data-execution_count="20">
+<div id="fc899e55" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-overflow-wrap code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">9.5</span>,<span class="dv">5</span>))</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(np.zeros(<span class="dv">9</span>), mses[<span class="dv">0</span>,:], s<span class="op">=</span><span class="dv">60</span>, c<span class="op">=</span><span class="st">'white'</span>, edgecolors<span class="op">=</span><span class="st">'black'</span>, label<span class="op">=</span> <span class="st">'Single Split'</span>)</span>
@@ -986,7 +996,7 @@ memory usage: 130.3 KB</code></pre>
 </div>
 </div>
 </div>
-<div id="3efe2070" class="cell" data-execution_count="21">
+<div id="c1f34cd8" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.mean(np.sqrt(mses), axis<span class="op">=</span><span class="dv">1</span>))</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimum and the position</span></span>
@@ -1004,7 +1014,8 @@ Minimum RMSE=11436.298421497275
 </section>
 <section id="final-model" class="level2">
 <h2 class="anchored" data-anchor-id="final-model">Final Model</h2>
-<div id="286dfb01" class="cell" data-execution_count="22">
+<p>This part needs to be updated</p>
+<div id="42eda5c6" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>model.fit(insurance_train[[<span class="st">'age'</span>,<span class="st">'bmi'</span>]],insurance_train.charges.values)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RMSE on the training set: "</span>,</span>
@@ -1897,23 +1908,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb30-429"><a href="#cb30-429" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-430"><a href="#cb30-430" aria-hidden="true" tabindex="-1"></a><span class="fu">## Final Model  </span></span>
 <span id="cb30-431"><a href="#cb30-431" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-434"><a href="#cb30-434" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb30-435"><a href="#cb30-435" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb30-436"><a href="#cb30-436" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb30-437"><a href="#cb30-437" aria-hidden="true" tabindex="-1"></a>model.fit(insurance_train[[<span class="st">'age'</span>,<span class="st">'bmi'</span>]],insurance_train.charges.values)</span>
-<span id="cb30-438"><a href="#cb30-438" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RMSE on the training set: "</span>,</span>
-<span id="cb30-439"><a href="#cb30-439" aria-hidden="true" tabindex="-1"></a>    np.<span class="bu">round</span>(np.sqrt(mean_squared_error(insurance_train.charges.values, model.predict(insurance_train[[<span class="st">'age'</span>,<span class="st">'bmi'</span>]]))),<span class="dv">2</span>)</span>
-<span id="cb30-440"><a href="#cb30-440" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-441"><a href="#cb30-441" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-442"><a href="#cb30-442" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RMSE on the test set: "</span>,</span>
-<span id="cb30-443"><a href="#cb30-443" aria-hidden="true" tabindex="-1"></a>    np.<span class="bu">round</span>(np.sqrt(mean_squared_error(insurance_test.charges.values, model.predict(insurance_test[[<span class="st">'age'</span>,<span class="st">'bmi'</span>]]))),<span class="dv">2</span>)</span>
-<span id="cb30-444"><a href="#cb30-444" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-445"><a href="#cb30-445" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb30-446"><a href="#cb30-446" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-447"><a href="#cb30-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-432"><a href="#cb30-432" aria-hidden="true" tabindex="-1"></a>This part needs to be updated</span>
+<span id="cb30-433"><a href="#cb30-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-436"><a href="#cb30-436" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb30-437"><a href="#cb30-437" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb30-438"><a href="#cb30-438" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb30-439"><a href="#cb30-439" aria-hidden="true" tabindex="-1"></a>model.fit(insurance_train[[<span class="st">'age'</span>,<span class="st">'bmi'</span>]],insurance_train.charges.values)</span>
+<span id="cb30-440"><a href="#cb30-440" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RMSE on the training set: "</span>,</span>
+<span id="cb30-441"><a href="#cb30-441" aria-hidden="true" tabindex="-1"></a>    np.<span class="bu">round</span>(np.sqrt(mean_squared_error(insurance_train.charges.values, model.predict(insurance_train[[<span class="st">'age'</span>,<span class="st">'bmi'</span>]]))),<span class="dv">2</span>)</span>
+<span id="cb30-442"><a href="#cb30-442" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-443"><a href="#cb30-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-444"><a href="#cb30-444" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RMSE on the test set: "</span>,</span>
+<span id="cb30-445"><a href="#cb30-445" aria-hidden="true" tabindex="-1"></a>    np.<span class="bu">round</span>(np.sqrt(mean_squared_error(insurance_test.charges.values, model.predict(insurance_test[[<span class="st">'age'</span>,<span class="st">'bmi'</span>]]))),<span class="dv">2</span>)</span>
+<span id="cb30-446"><a href="#cb30-446" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-447"><a href="#cb30-447" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb30-448"><a href="#cb30-448" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-449"><a href="#cb30-449" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-450"><a href="#cb30-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-451"><a href="#cb30-451" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-452"><a href="#cb30-452" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
@@ -1937,18 +1950,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mrislambd" target="_blank">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/mohammad-rafiqul-islam/" target="_blank">
-      <i class="bi bi-linkedin" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
     <a class="nav-link" href="https://twitter.com/rafiqr35" target="_blank">
       <i class="bi bi-twitter" role="img">
 </i> 
@@ -1957,6 +1958,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <li class="nav-item compact">
     <a class="nav-link" href="https://youtube.com/@quanttube" target="_blank">
       <i class="bi bi-youtube" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:rafiqfsu@gmail.com?subject&amp;body" target="_blank">
+      <i class="bi bi-envelope" role="img">
 </i> 
     </a>
   </li>  

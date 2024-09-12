@@ -39,6 +39,7 @@ website:
         target: _blank
       
       
+      
   page-footer: 
     background: "#782F40"
     left: "Powered by [Quarto](https://quarto.org/) <?quarto.version?>"
@@ -52,6 +53,9 @@ website:
         target: _blank
       - icon: youtube
         href: https://youtube.com/@quanttube
+        target: _blank
+      - icon: envelope
+        href: mailto:rafiqfsu@gmail.com?subject&body
         target: _blank
       
 
