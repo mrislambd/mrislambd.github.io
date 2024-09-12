@@ -387,6 +387,8 @@ print('Minimum RMSE={} \n Model {}'.format(min(np.mean(np.sqrt(mses), axis=1)),n
 
 ## Final Model  
 
+This part needs to be updated
+
 ```{python}
 #| code-fold: false
 model = LinearRegression()

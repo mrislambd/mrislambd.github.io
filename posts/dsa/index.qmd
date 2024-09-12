@@ -2,7 +2,7 @@
 title: "Data Structure and Algorithms: Basic Programming Hacks"
 date: "2024-09-11"
 author: Rafiq Islam
-categories: [Programming, Computer Science, DSA]
+categories: [Programming, Computer Science, DSA, Algorithms]
 citation: true
 search: true
 image: dsa.jpeg

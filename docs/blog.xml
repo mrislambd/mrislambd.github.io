@@ -23,7 +23,7 @@
 <p align="center">
 <img src="https://mrislambd.github.io/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400">
 </p>
-<div id="7c3f51b0" class="cell" data-execution_count="1">
+<div id="7c99a4cb" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -83,7 +83,7 @@ font-style: inherit;">return</span> wrapper</span></code></pre></div>
 </div>
 <section id="linked-list" class="level2">
 <h2 class="anchored" data-anchor-id="linked-list">Linked List</h2>
-<div id="f3040ef1" class="cell" data-execution_count="2">
+<div id="03958fb3" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="kw" style="color: #003B4F;
@@ -221,7 +221,7 @@ font-style: inherit;">print</span>()</span></code></pre></div>
 </div>
 <section id="reverse-a-linked-list-type-i" class="level3">
 <h3 class="anchored" data-anchor-id="reverse-a-linked-list-type-i">1. Reverse a linked list: Type I</h3>
-<div id="ad67776b" class="cell" data-execution_count="3">
+<div id="11f05893" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -302,7 +302,7 @@ Reversed List
 </section>
 <section id="reverse-a-linked-list-type-ii" class="level3">
 <h3 class="anchored" data-anchor-id="reverse-a-linked-list-type-ii">2. Reverse a linked list: Type II</h3>
-<div id="15a3acf9" class="cell" data-execution_count="4">
+<div id="d0d8abfe" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -466,7 +466,7 @@ Reversed List between 2 and 4
 <p style="text-align: justify">
 One way to solve this problem is using brute force solution, that is using two nested loops. But this method takes the time complexity of <img src="https://latex.codecogs.com/png.latex?O(n%5Ctimes%20m)"> given that the lenght of set A is <img src="https://latex.codecogs.com/png.latex?n"> and set B is <img src="https://latex.codecogs.com/png.latex?m">. And here is how it is:
 </p>
-<div id="38259ba9" class="cell" data-execution_count="5">
+<div id="73ef86ae" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">@time_required</span></span>
@@ -543,7 +543,7 @@ font-style: inherit;">print</span>(intersection_of_two_sets(A,B))</span></code><
 </div>
 </div>
 <p><strong>Hash Map Approach:</strong> In hash map approach, we can solve the same problem but in this case the time and space complexity is <img src="https://latex.codecogs.com/png.latex?O(n+m)"></p>
-<div id="089cde7a" class="cell" data-execution_count="6">
+<div id="7d6083b4" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">@time_required</span></span>
@@ -636,7 +636,7 @@ font-style: inherit;">print</span>(intersection_of_two_sets(A,B))</span></code><
 </div>
 <p>The reason we’re getting <img src="https://latex.codecogs.com/png.latex?%5B8,6%5D"> instead of <img src="https://latex.codecogs.com/png.latex?%5B6,8%5D"> is because sets in Python are unordered collections, meaning that when you convert the lists <img src="https://latex.codecogs.com/png.latex?A"> and <img src="https://latex.codecogs.com/png.latex?B"> to sets, the order of elements is not preserved. So, when we iterate over <code>set_A</code> or <code>set_A</code>, the order can change.</p>
 <p><strong>Better Approach:</strong> If we want to maintain the order of the elements in the original list <img src="https://latex.codecogs.com/png.latex?A"> or <img src="https://latex.codecogs.com/png.latex?B">, we can iterate over the original list directly rather than converting it to a set. Here’s how:</p>
-<div id="45950f6d" class="cell" data-execution_count="7">
+<div id="459dc03c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">@time_required</span></span>
@@ -806,6 +806,7 @@ Programming Hacks.”</span> September 11, 2024. <a href="https://mrislambd.gith
   <category>Programming</category>
   <category>Computer Science</category>
   <category>DSA</category>
+  <category>Algorithms</category>
   <guid>https://mrislambd.github.io/posts/dsa/</guid>
   <pubDate>Wed, 11 Sep 2024 04:00:00 GMT</pubDate>
   <media:content url="https://mrislambd.github.io/posts/dsa/dsa.jpeg" medium="image" type="image/jpeg"/>
