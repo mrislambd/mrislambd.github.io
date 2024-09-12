@@ -1,11 +1,11 @@
 ---
-title: "Data Structure and Algorithms: Quick Notes"
-date: "2024-08-21"
+title: "Data Structure and Algorithms: Basic Programming Hacks"
+date: "2024-09-11"
 author: Rafiq Islam
-categories: [Data Science, Machine Learning, Computer Science]
+categories: [Programming, Computer Science, DSA]
 citation: true
 search: true
-draft: true
+image: dsa.jpeg
 lightbox: true
 listing: 
     contents: "/../../posts"
@@ -14,16 +14,181 @@ listing:
     categories: false
     date-format: full
     fields: [image, date, title, author, reading-time]
----  
+---   
 
-## Binary Search  
+<p align="center">
+  <img src="/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400"/>
+</p>
 
 ```{python}
-def binary_search(arr, k):
-    """
-    arr:: sorted array
-    k:: search item; float or integer
-    """
-    low, high=0, len(arr)-1
+import time
+
+def time_required(func):
+    def wrapper(*args, **kwargs):
+        starting = time.perf_counter()
+        output = func(*args, **kwargs)
+        ending = time.perf_counter()
+        elapsed = ending - starting
+        print(f'Time required: {elapsed:.6f} seconds')
+        return output
+    return wrapper
+```
+
+## Linked List  
+
+```{python}
+class Node:
+    def __init__(self, value, next=None) -> None:
+        self.value = value
+        self.next = next
+
+def linklist(arr):
+    if not arr:
+        return None 
+    head = Node(arr[0])
+    current = head 
+    for value in arr[1:]:
+        current.next = Node(value)
+        current = current.next 
+    return head 
+
+def print_linklist(head):
+    current = head
+    print("[", end="")
+    while current:
+        print(current.value, end=", " if current.next else "]")
+        current = current.next
+    print()
+```  
+
+### 1. Reverse a linked list: Type I  
+
+```{python}
+#| code-fold: false
+def reverse(head):
+    prev = None 
+    curr = head 
+    while curr:
+        next = curr.next 
+        curr.next = prev 
+        prev = curr 
+        curr = next 
+    return prev 
+
+h = linklist([1,2,3,4,5])
+print('Original List:')
+print_linklist(h)
+
+h_reversed = reverse(h)
+print('Reversed List')
+print_linklist(h_reversed)
+```  
+
+### 2. Reverse a linked list: Type II  
+
+```{python}
+#| code-fold: false 
+def reverse_in_between(head, left, right):
+    dummy = Node(0, head)
+    leftPrev = dummy
+    curr = head 
+
+    for _ in range(left-1):
+        leftPrev = curr 
+        curr = curr.next 
     
+    prev = None 
+    tail = curr 
+
+    for _ in range(right - left + 1):
+        next = curr.next 
+        curr.next  = prev 
+        prev = curr 
+        curr = next 
+    
+    leftPrev.next = prev 
+    tail.next = curr 
+
+    return dummy.next if left != 1 else prev
+
+h = linklist([1,2,3,4,5])
+print('Original List:')
+print_linklist(h)  
+
+h_reversed = reverse_in_between(h,2,4)
+print('Reversed List between 2 and 4')
+print_linklist(h_reversed)
+```
+
+
+## Arrays, Lists, and Strings  
+
+### 1. Intersection of two arrays  
+
+Say you have two arrays. Write a function to get the intersection of the two. For example, if $A=[2,3,5,6,8]$ and $B=[4,6,8]$, then the function should return $[6,8]$  
+
+**Brute Force**  
+<p style="text-align: justify">
+    One way to solve this problem is using brute force solution, that is using two nested loops. But this method takes the time complexity of $O(n\times m)$ given that the lenght of set A is $n$ and set B is $m$. And here is how it is:
+</p>
+
+```{python}
+#| code-fold: false
+@time_required
+def intersection_of_two_sets(A,B):
+    set_A = set(A)
+    set_B = set(B)
+    intersection = []
+    for a in set_A:
+        for b in set_B:
+            if a==b:
+                intersection.append(a)
+    return intersection
+A = [2,3,5,6,8]
+B = [4,6,8]
+print(intersection_of_two_sets(A,B))
+```
+
+
+**Hash Map Approach:**  In hash map approach, we can solve the same problem but in this case the time and space complexity is $O(n+m)$
+```{python}
+#| code-fold: false
+@time_required
+def intersection_of_two_sets(A,B):
+    set_A = set(A)
+    set_B = set(B)
+    if len(set_A) < len(set_B):
+        return [a for a in set_A if a in set_B]
+    return [b for b in set_B if b in set_A]
+
+A = [2,3,5,6,8]
+B = [4,6,8]
+print(intersection_of_two_sets(A,B))
+```  
+
+The reason we're getting $[8,6]$ instead of $[6,8]$ is because sets in Python are unordered collections, meaning that when you convert the lists $A$ and $B$ to sets, the order of elements is not preserved. So, when we iterate over `set_A` or `set_A`, the order can change.  
+
+**Better Approach:** If we want to maintain the order of the elements in the original list $A$ or $B$, we can iterate over the original list directly rather than converting it to a set. Here's how:
+
+```{python}
+#| code-fold: false
+@time_required
+def intersection_of_two_sets(A, B):
+    set_B = set(B)  
+    return [a for a in A if a in set_B]
+
+A = [2, 3, 5, 6, 8]
+B = [4, 6, 8]
+print(intersection_of_two_sets(A, B))
+```  
+
+
+### 2. Max product of $k$ elements from an array of $n$ elements  
+
+<p style="text-align:justify">
+Say we have an array of size $n$. We want to find the maximum of the products of $k$ elements from the array where $k < n$. For example, if we have $A=[1,2,3,4,5,6]$ then the answer is 120, if we have $B=[-3,-4,3,5]$ then the answer is 60.
+</p>  
+
+```{python}
+
 ```

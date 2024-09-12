@@ -3,7 +3,6 @@ title: "Review probabilities"
 date: "2024-08-22"
 author: Rafiq Islam
 categories: [Probability, Statistics]
-draft: true
 citation: true
 search: true
 lightbox: true
@@ -16,6 +15,11 @@ listing:
     date-format: full
     fields: [image, date, title, author, reading-time]
 ---  
+
+
+<p align="center">
+  <img src="/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400"/>
+</p>
 
 ## Introduction  
 

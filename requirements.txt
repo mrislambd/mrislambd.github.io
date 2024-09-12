@@ -182,3 +182,4 @@ xxhash==3.4.1
 yarl==1.9.4
 ucimlrepo==0.0.7
 seaborn==0.13.2
+statsmodel==0.14.2

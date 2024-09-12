@@ -25,49 +25,20 @@ website:
         text: Home
       - href: research.qmd
         text: Research
-      - href: teaching.qmd
-        text: Teaching
       - href: portfolio.qmd
         text: Portfolio
       - href: cv.qmd
         text: CV
       - href: blog.qmd
         text: Blog
-  sidebar: 
-    style: floating
-    border: false
-    alignment: left
-    background: "#f4f4f4"
-    contents: 
-      - text: "<img src='/_assets/images/profile.png' class='oval-image' alt='Profile Picture' style='align-center; margin-bottom: 10px;'>" 
-      - text: "<span style='font-size: 1.5em; font-weight: bold; margin-bottom: 10px;'>Rafiq Islam</span>"
-      - text: "<span style='margin-bottom: 10px;'>Ph.D. Candidate in Mathematics</span>"
-      - text: "<span style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/univ.png' height='15' width='15' alt='University' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle; color: #782F40;'><a href='https://fsu.edu' target='_blank' style='color: #782F40;'>Florida State University</a></span>"
-      - icon: geo-alt
-        text: " Tallahassee, Florida"
-      - text: "<span style='font-size: 1.1em; font-weight: bold; margin-top: 50px; margin-bottom: 50px;color: #782F40'>Contact</span>"
-      - icon: envelope-arrow-down
-        text: "Email: mi21b@fsu.edu"
-        href: "mailto:mi21b@fsu.edu"
-      - icon: building
-        text: "Office: Love 331"
-        href: "https://maps.app.goo.gl/p25RvKR6jiecRYsG9"
-        target: _blank
-      - icon: calender-check
-        text: "Office Hour: TBD"
-      - text: "<span style='font-size: 1.1em; font-weight: bold; margin-top: 10px; margin-bottom: 50px; color: #782F40'>Find me on</span>"
-      - text: "<a href='https://scholar.google.com/citations?user=gTz5r68AAAAJ&hl=en' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/gs.png' height='15' width='15' alt='Google Scholar' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Google Scholar</span></a>"
-      - text: "<a href='https://www.researchgate.net/profile/Mohammad-Rafiqul-Islam-5' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/rg.png' height='15' width='15' alt='ResearchGate' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> ResearchGate</span></a>"
       - icon: linkedin
-        text: LinkedIn
-        href: "https://www.linkedin.com/in/mohammad-rafiqul-islam/"
+        href: https://www.linkedin.com/in/mohammad-rafiqul-islam/
         target: _blank
       - icon: github
-        text: "GitHub"
         href: "https://github.com/mrislambd"
         target: _blank
-      - text: "<a href='https://orcid.org/0000-0002-4376-8971' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/orcid.png' height='15' width='15' alt='Orcid' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Orcid</span></a>"
-      - text: "<a href='https://www.kaggle.com/rafiqislamfromfsu' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/kag.png' height='15' width='15' alt='Kaggle' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Kaggle</span></a>"
+      
+      
   page-footer: 
     background: "#782F40"
     left: "Powered by [Quarto](https://quarto.org/) <?quarto.version?>"
@@ -76,15 +47,8 @@ website:
       - text: "License"
         href: license.txt
     right: 
-      - icon: github
-        href: "https://github.com/mrislambd/mrislambd.github.io"
       - icon: twitter 
         href: https://twitter.com/rafiqr35 
-        target: _blank
-      - icon: rss
-        href: https://mrislambd.github.io/docs/index.xml
-      - icon: instagram
-        href: https://instagram.com
         target: _blank
       - icon: youtube
         href: https://youtube.com/@quanttube
