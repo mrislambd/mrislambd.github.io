@@ -32,14 +32,6 @@ This predictive modeling project involves personal medical data to predict the m
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
 <p>The dataset used in this project is collected from <a href="https://www.kaggle.com/datasets/mirichoi0218/insurance" target="_blank" style="text-decoration:none">Kaggle</a></p>
-<section id="context" class="level3">
-<h3 class="anchored" data-anchor-id="context">Context</h3>
-<p style="text-align: justify">
-Machine Learning with R by Brett Lantz is a book that provides an introduction to machine learning using R. As far as I can tell, Packt Publishing does not make its datasets available online unless you buy the book and create a user account which can be a problem if you are checking the book out from the library or borrowing the book from a friend. All of these datasets are in the public domain but simply needed some cleaning up and recoding to match the format in the book.
-</p>
-</section>
-<section id="content" class="level3">
-<h3 class="anchored" data-anchor-id="content">Content</h3>
 <p><strong>Columns</strong></p>
 <p><code>age</code>: age of primary beneficiary</p>
 <p><code>sex</code>: insurance contractor gender, female, male</p>
@@ -50,7 +42,6 @@ Machine Learning with R by Brett Lantz is a book that provides an introduction t
 <p><code>charges</code>: Individual medical costs billed by health insurance</p>
 <p>Acknowledgements</p>
 <p>The dataset is available on GitHub <a href="https://github.com/stedy/Machine-Learning-with-R-datasets" target="_blank" style="text-decoration:none">here</a>.</p>
-</section>
 </section>
 <section id="stakeholders" class="level2">
 <h2 class="anchored" data-anchor-id="stakeholders">Stakeholders</h2>
@@ -79,19 +70,21 @@ All the features were considered for the modeling purposes. However, from the ex
 <section id="final-model" class="level3">
 <h3 class="anchored" data-anchor-id="final-model">Final Model</h3>
 <p>Finally the modeling was done based on the lowest <code>MSE</code> value found from the 5-fold cross validation and the model has the following form</p>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5Ctext%7Bcharges%7D%20=10621.25+%203346.14%5Ctimes%20%5Ctext%7BAge%5C_BMI%7D+4570.76%5Ctimes%20%5Ctext%7BMale%7D+%20479.61%5Ctimes%20%5Ctext%7BSmoke%7D-315.12%5Ctimes%20%5Ctext%7BChildren%7D+13274.48%5Ctimes%20%5Ctext%7BRegion%7D-212.22%5Ctimes%20%5Ctext%7BAge%5C_BMI%5C_Smoke%7D%0A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A%5Ctext%7Bcharges%7D%20&amp;=10621.25+%203346.14%5Ctimes%20%5Ctext%7BAge%5C_BMI%7D+4570.76%5Ctimes%20%5Ctext%7BMale%7D+%20479.61%5Ctimes%20%5Ctext%7BSmoke%7D-315.12%5Ctimes%20%5Ctext%7BChildren%7D%5C%5C%0A&amp;+13274.48%5Ctimes%20%5Ctext%7BRegion%7D-212.22%5Ctimes%20%5Ctext%7BAge%5C_BMI%5C_Smoke%7D%0A%5Cend%7Balign*%7D"></p>
 </section>
 </section>
 <section id="results-and-outcomes" class="level2">
 <h2 class="anchored" data-anchor-id="results-and-outcomes">Results and Outcomes</h2>
 <section id="model-accuracy" class="level3">
 <h3 class="anchored" data-anchor-id="model-accuracy">Model Accuracy</h3>
-<p>The model above returns an RMSE of <img src="https://latex.codecogs.com/png.latex?5853.0"> on the training set and an RMSE of <img src="https://latex.codecogs.com/png.latex?5600.0"> on the test set with an <img src="https://latex.codecogs.com/png.latex?R%5E2=80%25">.</p>
+<p>The model above returns an RMSE of <img src="https://latex.codecogs.com/png.latex?5853.0"> on the training set and an RMSE of <img src="https://latex.codecogs.com/png.latex?5600.0"> on the test set with an <img src="https://latex.codecogs.com/png.latex?R%5E2=80%5C%25">.</p>
 </section>
 <section id="web-application" class="level3">
 <h3 class="anchored" data-anchor-id="web-application">Web Application</h3>
 <p>The final model was developed and deployed using <code>Streamlit</code>. To try a single instance, fill out the following form and then click predict charges.</p>
-<iframe height="800" width="800" src="https://michargepredictor.streamlit.app/?embed=true" title="Medical Insurance Charge Prediction"> </iframe>
+<center>
+<iframe height="600" width="450" src="https://michargepredictor.streamlit.app/?embed=true" title="Medical Insurance Charge Prediction"> </iframe>
+</center>
 </section>
 </section>
 <section id="future-directions" class="level2">
