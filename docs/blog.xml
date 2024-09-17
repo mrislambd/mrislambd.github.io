@@ -10,7 +10,341 @@
 <atom:link href="https://mrislambd.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.54</generator>
-<lastBuildDate>Wed, 11 Sep 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 12 Sep 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>How do we treat categorical features for our data science project?</title>
+  <dc:creator>Rafiq Islam</dc:creator>
+  <link>https://mrislambd.github.io/posts/dataengineering/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p align="center">
+<img src="https://mrislambd.github.io/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400">
+</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p style="text-align: justify">
+<img src="https://mrislambd.github.io/posts/dataengineering/sm.png" align="right" width="400" height="450" style="align-right; margin-left:20px"> Suppose we are working on a data science project and the data contains both contineous and categorical variables. For example, we want to build a predictive model for a life insurance company. The model will predict the annual company spending on individuals depending on their age, bmi, sex, smoking habit, number of children, and region in the US where the belong. So here, our target variable is a contineous variable and the feature variables contain both contineous and categorical variables.<br> <br> To understand how important each feature is, there are many possible ways. For example, when we do the exploratory data analysis (EDA) we can do some plotting to see how each feature inteacts with the target variable, or maybe calculating correlations of the features and target variables. However, when the feature is contineous it is not a big issue to calculate the correlation matrix. But when the feature is categorical or ordinal, for example, in this predictive modeling case, how do we know if the number of children or smoking habit have impact on insurance charges? Plotting <code>boxplot</code> or <code>countplot</code> from the <code>seaborn</code> or any other library may help, give some primary idea. But how do we quantify the correlations?<br> <br> Here comes the statistical method one-way <strong><em>Analysis of Variances (ANOVA)</em></strong> among many other alternatives. Machine libraries like <code>scipy</code> has built-in functions that can compute the ANOVA’s for each categorical feature. We will see the implementation of this at the end of this post. This blog post is about the simple explanation of the mathematics behind the ANOVA method.
+</p>
+</section>
+<section id="anova" class="level2">
+<h2 class="anchored" data-anchor-id="anova">ANOVA</h2>
+<p>This is the 5 random sample <a href="[www.kaggle.com/datasets/mirichoi0218/insurance/data](https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout)" target="_blank" style="text-decoration:none">data</a> that we are talking about. We will use this data to explain the mathematical formulation of the model.</p>
+<div id="bea9f8b6" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2">data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'insurance.csv'</span>)</span>
+<span id="cb1-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(data.sample(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, random_state<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">111</span>))</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>      age   sex    bmi  children smoker     region     charges
+1000   30  male  22.99         2    yes  northwest  17361.7661
+53     36  male  34.43         0    yes  southeast  37742.5757
+432    42  male  26.90         0     no  southwest   5969.7230
+162    54  male  39.60         1     no  southwest  10450.5520
+1020   51  male  37.00         0     no  southwest   8798.5930</code></pre>
+</div>
+</div>
+<p>We will explain the method using the feature <code>children</code>.</p>
+<div id="c6dfc482" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">child <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data.children.value_counts().sort_index()</span>
+<span id="cb3-2">c0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>data[data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'children'</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>].charges.values.tolist()</span>
+<span id="cb3-3">c1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>data[data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'children'</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>].charges.values.tolist()</span>
+<span id="cb3-4">c2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>data[data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'children'</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>].charges.values.tolist()</span>
+<span id="cb3-5">c3<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>data[data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'children'</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>].charges.values.tolist()</span>
+<span id="cb3-6">c4<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>data[data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'children'</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>].charges.values.tolist()</span>
+<span id="cb3-7">c5<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>data[data[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'children'</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>].charges.values.tolist()</span></code></pre></div>
+</details>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Children 0</th>
+<th>Children 1</th>
+<th>Children 2</th>
+<th>Children 3</th>
+<th>Children 4</th>
+<th>Children 5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>[16884.924, 21984.47061, 3866.8552, 3756.6216, 28923.13692, 2721.3208]</td>
+<td>[1725.5523, 8240.5896, 1837.237, 10797.3362]</td>
+<td>[6406.4107, 6203.90175, 12268.63225]</td>
+<td>[4449.462, 7281.5056]</td>
+<td>[4504.6624, 11033.6617, 10407.08585]</td>
+<td>[4687.797, 6799.458]</td>
+</tr>
+<tr class="even">
+<td>Total 574</td>
+<td>Total 324</td>
+<td>Total 240</td>
+<td>Total 157</td>
+<td>Total 25</td>
+<td>Total 18</td>
+</tr>
+</tbody>
+</table>
+<p>A one-way analysis of variance is a method to compare <img src="https://latex.codecogs.com/png.latex?k"> homogenous groups when the experiment has <img src="https://latex.codecogs.com/png.latex?n_i"> response values for each each group <img src="https://latex.codecogs.com/png.latex?i">. Therefore, total data <img src="https://latex.codecogs.com/png.latex?n=%5Csum_%7Bi%7D%20n_i"> and <img src="https://latex.codecogs.com/png.latex?y_%7Bij%7D"> represent the <img src="https://latex.codecogs.com/png.latex?j">th observation of the <img src="https://latex.codecogs.com/png.latex?i">th group. For our example above, we have <img src="https://latex.codecogs.com/png.latex?%5Csum_%7Bi=1%7D%5E%7B6%7Dn_i=">(574+324+240+157+25+18)= 1338 and <img src="https://latex.codecogs.com/png.latex?y_%7B12%7D="> 21984.47061 meaning, group 1 and second element.</p>
+<p>Now let’s define <img src="https://latex.codecogs.com/png.latex?%0A%5Cmu_i%20=%20%5Cfrac%7B1%7D%7Bn_i%7D%5Csum_%7Bj=1%7D%5E%7Bn_i%7D%5Cfrac%7By_%7Bij%7D%7D%7Bn_i%7D;%5Chspace%7B4mm%7D%5Ctext%7Bfor%20%7D%20i=1,2,%5Ccdots,%206%0A"></p>
+<p>Since all the groups are coming from the same sample/population, we must assume that they all have common variance. This <img src="https://latex.codecogs.com/png.latex?%5Ctextcolor%7Bred%7D%7B%5Ctext%7Bhomogeneity%20assumption%20is%20crucial%7D%7D"> for ANOVA analysis. So, irrespective of their group assignment, each <img src="https://latex.codecogs.com/png.latex?y_%7Bij%7D%5Csim%20(%5Cmu_i,%20%5Csigma%5E2)"></p>
+<section id="what-does-one-sided-anova-do" class="level3">
+<h3 class="anchored" data-anchor-id="what-does-one-sided-anova-do">What does one-sided ANOVA do?</h3>
+<p style="text-align: justify">
+The main purpose of one-sided ANOVA is to act as a judge like in a court house. It assumes that there is no variation in any group. All group has the same mean. So it sets a null hypthesis and declares that there is no difference in the groups whereas the alternative is set to the opposite. Let’s see what happens to our data
+</p>
+<div id="d022ddde" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np </span></code></pre></div>
+</details>
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><img src="https://latex.codecogs.com/png.latex?%5Cmu"></th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cmu_1"></td>
+<td>12365.98</td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cmu_2"></td>
+<td>12731.17</td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cmu_3"></td>
+<td>15073.56</td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cmu_4"></td>
+<td>15355.32</td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cmu_5"></td>
+<td>13850.66</td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cmu_6"></td>
+<td>8786.04</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Share on</strong></p>
+<div id="fb-root">
+
+</div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
+<div class="share-buttons">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/dataengineering/" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fdataengineering%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+</div>
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/dataengineering/"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/posts/dataengineering/" data-show-count="true">Tweet</a>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/dataengineering/" data-width="" data-numposts="5">
+
+</div>
+<p><strong>You may also like</strong></p>
+
+
+
+<!-- -->
+
+</section>
+</section>
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722139200000" data-listing-file-modified-sort="1723166921694" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
+<a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Bayesian Inference in Machine Learning: Part 1
+</h5>
+<div class="listing-reading-time card-text text-muted">
+6 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Sunday, July 28, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1726103787486" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="934">
+<a href="../../posts/dsa/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/dsa/dsa.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data Structure and Algorithms: Basic Programming Hacks
+</h5>
+<div class="listing-reading-time card-text text-muted">
+5 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, September 11, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1726534256902" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<a href="../../posts/datacollection/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/datacollection/ws.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data collection through Webscraping
+</h5>
+<div class="listing-reading-time card-text text-muted">
+7 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, August 14, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
+  author = {Islam, Rafiq},
+  title = {How Do We Treat Categorical Features for Our Data Science
+    Project?},
+  date = {2024-09-12},
+  url = {https://mrislambd.github.io/posts/dataengineering/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
+Islam, Rafiq. 2024. <span>“How Do We Treat Categorical Features for Our
+Data Science Project?”</span> September 12, 2024. <a href="https://mrislambd.github.io/posts/dataengineering/">https://mrislambd.github.io/posts/dataengineering/</a>.
+</div></div></section></div> ]]></description>
+  <category>Statistics</category>
+  <category>Data Science</category>
+  <category>Data Engineering</category>
+  <category>Machine Learning</category>
+  <category>Artificial Intelligence</category>
+  <guid>https://mrislambd.github.io/posts/dataengineering/</guid>
+  <pubDate>Thu, 12 Sep 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://mrislambd.github.io/posts/dataengineering/sm.png" medium="image" type="image/png" height="180" width="144"/>
+</item>
 <item>
   <title>Data Structure and Algorithms: Basic Programming Hacks</title>
   <dc:creator>Rafiq Islam</dc:creator>
@@ -1921,7 +2255,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1726095960181" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1198">
+<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1726103787486" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="934">
 <a href="../../posts/dsa/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1932,7 +2266,7 @@ Sunday, July 28, 2024
 Data Structure and Algorithms: Basic Programming Hacks
 </h5>
 <div class="listing-reading-time card-text text-muted">
-6 min
+5 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -2197,7 +2531,7 @@ Islam, Rafiq. 2024. <span>“Review Probabilities.”</span> August 22,
 <li><a href="https://www.kaggle.com" target="_blank">Kaggle Competition</a></li>
 </ol>
 <p>Example of collecting data from <a href="https://archive.ics.uci.edu/datasets" target="_blank">UCI Machine Learning Repository</a></p>
-<div id="e337e780" class="cell" data-execution_count="1">
+<div id="4bd93779" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> ucimlrepo <span class="im" style="color: #00769E;
@@ -2259,9 +2593,9 @@ font-style: inherit;">print</span>(iris.variables) </span></code></pre></div>
 </div>
 <p>you may need to install the <a href="https://archive.ics.uci.edu/datasets" target="_blank">UCI Machine Learning Repository</a> as a package using pip.</p>
 <pre><code>pip install ucimlrepo</code></pre>
-<div id="ce499578" class="cell" data-execution_count="2">
+<div id="34ee28ee" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">X.head()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
 
@@ -2321,7 +2655,7 @@ font-style: inherit;">print</span>(iris.variables) </span></code></pre></div>
 <section id="web-scraping" class="level2">
 <h2 class="anchored" data-anchor-id="web-scraping">Web Scraping</h2>
 <p>We scrapping is another way of collecting the data for the research if the data is not available in any repositiory. We can collect the data from a website using a library called <code>BeautifulSoup</code> if the website has permision for other people to collect data from the website.</p>
-<div id="14a70d20" class="cell" data-execution_count="3">
+<div id="05bf848d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> bs4                      <span class="co" style="color: #5E5E5E;
@@ -2364,7 +2698,7 @@ background-color: null;
 font-style: inherit;">"whitegrid"</span>)</span></code></pre></div>
 </div>
 <p>Now let’s make a html object using <code>BeautifulSoup</code>. Let’s say we have a html website that looks like below</p>
-<div id="e748fcb7" class="cell" data-execution_count="4">
+<div id="a99e961f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">html_doc<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
@@ -2411,7 +2745,7 @@ background-color: null;
 font-style: inherit;">"""</span></span></code></pre></div>
 </div>
 <p>Now we want to grab information from the dummy html documnet above.</p>
-<div id="9ebe7459" class="cell" data-execution_count="5">
+<div id="c9844b48" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">soup<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>BeautifulSoup(html_doc, features<span class="op" style="color: #5E5E5E;
@@ -2421,63 +2755,63 @@ background-color: null;
 font-style: inherit;">'html.parser'</span>)</span></code></pre></div>
 </div>
 <p>Now that we have the object <code>soup</code> we can walk through each elements in this object. For example, if we want to grab the title element,</p>
-<div id="3990ede4" class="cell" data-execution_count="6">
+<div id="9d442867" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">soup.html.head.title</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>&lt;title&gt;My Dummy HTML Document&lt;/title&gt;</code></pre>
 </div>
 </div>
 <p>Since the html document has only one title, therefore, we can simply use the following command</p>
-<div id="908b3dec" class="cell" data-execution_count="7">
+<div id="1b8bac08" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">soup.title </span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>&lt;title&gt;My Dummy HTML Document&lt;/title&gt;</code></pre>
 </div>
 </div>
 <p>or this command to get the text only</p>
-<div id="50788070" class="cell" data-execution_count="8">
+<div id="0efb9a6a" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">soup.title.text</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>'My Dummy HTML Document'</code></pre>
 </div>
 </div>
 <p>This <code>soup</code> object is like a family tree. It has parents, children, greatgrand parents etc.</p>
-<div id="d9c82d1f" class="cell" data-execution_count="9">
+<div id="f37e9048" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">soup.title.parent</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>&lt;head&gt;
 &lt;title&gt;My Dummy HTML Document&lt;/title&gt;
 &lt;/head&gt;</code></pre>
 </div>
 </div>
 <p>Now to grab an attribute from the <code>soup</code> object we can use</p>
-<div id="693cd800" class="cell" data-execution_count="10">
+<div id="80910116" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">soup.a</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>&lt;a class="blog" href="https://mrislambd.github.io/blog" id="blog"&gt; Blog &lt;/a&gt;</code></pre>
 </div>
 </div>
 <p>or any particular thing from the attribute</p>
-<div id="876d392b" class="cell" data-execution_count="11">
+<div id="71b0aa31" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">soup.a[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'class'</span>]</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>['blog']</code></pre>
 </div>
 </div>
 <p>We can also find multiple attribute of the same kind</p>
-<div id="42fbe5b1" class="cell" data-execution_count="12">
+<div id="64133ac0" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1">soup.findAll(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'a'</span>)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>[&lt;a class="blog" href="https://mrislambd.github.io/blog" id="blog"&gt; Blog &lt;/a&gt;,
  &lt;a class="research" href="htpps://mrislambd.github.io/research" id="research"&gt; Research &lt;/a&gt;]</code></pre>
 </div>
 </div>
 <p>Then if we want any particular object from all <code>a</code> attribute</p>
-<div id="4754e4de" class="cell" data-execution_count="13">
+<div id="0028c6a4" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">soup.findAll(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'a'</span>)[<span class="dv" style="color: #AD0000;
@@ -2485,19 +2819,19 @@ background-color: null;
 font-style: inherit;">0</span>][<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'id'</span>]</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>'blog'</code></pre>
 </div>
 </div>
 <p>For any <code>p</code> tag</p>
-<div id="f81ecaad" class="cell" data-execution_count="14">
+<div id="cef2ae38" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1">soup.p.text </span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>'This is a paragraph in my dummy HTML document.'</code></pre>
 </div>
 </div>
 <p>Similarly, if we want to grab all the <code>href</code>s from the <code>a</code> tags</p>
-<div id="c84338a0" class="cell" data-execution_count="15">
+<div id="bac5775e" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1">[h[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'href'</span>] <span class="cf" style="color: #003B4F;
@@ -2509,7 +2843,7 @@ font-weight: bold;
 font-style: inherit;">in</span> soup.findAll(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'a'</span>)]</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>['https://mrislambd.github.io/blog', 'htpps://mrislambd.github.io/research']</code></pre>
 </div>
 </div>
@@ -2517,7 +2851,7 @@ font-style: inherit;">'a'</span>)]</span></code></pre></div>
 <section id="example-of-webscraping-from-a-real-website" class="level2">
 <h2 class="anchored" data-anchor-id="example-of-webscraping-from-a-real-website">Example of Webscraping from a real website</h2>
 <p>In this example we want to obtain some information from <a href="https://research.nvidia.com/graduate-fellowships/archive" target="_blank">NVIDIA Graduate Fellowship Program</a>. Before accessing this website we need to know if we have permision to access their data through webscraping.</p>
-<div id="4d5efacc" class="cell" data-execution_count="16">
+<div id="e13cb506" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> requests</span>
@@ -2529,12 +2863,12 @@ font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"https://research.nvidia.com/graduate-fellowships/archive"</span>)</span>
 <span id="cb28-3">response.status_code</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="41">
 <pre><code>200</code></pre>
 </div>
 </div>
 <p>The <code>status_code</code> <img src="https://latex.codecogs.com/png.latex?200"> ensures that we have enough permision to acccess their website data. However, if we obtain <code>status_code</code> of <img src="https://latex.codecogs.com/png.latex?403,%20400,"> or <img src="https://latex.codecogs.com/png.latex?500"> then we do not permision or a <code>bad request</code>. For more about the status codes <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">click here</a>.</p>
-<div id="036a0e37" class="cell" data-execution_count="17">
+<div id="f4707134" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1">soup <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> BeautifulSoup(response.text, <span class="st" style="color: #20794D;
@@ -2542,7 +2876,7 @@ background-color: null;
 font-style: inherit;">'html.parser'</span>)</span></code></pre></div>
 </div>
 <p>We want to make an analysis based on the institution of the past graduate fellows. Insepecting the elements in <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">this website</a> we see that the <code>div</code> those have <code>class="archive-group"</code> contains the information of the past graduate fellows.</p>
-<div id="441de38d" class="cell" data-execution_count="18">
+<div id="88e5bc6f" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1">pf <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> soup.find_all(<span class="st" style="color: #20794D;
@@ -2554,11 +2888,11 @@ background-color: null;
 font-style: inherit;">"archive-group"</span>)</span></code></pre></div>
 </div>
 <p>and the first element of this <code>pf</code> contains the information of the graduate fellows in the year of 2021.</p>
-<div id="0887badd" class="cell" data-execution_count="19">
+<div id="8d92665c" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1">pf[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>]</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>&lt;div class="archive-group"&gt;
 &lt;h4 class="archive-group__title"&gt;2021 Grad Fellows&lt;/h4&gt;
 &lt;div class="views-row"&gt;&lt;div class="views-field views-field-title"&gt;&lt;span class="field-content"&gt;Alexander Sax&lt;/span&gt;&lt;/div&gt;&lt;div class="views-field views-field-field-grad-fellow-institution"&gt;&lt;div class="field-content"&gt;University of California, Berkeley&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
@@ -2575,7 +2909,7 @@ font-style: inherit;">0</span>]</span></code></pre></div>
 </div>
 </div>
 <p>Now let’s make a <code>pandas</code> dataframe using the information in this page. We can make an use of the output from the above chunk. To grab the year, we see that <code>archive-group__title</code> class with a <code>h4</code> tag contains the year for all years. With <code>strip=True</code>, the text is cleaned by removing extra whitespace from the beginning and end. We need the first element so a <code>split()[0]</code> will do the job. Then we make another group called <code>fellows</code> that contains the fellows in a certian year by using the <code>div</code> and <code>class"views-row"</code>. Once the new group created, we then iterate through this group to extract their names and corresponding institutions.</p>
-<div id="8080ff31" class="cell" data-execution_count="20">
+<div id="c97498a8" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode python code-overflow-scroll code-with-copy"><code class="sourceCode python"><span id="cb34-1">data<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[]</span>
@@ -2664,7 +2998,7 @@ font-style: inherit;">"Institute"</span>: institute})</span>
 background-color: null;
 font-style: inherit;">=</span>pd.DataFrame(data)</span>
 <span id="cb34-20">data.head()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="45">
 <div>
 
 
@@ -2715,7 +3049,7 @@ font-style: inherit;">=</span>pd.DataFrame(data)</span>
 </div>
 </div>
 <p>Now let’s perform some Exploratory Data Analysis (EDA). First, we analyze the unique values and distributions.</p>
-<div id="31dab16d" class="cell" data-execution_count="21">
+<div id="49cb8552" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Count the number of fellows each year</span></span>
@@ -2772,7 +3106,7 @@ Count     9     8     7     7     6     6     5     5  </code></pre>
 </div>
 </div>
 <p>Next we see that most represented universities</p>
-<div id="9ad55452" class="cell" data-execution_count="22">
+<div id="40e42563" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1">university_counts <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> data[<span class="st" style="color: #20794D;
@@ -2801,7 +3135,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>To visualize the award distributions per year,</p>
-<div id="f6694929" class="cell" data-execution_count="23">
+<div id="fd121c4e" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
@@ -2841,7 +3175,7 @@ font-style: inherit;">'Number of Fellows Per Year'</span>)</span>
 </div>
 </div>
 <p>Top 10 universities visualization</p>
-<div id="40591b3a" class="cell" data-execution_count="24">
+<div id="4c415cfe" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb40" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
@@ -2886,7 +3220,7 @@ font-style: inherit;">'University'</span>)</span>
 </div>
 </div>
 <p>Trend over time</p>
-<div id="0bf09830" class="cell" data-execution_count="25">
+<div id="2991e3cc" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
@@ -3001,7 +3335,32 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1726103787486" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="934">
+<a href="../../posts/dsa/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/dsa/dsa.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data Structure and Algorithms: Basic Programming Hacks
+</h5>
+<div class="listing-reading-time card-text text-muted">
+5 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, September 11, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3026,31 +3385,6 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-How to generate social share buttons
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Wednesday, July 17, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
@@ -3069,6 +3403,7 @@ August 14, 2024. <a href="https://mrislambd.github.io/posts/datacollection/">htt
   <category>Data Science</category>
   <category>Machine Learning</category>
   <category>Artificial Intelligence</category>
+  <category>Data Engineering</category>
   <guid>https://mrislambd.github.io/posts/datacollection/</guid>
   <pubDate>Wed, 14 Aug 2024 04:00:00 GMT</pubDate>
   <media:content url="https://mrislambd.github.io/posts/datacollection/ws.jpg" medium="image" type="image/jpeg"/>
@@ -4090,7 +4425,32 @@ The marginal probability of having burnt side in the top position<br>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1723767539127" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<div class="g-col-1" data-index="0" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1726103787486" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="934">
+<a href="../../posts/dsa/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/dsa/dsa.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data Structure and Algorithms: Basic Programming Hacks
+</h5>
+<div class="listing-reading-time card-text text-muted">
+5 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, September 11, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1726166123856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
 <a href="../../posts/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -4115,7 +4475,7 @@ Wednesday, August 14, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="2" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -4134,31 +4494,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Monday, January 25, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../posts/socialshare/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-How to generate social share buttons
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Wednesday, July 17, 2024
 </div>
 </div>
 </div>
