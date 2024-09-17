@@ -327,7 +327,7 @@ Non-parametric model is a statistical model that does not make any assumptions a
 </section>
 <section id="knn-implementation-regression" class="level2">
 <h2 class="anchored" data-anchor-id="knn-implementation-regression"><span class="math inline">\(k\)</span>NN Implementation: Regression</h2>
-<div id="cdcbbb89" class="cell" data-execution_count="1">
+<div id="1949b22d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -353,7 +353,7 @@ Non-parametric model is a statistical model that does not make any assumptions a
 </div>
 </div>
 <p>Now we fit two models for two different <span class="math inline">\(k\)</span> values to see how it affects the interpolation.</p>
-<div id="ffc078b0" class="cell" data-execution_count="2">
+<div id="5a78bdc6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsRegressor</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>knn_3 <span class="op">=</span> KNeighborsRegressor(<span class="dv">3</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>knn_9 <span class="op">=</span> KNeighborsRegressor(<span class="dv">9</span>)</span>
@@ -397,7 +397,7 @@ Non-parametric model is a statistical model that does not make any assumptions a
 <section id="knn-implementation-classification" class="level2">
 <h2 class="anchored" data-anchor-id="knn-implementation-classification"><span class="math inline">\(k\)</span>NN Implementation: Classification</h2>
 <p>For this classification problem, we choose that famous iris data from the <code>scikit-learn</code> library.</p>
-<div id="29758008" class="cell" data-execution_count="3">
+<div id="3cd92e0f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> datasets</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -415,7 +415,7 @@ Non-parametric model is a statistical model that does not make any assumptions a
        [5. , 3.6, 1.4, 0.2]])</code></pre>
 </div>
 </div>
-<div id="2291665f" class="cell" data-execution_count="4">
+<div id="c2b1fa1a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First 5 entries of the target values</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -424,7 +424,7 @@ Non-parametric model is a statistical model that does not make any assumptions a
 </div>
 </div>
 <p>There are total 150 observations of <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span> and the scatter plot of the data</p>
-<div id="2c101114" class="cell" data-execution_count="5">
+<div id="e66a82a5" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>_, ax <span class="op">=</span>  plt.subplots()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>scatter <span class="op">=</span> ax.scatter(iris.data[:,<span class="dv">0</span>],</span>
@@ -453,7 +453,7 @@ Non-parametric model is a statistical model that does not make any assumptions a
 <p>We can use the <code>KNeighborsClassifier</code> class from the <code>sklearn</code> library or make a custom classifier.</p>
 <section id="kneighborsclassifier-sklearn-libarary" class="level3">
 <h3 class="anchored" data-anchor-id="kneighborsclassifier-sklearn-libarary">KNeighborsClassifier: sklearn Libarary</h3>
-<div id="13ccbd98" class="cell" data-execution_count="6">
+<div id="831a385e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
@@ -503,7 +503,7 @@ Non-parametric model is a statistical model that does not make any assumptions a
 <span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        most_common <span class="op">=</span> Counter(knn_labels).most_common()</span>
 <span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> most_common[<span class="dv">0</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Save the above file as <code>knn.py</code> in the same directory. Then</p>
-<div id="aa8ffe78" class="cell" data-execution_count="7">
+<div id="fc043db8" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> knn <span class="im">import</span> KNNClassifier</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>customknn_clf <span class="op">=</span> KNNClassifier(k<span class="op">=</span><span class="dv">5</span>)</span>
@@ -543,7 +543,7 @@ Non-parametric model is a statistical model that does not make any assumptions a
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1726555651911" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2178">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1726557114262" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2178">
 <a href="../../machinelearning/multiplelinreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -568,7 +568,7 @@ Thursday, August 29, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1726555651915" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1726557114262" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
 <a href="../../machinelearning/simplelinreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -593,7 +593,7 @@ Thursday, August 29, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1726555869816">
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1726557332406">
 <a href="../../machinelearning/knn/index_files/figure-html/cell-2-output-1.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1374,7 +1374,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

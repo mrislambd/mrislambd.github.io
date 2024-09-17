@@ -314,7 +314,7 @@ window.Quarto = {
 <p align="center">
 <img src="../../_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400">
 </p>
-<div id="73f4725f" class="cell" data-execution_count="1">
+<div id="6be02cc1" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -332,7 +332,7 @@ window.Quarto = {
 </div>
 <section id="linked-list" class="level2">
 <h2 class="anchored" data-anchor-id="linked-list">Linked List</h2>
-<div id="2044d882" class="cell" data-execution_count="2">
+<div id="3c849a1e" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Node:</span>
@@ -361,7 +361,7 @@ window.Quarto = {
 </div>
 <section id="reverse-a-linked-list-type-i" class="level3">
 <h3 class="anchored" data-anchor-id="reverse-a-linked-list-type-i">1. Reverse a linked list: Type I</h3>
-<div id="35a92820" class="cell" data-execution_count="3">
+<div id="91f423d4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse(head):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    prev <span class="op">=</span> <span class="va">None</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    curr <span class="op">=</span> head </span>
@@ -389,7 +389,7 @@ Reversed List
 </section>
 <section id="reverse-a-linked-list-type-ii" class="level3">
 <h3 class="anchored" data-anchor-id="reverse-a-linked-list-type-ii">2. Reverse a linked list: Type II</h3>
-<div id="b99d77be" class="cell" data-execution_count="4">
+<div id="31511024" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse_in_between(head, left, right):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    dummy <span class="op">=</span> Node(<span class="dv">0</span>, head)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    leftPrev <span class="op">=</span> dummy</span>
@@ -439,7 +439,7 @@ Reversed List between 2 and 4
 <p style="text-align: justify">
 One way to solve this problem is using brute force solution, that is using two nested loops. But this method takes the time complexity of <span class="math inline">\(O(n\times m)\)</span> given that the lenght of set A is <span class="math inline">\(n\)</span> and set B is <span class="math inline">\(m\)</span>. And here is how it is:
 </p>
-<div id="4ef9fc4b" class="cell" data-execution_count="5">
+<div id="cb2ba48e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intersection_of_two_sets(A,B):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    set_A <span class="op">=</span> <span class="bu">set</span>(A)</span>
@@ -459,7 +459,7 @@ One way to solve this problem is using brute force solution, that is using two n
 </div>
 </div>
 <p><strong>Hash Map Approach:</strong> In hash map approach, we can solve the same problem but in this case the time and space complexity is <span class="math inline">\(O(n+m)\)</span></p>
-<div id="bc98b6b4" class="cell" data-execution_count="6">
+<div id="c5d3503b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intersection_of_two_sets(A,B):</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    set_A <span class="op">=</span> <span class="bu">set</span>(A)</span>
@@ -478,7 +478,7 @@ One way to solve this problem is using brute force solution, that is using two n
 </div>
 <p>The reason we’re getting <span class="math inline">\([8,6]\)</span> instead of <span class="math inline">\([6,8]\)</span> is because sets in Python are unordered collections, meaning that when you convert the lists <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> to sets, the order of elements is not preserved. So, when we iterate over <code>set_A</code> or <code>set_A</code>, the order can change.</p>
 <p><strong>Better Approach:</strong> If we want to maintain the order of the elements in the original list <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>, we can iterate over the original list directly rather than converting it to a set. Here’s how:</p>
-<div id="75d405cd" class="cell" data-execution_count="7">
+<div id="eb7c10cd" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intersection_of_two_sets(A, B):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    set_B <span class="op">=</span> <span class="bu">set</span>(B)  </span>
@@ -508,7 +508,7 @@ Say we have an array of size <span class="math inline">\(n\)</span>. We want to 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1726555651919" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1726557114270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -533,7 +533,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1726555651923" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1726557114270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
 <a href="../../posts/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -558,7 +558,7 @@ Wednesday, August 14, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1726555651927" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="2" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1726557114274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
