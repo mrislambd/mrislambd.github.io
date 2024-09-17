@@ -425,7 +425,7 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 <h2 class="anchored" data-anchor-id="python-execution">Python Execution</h2>
 <section id="synthetic-data" class="level3">
 <h3 class="anchored" data-anchor-id="synthetic-data">Synthetic Data</h3>
-<div id="7979a063" class="cell" data-execution_count="1">
+<div id="227de964" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>X<span class="op">=</span>np.random.randn(<span class="dv">1000</span>,<span class="dv">2</span>)</span>
@@ -435,13 +435,13 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 </section>
 <section id="fit-the-data-using-scikit-learn-library" class="level3">
 <h3 class="anchored" data-anchor-id="fit-the-data-using-scikit-learn-library">Fit the data: Using scikit-learn Library</h3>
-<div id="bdb6c16e" class="cell" data-execution_count="2">
+<div id="b167df43" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mlr<span class="op">=</span>LinearRegression()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mlr.fit(X,y)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>coefficients<span class="op">=</span>mlr.coef_.tolist()</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>slope<span class="op">=</span>mlr.intercept_.tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.009 and coefficients <span class="math inline">\(\beta_1=\)</span> 3.0181, and <span class="math inline">\(\beta_2=\)</span> 1.969</p>
+<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0044 and coefficients <span class="math inline">\(\beta_1=\)</span> 3.0137, and <span class="math inline">\(\beta_2=\)</span> 2.0331</p>
 </section>
 <section id="fit-the-data-using-custom-library-ols" class="level3">
 <h3 class="anchored" data-anchor-id="fit-the-data-using-custom-library-ols">Fit the data: Using Custom Library OLS</h3>
@@ -470,14 +470,14 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> interceptt_(<span class="va">self</span>):</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.beta[<span class="dv">0</span>].tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now it’s time to use the new class</p>
-<div id="1df0d726" class="cell" data-execution_count="3">
+<div id="20da99a6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlreg <span class="im">import</span> NewLinearRegression</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mlr1 <span class="op">=</span> NewLinearRegression()</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>mlr1.fit(X,y)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>coefficients1<span class="op">=</span>mlr1.coeff_()</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>slope1<span class="op">=</span>mlr1.interceptt_()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.009 and coefficients <span class="math inline">\(\beta_1=\)</span> 3.0181, and <span class="math inline">\(\beta_2=\)</span> 1.969</p>
+<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0044 and coefficients <span class="math inline">\(\beta_1=\)</span> 3.0137, and <span class="math inline">\(\beta_2=\)</span> 2.0331</p>
 </section>
 <section id="fit-the-data-using-gradient-descent" class="level3">
 <h3 class="anchored" data-anchor-id="fit-the-data-using-gradient-descent">Fit the data: Using Gradient Descent</h3>
@@ -513,14 +513,14 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> intercepttt_(<span class="va">self</span>):</span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.bias</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now we use this similarly as before,</p>
-<div id="0cbc0cf7" class="cell" data-execution_count="4">
+<div id="ac82dd43" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlreg <span class="im">import</span> GDLinearRegression</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mlr2<span class="op">=</span> GDLinearRegression(learning_rate<span class="op">=</span><span class="fl">0.008</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mlr2.fit(X,y)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>coefficients2<span class="op">=</span>mlr2.coefff_()</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>slope2<span class="op">=</span>mlr2.intercepttt_()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0087 and coefficients <span class="math inline">\(\beta_1=\)</span> 3.0168, and <span class="math inline">\(\beta_2=\)</span> 1.9687</p>
+<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0036 and coefficients <span class="math inline">\(\beta_1=\)</span> 3.0121, and <span class="math inline">\(\beta_2=\)</span> 2.0324</p>
 </section>
 <section id="fit-the-data-using-stochastic-gradient-descent" class="level3">
 <h3 class="anchored" data-anchor-id="fit-the-data-using-stochastic-gradient-descent">Fit the data: Using Stochastic Gradient Descent</h3>
@@ -586,13 +586,13 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 <span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Return the mse_list</span></span>
 <span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.mse_list.tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now</p>
-<div id="76163048" class="cell" data-execution_count="5">
+<div id="549c65a4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlreg <span class="im">import</span> SGDLinearRegression</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mlr3<span class="op">=</span>SGDLinearRegression(learning_rate<span class="op">=</span><span class="fl">0.01</span>, num_iterations<span class="op">=</span><span class="dv">1000</span>, batch_size<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>theta, _ <span class="op">=</span> mlr3.fit(X, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> array([0.94755479]) and coefficients <span class="math inline">\(\beta_1=\)</span> array([3.03861937]), and <span class="math inline">\(\beta_2=\)</span> array([1.94717286])</p>
+<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> array([1.02461848]) and coefficients <span class="math inline">\(\beta_1=\)</span> array([2.997127]), and <span class="math inline">\(\beta_2=\)</span> array([2.03634664])</p>
 <p>Up next <a href="../../machinelearning/knn/index.html">knn regression</a></p>
 <p><strong>Share on</strong></p>
 <div id="fb-root">
@@ -622,7 +622,7 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1726104600843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="765">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1726538661870" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="765">
 <a href="../../machinelearning/knn/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -647,7 +647,7 @@ Thursday, August 29, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1726104600843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1726538661874" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
 <a href="../../machinelearning/simplelinreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -672,7 +672,7 @@ Thursday, August 29, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1726104600843">
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1726538661870">
 <a href="../../machinelearning/knn/__pycache__/knn.cpython-311.pyc" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
