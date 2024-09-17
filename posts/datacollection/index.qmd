@@ -2,7 +2,7 @@
 title: "Data collection through Webscraping"
 date: "2024-08-14"
 author: Rafiq Islam
-categories: [Data Science, Machine Learning, Artificial Intelligence]
+categories: [Data Science, Machine Learning, Artificial Intelligence, Data Engineering]
 citation: true
 search: true
 lightbox: true

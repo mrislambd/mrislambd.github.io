@@ -1,8 +1,7 @@
 ---
 title: "Insurance Cost Forecast by using Linear Regression"
 author: "Rafiq Islam"
-date: 2024-08-30
-citation: true
+date: 2024-09-12
 search: true
 ---  
 
@@ -37,139 +36,210 @@ Statistical properties of the non-categorical variables
 
 ```{python} 
 #| code-fold: false
-print(insurance.describe().T)
+print(insurance.describe())
 ```  
 
-### Analyis of the continuous variables  
+### Data visualization  
+
+#### Distribution of the features and target  
 
 ```{python}
 #| code-fold: false
+#| output: false
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-fig, axes = plt.subplots(3,1, figsize = (6,18))
+fig, axes = plt.subplots(2,3,figsize = (15,9))
 
-sns.histplot(insurance['age'], color='red', kde=True, ax= axes[0])
-sns.histplot(insurance['bmi'], color='green', kde=True, ax= axes[1])
-sns.histplot(insurance['charges'], color='blue', kde=True, ax= axes[2])
+sns.histplot(insurance['age'], color='red', kde=True, ax= axes[0, 0]).set_title('Age Distribution')
+
+sns.histplot(insurance['bmi'], color='green', kde=True, ax= axes[0,1]).set_title('BMI Distribution')
+
+sns.histplot(insurance['charges'],color='blue', kde=True, ax= axes[0,2]).set_title('Charge Distribution')
+
+sns.countplot(x='smoker', data=insurance, hue='sex', palette='Set2', ax=axes[1,0]).set_title('Smoker vs Gender')
+
+sns.countplot(x=insurance['region'], hue=insurance['region'], palette='Set1', ax=axes[1,1]).set_title('Region Distribution')
+
+sns.countplot(x=insurance['children'], hue=insurance['children'],legend=False,palette='Set2', ax=axes[1,2]).set_title('Children Distribution')
+
+plt.gcf().patch.set_facecolor('#f4f4f4')
+
+```    
+
+<p align="center">
+  <img src="dataviz.png" alt="Data Vizualization" width="900" height="550"/>
+</p>  
+
+#### Relationship of the features and target
+
+```{python}
+#| code-fold: false
+#| warning: false
+fig, axes = plt.subplots(1,2, figsize=(9.5,4))
+g=sns.stripplot(data=insurance, x='smoker', y='charges', hue='smoker' ,palette=['blue', 'orange'], legend=True, ax=axes[0])
+g.set_yticklabels(['0k','10k','20k','30k','40k','50k','60k','65k'])
+
+axes[1].scatter(insurance.loc[insurance.smoker=='yes'].bmi,
+            insurance.loc[insurance.smoker=='yes'].charges, label="yes", marker='o',
+            s=60,edgecolors='black', c='orange'
+            )
+axes[1].set_yticklabels(['0k','10k','20k','30k','40k','50k','60k','65k'])
+
+axes[1].scatter(insurance.loc[insurance.smoker=='no'].bmi,
+            insurance.loc[insurance.smoker=='no'].charges, label="no", marker='v',
+            s=60,edgecolors='black', c='lightblue'
+            )
+axes[1].set_yticklabels(['0k','10k','20k','30k','40k','50k','60k','65k'])
+
+axes[1].set_xlabel('bmi')
+axes[1].set_ylabel('charges')
+axes[1].legend()
 
 for ax in axes:
     ax.set_facecolor('#f4f4f4')
 plt.gcf().patch.set_facecolor('#f4f4f4')
-```  
-
-### Analysis of the categorical variables  
-
-```{python}
-#| code-fold: false
-
-fig = plt.figure(figsize=(8, 12))
-grid = fig.add_gridspec(3, 2)
-
-ax1 = fig.add_subplot(grid[0, 0])
-sns.countplot(x=insurance['sex'], hue=insurance['sex'], palette='Set1', legend=False, ax=ax1)
-ax1.set_title('Gender Distribution')
-ax1.set_facecolor('#f4f4f4')
-
-ax2 = fig.add_subplot(grid[0, 1])
-sns.countplot(x=insurance['smoker'], hue=insurance['smoker'], palette='Set2', ax=ax2)
-ax2.set_title('Smoker Distribution')
-ax2.set_facecolor('#f4f4f4')
-
-ax3 = fig.add_subplot(grid[1, :])
-sns.countplot(x='smoker', data=insurance, hue='sex', palette='Set3', ax=ax3)
-ax3.set_title('Smoker Distribution by Gender')
-ax3.set_facecolor('#f4f4f4')
-
-ax4 = fig.add_subplot(grid[2, :])
-sns.countplot(x=insurance['region'], hue=insurance['region'], palette='Set1', ax=ax4)
-ax4.set_title('Region Distribution')
-ax4.set_facecolor('#f4f4f4')
-
-plt.gcf().patch.set_facecolor('#f4f4f4')
-plt.tight_layout()
 plt.show()
 ```  
 
-### Analysis of the correlation of continuous variables  
+Clearly from the plots above we can see that the somoking status has effect on the insurance charges in relation with bmi
 
 ```{python}
 #| code-fold: false
-corr_matrix = insurance[['age','bmi','children','charges']].corr()
+#| warning: false
+fig, axes = plt.subplots(1,2,figsize=(9.5,4))
+
+g1=sns.stripplot(x='region', y='charges', data=insurance, ax=axes[0])
+g1.set_xticklabels(['SW', 'SE', 'NW','NE'])
+g1.set_yticklabels(['0k','10k','20k','30k','40k','50k','60k','65k'])
+g2=sns.scatterplot(x='age', y='charges', data=insurance, hue='smoker' ,ax=axes[1])
+g2.set_yticklabels(['0k','10k','20k','30k','40k','50k','60k','65k'])
+for ax in axes:
+    ax.set_facecolor('#f4f4f4')
+plt.gcf().patch.set_facecolor('#f4f4f4')
+plt.show()
+```  
+
+```{python}
+#| code-fold: false
+#| warning: false
+fig, axes = plt.subplots(1,2, figsize=(9,4))
+
+g1=sns.stripplot(x='children', y='charges',data=insurance,hue='children',palette='Set1', ax=axes[0])
+g1.set_yticklabels(['0k','10k','20k','30k','40k','50k','60k','65k'])
+g1.set_facecolor('#f4f4f4')
+g2=sns.boxplot(x='sex', y='charges', data=insurance, hue='sex', palette='Set2', ax=axes[1])
+g2.set_yticklabels(['0k','10k','20k','30k','40k','50k','60k','65k'])
+g2.set_facecolor('#f4f4f4')
+
+plt.gcf().patch.set_facecolor('#f4f4f4')
+plt.show()
+```    
+
+To see the combined effect of all the features  
+```{python}
+#| code-fold: false
+#| warning: false
+plt.figure(figsize=(12,6))
+g = sns.FacetGrid(insurance, col='smoker', row='sex',hue='region', margin_titles=True, height=2.4, aspect=1.5)
+g.map(sns.scatterplot, 'age','charges')
+
+g.fig.patch.set_facecolor('#f4f4f4')
+g.add_legend()
+plt.show()
+```  
+
+
+
+
+#### Information Gain  
+
+From the above plots, we can see that `age` feature stacks in three layers for charges. It maybe depending on other categorical features such as smoking status.  
+
+### Correlation Analysis  
+#### Contineous Features
+
+```{python}
+#| code-fold: false
+corr_matrix = insurance[['age','bmi','charges']].corr()
 
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
 plt.title('Correlation Matrix')
 plt.gca().set_facecolor('#f4f4f4') 
 plt.gcf().patch.set_facecolor('#f4f4f4')
 plt.show()
-```  
+```   
 
-### Relationsship Between Features and Target  
-
-```{python}
-#| code-fold: false
-
-fig, axes = plt.subplots(5,1, figsize=(8,25))
-sns.scatterplot(x='age', y='charges', data=insurance, hue='sex' ,ax=axes[0])
-axes[0].set_title('Age vs Charges')
-sns.scatterplot(x='bmi', y='charges', data=insurance, hue='sex' ,ax=axes[1])
-axes[1].set_title('BMI vs Charges')
-sns.boxplot(x='children', y='charges', data=insurance, ax=axes[2])
-axes[2].set_title('Children vs Charges')
-sns.boxplot(x='sex', y='charges', data=insurance, ax=axes[3])
-axes[3].set_title('Gender vs Charges')
-sns.boxplot(x='smoker', y='charges', data=insurance, ax=axes[4])
-axes[4].set_title('Smoking vs Charges')
-
-for ax in axes:
-    ax.set_facecolor('#f4f4f4')
-plt.gcf().patch.set_facecolor('#f4f4f4')
-```  
-
-### Check for Outliers  
+#### Categorical Features
 
 ```{python}
 #| code-fold: false
-sns.boxplot(y='charges', data=insurance)
-plt.title('Boxplot of Charges')
-plt.gca().set_facecolor('#f4f4f4') 
-plt.gcf().patch.set_facecolor('#f4f4f4')
-plt.show()
+import scipy.stats as st
+anova_sex, p_value1 = st.f_oneway(
+    insurance[insurance['sex']=='male']['charges'],
+    insurance[insurance['sex']=='female']['charges']
+)
+
+anova_smoker, p_value2 = st.f_oneway(
+    insurance[insurance['smoker']=='yes']['charges'],
+    insurance[insurance['smoker']=='no']['charges']
+)
+
+anova_region, p_value3 = st.f_oneway(
+    insurance[insurance['region']=='southwest']['charges'],
+    insurance[insurance['region']=='southeast']['charges'],
+    insurance[insurance['region']=='northwest']['charges'],
+    insurance[insurance['region']=='northeast']['charges']
+)
+
+anova_children, p_value4 = st.f_oneway(
+    insurance[insurance['children']==0]['charges'],
+    insurance[insurance['children']==1]['charges'],
+    insurance[insurance['children']==2]['charges'],
+    insurance[insurance['children']==3]['charges'],
+    insurance[insurance['children']==4]['charges'],
+    insurance[insurance['children']==5]['charges']
+)
+
+anova_results = {
+    'feature_name': ['sex', 'smoker', 'region', 'children'],
+    'F-Statistic':[anova_sex, anova_smoker,anova_region,anova_children],
+    'p-value':[p_value1, p_value2, p_value3, p_value4]
+}
+
+anova = pd.DataFrame(anova_results)
+print(anova)
 ```  
 
 
+#### Information Gain  
 
-## Data Pre-processing for Modeling  
+Both `age` and `bmi` features are positively correlated to `charges` with correlation coefficients $0.3$ and $0.2$, respectively. Since the $p$-values are less thatn $0.05$, therefore, all the categorical features have impact on the target features.  
 
-### Categorical Variables  
+
+
+## Pre-processing
+
+### Data Cleaning
 ```{python} 
 #| code-fold: false
 # Binary Encoding for the variables with two categories
-insurance['sex'] = insurance['sex'].map({'male':1, 'female':0})
-insurance['smoker'] = insurance['smoker'].map({'yes':1, 'no':0})
+from sklearn.preprocessing import LabelEncoder
 
-# One-Hot Encoding for the multiclas variable: region
-insurance = pd.get_dummies(
-    insurance, columns=['region'],
-    drop_first=True,
-    dtype=int
-    )
+insurance['male'] = pd.get_dummies(insurance.sex, dtype=int)['male']
+insurance['smoke'] = pd.get_dummies(insurance.smoker, dtype=int)['yes']
+insurance.drop(['sex','smoker'],axis=1, inplace=True)
+
+label_encoder = LabelEncoder()
+insurance['region']=label_encoder.fit_transform(insurance['region'])
+
+new_order = ['age', 'bmi', 'male', 'smoke','children','region', 'charges']
+insurance = insurance[new_order]
+insurance['charges'] = insurance['charges'].round(2)
+insurance.sample(5)
 ```  
 
-### Continuous Variable
 
-```{python}
-#| code-fold: false
-# Round the continuous charge variable to 2 decimal places
-insurance['charges'] = insurance['charges'].round(2)
-
-# Mofe the predicting variable at the end of the dataframe
-insurance_charges = insurance.pop('charges')
-insurance.insert(loc = len(insurance.columns), column='charges', value=insurance_charges)
-
-# Quick look of the dataframe
-insurance.head()
-```   
 
 ### Check for Multicollinearity  
 
@@ -186,192 +256,257 @@ print(vif_data)
 
 Since BMI and Age have higher values for the multicolinearity, therefore we adopt the following methods  
 
-### Residual Adjustment  
+### Feature Engineering  
+#### Interaction term  
 
 ```{python}
 #| code-fold: false
-from sklearn.linear_model import LinearRegression
-reg = LinearRegression()
-reg.fit(insurance.age.values.reshape(-1,1), insurance.bmi.values)
-insurance['bmi_adusted_for_age'] = insurance.bmi.values - reg.predict(insurance.age.values.reshape(-1,1))
+plt.scatter(insurance.age,insurance.bmi)
+plt.xlabel('AGE')
+plt.ylabel('BMI')
+plt.title('BMI vs AGE')
+plt.gca().set_facecolor('#f4f4f4') 
+plt.gcf().patch.set_facecolor('#f4f4f4')
+plt.show()
 ```  
 
-### Interaction Term Adjustment  
+
+<p style="text-align: justify">
+    Since there is no clear linear relationship or any pattern, the Multicollinearity issue can be ignored. However, older individuals with a certain BMI range might have different risks or costs associated with their health. We could explore interaction terms like `age` * `bmi` in our model to capture any potential synergistic effects.  
+</p>
 
 ```{python}
 #| code-fold: false
-insurance['bmi_age_interact'] = insurance['bmi']*insurance['age']
+insurance.insert(6,'age_bmi',insurance.age*insurance.bmi)
+insurance.insert(7,'age_bmi_smoke',insurance.age_bmi*insurance.smoke)
+insurance.sample(5,random_state=111)
 ```  
 
-### Z-Score Normalization  
+
+### Data Splitting  
 
 ```{python}
 #| code-fold: false
-bins = [18,30,40,50,60,70]
-labels = ['18-30','31-40','41-50','51-60','61-70']
-insurance['age_group'] = pd.cut(insurance['age'], bins= bins, labels=labels)
-insurance['bmi_zscore'] = insurance.groupby('age_group', observed=False)['bmi'].transform(lambda x: (x-x.mean())/x.std())
-insurance.sample(5, random_state=111)
+from sklearn.model_selection import train_test_split
+X = insurance.drop('charges',axis=1)
+y = insurance['charges'].to_frame()
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.30, random_state=42)
 ```  
 
-To check any missing values  
+### Standardization  
 
 ```{python}
 #| code-fold: false
-insurance.info()
-```  
+from sklearn.preprocessing import StandardScaler
+from sklearn.compose import ColumnTransformer
 
-Therefore, there are some missing data.  
+conts_features = ['age','bmi','age_bmi']
+categ_features = ['male','smoke', 'children','region']
 
-```{python}
-#| code-fold: false
-insurance = insurance.dropna()
-insurance.info()
-```  
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', StandardScaler(), conts_features)
+    ],
+    remainder= 'passthrough'
+)
+X_train_sc = preprocessor.fit_transform(X_train)
+X_test_sc = preprocessor.fit(X_test)
+```
 
 
 # Model  
 ## Modelling Approaches  
+
+We consider the following models  
+
+1. **Baseline model:** Assumption that the `charges` variable can be modeled with the mean value of this `charges` variable.  
+   $$ 
+   \text{charges}=\mathbb{E}[\text{charges}]+\xi
+   $$
+2. **Linear Regression with `age-bmi-smoke` interaction**  
+   $$
+    \text{charges}=\beta_0+\beta_1 (\text{age\_bmi})+\beta_2 (\text{male})+\beta_3 (\text{smoke})+\beta_4 (\text{children})+\beta_5 (\text{region})+\beta_6 (\text{age-bmi-smoke})+\xi
+   $$  
+
+3. **K-Neighbor Regression**  
+   $k$NN using all the original feature
+
+
 ```{python}
 #| code-fold: false
 import numpy as np
-from sklearn.model_selection import train_test_split, KFold
-from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import KFold
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
+from sklearn.metrics import mean_squared_error
+
+kfold = KFold(n_splits=5,shuffle=True, random_state=111)
+
+mses = np.zeros((3,5))
+
+k = 10
+
+for i, (train_index, test_index) in enumerate(kfold.split(X_train_sc)):
+    X_train_sc_train = X_train_sc[train_index]
+    X_train_sc_holdout = X_train_sc[test_index]
+
+    y_train_train = y_train.iloc[train_index]
+    y_train_holdout = y_train.iloc[test_index]
+
+    pred0 = y_train_train.charges.mean()*np.ones(len(test_index))
+
+    model1 = LinearRegression()
+    model2 = KNeighborsRegressor(k)
+
+    model1.fit(X_train_sc_train[:,2:], y_train_train)
+    model2.fit(X_train_sc_train[:,:6], y_train_train)
+
+    pred1 = model1.predict(X_train_sc_holdout[:,2:])
+    pred2 = model2.predict(X_train_sc_holdout[:,:6])
+
+
+    mses[0,i] = mean_squared_error(y_train_holdout, pred0)
+    mses[1,i] = mean_squared_error(y_train_holdout, pred1)
+    mses[2,i] = mean_squared_error(y_train_holdout, pred2)
+
+plt.scatter(np.zeros(5), mses[0,:],s=60, c='white', edgecolors='black', label='Single Split')
+plt.scatter(np.ones(5), mses[1,:], s=60, c='white', edgecolors='black')
+plt.scatter(2*np.ones(5), mses[1,:], s=60, c='white', edgecolors='black')
+plt.scatter([0,1,2],np.mean(mses, axis=1),s=60, c='r', marker='X', label='Mean')
+plt.legend(loc='upper right', fontsize=12)
+plt.xticks([0,1,2],['Baseline','LinReg','KNN Reg'])
+plt.yticks(fontsize=10)
+plt.ylabel('MSE',fontsize=12)
+plt.gca().set_facecolor('#f4f4f4')
+plt.gcf().patch.set_facecolor('#f4f4f4')
+plt.show()
+
 ```  
+
 
 ```{python}
 #| code-fold: false
-insurance_train, insurance_test = train_test_split(
-    insurance, test_size=0.2,
-    random_state=111
-)
+print(np.mean(np.sqrt(mses),axis=1))
+print('\n')
+print('Minimum RMSE={} \n Model {}'.format(min(np.mean(np.sqrt(mses),axis=1)),np.argmin(np.mean(np.sqrt(mses),axis=1))) )
 ```
 
 
+## Final Model  
+
+
 ```{python}
 #| code-fold: false
-#| code-overflow: scroll
-kfold = KFold(9, shuffle=True, random_state=111)
-mses = np.zeros((9,9))
-k = 12
-for i, (train_index, test_index) in enumerate(kfold.split(insurance_train)):
-    # Training Set
-    insurance_train_train = insurance_train.iloc[train_index]
-    # Holdout Set 
-    insurance_train_test = insurance_train.iloc[test_index]
+#| warning: false
+from sklearn.pipeline import Pipeline
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.preprocessing import OneHotEncoder
+data = pd.read_csv('insurance.csv')
 
-    prediction0 = insurance_train_train.charges.mean()*np.ones(len(test_index))
+class FeatureEngineering(BaseEstimator, TransformerMixin):
+    def __init__(self):
+        # Initialize OneHotEncoder for 'smoker' and 'sex'
+        self.ohe_smoker_sex = OneHotEncoder(
+            drop='first', dtype=int, sparse_output=False)
+        self.label_encoder = LabelEncoder()
 
-    model1 = LinearRegression()
-    model2 = LinearRegression()
-    model3 = LinearRegression()
-    model4 = LinearRegression()
-    model5 = LinearRegression()
-    model6 = LinearRegression()
-    model7 = LinearRegression()
-    model8 = KNeighborsRegressor(k)
+    def fit(self, X, y=None):
+        # Fit the OneHotEncoder on smoker and sex
+        self.ohe_smoker_sex.fit(X[['smoker', 'sex']])
+        self.label_encoder.fit(X['region'])
+        return self
 
-    # Fit the models 
+    def transform(self, X):
+        X = X.copy()
 
-    model1.fit(
-        insurance_train_train.bmi_adusted_for_age.values.reshape(-1,1), insurance_train_train.charges.values
-    )
-    model2.fit(
-        insurance_train_train.bmi_age_interact.values.reshape(-1,1), insurance_train_train.charges.values
-    )
-    model3.fit(
-        insurance_train_train.bmi_zscore.values.reshape(-1,1), insurance_train_train.charges.values
-    )
-    model4.fit(
-        insurance_train_train[
-            ['age','bmi_adusted_for_age','sex','children','region_northwest','region_southeast','region_southwest']
-        ], insurance_train_train.charges.values
-    )
-    model5.fit(
-        insurance_train_train[
-            ['age','bmi','bmi_age_interact','sex','children','region_northwest','region_southeast','region_southwest']
-        ], insurance_train_train.charges.values
-    )
-    model6.fit(
-        insurance_train_train[
-            ['age','bmi_zscore','sex','children','region_northwest','region_southeast','region_southwest']
-        ], insurance_train_train.charges.values
-    )
-    model7.fit(
-        insurance_train_train[
-            ['bmi_adusted_for_age','bmi_age_interact','bmi_zscore','sex','children','region_northwest','region_southeast','region_southwest']
-        ], insurance_train_train.charges.values
-    )
-    model8.fit(
-        insurance_train_train[
-            ['age','bmi','sex','children','region_northwest','region_southeast','region_southwest']
-        ], insurance_train_train.charges.values
-    )
-    prediction1 = model1.predict(
-        insurance_train_test.bmi_adusted_for_age.values.reshape(-1,1)
-    )
-    prediction2 = model2.predict(
-        insurance_train_test.bmi_age_interact.values.reshape(-1,1)
-    )
-    prediction3 = model3.predict(
-        insurance_train_test.bmi_zscore.values.reshape(-1,1)
-    )
-    prediction4 = model4.predict(
-        insurance_train_test[['age','bmi_adusted_for_age','sex','children','region_northwest','region_southeast','region_southwest']]
-    )
-    prediction5 = model5.predict(
-        insurance_train_test[
-            ['age','bmi','bmi_age_interact','sex','children','region_northwest','region_southeast','region_southwest']
-        ]
-    )
-    prediction6 = model6.predict(
-        insurance_train_test[
-            ['age','bmi_zscore','sex','children','region_northwest','region_southeast','region_southwest']
-        ]
-    )
-    prediction7 = model7.predict(
-        insurance_train_test[
-            ['bmi_adusted_for_age','bmi_age_interact','bmi_zscore','sex','children','region_northwest','region_southeast','region_southwest']
-        ]
-    )
-    prediction8 = model8.predict(
-        insurance_train_test[
-            ['age','bmi','sex','children','region_northwest','region_southeast','region_southwest']
-        ]
-    )
-    
-    mses[0,i] = mean_squared_error(insurance_train_test.charges.values, prediction0)
-    mses[1,i] = mean_squared_error(insurance_train_test.charges.values, prediction1)
-    mses[2,i] = mean_squared_error(insurance_train_test.charges.values, prediction2)
-    mses[3,i] = mean_squared_error(insurance_train_test.charges.values, prediction3)
-    mses[4,i] = mean_squared_error(insurance_train_test.charges.values, prediction4)
-    mses[5,i] = mean_squared_error(insurance_train_test.charges.values, prediction5)
-    mses[6,i] = mean_squared_error(insurance_train_test.charges.values, prediction6)
-    mses[7,i] = mean_squared_error(insurance_train_test.charges.values, prediction7)
-    mses[8,i] = mean_squared_error(insurance_train_test.charges.values, prediction8)
+        # Apply OneHotEncoder to 'smoker' and 'sex'
+        smoker_sex_encoded = self.ohe_smoker_sex.transform(
+            X[['smoker', 'sex']])
+        smoker_sex_columns = ['smoker_yes', 'sex_male']
+
+        # Create DataFrame for encoded variables and merge with original data
+        smoker_sex_df = pd.DataFrame(
+            smoker_sex_encoded, columns=smoker_sex_columns, index=X.index)
+        X = pd.concat([X, smoker_sex_df], axis=1)
+
+        # Label encode the 'region' column
+        X['region'] = self.label_encoder.transform(X['region'])
+
+        # Create new features
+        X['age_bmi'] = X['age'] * X['bmi']
+        X['age_bmi_smoker'] = X['age_bmi'] * X['smoker_yes']
+
+        # Drop original columns
+        X = X.drop(columns=['age', 'bmi', 'smoker', 'sex'])
+
+        return X
+
+data = pd.read_csv('insurance.csv')
+data['charges'] = data['charges'].round(2)
+
+X = data.drop('charges', axis=1)
+y = data['charges']
+
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('scale', StandardScaler(), ['age_bmi', 'age_bmi_smoker'])
+    ],
+    remainder='passthrough'
+)
+
+pipe = Pipeline(steps=[
+    ('feature_engineering', FeatureEngineering()),
+    ('preprocess', preprocessor),
+    ('model', LinearRegression())
+])
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, shuffle=True, random_state=111
+)
+pipe.fit(X_train, y_train)
+print(np.round(pipe['model'].intercept_,2))
+```
+
+## Model Validation  
+
+### Root Mean Squared Error (RMSE)
+
+```{python}
+#| code-fold: false
+train_prediction = pipe.predict(X_train)
+test_prediction = pipe.predict(X_test)
+
+print("Training set RMSE:",
+    np.round(np.sqrt(mean_squared_error(train_prediction,y_train)))
+)
+print("Test set RMSE:",
+    np.round(np.sqrt(mean_squared_error(test_prediction,y_test)))
+)
 ```  
 
+### R-Squared ($R^2$)  
+
 ```{python}
 #| code-fold: false
-#| code-overflow: wrap
-plt.figure(figsize=(9.5,5))
+from sklearn.metrics import r2_score
+y_pred = pipe.predict(X_test)
+r2 = r2_score(y_test, y_pred)
+print(f'R-squared: {r2:.4f}')
+```  
 
-plt.scatter(np.zeros(9), mses[0,:], s=60, c='white', edgecolors='black', label= 'Single Split')
-plt.scatter(np.ones(9), mses[1,:], s=60, c='white', edgecolors='black')
-plt.scatter(2*np.ones(9), mses[2,:], s=60, c='white', edgecolors='black')
-plt.scatter(3*np.ones(9), mses[3,:], s=60, c='white', edgecolors='black')
-plt.scatter(4*np.ones(9), mses[4,:], s=60, c='white', edgecolors='black')
-plt.scatter(5*np.ones(9), mses[5,:], s=60, c='white', edgecolors='black')
-plt.scatter(6*np.ones(9), mses[6,:], s=60, c='white', edgecolors='black')
-plt.scatter(7*np.ones(9), mses[7,:], s=60, c='white', edgecolors='black')
-plt.scatter(8*np.ones(9), mses[8,:], s=60, c='white', edgecolors='black')
-plt.scatter([0,1,2,3,4,5,6,7,8], np.mean(mses, axis=1), s=60, c='r', marker='X', label='Mean')
-plt.legend(loc='upper right',fontsize=12)
-plt.xticks([0,1,2,3,4,5,6,7,8],['Baseline','Model 1','Model 2','Model 3','Model 4','Model 5','Model 6','Model 7', ' Model 8'])
-plt.yticks(fontsize=10)
-plt.ylabel('MSE', fontsize=12)
+### Residuals  
+
+```{python}
+#| code-fold: false
+res = y_test - y_pred
+
+plt.scatter(y_pred, res)
+plt.axhline(y=0, color='r', linestyle='--')
+plt.xlabel('Predicted Values')
+plt.ylabel('Residuals')
+plt.title('Residuals Plot')
 plt.gca().set_facecolor('#f4f4f4') 
 plt.gcf().patch.set_facecolor('#f4f4f4')
 plt.show()
@@ -379,28 +514,21 @@ plt.show()
 
 ```{python}
 #| code-fold: false
-print(np.mean(np.sqrt(mses), axis=1))
-print('\n')
-# Minimum and the position
-print('Minimum RMSE={} \n Model {}'.format(min(np.mean(np.sqrt(mses), axis=1)),np.argmin(np.mean(np.sqrt(mses), axis=1))))
+sns.displot(res,kind='kde')
+plt.gca().set_facecolor('#f4f4f4') 
+plt.gcf().patch.set_facecolor('#f4f4f4')
+plt.show()
 ```  
 
-## Final Model  
-
-This part needs to be updated
-
+# Development and Deployment
 ```{python}
 #| code-fold: false
-model = LinearRegression()
-model.fit(insurance_train[['age','bmi']],insurance_train.charges.values)
-print("RMSE on the training set: ",
-    np.round(np.sqrt(mean_squared_error(insurance_train.charges.values, model.predict(insurance_train[['age','bmi']]))),2)
-)
+import pickle
 
-print("RMSE on the test set: ",
-    np.round(np.sqrt(mean_squared_error(insurance_test.charges.values, model.predict(insurance_test[['age','bmi']]))),2)
-)
+pickle.dump(pipe, open('regmodel.pkl','wb'))
 ```
+
+
 
 
 

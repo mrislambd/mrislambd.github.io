@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/codepages/medicalcost/index.html</loc>
-    <lastmod>2024-09-12T01:28:55.607Z</lastmod>
+    <lastmod>2024-09-17T01:28:59.045Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/research.html</loc>
@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/portfolio/dsp/medicalcost/index.html</loc>
-    <lastmod>2024-09-11T23:06:45.294Z</lastmod>
+    <lastmod>2024-09-17T02:01:06.616Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/statisticaltalk/index.html</loc>
@@ -95,5 +95,13 @@
   <url>
     <loc>https://mrislambd.github.io/posts/montecarlo1/index.html</loc>
     <lastmod>2024-09-12T00:43:23.961Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/datacollection/index.html</loc>
+    <lastmod>2024-09-17T00:50:56.902Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/dataengineering/index.html</loc>
+    <lastmod>2024-09-17T02:02:36.691Z</lastmod>
   </url>
 </urlset>
