@@ -5,9 +5,6 @@ date: 2024-09-12
 search: true
 ---  
 
-<p align="center">
-  <img src="/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400"/>
-</p>
 
 # Data Gathering, Defining Stakeholders and KPIs    
 
