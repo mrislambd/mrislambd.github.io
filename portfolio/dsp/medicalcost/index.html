@@ -227,11 +227,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#project-overview" id="toc-project-overview" class="nav-link active" data-scroll-target="#project-overview">Project Overview</a></li>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a>
-  <ul class="collapse">
-  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context">Context</a></li>
-  <li><a href="#content" id="toc-content" class="nav-link" data-scroll-target="#content">Content</a></li>
-  </ul></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
   <li><a href="#stakeholders" id="toc-stakeholders" class="nav-link" data-scroll-target="#stakeholders">Stakeholders</a></li>
   <li><a href="#key-performance-indicators-kpis" id="toc-key-performance-indicators-kpis" class="nav-link" data-scroll-target="#key-performance-indicators-kpis">Key Performance Indicators (KPIs)</a></li>
   <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">Modeling</a>
@@ -294,14 +290,6 @@ This predictive modeling project involves personal medical data to predict the m
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
 <p>The dataset used in this project is collected from <a href="https://www.kaggle.com/datasets/mirichoi0218/insurance" target="_blank" style="text-decoration:none">Kaggle</a></p>
-<section id="context" class="level3">
-<h3 class="anchored" data-anchor-id="context">Context</h3>
-<p style="text-align: justify">
-Machine Learning with R by Brett Lantz is a book that provides an introduction to machine learning using R. As far as I can tell, Packt Publishing does not make its datasets available online unless you buy the book and create a user account which can be a problem if you are checking the book out from the library or borrowing the book from a friend. All of these datasets are in the public domain but simply needed some cleaning up and recoding to match the format in the book.
-</p>
-</section>
-<section id="content" class="level3">
-<h3 class="anchored" data-anchor-id="content">Content</h3>
 <p><strong>Columns</strong></p>
 <p><code>age</code>: age of primary beneficiary</p>
 <p><code>sex</code>: insurance contractor gender, female, male</p>
@@ -312,7 +300,6 @@ Machine Learning with R by Brett Lantz is a book that provides an introduction t
 <p><code>charges</code>: Individual medical costs billed by health insurance</p>
 <p>Acknowledgements</p>
 <p>The dataset is available on GitHub <a href="https://github.com/stedy/Machine-Learning-with-R-datasets" target="_blank" style="text-decoration:none">here</a>.</p>
-</section>
 </section>
 <section id="stakeholders" class="level2">
 <h2 class="anchored" data-anchor-id="stakeholders">Stakeholders</h2>
@@ -345,21 +332,24 @@ All the features were considered for the modeling purposes. However, from the ex
 <section id="final-model" class="level3">
 <h3 class="anchored" data-anchor-id="final-model">Final Model</h3>
 <p>Finally the modeling was done based on the lowest <code>MSE</code> value found from the 5-fold cross validation and the model has the following form</p>
-<p><span class="math display">\[
-\text{charges} =10621.25+ 3346.14\times \text{Age\_BMI}+4570.76\times \text{Male}+ 479.61\times \text{Smoke}-315.12\times \text{Children}+13274.48\times \text{Region}-212.22\times \text{Age\_BMI\_Smoke}
-\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\text{charges} &amp;=10621.25+ 3346.14\times \text{Age\_BMI}+4570.76\times \text{Male}+ 479.61\times \text{Smoke}-315.12\times \text{Children}\\
+&amp;+13274.48\times \text{Region}-212.22\times \text{Age\_BMI\_Smoke}
+\end{align*}\]</span></p>
 </section>
 </section>
 <section id="results-and-outcomes" class="level2">
 <h2 class="anchored" data-anchor-id="results-and-outcomes">Results and Outcomes</h2>
 <section id="model-accuracy" class="level3">
 <h3 class="anchored" data-anchor-id="model-accuracy">Model Accuracy</h3>
-<p>The model above returns an RMSE of <span class="math inline">\(5853.0\)</span> on the training set and an RMSE of <span class="math inline">\(5600.0\)</span> on the test set with an <span class="math inline">\(R^2=80%\)</span>.</p>
+<p>The model above returns an RMSE of <span class="math inline">\(5853.0\)</span> on the training set and an RMSE of <span class="math inline">\(5600.0\)</span> on the test set with an <span class="math inline">\(R^2=80\%\)</span>.</p>
 </section>
 <section id="web-application" class="level3">
 <h3 class="anchored" data-anchor-id="web-application">Web Application</h3>
 <p>The final model was developed and deployed using <code>Streamlit</code>. To try a single instance, fill out the following form and then click predict charges.</p>
-<iframe height="800" width="800" src="https://michargepredictor.streamlit.app/?embed=true" title="Medical Insurance Charge Prediction"> </iframe>
+<center>
+<iframe height="600" width="450" src="https://michargepredictor.streamlit.app/?embed=true" title="Medical Insurance Charge Prediction"> </iframe>
+</center>
 </section>
 </section>
 <section id="future-directions" class="level2">
@@ -896,108 +886,105 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset  </span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>The dataset used in this project is collected from <span class="co">[</span><span class="ot">Kaggle</span><span class="co">](https://www.kaggle.com/datasets/mirichoi0218/insurance)</span>{target="_blank" style="text-decoration:none"}  </span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Context  </span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt;</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  Machine Learning with R by Brett Lantz is a book that provides an introduction to machine learning using R. As far as I can tell, Packt Publishing does not make its datasets available online unless you buy the book and create a user account which can be a problem if you are checking the book out from the library or borrowing the book from a friend. All of these datasets are in the public domain but simply needed some cleaning up and recoding to match the format in the book.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>&lt;/p&gt;  </span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### Content  </span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>**Columns**</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">`age`</span>: age of primary beneficiary</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="in">`sex`</span>: insurance contractor gender, female, male</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">`bmi`</span>: Body mass index, providing an understanding of body, weights that are relatively high or low relative to height, objective index of body weight $\frac{kg}{m^ 2}$ using the ratio of height to weight, ideally $18.5$ to $24.9$</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="in">`children`</span>: Number of children covered by health insurance / Number of dependents</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">`smoker`</span>: Smoking</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="in">`region`</span>: the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="in">`charges`</span>: Individual medical costs billed by health insurance</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Acknowledgements</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>The dataset is available on GitHub <span class="co">[</span><span class="ot">here</span><span class="co">](https://github.com/stedy/Machine-Learning-with-R-datasets)</span>{target="_blank" style="text-decoration:none"}.</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stakeholders  </span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Can we accurately predict insurance costs?</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Performance Indicators (KPIs)  </span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>**Columns**</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">`age`</span>: age of primary beneficiary</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="in">`sex`</span>: insurance contractor gender, female, male</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="in">`bmi`</span>: Body mass index, providing an understanding of body, weights that are relatively high or low relative to height, objective index of body weight $\frac{kg}{m^ 2}$ using the ratio of height to weight, ideally $18.5$ to $24.9$</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">`children`</span>: Number of children covered by health insurance / Number of dependents</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">`smoker`</span>: Smoking</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="in">`region`</span>: the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="in">`charges`</span>: Individual medical costs billed by health insurance</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Acknowledgements</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>The dataset is available on GitHub <span class="co">[</span><span class="ot">here</span><span class="co">](https://github.com/stedy/Machine-Learning-with-R-datasets)</span>{target="_blank" style="text-decoration:none"}.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stakeholders  </span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Can we accurately predict insurance costs?</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Performance Indicators (KPIs)  </span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt;</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>All the features were considered for the modeling purposes. However, from the exploratory data analysis and mathematical analysis, it was found that the <span class="in">`charges`</span> usually goes up for the factors such as increase in <span class="in">`age`</span>, living in certain <span class="in">`region`</span>, having certain number of <span class="in">`children`</span>. But this is not always the same depending on the <span class="in">`smoker`</span> variable. Also, there is a strong correlation between <span class="in">`age`</span> and <span class="in">`bmi`</span> variable. Age a result new features such as <span class="in">`age_bmi`</span> and <span class="in">`age_bmi_smoker`</span> features were created to see how the <span class="in">`charges`</span> interact.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>&lt;/p&gt;</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modeling  </span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modeling Approaches  </span></span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt;</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>All the features were considered for the modeling purposes. However, from the exploratory data analysis and mathematical analysis, it was found that the <span class="in">`charges`</span> usually goes up for the factors such as increase in <span class="in">`age`</span>, living in certain <span class="in">`region`</span>, having certain number of <span class="in">`children`</span>. But this is not always the same depending on the <span class="in">`smoker`</span> variable. Also, there is a strong correlation between <span class="in">`age`</span> and <span class="in">`bmi`</span> variable. Age a result new features such as <span class="in">`age_bmi`</span> and <span class="in">`age_bmi_smoker`</span> features were created to see how the <span class="in">`charges`</span> interact.</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>&lt;/p&gt;</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modeling  </span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modeling Approaches  </span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>We consider the following models  </span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Baseline model:** Assumption that the <span class="in">`charges`</span> variable can be modeled with the mean value of this <span class="in">`charges`</span> variable.  </span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>   $$ </span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>   \text{charges}=\mathbb{E}<span class="co">[</span><span class="ot">\text{charges}</span><span class="co">]</span>+\xi</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>   $$</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Linear Regression with `age-bmi-smoke` interaction**  </span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>   $$</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    \text{charges}=\beta_0+\beta_1 (\text{age<span class="sc">\_</span>bmi})+\beta_2 (\text{male})+\beta_3 (\text{smoke})+\beta_4 (\text{children})+\beta_5 (\text{region})+\beta_6 (\text{age-bmi-smoke})+\xi</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>   $$  </span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>We consider the following models  </span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Baseline model:** Assumption that the <span class="in">`charges`</span> variable can be modeled with the mean value of this <span class="in">`charges`</span> variable.  </span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>   $$ </span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>   \text{charges}=\mathbb{E}<span class="co">[</span><span class="ot">\text{charges}</span><span class="co">]</span>+\xi</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Linear Regression with `age-bmi-smoke` interaction**  </span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    \text{charges}=\beta_0+\beta_1 (\text{age<span class="sc">\_</span>bmi})+\beta_2 (\text{male})+\beta_3 (\text{smoke})+\beta_4 (\text{children})+\beta_5 (\text{region})+\beta_6 (\text{age-bmi-smoke})+\xi</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>   $$  </span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**K-Neighbor Regression**  </span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>   $k$NN using all the original feature with $k=10$</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">### Final Model  </span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Finally the modeling was done based on the lowest <span class="in">`MSE`</span> value found from the 5-fold cross validation and the model has the following form  </span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**K-Neighbor Regression**  </span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>   $k$NN using all the original feature with $k=10$</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### Final Model  </span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>\text{charges} &amp;=10621.25+ 3346.14\times \text{Age<span class="sc">\_</span>BMI}+4570.76\times \text{Male}+ 479.61\times \text{Smoke}-315.12\times \text{Children}<span class="sc">\\</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>&amp;+13274.48\times \text{Region}-212.22\times \text{Age<span class="sc">\_</span>BMI<span class="sc">\_</span>Smoke}</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>Finally the modeling was done based on the lowest <span class="in">`MSE`</span> value found from the 5-fold cross validation and the model has the following form  </span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>\text{charges} =10621.25+ 3346.14\times \text{Age<span class="sc">\_</span>BMI}+4570.76\times \text{Male}+ 479.61\times \text{Smoke}-315.12\times \text{Children}+13274.48\times \text{Region}-212.22\times \text{Age<span class="sc">\_</span>BMI<span class="sc">\_</span>Smoke}</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results and Outcomes  </span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="fu">### Model Accuracy  </span></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>The model above returns an RMSE of $5853.0$ on the training set and an RMSE of $5600.0$</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>on the test set with an $R^2=80%$.  </span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">### Web Application  </span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>The final model was developed and deployed using <span class="in">`Streamlit`</span>. To try a single instance, fill out the following form and then click predict charges.</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe height="800" width="800" src="https://michargepredictor.streamlit.app/?embed=true" title="Medical Insurance Charge Prediction"&gt; &lt;/iframe&gt;</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="fu">## Future Directions  </span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>Future project on the same data could be adding a neural network and compare the relative performances of the two models.  </span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>**Share on**  </span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>&lt;div id="fb-root"&gt;&lt;/div&gt;</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>&lt;script async defer crossorigin="anonymous"</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a> src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"&gt;&lt;/script&gt;</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>&lt;div class="share-buttons"&gt;</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>&lt;div class="fb-share-button" data-href="https://mrislambd.github.io/portfolio/dsp/medicalcost/"</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>data-layout="button_count" data-size="small"&gt;&lt;a target="_blank" </span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a> href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fportfolio%2Fdsp%2Fmedicalcost%2F<span class="dv">&amp;amp;</span>src=sdkpreparse" </span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a> class="fb-xfbml-parse-ignore"&gt;Share&lt;/a&gt;&lt;/div&gt;</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>&lt;script src="https://platform.linkedin.com/in.js" type="text/javascript"&gt;lang<span class="op">:</span> en_US&lt;/script&gt;</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>&lt;script type="IN/Share" data-url="https://mrislambd.github.io/portfolio/dsp/medicalcost/"&gt;&lt;/script&gt; </span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" </span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a> data-url="https://mrislambd.github.io/portfolio/dsp/medicalcost/" data-show-count="true"&gt;Tweet&lt;/a&gt;</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>&lt;div class="fb-comments" data-href="https://mrislambd.github.io/portfolio/dsp/medicalcost/"</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a> data-width="" data-numposts="5"&gt;&lt;/div&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results and Outcomes  </span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### Model Accuracy  </span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>The model above returns an RMSE of $5853.0$ on the training set and an RMSE of $5600.0$</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>on the test set with an $R^2=80\%$.  </span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="fu">### Web Application  </span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>The final model was developed and deployed using <span class="in">`Streamlit`</span>. To try a single instance, fill out the following form and then click predict charges.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;center&gt;</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe height="600" width="450" src="https://michargepredictor.streamlit.app/?embed=true" title="Medical Insurance Charge Prediction" &gt; &lt;/iframe&gt;</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/center&gt;</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">## Future Directions  </span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Future project on the same data could be adding a neural network and compare the relative performances of the two models.  </span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>**Share on**  </span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>&lt;div id="fb-root"&gt;&lt;/div&gt;</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>&lt;script async defer crossorigin="anonymous"</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a> src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"&gt;&lt;/script&gt;</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>&lt;div class="share-buttons"&gt;</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>&lt;div class="fb-share-button" data-href="https://mrislambd.github.io/portfolio/dsp/medicalcost/"</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>data-layout="button_count" data-size="small"&gt;&lt;a target="_blank" </span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a> href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fportfolio%2Fdsp%2Fmedicalcost%2F<span class="dv">&amp;amp;</span>src=sdkpreparse" </span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a> class="fb-xfbml-parse-ignore"&gt;Share&lt;/a&gt;&lt;/div&gt;</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>&lt;script src="https://platform.linkedin.com/in.js" type="text/javascript"&gt;lang<span class="op">:</span> en_US&lt;/script&gt;</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>&lt;script type="IN/Share" data-url="https://mrislambd.github.io/portfolio/dsp/medicalcost/"&gt;&lt;/script&gt; </span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" </span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a> data-url="https://mrislambd.github.io/portfolio/dsp/medicalcost/" data-show-count="true"&gt;Tweet&lt;/a&gt;</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>&lt;div class="fb-comments" data-href="https://mrislambd.github.io/portfolio/dsp/medicalcost/"</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a> data-width="" data-numposts="5"&gt;&lt;/div&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
