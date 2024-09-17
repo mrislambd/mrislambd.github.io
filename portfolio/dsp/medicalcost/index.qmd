@@ -24,13 +24,6 @@ image: ins.jpeg
 ## Dataset  
 The dataset used in this project is collected from [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance){target="_blank" style="text-decoration:none"}  
 
-### Context  
-<p style="text-align: justify">
-  Machine Learning with R by Brett Lantz is a book that provides an introduction to machine learning using R. As far as I can tell, Packt Publishing does not make its datasets available online unless you buy the book and create a user account which can be a problem if you are checking the book out from the library or borrowing the book from a friend. All of these datasets are in the public domain but simply needed some cleaning up and recoding to match the format in the book.
-</p>  
-
-### Content  
-
 **Columns**
 
 `age`: age of primary beneficiary
@@ -82,22 +75,26 @@ We consider the following models
 
 Finally the modeling was done based on the lowest `MSE` value found from the 5-fold cross validation and the model has the following form  
 
-$$
-\text{charges} =10621.25+ 3346.14\times \text{Age\_BMI}+4570.76\times \text{Male}+ 479.61\times \text{Smoke}-315.12\times \text{Children}+13274.48\times \text{Region}-212.22\times \text{Age\_BMI\_Smoke}
-$$
+\begin{align*}
+\text{charges} &=10621.25+ 3346.14\times \text{Age\_BMI}+4570.76\times \text{Male}+ 479.61\times \text{Smoke}-315.12\times \text{Children}\\
+&+13274.48\times \text{Region}-212.22\times \text{Age\_BMI\_Smoke}
+\end{align*}
+
 
 ## Results and Outcomes  
 
 ### Model Accuracy  
 The model above returns an RMSE of $5853.0$ on the training set and an RMSE of $5600.0$
-on the test set with an $R^2=80%$.  
+on the test set with an $R^2=80\%$.  
 
 ### Web Application  
 
 The final model was developed and deployed using `Streamlit`. To try a single instance, fill out the following form and then click predict charges.
 
 ```{=html}
-<iframe height="800" width="800" src="https://michargepredictor.streamlit.app/?embed=true" title="Medical Insurance Charge Prediction"> </iframe>
+<center>
+<iframe height="600" width="450" src="https://michargepredictor.streamlit.app/?embed=true" title="Medical Insurance Charge Prediction" > </iframe>
+</center>
 ```
 
 ## Future Directions  
