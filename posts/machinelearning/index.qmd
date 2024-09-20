@@ -1,6 +1,6 @@
 ---
-title: "Python Implementation of General Machine Learning Algorithms"
-date: "2024-08-29"
+title: "Data Science & Machine Learning Basics"
+date: "2024-09-20"
 author: Rafiq Islam
 categories: [Data Science, Machine Learning, Artificial Intelligence]
 search: true
@@ -10,7 +10,7 @@ listing:
     contents: "/../../posts"
     max-items: 3
     type: grid
-    categories: false
+    categories: true
     date-format: full
     fields: [image, date, title, author, reading-time]
 ---  
@@ -20,24 +20,118 @@ listing:
 </p>
 
 <p style="text-align: justify">
-    This blog post is my personal repository of most common and useful machine learning algorithms using Python. In summer 2024, I participated in a [Data Science Boot Camp by the Erdos Institute](https://www.erdosinstitute.org/){target="_blank" style="text-decoration:none"}. Therefore, the topics listed here mostly align with their bootcamp syllabus. Note that, I did not copy their materials directly that affects the copyright issues. I wrote evrything in my own words and used new dataset.
-</p>
+    This page is my personal repository of most common and useful machine learning algorithms using Python and other data science tricks and tips.
+</p>  
 
-## Regressions  
-### Parametric Regressions  
-1. [Simple Linear Regression](/machinelearning/simplelinreg/index.qmd)
-2. [Multiple Linear Regression](/machinelearning/multiplelinreg/index.qmd)  
+## Machine Learning Algorithms  
 
-### Non-Parametric Regressions  
-1. [K Nearest Neighbors: Regression and Classification](/machinelearning/knn/index.qmd)
+```{=html}
+<style>
+  tr:nth-child(even){
+    background-color: #dddddd
+  }
+</style>
+<table>
+  <thead>
+    <tr>
+      <th> Learning Type </th>
+      <th> Parametric </th>
+      <th> Non-Parametric </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th> Supervised </th>
+      <th>
+        <ul>
+          <li><a href="/dsandml/simplelinreg/index.qmd" style="text-decoration:none" target="_blank">Simple Linear Regression</a></li>
+          <li><a href="/dsandml/multiplelinreg/index.qmd" style="text-decoration:none" target="_blank">Multiple Linear Regression</a></li>
+          <li><a  style="text-decoration:none">Polynomial Regression</a></li>
+          <li><a  style="text-decoration:none">Logistic Regression</a></li>
+          <li><a  style="text-decoration:none">Naive Bayes</a></li>
+        </ul>
+      </th>
+      <th> 
+        <ul>
+          <li><a href="/dsandml/knn/index.qmd" style="text-decoration:none" target="_blank">KNN Regression and Classification</a></li>
+          <li><a href="/dsandml/decisiontree/index.qmd" style="text-decoration:none" target="_blank">Decision Trees</a></li>
+          <li><a  style="text-decoration:none">Random Forest</a></li>
+          <li><a  style="text-decoration:none">Support Vector Machine (SVM)</a></li>
+        </ul>
+      </th>
+    </tr>
+    <tr>
+      <th>Unsupervised </th>
+      <th>
+        <ul>
+          <li><a  style="text-decoration:none">Gaussian Mixture Model (GMM)</a></li>
+          <li><a  style="text-decoration:none">Latent Dirichilet Allocation (LDA)</a></li>
+      </th>
+      <th>
+        <ul>
+          <li><a  style="text-decoration:none">K-Means</a></li>
+          <li><a  style="text-decoration:none">Hierarchial Clustering</a></li>
+          <li><a  style="text-decoration:none">Density-Based Spatial Clustering of Applications with Noise (DBSCAN)</a></li>
+      </th>
+    </tr>
+    <tr>
+      <th> Semi-Supervised </th>
+      <th> Self-training</th>
+    </tr>
+    <tr>
+      <th>Reinforcement Learning </th>
+      <th>
+        <ul>
+          <li><a  style="text-decoration:none">Q-Learning</a></li>
+          <li><a  style="text-decoration:none">DQN</a></li>
+          <li><a  style="text-decoration:none">Policy Gradient</a></li>
+      </th>
+    </tr>
+    <tr>
+      <th>Dimensionality Reduction </th>
+      <th>
+        <ul>
+          <li><a  style="text-decoration:none">Principle Component Analysis (PCA)</a></li>
+          <li><a  style="text-decoration:none">Linear Discriminant Analysis (LDA)</a></li>
+      </th>
+      <th>
+        <ul>
+          <li><a  style="text-decoration:none">t-SNE</a></li>
+          <li><a  style="text-decoration:none">Autoencoders</a></li>
+      </th>
+    </tr>
+    <tr>
+      <th>Ensemble Methods </th>
+      <th>
+        <ul>
+          <li><a  style="text-decoration:none">Bagging</a></li>
+          <li><a  style="text-decoration:none">Boosting</a></li>
+      </th>
+      <th>
+        <ul>
+          <li><a  style="text-decoration:none">Stacking</a></li>
+      </th>
+    </tr>
+    <tr>
+      <th>Deep Learning </th>
+      <th>
+        <ul>
+          <li><a  style="text-decoration:none">Artificial Neural Networks (ANN)</a></li>
+          <li><a  style="text-decoration:none">Convolutional Neural Networks (CNN)</a></li>
+          <li><a  style="text-decoration:none">Recurrent Neural Networks (ANN)</a></li>
+          <li><a  style="text-decoration:none">Long Short-Term Memory (LSTM)</a></li>
+          <li><a  style="text-decoration:none">Generative Adversarial Networks (GAN)</a></li>
+      </th>
+    </tr>
+  </tbody>
+</table>
+```  
 
-## Classifications  
-
-## Time Series  
-
-## Ensemble Learning    
-
-## Neural Networks  
+## Data Science Techniques  
+  
+- <a href="/dsandml/dataengineering/index.qmd" style="text-decoration:none" target="_blank">How do we treat the categorical features for our data science project?</a>
+- <a href="/dsandml/datacollection/index.qmd" style="text-decoration:none" target="_blank">Data collection through Webscraping</a>
+  
 
 
 **You may also like**
