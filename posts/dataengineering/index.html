@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.5.54">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -323,7 +323,7 @@ window.Quarto = {
 <section id="anova" class="level2">
 <h2 class="anchored" data-anchor-id="anova">ANOVA</h2>
 <p>This is the 5 random sample <a href="[www.kaggle.com/datasets/mirichoi0218/insurance/data](https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout)" target="_blank" style="text-decoration:none">data</a> that we are talking about. We will use this data to explain the mathematical formulation of the model.</p>
-<div id="a3d29040" class="cell" data-execution_count="1">
+<div id="bea9f8b6" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -340,7 +340,7 @@ window.Quarto = {
 </div>
 </div>
 <p>We will explain the method using the feature <code>children</code>.</p>
-<div id="0f3b236c" class="cell" data-execution_count="2">
+<div id="c6dfc482" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>child <span class="op">=</span> data.children.value_counts().sort_index()</span>
@@ -400,7 +400,7 @@ window.Quarto = {
 <p style="text-align: justify">
 The main purpose of one-sided ANOVA is to act as a judge like in a court house. It assumes that there is no variation in any group. All group has the same mean. So it sets a null hypthesis and declares that there is no difference in the groups whereas the alternative is set to the opposite. Let’s see what happens to our data
 </p>
-<div id="c916157c" class="cell" data-execution_count="3">
+<div id="d022ddde" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -468,7 +468,7 @@ The main purpose of one-sided ANOVA is to act as a judge like in a court house. 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1726557114270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722139200000" data-listing-file-modified-sort="1723166921694" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
 <a href="../../posts/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -493,7 +493,32 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726012800000" data-listing-file-modified-sort="1726557114274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="934">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1726867698639" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="856">
+<a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../../posts/machinelearning/ml.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data Science &amp; Machine Learning Basics
+</h5>
+<div class="listing-reading-time card-text text-muted">
+5 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Friday, September 20, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1726715517227" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1221">
 <a href="../../posts/dsa/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -504,31 +529,6 @@ Sunday, July 28, 2024
 Data Structure and Algorithms: Basic Programming Hacks
 </h5>
 <div class="listing-reading-time card-text text-muted">
-5 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Wednesday, September 11, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1726557114270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
-<a href="../../posts/datacollection/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../posts/datacollection/ws.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Data collection through Webscraping
-</h5>
-<div class="listing-reading-time card-text text-muted">
 7 min
 </div>
 <div class="card-attribution card-text-small justify">
@@ -536,7 +536,7 @@ Data collection through Webscraping
 Rafiq Islam
 </div>
 <div class="listing-date">
-Wednesday, August 14, 2024
+Wednesday, September 11, 2024
 </div>
 </div>
 </div>
@@ -1154,7 +1154,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Powered by <a href="https://quarto.org/">Quarto</a> 1.5.57</p>
+<p>Powered by <a href="https://quarto.org/">Quarto</a> 1.5.54</p>
 </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
