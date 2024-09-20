@@ -1,0 +1,77 @@
+---
+title: "Review probabilities"
+date: "2024-08-22"
+author: Rafiq Islam
+categories: [Probability, Statistics]
+citation: true
+search: true
+lightbox: true
+image: prob.png
+listing: 
+    contents: "/../../jobandintern"
+    max-items: 3
+    type: grid
+    categories: false
+    date-format: full
+    fields: [image, date, title, author, reading-time]
+---  
+
+
+<p align="center">
+  <img src="/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400"/>
+</p>
+
+## Introduction  
+
+<p style="text-align: justify">
+    In today's world, getting placement in data science world is highly challenging and competitive. It requires a lot of things including but not limited to basic knowledge in statistics, probability, machine learning, deep learning, and computer science. Even sometimes we face some basic problems from statistics and probability that we probably have solve long ago but forgot due to lack of practice or it's taking longer due to rusty memory. Because, in master's and Ph.D's we focus on a very narrow topic and get our experties on those topics. So, it's not a shame or humiliation if we can't do a very simple problem even though we are capable of solving thousand time harder problems than that. It's normal.  
+</p>
+
+## Conditional Probabilities: Bayes's Theorem    
+
+1. Assume two coins, one fair (i.e. equal chance of getting head and tail if tossed) and the other one is unfair and always gets head if tossed. If a coin is chosen at random and tossed six times and you get heads in all six tosses, what is the probability that you are tossing the unfair one?  
+   **Solution:**    
+   Let,  
+   - $F$ be the event the coin is fair, $F'$ being the event of unfair coin and  
+   - $H$ be the event showing up head. 
+   
+   We neeed to find $\mathbb{P}(F'|6H)$, the probability that we are tossing the unfair $F'$ coins given that we got 6 heads.  
+   \begin{align}
+        \mathbb{P}(F'|6H)&=\frac{\mathbb{P}(6H|F')\mathbb{P}(F')}{\mathbb{P}(6H)}
+   \end{align}  
+   Here,  
+   - $\mathbb{P}(F)=\mathbb{P}(F')=\frac{1}{2}$, the probability of chosing a fair or unfair coin
+   - $\mathbb{P}(6H|F)=\left(\frac{1}{2}\right)^6$, by the principle that flipping a fair coin 6 times are indpendent events, and thus the probability got multiplied
+   - $\mathbb{P}(6H|F')=1$, sure event, since unfair coin.  
+   
+   So, the total probability, 
+   $$\mathbb{P}(6H)=\mathbb{P}(6H|F)\mathbb{P}(F)+\mathbb{P}(6H|F')\mathbb{P}(F')=\left(\frac{1}{2}\right)^6\frac{1}{2}+1\cdot \frac{1}{2}$$  
+   Therefore,  
+   $$\mathbb{P}(F'|6H)=\frac{\mathbb{P}(6H|F')\mathbb{P}(F')}{\mathbb{P}(6H)}=\frac{1\cdot\frac{1}{2}}{\left(\frac{1}{2}\right)^6\frac{1}{2}+1\cdot \frac{1}{2}}$$
+
+2. One in thousand people 
+
+
+**Share on**  
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+ src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
+ 
+<div class="share-buttons">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/probability/"
+data-layout="button_count" data-size="small"><a target="_blank" 
+ href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fprobability%2F&amp;src=sdkpreparse" 
+ class="fb-xfbml-parse-ignore">Share</a></div>
+
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="https://mrislambd.github.io/posts/probability/"></script> 
+ 
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" 
+ data-url="https://mrislambd.github.io/posts/probability/" data-show-count="true">Tweet</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/probability/"
+ data-width="" data-numposts="5"></div>
+  
+**You may also like**

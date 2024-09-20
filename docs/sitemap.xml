@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/machinelearning/index.html</loc>
-    <lastmod>2024-09-11T23:13:29.013Z</lastmod>
+    <lastmod>2024-09-20T22:27:58.060Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/publication/pub2/index.html</loc>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/machinelearning/simplelinreg/index.html</loc>
-    <lastmod>2024-08-29T16:38:14.869Z</lastmod>
+    <lastmod>2024-09-19T17:17:38.953Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/teaching/fall22.html</loc>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/dsa/index.html</loc>
-    <lastmod>2024-09-12T01:16:27.486Z</lastmod>
+    <lastmod>2024-09-19T03:11:57.227Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/portfolio/dsp/medicalcost/index.html</loc>
@@ -94,7 +94,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/montecarlo1/index.html</loc>
-    <lastmod>2024-09-12T00:43:23.961Z</lastmod>
+    <lastmod>2024-09-19T21:44:16.221Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/datacollection/index.html</loc>
@@ -103,5 +103,61 @@
   <url>
     <loc>https://mrislambd.github.io/posts/dataengineering/index.html</loc>
     <lastmod>2024-09-17T02:02:36.691Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/sgd/index.html</loc>
+    <lastmod>2024-09-20T21:44:31.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/machinelearning/decisiontree/index.html</loc>
+    <lastmod>2024-08-26T05:33:59.037Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/multiplelinreg/index.html</loc>
+    <lastmod>2024-09-20T21:29:50.649Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/knn/index.html</loc>
+    <lastmod>2024-09-20T21:29:27.110Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/simplelinreg/index.html</loc>
+    <lastmod>2024-09-20T21:30:21.589Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/decisiontree/index.html</loc>
+    <lastmod>2024-09-20T21:33:00.461Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/datacollection/index.html</loc>
+    <lastmod>2024-09-20T21:37:02.575Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/dataengineering/index.html</loc>
+    <lastmod>2024-09-20T21:43:06.587Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/jobandintern/probability/index.html</loc>
+    <lastmod>2024-09-20T22:06:41.086Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/posts/jobandintern/index.html</loc>
+    <lastmod>2024-09-20T22:26:59.964Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/jobandintern/dsa/index.html</loc>
+    <lastmod>2024-09-20T22:06:27.216Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/jobandintern/statisticaltalk/index.html</loc>
+    <lastmod>2024-09-20T22:07:02.359Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/jobandintern/montecarlo1/index.html</loc>
+    <lastmod>2024-09-20T22:21:58.561Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/jobandintern/bayesianinference/index.html</loc>
+    <lastmod>2024-09-20T22:25:29.047Z</lastmod>
   </url>
 </urlset>

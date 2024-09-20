@@ -1,0 +1,16 @@
+---
+title: "Internship and Full Time Job Preparation Review"
+date: "2024-09-20"
+author: Rafiq Islam
+categories: [Data Science, Machine Learning, Artificial Intelligence]
+search: true
+lightbox: true
+image: job.jpeg
+listing: 
+    contents: "/../../jobandintern"
+    type: grid
+    categories: true
+    date-format: full
+    fields: [author,date,title ,image]
+---  
+
