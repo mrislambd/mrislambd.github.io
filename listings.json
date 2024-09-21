@@ -5,245 +5,50 @@
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
       "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]
   },
   {
-    "listing": "/dsandml/decisiontree/index.html",
+    "listing": "/dsandml/polyreg/index.html",
     "items": [
       "/dsandml/datacollection/index.html",
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
       "/dsandml/multiplelinreg/index.html",
-      "/dsandml/simplelinreg/index.html"
-    ]
-  },
-  {
-    "listing": "/dsandml/multiplelinreg/index.html",
-    "items": [
-      "/dsandml/datacollection/index.html",
-      "/dsandml/dataengineering/index.html",
-      "/dsandml/knn/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]
   },
   {
-    "listing": "/portfolio.html",
+    "listing": "/dsandml/dataengineering/index.html",
     "items": [
-      "/portfolio/dsp/medicalcost/index.html",
-      "/portfolio/dsp/dp-nlp/index.html",
-      "/portfolio/spd/desgld/index.html",
-      "/teaching/sp24.html",
-      "/teaching/fall23.html",
-      "/teaching/sp23.html",
-      "/teaching/fall22.html",
-      "/teaching/fall21.html",
-      "/teaching/f18-f21.html"
+      "/dsandml/datacollection/index.html",
+      "/dsandml/knn/index.html",
+      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
+      "/dsandml/simplelinreg/index.html",
+      "/dsandml/decisiontree/index.html"
     ]
   },
   {
-    "listing": "/teaching.html",
+    "listing": "/dsandml/knn/index.html",
     "items": [
-      "/teaching/sp24.html",
-      "/teaching/fall23.html",
-      "/teaching/sp23.html",
-      "/teaching/fall22.html",
-      "/teaching/fall21.html",
-      "/teaching/f18-f21.html"
+      "/dsandml/datacollection/index.html",
+      "/dsandml/dataengineering/index.html",
+      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
+      "/dsandml/simplelinreg/index.html",
+      "/dsandml/decisiontree/index.html"
     ]
   },
   {
-    "listing": "/posts/mathbiology/index.html",
+    "listing": "/posts/eigen/index.html",
     "items": [
       "/posts/machinelearning/index.html",
-      "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
-      "/posts/jobandintern/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/someproofs/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/machinelearning/index.html",
-    "items": [
-      "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
-      "/posts/sgd/index.html",
-      "/posts/jobandintern/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/someproofs/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/welcome/index.html",
-    "items": [
-      "/posts/machinelearning/index.html",
-      "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
-      "/posts/sgd/index.html",
-      "/posts/jobandintern/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/someproofs/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/jobandintern/index.html",
-    "items": [
-      "/jobandintern/bayesianinference/index.html",
-      "/jobandintern/dsa/index.html",
-      "/jobandintern/montecarlo1/index.html",
-      "/jobandintern/probability/index.html",
-      "/jobandintern/statisticaltalk/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/socialshare/index.html",
-    "items": [
-      "/posts/machinelearning/index.html",
-      "/posts/eigen/index.html",
-      "/posts/sgd/index.html",
-      "/posts/jobandintern/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/someproofs/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/someproofs/index.html",
-    "items": [
-      "/posts/machinelearning/index.html",
-      "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
-      "/posts/sgd/index.html",
-      "/posts/jobandintern/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/jobandintern/statisticaltalk/index.html",
-    "items": [
-      "/jobandintern/bayesianinference/index.html",
-      "/jobandintern/dsa/index.html",
-      "/jobandintern/montecarlo1/index.html",
-      "/jobandintern/probability/index.html"
-    ]
-  },
-  {
-    "listing": "/jobandintern/bayesianinference/index.html",
-    "items": [
-      "/jobandintern/dsa/index.html",
-      "/jobandintern/montecarlo1/index.html",
-      "/jobandintern/probability/index.html",
-      "/jobandintern/statisticaltalk/index.html"
-    ]
-  },
-  {
-    "listing": "/research.html",
-    "items": [
-      "/talks/2023-11-20-candi.html",
-      "/talks/2023-10-05-st-op.html",
-      "/talks/2020-04-26-project.html"
-    ]
-  },
-  {
-    "listing": "/jobandintern/montecarlo1/index.html",
-    "items": [
-      "/jobandintern/bayesianinference/index.html",
-      "/jobandintern/dsa/index.html",
-      "/jobandintern/probability/index.html",
-      "/jobandintern/statisticaltalk/index.html"
-    ]
-  },
-  {
-    "listing": "/jobandintern/dsa/index.html",
-    "items": [
-      "/jobandintern/bayesianinference/index.html",
-      "/jobandintern/montecarlo1/index.html",
-      "/jobandintern/probability/index.html",
-      "/jobandintern/statisticaltalk/index.html"
-    ]
-  },
-  {
-    "listing": "/jobandintern/probability/index.html",
-    "items": [
-      "/jobandintern/bayesianinference/index.html",
-      "/jobandintern/dsa/index.html",
-      "/jobandintern/montecarlo1/index.html",
-      "/jobandintern/statisticaltalk/index.html"
-    ]
-  },
-  {
-    "listing": "/blog.html",
-    "items": [
-      "/posts/jobandintern/index.html",
-      "/posts/machinelearning/index.html",
-      "/posts/sgd/index.html",
-      "/posts/socialshare/index.html",
-      "/posts/welcome/index.html",
-      "/posts/matmul/index.html",
-      "/posts/lu/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/eigen/index.html",
-      "/posts/someproofs/index.html",
-      "/posts/matrixrep/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/lu/index.html",
-    "items": [
-      "/posts/machinelearning/index.html",
-      "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
-      "/posts/sgd/index.html",
-      "/posts/jobandintern/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/someproofs/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/matmul/index.html",
-    "items": [
-      "/posts/machinelearning/index.html",
-      "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
-      "/posts/sgd/index.html",
-      "/posts/jobandintern/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/someproofs/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/sgd/index.html",
-    "items": [
-      "/posts/machinelearning/index.html",
-      "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
       "/posts/jobandintern/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
@@ -269,9 +74,178 @@
     ]
   },
   {
-    "listing": "/posts/eigen/index.html",
+    "listing": "/posts/sgd/index.html",
     "items": [
       "/posts/machinelearning/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/jobandintern/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/matmul/index.html",
+    "items": [
+      "/posts/machinelearning/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/sgd/index.html",
+      "/posts/jobandintern/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/lu/index.html",
+    "items": [
+      "/posts/machinelearning/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/sgd/index.html",
+      "/posts/jobandintern/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/jobandintern/index.html",
+      "/posts/machinelearning/index.html",
+      "/posts/sgd/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/welcome/index.html",
+      "/posts/matmul/index.html",
+      "/posts/lu/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/eigen/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/matrixrep/index.html"
+    ]
+  },
+  {
+    "listing": "/jobandintern/probability/index.html",
+    "items": [
+      "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/dsa/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/statisticaltalk/index.html"
+    ]
+  },
+  {
+    "listing": "/jobandintern/dsa/index.html",
+    "items": [
+      "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/probability/index.html",
+      "/jobandintern/statisticaltalk/index.html"
+    ]
+  },
+  {
+    "listing": "/jobandintern/montecarlo1/index.html",
+    "items": [
+      "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/dsa/index.html",
+      "/jobandintern/probability/index.html",
+      "/jobandintern/statisticaltalk/index.html"
+    ]
+  },
+  {
+    "listing": "/research.html",
+    "items": [
+      "/talks/2023-11-20-candi.html",
+      "/talks/2023-10-05-st-op.html",
+      "/talks/2020-04-26-project.html"
+    ]
+  },
+  {
+    "listing": "/jobandintern/bayesianinference/index.html",
+    "items": [
+      "/jobandintern/dsa/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/probability/index.html",
+      "/jobandintern/statisticaltalk/index.html"
+    ]
+  },
+  {
+    "listing": "/jobandintern/statisticaltalk/index.html",
+    "items": [
+      "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/dsa/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/probability/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/someproofs/index.html",
+    "items": [
+      "/posts/machinelearning/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/sgd/index.html",
+      "/posts/jobandintern/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/socialshare/index.html",
+    "items": [
+      "/posts/machinelearning/index.html",
+      "/posts/eigen/index.html",
+      "/posts/sgd/index.html",
+      "/posts/jobandintern/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/jobandintern/index.html",
+    "items": [
+      "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/dsa/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/probability/index.html",
+      "/jobandintern/statisticaltalk/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/welcome/index.html",
+    "items": [
+      "/posts/machinelearning/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/sgd/index.html",
+      "/posts/jobandintern/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/machinelearning/index.html",
+    "items": [
+      "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
       "/posts/jobandintern/index.html",
@@ -284,23 +258,65 @@
     ]
   },
   {
-    "listing": "/dsandml/knn/index.html",
+    "listing": "/posts/mathbiology/index.html",
+    "items": [
+      "/posts/machinelearning/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/sgd/index.html",
+      "/posts/jobandintern/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/teaching.html",
+    "items": [
+      "/teaching/sp24.html",
+      "/teaching/fall23.html",
+      "/teaching/sp23.html",
+      "/teaching/fall22.html",
+      "/teaching/fall21.html",
+      "/teaching/f18-f21.html"
+    ]
+  },
+  {
+    "listing": "/portfolio.html",
+    "items": [
+      "/portfolio/dsp/medicalcost/index.html",
+      "/portfolio/dsp/dp-nlp/index.html",
+      "/portfolio/spd/desgld/index.html",
+      "/teaching/sp24.html",
+      "/teaching/fall23.html",
+      "/teaching/sp23.html",
+      "/teaching/fall22.html",
+      "/teaching/fall21.html",
+      "/teaching/f18-f21.html"
+    ]
+  },
+  {
+    "listing": "/dsandml/multiplelinreg/index.html",
     "items": [
       "/dsandml/datacollection/index.html",
       "/dsandml/dataengineering/index.html",
-      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/knn/index.html",
+      "/dsandml/polyreg/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]
   },
   {
-    "listing": "/dsandml/dataengineering/index.html",
+    "listing": "/dsandml/decisiontree/index.html",
     "items": [
       "/dsandml/datacollection/index.html",
+      "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
       "/dsandml/multiplelinreg/index.html",
-      "/dsandml/simplelinreg/index.html",
-      "/dsandml/decisiontree/index.html"
+      "/dsandml/polyreg/index.html",
+      "/dsandml/simplelinreg/index.html"
     ]
   },
   {
@@ -310,6 +326,7 @@
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
       "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]
   }
