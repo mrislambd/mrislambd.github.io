@@ -274,18 +274,14 @@
   {
     "listing": "/posts/sgd/index.html",
     "items": [
-      "/posts/bayesianinference/index.html",
       "/posts/machinelearning/index.html",
-      "/posts/dsa/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
+      "/posts/jobandintern/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/montecarlo1/index.html",
-      "/posts/probability/index.html",
-      "/posts/statisticaltalk/index.html",
       "/posts/someproofs/index.html",
       "/posts/welcome/index.html"
     ]
@@ -315,7 +311,10 @@
   {
     "listing": "/dsandml/multiplelinreg/index.html",
     "items": [
+      "/dsandml/datacollection/index.html",
+      "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
+      "/dsandml/polyreg/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]
@@ -323,7 +322,10 @@
   {
     "listing": "/dsandml/knn/index.html",
     "items": [
+      "/dsandml/datacollection/index.html",
+      "/dsandml/dataengineering/index.html",
       "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]
@@ -411,6 +413,17 @@
       "/jobandintern/montecarlo1/index.html",
       "/jobandintern/probability/index.html",
       "/jobandintern/statisticaltalk/index.html"
+    ]
+  },
+  {
+    "listing": "/dsandml/polyreg/index.html",
+    "items": [
+      "/dsandml/datacollection/index.html",
+      "/dsandml/dataengineering/index.html",
+      "/dsandml/knn/index.html",
+      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/simplelinreg/index.html",
+      "/dsandml/decisiontree/index.html"
     ]
   }
 ]

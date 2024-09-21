@@ -11,7 +11,7 @@ listing:
     contents: "/../../dsandml"
     max-items: 3
     type: grid
-    categories: false
+    categories: true
     date-format: full
     fields: [image, date, title, author, reading-time]
 ---  
@@ -57,12 +57,23 @@ To minimize the SSE, let's first expand the expression:
 
 \begin{align}
 \text{SSE} &= (y - X\beta)^T(y - X\beta)\\
-&=(y^T-X^T\beta^T)(y-X\beta)\\
+&=(y^T-\beta^TX^T)(y-X\beta)\\
 & = y^T y - y^T X\beta - \beta^T X^T y + \beta^T X^T X \beta
 \end{align}
 
 
-Since $\beta^T X^T y$ is a scalar (a 1x1 matrix), it is equal to its transpose:
+Since $\beta^T X^T y$ is a scalar (a 1x1 matrix), it is equal to its transpose. That is 
+
+\begin{align*}
+\beta^TX^Ty&=\left(\beta^TX^Ty\right)^T\\
+&= \left((\beta^TX^T)y\right)^T\\
+&=y^T(\beta^TX^T)^T\\
+&=y^T(\beta^TX^T)^T\\
+&=y^T\left(X^T\right)^T\left(\beta^T\right)^T\\
+&=y^TX\beta
+\end{align*}
+
+and therefore, 
 
 $$
 \text{SSE} = y^T y - 2\beta^T X^T y + \beta^T X^T X \beta
