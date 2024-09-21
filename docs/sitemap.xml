@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/machinelearning/index.html</loc>
-    <lastmod>2024-09-20T22:27:58.060Z</lastmod>
+    <lastmod>2024-09-20T23:07:29.179Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/publication/pub2/index.html</loc>
@@ -114,7 +114,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/dsandml/multiplelinreg/index.html</loc>
-    <lastmod>2024-09-20T21:29:50.649Z</lastmod>
+    <lastmod>2024-09-20T23:38:15.525Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/dsandml/knn/index.html</loc>
@@ -159,5 +159,9 @@
   <url>
     <loc>https://mrislambd.github.io/jobandintern/bayesianinference/index.html</loc>
     <lastmod>2024-09-20T22:25:29.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/polyreg/index.html</loc>
+    <lastmod>2024-09-21T01:26:13.348Z</lastmod>
   </url>
 </urlset>
