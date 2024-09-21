@@ -121,9 +121,9 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/jobandintern/index.html",
       "/posts/machinelearning/index.html",
       "/posts/sgd/index.html",
+      "/posts/jobandintern/index.html",
       "/posts/socialshare/index.html",
       "/posts/welcome/index.html",
       "/posts/matmul/index.html",
