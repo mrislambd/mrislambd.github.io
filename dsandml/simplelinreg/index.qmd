@@ -196,7 +196,7 @@ plt.show()
 
 So the model fits the data almost perfectly.  
 
-Up next [multiple linear regression](/machinelearning/multiplelinreg/index.qmd).  
+Up next [multiple linear regression](/dsandml/multiplelinreg/index.qmd).  
 
 
 

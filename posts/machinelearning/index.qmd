@@ -91,7 +91,7 @@ listing:
       <th>Dimensionality Reduction </th>
       <th>
         <ul>
-          <li><a  style="text-decoration:none">Principle Component Analysis (PCA)</a></li>
+          <li><a href="/dsandml/pca/index.qmd" style="text-decoration:none">Principle Component Analysis (PCA)</a></li>
           <li><a  style="text-decoration:none">Linear Discriminant Analysis (LDA)</a></li>
       </th>
       <th>
@@ -118,7 +118,7 @@ listing:
         <ul>
           <li><a  style="text-decoration:none">Artificial Neural Networks (ANN)</a></li>
           <li><a  style="text-decoration:none">Convolutional Neural Networks (CNN)</a></li>
-          <li><a  style="text-decoration:none">Recurrent Neural Networks (ANN)</a></li>
+          <li><a  style="text-decoration:none">Recurrent Neural Networks (RNN)</a></li>
           <li><a  style="text-decoration:none">Long Short-Term Memory (LSTM)</a></li>
           <li><a  style="text-decoration:none">Generative Adversarial Networks (GAN)</a></li>
       </th>
@@ -128,10 +128,46 @@ listing:
 ```  
 
 ## Data Science Techniques  
-  
-- <a href="/dsandml/dataengineering/index.qmd" style="text-decoration:none" target="_blank">How do we treat the categorical features for our data science project?</a>
-- <a href="/dsandml/datacollection/index.qmd" style="text-decoration:none" target="_blank">Data collection through Webscraping</a>
-  
+ 
+
+```{=html}
+<style>
+  tr:nth-child(even){
+    background-color: #dddddd
+  }
+</style>
+<table>
+  <thead>
+    <tr>
+      <th>Techniques</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="/dsandml/dataengineering/index.qmd" style="text-decoration:none" target="_blank">Categorical Features</a></th>
+      <th> How do we treat the categorical features for our data science project?</th>
+    </tr>
+    <tr>
+      <th><a href="/dsandml/datacollection/index.qmd" style="text-decoration:none" target="_blank">Webscraping</a></th>
+      <th>Data collection through Webscraping</th>
+    </tr>
+    <tr>
+      <th><a href="/dsandml/biasvariance/index.qmd" style="text-decoration:none" target="_blank">Bias-Variance</a></th>
+      <th>Model Fine Tuning: Bias-Variance Trade Off</th>
+    </tr>
+    <tr>
+      <th><a href="/dsandml/regularization/index.qmd" style="text-decoration:none" target="_blank">Regularization</a></th>
+      <th>Model Fine Tuning: Regularization</th>
+    </tr>
+  </tbody>
+</table>
+```
+
+---  
+
+
+
 
 
 **You may also like**

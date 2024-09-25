@@ -80,32 +80,32 @@ cv:
 
 ## Publications
 
-- <a href="/publication/pub2/index.qmd">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
+- <a href="/publication/pub2/index.qmd" style="text-decoration:none">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
   Mostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) "Comparison of financial models for stock price prediction." *Journal of Risk and Financial Management*.
-- <a href="/publication/pub1/index.qmd">Comparison of Financial Models for Stock Price Prediction </a>  
+- <a href="/publication/pub1/index.qmd" style="text-decoration:none">Comparison of Financial Models for Stock Price Prediction </a>  
   Islam, Mohammad R.; Nguyen, N. (2020) "Comparison of financial models for stock price prediction." *Journal of Risk and Financial Management*. 
 
   
 ## Talks and Presentations  
 
-- <a href="/talks/2023-11-20-candi.qmd"> The Heavy-Tail Phenomenon in Decentralized Stochastic Gradient Descent</a>  
+- <a href="/talks/2023-11-20-candi.qmd" style="text-decoration:none"> The Heavy-Tail Phenomenon in Decentralized Stochastic Gradient Descent</a>  
   November 20, 2023  
   Presentation at James J Love Building, Florida State University, Tallahassee, Florida  
-- <a href="/talks/2023-10-05-st-op.qmd"> Decentralized Stochastic Gradient Langevin Dynamics and Hamiltonian Monte Carlo</a>  
+- <a href="/talks/2023-10-05-st-op.qmd" style="text-decoration:none"> Decentralized Stochastic Gradient Langevin Dynamics and Hamiltonian Monte Carlo</a>  
   October 05, 2023  
   Presentation at James J Love Building, Florida State University, Tallahassee, Florida  
-- <a href="/talks/2020-04-26-project.qmd"> Sensitivity analysis for Monte Carlo and Quasi Monte Carlo option pricing</a>  
+- <a href="/talks/2020-04-26-project.qmd" style="text-decoration:none"> Sensitivity analysis for Monte Carlo and Quasi Monte Carlo option pricing</a>  
   April 28, 2020  
   Presentation at Cafaro Hall, Youngstown State University, Youngstown, Ohio  
   
 ## Teaching
 
-  - <a href="/teaching/sp24.qmd"> Spring 2024: MAP4170 Introduction to Actuarial Mathematics</a>  
-  - <a href="/teaching/sp23.qmd"> Fall 2023: MAP4170 Introduction to Actuarial Mathematics</a>  
-  - <a href="/teaching/fall23.qmd"> Spring 2023: MAC1140 PreCalculus Algebra</a>  
-  - <a href="/teaching/fall22.qmd"> Fall 2022: MAC2311 Calculus and Analytic Geometry I</a>  
-  - <a href="/teaching/fall21.qmd"> Fall 2021 and Spring 2022: PreCalculus and Algebra</a>  
-  - <a href="/teaching/f18-f21.qmd"> Fall 2018 to Spring 2020: College Algebra, Trigonometry</a>  
+  - <a href="/teaching/sp24.qmd" style="text-decoration:none"> Spring 2024: MAP4170 Introduction to Actuarial Mathematics</a>  
+  - <a href="/teaching/sp23.qmd" style="text-decoration:none"> Fall 2023: MAP4170 Introduction to Actuarial Mathematics</a>  
+  - <a href="/teaching/fall23.qmd" style="text-decoration:none"> Spring 2023: MAC1140 PreCalculus Algebra</a>  
+  - <a href="/teaching/fall22.qmd" style="text-decoration:none"> Fall 2022: MAC2311 Calculus and Analytic Geometry I</a>  
+  - <a href="/teaching/fall21.qmd" style="text-decoration:none"> Fall 2021 and Spring 2022: PreCalculus and Algebra</a>  
+  - <a href="/teaching/f18-f21.qmd" style="text-decoration:none"> Fall 2018 to Spring 2020: College Algebra, Trigonometry</a>  
   
 
 ## Awards and Affiliations
@@ -117,7 +117,7 @@ cv:
 
 
 ### Affiliations  
-- [Bangladesh Mathematical Society: Life Member](https://www.bdmathsociety.org/){target="_blank"}
-- [Society of Actuaries, SOA: Student Member](https://www.soa.org){target="_blank"}
-- [American Mathematical Society, AMS](https://www.ams.org){target="_blank"}
-- [Society for Industrial and Applied Mathematics](https://www.siam.org/){target="_blank"}
+- [Bangladesh Mathematical Society: Life Member](https://www.bdmathsociety.org/){target="_blank" style="text-decoration:none"}
+- [Society of Actuaries, SOA: Student Member](https://www.soa.org){target="_blank" style="text-decoration:none"}
+- [American Mathematical Society, AMS](https://www.ams.org){target="_blank" style="text-decoration:none"}
+- [Society for Industrial and Applied Mathematics](https://www.siam.org/){target="_blank" style="text-decoration:none"}

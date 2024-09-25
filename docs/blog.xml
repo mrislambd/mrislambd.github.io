@@ -107,7 +107,7 @@ This page is my personal repository of most common and useful machine learning a
 <td data-quarto-table-cell-role="th">Dimensionality Reduction</td>
 <td data-quarto-table-cell-role="th"><ul>
 <li>
-<span style="text-decoration:none">Principle Component Analysis (PCA)</span>
+<a href="../../dsandml/pca/index.html" style="text-decoration:none">Principle Component Analysis (PCA)</a>
 </li>
 <li>
 <span style="text-decoration:none">Linear Discriminant Analysis (LDA)</span>
@@ -144,7 +144,7 @@ This page is my personal repository of most common and useful machine learning a
 <span style="text-decoration:none">Convolutional Neural Networks (CNN)</span>
 </li>
 <li>
-<span style="text-decoration:none">Recurrent Neural Networks (ANN)</span>
+<span style="text-decoration:none">Recurrent Neural Networks (RNN)</span>
 </li>
 <li>
 <span style="text-decoration:none">Long Short-Term Memory (LSTM)</span>
@@ -159,10 +159,39 @@ This page is my personal repository of most common and useful machine learning a
 </section>
 <section id="data-science-techniques" class="level2">
 <h2 class="anchored" data-anchor-id="data-science-techniques">Data Science Techniques</h2>
-<ul>
-<li><a href="../../dsandml/dataengineering/index.html" style="text-decoration:none" target="_blank">How do we treat the categorical features for our data science project?</a></li>
-<li><a href="../../dsandml/datacollection/index.html" style="text-decoration:none" target="_blank">Data collection through Webscraping</a></li>
-</ul>
+<style>
+  tr:nth-child(even){
+    background-color: #dddddd
+  }
+</style>
+
+<table class="caption-top table" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Techniques</th>
+<th data-quarto-table-cell-role="th">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th"><a href="../../dsandml/dataengineering/index.html" style="text-decoration:none" target="_blank">Categorical Features</a></td>
+<td data-quarto-table-cell-role="th">How do we treat the categorical features for our data science project?</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th"><a href="../../dsandml/datacollection/index.html" style="text-decoration:none" target="_blank">Webscraping</a></td>
+<td data-quarto-table-cell-role="th">Data collection through Webscraping</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th"><a href="../../dsandml/biasvariance/index.html" style="text-decoration:none" target="_blank">Bias-Variance</a></td>
+<td data-quarto-table-cell-role="th">Model Fine Tuning: Bias-Variance Trade Off</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th"><a href="../../dsandml/regularization/index.html" style="text-decoration:none" target="_blank">Regularization</a></td>
+<td data-quarto-table-cell-role="th">Model Fine Tuning: Regularization</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <p><strong>You may also like</strong></p>
 
 
