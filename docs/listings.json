@@ -312,8 +312,11 @@
     "listing": "/dsandml/multiplelinreg/index.html",
     "items": [
       "/dsandml/datacollection/index.html",
+      "/dsandml/pca/index.html",
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/regularization/index.html",
       "/dsandml/polyreg/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html"
@@ -324,6 +327,8 @@
     "items": [
       "/dsandml/datacollection/index.html",
       "/dsandml/dataengineering/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
       "/dsandml/simplelinreg/index.html",
@@ -333,8 +338,14 @@
   {
     "listing": "/dsandml/simplelinreg/index.html",
     "items": [
+      "/dsandml/datacollection/index.html",
+      "/dsandml/pca/index.html",
+      "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]
   },
@@ -351,7 +362,10 @@
     "items": [
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]
@@ -361,7 +375,10 @@
     "items": [
       "/dsandml/datacollection/index.html",
       "/dsandml/knn/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]
@@ -422,6 +439,47 @@
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
       "/dsandml/multiplelinreg/index.html",
+      "/dsandml/simplelinreg/index.html",
+      "/dsandml/decisiontree/index.html"
+    ]
+  },
+  {
+    "listing": "/dsandml/biasvariance/index.html",
+    "items": [
+      "/dsandml/datacollection/index.html",
+      "/dsandml/dataengineering/index.html",
+      "/dsandml/knn/index.html",
+      "/dsandml/regularization/index.html",
+      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
+      "/dsandml/simplelinreg/index.html",
+      "/dsandml/decisiontree/index.html"
+    ]
+  },
+  {
+    "listing": "/dsandml/regularization/index.html",
+    "items": [
+      "/dsandml/datacollection/index.html",
+      "/dsandml/pca/index.html",
+      "/dsandml/dataengineering/index.html",
+      "/dsandml/knn/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
+      "/dsandml/simplelinreg/index.html",
+      "/dsandml/decisiontree/index.html"
+    ]
+  },
+  {
+    "listing": "/dsandml/pca/index.html",
+    "items": [
+      "/dsandml/datacollection/index.html",
+      "/dsandml/dataengineering/index.html",
+      "/dsandml/knn/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/regularization/index.html",
+      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html"
     ]

@@ -377,7 +377,9 @@ theta, _ = mlr3.fit(X, y)
 So the model parameters: slope $\beta_0=$ `{python} theta[0]` and coefficients $\beta_1=$ `{python} theta[1]`, and $\beta_2=$ `{python} theta[2]`  
 
 
-Up next [knn regression](/machinelearning/knn/index.qmd)
+Up next [knn regression](/dsandml/knn/index.qmd)
+
+---
 
 **Share on**  
 
