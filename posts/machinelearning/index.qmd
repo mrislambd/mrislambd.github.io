@@ -64,6 +64,7 @@ listing:
       <th>Unsupervised </th>
       <th>
         <ul>
+          <li><a href="/dsandml/pca/index.qmd" style="text-decoration:none">Principle Component Analysis (PCA)</a></li>
           <li><a  style="text-decoration:none">Gaussian Mixture Model (GMM)</a></li>
           <li><a  style="text-decoration:none">Latent Dirichilet Allocation (LDA)</a></li>
       </th>
