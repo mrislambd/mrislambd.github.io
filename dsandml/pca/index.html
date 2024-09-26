@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -265,14 +265,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a-detailed-guide-to-principal-component-analysis-pca" id="toc-a-detailed-guide-to-principal-component-analysis-pca" class="nav-link active" data-scroll-target="#a-detailed-guide-to-principal-component-analysis-pca">A Detailed Guide to Principal Component Analysis (PCA)</a></li>
-  <li><a href="#what-is-principal-component-analysis-pca" id="toc-what-is-principal-component-analysis-pca" class="nav-link" data-scroll-target="#what-is-principal-component-analysis-pca"><strong>What is Principal Component Analysis (PCA)?</strong></a></li>
-  <li><a href="#mathematical-foundations-of-pca" id="toc-mathematical-foundations-of-pca" class="nav-link" data-scroll-target="#mathematical-foundations-of-pca"><strong>Mathematical Foundations of PCA</strong></a></li>
-  <li><a href="#benefits-of-pca" id="toc-benefits-of-pca" class="nav-link" data-scroll-target="#benefits-of-pca"><strong>Benefits of PCA</strong></a></li>
-  <li><a href="#limitations-of-pca" id="toc-limitations-of-pca" class="nav-link" data-scroll-target="#limitations-of-pca"><strong>Limitations of PCA</strong></a></li>
-  <li><a href="#pca-in-python-implementation-and-visualization" id="toc-pca-in-python-implementation-and-visualization" class="nav-link" data-scroll-target="#pca-in-python-implementation-and-visualization"><strong>PCA in Python: Implementation and Visualization</strong></a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><strong>Conclusion</strong></a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-is-principal-component-analysis-pca" id="toc-what-is-principal-component-analysis-pca" class="nav-link" data-scroll-target="#what-is-principal-component-analysis-pca">What is Principal Component Analysis (PCA)?</a></li>
+  <li><a href="#benefits-of-pca" id="toc-benefits-of-pca" class="nav-link" data-scroll-target="#benefits-of-pca">Benefits of PCA</a></li>
+  <li><a href="#limitations-of-pca" id="toc-limitations-of-pca" class="nav-link" data-scroll-target="#limitations-of-pca">Limitations of PCA</a></li>
+  <li><a href="#pca-in-python-implementation-and-visualization" id="toc-pca-in-python-implementation-and-visualization" class="nav-link" data-scroll-target="#pca-in-python-implementation-and-visualization">PCA in Python: Implementation and Visualization</a>
+  <ul class="collapse">
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><strong>References</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -316,54 +316,134 @@ window.Quarto = {
 </header>
 
 
-<section id="a-detailed-guide-to-principal-component-analysis-pca" class="level3">
-<h3 class="anchored" data-anchor-id="a-detailed-guide-to-principal-component-analysis-pca">A Detailed Guide to Principal Component Analysis (PCA)</h3>
-<p>Principal Component Analysis (PCA) is a powerful technique used in machine learning and statistics for <strong>dimensionality reduction</strong>. It transforms high-dimensional data into a lower-dimensional form while preserving the most important features or “components” of the data. This is particularly useful when dealing with large datasets that are difficult to visualize or computationally expensive to process.</p>
-<p>In this blog post, we’ll dive into the theory of PCA, explore its mathematical foundations, and implement PCA using Python for visualization.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p style="text-align:justify">
+Principal Component Analysis (PCA) is a powerful technique used in machine learning and statistics for <strong>unsupervised dimensionality reduction</strong>. It transforms high-dimensional data into a lower-dimensional form while preserving the most important features or “components” of the data. This is particularly useful when dealing with large datasets that are difficult to visualize or computationally expensive to process.<br> <br> For example, if we have a dataset that contains a lot of images of 20x20 pixels and we convert the images to one dimensional vectors then there are total 400 features which makes the analysis harder. PCA finds a low (best <span class="math inline">\(d\)</span>) dimensional subspace approximation that minimizes the least square error
+</p>
 <hr>
 </section>
-<section id="what-is-principal-component-analysis-pca" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-principal-component-analysis-pca"><strong>What is Principal Component Analysis (PCA)?</strong></h3>
-<p>PCA is a <strong>linear transformation technique</strong> that converts a dataset with potentially correlated variables into a set of linearly uncorrelated variables called <strong>principal components</strong>. The key goal is to project the data onto a new coordinate system where the variance of the data is maximized along the axes.</p>
-<p>The first principal component captures the maximum variance in the data, the second captures the next highest variance, and so on. The idea is that even with fewer dimensions, the principal components can represent most of the variance in the original data, making it an effective technique for data compression and feature extraction.</p>
-<hr>
-</section>
-<section id="mathematical-foundations-of-pca" class="level3">
-<h3 class="anchored" data-anchor-id="mathematical-foundations-of-pca"><strong>Mathematical Foundations of PCA</strong></h3>
-<p>Let’s explore the core mathematics behind PCA.</p>
-<section id="covariance-matrix" class="level4">
-<h4 class="anchored" data-anchor-id="covariance-matrix">1. <strong>Covariance Matrix</strong></h4>
-<p>The covariance matrix measures the relationships between variables. It helps understand how variables vary together. For PCA, we first need to compute the covariance matrix of the data.</p>
-<p>For a dataset $ X $ with $ n $ observations and $ p $ variables: - Each variable $ X_j $ is centered (subtract the mean). - The covariance matrix $ C $ is defined as:</p>
+<section id="what-is-principal-component-analysis-pca" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-principal-component-analysis-pca">What is Principal Component Analysis (PCA)?</h2>
+<p>Let’s start from the beginning. If we have a set of orthogonal basis vectors say <span class="math inline">\(\mathbf{u}=(u_1,u_2,\dots, u_p)\)</span> then <span class="math inline">\(u_i^Tu_j=\delta_{ij}\)</span> for <span class="math inline">\(1\le i,j \le m\)</span>. For example, consider <span class="math inline">\(u_1=\begin{bmatrix}1\\ 0\end{bmatrix}\)</span> and <span class="math inline">\(u_2=\begin{bmatrix}0\\1\end{bmatrix}\)</span></p>
+<div id="377c3534" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">2</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">2</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ax.quiver(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, color<span class="op">=</span><span class="st">'red'</span>, scale<span class="op">=</span><span class="dv">1</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, angles<span class="op">=</span><span class="st">'xy'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ax.quiver(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>, color<span class="op">=</span><span class="st">'red'</span>, scale<span class="op">=</span><span class="dv">1</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, angles<span class="op">=</span><span class="st">'xy'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">1.1</span>,<span class="dv">0</span>, <span class="st">'$u_1$'</span>, color<span class="op">=</span><span class="st">'red'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">0</span>,<span class="fl">1.1</span>, <span class="st">'$u_2$'</span>, color<span class="op">=</span><span class="st">'red'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">'equal'</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.gca().set_facecolor(<span class="st">'#f4f4f4'</span>) </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.gcf().patch.set_facecolor(<span class="st">'#f4f4f4'</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-2-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/cell-2-output-1.png" width="441" height="416" class="figure-img"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="math display">\[\begin{align*}
+u_1^Tu_2 &amp; = \begin{bmatrix}1 &amp; 0\end{bmatrix} \begin{bmatrix}0\\1\end{bmatrix} = 0 \hspace{4mm}\text{and}\hspace{4mm} u_2^Tu_1 = \begin{bmatrix}0 &amp; 1\end{bmatrix}\begin{bmatrix}1 \\ 0\end{bmatrix}=0\\
+u_1^Tu_1 &amp; = \begin{bmatrix}1 &amp; 0\end{bmatrix} \begin{bmatrix}1\\0\end{bmatrix} = 1 \hspace{4mm}\text{and}\hspace{4mm} u_2^Tu_2 = \begin{bmatrix}0 &amp; 1\end{bmatrix}\begin{bmatrix}0 \\ 1\end{bmatrix}=1
+\end{align*}\]</span></p>
+<p>Now suppose we have a data set <span class="math inline">\(X\)</span> with columns are features and <span class="math inline">\(k\)</span>th observation <span class="math inline">\(x^{(k)}=(x_1^{(k)},x_2^{(k)},\dots,x_p^{(k)})^T\)</span>. Now let <span class="math inline">\(\mu=\bar{x}= \frac{1}{n}\sum_{k=1}^{n}x^k\)</span>, that is for <span class="math display">\[\begin{align*}
+X &amp; = \begin{bmatrix}x_{11}&amp;x_{12}&amp;\dots x_{1p} \\x_{21}&amp;x_{22}&amp;\dots x_{2p} \\ \vdots &amp; \vdots &amp;\ddots \vdots \\x_{n1}&amp;x_{n2}&amp;\dots x_{np} \end{bmatrix}\\
+\mu_j &amp;= \frac{1}{n} \sum_{i=1}^{n} x_{ij}\\
+\mu &amp; =\begin{bmatrix}\mu_1\\ \mu_2 \\ \vdots\\ \mu_p\end{bmatrix} = \frac{1}{n} \sum_{i=1}^{n} X^i
+\end{align*}\]</span></p>
+<p>Now with the orthogonal vectors, we can write <span class="math display">\[ x^k-\mu = \sum_{i=1}^{p}\left[(x^k-\mu)\cdot u_i\right]u_i = \sum_{i=1}^{p} a_i^k u_i\]</span></p>
+<p>In PCA, we aim to find <span class="math inline">\((u_1,u_2,\dots, u_d)\)</span> that minimizes the reconstruction error, defined as the squared distance between each data point <span class="math inline">\(x^k\)</span> and its projection onto the subspace spanned by the top <span class="math inline">\(d\)</span> principle components: <span class="math display">\[\mathbf{E}(u_1,u_2,\dots, u_d)=\sum_{k=1}^{n}\left\|x^k -\left(\mu+\sum_{i=1}^{d} a_i^k u_i\right)\right\|^2\]</span></p>
+<p>Here <span class="math inline">\(\sum_{i=1}^{d} a_i^ku_i\)</span> is the projection of <span class="math inline">\(x^k\)</span> onto the subspace spanned by the top <span class="math inline">\(d\)</span> dimensional components. The term inside the norm, <span class="math inline">\(x^k -\left(\mu+\sum_{i=1}^{d} a_i^k u_i\right)\)</span>, represents the residual error after projecting <span class="math inline">\(x^k\)</span> onto this subspace. The goal is to minimize this error.</p>
+<p>The residual variance corresponds to the directions (or principal components) <strong>not</strong> captured by the top <span class="math inline">\(d\)</span> principal components. Specifically, these are the components corresponding to <span class="math inline">\(u_{d+1}, \dots, u_p\)</span>, where <span class="math inline">\(p\)</span> is the total number of features (or components).</p>
+<p>Now, the norm inside the error function can be decomposed as follows:</p>
 <p><span class="math display">\[
-C = \frac{1}{n-1} X^T X
+x^k - \left( \bar{x} + \sum_{i=1}^{d} a_i^k u_i \right) = \left( x^k - \bar{x} \right) - \sum_{i=1}^{d} a_i^k u_i
 \]</span></p>
-</section>
-<section id="eigenvalues-and-eigenvectors" class="level4">
-<h4 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">2. <strong>Eigenvalues and Eigenvectors</strong></h4>
-<p>The next step in PCA is to find the <strong>eigenvalues</strong> and <strong>eigenvectors</strong> of the covariance matrix. The eigenvectors represent the directions (principal components), and the eigenvalues indicate the magnitude of variance along those components.</p>
+<p>We define <span class="math inline">\(z^k = x^k - \bar{x}\)</span>, so the error becomes:</p>
+<p><span class="math display">\[
+E(u_1, \dots, u_d) = \sum_{k=1}^{n} \left\| z^k - \sum_{i=1}^{d} a_i^k u_i \right\|^2
+\]</span></p>
+<p>The key idea here is that <span class="math inline">\(z^k\)</span> is a vector in the original <span class="math inline">\(p\)</span>-dimensional space, and we are approximating it by projecting it onto the top <span class="math inline">\(d\)</span>-dimensional subspace spanned by <span class="math inline">\(u_1, \dots, u_d\)</span>.</p>
+<p>Since <span class="math inline">\(u_1, \dots, u_p\)</span> form an orthogonal basis, <span class="math inline">\(z^k\)</span> can be completely expressed in terms of all the basis vectors <span class="math inline">\(u_1, \dots, u_p\)</span>. In particular:</p>
+<p><span class="math display">\[
+z^k = \sum_{i=1}^{p} a_i^k u_i
+\]</span></p>
+<p>where <span class="math inline">\(a_i^k = z^k \cdot u_i\)</span> are the projections of <span class="math inline">\(z^k\)</span> onto each basis vector <span class="math inline">\(u_i\)</span>. Therefore, the reconstruction error <span class="math inline">\(E(u_1, \dots, u_d)\)</span> is the squared norm of the residual part of <span class="math inline">\(z^k\)</span> that is <strong>not captured</strong> by the top <span class="math inline">\(d\)</span> principal components:</p>
+<p><span class="math display">\[
+E(u_1, \dots, u_d) = \sum_{k=1}^{n} \sum_{i=d+1}^{M} (a_i^k)^2
+\]</span></p>
+<p>This means that the error comes from the projection of <span class="math inline">\(z^k\)</span> onto the remaining <span class="math inline">\(p-d\)</span> principal components, i.e., <span class="math inline">\(u_{d+1}, \dots, u_p\)</span>. Thus,</p>
+<p><span class="math display">\[\begin{align*}
+E(\mathbf{u}) &amp; = \sum_{k=1}^{n} \left\|\sum_{i=d+1}^{p}(z^k\cdot u_i)u_i\right\|^2\\
+&amp; = \sum_{k=1}^{n}\sum_{i=d+1}^{p} \left(z^k\cdot u_i\right)^2
+\end{align*}\]</span></p>
+<p>We start with the dot product <span class="math inline">\(z^k \cdot u_i\)</span>, which is just a scalar:</p>
+<p><span class="math display">\[
+z^k \cdot u_i = (z^k)^T u_i
+\]</span></p>
+<p>This is simply the sum of the element-wise products of $z^k $and <span class="math inline">\(u_i\)</span>: <span class="math display">\[\begin{align*}
+z^k \cdot u_i &amp;= \sum_{j=1}^{M} z_j^k u_{ij}\\
+\implies (z^k \cdot u_i)^2 &amp;= \left( \sum_{j=1}^{M} z_j^k u_{ij} \right)^2
+\implies \left( \sum_{j=1}^{M} z_j^k u_{ij} \right)^2 &amp;= \sum_{j=1}^{M} \sum_{l=1}^{M} z_j^k z_l^k u_{ij} u_{il}
+\end{align*}\]</span></p>
+<p>Notice that we can rewrite the product <span class="math inline">\(z_j^k z_l^k\)</span> as an <strong>outer product</strong> of the vector <span class="math inline">\(z^k\)</span> with itself:</p>
+<p><span class="math display">\[
+z^k z^{kT}
+\]</span></p>
+<p>The outer product <span class="math inline">\(z^k z^{kT}\)</span> is a matrix, specifically an <span class="math inline">\(p \times p\)</span> matrix. Each element of this matrix at position $(j, l) $is <span class="math inline">\(z_j^k z_l^k\)</span>, exactly what we have in the double sum.</p>
+<p>So, instead of writing out all the sums explicitly, we can represent the whole thing as a matrix:</p>
+<p><span class="math display">\[
+(z^k \cdot u_i)^2 = u_i^T (z^k z^{kT}) u_i
+\]</span></p>
+<p>This is called a <strong>quadratic form</strong>. So,</p>
+<p><span class="math display">\[\begin{align*}
+E(\mathbf{u}) &amp; = \sum_{k=1}^{n} \left\|\sum_{i=d+1}^{p}(z^k\cdot u_i)u_i\right\|^2\\
+&amp; = \sum_{k=1}^{n}\sum_{i=d+1}^{p} \left(z^k\cdot u_i\right)^2 \\
+&amp; = \sum_{k=1}^{n}\sum_{i=d+1}^{p} u_i^Tz^kz^{kT}u_i \\
+&amp; = \sum_{i=d+1}^{p} u_i^T\Sigma u_i \\
+\end{align*}\]</span></p>
+<p>where,</p>
 <ul>
-<li><strong>Eigenvectors</strong> are the directions in which the data varies the most.</li>
-<li><strong>Eigenvalues</strong> quantify the amount of variance in each of those directions.</li>
+<li><span class="math inline">\(\Sigma = \sum_{k=1}^{n}(x^k-\mu)(x^k-\mu)^T=X^TX\)</span><br>
+</li>
+<li><span class="math inline">\(X=(x^1-\mu, x^2-\mu,\dots,x^p-\mu)^T\)</span></li>
 </ul>
-<p>We order the eigenvectors by their corresponding eigenvalues in descending order. The first few eigenvectors (associated with the largest eigenvalues) form the principal components.</p>
-</section>
-<section id="dimensionality-reduction" class="level4">
-<h4 class="anchored" data-anchor-id="dimensionality-reduction">3. <strong>Dimensionality Reduction</strong></h4>
-<p>The final step is to project the original data onto the new space defined by the top $ k $ eigenvectors. If we reduce the number of components, we lose some variance, but this trade-off can still result in meaningful lower-dimensional representations of the data.</p>
-</section>
-<section id="pca-formula" class="level4">
-<h4 class="anchored" data-anchor-id="pca-formula">4. <strong>PCA Formula</strong></h4>
-<p>Let’s summarize PCA mathematically: - Compute the mean-centered data: $ X’ = X - $ - Calculate the covariance matrix: $ C = (X’)^T X’ $ - Compute the eigenvalues and eigenvectors of the covariance matrix. - Choose the top $ k $ eigenvectors and project the data onto them:</p>
-<p><span class="math display">\[
-Z = X' W_k
-\]</span></p>
-<p>Where $ Z $ is the matrix of the new components, and $ W_k $ is the matrix of the top $ k $ eigenvectors.</p>
+<p>So now we have <span class="math display">\[E(\mathbf{u})=\sum_{i=d+1}^{p} u_i^T\Sigma u_i \]</span></p>
+<p>and <span class="math inline">\(E(\mathbf{u})\)</span> is minimized when <span class="math inline">\(u_i\)</span>’s are the eigenvectors of <span class="math inline">\(\Sigma\)</span>. Then</p>
+<p><span class="math display">\[E(\mathbf{u})=\sum_{i=d+1}^{p} u_i^T\lambda_i u_i =\sum_{i=d+1}^{p} \lambda_i \]</span></p>
+<p>and we get our desired <span class="math inline">\(u_{d+1},\dots, u_{p}\)</span> components that minimizes the projection error. So if we take the first <span class="math inline">\(d\)</span> of these correspond to the <span class="math inline">\(d\)</span>-largest eigenvalues we get the principle components.</p>
+<p><strong>Long story short</strong></p>
+<ul>
+<li>We have <span class="math inline">\(n\)</span> data points with <span class="math inline">\(p\)</span> column vectors <span class="math inline">\(x^1,x^2,\dots,x^p\)</span><br>
+</li>
+<li>We compute the mean <span class="math inline">\(\mu= \frac{1}{n}\sum_{k=1}^{n}x^k\)</span><br>
+</li>
+<li>Then we compute the matrix <span class="math inline">\(X=(x^1-\mu, x^2-\mu,\dots,x^p-\mu)^T\)</span><br>
+</li>
+<li>Next, compute the eigenvalues of <span class="math inline">\(\Sigma = \sum_{k=1}^{n}(x^k-\mu)(x^k-\mu)^T=X^TX\)</span> and short them in decreasing order<br>
+</li>
+<li>Choose <span class="math inline">\(d\)</span>, the number of principle components</li>
+<li>Then we get the principle components <span class="math inline">\(P=[v_1,v_2,\dots, v_d]_{p\times d}\)</span><br>
+</li>
+<li>To project any column vector <span class="math inline">\(z\)</span>, we compute <span class="math inline">\(projection(z)=P^T(z-\mu)\)</span></li>
+</ul>
 <hr>
 </section>
-</section>
-<section id="benefits-of-pca" class="level3">
-<h3 class="anchored" data-anchor-id="benefits-of-pca"><strong>Benefits of PCA</strong></h3>
+<section id="benefits-of-pca" class="level2">
+<h2 class="anchored" data-anchor-id="benefits-of-pca">Benefits of PCA</h2>
 <ul>
 <li><strong>Dimensionality Reduction</strong>: PCA can reduce the number of variables, which speeds up algorithms and makes models more interpretable.</li>
 <li><strong>Visualization</strong>: PCA is often used to project high-dimensional data into 2D or 3D for visualization.</li>
@@ -372,8 +452,8 @@ Z = X' W_k
 </ul>
 <hr>
 </section>
-<section id="limitations-of-pca" class="level3">
-<h3 class="anchored" data-anchor-id="limitations-of-pca"><strong>Limitations of PCA</strong></h3>
+<section id="limitations-of-pca" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-of-pca">Limitations of PCA</h2>
 <ul>
 <li><strong>Linear Assumption</strong>: PCA assumes linear relationships between features. Non-linear patterns in data are not captured well by PCA.</li>
 <li><strong>Interpretability</strong>: While PCA can simplify data, the new components may not be easily interpretable.</li>
@@ -381,102 +461,65 @@ Z = X' W_k
 </ul>
 <hr>
 </section>
-<section id="pca-in-python-implementation-and-visualization" class="level3">
-<h3 class="anchored" data-anchor-id="pca-in-python-implementation-and-visualization"><strong>PCA in Python: Implementation and Visualization</strong></h3>
+<section id="pca-in-python-implementation-and-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="pca-in-python-implementation-and-visualization">PCA in Python: Implementation and Visualization</h2>
 <p>Now that we understand the theory behind PCA, let’s implement it in Python using the <code>sklearn</code> library and visualize the results.</p>
-<section id="import-necessary-libraries" class="level4">
-<h4 class="anchored" data-anchor-id="import-necessary-libraries">1. <strong>Import Necessary Libraries</strong></h4>
-<div id="c138023e" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div id="23117c55" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="load-and-preprocess-the-data" class="level4">
-<h4 class="anchored" data-anchor-id="load-and-preprocess-the-data">2. <strong>Load and Preprocess the Data</strong></h4>
 <p>For this example, we will use the famous Iris dataset, which contains 4 features (sepal length, sepal width, petal length, and petal width) of 3 species of iris flowers.</p>
-<div id="fd64bb6e" class="cell" data-execution_count="2">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Iris dataset</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> load_iris()</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> iris.data</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> iris.target</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardize the data</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>X_scaled <span class="op">=</span> scaler.fit_transform(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div id="51299ef4" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Iris dataset</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> load_iris()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> iris.data</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> iris.target</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardize the data</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>X_scaled <span class="op">=</span> scaler.fit_transform(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="apply-pca" class="level4">
-<h4 class="anchored" data-anchor-id="apply-pca">3. <strong>Apply PCA</strong></h4>
 <p>We will reduce the data from 4 dimensions to 2 for visualization.</p>
-<div id="e8903ab0" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply PCA to reduce the dataset to 2 principal components</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>X_pca <span class="op">=</span> pca.fit_transform(X_scaled)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the explained variance ratio</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Explained Variance Ratio: </span><span class="sc">{</span>pca<span class="sc">.</span>explained_variance_ratio_<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div id="51738c63" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>X_pca <span class="op">=</span> pca.fit_transform(X_scaled)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Explained Variance Ratio: </span><span class="sc">{</span>pca<span class="sc">.</span>explained_variance_ratio_<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Explained Variance Ratio: [0.72962445 0.22850762]</code></pre>
 </div>
 </div>
 <p>The explained variance ratio shows how much variance each principal component captures. In many cases, the first two components capture most of the variance.</p>
-</section>
-<section id="visualize-the-results" class="level4">
-<h4 class="anchored" data-anchor-id="visualize-the-results">4. <strong>Visualize the Results</strong></h4>
 <p>Let’s plot the Iris dataset using the first two principal components.</p>
-<div id="1d57d3cf" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatter plot of the PCA results</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign colors to the target classes</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>]</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, color <span class="kw">in</span> <span class="bu">enumerate</span>(colors):</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    plt.scatter(X_pca[y <span class="op">==</span> i, <span class="dv">0</span>], X_pca[y <span class="op">==</span> i, <span class="dv">1</span>], label<span class="op">=</span>iris.target_names[i], color<span class="op">=</span>color)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'PCA of Iris Dataset'</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Principal Component 1'</span>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Principal Component 2'</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'pca.png'</span>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div id="0d3b3116" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, color <span class="kw">in</span> <span class="bu">enumerate</span>(colors):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    plt.scatter(X_pca[y <span class="op">==</span> i, <span class="dv">0</span>], X_pca[y <span class="op">==</span> i, <span class="dv">1</span>], label<span class="op">=</span>iris.target_names[i], color<span class="op">=</span>color)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'PCA of Iris Dataset'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Principal Component 1'</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Principal Component 2'</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'pca.png'</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>plt.gca().set_facecolor(<span class="st">'#f4f4f4'</span>) </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>plt.gcf().patch.set_facecolor(<span class="st">'#f4f4f4'</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="index_files/figure-html/cell-5-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/cell-5-output-1.png" width="662" height="523" class="figure-img"></a></p>
+<p><a href="index_files/figure-html/cell-6-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/cell-6-output-1.png" width="662" height="523" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="interpreting-the-plot" class="level4">
-<h4 class="anchored" data-anchor-id="interpreting-the-plot">5. <strong>Interpreting the Plot</strong></h4>
 <p>The plot shows the data projected onto the first two principal components. We can observe how the three species cluster in the reduced 2D space. This visualization helps us see the separability of the classes using only two dimensions, instead of four.</p>
 <hr>
-</section>
-</section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h3>
-<p>PCA is an essential technique for dimensionality reduction and data visualization. It simplifies high-dimensional datasets by projecting them onto fewer dimensions while retaining as much variance as possible. However, it’s important to remember that PCA assumes linearity and can lead to some loss of information, so it should be used judiciously based on the dataset and problem at hand.</p>
-<p>By applying PCA, you can reduce computational complexity, improve model interpretability, and visualize complex datasets more easily.</p>
-<hr>
-</section>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references"><strong>References</strong></h3>
 <ol type="1">
@@ -501,16 +544,36 @@ Z = X' W_k
 <li>A practical guide with hands-on code examples, including PCA implementation in Python.</li>
 </ul></li>
 </ol>
+<hr>
+<p><strong>Share on</strong></p>
+<div id="fb-root">
+
+</div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
+<div class="share-buttons">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/dsandml/pca/" data-layout="button_count" data-size="small">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fdsandml%2Fpca%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+</div>
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="https://mrislambd.github.io/dsandml/pca/"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://mrislambd.github.io/dsandml/pca/" data-show-count="true">Tweet</a>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div class="fb-comments" data-href="https://mrislambd.github.io/dsandml/pca/" data-width="" data-numposts="5">
+
+</div>
+<p><strong>You may also like</strong></p>
 
 
 
 <!-- -->
 
 </section>
+</section>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1726868222575" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1727330111987" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
 <a href="../../dsandml/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -535,7 +598,7 @@ Wednesday, August 14, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726113600000" data-listing-file-modified-sort="1726868586587" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="720">
+<div class="g-col-1" data-index="1" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726099200000" data-listing-file-modified-sort="1727330111988" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="720">
 <a href="../../dsandml/dataengineering/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -560,7 +623,7 @@ Thursday, September 12, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724904000000" data-listing-file-modified-sort="1726867767110" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="765">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1727330111991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="765">
 <a href="../../dsandml/knn/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1072,204 +1135,312 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Dimensionality Reduction: Principle Component Analysis (PCA)"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-09-24"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Rafiq Islam</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Data Science, Machine Learning, Artificial Intelligence, Data Engineering]</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span><span class="co"> true</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="an">search:</span><span class="co"> true</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="an">lightbox:</span><span class="co"> true</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> pca.png</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co"> </span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: "/../../dsandml"</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">    max-items: 3</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">    categories: false</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: full</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">    fields: [image, date, title, author, reading-time]  </span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">    html: </span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">      toc: true</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">---</span>  </span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### A Detailed Guide to Principal Component Analysis (PCA)</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>Principal Component Analysis (PCA) is a powerful technique used in machine learning and statistics for **dimensionality reduction**. It transforms high-dimensional data into a lower-dimensional form while preserving the most important features or "components" of the data. This is particularly useful when dealing with large datasets that are difficult to visualize or computationally expensive to process.</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>In this blog post, we’ll dive into the theory of PCA, explore its mathematical foundations, and implement PCA using Python for visualization.</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### **What is Principal Component Analysis (PCA)?**</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>PCA is a **linear transformation technique** that converts a dataset with potentially correlated variables into a set of linearly uncorrelated variables called **principal components**. The key goal is to project the data onto a new coordinate system where the variance of the data is maximized along the axes.</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>The first principal component captures the maximum variance in the data, the second captures the next highest variance, and so on. The idea is that even with fewer dimensions, the principal components can represent most of the variance in the original data, making it an effective technique for data compression and feature extraction.</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Mathematical Foundations of PCA**</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>Let’s explore the core mathematics behind PCA.</span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. **Covariance Matrix**</span></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>The covariance matrix measures the relationships between variables. It helps understand how variables vary together. For PCA, we first need to compute the covariance matrix of the data.</span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>For a dataset $ X $ with $ n $ observations and $ p $ variables:</span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each variable $ X_j $ is centered (subtract the mean).</span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The covariance matrix $ C $ is defined as:</span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>C = \frac{1}{n-1} X^T X</span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. **Eigenvalues and Eigenvectors**</span></span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>The next step in PCA is to find the **eigenvalues** and **eigenvectors** of the covariance matrix. The eigenvectors represent the directions (principal components), and the eigenvalues indicate the magnitude of variance along those components.</span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Eigenvectors** are the directions in which the data varies the most.</span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Eigenvalues** quantify the amount of variance in each of those directions.</span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>We order the eigenvectors by their corresponding eigenvalues in descending order. The first few eigenvectors (associated with the largest eigenvalues) form the principal components.</span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 3. **Dimensionality Reduction**</span></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>The final step is to project the original data onto the new space defined by the top $ k $ eigenvectors. If we reduce the number of components, we lose some variance, but this trade-off can still result in meaningful lower-dimensional representations of the data.</span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 4. **PCA Formula**</span></span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>Let’s summarize PCA mathematically:</span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Compute the mean-centered data: $ X' = X - \mu $</span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calculate the covariance matrix: $ C = \frac{1}{n-1} (X')^T X' $</span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Compute the eigenvalues and eigenvectors of the covariance matrix.</span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Choose the top $ k $ eigenvectors and project the data onto them:</span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>Z = X' W_k</span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>Where $ Z $ is the matrix of the new components, and $ W_k $ is the matrix of the top $ k $ eigenvectors.</span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Benefits of PCA**</span></span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Dimensionality Reduction**: PCA can reduce the number of variables, which speeds up algorithms and makes models more interpretable.</span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Visualization**: PCA is often used to project high-dimensional data into 2D or 3D for visualization.</span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Noise Reduction**: By focusing on the principal components, PCA can eliminate irrelevant noise in the data.</span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Avoid Multicollinearity**: PCA removes multicollinearity by creating uncorrelated principal components.</span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Limitations of PCA**</span></span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Linear Assumption**: PCA assumes linear relationships between features. Non-linear patterns in data are not captured well by PCA.</span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Interpretability**: While PCA can simplify data, the new components may not be easily interpretable.</span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Loss of Information**: Reducing dimensions might result in the loss of some information or variance, depending on how many components are retained.</span>
-<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### **PCA in Python: Implementation and Visualization**</span></span>
-<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>Now that we understand the theory behind PCA, let’s implement it in Python using the <span class="in">`sklearn`</span> library and visualize the results.</span>
-<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. **Import Necessary Libraries**</span></span>
-<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
-<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
-<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
-<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. **Load and Preprocess the Data**</span></span>
-<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>For this example, we will use the famous Iris dataset, which contains 4 features (sepal length, sepal width, petal length, and petal width) of 3 species of iris flowers.</span>
-<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Iris dataset</span></span>
-<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> load_iris()</span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> iris.data</span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> iris.target</span>
-<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardize the data</span></span>
-<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
-<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>X_scaled <span class="op">=</span> scaler.fit_transform(X)</span>
-<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 3. **Apply PCA**</span></span>
-<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>We will reduce the data from 4 dimensions to 2 for visualization.</span>
-<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply PCA to reduce the dataset to 2 principal components</span></span>
-<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a>X_pca <span class="op">=</span> pca.fit_transform(X_scaled)</span>
-<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the explained variance ratio</span></span>
-<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Explained Variance Ratio: </span><span class="sc">{</span>pca<span class="sc">.</span>explained_variance_ratio_<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a>The explained variance ratio shows how much variance each principal component captures. In many cases, the first two components capture most of the variance.</span>
-<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 4. **Visualize the Results**</span></span>
-<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a>Let’s plot the Iris dataset using the first two principal components.</span>
-<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatter plot of the PCA results</span></span>
-<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign colors to the target classes</span></span>
-<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>]</span>
-<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, color <span class="kw">in</span> <span class="bu">enumerate</span>(colors):</span>
-<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a>    plt.scatter(X_pca[y <span class="op">==</span> i, <span class="dv">0</span>], X_pca[y <span class="op">==</span> i, <span class="dv">1</span>], label<span class="op">=</span>iris.target_names[i], color<span class="op">=</span>color)</span>
-<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'PCA of Iris Dataset'</span>)</span>
-<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Principal Component 1'</span>)</span>
-<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Principal Component 2'</span>)</span>
-<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'pca.png'</span>)</span>
-<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 5. **Interpreting the Plot**</span></span>
-<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a>The plot shows the data projected onto the first two principal components. We can observe how the three species cluster in the reduced 2D space. This visualization helps us see the separability of the classes using only two dimensions, instead of four.</span>
-<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Conclusion**</span></span>
-<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-178"><a href="#cb6-178" aria-hidden="true" tabindex="-1"></a>PCA is an essential technique for dimensionality reduction and data visualization. It simplifies high-dimensional datasets by projecting them onto fewer dimensions while retaining as much variance as possible. However, it's important to remember that PCA assumes linearity and can lead to some loss of information, so it should be used judiciously based on the dataset and problem at hand.</span>
-<span id="cb6-179"><a href="#cb6-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a>By applying PCA, you can reduce computational complexity, improve model interpretability, and visualize complex datasets more easily.</span>
-<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb6-183"><a href="#cb6-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-184"><a href="#cb6-184" aria-hidden="true" tabindex="-1"></a><span class="fu">### **References**</span></span>
-<span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Jolliffe, I. T.** (2002). *Principal Component Analysis*. Springer Series in Statistics.</span>
-<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>The seminal book on PCA, providing an in-depth theoretical background.</span>
-<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Shlens, J.** (2014). A tutorial on principal component analysis. *arXiv preprint arXiv:1404.1100*.</span>
-<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>An excellent tutorial that breaks down PCA concepts with clear mathematical derivations.</span>
-<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Bishop, C. M.** (2006). *Pattern Recognition and Machine Learning*. Springer.</span>
-<span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>This book offers a comprehensive guide to PCA and other machine learning techniques.</span>
-<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Hastie, T., Tibshirani, R., &amp; Friedman, J.** (2009). *The Elements of Statistical Learning*. Springer.</span>
-<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Covers PCA as well as a variety of other machine learning and statistical techniques.</span>
-<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Géron, A.** (2019). *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow*. O'Reilly Media.</span>
-<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>A practical guide with hands-on code examples, including PCA implementation in Python.</span>
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Dimensionality Reduction: Principle Component Analysis (PCA)"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-09-24"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Rafiq Islam</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Data Science, Machine Learning, Artificial Intelligence, Data Engineering]</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span><span class="co"> true</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="an">search:</span><span class="co"> true</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="an">lightbox:</span><span class="co"> true</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> pca.png</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co"> </span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: "/../../dsandml"</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">    max-items: 3</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">    categories: false</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: full</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">    fields: [image, date, title, author, reading-time]  </span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">    html: </span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">      toc: true</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">---</span>  </span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align:justify"&gt;</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>Principal Component Analysis (PCA) is a powerful technique used in machine learning and statistics for **unsupervised dimensionality reduction**. It transforms high-dimensional data into a lower-dimensional form while preserving the most important features or "components" of the data. This is particularly useful when dealing with large datasets that are difficult to visualize or computationally expensive to process.&lt;br&gt;</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>&lt;br&gt;</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>For example, if we have a dataset that contains a lot of images of 20x20 pixels and we convert the images to one dimensional vectors then there are total 400 features which makes the analysis harder. PCA finds a low (best $d$) dimensional subspace approximation that minimizes the least square error</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>&lt;/p&gt;</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is Principal Component Analysis (PCA)?  </span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>Let's start from the beginning. If we have a set of orthogonal basis vectors say $\mathbf{u}=(u_1,u_2,\dots, u_p)$ then $u_i^Tu_j=\delta_{ij}$ for $1\le i,j \le m$. For example, consider $u_1=\begin{bmatrix}1<span class="sc">\\</span> 0\end{bmatrix}$ and $u_2=\begin{bmatrix}0<span class="sc">\\</span>1\end{bmatrix}$  </span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">2</span>)</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="fl">0.5</span>,<span class="dv">2</span>)</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>ax.quiver(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, color<span class="op">=</span><span class="st">'red'</span>, scale<span class="op">=</span><span class="dv">1</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, angles<span class="op">=</span><span class="st">'xy'</span>)</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>ax.quiver(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>, color<span class="op">=</span><span class="st">'red'</span>, scale<span class="op">=</span><span class="dv">1</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, angles<span class="op">=</span><span class="st">'xy'</span>)</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">1.1</span>,<span class="dv">0</span>, <span class="st">'$u_1$'</span>, color<span class="op">=</span><span class="st">'red'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">0</span>,<span class="fl">1.1</span>, <span class="st">'$u_2$'</span>, color<span class="op">=</span><span class="st">'red'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">'equal'</span>)</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>plt.gca().set_facecolor(<span class="st">'#f4f4f4'</span>) </span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>plt.gcf().patch.set_facecolor(<span class="st">'#f4f4f4'</span>)</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span>  </span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>u_1^Tu_2 &amp; = \begin{bmatrix}1 &amp; 0\end{bmatrix} \begin{bmatrix}0<span class="sc">\\</span>1\end{bmatrix} = 0 \hspace{4mm}\text{and}\hspace{4mm} u_2^Tu_1 = \begin{bmatrix}0 &amp; 1\end{bmatrix}\begin{bmatrix}1 <span class="sc">\\</span> 0\end{bmatrix}=0<span class="sc">\\</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>u_1^Tu_1 &amp; = \begin{bmatrix}1 &amp; 0\end{bmatrix} \begin{bmatrix}1<span class="sc">\\</span>0\end{bmatrix} = 1 \hspace{4mm}\text{and}\hspace{4mm} u_2^Tu_2 = \begin{bmatrix}0 &amp; 1\end{bmatrix}\begin{bmatrix}0 <span class="sc">\\</span> 1\end{bmatrix}=1</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>\end{align*}  </span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>Now suppose we have a data set $X$ with columns are features and $k$th observation $x^{(k)}=(x_1^{(k)},x_2^{(k)},\dots,x_p^{(k)})^T$. Now let $\mu=\bar{x}= \frac{1}{n}\sum_{k=1}^{n}x^k$, that is for </span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>X &amp; = \begin{bmatrix}x_{11}&amp;x_{12}&amp;\dots x_{1p} <span class="sc">\\</span>x_{21}&amp;x_{22}&amp;\dots x_{2p} <span class="sc">\\</span> \vdots &amp; \vdots &amp;\ddots \vdots <span class="sc">\\</span>x_{n1}&amp;x_{n2}&amp;\dots x_{np} \end{bmatrix}<span class="sc">\\</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>\mu_j &amp;= \frac{1}{n} \sum_{i=1}^{n} x_{ij}<span class="sc">\\</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>\mu &amp; =\begin{bmatrix}\mu_1<span class="sc">\\</span> \mu_2 <span class="sc">\\</span> \vdots<span class="sc">\\</span> \mu_p\end{bmatrix} = \frac{1}{n} \sum_{i=1}^{n} X^i</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>\end{align*} </span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>Now with the orthogonal vectors, we can write </span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>$$ x^k-\mu = \sum_{i=1}^{p}\left<span class="co">[</span><span class="ot">(x^k-\mu)\cdot u_i\right</span><span class="co">]</span>u_i = \sum_{i=1}^{p} a_i^k u_i$$  </span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>In PCA, we aim to find $(u_1,u_2,\dots, u_d)$ that minimizes the reconstruction error, defined as the squared distance between each data point $x^k$ and its projection onto the subspace spanned by the top $d$ principle components:</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>$$\mathbf{E}(u_1,u_2,\dots, u_d)=\sum_{k=1}^{n}\left\|x^k -\left(\mu+\sum_{i=1}^{d} a_i^k u_i\right)\right\|^2$$</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>Here $\sum_{i=1}^{d} a_i^ku_i$ is the projection of $x^k$ onto the subspace spanned by the top $d$ dimensional components. The term inside the norm, $x^k -\left(\mu+\sum_{i=1}^{d} a_i^k u_i\right)$, represents the residual error after projecting $x^k$ onto this subspace. The goal is to minimize this error.  </span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>The residual variance corresponds to the directions (or principal components) **not** captured by the top $d$ principal components. Specifically, these are the components corresponding to $u_{d+1}, \dots, u_p$, where $p$ is the total number of features (or components).</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>Now, the norm inside the error function can be decomposed as follows:</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>x^k - \left( \bar{x} + \sum_{i=1}^{d} a_i^k u_i \right) = \left( x^k - \bar{x} \right) - \sum_{i=1}^{d} a_i^k u_i</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>We define $z^k = x^k - \bar{x}$, so the error becomes:</span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>E(u_1, \dots, u_d) = \sum_{k=1}^{n} \left\| z^k - \sum_{i=1}^{d} a_i^k u_i \right\|^2</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>The key idea here is that $z^k$ is a vector in the original $p$-dimensional space, and we are approximating it by projecting it onto the top $d$-dimensional subspace spanned by $u_1, \dots, u_d$.  </span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>Since $u_1, \dots, u_p$ form an orthogonal basis, $z^k$ can be completely expressed in terms of all the basis vectors $u_1, \dots, u_p$. In particular:</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>z^k = \sum_{i=1}^{p} a_i^k u_i</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>where $a_i^k = z^k \cdot u_i$ are the projections of $z^k$ onto each basis vector $u_i$. Therefore, the reconstruction error $E(u_1, \dots, u_d)$ is the squared norm of the residual part of $z^k$ that is **not captured** by the top $d$ principal components:</span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>E(u_1, \dots, u_d) = \sum_{k=1}^{n} \sum_{i=d+1}^{M} (a_i^k)^2</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>This means that the error comes from the projection of $z^k$ onto the remaining $p-d$ principal components, i.e., $u_{d+1}, \dots, u_p$. Thus,  </span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>E(\mathbf{u}) &amp; = \sum_{k=1}^{n} \left\|\sum_{i=d+1}^{p}(z^k\cdot u_i)u_i\right\|^2<span class="sc">\\</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>&amp; = \sum_{k=1}^{n}\sum_{i=d+1}^{p} \left(z^k\cdot u_i\right)^2</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>\end{align*} </span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>We start with the dot product $z^k \cdot u_i$, which is just a scalar:</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>z^k \cdot u_i = (z^k)^T u_i</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>This is simply the sum of the element-wise products of $z^k $and $u_i$:</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>z^k \cdot u_i &amp;= \sum_{j=1}^{M} z_j^k u_{ij}<span class="sc">\\</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>\implies (z^k \cdot u_i)^2 &amp;= \left( \sum_{j=1}^{M} z_j^k u_{ij} \right)^2</span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>\implies \left( \sum_{j=1}^{M} z_j^k u_{ij} \right)^2 &amp;= \sum_{j=1}^{M} \sum_{l=1}^{M} z_j^k z_l^k u_{ij} u_{il}</span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>Notice that we can rewrite the product $z_j^k z_l^k$ as an **outer product** of the vector $z^k$ with itself:</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>z^k z^{kT}</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>The outer product $z^k z^{kT}$ is a matrix, specifically an $p \times p$ matrix. Each element of this matrix at position $(j, l) $is $z_j^k z_l^k$, exactly what we have in the double sum.</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>So, instead of writing out all the sums explicitly, we can represent the whole thing as a matrix:</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>(z^k \cdot u_i)^2 = u_i^T (z^k z^{kT}) u_i</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>This is called a **quadratic form**. So, </span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>E(\mathbf{u}) &amp; = \sum_{k=1}^{n} \left\|\sum_{i=d+1}^{p}(z^k\cdot u_i)u_i\right\|^2<span class="sc">\\</span></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>&amp; = \sum_{k=1}^{n}\sum_{i=d+1}^{p} \left(z^k\cdot u_i\right)^2 <span class="sc">\\</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>&amp; = \sum_{k=1}^{n}\sum_{i=d+1}^{p} u_i^Tz^kz^{kT}u_i <span class="sc">\\</span></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>&amp; = \sum_{i=d+1}^{p} u_i^T\Sigma u_i <span class="sc">\\</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>\end{align*}  </span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>where,  </span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\Sigma = \sum_{k=1}^{n}(x^k-\mu)(x^k-\mu)^T=X^TX$  </span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$X=(x^1-\mu, x^2-\mu,\dots,x^p-\mu)^T$  </span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>So now we have </span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>$$E(\mathbf{u})=\sum_{i=d+1}^{p} u_i^T\Sigma u_i $$  </span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>and $E(\mathbf{u})$ is minimized when $u_i$'s are the eigenvectors of $\Sigma$. Then  </span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>$$E(\mathbf{u})=\sum_{i=d+1}^{p} u_i^T\lambda_i u_i =\sum_{i=d+1}^{p} \lambda_i $$  </span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>and we get our desired $u_{d+1},\dots, u_{p}$ components that minimizes the projection error. So if we take the first $d$ of these correspond to the $d$-largest eigenvalues we get the principle components.  </span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>**Long story short**  </span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>We have $n$ data points with $p$ column vectors $x^1,x^2,\dots,x^p$  </span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>We compute the mean $\mu= \frac{1}{n}\sum_{k=1}^{n}x^k$  </span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Then we compute the matrix $X=(x^1-\mu, x^2-\mu,\dots,x^p-\mu)^T$  </span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Next, compute the eigenvalues of $\Sigma = \sum_{k=1}^{n}(x^k-\mu)(x^k-\mu)^T=X^TX$ and short them in decreasing order  </span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Choose $d$, the number of principle components </span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Then we get the principle components $P=<span class="co">[</span><span class="ot">v_1,v_2,\dots, v_d</span><span class="co">]</span>_{p\times d}$  </span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To project any column vector $z$, we compute $projection(z)=P^T(z-\mu)$</span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="fu">## Benefits of PCA</span></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Dimensionality Reduction**: PCA can reduce the number of variables, which speeds up algorithms and makes models more interpretable.</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Visualization**: PCA is often used to project high-dimensional data into 2D or 3D for visualization.</span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Noise Reduction**: By focusing on the principal components, PCA can eliminate irrelevant noise in the data.</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Avoid Multicollinearity**: PCA removes multicollinearity by creating uncorrelated principal components.</span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Limitations of PCA</span></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Linear Assumption**: PCA assumes linear relationships between features. Non-linear patterns in data are not captured well by PCA.</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Interpretability**: While PCA can simplify data, the new components may not be easily interpretable.</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Loss of Information**: Reducing dimensions might result in the loss of some information or variance, depending on how many components are retained.</span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="fu">## PCA in Python: Implementation and Visualization</span></span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>Now that we understand the theory behind PCA, let’s implement it in Python using the <span class="in">`sklearn`</span> library and visualize the results.</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>For this example, we will use the famous Iris dataset, which contains 4 features (sepal length, sepal width, petal length, and petal width) of 3 species of iris flowers.</span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Iris dataset</span></span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> load_iris()</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> iris.data</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> iris.target</span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardize the data</span></span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>X_scaled <span class="op">=</span> scaler.fit_transform(X)</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>We will reduce the data from 4 dimensions to 2 for visualization.</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a>X_pca <span class="op">=</span> pca.fit_transform(X_scaled)</span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Explained Variance Ratio: </span><span class="sc">{</span>pca<span class="sc">.</span>explained_variance_ratio_<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a>The explained variance ratio shows how much variance each principal component captures. In many cases, the first two components capture most of the variance.</span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>Let’s plot the Iris dataset using the first two principal components.</span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>]</span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, color <span class="kw">in</span> <span class="bu">enumerate</span>(colors):</span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a>    plt.scatter(X_pca[y <span class="op">==</span> i, <span class="dv">0</span>], X_pca[y <span class="op">==</span> i, <span class="dv">1</span>], label<span class="op">=</span>iris.target_names[i], color<span class="op">=</span>color)</span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'PCA of Iris Dataset'</span>)</span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Principal Component 1'</span>)</span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Principal Component 2'</span>)</span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'pca.png'</span>)</span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>plt.gca().set_facecolor(<span class="st">'#f4f4f4'</span>) </span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a>plt.gcf().patch.set_facecolor(<span class="st">'#f4f4f4'</span>)</span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a>The plot shows the data projected onto the first two principal components. We can observe how the three species cluster in the reduced 2D space. This visualization helps us see the separability of the classes using only two dimensions, instead of four.</span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a><span class="fu">### **References**</span></span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Jolliffe, I. T.** (2002). *Principal Component Analysis*. Springer Series in Statistics.</span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>The seminal book on PCA, providing an in-depth theoretical background.</span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Shlens, J.** (2014). A tutorial on principal component analysis. *arXiv preprint arXiv:1404.1100*.</span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>An excellent tutorial that breaks down PCA concepts with clear mathematical derivations.</span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Bishop, C. M.** (2006). *Pattern Recognition and Machine Learning*. Springer.</span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>This book offers a comprehensive guide to PCA and other machine learning techniques.</span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Hastie, T., Tibshirani, R., &amp; Friedman, J.** (2009). *The Elements of Statistical Learning*. Springer.</span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Covers PCA as well as a variety of other machine learning and statistical techniques.</span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Géron, A.** (2019). *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow*. O'Reilly Media.</span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>A practical guide with hands-on code examples, including PCA implementation in Python.</span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a>---  </span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a>**Share on**  </span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a>&lt;div id="fb-root"&gt;&lt;/div&gt;</span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a>&lt;script async defer crossorigin="anonymous"</span>
+<span id="cb7-289"><a href="#cb7-289" aria-hidden="true" tabindex="-1"></a> src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"&gt;&lt;/script&gt;</span>
+<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb7-291"><a href="#cb7-291" aria-hidden="true" tabindex="-1"></a>&lt;div class="share-buttons"&gt;</span>
+<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a>&lt;div class="fb-share-button" data-href="https://mrislambd.github.io/dsandml/pca/"</span>
+<span id="cb7-293"><a href="#cb7-293" aria-hidden="true" tabindex="-1"></a>data-layout="button_count" data-size="small"&gt;&lt;a target="_blank" </span>
+<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a> href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fdsandml%2Fpca%2F<span class="dv">&amp;amp;</span>src=sdkpreparse" </span>
+<span id="cb7-295"><a href="#cb7-295" aria-hidden="true" tabindex="-1"></a> class="fb-xfbml-parse-ignore"&gt;Share&lt;/a&gt;&lt;/div&gt;</span>
+<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a>&lt;script src="https://platform.linkedin.com/in.js" type="text/javascript"&gt;lang<span class="op">:</span> en_US&lt;/script&gt;</span>
+<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a>&lt;script type="IN/Share" data-url="https://mrislambd.github.io/dsandml/pca/"&gt;&lt;/script&gt; </span>
+<span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" </span>
+<span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a> data-url="https://mrislambd.github.io/dsandml/pca/" data-show-count="true"&gt;Tweet&lt;/a&gt;</span>
+<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a>&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</span>
+<span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a>&lt;div class="fb-comments" data-href="https://mrislambd.github.io/dsandml/pca/"</span>
+<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a> data-width="" data-numposts="5"&gt;&lt;/div&gt;</span>
+<span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-309"><a href="#cb7-309" aria-hidden="true" tabindex="-1"></a>**You may also like**</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Powered by <a href="https://quarto.org/">Quarto</a> 1.5.54</p>
+<p>Powered by <a href="https://quarto.org/">Quarto</a> 1.5.57</p>
 </div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
@@ -1307,7 +1478,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
