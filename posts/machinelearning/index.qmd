@@ -64,13 +64,13 @@ listing:
       <th>Unsupervised </th>
       <th>
         <ul>
-          <li><a href="/dsandml/pca/index.qmd" style="text-decoration:none">Principle Component Analysis (PCA)</a></li>
+          <li><a href="/dsandml/pca/index.qmd" style="text-decoration:none" target="_blank">Principle Component Analysis (PCA)</a></li>
           <li><a  style="text-decoration:none">Gaussian Mixture Model (GMM)</a></li>
           <li><a  style="text-decoration:none">Latent Dirichilet Allocation (LDA)</a></li>
       </th>
       <th>
         <ul>
-          <li><a  style="text-decoration:none">K-Means</a></li>
+          <li><a  href="/dsandml/kmeans/index.qmd" style="text-decoration:none" target="_blank">K-Means</a></li>
           <li><a  style="text-decoration:none">Hierarchial Clustering</a></li>
           <li><a  style="text-decoration:none">Density-Based Spatial Clustering of Applications with Noise (DBSCAN)</a></li>
       </th>
