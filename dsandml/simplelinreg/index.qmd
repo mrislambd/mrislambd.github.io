@@ -107,6 +107,13 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 ```  
 
+## Assumptions of Linear Regressions  
+
+- **Linearity:** The relationship between the feature set and the target variable has to be linear.  
+- **Homoscedasticity:** The variance of the residuals has to be constant.  
+- **Independence:** All the observations are independent of each other.  
+- **Normality:** The distribution of the dependent variable $y$ has to be normal.
+
 ## Synthetic Data  
 
 To implement the algorithm, we need some synthetic data. To generate the synthetic data we use the linear equation $y(x)=2x+\frac{1}{2}+\xi$ where $\xi\sim \mathbf{N}(0,1)$  
