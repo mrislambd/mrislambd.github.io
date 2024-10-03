@@ -1,0 +1,607 @@
+---
+title: "K Nearest Neighbors Regression"
+date: "2024-08-29"
+author: Rafiq Islam
+categories: [Data Science, Machine Learning, Artificial Intelligence]
+citation: true
+image: knn.jpeg
+search: true
+lightbox: true
+listing: 
+    contents: "/../../dsandml"
+    max-items: 3
+    type: grid
+    categories: false
+    date-format: full
+    fields: [image, date, title, author, reading-time]
+---  
+
+## Introduction: Non-parametric Models 
+<p style="text-align: justify">
+    Non-parametric model is a statistical model that does not make any assumptions about the underlying data distributions, meaning it does not require specifying functional form for the relationships between variables, instead learning directly from the data points without pre-defined parameters.  
+</p>
+
+## $K-$Nearest Neighbors (KNN) Algorithm  
+
+<p style="text-align:justify">
+K-Nearest Neighbors (KNN) is one of the simplest yet effective algorithms used in supervised learning for both classification and regression problems. It's a **lazy learner**—meaning it does not perform any specific training of a model but memorizes the training dataset and makes predictions based on proximity in feature space.  
+</p>
+
+We are given a set of data points $(\bar{x}_i,y_i)$ with $\bar{x}_i\in \mathbb{R}^d$ and $y_i\in \mathbb{R}$  
+1. Choose the number of neighbors $K$  
+2. Compute the distance between the new data point and all the training samples  
+3. Select the $K$ nearest neighbors based on distance.  
+4. For **classification**, the output is the most common class among the $K$ neighbors.  
+5. For **regression**, the output is the average of the target values of $K$ neighbors
+
+
+### KNN Classification  
+
+The KNN classification algorithm can be summarized with the following steps:
+
+Given:  
+
+- $X_{train} = [x_1, x_2, \ldots, x_n]$ (the training data features)  
+- $y_{train} = [y_1, y_2, \ldots, y_n]$ (the training data labels)  
+- $x_{test}$ (the new data point for which we want to predict the class)
+
+**Steps**  
+
+**1. Compute Distance**: 
+   For each training point $x_i$, calculate the distance $d(x_i, x_{test})$ using a distance metric like **Euclidean distance**:
+   $$
+   d(x_i, x_{test}) = \sqrt{\sum_{j=1}^{m} (x_{i,j} - x_{test,j})^2}
+   $$
+   where $m$ is the number of features.  
+
+   
+**2. Find K Nearest Neighbors**: 
+   Sort the distances and pick the **K** closest points.  
+
+**3. Majority Voting**: 
+   Look at the labels $y_i$ of the **K** nearest neighbors. The predicted label for $x_{test}$ is the most frequent label (majority vote) among the neighbors.  
+
+
+For example, let's say our data looks like this  
+
+::: {#tb1-panel layout-ncol=2}
+| area   | bedroom   |   bathroom |   price   |   condition |  
+|:------:|:---------:|:----------:|:---------:|:-----------:|   
+| 7420   | 4         | 2          | 1300000   | 1           |  
+| 7520   | 3         | 3          | 1450000   | 1           |  
+| 6420   | 2         | 1          | 1110000   | 0           |  
+| 5423   | 3         | 2          | 1363400   | 0           |  
+| 5423   | 3         | 1          | 1263400   | 1           |  
+
+: Training Data   
+
+| area   | bedroom   |   bathroom |   price   |   condition |  
+|:------:|:---------:|:----------:|:---------:|:-----------:|   
+| 5420   | 3         | 2.5        | 1302000   |             |  
+| 7120   | 5         | 4          | 1453000   |             |  
+   
+: Test Data 
+:::  
+
+For the data points $x_i$ from the training set and a single test data point $xt=[5420,3,2.5,1302000]$
+
+\begin{align*}
+    d(x_1, xt) & = \sqrt{(x_{11}-xt_1)^2 + (x_{12}-xt_2)^2 + (x_{13}-xt_3)^2 + (x_{14}-xt_4)^2}\\
+               & = \sqrt{(7420-5420)^2 + (4-5)^2 + (2-2.5)^2 + (1300000-1302000)^2} \approx 2828.43\\
+    d(x_2,xt)  & = \sqrt{(x_{21}-xt_1)^2 + (x_{22}-xt_2)^2 + (x_{23}-xt_3)^2 + (x_{24}-xt_4)^2} \\     
+               & = \sqrt{(7520-5420)^2 + (3-5)^2 + (3-2.5)^2 + (1450000-1302000)^2} \approx 14805.92\\
+    d(x_3,xt)  & = \sqrt{(x_{31}-xt_1)^2 + (x_{32}-xt_2)^2 + (x_{33}-xt_3)^2 + (x_{34}-xt_4)^2}   \\
+               & = \sqrt{(6420-5420)^2 + (2-5)^2 + (1-2.5)^2 + (1110000-1302000)^2} \approx 19209.38\\
+    d(x_4,xt)  & = \sqrt{(x_{41}-xt_1)^2 + (x_{42}-xt_2)^2 + (x_{43}-xt_3)^2 + (x_{44}-xt_4)^2}\\
+               & = \sqrt{(6420-5420)^2 + (2-5)^2 + (1-2.5)^2 + (1110000-1302000)^2} \approx 19209.38\\
+    d(x_5,xt)  & = \sqrt{(x_{51}-xt_1)^2 + (x_{52}-xt_2)^2 + (x_{53}-xt_3)^2 + (x_{54}-xt_4)^2} \\
+               & = \sqrt{(5423-5420)^2 + (3-5)^2 + (1-2.5)^2 + (1263400-1302000)^2} \approx 38602.95
+\end{align*}
+
+
+So the distances  
+
+- $d_1=d(x_1, xt) \approx 2828.43$
+- $d_2=d(x_2, xt) \approx 14805.92$
+- $d_3=d(x_3, xt) \approx 19209.38$
+- $d_4=d(x_4, xt) \approx 61405.03$
+- $d_5=d(x_5, xt) \approx 38602.95$
+
+If we sort the above distances, we get $d_1<d_2<d_3<d_5<d_4$ and if we choose $K=3$ nearest neighbors, then $d_1<d_2<d_3$ and  
+
+- Data point $x_1$ has class label `condition`$=1$  
+- Data point $x_2$ has class label `condition`$=1$  
+- Data point $x_3$ has class label `condition`$=0$  
+
+We can clearly see that the majority class (2 out of 3) is `condition`$=1$. Therefore, for the given test data, the label would be also `condition`$=1$.
+
+#### KNN Classifier Using Python  
+
+Here’s how to implement KNN for classification in Python from scratch:
+
+```{python}
+#| code-fold: false
+import numpy as np
+import pandas as pd
+from collections import Counter
+
+class CustomKNNclassifier:
+
+    def __init__(self, k=3):
+        self.k = k
+    
+    def fit(self, X, Y):
+        self.X = X
+        self.Y = Y
+    
+    def predict(self, X):
+        predictions = [self._predict(x) for x in X.to_numpy()] 
+        return np.array(predictions)
+    
+    def _predict(self, x):
+        # Compute the Euclidean distances 
+        distances = [np.linalg.norm(x - X_train) for X_train in self.X.to_numpy()]
+
+        # Get the indices of the k nearest neighbors
+        k_indices = np.argsort(distances)[:self.k]
+
+        # Get the labels of k nearest neighbors
+        k_nearest_neighbors = [self.Y[i] for i in k_indices]
+
+        # Return the most common label
+        common_label = Counter(k_nearest_neighbors).most_common(1)[0][0]
+        return common_label
+
+# Example usage
+train_data = pd.DataFrame(
+    {
+        'area': [7420, 7520, 6420, 5423, 5423],
+        'bedroom': [4, 3, 2, 3, 3],
+        'bathroom': [2, 3, 1, 2, 1],
+        'price': [1300000, 1450000, 1110000, 1363400, 1263400],
+        'condition': [1, 1, 0, 0, 1]
+    }
+)
+test_data = pd.DataFrame(
+    {
+        'area': [5420, 7120],
+        'bedroom': [3, 5],
+        'bathroom': [2.5, 4],
+        'price': [1302000, 1453000]
+    }
+)
+
+X_train = train_data.drop('condition', axis=1)
+y_train = train_data['condition']
+
+X_test = test_data
+
+# Initialize and train the KNN model
+classifier = CustomKNNclassifier(k=3)
+classifier.fit(X_train, y_train)
+
+# Predict on test data
+predictions = classifier.predict(X_test)
+print(predictions)
+```  
+
+So the complete test set would be  
+
+| area   | bedroom   |   bathroom |   price   |   condition |  
+|:------:|:---------:|:----------:|:---------:|:-----------:|   
+| 5420   | 3         | 2.5        | 1302000   |          1  |  
+| 7120   | 5         | 4          | 1453000   |          1  |  
+
+
+### KNN for Regression
+
+KNN regression is slightly different from classification. Instead of taking a majority vote, we predict the output by averaging the values of the **K** nearest neighbors.
+
+Given:  
+
+- $X_{train} = [x_1, x_2, \ldots, x_n]$ (the training data features)
+- $y_{train} = [y_1, y_2, \ldots, y_n]$ (the continuous target values)
+- $x_{test}$ (the new data point for which we want to predict the value)
+
+**Step-by-Step:**  
+
+**1. Compute Distance**: Calculate the Euclidean distance between $x_{test}$ and each training point $x_i$.  
+**2. Find K Nearest Neighbors**: Sort the distances and select the **K** nearest points.  
+**3. Averaging**: The predicted value for $x_{test}$ is the average of the target values $y_i$ of the **K** nearest neighbors:  
+
+$$
+\hat{y}_{test} = \frac{1}{K} \sum_{i=1}^{K} y_i
+$$
+
+#### KNN Regressor Using Python
+
+Now we use the same training data and test data for this regression. But this time, our target variable is `price` and test data looks like this   
+
+| area   | bedroom   |   bathroom | Condition |   price     |  
+|:------:|:---------:|:----------:|:---------:|:-----------:|   
+| 5420   | 3         | 2.5        | 1         |             |  
+| 7120   | 5         | 4          | 1         |             |  
+
+Now we see that  
+
+\begin{align*}
+    d_1=d(x_1, x_t) & = \sqrt{(7420 - 5420)^2 + (4 - 3)^2 + (2 - 2.5)^2 + (1 - 1)^2} \approx 2000.06\\
+    d_2=d(x_2, x_t) & = \sqrt{(7520 - 5420)^2 + (3 - 3)^2 + (3 - 2.5)^2 + (1 - 1)^2} \approx 2100.12\\
+    d_3=d(x_3, x_t) & = \sqrt{(6420 - 5420)^2 + (2 - 3)^2 + (1 - 2.5)^2 + (0 - 1)^2} \approx 1000.05\\
+    d_4=d(x_4, x_t) & = \sqrt{(5423 - 5420)^2 + (3 - 3)^2 + (2 - 2.5)^2 + (0 - 1)^2} \approx 3.27\\
+    d_5=d(x_5, x_t) & = \sqrt{(5423 - 5420)^2 + (3 - 3)^2 + (1 - 2.5)^2 + (1 - 1)^2} \approx 3.87
+\end{align*}
+
+But this time, the order is $d_4<d_5<d_3<d_1<d_2$ and for $k=3$ we have $d_4<d_5<d_3$. The price for this distances  
+
+- For data point $x_4$, the `price`$=1363400$  
+- For data point $x_5$, the `price`$=1263400$  
+- For data point $x_3$, the `price`$=1110000$  
+
+So the predicted price should be the average of this three prices, that for $xt=[5420,3,2.5,1]$ the price we expect  
+$$
+price = \frac{1363400+1263400+1110000}{3}=1245600.00
+$$ 
+
+Here’s how to implement KNN for regression in Python from scratch and we see if we get the same as the hand calculation.
+
+```{python}
+#| code-fold: false
+
+class CustomKNNRegressor:
+    def __init__(self, k=3):
+        self.k = k
+
+    def fit(self, X_train, y_train):
+        # Ensure X_train is always a NumPy array
+        if isinstance(X_train, pd.DataFrame):
+            self.X_train = X_train.to_numpy()
+        else:
+            self.X_train = X_train
+        
+        # y_train should be a flat array (vector)
+        if isinstance(y_train, pd.DataFrame) or isinstance(y_train, pd.Series):
+            self.y_train = y_train.to_numpy()
+        else:
+            self.y_train = y_train
+
+    def predict(self, X_test):
+        # Ensure X_test is always a NumPy array
+        if isinstance(X_test, pd.DataFrame):
+            X_test = X_test.to_numpy()
+        
+        # Make predictions for each row in X_test
+        predictions = [self._predict(x) for x in X_test]
+        return np.array(predictions)
+
+    def _predict(self, x):
+        # Compute distances between x and all training points
+        distances = [np.linalg.norm(x - x_train) for x_train in self.X_train]
+        
+        # Get the indices of the k nearest neighbors
+        k_indices = np.argsort(distances)[:self.k]
+        
+        # Get the values of the k nearest neighbors
+        k_nearest_values = [self.y_train[i] for i in k_indices]
+        
+        # Return the average of the k nearest values
+        return np.mean(k_nearest_values)
+
+X_train = train_data.drop('price', axis=1)
+y_train = train_data['price']
+
+test_data = pd.DataFrame(
+    {
+        'area': [5420, 7120],
+        'bedroom': [3, 5],
+        'bathroom': [2.5, 4],
+        'condition': [1, 1]
+    }
+)
+
+X_test = test_data
+
+# Initialize and train the KNN regressor
+regressor = CustomKNNRegressor(k=3)
+regressor.fit(X_train, y_train)
+
+# Predict on test data
+predictions = regressor.predict(X_test)
+print(predictions)
+
+```
+
+---
+
+### Choosing the Value of **K**
+
+The value of **K** significantly affects the performance of the KNN algorithm:  
+
+- **Small K**: If **K** is too small, the model is sensitive to noise, and the predictions can be unstable.  
+- **Large K**: If **K** is too large, the model becomes more biased, and the predictions may be overly smoothed.
+
+A typical way to choose **K** is by trying different values and using cross-validation to see which value yields the best performance.
+
+---
+
+### Distance Metrics
+
+The default metric for KNN is **Euclidean distance**, but depending on the dataset, other metrics like **Manhattan distance** or **Minkowski distance** might be more suitable.
+
+- **Euclidean Distance** (L2 Norm):
+  $$
+  d(x_i, x_j) = \sqrt{\sum_{k=1}^{m} (x_{i,k} - x_{j,k})^2}
+  $$
+
+- **Manhattan Distance** (L1 Norm):
+  $$
+  d(x_i, x_j) = \sum_{k=1}^{m} |x_{i,k} - x_{j,k}|
+  $$
+
+### KNN Implementation  
+
+In this section we use KNN regression for `California Housing` dataset and find the optimal $K$ using the `KFold` cross-validation. We als use two distance metrices to compare which one gives better accuracy.  
+
+```{python}
+#| code-fold: false
+from sklearn.datasets import fetch_california_housing
+housing = fetch_california_housing()
+X = pd.DataFrame(data = housing['data'], columns = housing['feature_names'])
+y = pd.DataFrame(data = housing['target'], columns = housing['target_names'])
+df = pd.concat([X,y], axis=1)
+df.head()
+```  
+
+Next we see if there is any missing values  
+
+```{python}
+#| code-fold: false
+df.isnull().sum()
+```  
+
+<p style="text-align:justify">
+The data looks clean and ready to implement to the KNNRegressor. Note that, for predictive modeling we need a lot of things, such as exporatory data analysis (EDA), feature engineering, preprocessing and others. However, we will simply apply the `KNNRegressor` that we built from scratch and built-in library function from `scikit-learn` to explore the algorithm and find the optimal $K$.
+</p>
+
+```{python}
+#| code-fold: false
+from sklearn.model_selection import KFold, train_test_split
+from sklearn.metrics import mean_squared_error
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,y, test_size=0.30, random_state=123
+)
+
+k_values = [5,8,11,15]
+
+kfold = KFold(n_splits=7, shuffle=True, random_state=123)
+mses = np.zeros((7,4))
+
+for i,(train_index, test_index) in enumerate(kfold.split(X_train)):
+    X_train_train = X_train.iloc[train_index]
+    X_train_holdout = X_train.iloc[test_index]
+
+    y_train_train = y_train.iloc[train_index]
+    y_train_holdout = y_train.iloc[test_index]
+
+    for j,k in enumerate(k_values):
+        knn_regression = CustomKNNRegressor(k=k)
+        knn_regression.fit(X_train_train, y_train_train)
+        preds = knn_regression.predict(X_train_holdout)
+        mses[i,j] = mean_squared_error(y_train_holdout, preds)
+print(mses)
+```
+
+### Conclusion
+
+K-Nearest Neighbors is a simple, intuitive algorithm that can be highly effective in both classification and regression problems. Its simplicity comes from the fact that it doesn't make any assumptions about the underlying data distribution (it's non-parametric). However, its performance can be sensitive to the choice of **K** and the distance metric.
+
+The implementations of KNN from scratch for both classification and regression have helped us understand the algorithm’s mechanics. Although it's easy to implement, KNN can become computationally expensive for large datasets, as it requires calculating distances between the test point and all training samples.
+
+If you need an efficient version, it's always possible to use optimized libraries like scikit-learn, but writing the algorithm from scratch helps build a solid understanding.
+
+For classification problems, the class is determined by the vote of its neighbors. For a regression problem the response $y$ is calculated by the weighted average of the sorted $K$-th distances. For example, if $k=4$ and the shorted distances are $d_1<d_3<d_2<d_4$ then $y=(d_1+d_3+d_2+d_4)/2$  
+
+## $K$NN Implementation: Regression
+
+```{python}
+#| code-fold: false
+import numpy as np 
+import matplotlib.pyplot as plt
+
+np.random.seed(123)
+X = 2*np.random.normal(size=(100,1))
+y = (np.cos(X)+0.3*np.random.normal(size=X.shape)).reshape(-1)
+# First 5 entries in X
+X[:5]
+# First 5 entries in y
+y[:5]
+
+# Plot of the data
+plt.scatter(X,y)
+plt.gca().set_facecolor('#f4f4f4') 
+plt.gcf().patch.set_facecolor('#f4f4f4') 
+plt.show()
+```  
+
+Now we fit two models for two different $K$ values to see how it affects the interpolation.  
+
+```{python}
+#| code-fold: false
+from sklearn.neighbors import KNeighborsRegressor
+knn_3 = KNeighborsRegressor(3)
+knn_9 = KNeighborsRegressor(9)
+
+knn_3.fit(X,y)
+knn_9.fit(X,y)
+
+fig, ax = plt.subplots(1,2, figsize=(9,5), sharex=True, sharey=True)
+ax[0].scatter(X,y, alpha=0.5, label="Sample Data")
+ax[1].scatter(X,y, alpha=0.5, label="Sample Data")
+ax[0].plot(
+    np.linspace(np.min(X)-1,np.max(X)+1,200).reshape(-1,1),
+    knn_3.predict(np.linspace(np.min(X)-1,np.max(X)+1,200).reshape(-1,1)),
+    'k',
+    label='KNR'
+)
+ax[0].set_title('$k=3$')
+ax[0].set_facecolor('#f4f4f4')
+ax[0].patch.set_facecolor('#f4f4f4')
+
+ax[1].plot(
+    np.linspace(np.min(X)-1,np.max(X)+1,200).reshape(-1,1),
+    knn_9.predict(np.linspace(np.min(X)-1,np.max(X)+1,200).reshape(-1,1)),
+    'k',
+    label='KNR'
+)
+ax[1].set_title('$k=9$')
+ax[1].set_facecolor('#f4f4f4')
+ax[1].patch.set_facecolor('#f4f4f4')
+
+plt.show()
+```  
+
+
+
+## $K$NN Implementation: Classification  
+
+For this classification problem, we choose that famous iris data from the `scikit-learn` library.  
+
+```{python}
+#| code-fold: false
+from sklearn import datasets
+
+
+# Load the data
+iris = datasets.load_iris()
+X,y = iris.data, iris.target
+
+# First 5 entries of the features  
+X[:5,:5]
+```
+
+```{python}
+#| code-fold: false
+# First 5 entries of the target values
+
+y[:5]
+```
+
+There are total 150 observations of $X$ and $y$ and the scatter plot of the data  
+
+```{python}
+#| code-fold: false
+# Scatter plot 
+_, ax =  plt.subplots()
+scatter = ax.scatter(iris.data[:,0],
+            iris.data[:,1],
+            c=iris.target
+        )
+ax.set(xlabel=iris.feature_names[0],
+       ylabel=iris.feature_names[1]
+)
+_ = ax.legend(
+    scatter.legend_elements()[0],
+    iris.target_names, 
+    loc="lower right",
+    title="Classes"
+)
+plt.gca().set_facecolor('#f4f4f4') 
+plt.gcf().patch.set_facecolor('#f4f4f4') 
+```  
+
+We can use the `KNeighborsClassifier` class from the  `sklearn` library or make a custom classifier. 
+
+### KNeighborsClassifier: sklearn Libarary  
+
+```{python}
+#| code-fold: false
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.33, random_state=42) 
+
+sklern_clf = KNeighborsClassifier(n_neighbors=5) # 5 is the default number
+sklern_clf.fit(X_train,y_train)
+pred = sklern_clf.predict(X_test)
+acc = accuracy_score(y_test,pred)
+print('Classification Accuracy: ',acc)
+```
+
+### KNeighborsClassifier: custom Libarary  
+
+This is a custom made KNN classifier (code credit goes to [AssemblyAI](https://www.youtube.com/watch?v=rTEtEy5o3X0&t=307s)). Let's use this to classify the iris dataset.  
+
+```python
+import numpy as np
+from collections import Counter
+
+
+def distance(x1, x2):
+    return np.sqrt(np.sum((x1-x2)**2))
+
+
+class KNNClassifier:
+    def __init__(self, k=3):
+        self.k = k
+
+    def fit(self, X, y):
+        self.X_train = X
+        self.y_train = y
+
+    def predict(self, X):
+        predictions = [self._prediction(x) for x in X]
+        return predictions
+
+    def _prediction(self, x):
+        distances = [distance(x, x_train) for x_train in self.Xtrain]
+        knn_indices = np.argsort(distances)[:self.k]
+        knn_labels = [self.y_train[i] for i in knn_indices]
+
+        # majority vote
+        most_common = Counter(knn_labels).most_common()
+        return most_common[0][0]
+```  
+
+Save the above file as `knn.py` in the same directory. Then
+
+```{python}
+#| code-fold: false
+from knn import KNNClassifier
+
+customknn_clf = KNNClassifier(k=5)
+customknn_clf.fit(X_train,y_train)
+pred = customknn_clf.predict(X_test)
+acc = accuracy_score(y_test,pred)
+print('Classification Accuracy: ',acc)
+```
+
+
+
+**Share on**  
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+ src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
+ 
+<div class="share-buttons">
+<div class="fb-share-button" data-href="https://mrislambd.github.io/machinelearning/knn/"
+data-layout="button_count" data-size="small"><a target="_blank" 
+ href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fmachinelearning%2Fknn%2F&amp;src=sdkpreparse" 
+ class="fb-xfbml-parse-ignore">Share</a></div>
+
+<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="https://mrislambd.github.io/machinelearning/knn/"></script> 
+ 
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" 
+ data-url="https://mrislambd.github.io/machinelearning/knn/" data-show-count="true">Tweet</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div class="fb-comments" data-href="https://mrislambd.github.io/machinelearning/knn/"
+ data-width="" data-numposts="5"></div>
+
+
+**You may also like**  
