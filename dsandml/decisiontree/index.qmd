@@ -151,7 +151,7 @@ $$IG(split_1)=1-\left(\frac{5}{20}\cdot 0+\frac{15}{20}\cdot 0.92\right)=0.31$$
 
 Now the burning question is how did we select the condition $x_0\le 3.5$? It could have been any other number, say we set $x_0\le 6.5$. Then  
 
-![Figure 3: Alternative Split](/posts/decisiontree/op1.png)  
+![Figure 3: Alternative Split](/dsandml/decisiontree/op1.png)  
 
 Based on the condition $x_0\le 6.5$, the left and right child recieves 11 and 9 feature points $X=(x_0,x_1)$, respectively. But in this case we don't see any pure nodes and the entropies at these child nodes
 
@@ -166,7 +166,7 @@ $$IG(split_1)=1-\left(\frac{11}{20}\cdot 0.95+\frac{9}{20}\cdot 0.92\right)=0.06
 
 Note that the information gain is much lower than the first option. Therefore, the first split is better than this alternative split. Because the goal is to have minimum entropy value and/or the maximum information gain. This is where the machine learning gets in the game. The algorithm finds the optimal split based on each feature values.
 
-![Figure 4: Second Split](/posts/decisiontree/tree.png)  
+![Figure 4: Second Split](/dsandml/decisiontree/tree.png)  
 
 Now say we have a new set of feature values $(x_0,x_1,Class)=(10,7,1)$. Based on our tree above, since $x_0$ is NOT less than or equal to $3.5$ so it goes to the right first child. Then it satisfies $x_0\le 10$. So it moves to the left grand child gradually traverse through the tree and ended up to the very bottom layer left leaf node.
 
