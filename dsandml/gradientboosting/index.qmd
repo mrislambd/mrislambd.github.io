@@ -1,0 +1,177 @@
+---
+title: "Ensemble Methods: Gradient Boosting - A detailed overview"
+date: "2024-10-07"
+author: Rafiq Islam
+categories: [Data Science, Machine Learning, Artificial Intelligence]
+citation: true
+search: true
+image: gb.webp
+lightbox: true
+listing: 
+    contents: "/../../dsandml"
+    max-items: 3
+    type: grid
+    categories: true
+    date-format: full
+    fields: [image, date, title, author, reading-time]
+---
+
+## Introduction
+<p style ="text-align: justify">
+Gradient Boosting is one of the most powerful techniques for building predictive models. It has gained popularity in the realms of both classification and regression due to its flexibility and effectiveness, particularly with decision trees as weak learners. </p>
+
+
+## What is Gradient Boosting?
+<p style ="text-align: justify">
+Gradient Boosting is an ensemble learning technique where several weak learners (typically decision trees) are combined to form a strong learner. The key idea behind boosting is to train models sequentially, where each new model tries to correct the errors of the previous ones. Gradient Boosting achieves this by minimizing a loss function using gradient descent.
+</p>
+
+**Key Concepts:**  
+
+- **Weak Learners**: These are models that are only slightly better than random guessing. Decision trees with few splits (depth-1 trees) are commonly used as weak learners.  
+-  **Sequential Learning**: Models are trained one after another. Each model focuses on the errors (residuals) made by the previous models.  
+-  **Gradient Descent**: Gradient Boosting relies on gradient descent to minimize the loss function.
+
+---
+
+## Mathematical Derivation of Gradient Boosting
+
+Let’s consider a regression problem where we aim to predict the target values $y \in \mathbb{R}$ using the features $X \in \mathbb{R}^d$. We aim to find a function $F(x)$ that minimizes the expected value of a loss function $L(y, F(x))$, where $L$ could be mean squared error or any other appropriate loss function.
+
+The idea behind Gradient Boosting is to improve the current model by adding a new model that reduces the loss:
+
+$$
+F_{m+1}(x) = F_m(x) + \eta h_m(x)
+$$
+
+where:  
+
+- $F_m(x)$ is the current model after $m$ iterations,  
+- $h_m(x)$ is the new weak learner added at iteration $m$,  
+- $\eta$ is the learning rate, which controls how much the new learner impacts the final model.
+
+<p style ="text-align: justify">
+We aim to minimize the loss function $L(y, F(x))$. At each iteration, Gradient Boosting fits a new model $h_m(x)$ to the negative gradient of the loss function. The negative gradient represents the direction of steepest descent, essentially capturing the errors or residuals of the model.
+<br>
+Given a loss function $L(y, F(x))$, we compute the residuals (or pseudo-residuals) as:
+</p>
+
+$$
+r_{i,m} = - \frac{\partial L(y_i, F_m(x_i))}{\partial F_m(x_i)}
+$$
+
+These residuals are then used to fit the new weak learner $h_m(x)$. In the case of squared error (for regression), the residuals simplify to the difference between the observed and predicted values:
+
+$$
+r_{i,m} = y_i - F_m(x_i)
+$$
+
+Thus, the new learner is fit to minimize these residuals.
+
+**Steps**
+
+**Initialize** the model with a constant prediction:
+$$
+F_0(x) = \arg \min_{c} \sum_{i=1}^{n} L(y_i, c)
+$$
+For squared error loss, $F_0(x)$ would be the mean of the target values $y$.
+
+**For each iteration $m = 1, 2, \dots, M$:**  
+
+- Compute the residuals:
+$$
+r_{i,m} = - \frac{\partial L(y_i, F_m(x_i))}{\partial F_m(x_i)}
+$$  
+- Fit a weak learner $h_m(x)$ to the residuals $r_{i,m}$.  
+- Update the model:
+$$
+F_{m+1}(x) = F_m(x) + \eta h_m(x)
+$$  
+- Continue until a stopping criterion is met (e.g., a fixed number of iterations or convergence).
+
+## Assumptions of Gradient Boosting
+
+Gradient Boosting, like any algorithm, comes with its own set of assumptions and limitations. Key assumptions include:
+
+1. **Independence of Features**: Gradient Boosting assumes that the features are independent. Correlated features can lead to overfitting.
+2. **Weak Learners**: It assumes that weak learners, typically shallow decision trees, are adequate for capturing the patterns in the data, though overly complex learners may lead to overfitting.
+3. **Additive Model**: The model is additive, meaning it combines weak learners to improve performance. This makes it sensitive to noisy data, as adding too many learners might lead to overfitting.
+
+
+## When to Use Gradient Boosting?
+
+Gradient Boosting is ideal in the following scenarios:
+
+- **High Predictive Power**: When accuracy is a top priority, Gradient Boosting often outperforms simpler algorithms like linear regression or basic decision trees.  
+- **Complex Datasets**: It works well with datasets that have complex patterns, non-linear relationships, or multiple feature interactions.  
+- **Feature Engineering**: It is less reliant on extensive feature engineering because decision trees are capable of handling mixed types of features (numerical and categorical) and automatically learning interactions.  
+- **Imbalanced Data**: Gradient Boosting can handle class imbalances by tuning the loss function, making it suitable for classification tasks like fraud detection.
+  
+However, due to its complexity, Gradient Boosting can be computationally expensive, so it’s less ideal for very large datasets or real-time predictions.
+
+
+## Python Implementation of Gradient Boosting
+
+Below is a Python implementation using the `scikit-learn` library for a regression problem. We will use the Boston Housing dataset as an example.
+
+```{python}
+#| code-fold: false
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.metrics import mean_squared_error
+
+# Load the Boston Housing dataset
+data_url = "http://lib.stat.cmu.edu/datasets/boston"
+raw_df = pd.read_csv(data_url, sep="\s+", skiprows=22, header=None)
+data = np.hstack([raw_df.values[::2, :], raw_df.values[1::2, :2]])
+target = raw_df.values[1::2, 2]
+
+X = data
+y = target
+
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize and fit the Gradient Boosting Regressor
+gb_regressor = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+gb_regressor.fit(X_train, y_train)
+
+# Predict on the test set
+y_pred = gb_regressor.predict(X_test)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+print(f"Mean Squared Error: {mse}")
+```
+
+In this example:  
+
+- We use the `GradientBoostingRegressor` from `scikit-learn` for a regression task.  
+- We fit the model on the Boston Housing dataset, and predict values on the test set.  
+- The mean squared error (MSE) is used to evaluate the model’s performance.
+
+**Hyperparameters**:  
+
+- `n_estimators`: Number of boosting stages to run.  
+- `learning_rate`: Controls the contribution of each tree to the final model.  
+- `max_depth`: Limits the depth of the individual decision trees (weak learners).
+
+<p style ="text-align: justify">
+Gradient Boosting is a powerful ensemble technique, particularly effective for both classification and regression tasks. It builds models sequentially, focusing on correcting the mistakes of prior models. While it is computationally expensive and prone to overfitting if not properly regularized, it often achieves state-of-the-art results in predictive tasks.
+</p>  
+
+--- 
+
+## References  
+
+1. [**"The Elements of Statistical Learning"** by Trevor Hastie, Robert Tibshirani, and Jerome Friedman](https://web.stanford.edu/~hastie/ElemStatLearn/){target="_blank" style="text-decoration:none"} (freely available online). 
+2. **"Pattern Recognition and Machine Learning"** by Christopher M. Bishop: 
+3. [**"Greedy Function Approximation: A Gradient Boosting Machine"** by Jerome Friedman](https://projecteuclid.org/euclid.aos/1013203451){target="_blank" style="text-decoration:none"}  
+4. [**"A Short Introduction to Boosting"** by Yoav Freund and Robert E. Schapire](https://www.jmlr.org/papers/volume2/friedman01a/friedman01a.pdf){target="_blank" style="text-decoration:none"}    
+5. [**"Understanding Gradient Boosting Machines"** by Terence Parr and Jeremy Howard](https://explained.ai/gradient-boosting/index.html){target="_blank" style="text-decoration:none"}    
+6. [**"A Gentle Introduction to Gradient Boosting"** by Jason Brownlee](https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/){target="_blank" style="text-decoration:none"}     
+
+--- 
+   

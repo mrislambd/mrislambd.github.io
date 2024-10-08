@@ -474,7 +474,7 @@ K-Nearest Neighbors (KNN) is one of the simplest yet effective algorithms used i
 <section id="knn-classifier-using-python" class="level4">
 <h4 class="anchored" data-anchor-id="knn-classifier-using-python">KNN Classifier Using Python</h4>
 <p>Here’s how to implement KNN for classification in Python from scratch:</p>
-<div id="64e6180f" class="cell" data-execution_count="1">
+<div id="028dca52" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
@@ -728,7 +728,7 @@ K-Nearest Neighbors (KNN) is one of the simplest yet effective algorithms used i
 price = \frac{1363400+1263400+1450000}{3}=1358933.33
 \]</span></p>
 <p>Here’s how to implement KNN for regression in Python from scratch and we see if we get the same as the hand calculation.</p>
-<div id="b501cedc" class="cell" data-execution_count="2">
+<div id="267665aa" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CustomKNNRegressor:</span>
@@ -808,11 +808,11 @@ d(x_i, x_j) = \sum_{k=1}^{m} |x_{i,k} - x_{j,k}|
 <section id="knn-implementation" class="level3">
 <h3 class="anchored" data-anchor-id="knn-implementation">KNN Implementation</h3>
 <p>In this section we use KNN regression for <code>Boston Housing</code> dataset and find the optimal <span class="math inline">\(K\)</span> using the <code>KFold</code> cross-validation.</p>
-<div id="f9e2a528" class="cell" data-execution_count="3">
+<div id="ec2358d5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'HousingData.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next we see if there is any missing values. If we have any, we will skip those observations.</p>
-<div id="5a2bcef1" class="cell" data-execution_count="4">
+<div id="06d0172d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.isnull().<span class="bu">sum</span>())</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.dropna(axis<span class="op">=</span><span class="dv">1</span>,inplace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -916,7 +916,7 @@ dtype: int64</code></pre>
 <p style="text-align:justify">
 The data looks clean and ready to implement to the KNNRegressor. Note that, for predictive modeling we need a lot of things, such as exporatory data analysis (EDA), feature engineering, preprocessing and others. However, we will simply apply the <code>KNNRegressor</code> that we built from scratch and built-in library function from <code>scikit-learn</code> to explore the algorithm and find the optimal <span class="math inline">\(K\)</span>.
 </p>
-<div id="b7713587" class="cell" data-execution_count="5">
+<div id="ae2e8e4b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> KFold, train_test_split</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error,r2_score</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
@@ -970,7 +970,7 @@ The data looks clean and ready to implement to the KNNRegressor. Note that, for 
 </div>
 </div>
 <p>So, <span class="math inline">\(K=5\)</span> seems optimal based on our custom built regressor. Now if we do the same thing using the <code>scikit-learn</code> library</p>
-<div id="2a4a1ae5" class="cell" data-execution_count="6">
+<div id="e876bc8e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsRegressor</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1009,7 +1009,7 @@ The data looks clean and ready to implement to the KNNRegressor. Note that, for 
 </div>
 </div>
 <p>In both method, we got <span class="math inline">\(K=5\)</span> is the optimal number of neighbors for KNN regression. Let’s apply this in our test dataset</p>
-<div id="7079e6d7" class="cell" data-execution_count="7">
+<div id="7d4e9c97" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>regressor <span class="op">=</span> CustomKNNRegressor(k<span class="op">=</span><span class="dv">5</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>regressor.fit(X_train_sc, y_train)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1112,7 +1112,30 @@ K-Nearest Neighbors is a simple, intuitive algorithm that can be highly effectiv
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1726868222575" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728273600000" data-listing-file-modified-sort="1728338691892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1345">
+<a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="../datacollection/ws.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Classification: Logistic Regression - A Comprehensive Guide with Mathematical Derivation and Python Code
+</h5>
+<div class="listing-reading-time card-text text-muted">
+7 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Monday, October 7, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1726868222575" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
 <a href="../../dsandml/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1137,7 +1160,7 @@ Wednesday, August 14, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1727150400000" data-listing-file-modified-sort="1727330012576" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1429">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1727150400000" data-listing-file-modified-sort="1727330012576" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1429">
 <a href="../../dsandml/pca/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1156,31 +1179,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Tuesday, September 24, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726113600000" data-listing-file-modified-sort="1726868586587" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="720">
-<a href="../../dsandml/dataengineering/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../dsandml/dataengineering/sm.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-How do we treat categorical features for our data science project?
-</h5>
-<div class="listing-reading-time card-text text-muted">
-4 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Thursday, September 12, 2024
 </div>
 </div>
 </div>
@@ -2276,7 +2274,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
