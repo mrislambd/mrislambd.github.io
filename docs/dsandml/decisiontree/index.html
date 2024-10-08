@@ -331,7 +331,7 @@ G(t) &amp;= 1 - \sum_{i=1}^{n} p_i^2
 <p><strong>Entropy and Information Gain</strong></p>
 <p>Entropy, borrowed from information theory, measures the disorder or uncertainty in the dataset. It is defined as:</p>
 <p><span class="math display">\[H(t) = -\sum_{i=1}^{n} p_i \log_2(p_i)\]</span></p>
-<div id="6edb0a77" class="cell" data-execution_count="1">
+<div id="a8426198" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -409,7 +409,7 @@ G(t) &amp;= 1 - \sum_{i=1}^{n} p_i^2
 </tbody>
 </table>
 <p>Total 20 data points and the scatter plot looks like this</p>
-<div id="ffe4bc36" class="cell" data-execution_count="2">
+<div id="65558e85" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [</span>
@@ -456,7 +456,7 @@ G(t) &amp;= 1 - \sum_{i=1}^{n} p_i^2
 <p>At this point, we see that the classes are not linearly separable, meaning, we can not draw any line that separate the two classes. Notice that the minimum and maximum of feature <span class="math inline">\(x_0\)</span> is 1 and 15, respectively. So, let’s pick a few numbers in between these two numbers. Say, our first number is <span class="math inline">\(3.5\)</span>. In the first node, that is the root node, we divide the data based on the feature <span class="math inline">\(x_0\le 3.5\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../posts/decisiontree/root.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 2: First Split"><img src="../../posts/decisiontree/root.png" class="img-fluid figure-img" alt="Figure 2: First Split"></a></p>
+<p><a href="../../dsandml/decisiontree/root.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 2: First Split"><img src="../../dsandml/decisiontree/root.png" class="img-fluid figure-img" alt="Figure 2: First Split"></a></p>
 <figcaption>Figure 2: First Split</figcaption>
 </figure>
 </div>
@@ -504,7 +504,7 @@ Based on the condition <span class="math inline">\(x_0\le 3.5\)</span>, the left
 </section>
 <section id="implementation-of-decision-tree-scikit-learn" class="level2">
 <h2 class="anchored" data-anchor-id="implementation-of-decision-tree-scikit-learn">Implementation of Decision Tree: Scikit-learn</h2>
-<div id="a9afc978" class="cell" data-execution_count="3">
+<div id="8c02b257" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier,plot_tree</span>
@@ -556,11 +556,11 @@ Result
 
    Feature 1  Feature 2  Class  Predicted_Class
 0         10          7      1                1
-1          9          9      0                0
+1          9          9      0                1
 2         11          5      1                0
 
 
-Accuracy score: 0.67</code></pre>
+Accuracy score: 0.33</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -1301,7 +1301,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>At this point, we see that the classes are not linearly separable, meaning, we can not draw any line that separate the two classes. Notice that the minimum and maximum of feature $x_0$ is 1 and 15, respectively. So, let's pick a few numbers in between these two numbers. Say, our first number is $3.5$. In the first node, that is the root node, we divide the data based on the feature $x_0\le 3.5$  </span>
 <span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a><span class="al">![Figure 2: First Split](/posts/decisiontree/root.png)</span>  </span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a><span class="al">![Figure 2: First Split](/dsandml/decisiontree/root.png)</span>  </span>
 <span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>At the root node, we have equal number of blue and red points so the proportion of the data class is $p_1=p_2=0.5$, so the entropy  </span>
 <span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a></span>
@@ -1468,7 +1468,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

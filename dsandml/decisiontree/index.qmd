@@ -130,7 +130,7 @@ plt.show()
 
 At this point, we see that the classes are not linearly separable, meaning, we can not draw any line that separate the two classes. Notice that the minimum and maximum of feature $x_0$ is 1 and 15, respectively. So, let's pick a few numbers in between these two numbers. Say, our first number is $3.5$. In the first node, that is the root node, we divide the data based on the feature $x_0\le 3.5$  
 
-![Figure 2: First Split](/posts/decisiontree/root.png)  
+![Figure 2: First Split](/dsandml/decisiontree/root.png)  
 
 At the root node, we have equal number of blue and red points so the proportion of the data class is $p_1=p_2=0.5$, so the entropy  
 
