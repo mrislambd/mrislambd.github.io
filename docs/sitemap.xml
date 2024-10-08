@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/machinelearning/index.html</loc>
-    <lastmod>2024-10-08T04:55:57.776Z</lastmod>
+    <lastmod>2024-10-08T22:18:14.766Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/someproofs/index.html</loc>
@@ -203,5 +203,9 @@
   <url>
     <loc>https://mrislambd.github.io/dsandml/gradientboosting/index.html</loc>
     <lastmod>2024-10-08T15:49:54.959Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/randomforest/index.html</loc>
+    <lastmod>2024-10-08T22:47:20.174Z</lastmod>
   </url>
 </urlset>
