@@ -55,7 +55,7 @@ listing:
         <ul>
           <li><a href="/dsandml/knn/index.qmd" style="text-decoration:none" target="_blank">KNN Regression and Classification</a></li>
           <li><a href="/dsandml/decisiontree/index.qmd" style="text-decoration:none" target="_blank">Decision Trees</a></li>
-          <li><a  style="text-decoration:none">Random Forest</a></li>
+          <li><a  href="/dsandml/randomforest/index.qmd" style="text-decoration:none" target="_blank">Random Forest</a></li>
           <li><a  style="text-decoration:none">Support Vector Machine (SVM)</a></li>
         </ul>
       </th>

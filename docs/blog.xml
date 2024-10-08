@@ -60,7 +60,7 @@ This page is my personal repository of most common and useful machine learning a
 <td data-quarto-table-cell-role="th"><ul>
 <li><a href="../../dsandml/knn/index.html" style="text-decoration:none" target="_blank">KNN Regression and Classification</a></li>
 <li><a href="../../dsandml/decisiontree/index.html" style="text-decoration:none" target="_blank">Decision Trees</a></li>
-<li><span style="text-decoration:none">Random Forest</span></li>
+<li><a href="../../dsandml/randomforest/index.html" style="text-decoration:none" target="_blank">Random Forest</a></li>
 <li><span style="text-decoration:none">Support Vector Machine (SVM)</span></li>
 </ul></td>
 </tr>
