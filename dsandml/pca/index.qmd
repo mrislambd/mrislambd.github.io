@@ -114,7 +114,7 @@ $$
 z^k \cdot u_i = (z^k)^T u_i
 $$
 
-This is simply the sum of the element-wise products of $z^k $and $u_i$:
+This is simply the sum of the element-wise products of $z^k$ and $u_i$:
 \begin{align*}
 z^k \cdot u_i &= \sum_{j=1}^{M} z_j^k u_{ij}\\
 \implies (z^k \cdot u_i)^2 &= \left( \sum_{j=1}^{M} z_j^k u_{ij} \right)^2
@@ -127,7 +127,7 @@ $$
 z^k z^{kT}
 $$
 
-The outer product $z^k z^{kT}$ is a matrix, specifically an $p \times p$ matrix. Each element of this matrix at position $(j, l) $is $z_j^k z_l^k$, exactly what we have in the double sum.
+The outer product $z^k z^{kT}$ is a matrix, specifically an $p \times p$ matrix. Each element of this matrix at position $(j, l)$ is $z_j^k z_l^k$, exactly what we have in the double sum.
 
 So, instead of writing out all the sums explicitly, we can represent the whole thing as a matrix:
 
