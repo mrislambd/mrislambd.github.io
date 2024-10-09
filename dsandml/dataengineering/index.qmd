@@ -21,7 +21,7 @@ listing:
 </p>
 
 ## Introduction  
-<p style="text-align: justify"> <img src="/posts/dataengineering/sm.png" align="right" width="400" height= "450" style="align-right; margin-left:20px"/>
+<p style="text-align: justify"> <img src="/dsandml/dataengineering/sm.png" align="right" width="400" height= "450" style="align-right; margin-left:20px"/>
     Suppose we are working on a data science project and the data contains both contineous and categorical variables. For example, we want to build a predictive model for a life insurance company. The model will predict the annual company spending on individuals depending on their age, bmi, sex, smoking habit, number of children, and region in the US where the belong. So here, our target variable is a contineous variable and the feature variables contain both contineous and categorical variables.<br>
     <br>
     To understand how important each feature is, there are many possible ways. For example, when we do the exploratory data analysis (EDA) we can do some plotting to see how each feature inteacts with the target variable, or maybe calculating correlations of the features and target variables. However, when the feature is contineous it is not a big issue to calculate the correlation matrix. But when the feature is categorical or ordinal, for example, in this predictive modeling case, how do we know if the number of children or smoking habit have impact on insurance charges? Plotting `boxplot` or `countplot` from the `seaborn` or any other library may help, give some primary idea. But how do we quantify the correlations?<br>
