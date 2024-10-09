@@ -317,13 +317,13 @@ window.Quarto = {
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p style="text-align: justify">
-<img src="../../posts/dataengineering/sm.png" align="right" width="400" height="450" style="align-right; margin-left:20px"> Suppose we are working on a data science project and the data contains both contineous and categorical variables. For example, we want to build a predictive model for a life insurance company. The model will predict the annual company spending on individuals depending on their age, bmi, sex, smoking habit, number of children, and region in the US where the belong. So here, our target variable is a contineous variable and the feature variables contain both contineous and categorical variables.<br> <br> To understand how important each feature is, there are many possible ways. For example, when we do the exploratory data analysis (EDA) we can do some plotting to see how each feature inteacts with the target variable, or maybe calculating correlations of the features and target variables. However, when the feature is contineous it is not a big issue to calculate the correlation matrix. But when the feature is categorical or ordinal, for example, in this predictive modeling case, how do we know if the number of children or smoking habit have impact on insurance charges? Plotting <code>boxplot</code> or <code>countplot</code> from the <code>seaborn</code> or any other library may help, give some primary idea. But how do we quantify the correlations?<br> <br> Here comes the statistical method one-way <strong><em>Analysis of Variances (ANOVA)</em></strong> among many other alternatives. Machine libraries like <code>scipy</code> has built-in functions that can compute the ANOVA’s for each categorical feature. We will see the implementation of this at the end of this post. This blog post is about the simple explanation of the mathematics behind the ANOVA method.
+<img src="../../dsandml/dataengineering/sm.png" align="right" width="400" height="450" style="align-right; margin-left:20px"> Suppose we are working on a data science project and the data contains both contineous and categorical variables. For example, we want to build a predictive model for a life insurance company. The model will predict the annual company spending on individuals depending on their age, bmi, sex, smoking habit, number of children, and region in the US where the belong. So here, our target variable is a contineous variable and the feature variables contain both contineous and categorical variables.<br> <br> To understand how important each feature is, there are many possible ways. For example, when we do the exploratory data analysis (EDA) we can do some plotting to see how each feature inteacts with the target variable, or maybe calculating correlations of the features and target variables. However, when the feature is contineous it is not a big issue to calculate the correlation matrix. But when the feature is categorical or ordinal, for example, in this predictive modeling case, how do we know if the number of children or smoking habit have impact on insurance charges? Plotting <code>boxplot</code> or <code>countplot</code> from the <code>seaborn</code> or any other library may help, give some primary idea. But how do we quantify the correlations?<br> <br> Here comes the statistical method one-way <strong><em>Analysis of Variances (ANOVA)</em></strong> among many other alternatives. Machine libraries like <code>scipy</code> has built-in functions that can compute the ANOVA’s for each categorical feature. We will see the implementation of this at the end of this post. This blog post is about the simple explanation of the mathematics behind the ANOVA method.
 </p>
 </section>
 <section id="anova" class="level2">
 <h2 class="anchored" data-anchor-id="anova">ANOVA</h2>
 <p>This is the 5 random sample <a href="[www.kaggle.com/datasets/mirichoi0218/insurance/data](https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout)" target="_blank" style="text-decoration:none">data</a> that we are talking about. We will use this data to explain the mathematical formulation of the model.</p>
-<div id="5c06fd0e" class="cell" data-execution_count="1">
+<div id="88595069" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -340,7 +340,7 @@ window.Quarto = {
 </div>
 </div>
 <p>We will explain the method using the feature <code>children</code>.</p>
-<div id="902de696" class="cell" data-execution_count="2">
+<div id="3ccb8745" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>child <span class="op">=</span> data.children.value_counts().sort_index()</span>
@@ -400,7 +400,7 @@ window.Quarto = {
 <p style="text-align: justify">
 The main purpose of one-sided ANOVA is to act as a judge like in a court house. It assumes that there is no variation in any group. All group has the same mean. So it sets a null hypthesis and declares that there is no difference in the groups whereas the alternative is set to the opposite. Let’s see what happens to our data
 </p>
-<div id="3af715e6" class="cell" data-execution_count="3">
+<div id="ebc3dab9" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -468,10 +468,12 @@ The main purpose of one-sided ANOVA is to act as a judge like in a court house. 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728273600000" data-listing-file-modified-sort="1728338691892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1345">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728273600000" data-listing-file-modified-sort="1728356230186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1345">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="../datacollection/ws.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top">
+<img loading="lazy" src="../../dsandml/logreg/logreg.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Classification: Logistic Regression - A Comprehensive Guide with Mathematical Derivation and Python Code
@@ -1051,7 +1053,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>&lt;/p&gt;</span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction  </span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt; &lt;img src="/posts/dataengineering/sm.png" align="right" width="400" height= "450" style="align-right; margin-left:20px"/&gt;</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt; &lt;img src="/dsandml/dataengineering/sm.png" align="right" width="400" height= "450" style="align-right; margin-left:20px"/&gt;</span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    Suppose we are working on a data science project and the data contains both contineous and categorical variables. For example, we want to build a predictive model for a life insurance company. The model will predict the annual company spending on individuals depending on their age, bmi, sex, smoking habit, number of children, and region in the US where the belong. So here, our target variable is a contineous variable and the feature variables contain both contineous and categorical variables.&lt;br&gt;</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;</span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    To understand how important each feature is, there are many possible ways. For example, when we do the exploratory data analysis (EDA) we can do some plotting to see how each feature inteacts with the target variable, or maybe calculating correlations of the features and target variables. However, when the feature is contineous it is not a big issue to calculate the correlation matrix. But when the feature is categorical or ordinal, for example, in this predictive modeling case, how do we know if the number of children or smoking habit have impact on insurance charges? Plotting <span class="in">`boxplot`</span> or <span class="in">`countplot`</span> from the <span class="in">`seaborn`</span> or any other library may help, give some primary idea. But how do we quantify the correlations?&lt;br&gt;</span>
