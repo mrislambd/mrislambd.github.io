@@ -92,7 +92,7 @@ listing:
       <th>Dimensionality Reduction </th>
       <th>
         <ul>
-          <li><a href="/dsandml/pca/index.qmd" style="text-decoration:none">Principle Component Analysis (PCA)</a></li>
+          <li><a href="/dsandml/pca/index.qmd" style="text-decoration:none" target="_blank">Principle Component Analysis (PCA)</a></li>
           <li><a  style="text-decoration:none">Linear Discriminant Analysis (LDA)</a></li>
       </th>
       <th>
