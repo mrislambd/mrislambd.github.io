@@ -209,10 +209,6 @@
     <lastmod>2024-10-08T22:47:20.174Z</lastmod>
   </url>
   <url>
-    <loc>https://mrislambd.github.io/dsandml/naivebayes/index.html</loc>
-    <lastmod>2024-10-10T21:22:13.662Z</lastmod>
-  </url>
-  <url>
     <loc>https://mrislambd.github.io/portfolio/dsp/nlp-sales/index.html</loc>
     <lastmod>2024-10-11T16:37:21.532Z</lastmod>
   </url>
@@ -223,5 +219,9 @@
   <url>
     <loc>https://mrislambd.github.io/portfolio/spd/webapp/index.html</loc>
     <lastmod>2024-10-11T16:34:42.927Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/naivebayes/index.html</loc>
+    <lastmod>2024-10-11T22:10:41.298Z</lastmod>
   </url>
 </urlset>
