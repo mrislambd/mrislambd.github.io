@@ -339,7 +339,7 @@ window.Quarto = {
 <li><a href="https://www.kaggle.com" target="_blank">Kaggle Competition</a></li>
 </ol>
 <p>Example of collecting data from <a href="https://archive.ics.uci.edu/datasets" target="_blank">UCI Machine Learning Repository</a></p>
-<div id="2c82f470" class="cell" data-execution_count="1">
+<div id="843bfc5e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ucimlrepo <span class="im">import</span> fetch_ucirepo </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch dataset </span></span>
@@ -373,7 +373,7 @@ window.Quarto = {
 </div>
 <p>you may need to install the <a href="https://archive.ics.uci.edu/datasets" target="_blank">UCI Machine Learning Repository</a> as a package using pip.</p>
 <pre><code>pip install ucimlrepo</code></pre>
-<div id="4de7545c" class="cell" data-execution_count="2">
+<div id="62a0a625" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>X.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
@@ -435,7 +435,7 @@ window.Quarto = {
 <section id="web-scraping" class="level2">
 <h2 class="anchored" data-anchor-id="web-scraping">Web Scraping</h2>
 <p>We scrapping is another way of collecting the data for the research if the data is not available in any repositiory. We can collect the data from a website using a library called <code>BeautifulSoup</code> if the website has permision for other people to collect data from the website.</p>
-<div id="707b402a" class="cell" data-execution_count="3">
+<div id="56e309d4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bs4                      <span class="co"># library for BeautifulSoup</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup   <span class="co"># import the BeautifulSoup object</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -446,7 +446,7 @@ window.Quarto = {
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>set_style(<span class="st">"whitegrid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now let’s make a html object using <code>BeautifulSoup</code>. Let’s say we have a html website that looks like below</p>
-<div id="272129a2" class="cell" data-execution_count="4">
+<div id="87a2d943" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>html_doc<span class="op">=</span><span class="st">"""</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html lang="en"&gt;</span></span>
@@ -463,32 +463,32 @@ window.Quarto = {
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we want to grab information from the dummy html documnet above.</p>
-<div id="4a796ad2" class="cell" data-execution_count="5">
+<div id="c3418734" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>soup<span class="op">=</span>BeautifulSoup(html_doc, features<span class="op">=</span><span class="st">'html.parser'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now that we have the object <code>soup</code> we can walk through each elements in this object. For example, if we want to grab the title element,</p>
-<div id="96b703f7" class="cell" data-execution_count="6">
+<div id="a71d6344" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>soup.html.head.title</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>&lt;title&gt;My Dummy HTML Document&lt;/title&gt;</code></pre>
 </div>
 </div>
 <p>Since the html document has only one title, therefore, we can simply use the following command</p>
-<div id="4a2efe58" class="cell" data-execution_count="7">
+<div id="98254c18" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>soup.title </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>&lt;title&gt;My Dummy HTML Document&lt;/title&gt;</code></pre>
 </div>
 </div>
 <p>or this command to get the text only</p>
-<div id="c9a1e788" class="cell" data-execution_count="8">
+<div id="3f13f103" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>soup.title.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>'My Dummy HTML Document'</code></pre>
 </div>
 </div>
 <p>This <code>soup</code> object is like a family tree. It has parents, children, greatgrand parents etc.</p>
-<div id="a0bd55a9" class="cell" data-execution_count="9">
+<div id="7cf916f9" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>soup.title.parent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>&lt;head&gt;
@@ -497,21 +497,21 @@ window.Quarto = {
 </div>
 </div>
 <p>Now to grab an attribute from the <code>soup</code> object we can use</p>
-<div id="33f59401" class="cell" data-execution_count="10">
+<div id="ff76e820" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>soup.a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>&lt;a class="blog" href="https://mrislambd.github.io/blog" id="blog"&gt; Blog &lt;/a&gt;</code></pre>
 </div>
 </div>
 <p>or any particular thing from the attribute</p>
-<div id="ddb9e1d8" class="cell" data-execution_count="11">
+<div id="3684d62e" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>soup.a[<span class="st">'class'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>['blog']</code></pre>
 </div>
 </div>
 <p>We can also find multiple attribute of the same kind</p>
-<div id="7f25d45c" class="cell" data-execution_count="12">
+<div id="669f032d" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>soup.findAll(<span class="st">'a'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>[&lt;a class="blog" href="https://mrislambd.github.io/blog" id="blog"&gt; Blog &lt;/a&gt;,
@@ -519,21 +519,21 @@ window.Quarto = {
 </div>
 </div>
 <p>Then if we want any particular object from all <code>a</code> attribute</p>
-<div id="05afa2ab" class="cell" data-execution_count="13">
+<div id="c70a2003" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>soup.findAll(<span class="st">'a'</span>)[<span class="dv">0</span>][<span class="st">'id'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>'blog'</code></pre>
 </div>
 </div>
 <p>For any <code>p</code> tag</p>
-<div id="0018994c" class="cell" data-execution_count="14">
+<div id="1ae106d8" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>soup.p.text </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>'This is a paragraph in my dummy HTML document.'</code></pre>
 </div>
 </div>
 <p>Similarly, if we want to grab all the <code>href</code>s from the <code>a</code> tags</p>
-<div id="de855f99" class="cell" data-execution_count="15">
+<div id="1ec0a964" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>[h[<span class="st">'href'</span>] <span class="cf">for</span> h <span class="kw">in</span> soup.findAll(<span class="st">'a'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>['https://mrislambd.github.io/blog', 'htpps://mrislambd.github.io/research']</code></pre>
@@ -543,7 +543,7 @@ window.Quarto = {
 <section id="example-of-webscraping-from-a-real-website" class="level2">
 <h2 class="anchored" data-anchor-id="example-of-webscraping-from-a-real-website">Example of Webscraping from a real website</h2>
 <p>In this example we want to obtain some information from <a href="https://research.nvidia.com/graduate-fellowships/archive" target="_blank">NVIDIA Graduate Fellowship Program</a>. Before accessing this website we need to know if we have permision to access their data through webscraping.</p>
-<div id="95af1380" class="cell" data-execution_count="16">
+<div id="fa271af7" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url<span class="op">=</span><span class="st">"https://research.nvidia.com/graduate-fellowships/archive"</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>response.status_code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -552,15 +552,15 @@ window.Quarto = {
 </div>
 </div>
 <p>The <code>status_code</code> <span class="math inline">\(200\)</span> ensures that we have enough permision to acccess their website data. However, if we obtain <code>status_code</code> of <span class="math inline">\(403, 400,\)</span> or <span class="math inline">\(500\)</span> then we do not permision or a <code>bad request</code>. For more about the status codes <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">click here</a>.</p>
-<div id="63a58bf4" class="cell" data-execution_count="17">
+<div id="ecefde68" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">'html.parser'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We want to make an analysis based on the institution of the past graduate fellows. Insepecting the elements in <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">this website</a> we see that the <code>div</code> those have <code>class="archive-group"</code> contains the information of the past graduate fellows.</p>
-<div id="59c438dd" class="cell" data-execution_count="18">
+<div id="9bcffa84" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>pf <span class="op">=</span> soup.find_all(<span class="st">"div"</span>, class_<span class="op">=</span><span class="st">"archive-group"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>and the first element of this <code>pf</code> contains the information of the graduate fellows in the year of 2021.</p>
-<div id="fcc13a5b" class="cell" data-execution_count="19">
+<div id="10aa9706" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>pf[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>&lt;div class="archive-group"&gt;
@@ -579,7 +579,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Now let’s make a <code>pandas</code> dataframe using the information in this page. We can make an use of the output from the above chunk. To grab the year, we see that <code>archive-group__title</code> class with a <code>h4</code> tag contains the year for all years. With <code>strip=True</code>, the text is cleaned by removing extra whitespace from the beginning and end. We need the first element so a <code>split()[0]</code> will do the job. Then we make another group called <code>fellows</code> that contains the fellows in a certian year by using the <code>div</code> and <code>class"views-row"</code>. Once the new group created, we then iterate through this group to extract their names and corresponding institutions.</p>
-<div id="21ff7c91" class="cell" data-execution_count="20">
+<div id="4f92ebde" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-overflow-scroll code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data<span class="op">=</span>[]</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> group <span class="kw">in</span> pf:</span>
@@ -651,7 +651,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Now let’s perform some Exploratory Data Analysis (EDA). First, we analyze the unique values and distributions.</p>
-<div id="87037f6f" class="cell" data-execution_count="21">
+<div id="6433461f" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of fellows each year</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>year_counts <span class="op">=</span> data[<span class="st">'Year'</span>].value_counts().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame where years are columns and counts are values in the next row</span></span>
@@ -676,7 +676,7 @@ Count     9     8     7     7     6     6     5     5  </code></pre>
 </div>
 </div>
 <p>Next we see that most represented universities</p>
-<div id="697009d1" class="cell" data-execution_count="22">
+<div id="d071baa5" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>university_counts <span class="op">=</span> data[<span class="st">'Institute'</span>].value_counts()</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(university_counts.head(<span class="dv">10</span>))  <span class="co"># Display the top 10 universities</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -695,7 +695,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>To visualize the award distributions per year,</p>
-<div id="66fa7191" class="cell" data-execution_count="23">
+<div id="052c2e09" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">5</span>))</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">'Year'</span>, data<span class="op">=</span>data, order<span class="op">=</span><span class="bu">sorted</span>(data[<span class="st">'Year'</span>].unique()))</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>plt.gca().set_facecolor(<span class="st">'#f4f4f4'</span>) </span>
@@ -711,7 +711,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Top 10 universities visualization</p>
-<div id="994d4c21" class="cell" data-execution_count="24">
+<div id="2880b140" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>top_universities <span class="op">=</span> data[<span class="st">'Institute'</span>].value_counts().head(<span class="dv">10</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>sns.barplot(y<span class="op">=</span>top_universities.index, x<span class="op">=</span>top_universities.values)</span>
@@ -730,7 +730,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Trend over time</p>
-<div id="4bde5379" class="cell" data-execution_count="25">
+<div id="15d8a9d2" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">5</span>))</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Year'</span>] <span class="op">=</span> data[<span class="st">'Year'</span>].astype(<span class="bu">int</span>)  </span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>yearly_trend <span class="op">=</span> data.groupby(<span class="st">'Year'</span>).size()</span>
@@ -784,7 +784,30 @@ Name: count, dtype: int64</code></pre>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1728438714431" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1345">
+<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1728683519013" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2431">
+<a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="../logreg/logreg.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Classification using Naive Bayes algorithm
+</h5>
+<div class="listing-reading-time card-text text-muted">
+13 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Thursday, October 10, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1728683519011" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1345">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -809,7 +832,7 @@ Monday, October 7, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1727136000000" data-listing-file-modified-sort="1728438714433" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1429">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1727136000000" data-listing-file-modified-sort="1728683519013" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1429">
 <a href="../../dsandml/pca/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -828,31 +851,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Tuesday, September 24, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1728438714429" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1051">
-<a href="../../dsandml/gradientboosting/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../dsandml/gradientboosting/gb.webp" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Ensemble Methods: Gradient Boosting - A detailed overview
-</h5>
-<div class="listing-reading-time card-text text-muted">
-6 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Monday, October 7, 2024
 </div>
 </div>
 </div>
@@ -1729,7 +1727,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

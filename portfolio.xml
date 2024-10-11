@@ -10,7 +10,43 @@
 <atom:link href="https://mrislambd.github.io/portfolio.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Fri, 30 Aug 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 11 Oct 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Predicting Product Success Using Customer Reviews and Sales Data</title>
+  <dc:creator>Rafiq Islam</dc:creator>
+  <link>https://mrislambd.github.io/portfolio/dsp/nlp-sales/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p style="text-align:center">
+<a href="../../../codepages/amazonNLP/index.html" target="_blank" style="text-decoration:none">Notebook</a> <a href="https://github.com/mrislambd/medical-insurance-charge" target="_blank" style="text-decoration:none">GitHub (Private until finished)</a>
+</p>
+<p align="center">
+<img src="https://mrislambd.github.io/_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400">
+</p>
+
+
+<!-- -->
+
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
+  author = {Islam, Rafiq},
+  title = {Predicting {Product} {Success} {Using} {Customer} {Reviews}
+    and {Sales} {Data}},
+  date = {2024-10-11},
+  url = {https://mrislambd.github.io/portfolio/dsp/nlp-sales/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
+Islam, Rafiq. 2024. <span>“Predicting Product Success Using Customer
+Reviews and Sales Data.”</span> October 11, 2024. <a href="https://mrislambd.github.io/portfolio/dsp/nlp-sales/">https://mrislambd.github.io/portfolio/dsp/nlp-sales/</a>.
+</div></div></section></div> ]]></description>
+  <guid>https://mrislambd.github.io/portfolio/dsp/nlp-sales/</guid>
+  <pubDate>Fri, 11 Oct 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://mrislambd.github.io/portfolio/dsp/nlp-sales/amazon.webp" medium="image" type="image/webp"/>
+</item>
 <item>
   <title>Insurance Cost Forecast by using Linear Regression</title>
   <dc:creator>Rafiq Islam</dc:creator>
@@ -129,6 +165,75 @@ Regression.”</span> August 30, 2024. <a href="https://mrislambd.github.io/port
   <media:content url="https://mrislambd.github.io/portfolio/dsp/medicalcost/ins.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
+  <title>Streamlit Web App</title>
+  <dc:creator>Rafiq Islam</dc:creator>
+  <link>https://mrislambd.github.io/portfolio/spd/webapp/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="about" class="level2">
+<h2 class="anchored" data-anchor-id="about">About</h2>
+<p style="text-align: justify">
+<img align="right" height="250" width="250" src="https://mrislambd.github.io/portfolio/spd/webapp/stlit.jpeg" alt="Streamlit Web App" style="margin-left: 20px; margin-bottom: 20px"><br>
+<br> Welcome to <code>MiCharge Predictor</code>! This web app is a part of my data science project <a href="https://mrislambd.github.io/portfolio/dsp/medicalcost/" target="_blank" style="text-decoration:none">Insurance Cost Forecast by using Linear Regression</a>, aimed at predicting the medical cost based on various personal and lifestyle factors. By leveraging advanced machine learning techniques, <code>MiCharge Predictor</code> provides an approximate estimates to help users understand potential medical expances.
+</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features:</h3>
+<ul>
+<li><strong>User-Friendly Interface:</strong> Easily input your personal details and receive instant predictions.<br>
+</li>
+<li><strong>Copmprehensive Data Analysis:</strong> Utilizes sophisticated algorithms to analyze factors such as age, BMI, smoking habits, and more.<br>
+</li>
+<li><strong>Accessibility:</strong> Available both on web and mobile platforms.</li>
+</ul>
+</section>
+<section id="how-it-works" class="level3">
+<h3 class="anchored" data-anchor-id="how-it-works">How it works?</h3>
+<ol type="1">
+<li><strong>Input Your Data:</strong> Enter details such as age, gender, BMI, number of children, smoking status, and region.
+<ul>
+<li><code>age:</code> Minimum 18, maximum 100</li>
+<li><code>gender:</code> Male or Female</li>
+<li><code>BMI</code>: Minimum 15.0, maximum 60</li>
+<li><code>number of children:</code> Takes values from 0 to 5</li>
+<li><code>smoking:</code> Yes or No</li>
+<li><code>region:</code> Takes four string input: Northeast, Northwest, Southeast, Southwest</li>
+</ul></li>
+<li><strong>Analyze:</strong> The algorithm process the given input</li>
+<li><strong>Get Prediction:</strong> Based on the input, you get the output.</li>
+</ol>
+</section>
+</section>
+<section id="usage" class="level2">
+<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<p>You can use the app directly from <code>streamlit</code> web using this <strong><a href="https://michargepredictor.streamlit.app" target="_blank" style="text-decoration:none">link</a></strong> or just here..</p>
+<center>
+<iframe height="600" width="450" src="https://michargepredictor.streamlit.app/?embed=true" title="Medical Insurance Charge Prediction"> </iframe>
+</center>
+
+
+<!-- -->
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
+  author = {Islam, Rafiq},
+  title = {Streamlit {Web} {App}},
+  date = {2024-08-30},
+  url = {https://mrislambd.github.io/portfolio/spd/webapp/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas">
+Islam, Rafiq. 2024. <span>“Streamlit Web App.”</span> August 30, 2024.
+<a href="https://mrislambd.github.io/portfolio/spd/webapp/">https://mrislambd.github.io/portfolio/spd/webapp/</a>.
+</div></div></section></div> ]]></description>
+  <guid>https://mrislambd.github.io/portfolio/spd/webapp/</guid>
+  <pubDate>Fri, 30 Aug 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://mrislambd.github.io/portfolio/spd/webapp/stlit.jpeg" medium="image" type="image/jpeg"/>
+</item>
+<item>
   <title>Disease diagnosis using classification and NLP</title>
   <dc:creator>Rebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya </dc:creator>
   <link>https://mrislambd.github.io/portfolio/dsp/dp-nlp/</link>
@@ -198,7 +303,7 @@ Using Classification and NLP.”</span> June 18, 2024. <a href="https://mrislamb
 
 
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528" crossorigin="anonymous"></script>
-<p><a href="pypi.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/portfolio/spd/desgld/pypi.jpg" class="img-fluid"></a></p>
+<p><a href="pyp.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/portfolio/spd/desgld/pyp.jpeg" width="250" height="250"></a></p>
 <p>This package is related to my ongoing project “EXTRA decentralized stochastic gradient Langevin dynamics”. The detail of the package can be found <a href="https://mrislambd.github.io/desgld_package/desgld/" target="_blank">here</a></p>
 <p><strong>Share on</strong></p>
 <div id="fb-root">
@@ -235,7 +340,7 @@ Packaging.”</span> May 3, 2024. <a href="https://mrislambd.github.io/portfolio
 </div></div></section></div> ]]></description>
   <guid>https://mrislambd.github.io/portfolio/spd/desgld/</guid>
   <pubDate>Fri, 03 May 2024 00:00:00 GMT</pubDate>
-  <media:content url="https://mrislambd.github.io/portfolio/spd/desgld/pypi.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://mrislambd.github.io/portfolio/spd/desgld/pyp.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Fall 2023: MAP4170 Introduction to Actuarial Mathematics</title>
