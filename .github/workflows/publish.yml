@@ -25,7 +25,7 @@ jobs:
       - name: Install System Dependencies for rgl
         run: |
           sudo apt-get update
-          sudo apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
+          sudo apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev libpng-dev
 
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
