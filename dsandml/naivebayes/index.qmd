@@ -318,89 +318,21 @@ predictions = model.predict(X_test)
 print(predictions)
 ```
 
-### **6. Pros and Cons of Naive Bayes**
+## Pros and Cons of Naive Bayes
 
-#### **Pros:**
-- **Simplicity**: Easy to implement and computationally efficient.
-- **Fast Training and Prediction**: Naive Bayes is especially fast for both training and inference, even on large datasets.
-- **Performs Well with Small Data**: Despite its simplicity, Naive Bayes works well even with relatively small datasets.
-- **Handles Irrelevant Features**: Naive Bayes can often ignore irrelevant features in the data since the independence assumption dilutes their influence.
+### Pros:  
+
+- **Simplicity**: Easy to implement and computationally efficient.  
+- **Fast Training and Prediction**: Naive Bayes is especially fast for both training and inference, even on large datasets.  
+- **Performs Well with Small Data**: Despite its simplicity, Naive Bayes works well even with relatively small datasets.  
+- **Handles Irrelevant Features**: Naive Bayes can often ignore irrelevant features in the data since the independence assumption dilutes their influence.  
 - **Multi-Class Classification**: Naturally suited for multi-class classification problems.
 
-#### **Cons:**
-- **Strong Assumption of Independence**: The assumption that features are independent is rarely true in real-world data, which can limit the model's effectiveness.
-- **Poor Estimation of Probabilities**: When dealing with very small datasets or unseen feature combinations, Naive Bayes can yield inaccurate probability estimates.
+### Cons:  
+
+- **Strong Assumption of Independence**: The assumption that features are independent is rarely true in real-world data, which can limit the model's effectiveness.  
+- **Poor Estimation of Probabilities**: When dealing with very small datasets or unseen feature combinations, Naive Bayes can yield inaccurate probability estimates.  
 - **Zero-Frequency Problem**: If a feature value was not present in the training data, Naive Bayes will assign zero probability to the entire class, which can be addressed using Laplace smoothing.
 
----
 
-### **7. Python Implementation of Naive Bayes**
 
-Let's implement Naive Bayes in Python using the Scikit-learn library.
-
-#### **Step 1: Importing the necessary libraries**
-
-```python
-import numpy as np
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
-```
-
-#### **Step 2: Load the Dataset**
-
-For this example, let's use the famous **Iris dataset**:
-
-```python
-from sklearn.datasets import load_iris
-
-# Load Iris dataset
-data = load_iris()
-X = data.data  # Features
-y = data.target  # Target variable (Classes)
-
-# Split into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-```
-
-#### **Step 3: Train the Naive Bayes Classifier**
-
-We'll use Gaussian Naive Bayes since the Iris dataset has continuous features.
-
-```python
-# Create a Gaussian Naive Bayes classifier
-gnb = GaussianNB()
-
-# Train the model
-gnb.fit(X_train, y_train)
-```
-
-#### **Step 4: Making Predictions**
-
-```python
-# Make predictions on the test data
-y_pred = gnb.predict(X_test)
-
-# Evaluate the model
-accuracy = accuracy_score(y_test, y_pred)
-print(f'Accuracy: {accuracy * 100:.2f}%')
-
-# Confusion matrix and classification report
-print(confusion_matrix(y_test, y_pred))
-print(classification_report(y_test, y_pred))
-```
-
-#### **Step 5: Output and Interpretation**
-
-The output will provide an accuracy score, confusion matrix, and a classification report summarizing the precision, recall, and F1 scores for each class.
-
----
-
-### **8. Conclusion**
-
-Naive Bayes is a deceptively simple yet powerful algorithm, particularly effective for problems with a clear probabilistic structure. While the independence assumption may seem unrealistic in many cases, the algorithm often performs surprisingly well, especially when working with high-dimensional data such as text. However, users must be aware of its limitations, particularly when handling dependent features.
-
----
-
-In the next section, we'll explore more advanced topics related to Naive Bayes, including handling zero frequencies, Laplace smoothing, and real-world applications of the algorithm.
