@@ -19,7 +19,7 @@ listing:
 ## Gradient Descent  
 
 <p style="text-align: justify">
-    <img align="right" height=350 width=450 src="/machinelearning/multiplelinreg/gradient_descent.gif" alt="Collected from gbhat.com" style="margin-left: 20px; margin-bottom: 20px"/>
+    <img align="right" height=350 width=450 src="/dsandml/multiplelinreg/gradient_descent.gif" alt="Collected from gbhat.com" style="margin-left: 20px; margin-bottom: 20px"/>
     <br>
     GIF Credit: <a href="https://gbhat.com/machine_learning/gradient_descent_anim.html" target="_blank" style="text-decoration:none">gbhat.com</a>    
     <br>

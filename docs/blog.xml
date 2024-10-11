@@ -55,7 +55,7 @@ This page is my personal repository of most common and useful machine learning a
 <li><a href="../../dsandml/multiplelinreg/index.html" style="text-decoration:none" target="_blank">Multiple Linear Regression</a></li>
 <li><a href="../../dsandml/polyreg/index.html" style="text-decoration:none" target="_blank">Polynomial Regression</a></li>
 <li><a href="../../dsandml/logreg/index.html" style="text-decoration:none" target="_blank">Logistic Regression</a></li>
-<li><span style="text-decoration:none">Naive Bayes</span></li>
+<li><a href="../../dsandml/naivebayes/index.html" style="text-decoration:none" target="_blank">Naive Bayes</a></li>
 </ul></td>
 <td data-quarto-table-cell-role="th"><ul>
 <li><a href="../../dsandml/knn/index.html" style="text-decoration:none" target="_blank">KNN Regression and Classification</a></li>
@@ -255,7 +255,7 @@ Wednesday, July 17, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726718400000" data-listing-file-modified-sort="1726868671257" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726718400000" data-listing-file-modified-sort="1728661724996" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -304,7 +304,7 @@ No matching items
 <section id="gradient-descent" class="level2">
 <h2 class="anchored" data-anchor-id="gradient-descent">Gradient Descent</h2>
 <p style="text-align: justify">
-<img align="right" height="350" width="450" src="https://mrislambd.github.io/machinelearning/multiplelinreg/gradient_descent.gif" alt="Collected from gbhat.com" style="margin-left: 20px; margin-bottom: 20px"> <br> GIF Credit: <a href="https://gbhat.com/machine_learning/gradient_descent_anim.html" target="_blank" style="text-decoration:none">gbhat.com</a><br>
+<img align="right" height="350" width="450" src="https://mrislambd.github.io/dsandml/multiplelinreg/gradient_descent.gif" alt="Collected from gbhat.com" style="margin-left: 20px; margin-bottom: 20px"> <br> GIF Credit: <a href="https://gbhat.com/machine_learning/gradient_descent_anim.html" target="_blank" style="text-decoration:none">gbhat.com</a><br>
 <br> Gradient Descent is an optimization algorithm used to minimize the cost function. The cost function <img src="https://latex.codecogs.com/png.latex?f(%5Cbeta)"> measures how well a model with parameters <img src="https://latex.codecogs.com/png.latex?%5Cbeta"> fits the data. The goal is to find the values of <img src="https://latex.codecogs.com/png.latex?%5Cbeta"> that minimize this cost function. In terms of the iterative method, we want to find <img src="https://latex.codecogs.com/png.latex?%5Cbeta_%7Bk+1%7D"> and <img src="https://latex.codecogs.com/png.latex?%5Cbeta_k"> such that <img src="https://latex.codecogs.com/png.latex?f(%5Cbeta_%7Bk+1%7D)%3Cf(%5Cbeta_k)">. <br> <br> For a small change in <img src="https://latex.codecogs.com/png.latex?%5Cbeta">, we can approximate <img src="https://latex.codecogs.com/png.latex?f(%5Cbeta)"> using Taylor series expansion<br>
 <img src="https://latex.codecogs.com/png.latex?f(%5Cbeta_%7Bk+1%7D)=f(%5Cbeta_k%20+%5CDelta%5Cbeta_k)%5Capprox%20f(%5Cbeta_k)+%5Cnabla%20f(%5Cbeta_k)%5ET%20%5CDelta%20%5Cbeta_k+%5Ctext%7Bhigher-order%20terms%7D">
 </p>
@@ -352,7 +352,7 @@ Let’s imagine a hypothetical scenario, Walmart Inc.&nbsp;wants to explore thei
 <img src="https://latex.codecogs.com/png.latex?d=%5Csqrt%7B(x_1-x_2)%5E2+(y_1-y_2)%7D"></p>
 <p>Assume that <img src="https://latex.codecogs.com/png.latex?P=(x,y)"> is the coordinate of Walmart. So for a total of <img src="https://latex.codecogs.com/png.latex?n"> such points the total distance <img src="https://latex.codecogs.com/png.latex?D"> from the point <img src="https://latex.codecogs.com/png.latex?P"> is a function of two variable <img src="https://latex.codecogs.com/png.latex?x"> and <img src="https://latex.codecogs.com/png.latex?y"> of the following form</p>
 <p><img src="https://latex.codecogs.com/png.latex?D=f(x,y)=%5Csum_%7Bi=1%7D%5E%7Bn%7D%5Csqrt%7B(x-x_i)%5E2+(y-y_i)%5E2%7D"></p>
-<div id="51f52578" class="cell" data-execution_count="1">
+<div id="609becef" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -485,7 +485,7 @@ font-style: inherit;">'sgd.png'</span>)</span>
 <p>Next, how do we control the numerical stability of the algorithm? We need to decrease the step size at each iteration which. This is called the <code>rate of decay</code>. We also need a termination factor or <code>tolerance</code> level that determines if we can stop the iteration. Sometimes, for a deep down convex function, the process oscillates back and forth around a range of values. In this case, applying a <code>damping factor</code> increases the chance for a smooth convergence.</p>
 <section id="gradient-descent-gd" class="level3">
 <h3 class="anchored" data-anchor-id="gradient-descent-gd">Gradient Descent (GD)</h3>
-<div id="0ad507d9" class="cell" data-execution_count="2">
+<div id="6c5e33f9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -1042,7 +1042,7 @@ font-style: inherit;">'#f4f4f4'</span>)</span>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1728329924378" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1014">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1728572950712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1020">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">

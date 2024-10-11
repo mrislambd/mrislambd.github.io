@@ -48,7 +48,7 @@ listing:
           <li><a href="/dsandml/multiplelinreg/index.qmd" style="text-decoration:none" target="_blank">Multiple Linear Regression</a></li>
           <li><a href="/dsandml/polyreg/index.qmd" style="text-decoration:none" target="_blank">Polynomial Regression</a></li>
           <li><a href="/dsandml/logreg/index.qmd" style="text-decoration:none" target="_blank">Logistic Regression</a></li>
-          <li><a  style="text-decoration:none">Naive Bayes</a></li>
+          <li><a href="/dsandml/naivebayes/index.qmd" style="text-decoration:none" target="_blank">Naive Bayes</a></li>
         </ul>
       </th>
       <th> 

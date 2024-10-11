@@ -346,8 +346,10 @@
   {
     "listing": "/portfolio.html",
     "items": [
+      "/portfolio/dsp/nlp-sales/index.html",
       "/portfolio/dsp/medicalcost/index.html",
       "/portfolio/dsp/dp-nlp/index.html",
+      "/portfolio/spd/webapp/index.html",
       "/portfolio/spd/desgld/index.html",
       "/teaching/sp24.html",
       "/teaching/fall23.html",
@@ -424,9 +426,12 @@
   {
     "listing": "/dsandml/multiplelinreg/index.html",
     "items": [
+      "/dsandml/naivebayes/index.html",
       "/dsandml/logreg/index.html",
       "/dsandml/datacollection/index.html",
       "/dsandml/pca/index.html",
+      "/dsandml/gradientboosting/index.html",
+      "/dsandml/randomforest/index.html",
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
       "/dsandml/biasvariance/index.html",
@@ -479,6 +484,25 @@
       "/dsandml/datacollection/index.html",
       "/dsandml/pca/index.html",
       "/dsandml/gradientboosting/index.html",
+      "/dsandml/dataengineering/index.html",
+      "/dsandml/knn/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/regularization/index.html",
+      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
+      "/dsandml/simplelinreg/index.html",
+      "/dsandml/decisiontree/index.html",
+      "/dsandml/kmeans/index.html"
+    ]
+  },
+  {
+    "listing": "/dsandml/naivebayes/index.html",
+    "items": [
+      "/dsandml/logreg/index.html",
+      "/dsandml/datacollection/index.html",
+      "/dsandml/pca/index.html",
+      "/dsandml/gradientboosting/index.html",
+      "/dsandml/randomforest/index.html",
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
       "/dsandml/biasvariance/index.html",

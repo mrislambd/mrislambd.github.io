@@ -85,9 +85,11 @@ format:
     code-copy: true
     code-overflow: wrap
     mainfont: lualatex
-    code-fold: true 
     code-line-numbers: false
+    highlight-style: ayu-dark
     code-tools: true
+    code-block-bg: false
+    code-block-border-left: true
     minimal: false
     anchor-sections: true
     smooth-scroll: true
