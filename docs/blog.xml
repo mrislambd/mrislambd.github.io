@@ -26,19 +26,249 @@
 <p style="text-align: justify">
 This page is my personal repository of most common and useful machine learning algorithms using Python and other data science tricks and tips.
 </p>
-<section id="machine-learning-algorithms" class="level2">
-<h2 class="anchored" data-anchor-id="machine-learning-algorithms">Machine Learning Algorithms</h2>
+<section id="texttextcolor782f40data-science" class="level2">
+<h2 class="anchored" data-anchor-id="texttextcolor782f40data-science"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7B%5Ctextcolor%7B#782F40%7D%7BData%20Science%7D%7D"></strong></h2>
+<p>Data science involves extracting knowledge from structured and unstructured data. It combines principle from statistics, machine learning, data analysis, and domain knoledge to understand and interpret the data</p>
+<section id="data-collection-accuisition" class="level4">
+<h4 class="anchored" data-anchor-id="data-collection-accuisition">Data Collection &amp; Accuisition</h4>
+<ul>
+<li><strong><a href="../../dsandml/datacollection/index.html" target="_blank" style="text-decoration:none">Web srcaping</a>:</strong> Data collection through Webscraping<br>
+</li>
+<li>API integration<br>
+</li>
+<li>Data Lakes, Data Warehouses</li>
+</ul>
+</section>
+<section id="data-cleaning-preprocessing" class="level4">
+<h4 class="anchored" data-anchor-id="data-cleaning-preprocessing">Data Cleaning &amp; Preprocessing</h4>
+<ul>
+<li>Handling Missing Values<br>
+</li>
+<li>Data Transformation<br>
+</li>
+<li>Feature Engineering and Selection<br>
+</li>
+<li>Encoding Categorical Variables<br>
+</li>
+<li>Handling Outliers</li>
+</ul>
+</section>
+<section id="exploratory-data-analysis-eda" class="level4">
+<h4 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h4>
+<ul>
+<li>Descriptive Statistics<br>
+</li>
+<li>Data Visualization<br>
+</li>
+<li>Identifying Patterns, Trends, Correlations</li>
+</ul>
+</section>
+<section id="statistical-methods" class="level4">
+<h4 class="anchored" data-anchor-id="statistical-methods">Statistical Methods</h4>
+<ul>
+<li><strong><a href="../../dsandml/dataengineering/index.html" target="_blank" style="text-decoration:none">ANOVA - Categorical Features’</a>:</strong> How do we treat the categorical features for our data science project?</li>
+<li>Hypothesis Testing<br>
+</li>
+<li>Probability Distributions<br>
+</li>
+<li>Inferential Statistics<br>
+</li>
+<li>Sampling Methods</li>
+</ul>
+</section>
+<section id="big-data-techniques" class="level4">
+<h4 class="anchored" data-anchor-id="big-data-techniques">Big Data Techniques</h4>
+<ul>
+<li>Hadoop, Spark<br>
+</li>
+<li>Distributed Data Storage (e.g., HDFS, NoSQL)</li>
+<li>Data PipeLines, ETL (Extract, Transform, Load)</li>
+</ul>
+</section>
+</section>
+<section id="texttextcolor782f40machine-learning-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="texttextcolor782f40machine-learning-algorithms"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7B%5Ctextcolor%7B#782F40%7D%7BMachine%20Learning%20Algorithms%7D%7D"></strong></h2>
+<section id="textsupervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="textsupervised-learning"><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSupervised%20Learning%7D"></h3>
+<p>(Training with labeled data: input-output pairs)</p>
+<section id="regression" class="level4">
+<h4 class="anchored" data-anchor-id="regression"><strong>Regression</strong></h4>
+<div class="grid">
+<section id="parametric" class="level5 g-col-6">
+<h5 class="anchored" data-anchor-id="parametric">Parametric</h5>
+<ul>
+<li><a href="../../dsandml/simplelinreg/index.html" target="_blank" style="text-decoration:none">Simple Linear Regression</a></li>
+<li><a href="../../dsandml/multiplelinreg/index.html" target="_blank" style="text-decoration:none">Multiple Linear Regression</a></li>
+<li><a href="../../dsandml/polyreg/index.html" target="_blank" style="text-decoration:none">Polynomial Regression</a></li>
+</ul>
+</section>
+<section id="non-parametric" class="level5 g-col-6">
+<h5 class="anchored" data-anchor-id="non-parametric">Non-Parametric</h5>
+<ul>
+<li><a href="../../dsandml/knn/index.html" target="_blank" style="text-decoration:none">K-Nearest Neighbor (KNN) Regression</a></li>
+<li><a href="../../dsandml/decisiontree/index.html" target="_blank" style="text-decoration:none">Decesion Trees Regression</a></li>
+<li><a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Random Forest Regression</a></li>
+<li>Support Vector Machine (SVM)</li>
+</ul>
+</section>
+</div>
+</section>
+<section id="classification" class="level4">
+<h4 class="anchored" data-anchor-id="classification"><strong>Classification</strong></h4>
+<div class="grid">
+<section id="parametric-1" class="level5 g-col-6">
+<h5 class="anchored" data-anchor-id="parametric-1">Parametric</h5>
+<ul>
+<li><a href="../../dsandml/logreg/index.html" target="_blank" style="text-decoration:none">Logistic Regression</a></li>
+<li><a href="../../dsandml/naivebayes/index.html" target="_blank" style="text-decoration:none">Naive Bayes</a></li>
+</ul>
+</section>
+<section id="non-parametric-1" class="level5 g-col-6">
+<h5 class="anchored" data-anchor-id="non-parametric-1">Non-Parametric</h5>
+<ul>
+<li><a href="../../dsandml/knn/index.html" target="_blank" style="text-decoration:none">KNN Classification</a></li>
+<li><a href="../../dsandml/decisiontree/index.html" target="_blank" style="text-decoration:none">Decision Tree Classification</a></li>
+<li><a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Random Forest Classification</a></li>
+<li>Support Vector Machine (SVM)</li>
+</ul>
+</section>
+</div>
+</section>
+</section>
+<section id="textunsupervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="textunsupervised-learning"><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BUnsupervised%20Learning%7D"></h3>
+<p>(Training with unlabeled data)</p>
+<div class="grid">
+<section id="clustering" class="level5 g-col-6">
+<h5 class="anchored" data-anchor-id="clustering">Clustering</h5>
+<ul>
+<li><a href="../../dsandml/kmeans/index.html" target="_blank" style="text-decoration:none">k-Means Clustering</a><br>
+</li>
+<li>Hierarchical Clustering<br>
+</li>
+<li>DBSCAN (Density-Based Spatial Clustering)<br>
+</li>
+<li>Gaussian Mixture Models (GMM)</li>
+</ul>
+</section>
+<section id="dimensionality-reduction" class="level5 g-col-6">
+<h5 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h5>
+<ul>
+<li><a href="../../dsandml/pca/index.html" target="_blank" style="text-decoration:none">Principal Component Analysis</a><br>
+</li>
+<li>t-SNE (t-distributed Stochastic Neihbor Embedding)<br>
+</li>
+<li>Linear Discriminant Analysis (LDA)<br>
+</li>
+<li>Factor Analysis<br>
+</li>
+<li>Autoencoders<br>
+</li>
+</ul>
+</section>
+<section id="anomaly-detection" class="level5 g-col-6">
+<h5 class="anchored" data-anchor-id="anomaly-detection">Anomaly Detection</h5>
+<ul>
+<li>Isolation Forests<br>
+</li>
+<li>One-Class SVM</li>
+</ul>
+</section>
+</div>
+</section>
+<section id="textsemi-supervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="textsemi-supervised-learning"><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSemi-Supervised%20Learning%7D"></h3>
+<p>(Combination of labeled and unlabeled data)</p>
+<ul>
+<li>Self-training<br>
+</li>
+<li>Co-training<br>
+</li>
+<li>Label Propagation</li>
+</ul>
+</section>
+<section id="textreinforcement-learning" class="level3">
+<h3 class="anchored" data-anchor-id="textreinforcement-learning"><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BReinforcement%20Learning%7D"></h3>
+<p>(Learning via rewards and penalties)</p>
+<ul>
+<li>Markov Decision Process (MDP)<br>
+</li>
+<li>Q-Learning<br>
+</li>
+<li>Deep Q-Networks (DQN)<br>
+</li>
+<li>Policy Gradient Method</li>
+</ul>
+</section>
+</section>
+<section id="texttextcolor782f40deep-learnings" class="level2">
+<h2 class="anchored" data-anchor-id="texttextcolor782f40deep-learnings"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7B%5Ctextcolor%7B#782F40%7D%7BDeep%20Learnings%7D%7D"></strong></h2>
+<ul>
+<li><a href="../../dsandml/pytorch/index.html" target="_blank" style="text-decoration:none">PyTorch</a><br>
+</li>
+<li>Artificial Neural Networks (ANN)<br>
+</li>
+<li>Convolutional Neural Networks (CNN)<br>
+</li>
+<li>Recurrent Neural Networks (RNN)<br>
+</li>
+<li>Long Short-Term Memory (LSTM)<br>
+</li>
+<li>Generative Adversarial Networks (GAN)</li>
+</ul>
+</section>
+<section id="texttextcolor782f40model-evaluation-and-fine-tuning" class="level2">
+<h2 class="anchored" data-anchor-id="texttextcolor782f40model-evaluation-and-fine-tuning"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7B%5Ctextcolor%7B#782F40%7D%7BModel%20Evaluation%20and%20Fine%20Tuning%7D%7D"></strong></h2>
+<section id="model-evaluation-metrics" class="level4">
+<h4 class="anchored" data-anchor-id="model-evaluation-metrics">Model Evaluation Metrics</h4>
+<ul>
+<li><strong>For Regression:</strong> Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), <img src="https://latex.codecogs.com/png.latex?R%5E2"> score<br>
+</li>
+<li><strong>For Classification:</strong> Accuracy, Precision, Recall, F1 Score, ROC-AUC<br>
+</li>
+<li><strong>Cross-validation:</strong> kFold, Stratified k-fold, leave-one-out</li>
+</ul>
+</section>
+<section id="model-optimization" class="level4">
+<h4 class="anchored" data-anchor-id="model-optimization">Model Optimization</h4>
+<ul>
+<li><strong>Bias-Variance:</strong> <a href="../../dsandml/biasvariance/index.html" target="_blank" style="text-decoration:none">Bias Variance Trade off</a><br>
+</li>
+<li><strong>Hyperparameter Tuning:</strong> Grid Search, Random Search, Bayesian Optimization<br>
+</li>
+<li><strong>Features Selection Techniques:</strong> Recursive Feature Elimination (RFE), <a href="../../dsandml/regularization/index.html" target="_blank" style="text-decoration:none">L1 or Rasso Regurlarization</a>, <a href="../../dsandml/regularization/index.html" target="_blank" style="text-decoration:none">L2 or Ridge Regularization</a><br>
+</li>
+<li><strong>Model Interpretability:</strong> SHAP (Shapley values), LIME (Local Interpretable Model-agnostic Explanations)</li>
+</ul>
+</section>
+<section id="ensemble-methods" class="level4">
+<h4 class="anchored" data-anchor-id="ensemble-methods">Ensemble Methods</h4>
+<ul>
+<li><strong>Bagging:</strong> <a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Random Forest</a>, Bootstrap Aggregating<br>
+</li>
+<li><strong>Boosting:</strong> <a href="../../dsandml/gradientboosting/index.html" target="_blank" style="text-decoration:none">Gradient Boosting</a>, AdaBoost, XGBoost, CatBoost<br>
+</li>
+<li><strong>Stacking:</strong> Stacked Generalization</li>
+</ul>
+<!---
+## Machine Learning Algorithms  
+
+
+
+
+
+```{=html}
 <style>
   tr:nth-child(even){
     background-color: #dddddd
   }
 </style>
 
-<table class="caption-top table" data-quarto-postprocess="true">
+<table class="caption-top" data-quarto-postprocess="true">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -51,16 +281,16 @@ This page is my personal repository of most common and useful machine learning a
 <tr class="odd">
 <td data-quarto-table-cell-role="th">Supervised</td>
 <td data-quarto-table-cell-role="th"><ul>
-<li><a href="../../dsandml/simplelinreg/index.html" style="text-decoration:none" target="_blank">Simple Linear Regression</a></li>
-<li><a href="../../dsandml/multiplelinreg/index.html" style="text-decoration:none" target="_blank">Multiple Linear Regression</a></li>
-<li><a href="../../dsandml/polyreg/index.html" style="text-decoration:none" target="_blank">Polynomial Regression</a></li>
-<li><a href="../../dsandml/logreg/index.html" style="text-decoration:none" target="_blank">Logistic Regression</a></li>
-<li><a href="../../dsandml/naivebayes/index.html" style="text-decoration:none" target="_blank">Naive Bayes</a></li>
+<li><a href="../../dsandml/simplelinreg/index.qmd" style="text-decoration:none" target="_blank">Simple Linear Regression</a></li>
+<li><a href="../../dsandml/multiplelinreg/index.qmd" style="text-decoration:none" target="_blank">Multiple Linear Regression</a></li>
+<li><a href="../../dsandml/polyreg/index.qmd" style="text-decoration:none" target="_blank">Polynomial Regression</a></li>
+<li><a href="../../dsandml/logreg/index.qmd" style="text-decoration:none" target="_blank">Logistic Regression</a></li>
+<li><a href="../../dsandml/naivebayes/index.qmd" style="text-decoration:none" target="_blank">Naive Bayes</a></li>
 </ul></td>
 <td data-quarto-table-cell-role="th"><ul>
-<li><a href="../../dsandml/knn/index.html" style="text-decoration:none" target="_blank">KNN Regression and Classification</a></li>
-<li><a href="../../dsandml/decisiontree/index.html" style="text-decoration:none" target="_blank">Decision Trees</a></li>
-<li><a href="../../dsandml/randomforest/index.html" style="text-decoration:none" target="_blank">Random Forest</a></li>
+<li><a href="../../dsandml/knn/index.qmd" style="text-decoration:none" target="_blank">KNN Regression and Classification</a></li>
+<li><a href="../../dsandml/decisiontree/index.qmd" style="text-decoration:none" target="_blank">Decision Trees</a></li>
+<li><a href="../../dsandml/randomforest/index.qmd" style="text-decoration:none" target="_blank">Random Forest</a></li>
 <li><span style="text-decoration:none">Support Vector Machine (SVM)</span></li>
 </ul></td>
 </tr>
@@ -68,24 +298,24 @@ This page is my personal repository of most common and useful machine learning a
 <td data-quarto-table-cell-role="th">Unsupervised</td>
 <td data-quarto-table-cell-role="th"><ul>
 <li>
-<a href="../../dsandml/pca/index.html" style="text-decoration:none" target="_blank">Principle Component Analysis (PCA)</a>
+<a href="../../dsandml/pca/index.qmd" style="text-decoration:none" target="_blank">Principle Component Analysis (PCA)</a>
 </li>
 <li>
 <span style="text-decoration:none">Gaussian Mixture Model (GMM)</span>
 </li>
 <li>
 <span style="text-decoration:none">Latent Dirichilet Allocation (LDA)</span>
-</li></ul></td>
+</li></td>
 <td data-quarto-table-cell-role="th"><ul>
 <li>
-<a href="../../dsandml/kmeans/index.html" style="text-decoration:none" target="_blank">K-Means</a>
+<a href="../../dsandml/kmeans/index.qmd" style="text-decoration:none" target="_blank">K-Means</a>
 </li>
 <li>
 <span style="text-decoration:none">Hierarchial Clustering</span>
 </li>
 <li>
 <span style="text-decoration:none">Density-Based Spatial Clustering of Applications with Noise (DBSCAN)</span>
-</li></ul></td>
+</li></td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">Semi-Supervised</td>
@@ -103,25 +333,25 @@ This page is my personal repository of most common and useful machine learning a
 </li>
 <li>
 <span style="text-decoration:none">Policy Gradient</span>
-</li></ul></td>
+</li></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">Dimensionality Reduction</td>
 <td data-quarto-table-cell-role="th"><ul>
 <li>
-<a href="../../dsandml/pca/index.html" style="text-decoration:none" target="_blank">Principle Component Analysis (PCA)</a>
+<a href="../../dsandml/pca/index.qmd" style="text-decoration:none" target="_blank">Principle Component Analysis (PCA)</a>
 </li>
 <li>
 <span style="text-decoration:none">Linear Discriminant Analysis (LDA)</span>
-</li></ul></td>
+</li></td>
 <td data-quarto-table-cell-role="th"><ul>
 <li>
 <span style="text-decoration:none">t-SNE</span>
 </li>
 <li>
 <span style="text-decoration:none">Autoencoders</span>
-</li></ul></td>
+</li></td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">Ensemble Methods</td>
@@ -130,12 +360,12 @@ This page is my personal repository of most common and useful machine learning a
 <span style="text-decoration:none">Bagging</span>
 </li>
 <li>
-<a href="../../dsandml/gradientboosting/index.html" style="text-decoration:none" target="_blank">Gradient Boosting</a>
-</li></ul></td>
+<a href="../../dsandml/gradientboosting/index.qmd" style="text-decoration:none" target="_blank">Gradient Boosting</a>
+</li></td>
 <td data-quarto-table-cell-role="th"><ul>
 <li>
 <span style="text-decoration:none">Stacking</span>
-</li></ul></td>
+</li></td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">Deep Learning</td>
@@ -154,21 +384,33 @@ This page is my personal repository of most common and useful machine learning a
 </li>
 <li>
 <span style="text-decoration:none">Generative Adversarial Networks (GAN)</span>
-</li></ul></td>
+</li></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="data-science-techniques" class="level2">
-<h2 class="anchored" data-anchor-id="data-science-techniques">Data Science Techniques</h2>
+
+```  
+
+
+
+
+
+## Data Science Techniques  
+ 
+
+
+
+
+
+```{=html}
 <style>
   tr:nth-child(even){
     background-color: #dddddd
   }
 </style>
 
-<table class="caption-top table" data-quarto-postprocess="true">
+<table class="caption-top" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">Techniques</th>
@@ -177,23 +419,33 @@ This page is my personal repository of most common and useful machine learning a
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th"><a href="../../dsandml/dataengineering/index.html" style="text-decoration:none" target="_blank">Categorical Features</a></td>
+<td data-quarto-table-cell-role="th"><a href="../../dsandml/dataengineering/index.qmd" style="text-decoration:none" target="_blank">Categorical Features</a></td>
 <td data-quarto-table-cell-role="th">How do we treat the categorical features for our data science project?</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th"><a href="../../dsandml/datacollection/index.html" style="text-decoration:none" target="_blank">Webscraping</a></td>
+<td data-quarto-table-cell-role="th"><a href="../../dsandml/datacollection/index.qmd" style="text-decoration:none" target="_blank">Webscraping</a></td>
 <td data-quarto-table-cell-role="th">Data collection through Webscraping</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th"><a href="../../dsandml/biasvariance/index.html" style="text-decoration:none" target="_blank">Bias-Variance</a></td>
+<td data-quarto-table-cell-role="th"><a href="../../dsandml/biasvariance/index.qmd" style="text-decoration:none" target="_blank">Bias-Variance</a></td>
 <td data-quarto-table-cell-role="th">Model Fine Tuning: Bias-Variance Trade Off</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th"><a href="../../dsandml/regularization/index.html" style="text-decoration:none" target="_blank">Regularization</a></td>
+<td data-quarto-table-cell-role="th"><a href="../../dsandml/regularization/index.qmd" style="text-decoration:none" target="_blank">Regularization</a></td>
 <td data-quarto-table-cell-role="th">Model Fine Tuning: Regularization</td>
 </tr>
 </tbody>
 </table>
+
+```
+
+
+
+
+
+---  
+
+-->
 <hr>
 <p><strong>You may also like</strong></p>
 
@@ -201,6 +453,7 @@ This page is my personal repository of most common and useful machine learning a
 
 <!-- -->
 
+</section>
 </section>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
@@ -353,8 +606,6 @@ Let’s imagine a hypothetical scenario, Walmart Inc.&nbsp;wants to explore thei
 <p>Assume that <img src="https://latex.codecogs.com/png.latex?P=(x,y)"> is the coordinate of Walmart. So for a total of <img src="https://latex.codecogs.com/png.latex?n"> such points the total distance <img src="https://latex.codecogs.com/png.latex?D"> from the point <img src="https://latex.codecogs.com/png.latex?P"> is a function of two variable <img src="https://latex.codecogs.com/png.latex?x"> and <img src="https://latex.codecogs.com/png.latex?y"> of the following form</p>
 <p><img src="https://latex.codecogs.com/png.latex?D=f(x,y)=%5Csum_%7Bi=1%7D%5E%7Bn%7D%5Csqrt%7B(x-x_i)%5E2+(y-y_i)%5E2%7D"></p>
 <div id="609becef" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -468,7 +719,6 @@ font-style: inherit;">'#f4f4f4'</span>)</span>
 background-color: null;
 font-style: inherit;">'sgd.png'</span>)</span>
 <span id="cb1-25">plt.show()</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1042,7 +1292,7 @@ font-style: inherit;">'#f4f4f4'</span>)</span>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1728572950712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1020">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1729053109034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1578">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1053,7 +1303,7 @@ font-style: inherit;">'#f4f4f4'</span>)</span>
 Data Science &amp; Machine Learning Basics
 </h5>
 <div class="listing-reading-time card-text text-muted">
-6 min
+8 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">

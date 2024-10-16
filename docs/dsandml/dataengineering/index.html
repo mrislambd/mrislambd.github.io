@@ -275,7 +275,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">How do we treat categorical features for our data science project?</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">How do we treat categorical features for our data science project?</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
   <div class="quarto-categories">
     <div class="quarto-category">Statistics</div>
     <div class="quarto-category">Data Science</div>
@@ -324,12 +324,9 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="anova">ANOVA</h2>
 <p>This is the 5 random sample <a href="[www.kaggle.com/datasets/mirichoi0218/insurance/data](https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout)" target="_blank" style="text-decoration:none">data</a> that we are talking about. We will use this data to explain the mathematical formulation of the model.</p>
 <div id="88595069" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'insurance.csv'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.sample(<span class="dv">5</span>, random_state<span class="op">=</span><span class="dv">111</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>      age   sex    bmi  children smoker     region     charges
 1000   30  male  22.99         2    yes  northwest  17361.7661
@@ -341,8 +338,6 @@ window.Quarto = {
 </div>
 <p>We will explain the method using the feature <code>children</code>.</p>
 <div id="3ccb8745" class="cell" data-execution_count="2">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>child <span class="op">=</span> data.children.value_counts().sort_index()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>c0<span class="op">=</span>data[data[<span class="st">'children'</span>]<span class="op">==</span><span class="dv">0</span>].charges.values.tolist()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>c1<span class="op">=</span>data[data[<span class="st">'children'</span>]<span class="op">==</span><span class="dv">1</span>].charges.values.tolist()</span>
@@ -350,7 +345,6 @@ window.Quarto = {
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>c3<span class="op">=</span>data[data[<span class="st">'children'</span>]<span class="op">==</span><span class="dv">3</span>].charges.values.tolist()</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>c4<span class="op">=</span>data[data[<span class="st">'children'</span>]<span class="op">==</span><span class="dv">4</span>].charges.values.tolist()</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>c5<span class="op">=</span>data[data[<span class="st">'children'</span>]<span class="op">==</span><span class="dv">5</span>].charges.values.tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <table class="caption-top table">
 <colgroup>
@@ -401,10 +395,7 @@ window.Quarto = {
 The main purpose of one-sided ANOVA is to act as a judge like in a court house. It assumes that there is no variation in any group. All group has the same mean. So it sets a null hypthesis and declares that there is no difference in the groups whereas the alternative is set to the opposite. Let’s see what happens to our data
 </p>
 <div id="ebc3dab9" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <table class="caption-top table">
 <thead>
@@ -468,7 +459,30 @@ The main purpose of one-sided ANOVA is to act as a judge like in a court house. 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728273600000" data-listing-file-modified-sort="1728356230186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1345">
+<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728532800000" data-listing-file-modified-sort="1728684641298" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="../logreg/logreg.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Classification using Naive Bayes algorithm
+</h5>
+<div class="listing-reading-time card-text text-muted">
+11 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Thursday, October 10, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728273600000" data-listing-file-modified-sort="1728356230186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1345">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -493,7 +507,7 @@ Monday, October 7, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1726868222575" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723608000000" data-listing-file-modified-sort="1726868222575" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
 <a href="../../dsandml/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -512,31 +526,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Wednesday, August 14, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1727150400000" data-listing-file-modified-sort="1727330012576" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1429">
-<a href="../../dsandml/pca/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../dsandml/pca/pca.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Dimensionality Reduction: Principle Component Analysis (PCA)
-</h5>
-<div class="listing-reading-time card-text text-muted">
-8 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Tuesday, September 24, 2024
 </div>
 </div>
 </div>
