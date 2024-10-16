@@ -326,7 +326,7 @@ Principal Component Analysis (PCA) is a powerful technique used in machine learn
 <section id="what-is-principal-component-analysis-pca" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-principal-component-analysis-pca">What is Principal Component Analysis (PCA)?</h2>
 <p>Let’s start from the beginning. If we have a set of orthogonal basis vectors say <span class="math inline">\(\mathbf{u}=(u_1,u_2,\dots, u_p)\)</span> then <span class="math inline">\(u_i^Tu_j=\delta_{ij}\)</span> for <span class="math inline">\(1\le i,j \le m\)</span>. For example, consider <span class="math inline">\(u_1=\begin{bmatrix}1\\ 0\end{bmatrix}\)</span> and <span class="math inline">\(u_2=\begin{bmatrix}0\\1\end{bmatrix}\)</span></p>
-<div id="ddfc6a15" class="cell" data-execution_count="1">
+<div id="74cea3cb" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -461,7 +461,7 @@ E(\mathbf{u}) &amp; = \sum_{k=1}^{n} \left\|\sum_{i=d+1}^{p}(z^k\cdot u_i)u_i\ri
 <section id="pca-in-python-implementation-and-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="pca-in-python-implementation-and-visualization">PCA in Python: Implementation and Visualization</h2>
 <p>Now that we understand the theory behind PCA, let’s implement it in Python using the <code>sklearn</code> library and visualize the results.</p>
-<div id="f1eb8c9f" class="cell" data-execution_count="2">
+<div id="89f51287" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -470,7 +470,7 @@ E(\mathbf{u}) &amp; = \sum_{k=1}^{n} \left\|\sum_{i=d+1}^{p}(z^k\cdot u_i)u_i\ri
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For this example, we will use the famous Iris dataset, which contains 4 features (sepal length, sepal width, petal length, and petal width) of 3 species of iris flowers.</p>
-<div id="b2fa223d" class="cell" data-execution_count="3">
+<div id="41eb5196" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Iris dataset</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> load_iris()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> iris.data</span>
@@ -481,7 +481,7 @@ E(\mathbf{u}) &amp; = \sum_{k=1}^{n} \left\|\sum_{i=d+1}^{p}(z^k\cdot u_i)u_i\ri
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>X_scaled <span class="op">=</span> scaler.fit_transform(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We will reduce the data from 4 dimensions to 2 for visualization.</p>
-<div id="369303e3" class="cell" data-execution_count="4">
+<div id="d66d83f5" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>X_pca <span class="op">=</span> pca.fit_transform(X_scaled)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -492,7 +492,7 @@ E(\mathbf{u}) &amp; = \sum_{k=1}^{n} \left\|\sum_{i=d+1}^{p}(z^k\cdot u_i)u_i\ri
 </div>
 <p>The explained variance ratio shows how much variance each principal component captures. In many cases, the first two components capture most of the variance.</p>
 <p>Let’s plot the Iris dataset using the first two principal components.</p>
-<div id="fd7a5210" class="cell" data-execution_count="5">
+<div id="4cb86352" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, color <span class="kw">in</span> <span class="bu">enumerate</span>(colors):</span>
@@ -570,7 +570,7 @@ E(\mathbf{u}) &amp; = \sum_{k=1}^{n} \left\|\sum_{i=d+1}^{p}(z^k\cdot u_i)u_i\ri
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1728684684746" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729121444168" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
 <a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="../logreg/logreg.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -593,7 +593,7 @@ Thursday, October 10, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1728684684744" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1345">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729121444168" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1738">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -604,7 +604,7 @@ Thursday, October 10, 2024
 Classification: Logistic Regression - A Comprehensive Guide with Mathematical Derivation and Python Code
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+9 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -618,7 +618,7 @@ Monday, October 7, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1728684684739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1729121444160" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
 <a href="../../dsandml/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1473,7 +1473,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
