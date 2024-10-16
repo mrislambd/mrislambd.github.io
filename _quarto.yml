@@ -88,12 +88,12 @@ format:
     code-line-numbers: false
     highlight-style: ayu-dark
     code-tools: true
+    code-fold: false
     code-block-bg: false
     code-block-border-left: true
     minimal: false
     anchor-sections: true
     smooth-scroll: true
-    
     
     
 

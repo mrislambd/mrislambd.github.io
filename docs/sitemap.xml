@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/dsandml/logreg/index.html</loc>
-    <lastmod>2024-10-08T02:57:10.186Z</lastmod>
+    <lastmod>2024-10-16T23:26:06.492Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/dsandml/knn/index.html</loc>
@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/machinelearning/index.html</loc>
-    <lastmod>2024-10-10T15:09:10.712Z</lastmod>
+    <lastmod>2024-10-16T04:31:49.034Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/someproofs/index.html</loc>
@@ -223,5 +223,9 @@
   <url>
     <loc>https://mrislambd.github.io/dsandml/naivebayes/index.html</loc>
     <lastmod>2024-10-11T22:10:41.298Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/pytorch/index.html</loc>
+    <lastmod>2024-10-16T15:43:22.345Z</lastmod>
   </url>
 </urlset>

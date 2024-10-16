@@ -18,6 +18,7 @@
   {
     "listing": "/dsandml/dataengineering/index.html",
     "items": [
+      "/dsandml/naivebayes/index.html",
       "/dsandml/logreg/index.html",
       "/dsandml/datacollection/index.html",
       "/dsandml/pca/index.html",
@@ -54,6 +55,7 @@
   {
     "listing": "/dsandml/logreg/index.html",
     "items": [
+      "/dsandml/naivebayes/index.html",
       "/dsandml/datacollection/index.html",
       "/dsandml/pca/index.html",
       "/dsandml/gradientboosting/index.html",
@@ -64,6 +66,7 @@
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
+      "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html",
       "/dsandml/kmeans/index.html"
@@ -378,8 +381,11 @@
   {
     "listing": "/dsandml/datacollection/index.html",
     "items": [
+      "/dsandml/naivebayes/index.html",
       "/dsandml/logreg/index.html",
       "/dsandml/pca/index.html",
+      "/dsandml/gradientboosting/index.html",
+      "/dsandml/randomforest/index.html",
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
       "/dsandml/biasvariance/index.html",
@@ -394,9 +400,12 @@
   {
     "listing": "/dsandml/regularization/index.html",
     "items": [
+      "/dsandml/naivebayes/index.html",
       "/dsandml/logreg/index.html",
       "/dsandml/datacollection/index.html",
       "/dsandml/pca/index.html",
+      "/dsandml/gradientboosting/index.html",
+      "/dsandml/randomforest/index.html",
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
       "/dsandml/biasvariance/index.html",
@@ -480,6 +489,7 @@
   {
     "listing": "/dsandml/randomforest/index.html",
     "items": [
+      "/dsandml/naivebayes/index.html",
       "/dsandml/logreg/index.html",
       "/dsandml/datacollection/index.html",
       "/dsandml/pca/index.html",
@@ -509,9 +519,26 @@
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
+      "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html",
       "/dsandml/kmeans/index.html"
+    ]
+  },
+  {
+    "listing": "/dsandml/pytorch/index.html",
+    "items": [
+      "/posts/machinelearning/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/sgd/index.html",
+      "/posts/jobandintern/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/welcome/index.html"
     ]
   }
 ]

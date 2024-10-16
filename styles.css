@@ -59,3 +59,9 @@ pre {
   background-color: #2e2e2e !important;
   color: #ffffff !important; /* This will ensure both the background and the text color fit the dark theme */
 }
+
+.cell-output {
+  background-color: #f4f4f4;
+  border-radius: 4px;
+}
+
