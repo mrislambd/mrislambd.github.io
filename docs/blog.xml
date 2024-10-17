@@ -224,7 +224,7 @@ This page is my personal repository of most common and useful machine learning a
 <ul>
 <li><strong>For Regression:</strong> Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), <img src="https://latex.codecogs.com/png.latex?R%5E2"> score<br>
 </li>
-<li><strong>For Classification:</strong> Accuracy, Precision, Recall, F1 Score, ROC-AUC<br>
+<li><strong>For Classification:</strong> <a href="../../dsandml/classificationmetrics/index.html" target="_blank" style="text-decoration:none">Accuracy, Precision, Recall, F1 Score, ROC-AUC</a><br>
 </li>
 <li><strong>Cross-validation:</strong> kFold, Stratified k-fold, leave-one-out</li>
 </ul>
@@ -252,7 +252,6 @@ This page is my personal repository of most common and useful machine learning a
 </ul>
 <!---
 ## Machine Learning Algorithms  
-
 
 
 
@@ -395,10 +394,8 @@ This page is my personal repository of most common and useful machine learning a
 
 
 
-
 ## Data Science Techniques  
  
-
 
 
 
@@ -438,7 +435,6 @@ This page is my personal repository of most common and useful machine learning a
 </table>
 
 ```
-
 
 
 

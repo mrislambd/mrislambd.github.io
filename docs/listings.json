@@ -515,6 +515,7 @@
       "/dsandml/randomforest/index.html",
       "/dsandml/dataengineering/index.html",
       "/dsandml/knn/index.html",
+      "/dsandml/classificationmetrics/index.html",
       "/dsandml/biasvariance/index.html",
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
@@ -539,6 +540,27 @@
       "/posts/mathbiology/index.html",
       "/posts/someproofs/index.html",
       "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/dsandml/classificationmetrics/index.html",
+    "items": [
+      "/dsandml/naivebayes/index.html",
+      "/dsandml/logreg/index.html",
+      "/dsandml/datacollection/index.html",
+      "/dsandml/pca/index.html",
+      "/dsandml/gradientboosting/index.html",
+      "/dsandml/randomforest/index.html",
+      "/dsandml/dataengineering/index.html",
+      "/dsandml/knn/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/regularization/index.html",
+      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
+      "/dsandml/pytorch/index.html",
+      "/dsandml/simplelinreg/index.html",
+      "/dsandml/decisiontree/index.html",
+      "/dsandml/kmeans/index.html"
     ]
   }
 ]
