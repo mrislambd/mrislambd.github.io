@@ -272,7 +272,7 @@ print(np.round(accuracy_score(predicted_y, y_test),2))
 
 
 ::::{.columns}
-:::{.column width="10%"}
+:::{.column width="33%"}
 <a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1877F2; text-decoration: none;">
  
 {{< fa brands facebook size=3x >}}
@@ -280,7 +280,7 @@ print(np.round(accuracy_score(predicted_y, y_test),2))
  
 :::
  
-:::{.column width="10%"}
+:::{.column width="33%"}
 <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#0077B5; text-decoration: none;">
  
 {{< fa brands linkedin size=3x >}}
@@ -288,7 +288,7 @@ print(np.round(accuracy_score(predicted_y, y_test),2))
  
 :::
  
-:::{.column width="10%"}
+:::{.column width="33%"}
 <a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1DA1F2; text-decoration: none;">
  
 {{< fa brands twitter size=3x >}}
