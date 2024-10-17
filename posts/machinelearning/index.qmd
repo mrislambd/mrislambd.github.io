@@ -94,6 +94,7 @@ Data science involves extracting knowledge from structured and unstructured data
 
 - [Logistic Regression](/dsandml/logreg/index.qmd){target="_blank" style="text-decoration:none"}
 - [Naive Bayes](/dsandml/naivebayes/index.qmd){target="_blank" style="text-decoration:none"}
+- [Linear Discriminant Analysis (LDA)](/dsandml/lda/index.qmd){target="_blank" style="text-decoration:none"}
 :::  
 
 :::{.column width="33%"}
@@ -130,7 +131,7 @@ Data science involves extracting knowledge from structured and unstructured data
 ##### Dimensionality Reduction  
 
 - [Principal Component Analysis](/dsandml/pca/index.qmd){target="_blank" style="text-decoration:none"}  
-- [Linear Discriminant Analysis (LDA)](/dsandml/lda/index.qmd){target="_blank" style="text-decoration:none"}    
+- Latent Dirichlet Allocation (LDA)
 - t-SNE (t-distributed Stochastic Neihbor Embedding)  
 - Factor Analysis  
 - Autoencoders  
