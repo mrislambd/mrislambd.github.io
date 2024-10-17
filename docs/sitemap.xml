@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/machinelearning/index.html</loc>
-    <lastmod>2024-10-17T06:09:33.678Z</lastmod>
+    <lastmod>2024-10-17T20:44:58.805Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/someproofs/index.html</loc>
@@ -231,5 +231,13 @@
   <url>
     <loc>https://mrislambd.github.io/dsandml/classificationmetrics/index.html</loc>
     <lastmod>2024-10-17T06:15:57.949Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/multiclass/index.html</loc>
+    <lastmod>2024-10-17T21:03:03.638Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/dsandml/lda/index.html</loc>
+    <lastmod>2024-10-17T20:58:15.093Z</lastmod>
   </url>
 </urlset>
