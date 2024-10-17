@@ -1,0 +1,32 @@
+format:
+  html:
+    theme: cosmo
+    css: ../styles.css
+    toc: true
+    grid: 
+      sidebar-width: 330px
+    backgroundcolor: "#f4f4f4"
+    linkcolor: "#782F40"
+    code-copy: true
+    code-overflow: wrap
+    mainfont: lualatex
+    code-line-numbers: false
+    highlight-style: ayu-dark
+    code-tools: true
+    code-fold: false
+    code-block-bg: false
+    code-block-border-left: true
+    minimal: false
+    anchor-sections: true
+    smooth-scroll: true
+    comments: 
+      giscus: 
+        reactions-enabled: true
+        repo: mrislambd/mrislambd.github.io
+        repo-id: "R_kgDOMV8crA"
+        category: "Announcements"
+        category-id: "DIC_kwDOMV8crM4CjbQW"
+        mapping: pathname
+        input-position: bottom
+        theme: light_high_contrast
+        language: "en"

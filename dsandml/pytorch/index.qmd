@@ -4,6 +4,7 @@ date: "2024-10-16"
 author: Rafiq Islam
 categories: [Programming, Data Science, Machine Learning, Python, PyTorch]
 search: true
+draft": true
 listing: 
     contents: "/../../posts"
     max-items: 3
