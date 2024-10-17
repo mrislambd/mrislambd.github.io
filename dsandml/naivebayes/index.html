@@ -453,7 +453,7 @@ P(x_i|y_k)=\begin{cases}\frac{N_{x_i,y_k}+\alpha}{N_{y_k}+2\alpha }\hspace{2mm}\
 <section id="gaussian-naive-bayes" class="level3">
 <h3 class="anchored" data-anchor-id="gaussian-naive-bayes">Gaussian Naive Bayes</h3>
 <p>Code credit for the custom classifier goes to <a href="https://github.com/AssemblyAI-Community/Machine-Learning-From-Scratch/blob/main/06%20NaiveBayes/naive_bayes.py" target="_blank" style="text-decoration:none">Assembly AI</a></p>
-<div id="1e3f3dd3" class="cell" data-execution_count="1">
+<div id="b6852565" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GNaiveBayes:</span>
@@ -505,7 +505,7 @@ P(x_i|y_k)=\begin{cases}\frac{N_{x_i,y_k}+\alpha}{N_{y_k}+2\alpha }\hspace{2mm}\
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> numerator<span class="op">/</span>denominator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s apply this to the <code>irish</code> data set</p>
-<div id="0beb9e30" class="cell" data-execution_count="2">
+<div id="f570eb00" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -579,7 +579,7 @@ P(x_i|y_k)=\begin{cases}\frac{N_{x_i,y_k}+\alpha}{N_{y_k}+2\alpha }\hspace{2mm}\
 </div>
 </div>
 </div>
-<div id="1ff1745f" class="cell" data-execution_count="3">
+<div id="52b6cbbd" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> GaussianNB</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, confusion_matrix, classification_report  </span>
@@ -643,7 +643,7 @@ weighted avg       0.98      0.98      0.98        45
 </section>
 <section id="multinomial-naive-bayes" class="level3">
 <h3 class="anchored" data-anchor-id="multinomial-naive-bayes">Multinomial Naive Bayes</h3>
-<div id="37bd9e12" class="cell" data-execution_count="4">
+<div id="d5e46568" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MNaiveBayes:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, alpha <span class="op">=</span> <span class="dv">1</span>):</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.alpha <span class="op">=</span> alpha</span>
@@ -752,7 +752,32 @@ weighted avg       0.98      0.98      0.98        45
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729145862471" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1729199021940" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5383">
+<a href="../../dsandml/lda/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../../dsandml/lda/lda.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Classification: Linear Discriminant Analysis (LDA)
+</h5>
+<div class="listing-reading-time card-text text-muted">
+27 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Thursday, October 17, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729199021940" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -777,50 +802,23 @@ Monday, October 7, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1729145862467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
-<a href="../../dsandml/datacollection/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1729199021940" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="167">
+<a href="../../dsandml/multiclass/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../dsandml/datacollection/ws.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="../lda/lda.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Data collection through Webscraping
+Classification: Techniques to handle multi-class classification problems
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+1 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Rafiq Islam
 </div>
 <div class="listing-date">
-Wednesday, August 14, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1727136000000" data-listing-file-modified-sort="1729145862475" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1429">
-<a href="../../dsandml/pca/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../dsandml/pca/pca.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Dimensionality Reduction: Principle Component Analysis (PCA)
-</h5>
-<div class="listing-reading-time card-text text-muted">
-8 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Tuesday, September 24, 2024
+Thursday, October 17, 2024
 </div>
 </div>
 </div>
