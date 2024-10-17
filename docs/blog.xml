@@ -115,15 +115,17 @@ This page is my personal repository of most common and useful machine learning a
 </section>
 <section id="classification" class="level4">
 <h4 class="anchored" data-anchor-id="classification"><strong>Classification</strong></h4>
-<div class="grid">
-<section id="parametric-1" class="level5 g-col-6">
+<div class="columns">
+<div class="column" style="width:33%;">
+<section id="parametric-1" class="level5">
 <h5 class="anchored" data-anchor-id="parametric-1">Parametric</h5>
 <ul>
 <li><a href="../../dsandml/logreg/index.html" target="_blank" style="text-decoration:none">Logistic Regression</a></li>
 <li><a href="../../dsandml/naivebayes/index.html" target="_blank" style="text-decoration:none">Naive Bayes</a></li>
 </ul>
 </section>
-<section id="non-parametric-1" class="level5 g-col-6">
+</div><div class="column" style="width:33%;">
+<section id="non-parametric-1" class="level5">
 <h5 class="anchored" data-anchor-id="non-parametric-1">Non-Parametric</h5>
 <ul>
 <li><a href="../../dsandml/knn/index.html" target="_blank" style="text-decoration:none">KNN Classification</a></li>
@@ -132,14 +134,23 @@ This page is my personal repository of most common and useful machine learning a
 <li>Support Vector Machine (SVM)</li>
 </ul>
 </section>
+</div><div class="column" style="width:33%;">
+<section id="multi-class-classification" class="level5">
+<h5 class="anchored" data-anchor-id="multi-class-classification">Multi-Class Classification</h5>
+<ul>
+<li><a href="../../dsandml/multiclass/index.html" target="_blank" style="text-decoration:none">Multi-class Classification</a></li>
+</ul>
+</section>
+</div>
 </div>
 </section>
 </section>
 <section id="textunsupervised-learning" class="level3">
 <h3 class="anchored" data-anchor-id="textunsupervised-learning"><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BUnsupervised%20Learning%7D"></h3>
 <p>(Training with unlabeled data)</p>
-<div class="grid">
-<section id="clustering" class="level5 g-col-6">
+<div class="columns">
+<div class="column" style="width:33%;">
+<section id="clustering" class="level5">
 <h5 class="anchored" data-anchor-id="clustering">Clustering</h5>
 <ul>
 <li><a href="../../dsandml/kmeans/index.html" target="_blank" style="text-decoration:none">k-Means Clustering</a><br>
@@ -151,14 +162,15 @@ This page is my personal repository of most common and useful machine learning a
 <li>Gaussian Mixture Models (GMM)</li>
 </ul>
 </section>
-<section id="dimensionality-reduction" class="level5 g-col-6">
+</div><div class="column" style="width:33%;">
+<section id="dimensionality-reduction" class="level5">
 <h5 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h5>
 <ul>
 <li><a href="../../dsandml/pca/index.html" target="_blank" style="text-decoration:none">Principal Component Analysis</a><br>
 </li>
-<li>t-SNE (t-distributed Stochastic Neihbor Embedding)<br>
+<li><a href="../../dsandml/lda/index.html" target="_blank" style="text-decoration:none">Linear Discriminant Analysis (LDA)</a><br>
 </li>
-<li>Linear Discriminant Analysis (LDA)<br>
+<li>t-SNE (t-distributed Stochastic Neihbor Embedding)<br>
 </li>
 <li>Factor Analysis<br>
 </li>
@@ -166,7 +178,8 @@ This page is my personal repository of most common and useful machine learning a
 </li>
 </ul>
 </section>
-<section id="anomaly-detection" class="level5 g-col-6">
+</div><div class="column" style="width:33%;">
+<section id="anomaly-detection" class="level5">
 <h5 class="anchored" data-anchor-id="anomaly-detection">Anomaly Detection</h5>
 <ul>
 <li>Isolation Forests<br>
@@ -174,6 +187,7 @@ This page is my personal repository of most common and useful machine learning a
 <li>One-Class SVM</li>
 </ul>
 </section>
+</div>
 </div>
 </section>
 <section id="textsemi-supervised-learning" class="level3">

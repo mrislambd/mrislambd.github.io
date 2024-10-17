@@ -88,21 +88,27 @@ Data science involves extracting knowledge from structured and unstructured data
 
 #### **Classification**  
 
-::::{.grid}
-:::{.g-col-6}
+::::{.columns}
+:::{.column width="33%"}
 ##### Parametric    
 
 - [Logistic Regression](/dsandml/logreg/index.qmd){target="_blank" style="text-decoration:none"}
 - [Naive Bayes](/dsandml/naivebayes/index.qmd){target="_blank" style="text-decoration:none"}
 :::  
 
-:::{.g-col-6}
+:::{.column width="33%"}
 ##### Non-Parametric  
 
 - [KNN Classification](/dsandml/knn/index.qmd){target="_blank" style="text-decoration:none"}
 - [Decision Tree Classification](/dsandml/decisiontree/index.qmd){target="_blank" style="text-decoration:none"}
 - [Random Forest Classification](/dsandml/randomforest/index.qmd){target="_blank" style="text-decoration:none"}
 - Support Vector Machine (SVM)
+:::  
+
+:::{.column width="33%"}
+##### Multi-Class Classification  
+
+- [Multi-class Classification](/dsandml/multiclass/index.qmd){target="_blank" style="text-decoration:none"}
 :::
 ::::  
 
@@ -110,8 +116,8 @@ Data science involves extracting knowledge from structured and unstructured data
 ### $\text{Unsupervised Learning}$  
 (Training with unlabeled data)  
 
-::::{.grid}
-:::{.g-col-6}
+::::{.columns}
+:::{.column width="33%"}
 ##### Clustering      
 
 - [k-Means Clustering](/dsandml/kmeans/index.qmd){target="_blank" style="text-decoration:none"}  
@@ -120,17 +126,17 @@ Data science involves extracting knowledge from structured and unstructured data
 - Gaussian Mixture Models (GMM)
 :::  
 
-:::{.g-col-6}
+:::{.column width="33%"}
 ##### Dimensionality Reduction  
 
 - [Principal Component Analysis](/dsandml/pca/index.qmd){target="_blank" style="text-decoration:none"}  
+- [Linear Discriminant Analysis (LDA)](/dsandml/lda/index.qmd){target="_blank" style="text-decoration:none"}    
 - t-SNE (t-distributed Stochastic Neihbor Embedding)  
-- Linear Discriminant Analysis (LDA)  
 - Factor Analysis  
 - Autoencoders  
 :::  
 
-:::{.g-col-6}
+:::{.column width="33%"}
 ##### Anomaly Detection  
 
 - Isolation Forests  
