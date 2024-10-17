@@ -122,6 +122,7 @@ This page is my personal repository of most common and useful machine learning a
 <ul>
 <li><a href="../../dsandml/logreg/index.html" target="_blank" style="text-decoration:none">Logistic Regression</a></li>
 <li><a href="../../dsandml/naivebayes/index.html" target="_blank" style="text-decoration:none">Naive Bayes</a></li>
+<li><a href="../../dsandml/lda/index.html" target="_blank" style="text-decoration:none">Linear Discriminant Analysis (LDA)</a></li>
 </ul>
 </section>
 </div><div class="column" style="width:33%;">
@@ -168,8 +169,7 @@ This page is my personal repository of most common and useful machine learning a
 <ul>
 <li><a href="../../dsandml/pca/index.html" target="_blank" style="text-decoration:none">Principal Component Analysis</a><br>
 </li>
-<li><a href="../../dsandml/lda/index.html" target="_blank" style="text-decoration:none">Linear Discriminant Analysis (LDA)</a><br>
-</li>
+<li>Latent Dirichlet Allocation (LDA)</li>
 <li>t-SNE (t-distributed Stochastic Neihbor Embedding)<br>
 </li>
 <li>Factor Analysis<br>
