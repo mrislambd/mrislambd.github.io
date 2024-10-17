@@ -337,7 +337,7 @@ In any classification problem, the goal is to build a model that accurately pred
 <h3 class="anchored" data-anchor-id="confusion-matrix">Confusion Matrix</h3>
 <p>A confusion matrix is a tabular summary of the performance of a classification algorithm. It shows the number of correct and incorrect predictions broken down by each class.</p>
 <p>For a binary classification, the confusion matrix looks like this:</p>
-<div id="1d332227" class="cell" data-execution_count="1">
+<div id="183d1f20" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -460,7 +460,7 @@ The ROC-AUC curve helps visualize the performance of a classification model by p
 <h2 class="anchored" data-anchor-id="example-in-python">Example in Python</h2>
 <p>Let’s use a real dataset and compute these metrics using Python.</p>
 <p>We’ll use the <code>breast cancer</code> dataset from <code>sklearn</code>, which is a binary classification problem where the task is to predict whether a tumor is malignant or benign.</p>
-<div id="8009c4ad" class="cell" data-execution_count="2">
+<div id="1af21a25" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_breast_cancer</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
@@ -504,7 +504,7 @@ The ROC-AUC curve helps visualize the performance of a classification model by p
 </div>
 </div>
 <p>Next, Compute Accuracy, Precision, Recall, F1 Score, ROC-AUC</p>
-<div id="2dae6526" class="cell" data-execution_count="3">
+<div id="c539a5ff" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>precision <span class="op">=</span> precision_score(y_test, y_pred)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>recall <span class="op">=</span> recall_score(y_test, y_pred)</span>
@@ -525,7 +525,7 @@ ROC-AUC: 0.9968</code></pre>
 </div>
 </div>
 <p>Plot ROC curve</p>
-<div id="bc6711fa" class="cell" data-execution_count="4">
+<div id="f002db4c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fpr, tpr, thresholds <span class="op">=</span> roc_curve(y_test, y_pred_proba)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.plot(fpr, tpr, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="ss">f'ROC Curve (AUC = </span><span class="sc">{</span>roc_auc<span class="sc">:.4f}</span><span class="ss">)'</span>)</span>
@@ -574,7 +574,7 @@ ROC-AUC: 0.9968</code></pre>
 For classification problems, the decision threshold is crucial, especially for metrics like ROC-AUC. Often, models use a default threshold of 0.5 to classify whether an instance belongs to the positive class or not, but you can adjust this threshold to prioritize recall over precision or vice versa. You could add a section showing how adjusting the threshold can change model performance.
 </p>
 <p>Here’s an additional Python example showing how to adjust thresholds:</p>
-<div id="999ddf60" class="cell" data-execution_count="5">
+<div id="cc3fb65d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust threshold</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>threshold <span class="op">=</span> <span class="fl">0.4</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>y_pred_thresholded <span class="op">=</span> (y_pred_proba <span class="op">&gt;=</span> threshold).astype(<span class="bu">int</span>)</span>
@@ -601,7 +601,7 @@ New F1 Score: 0.9727</code></pre>
 Class imbalance can skew metrics like accuracy. A discussion on how to handle imbalance through methods such as resampling (oversampling/undersampling) or using techniques like SMOTE (Synthetic Minority Over-sampling Technique) could provide further depth.
 </p>
 <p>For example:</p>
-<div id="0d55a31a" class="cell" data-execution_count="6">
+<div id="1373f95d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.over_sampling <span class="im">import</span> SMOTE</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Handling class imbalance using SMOTE</span></span>
@@ -634,7 +634,7 @@ Resampled Recall: 0.9722</code></pre>
 <p style="text-align: justify">
 While the ROC curve is useful, the <strong>Precision-Recall (PR) curve</strong> is often more informative when dealing with imbalanced datasets because it focuses on the performance of the positive class. Including a section on this can enhance the evaluation process.
 </p>
-<div id="fff864c4" class="cell" data-execution_count="7">
+<div id="dee604df" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> precision_recall_curve</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Precision-Recall curve</span></span>
@@ -665,7 +665,7 @@ While the ROC curve is useful, the <strong>Precision-Recall (PR) curve</strong> 
 <li><p><strong>Cohen’s Kappa</strong> measures agreement between observed accuracy and expected accuracy.</p></li>
 <li><p><strong>Matthews Correlation Coefficient (MCC)</strong> provides a balanced metric even when classes are imbalanced. It considers true and false positives and negatives, giving a correlation-like score between predictions and actuals.</p></li>
 </ul>
-<div id="be0b5a26" class="cell" data-execution_count="8">
+<div id="8c1d83a8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> cohen_kappa_score, matthews_corrcoef</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>kappa <span class="op">=</span> cohen_kappa_score(y_test, y_pred)</span>
@@ -689,15 +689,15 @@ MCC: 0.9372</code></pre>
 </ul>
 <p><strong>Share on</strong></p>
 <div class="columns">
-<div class="column" style="width:10%;">
+<div class="column" style="width:33%;">
 <p><a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#1877F2; text-decoration: none;"></a></p><a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#1877F2; text-decoration: none;">
 <p><i class="fa-brands fa-facebook fa-3x" aria-label="facebook"></i></p>
 </a><p><a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#1877F2; text-decoration: none;"></a></p>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:33%;">
 <p><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#0077B5; text-decoration: none;"></a></p><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#0077B5; text-decoration: none;">
 <p><i class="fa-brands fa-linkedin fa-3x" aria-label="linkedin"></i></p>
 </a><p><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#0077B5; text-decoration: none;"></a></p>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:33%;">
 <p><a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#1DA1F2; text-decoration: none;"></a></p><a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#1DA1F2; text-decoration: none;">
 <p><i class="fa-brands fa-twitter fa-3x" aria-label="twitter"></i></p>
 </a><p><a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#1DA1F2; text-decoration: none;"></a></p>
@@ -723,7 +723,7 @@ MCC: 0.9372</code></pre>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729145444522" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729145862475" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
 <a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="../logreg/logreg.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -746,7 +746,7 @@ Thursday, October 10, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729145444518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729145862471" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -771,7 +771,7 @@ Monday, October 7, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1729145444514" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1729145862467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
 <a href="../../dsandml/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1636,7 +1636,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-367"><a href="#cb13-367" aria-hidden="true" tabindex="-1"></a>**Share on**</span>
 <span id="cb13-368"><a href="#cb13-368" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-369"><a href="#cb13-369" aria-hidden="true" tabindex="-1"></a>::::{.columns}</span>
-<span id="cb13-370"><a href="#cb13-370" aria-hidden="true" tabindex="-1"></a>:::{.column width="10%"}</span>
+<span id="cb13-370"><a href="#cb13-370" aria-hidden="true" tabindex="-1"></a>:::{.column width="33%"}</span>
 <span id="cb13-371"><a href="#cb13-371" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#1877F2; text-decoration: none;"&gt;</span>
 <span id="cb13-372"><a href="#cb13-372" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb13-373"><a href="#cb13-373" aria-hidden="true" tabindex="-1"></a>{{&lt; fa brands facebook size=3x &gt;}}</span>
@@ -1644,7 +1644,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-375"><a href="#cb13-375" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb13-376"><a href="#cb13-376" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb13-377"><a href="#cb13-377" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb13-378"><a href="#cb13-378" aria-hidden="true" tabindex="-1"></a>:::{.column width="10%"}</span>
+<span id="cb13-378"><a href="#cb13-378" aria-hidden="true" tabindex="-1"></a>:::{.column width="33%"}</span>
 <span id="cb13-379"><a href="#cb13-379" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#0077B5; text-decoration: none;"&gt;</span>
 <span id="cb13-380"><a href="#cb13-380" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb13-381"><a href="#cb13-381" aria-hidden="true" tabindex="-1"></a>{{&lt; fa brands linkedin size=3x &gt;}}</span>
@@ -1652,7 +1652,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-383"><a href="#cb13-383" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb13-384"><a href="#cb13-384" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb13-385"><a href="#cb13-385" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb13-386"><a href="#cb13-386" aria-hidden="true" tabindex="-1"></a>:::{.column width="10%"}</span>
+<span id="cb13-386"><a href="#cb13-386" aria-hidden="true" tabindex="-1"></a>:::{.column width="33%"}</span>
 <span id="cb13-387"><a href="#cb13-387" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/classificationmetrics/" target="_blank" style="color:#1DA1F2; text-decoration: none;"&gt;</span>
 <span id="cb13-388"><a href="#cb13-388" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb13-389"><a href="#cb13-389" aria-hidden="true" tabindex="-1"></a>{{&lt; fa brands twitter size=3x &gt;}}</span>
@@ -1682,9 +1682,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-413"><a href="#cb13-413" aria-hidden="true" tabindex="-1"></a> src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"&gt;&lt;/script&gt;</span>
 <span id="cb13-414"><a href="#cb13-414" aria-hidden="true" tabindex="-1"></a>&lt;div class="fb-comments" data-href="https://mrislambd.github.io/dsandml/classificationmetrics/" data-width="" data-numposts="5"&gt;&lt;/div&gt;</span>
 <span id="cb13-415"><a href="#cb13-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-416"><a href="#cb13-416" aria-hidden="true" tabindex="-1"></a>---  </span>
-<span id="cb13-417"><a href="#cb13-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-418"><a href="#cb13-418" aria-hidden="true" tabindex="-1"></a>**You may also like**</span>
+<span id="cb13-416"><a href="#cb13-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-417"><a href="#cb13-417" aria-hidden="true" tabindex="-1"></a>---  </span>
+<span id="cb13-418"><a href="#cb13-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-419"><a href="#cb13-419" aria-hidden="true" tabindex="-1"></a>**You may also like**</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
@@ -1729,7 +1730,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

@@ -440,7 +440,7 @@ L(\theta) = \prod_{i=1}^{n} \left(y_ip_{\theta}(\mathbf{x_i})+ (1-y_i)(1-p_{\the
 <section id="python-code-implementation-from-scratch" class="level2">
 <h2 class="anchored" data-anchor-id="python-code-implementation-from-scratch">Python Code Implementation from Scratch</h2>
 <p>Here’s how to implement Logistic Regression from scratch in Python. We will use two different forms for our class</p>
-<div id="e60f2580" class="cell" data-execution_count="1">
+<div id="91d8400a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> LogisticRegression1:</span>
@@ -487,7 +487,7 @@ L(\theta) = \prod_{i=1}^{n} \left(y_ip_{\theta}(\mathbf{x_i})+ (1-y_i)(1-p_{\the
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> class_of_y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now let’s use this using the <code>scikit-learn</code> breast cancer data set.</p>
-<div id="8b12b93c" class="cell" data-execution_count="2">
+<div id="92fab7fd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_breast_cancer</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
@@ -506,7 +506,7 @@ L(\theta) = \prod_{i=1}^{n} \left(y_ip_{\theta}(\mathbf{x_i})+ (1-y_i)(1-p_{\the
 </div>
 </div>
 <p>Now lets compare this with the standard <code>scikit-learn</code> library</p>
-<div id="7f35e7b0" class="cell" data-execution_count="3">
+<div id="0b063d9c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>clf2 <span class="op">=</span> LogisticRegression()</span>
@@ -538,15 +538,15 @@ L(\theta) = \prod_{i=1}^{n} \left(y_ip_{\theta}(\mathbf{x_i})+ (1-y_i)(1-p_{\the
 <hr>
 <p><strong>Share on</strong></p>
 <div class="columns">
-<div class="column" style="width:10%;">
+<div class="column" style="width:33%;">
 <p><a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1877F2; text-decoration: none;"></a></p><a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1877F2; text-decoration: none;">
 <p><i class="fa-brands fa-facebook fa-3x" aria-label="facebook"></i></p>
 </a><p><a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1877F2; text-decoration: none;"></a></p>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:33%;">
 <p><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#0077B5; text-decoration: none;"></a></p><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#0077B5; text-decoration: none;">
 <p><i class="fa-brands fa-linkedin fa-3x" aria-label="linkedin"></i></p>
 </a><p><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#0077B5; text-decoration: none;"></a></p>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:33%;">
 <p><a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1DA1F2; text-decoration: none;"></a></p><a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1DA1F2; text-decoration: none;">
 <p><i class="fa-brands fa-twitter fa-3x" aria-label="twitter"></i></p>
 </a><p><a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1DA1F2; text-decoration: none;"></a></p>
@@ -572,7 +572,7 @@ L(\theta) = \prod_{i=1}^{n} \left(y_ip_{\theta}(\mathbf{x_i})+ (1-y_i)(1-p_{\the
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729145444522" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729145862475" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
 <a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="logreg.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -595,7 +595,7 @@ Thursday, October 10, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1729145444514" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1729145862467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
 <a href="../../dsandml/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -620,7 +620,7 @@ Wednesday, August 14, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1727136000000" data-listing-file-modified-sort="1729145444522" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1429">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1727136000000" data-listing-file-modified-sort="1729145862475" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1429">
 <a href="../../dsandml/pca/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1407,7 +1407,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-278"><a href="#cb6-278" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-279"><a href="#cb6-279" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-280"><a href="#cb6-280" aria-hidden="true" tabindex="-1"></a>::::{.columns}</span>
-<span id="cb6-281"><a href="#cb6-281" aria-hidden="true" tabindex="-1"></a>:::{.column width="10%"}</span>
+<span id="cb6-281"><a href="#cb6-281" aria-hidden="true" tabindex="-1"></a>:::{.column width="33%"}</span>
 <span id="cb6-282"><a href="#cb6-282" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1877F2; text-decoration: none;"&gt;</span>
 <span id="cb6-283"><a href="#cb6-283" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb6-284"><a href="#cb6-284" aria-hidden="true" tabindex="-1"></a>{{&lt; fa brands facebook size=3x &gt;}}</span>
@@ -1415,7 +1415,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-286"><a href="#cb6-286" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb6-287"><a href="#cb6-287" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb6-288"><a href="#cb6-288" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb6-289"><a href="#cb6-289" aria-hidden="true" tabindex="-1"></a>:::{.column width="10%"}</span>
+<span id="cb6-289"><a href="#cb6-289" aria-hidden="true" tabindex="-1"></a>:::{.column width="33%"}</span>
 <span id="cb6-290"><a href="#cb6-290" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#0077B5; text-decoration: none;"&gt;</span>
 <span id="cb6-291"><a href="#cb6-291" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb6-292"><a href="#cb6-292" aria-hidden="true" tabindex="-1"></a>{{&lt; fa brands linkedin size=3x &gt;}}</span>
@@ -1423,7 +1423,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-294"><a href="#cb6-294" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb6-295"><a href="#cb6-295" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb6-296"><a href="#cb6-296" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb6-297"><a href="#cb6-297" aria-hidden="true" tabindex="-1"></a>:::{.column width="10%"}</span>
+<span id="cb6-297"><a href="#cb6-297" aria-hidden="true" tabindex="-1"></a>:::{.column width="33%"}</span>
 <span id="cb6-298"><a href="#cb6-298" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/logreg/" target="_blank" style="color:#1DA1F2; text-decoration: none;"&gt;</span>
 <span id="cb6-299"><a href="#cb6-299" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb6-300"><a href="#cb6-300" aria-hidden="true" tabindex="-1"></a>{{&lt; fa brands twitter size=3x &gt;}}</span>
