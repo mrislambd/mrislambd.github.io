@@ -167,7 +167,7 @@ Data science involves extracting knowledge from structured and unstructured data
 #### Model Evaluation Metrics  
 
 - **For Regression:** Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), $R^2$ score  
-- **For Classification:** Accuracy, Precision, Recall, F1 Score, ROC-AUC  
+- **For Classification:** [Accuracy, Precision, Recall, F1 Score, ROC-AUC](/dsandml/classificationmetrics/index.qmd){target="_blank" style="text-decoration:none"}    
 - **Cross-validation:** kFold, Stratified k-fold, leave-one-out  
 
 #### Model Optimization  
