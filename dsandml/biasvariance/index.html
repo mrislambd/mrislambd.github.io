@@ -359,7 +359,7 @@ where <span class="math inline">\(y = f(x) + \epsilon\)</span>, and <span class=
 <ul>
 <li>A <strong>high bias</strong> model makes strong assumptions about the data and fails to capture the underlying patterns, resulting in underfitting.</li>
 </ul>
-<div id="9c94a2c4" class="cell" data-execution_count="1">
+<div id="4786a65d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
@@ -390,7 +390,7 @@ where <span class="math inline">\(y = f(x) + \epsilon\)</span>, and <span class=
 <ul>
 <li>A <strong>high variance</strong> model is highly flexible, capturing not only the signal but also the noise in the data, leading to overfitting.</li>
 </ul>
-<div id="bd328e41" class="cell" data-execution_count="2">
+<div id="2dc56f38" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeRegressor</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>model2 <span class="op">=</span> DecisionTreeRegressor(max_depth<span class="op">=</span><span class="dv">10</span>)</span>
@@ -422,7 +422,7 @@ where <span class="math inline">\(y = f(x) + \epsilon\)</span>, and <span class=
 <section id="more-visualization-of-bias-variance-tradeoff" class="level2">
 <h2 class="anchored" data-anchor-id="more-visualization-of-bias-variance-tradeoff">More Visualization of Bias-Variance Tradeoff</h2>
 <p>Now let’s use Python to visualize the bias-variance tradeoff by generating models of varying complexity on a synthetic dataset.</p>
-<div id="0509aef5" class="cell" data-execution_count="3">
+<div id="aabc6d7e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> PolynomialFeatures</span>
@@ -529,7 +529,7 @@ The bias-variance tradeoff is a crucial concept for building machine learning mo
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729123913624" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729124773875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
 <a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="../logreg/logreg.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -552,7 +552,7 @@ Thursday, October 10, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729123913624" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1630">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729124773875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -577,7 +577,7 @@ Monday, October 7, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1729123913616" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1729124773867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1261">
 <a href="../../dsandml/datacollection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1087,11 +1087,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://giscus.app/client.js" data-repo="mrislambd/mrislambd.github.io" data-repo-id="R_kgDOMV8crA" data-category="Announcements" data-category-id="DIC_kwDOMV8crM4CjbQW" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light_high_contrast" data-lang="en" crossorigin="anonymous" async="">
-</script>
-<input type="hidden" id="giscus-base-theme" value="light_high_contrast">
-<input type="hidden" id="giscus-alt-theme" value="light_high_contrast"><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Model Fine Tuning: Bias-Variance Trade Off"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-09-23"</span></span>
@@ -1376,7 +1372,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
