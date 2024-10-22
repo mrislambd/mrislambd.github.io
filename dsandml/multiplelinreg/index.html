@@ -275,7 +275,7 @@ window.Quarto = {
   </ul></li>
   </ul>
 </nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(59)</span></div><div class="category" data-category="Algorithms">Algorithms <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Artificial Intelligence">Artificial Intelligence <span class="quarto-category-count">(17)</span></div><div class="category" data-category="Data Engineering">Data Engineering <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Programming">Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(60)</span></div><div class="category" data-category="Algorithms">Algorithms <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Artificial Intelligence">Artificial Intelligence <span class="quarto-category-count">(17)</span></div><div class="category" data-category="Data Engineering">Data Engineering <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Programming">Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -435,7 +435,7 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 <h2 class="anchored" data-anchor-id="python-execution">Python Execution</h2>
 <section id="synthetic-data" class="level3">
 <h3 class="anchored" data-anchor-id="synthetic-data">Synthetic Data</h3>
-<div id="98fbbd6a" class="cell" data-execution_count="1">
+<div id="511ee53c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>X<span class="op">=</span>np.random.randn(<span class="dv">1000</span>,<span class="dv">2</span>)</span>
@@ -445,13 +445,13 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 </section>
 <section id="fit-the-data-using-scikit-learn-library" class="level3">
 <h3 class="anchored" data-anchor-id="fit-the-data-using-scikit-learn-library">Fit the data: Using scikit-learn Library</h3>
-<div id="5c575e31" class="cell" data-execution_count="2">
+<div id="5ec52018" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mlr<span class="op">=</span>LinearRegression()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mlr.fit(X,y)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>coefficients<span class="op">=</span>mlr.coef_.tolist()</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>slope<span class="op">=</span>mlr.intercept_.tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0593 and coefficients <span class="math inline">\(\beta_1=\)</span> 2.9896, and <span class="math inline">\(\beta_2=\)</span> 2.0053</p>
+<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0326 and coefficients <span class="math inline">\(\beta_1=\)</span> 2.9918, and <span class="math inline">\(\beta_2=\)</span> 2.0066</p>
 </section>
 <section id="fit-the-data-using-custom-library-ols" class="level3">
 <h3 class="anchored" data-anchor-id="fit-the-data-using-custom-library-ols">Fit the data: Using Custom Library OLS</h3>
@@ -480,14 +480,14 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> interceptt_(<span class="va">self</span>):</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.beta[<span class="dv">0</span>].tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now it’s time to use the new class</p>
-<div id="c12347b1" class="cell" data-execution_count="3">
+<div id="d6a4c385" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlreg <span class="im">import</span> NewLinearRegression</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mlr1 <span class="op">=</span> NewLinearRegression()</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>mlr1.fit(X,y)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>coefficients1<span class="op">=</span>mlr1.coeff_()</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>slope1<span class="op">=</span>mlr1.interceptt_()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0593 and coefficients <span class="math inline">\(\beta_1=\)</span> 2.9896, and <span class="math inline">\(\beta_2=\)</span> 2.0053</p>
+<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0326 and coefficients <span class="math inline">\(\beta_1=\)</span> 2.9918, and <span class="math inline">\(\beta_2=\)</span> 2.0066</p>
 </section>
 <section id="fit-the-data-using-gradient-descent" class="level3">
 <h3 class="anchored" data-anchor-id="fit-the-data-using-gradient-descent">Fit the data: Using Gradient Descent</h3>
@@ -523,14 +523,14 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> intercepttt_(<span class="va">self</span>):</span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.bias</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now we use this similarly as before,</p>
-<div id="312c9302" class="cell" data-execution_count="4">
+<div id="1869a5e1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlreg <span class="im">import</span> GDLinearRegression</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mlr2<span class="op">=</span> GDLinearRegression(learning_rate<span class="op">=</span><span class="fl">0.008</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mlr2.fit(X,y)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>coefficients2<span class="op">=</span>mlr2.coefff_()</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>slope2<span class="op">=</span>mlr2.intercepttt_()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0584 and coefficients <span class="math inline">\(\beta_1=\)</span> 2.9878, and <span class="math inline">\(\beta_2=\)</span> 2.0041</p>
+<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> 1.0324 and coefficients <span class="math inline">\(\beta_1=\)</span> 2.9908, and <span class="math inline">\(\beta_2=\)</span> 2.006</p>
 </section>
 <section id="fit-the-data-using-stochastic-gradient-descent" class="level3">
 <h3 class="anchored" data-anchor-id="fit-the-data-using-stochastic-gradient-descent">Fit the data: Using Stochastic Gradient Descent</h3>
@@ -596,13 +596,13 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 <span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Return the mse_list</span></span>
 <span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.mse_list.tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now</p>
-<div id="73bc5d5e" class="cell" data-execution_count="5">
+<div id="567b6571" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlreg <span class="im">import</span> SGDLinearRegression</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mlr3<span class="op">=</span>SGDLinearRegression(learning_rate<span class="op">=</span><span class="fl">0.01</span>, num_iterations<span class="op">=</span><span class="dv">1000</span>, batch_size<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>theta, _ <span class="op">=</span> mlr3.fit(X, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> array([1.04787624]) and coefficients <span class="math inline">\(\beta_1=\)</span> array([2.94335577]), and <span class="math inline">\(\beta_2=\)</span> array([2.01515188])</p>
+<p>So the model parameters: slope <span class="math inline">\(\beta_0=\)</span> array([1.02208418]) and coefficients <span class="math inline">\(\beta_1=\)</span> array([2.97855234]), and <span class="math inline">\(\beta_2=\)</span> array([2.00942326])</p>
 <p>Up next <a href="../../dsandml/knn/index.html">knn regression</a></p>
 <hr>
 <p><strong>Share on</strong></p>
@@ -633,7 +633,7 @@ f(\beta) = \frac{1}{n} \sum_{i=1}^{n} f_i(\beta)
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729199994911" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729575595689" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
 <a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="../lda/lda.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -656,7 +656,7 @@ Thursday, October 10, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1729199994907" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5383">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1729575595685" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5383">
 <a href="../../dsandml/lda/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -681,7 +681,7 @@ Thursday, October 17, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729199994907" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729575595685" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
