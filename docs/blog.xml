@@ -108,7 +108,7 @@ This page is my personal repository of most common and useful machine learning a
 <li><a href="../../dsandml/knn/index.html" target="_blank" style="text-decoration:none">K-Nearest Neighbor (KNN) Regression</a></li>
 <li><a href="../../dsandml/decisiontree/index.html" target="_blank" style="text-decoration:none">Decesion Trees Regression</a></li>
 <li><a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Random Forest Regression</a></li>
-<li>Support Vector Machine (SVM)</li>
+<li><a href="../../dsandml/svm/index.html" target="_blank" style="text-decoration:none">Support Vector Machine (SVM)</a></li>
 </ul>
 </section>
 </div>
@@ -132,7 +132,7 @@ This page is my personal repository of most common and useful machine learning a
 <li><a href="../../dsandml/knn/index.html" target="_blank" style="text-decoration:none">KNN Classification</a></li>
 <li><a href="../../dsandml/decisiontree/index.html" target="_blank" style="text-decoration:none">Decision Tree Classification</a></li>
 <li><a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Random Forest Classification</a></li>
-<li>Support Vector Machine (SVM)</li>
+<li><a href="../../dsandml/svm/index.html" target="_blank" style="text-decoration:none">Support Vector Machine (SVM)</a></li>
 </ul>
 </section>
 </div><div class="column" style="width:33%;">

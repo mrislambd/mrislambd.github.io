@@ -594,6 +594,7 @@
       "/dsandml/polyreg/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
+      "/dsandml/svm/index.html",
       "/dsandml/decisiontree/index.html",
       "/dsandml/kmeans/index.html"
     ]

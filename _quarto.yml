@@ -83,7 +83,7 @@ format:
     backgroundcolor: "#f4f4f4"
     linkcolor: "#782F40"
     code-copy: true
-    code-overflow: wrap
+    code-overflow: scroll
     mainfont: lualatex
     code-line-numbers: false
     highlight-style: ayu-dark

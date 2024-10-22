@@ -1,0 +1,18 @@
+---
+title: "Support Vector Machine (SVM) Algorithm"
+date: "2024-10-22"
+author: Rafiq Islam
+categories: [Statistics, Data Science, Data Engineering, Machine Learning, Artificial Intelligence]
+citation: true
+search: true
+lightbox: true
+listing: 
+    contents: "/../../dsandml"
+    max-items: 3
+    type: grid
+    categories: false
+    date-format: full
+    fields: [image, date, title, author, reading-time]
+---  
+
+Draft
