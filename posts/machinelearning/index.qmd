@@ -82,7 +82,7 @@ Data science involves extracting knowledge from structured and unstructured data
 - [K-Nearest Neighbor (KNN) Regression](/dsandml/knn/index.qmd){target="_blank" style="text-decoration:none"}
 - [Decesion Trees Regression](/dsandml/decisiontree/index.qmd){target="_blank" style="text-decoration:none"}
 - [Random Forest Regression](/dsandml/randomforest/index.qmd){target="_blank" style="text-decoration:none"}
-- Support Vector Machine (SVM)
+- [Support Vector Machine (SVM)](/dsandml/svm/index.qmd){target="_blank" style="text-decoration:none"}
 :::
 ::::  
 
@@ -103,7 +103,7 @@ Data science involves extracting knowledge from structured and unstructured data
 - [KNN Classification](/dsandml/knn/index.qmd){target="_blank" style="text-decoration:none"}
 - [Decision Tree Classification](/dsandml/decisiontree/index.qmd){target="_blank" style="text-decoration:none"}
 - [Random Forest Classification](/dsandml/randomforest/index.qmd){target="_blank" style="text-decoration:none"}
-- Support Vector Machine (SVM)
+- [Support Vector Machine (SVM)](/dsandml/svm/index.qmd){target="_blank" style="text-decoration:none"}
 :::  
 
 :::{.column width="33%"}
