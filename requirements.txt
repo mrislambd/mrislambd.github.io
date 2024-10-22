@@ -184,3 +184,4 @@ ucimlrepo==0.0.7
 seaborn==0.13.2
 statsmodels==0.14.2
 imbalanced-learn
+tensorflow
