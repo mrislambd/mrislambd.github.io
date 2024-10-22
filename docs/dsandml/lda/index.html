@@ -506,7 +506,7 @@ S_W = \sum_{k=1}^{K} \sum_{x_i \in C_k} (x_i - \mu_k)(x_i - \mu_k)^T
 <p><span class="math display">\[\begin{align*}
 S_{W1} &amp;= (x_1 - \mu_1)(x_1 - \mu_1)^T + (x_2 - \mu_1)(x_2 - \mu_1)^T\\
 &amp;=\begin{bmatrix} -0.5 \\ -0.5 \\ -0.5 \\ -0.5 \\ -0.5 \\ -0.5 \end{bmatrix} \begin{bmatrix} -0.5 &amp; -0.5 &amp; -0.5 &amp; -0.5 &amp; -0.5 &amp; -0.5 \end{bmatrix} + \begin{bmatrix} 0.5 \\ 0.5 \\ 0.5 \\ 0.5 \\ 0.5 \\ 0.5 \end{bmatrix} \begin{bmatrix} 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \end{bmatrix}\\
-&amp;= \begin{bmatrix} 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \end{bmatrix}
+&amp;= \begin{bmatrix} 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \end{bmatrix}
 \end{align*}\]</span></p>
 <p>For classes <span class="math inline">\(C_2\)</span> and <span class="math inline">\(C_3\)</span>, there is only one data point in each, so there is no within-class scatter:</p>
 <p><span class="math display">\[
@@ -517,7 +517,7 @@ S_{W2} = 0, \quad S_{W3} = 0
 S_W = S_{W1} + S_{W2} + S_{W3} = S_{W1}
 \]</span></p>
 <p><span class="math display">\[
-S_W = \begin{bmatrix} 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \end{bmatrix}
+S_W = \begin{bmatrix} 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \\ 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \end{bmatrix}
 \]</span></p>
 </section>
 <section id="compute-the-between-class-scatter-matrix-s_b" class="level3">
@@ -661,7 +661,7 @@ y_{41} &amp; y_{42}
 <section id="step-6-visualizing-the-results" class="level3">
 <h3 class="anchored" data-anchor-id="step-6-visualizing-the-results">Step 6: Visualizing the Results</h3>
 <p>If we were to plot the projected data in this new 2D space, we would see the observations from different classes are better separated, which is the ultimate goal of LDA. The two axes of this 2D space correspond to the two linear discriminants that maximize the separation between the classes.</p>
-<div id="8250002b" class="cell" data-execution_count="1">
+<div id="e52a5b0b" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -731,7 +731,7 @@ y_{41} &amp; y_{42}
 <section id="python-code-example" class="level2">
 <h2 class="anchored" data-anchor-id="python-code-example">Python Code Example</h2>
 <p>Let’s now revisit the Python code, with an understanding of the math behind LDA. First build our own classifier</p>
-<div id="dca12c51" class="cell" data-execution_count="2">
+<div id="06728ea8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CustomLDA:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,n_components <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
@@ -854,7 +854,7 @@ y_{41} &amp; y_{42}
 <span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [(i<span class="op">/</span>total) <span class="cf">for</span> i <span class="kw">in</span> <span class="va">self</span>.eigenvalues[:<span class="va">self</span>.n_components]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next we apply both the custom classifier and the classifier from the <code>scikit-learn</code> library.</p>
-<div id="def6b11f" class="cell" data-execution_count="3">
+<div id="5ca4d0e4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
@@ -909,7 +909,7 @@ y_{41} &amp; y_{42}
 </div>
 </div>
 <p>Next, apply LDA as a classifiers for the actual classification</p>
-<div id="f82a5b19" class="cell" data-execution_count="4">
+<div id="58ef7910" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lda_classifier1 <span class="op">=</span> LDA()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>lda_classifier1.fit(X_train, y_train)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>y_pred1 <span class="op">=</span> lda_classifier1.predict(X_test)</span>
@@ -929,7 +929,7 @@ custom LDA Classifier Accuracy: 95.56%</code></pre>
 </div>
 </div>
 <p>Not too bad, huh! Let’s see the confusion matrix for our custom classifier</p>
-<div id="3ad87b31" class="cell" data-execution_count="5">
+<div id="c6c78cb3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>conf_mat <span class="op">=</span> confusion_matrix(y_test, y_pred2)</span>
@@ -939,7 +939,7 @@ custom LDA Classifier Accuracy: 95.56%</code></pre>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>[<span class="st">'Predicted: Setosa'</span>,<span class="st">'Predicted: Virginica'</span>, <span class="st">'Predicted: Versicolor'</span>],</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span>[<span class="st">'Actual: Setosa'</span>,<span class="st">'Actual: Virginica'</span>, <span class="st">'Actual: Versicolor'</span>]</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 
 
@@ -1086,10 +1086,10 @@ Monday, October 7, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729137600000" data-listing-file-modified-sort="1729185224582" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729137600000" data-listing-file-modified-sort="1729198983638" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="167">
 <a href="../../dsandml/multiclass/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="../logreg/logreg.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img src="lda.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Classification: Techniques to handle multi-class classification problems
@@ -1760,7 +1760,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
 <span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>S_{W1} &amp;= (x_1 - \mu_1)(x_1 - \mu_1)^T + (x_2 - \mu_1)(x_2 - \mu_1)^T<span class="sc">\\</span></span>
 <span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a> &amp;=\begin{bmatrix} -0.5 <span class="sc">\\</span> -0.5 <span class="sc">\\</span> -0.5 <span class="sc">\\</span> -0.5 <span class="sc">\\</span> -0.5 <span class="sc">\\</span> -0.5 \end{bmatrix} \begin{bmatrix} -0.5 &amp; -0.5 &amp; -0.5 &amp; -0.5 &amp; -0.5 &amp; -0.5 \end{bmatrix} + \begin{bmatrix} 0.5 <span class="sc">\\</span> 0.5 <span class="sc">\\</span> 0.5 <span class="sc">\\</span> 0.5 <span class="sc">\\</span> 0.5 <span class="sc">\\</span> 0.5 \end{bmatrix} \begin{bmatrix} 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \end{bmatrix}<span class="sc">\\</span></span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a> &amp;= \begin{bmatrix} 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \end{bmatrix}</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a> &amp;= \begin{bmatrix} 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \end{bmatrix}</span>
 <span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
 <span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a></span>
@@ -1777,7 +1777,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>S_W = \begin{bmatrix} 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 <span class="sc">\\</span> 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 &amp; 0.25 \end{bmatrix}</span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>S_W = \begin{bmatrix} 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 <span class="sc">\\</span> 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 &amp; 0.5 \end{bmatrix}</span>
 <span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="fu">### 4. Compute the Between-Class Scatter Matrix $S_B$:</span></span>
@@ -2350,7 +2350,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
