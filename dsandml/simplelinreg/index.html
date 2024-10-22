@@ -370,7 +370,7 @@ RSS &amp;=\epsilon_1^2+\epsilon_2^2+\cdots+\epsilon_{10}^2\\
      \hat{\beta_1}&amp;=\frac{\sum_{i=1}^{10}(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^{10}(x_i-\bar{x})^2}
 \end{align*}\]</span></p>
 <p>Simple Linear Regression <code>slr</code> is applicable for a single feature data set with contineous response variable.</p>
-<div id="86e10a9a" class="cell" data-execution_count="1">
+<div id="bfc471fc" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -390,12 +390,12 @@ RSS &amp;=\epsilon_1^2+\epsilon_2^2+\cdots+\epsilon_{10}^2\\
 <section id="synthetic-data" class="level2">
 <h2 class="anchored" data-anchor-id="synthetic-data">Synthetic Data</h2>
 <p>To implement the algorithm, we need some synthetic data. To generate the synthetic data we use the linear equation <span class="math inline">\(y(x)=2x+\frac{1}{2}+\xi\)</span> where <span class="math inline">\(\xi\sim \mathbf{N}(0,1)\)</span></p>
-<div id="8583f49b" class="cell" data-execution_count="2">
+<div id="5e445a04" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>X<span class="op">=</span>np.random.random(<span class="dv">100</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span><span class="dv">2</span><span class="op">*</span>X<span class="op">+</span><span class="fl">0.5</span><span class="op">+</span>np.random.randn(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that we used two random number generators, <code>np.random.random(n)</code> and <code>np.random.randn(n)</code>. The first one generates <span class="math inline">\(n\)</span> random numbers of values from the range (0,1) and the second one generates values from the standard normal distribution with mean 0 and variance or standard deviation 1.</p>
-<div id="ce853ce8" class="cell" data-execution_count="3">
+<div id="067948d8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">6</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(X,y)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'$X$'</span>)</span>
@@ -415,67 +415,67 @@ RSS &amp;=\epsilon_1^2+\epsilon_2^2+\cdots+\epsilon_{10}^2\\
 <section id="model" class="level2">
 <h2 class="anchored" data-anchor-id="model">Model</h2>
 <p>We want to fit a simple linear regression to the above data.</p>
-<div id="b6edfe21" class="cell" data-execution_count="4">
+<div id="a2e45493" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>slr<span class="op">=</span>LinearRegression()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now to fit our data <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span> we need to reshape the input variable. Because if we look at <span class="math inline">\(X\)</span>,</p>
-<div id="bf7731bb" class="cell" data-execution_count="5">
+<div id="4bb73fa2" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-overflow-scroll code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>array([0.65548662, 0.64666365, 0.98060803, 0.72841145, 0.20100242,
-       0.57127974, 0.24585414, 0.3189632 , 0.85216728, 0.11137651,
-       0.25167773, 0.74988849, 0.56911685, 0.81848791, 0.97317595,
-       0.09790248, 0.82547746, 0.80041823, 0.92482231, 0.78795612,
-       0.60128994, 0.95363925, 0.06333356, 0.25085235, 0.87586886,
-       0.94357336, 0.22401918, 0.18162832, 0.13269308, 0.35666712,
-       0.06221361, 0.88065634, 0.61639653, 0.65527632, 0.28226942,
-       0.39697988, 0.0497273 , 0.99149586, 0.57822873, 0.62371803,
-       0.96884075, 0.37172659, 0.3805081 , 0.62087809, 0.63726689,
-       0.37060073, 0.78305437, 0.52932534, 0.23081572, 0.60204059,
-       0.88015975, 0.33068837, 0.27786411, 0.59280877, 0.85916342,
-       0.84575532, 0.07447342, 0.50248721, 0.55813321, 0.91642518,
-       0.56415395, 0.36098878, 0.5389695 , 0.29283097, 0.22156277,
-       0.88906174, 0.82481506, 0.48061734, 0.5052906 , 0.19679113,
-       0.21546663, 0.60857676, 0.66663017, 0.35194005, 0.30617921,
-       0.52321741, 0.55831424, 0.10382568, 0.10774935, 0.66934045,
-       0.50952518, 0.95991221, 0.60683788, 0.07074232, 0.67382272,
-       0.29200007, 0.41872842, 0.31040464, 0.47123859, 0.47956582,
-       0.85815185, 0.24143851, 0.50878153, 0.5472176 , 0.02190264,
-       0.62953435, 0.78144122, 0.47999536, 0.08024426, 0.10823578])</code></pre>
+<pre><code>array([0.4624069 , 0.8653622 , 0.71577064, 0.23906749, 0.76883593,
+       0.35271445, 0.42748926, 0.49794436, 0.55836822, 0.05318557,
+       0.18739945, 0.68517486, 0.20725568, 0.99504467, 0.94938082,
+       0.20709012, 0.29654267, 0.92354717, 0.3439665 , 0.64087368,
+       0.52455479, 0.22239507, 0.53327454, 0.53827496, 0.03176876,
+       0.18803961, 0.22620792, 0.62173082, 0.78942979, 0.54555977,
+       0.78668799, 0.56580059, 0.11922625, 0.02788196, 0.57880382,
+       0.86132936, 0.1221542 , 0.39969762, 0.88297162, 0.23724557,
+       0.57729896, 0.44536774, 0.55299535, 0.12000519, 0.94958622,
+       0.7497098 , 0.96360567, 0.73695528, 0.42228837, 0.90626155,
+       0.60380954, 0.83546451, 0.37298273, 0.69318495, 0.05994931,
+       0.36464028, 0.31455858, 0.4488005 , 0.50275882, 0.14964744,
+       0.29513158, 0.96823713, 0.28066836, 0.6489934 , 0.32172935,
+       0.10522514, 0.28778985, 0.1931119 , 0.45221672, 0.19796734,
+       0.90991574, 0.15555322, 0.2080323 , 0.40557109, 0.20313707,
+       0.57360563, 0.52078999, 0.9762372 , 0.86022431, 0.38057662,
+       0.47280302, 0.59751705, 0.33683658, 0.16566646, 0.02535659,
+       0.45888911, 0.99894131, 0.60146104, 0.95082094, 0.03929118,
+       0.96717075, 0.153855  , 0.16198449, 0.12052045, 0.84426126,
+       0.88570416, 0.92141044, 0.01921192, 0.14543215, 0.34657639])</code></pre>
 </div>
 </div>
 <p>It is a one-dimensional array/vector but the <code>slr</code> object accepts input variable as matrix or two-dimensional format.</p>
-<div id="0750b065" class="cell" data-execution_count="6">
+<div id="7d96b00a" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-overflow-wrap code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>X<span class="op">=</span>X.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>X[:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>array([[0.65548662],
-       [0.64666365],
-       [0.98060803],
-       [0.72841145],
-       [0.20100242],
-       [0.57127974],
-       [0.24585414],
-       [0.3189632 ],
-       [0.85216728],
-       [0.11137651]])</code></pre>
+<pre><code>array([[0.4624069 ],
+       [0.8653622 ],
+       [0.71577064],
+       [0.23906749],
+       [0.76883593],
+       [0.35271445],
+       [0.42748926],
+       [0.49794436],
+       [0.55836822],
+       [0.05318557]])</code></pre>
 </div>
 </div>
 <p>Now we fit the data to our model</p>
-<div id="261d85f7" class="cell" data-execution_count="7">
+<div id="3653aec6" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>slr.fit(X,y)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>slr.predict([[<span class="dv">2</span>],[<span class="dv">3</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>array([4.49009313, 6.47829832])</code></pre>
+<pre><code>array([4.28846982, 6.11995263])</code></pre>
 </div>
 </div>
 <p>We have our <span class="math inline">\(X=2,3\)</span> and the corresponding <span class="math inline">\(y\)</span> values are from the above cell output, which are pretty close to the model <span class="math inline">\(y=2x+\frac{1}{2}\)</span>.</p>
-<div id="7da49902" class="cell" data-execution_count="8">
+<div id="a859511c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>intercept <span class="op">=</span> <span class="bu">round</span>(slr.intercept_,<span class="dv">4</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>slope <span class="op">=</span> slr.coef_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now our model parameters are: intercept <span class="math inline">\(\beta_0=\)</span> 0.5137 and slope <span class="math inline">\(\beta_1=\)</span> array([1.98820519]).</p>
-<div id="83ad886a" class="cell" data-execution_count="9">
+<p>Now our model parameters are: intercept <span class="math inline">\(\beta_0=\)</span> 0.6255 and slope <span class="math inline">\(\beta_1=\)</span> array([1.83148281]).</p>
+<div id="f7bd00ee" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">6</span>))</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(X,y, alpha<span class="op">=</span><span class="fl">0.7</span>,label<span class="op">=</span><span class="st">"Sample Data"</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>plt.plot(np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">100</span>),</span>
@@ -532,7 +532,7 @@ RSS &amp;=\epsilon_1^2+\epsilon_2^2+\cdots+\epsilon_{10}^2\\
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729575595689" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729624807230" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
 <a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="../lda/lda.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -555,7 +555,7 @@ Thursday, October 10, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1729575595685" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5383">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1729624807226" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5383">
 <a href="../../dsandml/lda/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -580,7 +580,7 @@ Thursday, October 17, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729575595685" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729624807230" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1372,7 +1372,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
