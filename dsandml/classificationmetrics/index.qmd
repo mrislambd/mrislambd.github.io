@@ -70,9 +70,14 @@ def plot_confusion_matrix():
     ax.text(0.5, 0.2, r'NPV= $\frac{TN}{TN + FN}$', ha='center', va='center', transform=ax.transAxes, fontsize=12)
 
     # Add Sensitivity and Specificity in the right column of the confusion matrix
-    ax.text(0.83, .9, r'Sensitivity= $\frac{TP}{TP + FN}$', ha='center', va='center', transform=ax.transAxes, fontsize=12)
-    ax.text(0.83, .8, 'or Recall', ha='center', va='center', transform=ax.transAxes, fontsize=12)
-    ax.text(0.83, .5, r'Specificity= $\frac{TN}{TN + FP}$', ha='center', va='center', transform=ax.transAxes, fontsize=12)
+    ax.text(0.83, .95, r'TPR=Sensitivity= $\frac{TP}{TP + FN}$', ha='center', va='center', transform=ax.transAxes, fontsize=12)
+    ax.text(0.83, .89, 'or Recall', ha='center', va='center', transform=ax.transAxes, fontsize=12)
+    ax.text(0.83, .8, 'False Neg. Rate (FNR)', ha='center', va='center', transform=ax.transAxes, fontsize=12)
+    ax.text(0.83, .75, r'Type II Error rate= $\frac{FN}{TP + FN}$', ha='center', va='center', transform=ax.transAxes, fontsize=12)
+    ax.text(0.83, .6, r'TNR=Specificity= $\frac{TN}{TN + FP}$', ha='center', va='center', transform=ax.transAxes, fontsize=12)
+    ax.text(0.83, .48, 'False Positive Rate', ha='center', va='center', transform=ax.transAxes, fontsize=12)
+    ax.text(0.83, .43, r'FPR= $\frac{FP}{TN + FP}$', ha='center', va='center', transform=ax.transAxes, fontsize=12)
+    ax.text(0.83, .37, 'Type I Error Rate', ha='center', va='center', transform=ax.transAxes, fontsize=12)
 
     # Add Accuracy in the bottom-right corner of the extended grid
     ax.text(0.83, 0.2, r'Accuracy= $\frac{TP + TN}{TP+TN+FP+FN}$', ha='center', va='center', transform=ax.transAxes, fontsize=12)
@@ -141,13 +146,31 @@ $$
 ### ROC-AUC Curve (Receiver Operating Characteristic – Area Under the Curve)
 
 <p style="text-align: justify">
-The ROC-AUC curve helps visualize the performance of a classification model by plotting the true positive rate (recall) against the false positive rate (1 - specificity) at various threshold settings. The AUC (Area Under the Curve) gives a single number that summarizes the performance. A model with an AUC of 1 is perfect, while a model with an AUC of 0.5 is as good as random guessing.</p>
+The ROC-AUC curve helps visualize the performance of a classification model by plotting the true positive rate (recall) against the false positive rate (1 - specificity) at various threshold settings. The AUC (Area Under the Curve) gives a single number that summarizes the performance. A model with an AUC of 1 is perfect, while a model with an AUC of 0.5 is as good as random guessing.</p>  
+
+### Summary of the Metrices  
+
+
+
+| Metric | Formula |  
+|--------|---------|  
+| Precision: | $\frac{TP}{TP+FP}$ |  
+| Sensitivity or Recall or True Positive Rate (TPR): | $\frac{TP}{TP+FN}$ |  
+| Type II Error Rate or False Negative Rate (FNR): | $\frac{FN}{FN+TP}$ |  
+| Sepecificity or Selectivity or True Negative Rate (TNR): | $\frac{TN}{TN+FP}$ |  
+| Type I Error Rate or False Positive Rate (FPR): | $\frac{FP}{FP+TN}$ |  
+| Total Error Rate: | $\frac{FP+FN}{TN+TP+FN+FP}$ |  
+| Accuracy: | $\frac{TP+TN}{TN+TP+FN+FP}$ |  
+ 
+
+
 
 ---
 
 ## Example in Python
 
-Let's use a real dataset and compute these metrics using Python.
+Let's use a real dataset and compute these metrics using Python. In python the actual confusion matrix looks like this  
+![Confusion matrix](/dsandml/classificationmetrics/confmat1.png)
 
 We'll use the `breast cancer` dataset from `sklearn`, which is a binary classification problem where the task is to predict whether a tumor is malignant or benign.
 
@@ -176,7 +199,6 @@ y_pred_proba = clf.predict_proba(X_test)[:, 1]
 
 # Compute the confusion matrix
 cm = confusion_matrix(y_test, y_pred)
-
 # Plot confusion matrix
 plt.figure(figsize=(8,5))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['Predicted Benign', 'Predicted Malignant'], yticklabels=['Actual Benign', 'Actual Malignant'])
@@ -191,20 +213,33 @@ plt.show()
 Next, Compute Accuracy, Precision, Recall, F1 Score, ROC-AUC  
 
 ```{python}
-accuracy = accuracy_score(y_test, y_pred)
-precision = precision_score(y_test, y_pred)
-recall = recall_score(y_test, y_pred)
-f1 = f1_score(y_test, y_pred)
+tn = cm[0,0]
+fp = cm[0,1]
+fn = cm[1,0]
+tp = cm[1,1]
+accuracy1 = np.round(accuracy_score(y_test, y_pred),4)
+accuracy2 = np.round(((tp+tn)/(tp+tn+fp+fn)),4)
+
+precision1 = np.round(precision_score(y_test, y_pred),4)
+precision2 = np.round(((tp)/(tp+fp)),4)
+
+recall1 = np.round(recall_score(y_test, y_pred),4)
+recall2 = np.round(((tp)/(tp+fn)),4)
+
+f1_1 = np.round(f1_score(y_test, y_pred),4) 
+f1_2 = np.round((2*precision2*recall2)/(precision2+recall2),4)
+
 roc_auc = roc_auc_score(y_test, y_pred_proba)
 
-print(f'Accuracy: {accuracy:.4f}')
-print(f'Precision: {precision:.4f}')
-print(f'Recall: {recall:.4f}')
-print(f'F1 Score: {f1:.4f}')
-print(f'ROC-AUC: {roc_auc:.4f}')
+print('Accuracy Using Library = {}, and Accuracy Using Formula = {}'.format(accuracy1,accuracy2))
+print('Precision Using Library = {}, and Precision Using Formula = {}'.format(precision1,precision2))
+print('Recall Using Library = {}, and Recall Using Formula = {}'.format(recall1,recall2))
+print('F1 Score Using Library = {}, and F1 Score Using Formula = {}'.format(f1_1,f1_2))
+print(f'ROC-AUC score={roc_auc:.4f}')
+
 ```
 
-Plot ROC curve
+Plot ROC curve. ROC curve is found from plotting *True Positive Rate (TPRs)* against *False Positive Rate (FPRs)* for different cutoffs of probability values. To plot the ROC curve using the built-in function from `sklearn` we do the following:
 
 ```{python}
 fpr, tpr, thresholds = roc_curve(y_test, y_pred_proba)
@@ -218,7 +253,64 @@ plt.legend()
 plt.gcf().patch.set_facecolor('#f4f4f4')
 plt.gca().set_facecolor('#f4f4f4')
 plt.show()
-```
+```  
+
+To build our own  
+
+```{python}
+#| warning: false
+cutoff_values = np.arange(0,0.99,0.001)
+true_pos_rates = []
+false_pos_rates = []
+
+for cutoff in cutoff_values:
+    prediction = 1*(clf.predict_proba(X_test)[:,1] >= cutoff)
+    conf_matrix = confusion_matrix(y_test, prediction)
+    tn = conf_matrix[0,0]
+    fp = conf_matrix[0,1]
+    fn = conf_matrix[1,0]
+    tp = conf_matrix[1,1]
+
+    true_pos_rates.append(tp/(tp+fn))
+    false_pos_rates.append(fp/(fp+tn))
+
+plt.figure(figsize=(8,5))
+plt.plot(false_pos_rates, true_pos_rates, color='blue', label=f'ROC Curve (AUC = {roc_auc:.4f})')
+plt.plot([0, 1], [0, 1], color='red', linestyle='--')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve')
+plt.legend()
+plt.gcf().patch.set_facecolor('#f4f4f4')
+plt.gca().set_facecolor('#f4f4f4')
+plt.show()
+```  
+
+Next, precision-recall score  
+
+```{python}
+#| warning: false
+cutoff_values = np.arange(0,0.99,0.001)
+precisions = []
+recalls = []
+
+for cutoff in cutoff_values:
+    prediction = 1*(clf.predict_proba(X_test)[:,1] >= cutoff)
+
+    precisions.append(precision_score(y_test, prediction))
+    recalls.append(recall_score(y_test, prediction))
+
+plt.figure(figsize=(8,5))
+plt.plot(recalls, precisions, color='blue')
+plt.plot([0, 1], [0, 1], color='red', linestyle='--')
+plt.xlabel('Recalls')
+plt.ylabel('Precisions')
+plt.title('Precision-Recall Curve')
+plt.legend()
+plt.gcf().patch.set_facecolor('#f4f4f4')
+plt.gca().set_facecolor('#f4f4f4')
+plt.show()
+```  
 
 ### Explanation of Results
 
