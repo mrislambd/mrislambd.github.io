@@ -627,11 +627,11 @@ from sklearn.metrics import confusion_matrix
 
 conf_mat = confusion_matrix(y_test, y_pred2)
 
-pd.DataFrame(
+print(pd.DataFrame(
     conf_mat, 
-    columns=['Predicted: Setosa','Predicted: Virginica', 'Predicted: Versicolor'],
+    columns=['Pred: Setosa','Pred: Virginica', 'Pred: Versicolor'],
     index=['Actual: Setosa','Actual: Virginica', 'Actual: Versicolor']
-)
+))
 ```
 
 ---

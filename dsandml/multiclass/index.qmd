@@ -14,6 +14,10 @@ listing:
     categories: false
     date-format: full
     fields: [image, date, title, author, reading-time]
+
+format: 
+    html: default
+    ipynb: default
 ---    
   
 ## Introduction {#intro}  

@@ -19,7 +19,6 @@ website:
     logo: "/_assets/images/fsu-logo.png"
     logo-alt: "Florida State University"
     logo-href: index.qmd
-    background: "#782F40"
     right:
       - href: index.qmd
         text: Home
@@ -75,13 +74,13 @@ filters:
   
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: [cosmo, theme-light.scss]
+      dark: [cosmo, theme-dark.scss]
     css: styles.css
     toc: true
     grid: 
       sidebar-width: 330px
-    backgroundcolor: "#f4f4f4"
-    linkcolor: "#782F40"
     code-copy: true
     code-overflow: scroll
     mainfont: lualatex

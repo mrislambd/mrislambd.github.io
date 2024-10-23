@@ -82,7 +82,7 @@ Data science involves extracting knowledge from structured and unstructured data
 - [K-Nearest Neighbor (KNN) Regression](/dsandml/knn/index.qmd){target="_blank" style="text-decoration:none"}
 - [Decesion Trees Regression](/dsandml/decisiontree/index.qmd){target="_blank" style="text-decoration:none"}
 - [Random Forest Regression](/dsandml/randomforest/index.qmd){target="_blank" style="text-decoration:none"}
-- [Support Vector Machine (SVM)](/dsandml/svm/index.qmd){target="_blank" style="text-decoration:none"}
+- [Support Vector Machine (SVM) Regression](/dsandml/svm/index.qmd){target="_blank" style="text-decoration:none"}
 :::
 ::::  
 
@@ -94,7 +94,8 @@ Data science involves extracting knowledge from structured and unstructured data
 
 - [Logistic Regression](/dsandml/logreg/index.qmd){target="_blank" style="text-decoration:none"}
 - [Naive Bayes](/dsandml/naivebayes/index.qmd){target="_blank" style="text-decoration:none"}
-- [Linear Discriminant Analysis (LDA)](/dsandml/lda/index.qmd){target="_blank" style="text-decoration:none"}
+- [Linear Discriminant Analysis (LDA)](/dsandml/lda/index.qmd){target="_blank" style="text-decoration:none"}  
+- Quadratic Discriminant Analysis (QDA)
 :::  
 
 :::{.column width="33%"}
@@ -103,13 +104,34 @@ Data science involves extracting knowledge from structured and unstructured data
 - [KNN Classification](/dsandml/knn/index.qmd){target="_blank" style="text-decoration:none"}
 - [Decision Tree Classification](/dsandml/decisiontree/index.qmd){target="_blank" style="text-decoration:none"}
 - [Random Forest Classification](/dsandml/randomforest/index.qmd){target="_blank" style="text-decoration:none"}
-- [Support Vector Machine (SVM)](/dsandml/svm/index.qmd){target="_blank" style="text-decoration:none"}
+- [Support Vector Machine (SVM) Classification](/dsandml/svm/index.qmd){target="_blank" style="text-decoration:none"}
 :::  
 
 :::{.column width="33%"}
 ##### Multi-Class Classification  
 
 - [Multi-class Classification](/dsandml/multiclass/index.qmd){target="_blank" style="text-decoration:none"}
+:::  
+
+
+:::{.column width="33%"}
+##### Bayesian or Probabilistic Classification  
+
+- [What is Bayesian or Probabilistic Classification?](/dsandml/bayesianclassification/index.qmd){target="_blank" style="text-decoration:none"}    
+- [Linear Discriminant Analysis (LDA)](/dsandml/lda/index.qmd){target="_blank" style="text-decoration:none"}  
+- Quadratic Discriminant Analysis (QDA)  
+- Naive Bayes 
+- Bayesian Network Classifier (Tree Augmented Naive Bayes (TAN))
+:::  
+
+:::{.column width="33%"}
+##### Non-probabilistic Classification  
+
+- [Support Vector Machine (SVM) Classification](/dsandml/svm/index.qmd){target="_blank" style="text-decoration:none"}  
+- [Decision Tree Classification](/dsandml/decisiontree/index.qmd){target="_blank" style="text-decoration:none"}  
+- [Random Forest Classification](/dsandml/randomforest/index.qmd){target="_blank" style="text-decoration:none"}  
+- [KNN Classification](/dsandml/knn/index.qmd){target="_blank" style="text-decoration:none"}  
+- Perceptron
 :::
 ::::  
 
