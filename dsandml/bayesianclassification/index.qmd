@@ -1,0 +1,16 @@
+---
+title: "Probabilistic Classification - Bayesian Classification"
+date: "2024-10-22"
+author: "Rafiq Islam"
+categories: [Machine Learning, Data Science, Bayesian Inference, Bayesian Statistics, Statistics]
+citation: true
+lightbox: true
+search: true
+listing: 
+    contents: "/../../jobandintern"
+    max-items: 3
+    type: grid
+    categories: false
+    date-format: full
+    fields: [image, date, title, author, reading-time]
+---

@@ -21,8 +21,8 @@ listing:
      
 ## Introduction  
 
-<p style="text-align: left"><img align="right" width="420" height="300" src="/posts/bayesianinference/ven.png">
-    Bayesian inference is a powerful statistical method that applies the principles of Bayes's theorem to update the probability of a hypothesis as more evidence or information becomes available. It is widely used in various fields, including machine learning, to make predictions and decisions under uncertainty.
+<p style="text-align: justify"><img align="right" width="420" height="300" src="/jobandintern/bayesianinference/ven.png" style="margin-left:20px">
+    Bayesian inference is a powerful statistical method that applies the principles of Bayes's theorem to update the probability of a hypothesis as more evidence or information becomes available. It is widely used in various fields including machine learning, to make predictions and decisions under uncertainty.
 </p>
 
 
@@ -68,10 +68,12 @@ So, the probability that the patient has the disease given a positive test resul
 
 **Example 2**   
 
-<p style="text-align: left"><img align="right" width="420" height="300" src="/posts/bayesianinference/pancake.jpeg">
+<p style="text-align: justify"><img align="right" width="420" height="300" src="/jobandintern/bayesianinference/pancake.jpeg" style="margin-left: 20px; margin-bottom: 20px">
     Assume that you are in a restuarant and you ordered a plate of 3 pancakes. The chef made three pancakes with one in perfect condition, that is not burnt in any side, one with one side burnt, and the last one burnt in both sides. The waiter wanted to stack the pancakes so that the burnt side does not show up when served. However, the chef recommended not to hide the burnt side and asked her to stack the pancakes randomly. What is the likelyhood that the fully burnt pancake will be on the top?
+    <br><br>
+    To solve this problem, we can use Bayesian approach. We denote the event $X$ as the pancake without any burnt, $Y$ with one side burnt, and $Z$ both side burnt. Then we have the following conditional probabilities  
 </p>  
-To solve this problem, we can use Bayesian approach. We denote the event $X$ as the pancake without any burnt, $Y$ with one side burnt, and $Z$ both side burnt. Then we have the following conditional probabilities  
+
 
 \begin{align*}
     \mathbb{P}(\text{top-burnt} | X)&=0\\
