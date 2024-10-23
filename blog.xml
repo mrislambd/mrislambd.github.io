@@ -10,7 +10,69 @@
 <atom:link href="https://mrislambd.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Fri, 20 Sep 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 23 Oct 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>বাংলা ভাষায় আমার লেখা || My Blog in Benglali Language</title>
+  <link>https://mrislambd.github.io/posts/bengalitrial/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="আপনক-সবগতম" class="level2">
+<h2 class="anchored" data-anchor-id="আপনক-সবগতম">আপনাকে স্বাগতম</h2>
+<p>“বাংলায় ব্লগিং করতে পারলে ভালই হতো” এমন ভাবনা থেকেই ঘাটাঘটি শুরু করলাম কিভাবে নিজের ব্লগে বাংলায় লিখতে পারি। বাংলায় মনের ভাব প্রকাশের অসংখ্য মাধ্যম রয়েছে। সামাজিক যোগাযোগের মাধ্যম, পত্রিকা, কিংবা অন্যান্য প্রতিষ্ঠিত ব্লগ। কিন্তু নিজের ব্লগে নিজে বাংলায় লিখতে পারবো কিনা তা নিয়ে একটু সংশয় ছিল কারিগরি দিকটা নিয়ে। কোয়ার্তো দিয়ে আমার এই ব্লগ সাইট বানানো। তাই কোয়ার্তোর ওয়েবসাইট ঘাঁটতে ঘাঁটতে আজ পেয়ে গেলাম কিভাবে ইউনিকোড দিয়ে লিখা যায়। এখন থেকে মাঝে মধ্যেই এখানে বাংলায় পোষ্ট করবো। দেখা যাক।</p>
+
+
+
+<!-- -->
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1729722112535" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="../../banglablog/welcomepost/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<!-- img(9CEB782EFEE6)[progressive=false, height=150px]:listing:banglablog/welcomepost/index.html -->
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+বাংলা ব্লগে আপনাকে স্বাগতম
+</h5>
+<div class="listing-reading-time card-text text-muted">
+1 min
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1729722699384">
+<a href="../../banglablog/welcomepost/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://mrislambd.github.io/posts/bengalitrial/</guid>
+  <pubDate>Wed, 23 Oct 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://mrislambd.github.io/posts/bengalitrial/ben.svg" medium="image" type="image/svg+xml"/>
+</item>
 <item>
   <title>Data Science &amp; Machine Learning Basics</title>
   <dc:creator>Rafiq Islam</dc:creator>
@@ -108,7 +170,7 @@ This page is my personal repository of most common and useful machine learning a
 <li><a href="../../dsandml/knn/index.html" target="_blank" style="text-decoration:none">K-Nearest Neighbor (KNN) Regression</a></li>
 <li><a href="../../dsandml/decisiontree/index.html" target="_blank" style="text-decoration:none">Decesion Trees Regression</a></li>
 <li><a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Random Forest Regression</a></li>
-<li><a href="../../dsandml/svm/index.html" target="_blank" style="text-decoration:none">Support Vector Machine (SVM)</a></li>
+<li><a href="../../dsandml/svm/index.html" target="_blank" style="text-decoration:none">Support Vector Machine (SVM) Regression</a></li>
 </ul>
 </section>
 </div>
@@ -122,7 +184,9 @@ This page is my personal repository of most common and useful machine learning a
 <ul>
 <li><a href="../../dsandml/logreg/index.html" target="_blank" style="text-decoration:none">Logistic Regression</a></li>
 <li><a href="../../dsandml/naivebayes/index.html" target="_blank" style="text-decoration:none">Naive Bayes</a></li>
-<li><a href="../../dsandml/lda/index.html" target="_blank" style="text-decoration:none">Linear Discriminant Analysis (LDA)</a></li>
+<li><a href="../../dsandml/lda/index.html" target="_blank" style="text-decoration:none">Linear Discriminant Analysis (LDA)</a><br>
+</li>
+<li>Quadratic Discriminant Analysis (QDA)</li>
 </ul>
 </section>
 </div><div class="column" style="width:33%;">
@@ -132,7 +196,7 @@ This page is my personal repository of most common and useful machine learning a
 <li><a href="../../dsandml/knn/index.html" target="_blank" style="text-decoration:none">KNN Classification</a></li>
 <li><a href="../../dsandml/decisiontree/index.html" target="_blank" style="text-decoration:none">Decision Tree Classification</a></li>
 <li><a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Random Forest Classification</a></li>
-<li><a href="../../dsandml/svm/index.html" target="_blank" style="text-decoration:none">Support Vector Machine (SVM)</a></li>
+<li><a href="../../dsandml/svm/index.html" target="_blank" style="text-decoration:none">Support Vector Machine (SVM) Classification</a></li>
 </ul>
 </section>
 </div><div class="column" style="width:33%;">
@@ -140,6 +204,35 @@ This page is my personal repository of most common and useful machine learning a
 <h5 class="anchored" data-anchor-id="multi-class-classification">Multi-Class Classification</h5>
 <ul>
 <li><a href="../../dsandml/multiclass/index.html" target="_blank" style="text-decoration:none">Multi-class Classification</a></li>
+</ul>
+</section>
+</div><div class="column" style="width:33%;">
+<section id="bayesian-or-probabilistic-classification" class="level5">
+<h5 class="anchored" data-anchor-id="bayesian-or-probabilistic-classification">Bayesian or Probabilistic Classification</h5>
+<ul>
+<li><a href="../../dsandml/bayesianclassification/index.html" target="_blank" style="text-decoration:none">What is Bayesian or Probabilistic Classification?</a><br>
+</li>
+<li><a href="../../dsandml/lda/index.html" target="_blank" style="text-decoration:none">Linear Discriminant Analysis (LDA)</a><br>
+</li>
+<li>Quadratic Discriminant Analysis (QDA)<br>
+</li>
+<li>Naive Bayes</li>
+<li>Bayesian Network Classifier (Tree Augmented Naive Bayes (TAN))</li>
+</ul>
+</section>
+</div><div class="column" style="width:33%;">
+<section id="non-probabilistic-classification" class="level5">
+<h5 class="anchored" data-anchor-id="non-probabilistic-classification">Non-probabilistic Classification</h5>
+<ul>
+<li><a href="../../dsandml/svm/index.html" target="_blank" style="text-decoration:none">Support Vector Machine (SVM) Classification</a><br>
+</li>
+<li><a href="../../dsandml/decisiontree/index.html" target="_blank" style="text-decoration:none">Decision Tree Classification</a><br>
+</li>
+<li><a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Random Forest Classification</a><br>
+</li>
+<li><a href="../../dsandml/knn/index.html" target="_blank" style="text-decoration:none">KNN Classification</a><br>
+</li>
+<li>Perceptron</li>
 </ul>
 </section>
 </div>
@@ -472,7 +565,7 @@ This page is my personal repository of most common and useful machine learning a
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729624807258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -497,7 +590,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -522,7 +615,7 @@ Wednesday, July 17, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -619,7 +712,7 @@ Let’s imagine a hypothetical scenario, Walmart Inc.&nbsp;wants to explore thei
 <img src="https://latex.codecogs.com/png.latex?d=%5Csqrt%7B(x_1-x_2)%5E2+(y_1-y_2)%7D"></p>
 <p>Assume that <img src="https://latex.codecogs.com/png.latex?P=(x,y)"> is the coordinate of Walmart. So for a total of <img src="https://latex.codecogs.com/png.latex?n"> such points the total distance <img src="https://latex.codecogs.com/png.latex?D"> from the point <img src="https://latex.codecogs.com/png.latex?P"> is a function of two variable <img src="https://latex.codecogs.com/png.latex?x"> and <img src="https://latex.codecogs.com/png.latex?y"> of the following form</p>
 <p><img src="https://latex.codecogs.com/png.latex?D=f(x,y)=%5Csum_%7Bi=1%7D%5E%7Bn%7D%5Csqrt%7B(x-x_i)%5E2+(y-y_i)%5E2%7D"></p>
-<div id="43cda027" class="cell" data-execution_count="1">
+<div id="f5251106" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -749,7 +842,7 @@ font-style: inherit;">'sgd.png'</span>)</span>
 <p>Next, how do we control the numerical stability of the algorithm? We need to decrease the step size at each iteration which. This is called the <code>rate of decay</code>. We also need a termination factor or <code>tolerance</code> level that determines if we can stop the iteration. Sometimes, for a deep down convex function, the process oscillates back and forth around a range of values. In this case, applying a <code>damping factor</code> increases the chance for a smooth convergence.</p>
 <section id="gradient-descent-gd" class="level3">
 <h3 class="anchored" data-anchor-id="gradient-descent-gd">Gradient Descent (GD)</h3>
-<div id="3df9dc02" class="cell" data-execution_count="2">
+<div id="00c62b1a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -1306,7 +1399,7 @@ font-style: inherit;">'#f4f4f4'</span>)</span>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729624807270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1601">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1331,7 +1424,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729624807258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1356,7 +1449,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1422,7 +1515,7 @@ Stochastic Gradient Descent (SGD).”</span> September 19, 2024. <a href="https:
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1729624807246" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1199">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1729722112767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1212">
 <a href="../../jobandintern/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1444,7 +1537,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726012800000" data-listing-file-modified-sort="1729624807250" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1221">
+<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726012800000" data-listing-file-modified-sort="1729722112767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1221">
 <a href="../../jobandintern/dsa/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1466,7 +1559,7 @@ Wednesday, September 11, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Computational Mathematics,Number Theory" data-listing-date-sort="1723334400000" data-listing-file-modified-sort="1729624807250" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Computational Mathematics,Number Theory" data-listing-date-sort="1723334400000" data-listing-file-modified-sort="1729722112767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
 <a href="../../jobandintern/montecarlo1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1488,7 +1581,7 @@ Sunday, August 11, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Probability,Statistics" data-listing-date-sort="1724284800000" data-listing-file-modified-sort="1729624807250" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="415">
+<div class="g-col-1" data-index="3" data-categories="Probability,Statistics" data-listing-date-sort="1724284800000" data-listing-file-modified-sort="1729722112767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="415">
 <a href="../../jobandintern/probability/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1510,7 +1603,7 @@ Thursday, August 22, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Data Science,Machine Learning,Artificial Intelligence,Statistics" data-listing-date-sort="1725494400000" data-listing-file-modified-sort="1729624807250" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
+<div class="g-col-1" data-index="4" data-categories="Data Science,Machine Learning,Artificial Intelligence,Statistics" data-listing-date-sort="1725494400000" data-listing-file-modified-sort="1729722112767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
 <a href="../../jobandintern/statisticaltalk/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1532,7 +1625,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1729625355581">
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1729722670151">
 <a href="../../jobandintern/bayesianinference/index-listing.json" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1545,7 +1638,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1729625355725">
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1729722670307">
 <a href="../../jobandintern/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1558,7 +1651,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1729624807246">
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1729722112767">
 <a href="../../jobandintern/bayesianinference/pancake.jpeg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1571,7 +1664,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1729624807246">
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1729722112767">
 <a href="../../jobandintern/bayesianinference/ven.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1584,7 +1677,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1729624807250">
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1729722112767">
 <a href="../../jobandintern/dsa/dsa.jpeg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1597,7 +1690,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1729625376637">
+<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1729722696832">
 <a href="../../jobandintern/dsa/index-listing.json" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1610,7 +1703,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1729625376841">
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1729722697020">
 <a href="../../jobandintern/dsa/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1623,7 +1716,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1729624807250">
+<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1729722112767">
 <a href="../../jobandintern/dsa/ll1.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1636,7 +1729,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1729625372437">
+<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1729722692692">
 <a href="../../jobandintern/montecarlo1/index-listing.json" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1649,7 +1742,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1729625372645">
+<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1729722692884">
 <a href="../../jobandintern/montecarlo1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1662,7 +1755,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="15" data-listing-file-modified-sort="1729625360737">
+<div class="g-col-1" data-index="15" data-listing-file-modified-sort="1729722681055">
 <a href="../../jobandintern/montecarlo1/index_files/figure-html/unnamed-chunk-3-1.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1675,7 +1768,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1729624807250">
+<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1729722112767">
 <a href="../../jobandintern/montecarlo1/mc1.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1688,7 +1781,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1729624807250">
+<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1729722112767">
 <a href="../../jobandintern/montecarlo1/pi.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1701,7 +1794,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="18" data-listing-file-modified-sort="1729625373181">
+<div class="g-col-1" data-index="18" data-listing-file-modified-sort="1729722693432">
 <a href="../../jobandintern/probability/index-listing.json" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1714,7 +1807,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="19" data-listing-file-modified-sort="1729625373313">
+<div class="g-col-1" data-index="19" data-listing-file-modified-sort="1729722693568">
 <a href="../../jobandintern/probability/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1727,7 +1820,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="20" data-listing-file-modified-sort="1729624807250">
+<div class="g-col-1" data-index="20" data-listing-file-modified-sort="1729722112767">
 <a href="../../jobandintern/probability/prob.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1740,7 +1833,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="21" data-listing-file-modified-sort="1729625356333">
+<div class="g-col-1" data-index="21" data-listing-file-modified-sort="1729722670939">
 <a href="../../jobandintern/statisticaltalk/index-listing.json" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1753,7 +1846,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="22" data-listing-file-modified-sort="1729625356485">
+<div class="g-col-1" data-index="22" data-listing-file-modified-sort="1729722671083">
 <a href="../../jobandintern/statisticaltalk/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1766,7 +1859,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="23" data-listing-file-modified-sort="1729624807250">
+<div class="g-col-1" data-index="23" data-listing-file-modified-sort="1729722112771">
 <a href="../../jobandintern/statisticaltalk/stat.jpeg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1806,7 +1899,7 @@ No matching items
 If you want to share any blog posts on social media, you can have a share button at the bottom of each post so that the reader can easily share this on their preferred social media such as Facebook, LinkedIn, and X. Here I am showing only three but can be added more.
 </p>
 <p><a href="../../posts/socialshare/ss.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://mrislambd.github.io/posts/socialshare/ss.jpg" class="preview-class img-fluid"></a></p>
-<div id="a3fc07a4" class="cell" data-execution_count="1">
+<div id="b0606966" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Library you need</span></span>
@@ -2048,7 +2141,7 @@ data-layout="button_count" data-size="small"&gt;&lt;a target="_blank"
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729624807270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1601">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2073,7 +2166,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729624807258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2098,7 +2191,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2187,7 +2280,7 @@ July 17, 2024. <a href="https://mrislambd.github.io/posts/socialshare/">https://
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729624807270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1601">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2212,7 +2305,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729624807258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2237,7 +2330,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2513,7 +2606,7 @@ font-style: inherit;">0.001841</span> seconds</span></code></pre></div>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729624807270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1601">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2538,7 +2631,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729624807258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2563,7 +2656,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3446,7 +3539,7 @@ c
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729624807270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1601">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3471,7 +3564,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729624807258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3496,7 +3589,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3667,7 +3760,7 @@ So, <img src="https://latex.codecogs.com/png.latex?X(12)%5Capprox%204945"></p>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729624807270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1601">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3692,7 +3785,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729624807258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3717,7 +3810,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3868,7 +3961,7 @@ Hence, <img src="https://latex.codecogs.com/png.latex?%5C%7Bv,(%5Calpha-%5Clambd
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729624807270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1601">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3893,7 +3986,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3918,7 +4011,7 @@ Wednesday, July 17, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -4267,7 +4360,7 @@ Now,
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729624807270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1601">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -4292,7 +4385,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729624807258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -4317,7 +4410,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -4559,7 +4652,7 @@ and
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729624807270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1601">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -4584,7 +4677,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729624807258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -4609,7 +4702,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729624807286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">

@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Rafiq Islam">
-<meta name="dcterms.date" content="2024-10-22">
+<meta name="dcterms.date" content="2024-10-23">
 
-<title>Support Vector Machine (SVM) Algorithm – Mohammad Rafiqul Islam</title>
+<title>বাংলা ভাষায় আমার লেখা || My Blog in Benglali Language – Mohammad Rafiqul Islam</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,9 +116,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     const options = {
       valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 18,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -179,25 +177,27 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Support Vector Machine (SVM) Algorithm – Mohammad Rafiqul Islam">
+<meta property="og:title" content="বাংলা ভাষায় আমার লেখা || My Blog in Benglali Language – Mohammad Rafiqul Islam">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://mrislambd.github.io/posts/bengalitrial/ben.svg">
 <meta property="og:site_name" content="Mohammad Rafiqul Islam">
-<meta name="twitter:title" content="Support Vector Machine (SVM) Algorithm – Mohammad Rafiqul Islam">
+<meta name="twitter:title" content="বাংলা ভাষায় আমার লেখা || My Blog in Benglali Language – Mohammad Rafiqul Islam">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mrislambd.github.io/posts/bengalitrial/ben.svg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../dsandml/svm/index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../posts/bengalitrial/index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../_assets/images/fsu-logo.png" alt="Florida State University" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../dsandml/svm/index.html">
+    <a class="navbar-brand" href="../../posts/bengalitrial/index.html">
     <span class="navbar-title">Mohammad Rafiqul Islam</span>
     </a>
   </div>
@@ -254,39 +254,24 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Support Vector Machine (SVM) Algorithm</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-  <div class="quarto-categories">
-    <div class="quarto-category">Statistics</div>
-    <div class="quarto-category">Data Science</div>
-    <div class="quarto-category">Data Engineering</div>
-    <div class="quarto-category">Machine Learning</div>
-    <div class="quarto-category">Artificial Intelligence</div>
-  </div>
-  </div>
+<div class="quarto-title-block"><div><h1 class="title">বাংলা ভাষায় আমার লেখা || My Blog in Benglali Language</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Rafiq Islam </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 22, 2024</p>
+      <p class="date">October 23, 2024</p>
     </div>
   </div>
   
@@ -298,82 +283,45 @@ window.Quarto = {
 </header>
 
 
-<p>Draft</p>
+<section id="আপনক-সবগতম" class="level2">
+<h2 class="anchored" data-anchor-id="আপনক-সবগতম">আপনাকে স্বাগতম</h2>
+<p>“বাংলায় ব্লগিং করতে পারলে ভালই হতো” এমন ভাবনা থেকেই ঘাটাঘটি শুরু করলাম কিভাবে নিজের ব্লগে বাংলায় লিখতে পারি। বাংলায় মনের ভাব প্রকাশের অসংখ্য মাধ্যম রয়েছে। সামাজিক যোগাযোগের মাধ্যম, পত্রিকা, কিংবা অন্যান্য প্রতিষ্ঠিত ব্লগ। কিন্তু নিজের ব্লগে নিজে বাংলায় লিখতে পারবো কিনা তা নিয়ে একটু সংশয় ছিল কারিগরি দিকটা নিয়ে। কোয়ার্তো দিয়ে আমার এই ব্লগ সাইট বানানো। তাই কোয়ার্তোর ওয়েবসাইট ঘাঁটতে ঘাঁটতে আজ পেয়ে গেলাম কিভাবে ইউনিকোড দিয়ে লিখা যায়। এখন থেকে মাঝে মধ্যেই এখানে বাংলায় পোষ্ট করবো। দেখা যাক।</p>
 
 
 
 <!-- -->
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1729722112751" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
-<a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1729722112535" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="../../banglablog/welcomepost/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="../lda/lda.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Classification using Naive Bayes algorithm
+বাংলা ব্লগে আপনাকে স্বাগতম
 </h5>
 <div class="listing-reading-time card-text text-muted">
-11 min
+1 min
 </div>
-<div class="card-attribution card-text-small justify">
+<div class="card-attribution card-text-small start">
 <div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Thursday, October 10, 2024
+
 </div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1729722112747" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5383">
-<a href="../../dsandml/lda/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1729722699384">
+<a href="../../banglablog/welcomepost/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../dsandml/lda/lda.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
 <div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Classification: Linear Discriminant Analysis (LDA)
-</h5>
-<div class="listing-reading-time card-text text-muted">
-27 min
-</div>
-<div class="card-attribution card-text-small justify">
+<div class="card-attribution card-text-small start">
 <div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Thursday, October 17, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729722112747" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
-<a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../dsandml/logreg/logreg.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Classification: Logistic Regression - A Comprehensive Guide with Mathematical Derivation and Python Code
-</h5>
-<div class="listing-reading-time card-text text-muted">
-9 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Monday, October 7, 2024
+
 </div>
 </div>
 </div>
@@ -384,17 +332,7 @@ Monday, October 7, 2024
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
-  author = {Islam, Rafiq},
-  title = {Support {Vector} {Machine} {(SVM)} {Algorithm}},
-  date = {2024-10-22},
-  url = {https://mrislambd.github.io/dsandml/svm/},
-  langid = {en}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Islam, Rafiq. 2024. <span>“Support Vector Machine (SVM)
-Algorithm.”</span> October 22, 2024. <a href="https://mrislambd.github.io/dsandml/svm/">https://mrislambd.github.io/dsandml/svm/</a>.
-</div></div></section></div></main> <!-- /main -->
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1011,23 +949,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Support Vector Machine (SVM) Algorithm"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-10-22"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Rafiq Islam</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Statistics, Data Science, Data Engineering, Machine Learning, Artificial Intelligence]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span><span class="co"> true</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">search:</span><span class="co"> true</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">lightbox:</span><span class="co"> true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co"> </span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: "/../../dsandml"</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    max-items: 3</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    categories: false</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: full</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    fields: [image, date, title, author, reading-time]</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span>  </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> বাংলা ভাষায় আমার লেখা || My Blog in Benglali Language </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-10-23</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">mainfont:</span><span class="co"> Kalpurush</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co"> </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: "/../../banglablog"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    max-items: 3</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    categories: false</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: full</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    fields: [image, date, title, author, reading-time]</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ben.svg</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span>   </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## আপনাকে স্বাগতম   </span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Draft</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>"বাংলায় ব্লগিং করতে পারলে ভালই হতো" এমন ভাবনা থেকেই ঘাটাঘটি শুরু করলাম কিভাবে নিজের ব্লগে বাংলায় লিখতে পারি। বাংলায় মনের ভাব প্রকাশের অসংখ্য মাধ্যম রয়েছে। সামাজিক যোগাযোগের মাধ্যম, পত্রিকা, কিংবা অন্যান্য প্রতিষ্ঠিত ব্লগ। কিন্তু নিজের ব্লগে নিজে বাংলায় লিখতে পারবো কিনা তা নিয়ে একটু সংশয় ছিল কারিগরি দিকটা নিয়ে। কোয়ার্তো দিয়ে আমার এই ব্লগ সাইট বানানো। তাই কোয়ার্তোর ওয়েবসাইট ঘাঁটতে ঘাঁটতে আজ পেয়ে গেলাম কিভাবে ইউনিকোড দিয়ে লিখা যায়। এখন থেকে মাঝে মধ্যেই এখানে বাংলায় পোষ্ট করবো। দেখা যাক। </span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
