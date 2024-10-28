@@ -28,8 +28,14 @@ website:
         text: Portfolio
       - href: cv.qmd
         text: CV
-      - href: blog.qmd
-        text: Blog
+      - text: Blog
+        menu: 
+          - text: "Data Science and Machine Learning"
+            href: posts/machinelearning/index.qmd
+          - text: "Job and Intern"
+            href: posts/jobandintern/index.qmd
+          - text: "All Other Blogs"
+            href: blog.qmd
       - icon: linkedin
         href: https://www.linkedin.com/in/mohammad-rafiqul-islam/
         target: _blank
@@ -93,6 +99,7 @@ format:
     minimal: false
     anchor-sections: true
     smooth-scroll: true
+    toc-location: left
     
     
 

@@ -34,7 +34,7 @@
 <div class="g-col-1" data-index="0" data-listing-file-modified-sort="1729719501250" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <a href="../../banglablog/welcomepost/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<!-- img(9CEB782EFEE6)[progressive=false, height=150px]:listing:banglablog/welcomepost/index.html -->
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 বাংলা ব্লগে আপনাকে স্বাগতম
@@ -42,19 +42,6 @@
 <div class="listing-reading-time card-text text-muted">
 1 min
 </div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1729721543589">
-<a href="../../banglablog/welcomepost/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
 <div class="card-attribution card-text-small start">
 <div class="listing-author">
 
@@ -88,8 +75,8 @@ No matching items
 <p style="text-align: justify">
 This page is my personal repository of most common and useful machine learning algorithms using Python and other data science tricks and tips.
 </p>
-<section id="texttextcolor782f40data-science" class="level2">
-<h2 class="anchored" data-anchor-id="texttextcolor782f40data-science"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7B%5Ctextcolor%7B#782F40%7D%7BData%20Science%7D%7D"></strong></h2>
+<section id="textdata-science" class="level2">
+<h2 class="anchored" data-anchor-id="textdata-science"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BData%20Science%7D"></strong></h2>
 <p>Data science involves extracting knowledge from structured and unstructured data. It combines principle from statistics, machine learning, data analysis, and domain knoledge to understand and interpret the data</p>
 <section id="data-collection-accuisition" class="level4">
 <h4 class="anchored" data-anchor-id="data-collection-accuisition">Data Collection &amp; Accuisition</h4>
@@ -148,8 +135,8 @@ This page is my personal repository of most common and useful machine learning a
 </ul>
 </section>
 </section>
-<section id="texttextcolor782f40machine-learning-algorithms" class="level2">
-<h2 class="anchored" data-anchor-id="texttextcolor782f40machine-learning-algorithms"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7B%5Ctextcolor%7B#782F40%7D%7BMachine%20Learning%20Algorithms%7D%7D"></strong></h2>
+<section id="textmachine-learning-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="textmachine-learning-algorithms"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BMachine%20Learning%20Algorithms%7D"></strong></h2>
 <section id="textsupervised-learning" class="level3">
 <h3 class="anchored" data-anchor-id="textsupervised-learning"><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSupervised%20Learning%7D"></h3>
 <p>(Training with labeled data: input-output pairs)</p>
@@ -308,8 +295,8 @@ This page is my personal repository of most common and useful machine learning a
 </ul>
 </section>
 </section>
-<section id="texttextcolor782f40deep-learnings" class="level2">
-<h2 class="anchored" data-anchor-id="texttextcolor782f40deep-learnings"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7B%5Ctextcolor%7B#782F40%7D%7BDeep%20Learnings%7D%7D"></strong></h2>
+<section id="textdeep-learnings" class="level2">
+<h2 class="anchored" data-anchor-id="textdeep-learnings"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BDeep%20Learnings%7D"></strong></h2>
 <ul>
 <li><a href="../../dsandml/pytorch/index.html" target="_blank" style="text-decoration:none">PyTorch</a><br>
 </li>
@@ -324,8 +311,8 @@ This page is my personal repository of most common and useful machine learning a
 <li>Generative Adversarial Networks (GAN)</li>
 </ul>
 </section>
-<section id="texttextcolor782f40model-evaluation-and-fine-tuning" class="level2">
-<h2 class="anchored" data-anchor-id="texttextcolor782f40model-evaluation-and-fine-tuning"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7B%5Ctextcolor%7B#782F40%7D%7BModel%20Evaluation%20and%20Fine%20Tuning%7D%7D"></strong></h2>
+<section id="textmodel-evaluation-and-fine-tuning" class="level2">
+<h2 class="anchored" data-anchor-id="textmodel-evaluation-and-fine-tuning"><strong><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BModel%20Evaluation%20and%20Fine%20Tuning%7D"></strong></h2>
 <section id="model-evaluation-metrics" class="level4">
 <h4 class="anchored" data-anchor-id="model-evaluation-metrics">Model Evaluation Metrics</h4>
 <ul>
@@ -1537,7 +1524,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1726869987216" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1221">
+<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1729793052523" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1232">
 <a href="../../jobandintern/dsa/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">

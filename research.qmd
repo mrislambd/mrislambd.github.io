@@ -14,7 +14,8 @@ listing:
 ## Current Research  
 
 - Higher order Langevin dynamics: General $n$th order Langevin dynamics  
-- Exact First-Order Algorightm (EXTRA) for decentralized stochastic gradient Langevin dynamics  
+- Generalized Exact First-Order Algorightm (EXTRA) stochastic gradient Langevin dynamics (EXTRA SGLD).  
+- Reflected Underdamped Langevin Monte Carlo dynamics  
   
 
 

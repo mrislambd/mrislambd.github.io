@@ -14,6 +14,9 @@ listing:
     categories: false
     date-format: full
     fields: [image, date, title, author, reading-time]
+format: 
+    html: default
+    ipynb: default
 ---   
 
 <p align="center">
@@ -21,6 +24,7 @@ listing:
 </p>
 
 ```{python}
+#| code-fold: true
 import time
 
 def time_required(func):
@@ -64,7 +68,7 @@ def print_linklist(head):
 ### 1. Reverse a linked list: Type I  
 
 <p align="center">
-  <img src="/posts/dsa/ll1.png" alt="Post under construction" width="450" height="350"/>
+  <img src="/jobandintern/dsa/ll1.png" alt="Post under construction" width="450" height="350"/>
 </p>
 
 ```{python}
@@ -241,7 +245,9 @@ def knearest(points: list[list[int]], k: int) -> list[list[int]]:
 pts = [[2,-1],[3,2],[4,1],[-1,-1],[-2,2]]
 k = 3
 print(knearest(pts,k))
-```
+```  
+
+# [Internship and Full Time Job Preparation Review](/posts/jobandintern/index.qmd){style="text-decoration:none"}
 
 **Share on**  
 

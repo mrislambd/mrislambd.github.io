@@ -23,7 +23,8 @@ listing:
     This page is my personal repository of most common and useful machine learning algorithms using Python and other data science tricks and tips.
 </p>  
 
-## **$\text{\textcolor{#782F40}{Data Science}}$**  
+
+## **$\text{Data Science}$**  
 Data science involves extracting knowledge from structured and unstructured data. It combines principle from statistics, machine learning, data analysis, and domain knoledge to understand and interpret the data
 
 #### Data Collection \& Accuisition  
@@ -60,7 +61,7 @@ Data science involves extracting knowledge from structured and unstructured data
 - Distributed Data Storage  (e.g., HDFS, NoSQL)
 - Data PipeLines, ETL (Extract, Transform, Load)
 
-## **$\text{\textcolor{#782F40}{Machine Learning Algorithms}}$**  
+## **$\text{Machine Learning Algorithms}$**  
 
 ### $\text{Supervised Learning}$  
 (Training with labeled data: input-output pairs)  
@@ -182,7 +183,7 @@ Data science involves extracting knowledge from structured and unstructured data
 - Deep Q-Networks (DQN)  
 - Policy Gradient Method  
 
-## **$\text{\textcolor{#782F40}{Deep Learnings}}$**  
+## **$\text{Deep Learnings}$**  
 
 - [PyTorch](/dsandml/pytorch/index.qmd){target="_blank" style="text-decoration:none"}  
 - Artificial Neural Networks (ANN)  
@@ -191,7 +192,7 @@ Data science involves extracting knowledge from structured and unstructured data
 - Long Short-Term Memory (LSTM)  
 - Generative Adversarial Networks (GAN)  
 
-## **$\text{\textcolor{#782F40}{Model Evaluation and Fine Tuning}}$**  
+## **$\text{Model Evaluation and Fine Tuning}$**  
 
 #### Model Evaluation Metrics  
 

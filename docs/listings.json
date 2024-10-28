@@ -19,6 +19,7 @@
   {
     "listing": "/dsandml/multiclass/index.html",
     "items": [
+      "/dsandml/bayesianclassification/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/lda/index.html",
       "/dsandml/logreg/index.html",
@@ -33,7 +34,6 @@
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
-      "/dsandml/bayesianclassification/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/svm/index.html",
@@ -44,6 +44,7 @@
   {
     "listing": "/dsandml/dataengineering/index.html",
     "items": [
+      "/dsandml/bayesianclassification/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/lda/index.html",
       "/dsandml/logreg/index.html",
@@ -58,7 +59,6 @@
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
-      "/dsandml/bayesianclassification/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/svm/index.html",
@@ -69,6 +69,7 @@
   {
     "listing": "/dsandml/multiplelinreg/index.html",
     "items": [
+      "/dsandml/bayesianclassification/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/lda/index.html",
       "/dsandml/logreg/index.html",
@@ -83,7 +84,6 @@
       "/dsandml/biasvariance/index.html",
       "/dsandml/regularization/index.html",
       "/dsandml/polyreg/index.html",
-      "/dsandml/bayesianclassification/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/svm/index.html",
@@ -169,6 +169,7 @@
   {
     "listing": "/dsandml/regularization/index.html",
     "items": [
+      "/dsandml/bayesianclassification/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/lda/index.html",
       "/dsandml/logreg/index.html",
@@ -183,7 +184,6 @@
       "/dsandml/biasvariance/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
-      "/dsandml/bayesianclassification/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/svm/index.html",
@@ -194,6 +194,7 @@
   {
     "listing": "/dsandml/classificationmetrics/index.html",
     "items": [
+      "/dsandml/bayesianclassification/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/lda/index.html",
       "/dsandml/logreg/index.html",
@@ -208,7 +209,6 @@
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
-      "/dsandml/bayesianclassification/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/svm/index.html",
@@ -219,6 +219,7 @@
   {
     "listing": "/dsandml/datacollection/index.html",
     "items": [
+      "/dsandml/bayesianclassification/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/lda/index.html",
       "/dsandml/logreg/index.html",
@@ -233,7 +234,6 @@
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
-      "/dsandml/bayesianclassification/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/svm/index.html",
@@ -244,6 +244,7 @@
   {
     "listing": "/dsandml/simplelinreg/index.html",
     "items": [
+      "/dsandml/bayesianclassification/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/lda/index.html",
       "/dsandml/logreg/index.html",
@@ -259,7 +260,6 @@
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
-      "/dsandml/bayesianclassification/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/svm/index.html",
       "/dsandml/decisiontree/index.html",
@@ -344,6 +344,7 @@
   {
     "listing": "/dsandml/lda/index.html",
     "items": [
+      "/dsandml/bayesianclassification/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/logreg/index.html",
       "/dsandml/multiclass/index.html",
@@ -358,7 +359,6 @@
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
-      "/dsandml/bayesianclassification/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/svm/index.html",
@@ -461,11 +461,26 @@
   {
     "listing": "/dsandml/bayesianclassification/index.html",
     "items": [
-      "/jobandintern/bayesianinference/index.html",
-      "/jobandintern/dsa/index.html",
-      "/jobandintern/montecarlo1/index.html",
-      "/jobandintern/probability/index.html",
-      "/jobandintern/statisticaltalk/index.html"
+      "/dsandml/naivebayes/index.html",
+      "/dsandml/lda/index.html",
+      "/dsandml/logreg/index.html",
+      "/dsandml/multiclass/index.html",
+      "/dsandml/datacollection/index.html",
+      "/dsandml/pca/index.html",
+      "/dsandml/gradientboosting/index.html",
+      "/dsandml/randomforest/index.html",
+      "/dsandml/dataengineering/index.html",
+      "/dsandml/knn/index.html",
+      "/dsandml/classificationmetrics/index.html",
+      "/dsandml/biasvariance/index.html",
+      "/dsandml/regularization/index.html",
+      "/dsandml/multiplelinreg/index.html",
+      "/dsandml/polyreg/index.html",
+      "/dsandml/pytorch/index.html",
+      "/dsandml/simplelinreg/index.html",
+      "/dsandml/svm/index.html",
+      "/dsandml/decisiontree/index.html",
+      "/dsandml/kmeans/index.html"
     ]
   },
   {
@@ -507,6 +522,73 @@
       "/posts/someproofs/index.html",
       "/posts/welcome/index.html",
       "/posts/bengalitrial/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/bengalitrial/index.html",
+    "items": [
+      "/banglablog/welcomepost/index.html"
+    ]
+  },
+  {
+    "listing": "/research.html",
+    "items": [
+      "/talks/2023-11-20-candi.html",
+      "/talks/2023-10-05-st-op.html",
+      "/talks/2020-04-26-project.html"
+    ]
+  },
+  {
+    "listing": "/portfolio.html",
+    "items": [
+      "/portfolio/dsp/nlp-sales/index.html",
+      "/portfolio/dsp/medicalcost/index.html",
+      "/portfolio/dsp/dp-nlp/index.html",
+      "/portfolio/spd/webapp/index.html",
+      "/portfolio/spd/desgld/index.html",
+      "/teaching/sp24.html",
+      "/teaching/fall23.html",
+      "/teaching/sp23.html",
+      "/teaching/fall22.html",
+      "/teaching/fall21.html",
+      "/teaching/f18-f21.html"
+    ]
+  },
+  {
+    "listing": "/posts/jobandintern/index.html",
+    "items": [
+      "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/dsa/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/probability/index.html",
+      "/jobandintern/statisticaltalk/index.html"
+    ]
+  },
+  {
+    "listing": "/jobandintern/statisticaltalk/index.html",
+    "items": [
+      "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/dsa/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/probability/index.html"
+    ]
+  },
+  {
+    "listing": "/jobandintern/dsa/index.html",
+    "items": [
+      "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/probability/index.html",
+      "/jobandintern/statisticaltalk/index.html"
+    ]
+  },
+  {
+    "listing": "/jobandintern/bayesianinference/index.html",
+    "items": [
+      "/jobandintern/dsa/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/probability/index.html",
+      "/jobandintern/statisticaltalk/index.html"
     ]
   }
 ]
