@@ -9,7 +9,7 @@
 <meta name="author" content="Rafiq Islam">
 <meta name="dcterms.date" content="2024-10-22">
 
-<title>Probabilistic Classification - Bayesian Classification – Mohammad Rafiqul Islam</title>
+<title>Bayesian Probabilistic Models for Classification – Mohammad Rafiqul Islam</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,6 +79,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -117,8 +122,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     const options = {
       valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+      page: 18,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -178,13 +184,21 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Probabilistic Classification - Bayesian Classification – Mohammad Rafiqul Islam">
+<meta property="og:title" content="Bayesian Probabilistic Models for Classification – Mohammad Rafiqul Islam">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://mrislambd.github.io/dsandml/bayesianclassification/Bayeslearn.png">
 <meta property="og:site_name" content="Mohammad Rafiqul Islam">
-<meta name="twitter:title" content="Probabilistic Classification - Bayesian Classification – Mohammad Rafiqul Islam">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:height" content="480">
+<meta property="og:image:width" content="672">
+<meta name="twitter:title" content="Bayesian Probabilistic Models for Classification – Mohammad Rafiqul Islam">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://mrislambd.github.io/dsandml/bayesianclassification/Bayeslearn.png">
+<meta name="twitter:image-height" content="480">
+<meta name="twitter:image-width" content="672">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -220,10 +234,25 @@ window.Quarto = {
     <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
-<span class="menu-text">Blog</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-blog" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Blog</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-blog">    
+        <li>
+    <a class="dropdown-item" href="../../posts/machinelearning/index.html">
+ <span class="dropdown-text">Data Science and Machine Learning</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../posts/jobandintern/index.html">
+ <span class="dropdown-text">Job and Intern</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog.html">
+ <span class="dropdown-text">All Other Blogs</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/mohammad-rafiqul-islam/" target="_blank"> <i class="bi bi-linkedin" role="img">
 </i> 
@@ -250,16 +279,50 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#bayess-theorem" id="toc-bayess-theorem" class="nav-link" data-scroll-target="#bayess-theorem">Bayes’s Theorem</a>
+  <ul>
+  <li><a href="#for-two-events-or-random-variables" id="toc-for-two-events-or-random-variables" class="nav-link" data-scroll-target="#for-two-events-or-random-variables">For Two Events or Random Variables</a></li>
+  <li><a href="#generalization-of-bayess-theorem" id="toc-generalization-of-bayess-theorem" class="nav-link" data-scroll-target="#generalization-of-bayess-theorem">Generalization of Bayes’s Theorem</a></li>
+  </ul></li>
+  <li><a href="#probabilistic-models" id="toc-probabilistic-models" class="nav-link" data-scroll-target="#probabilistic-models">Probabilistic Models</a>
+  <ul>
+  <li><a href="#linear-discriminant-analysis-lda" id="toc-linear-discriminant-analysis-lda" class="nav-link" data-scroll-target="#linear-discriminant-analysis-lda">Linear Discriminant Analysis (LDA)</a>
+  <ul class="collapse">
+  <li><a href="#gaussian-assumption-in-lda" id="toc-gaussian-assumption-in-lda" class="nav-link" data-scroll-target="#gaussian-assumption-in-lda">Gaussian Assumption in LDA</a></li>
+  <li><a href="#log-likelihood-ratio" id="toc-log-likelihood-ratio" class="nav-link" data-scroll-target="#log-likelihood-ratio">Log Likelihood Ratio</a></li>
+  <li><a href="#fishers-discriminant-ratio" id="toc-fishers-discriminant-ratio" class="nav-link" data-scroll-target="#fishers-discriminant-ratio">Fisher’s Discriminant Ratio</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  <li><a href="#quadratic-discriminant-analysis-qda" id="toc-quadratic-discriminant-analysis-qda" class="nav-link" data-scroll-target="#quadratic-discriminant-analysis-qda">Quadratic Discriminant Analysis (QDA)</a>
+  <ul class="collapse">
+  <li><a href="#discriminant-function-for-qda" id="toc-discriminant-function-for-qda" class="nav-link" data-scroll-target="#discriminant-function-for-qda">Discriminant Function for QDA</a></li>
+  <li><a href="#likelihood-of-mathbfx-in-class-c_k" id="toc-likelihood-of-mathbfx-in-class-c_k" class="nav-link" data-scroll-target="#likelihood-of-mathbfx-in-class-c_k">Likelihood of <span class="math inline">\(\mathbf{x}\)</span> in Class <span class="math inline">\(C_k\)</span></a></li>
+  <li><a href="#log-of-the-posterior-quadratic-discriminant" id="toc-log-of-the-posterior-quadratic-discriminant" class="nav-link" data-scroll-target="#log-of-the-posterior-quadratic-discriminant">Log of the Posterior (Quadratic Discriminant)</a></li>
+  <li><a href="#expanding-the-quadratic-term" id="toc-expanding-the-quadratic-term" class="nav-link" data-scroll-target="#expanding-the-quadratic-term">Expanding the Quadratic Term</a></li>
+  <li><a href="#final-form-of-the-qda-discriminant-function" id="toc-final-form-of-the-qda-discriminant-function" class="nav-link" data-scroll-target="#final-form-of-the-qda-discriminant-function">Final Form of the QDA Discriminant Function</a></li>
+  <li><a href="#key-points-in-qda" id="toc-key-points-in-qda" class="nav-link" data-scroll-target="#key-points-in-qda">Key Points in QDA</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.ipynb" download="index.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li><li><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="index.epub"><i class="bi bi-file"></i>ePub</a></li><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(96)</span></div><div class="category" data-category="Algorithms">Algorithms <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Artificial Intelligence">Artificial Intelligence <span class="quarto-category-count">(19)</span></div><div class="category" data-category="Data Engineering">Data Engineering <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Programming">Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Probabilistic Classification - Bayesian Classification</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Bayesian Probabilistic Models for Classification</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
   <div class="quarto-categories">
     <div class="quarto-category">Machine Learning</div>
     <div class="quarto-category">Data Science</div>
@@ -295,83 +358,408 @@ window.Quarto = {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<div style="text-align: justify;">
+<p>Bayesian inference is a powerful statistical method that applies the principles of Bayes’s theorem to update the probability of a hypothesis as more evidence or information becomes available. It is widely used in various fields including machine learning, to make predictions and decisions under uncertainty.</p>
+<p>Bayes’s theorem is based on the definition of conditional probability. For two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(\mathbb{P}(B) \neq 0\)</span>, we define the conditional probability of occurring <span class="math inline">\(A\)</span> given that <span class="math inline">\(B\)</span> has already occurred.</p>
+</div>
+<div id="50f8c2d9" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-2-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/cell-2-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="511" height="389"></a></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 384x288 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+<p><span class="math inline">\(\mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}\)</span></p>
+<p>Similarly, the conditional probability of occuring <span class="math inline">\(B\)</span> given that <span class="math inline">\(A\)</span> has already occured with <span class="math inline">\(\mathbb{P}(A) \ne 0\)</span> is<br>
+<span class="math display">\[
+\mathbb{P}(B|A)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)}
+\]</span></p>
+<p>From this equation, we can derive that the joint probability of <span class="math inline">\(A\cap B\)</span> is <span class="math display">\[
+\mathbb{P}(A\cap B) = \mathbb{P}(B | A) \mathbb{P} (A) = \mathbb{P}(A | B) \mathbb{P} (B)
+\]</span></p>
+</section>
+<section id="bayess-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="bayess-theorem">Bayes’s Theorem</h2>
+<section id="for-two-events-or-random-variables" class="level3">
+<h3 class="anchored" data-anchor-id="for-two-events-or-random-variables">For Two Events or Random Variables</h3>
+<p>Bayes’s theorem is based on these conditional probabilities. It states that the likelihood of occuring the event <span class="math inline">\(A\)</span> given that the event <span class="math inline">\(B\)</span> has occured is given as</p>
+<p><span class="math display">\[
+\mathbb{P}(A | B) = \frac{\mathbb{P}(B | A)\mathbb{P}(A)}{\mathbb{P}(B)} = \frac{\mathbb{P}(B | A)\mathbb{P}(A)}{\mathbb{P}(B\cap A)+\mathbb{P}(B\cap A^c)} = \frac{\mathbb{P}(B | A)\mathbb{P}(A)}{\mathbb{P}(B | A)\mathbb{P}(A)+\mathbb{P}(A | B)\mathbb{P}(B)}
+\]</span></p>
+<p>where, in Bayesin terminology,</p>
+<ul>
+<li><span class="math inline">\(\mathbb{P}(A|B)\)</span> is called <em><span style="color: red">posterior probability</span></em> of <span class="math inline">\(A\)</span> given the event <span class="math inline">\(B\)</span> or simply, <em><span style="color: red">posterior distribution.</span></em><br>
+</li>
+<li><span class="math inline">\(\mathbb{P}(B|A)\)</span> is the likelihood: the probability of evidence <span class="math inline">\(B\)</span> given that <span class="math inline">\(A\)</span> is true.<br>
+</li>
+<li><span class="math inline">\(\mathbb{P}(A)\)</span> or <span class="math inline">\(\mathbb{P}(B)\)</span> are the probabilities of occuring <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> respectively, without any dependence on each other.<br>
+</li>
+<li><span class="math inline">\(\mathbb{P}(A)\)</span> is called the <em>prior</em> probability or prior distribution and <span class="math inline">\(\mathbb{P}(B)\)</span> is called the marginal likelihood or marginal probabilities.</li>
+</ul>
+<p>For two continuous random variable <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the conditional probability density function of <span class="math inline">\(X\)</span> given the occurence of the value <span class="math inline">\(y\)</span> of <span class="math inline">\(Y\)</span> can be given as</p>
+<p><span class="math display">\[
+f_{X|Y} (x | y) =\frac{f_{X,Y}(x,y)}{f_Y(y)}
+\]</span></p>
+<p>or the otherway around,<br>
+<span class="math display">\[
+f_{Y|X} (y | x) =\frac{f_{X,Y}(x,y)}{f_X(x)}
+\]</span></p>
+<p>Therefore, the continuous version of Bayes’s theorem is given as follows</p>
+<p><span class="math display">\[
+f_{Y|X}(y) = \frac{f_{X|Y}(x)f_Y(y)}{f_X(x)}
+\]</span></p>
+</section>
+<section id="generalization-of-bayess-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="generalization-of-bayess-theorem">Generalization of Bayes’s Theorem</h3>
+<p>For <span class="math inline">\(n\)</span> disjoint set of discrete events <span class="math inline">\(B_1,B_2\dots, B_n\)</span> where <span class="math inline">\(\Omega = \cup_{i}^{n}B_i\)</span> and for any event <span class="math inline">\(A\in \Omega\)</span>, we will have<br>
+<span class="math display">\[
+\mathbb{P}(A) = \sum_{i=1}^{n}\mathbb{P}(A\cap B_i)
+\]</span></p>
+<p>and this is true by the <a href="https://en.wikipedia.org/wiki/Law_of_total_probability" style="text-decoration:none">law of total probability</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/cell-3-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/cell-3-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="540" height="319"></a></p>
+</figure>
+</div>
+<p>Then the Bayes’s rule extends to the following</p>
+<p><span class="math display">\[
+\mathbb{P}(B_i|A) = \frac{\mathbb{P}(A|B_i)\mathbb{P}(B_i)}{\mathbb{P}(A)}=\frac{\mathbb{P}(A|B_i)\mathbb{P}(B_i)}{\sum_{i=1}^{n}\mathbb{P}(A|B_i)\mathbb{P}(B_i)}
+\]</span></p>
+<p>The continuous version would be <span class="math display">\[
+f_{Y=y|X=x}(y|x) = \frac{f_{X|Y=y}(x)f_Y(y)}{\sum_{i=1}^{n}\int_{-\infty}^{\infty}f_{X|Y=y}(x|u)f_{Y}(u)du}
+\]</span></p>
+</section>
+</section>
+<section id="probabilistic-models" class="level2">
+<h2 class="anchored" data-anchor-id="probabilistic-models">Probabilistic Models</h2>
+<p style="text-align: justify">
+Bayes’s theorem gets us the posterior probability given the data with a prior. Therefore, for classification tasks in machine learning, we can use Bayesin style models for classification by maximizing the numerator and minimizing the denominator in the previous equation, for any given class. For instance, say we have a <span class="math inline">\(d-\)</span> dimensional data collected as a random matrix <span class="math inline">\(X\)</span> and the response variable <span class="math inline">\(y\)</span> is a categorical one with <span class="math inline">\(c\)</span> categories. Then for a given data vector <span class="math inline">\(X'\)</span>, the posterior distibution that it falls for category <span class="math inline">\(j\)</span> is given as
+</p>
+<p><span class="math display">\[
+\mathbb{P}(y=j|X=X')=\frac{\pi_j f_j(X')}{\sum_{i=1}^{c}\pi_i f_i(X')}
+\]</span></p>
+<p>where,</p>
+<ul>
+<li><span class="math inline">\(f_i(X)\)</span> is the probability density function of the features conditioned on <span class="math inline">\(y\)</span> being class <span class="math inline">\(i\)</span><br>
+</li>
+<li><span class="math inline">\(\pi_i =\mathbb{P}(y=i)\)</span></li>
+</ul>
+<p>We can estimate <span class="math inline">\(\pi_i\)</span> as the fraction of observations which belong to class <span class="math inline">\(i\)</span>.</p>
+<section id="linear-discriminant-analysis-lda" class="level3">
+<h3 class="anchored" data-anchor-id="linear-discriminant-analysis-lda">Linear Discriminant Analysis (LDA)</h3>
+<p style="text-align: justify">
+To connect Linear Discriminant Analysis (LDA) with the Bayesian probabilistic classification, we start by considering the Bayes Theorem and the assumptions made in LDA. We adapt the Bayes theorem for classification as follows
+</p>
+<p><span class="math display">\[
+P(C_k | \mathbf{x}) = \frac{P(\mathbf{x} | C_k) P(C_k)}{P(\mathbf{x})}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(P(C_k | \mathbf{x})\)</span> is the posterior probability that <span class="math inline">\(\mathbf{x}\)</span> belongs to class <span class="math inline">\(C_k\)</span>,</li>
+<li><span class="math inline">\(P(\mathbf{x} | C_k)\)</span> is the likelihood (the probability of observing <span class="math inline">\(\mathbf{x}\)</span> given class <span class="math inline">\(C_k\)</span>),</li>
+<li><span class="math inline">\(P(C_k)\)</span> is the prior probability of class <span class="math inline">\(C_k\)</span>,</li>
+<li><span class="math inline">\(P(\mathbf{x})\)</span> is the marginal likelihood (normalizing constant).</li>
+</ul>
+<section id="gaussian-assumption-in-lda" class="level4">
+<h4 class="anchored" data-anchor-id="gaussian-assumption-in-lda">Gaussian Assumption in LDA</h4>
+<p>LDA assumes that:</p>
+<ul>
+<li>The likelihood for each class follows a Gaussian distribution with a common covariance matrix <span class="math inline">\(\Sigma\)</span>, i.e.,</li>
+</ul>
+<p><span class="math display">\[
+P(\mathbf{x} | C_k) = \frac{1}{(2\pi)^{d/2} |\Sigma|^{1/2}} \exp\left(-\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu}_k)\right)
+\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{\mu}_k\)</span> is the mean of class <span class="math inline">\(C_k\)</span> and <span class="math inline">\(\Sigma\)</span> is the shared covariance matrix. Now let’s talk about <span class="math inline">\(\boldsymbol{\mu}_k\)</span> and <span class="math inline">\(\Sigma\)</span>.</p>
+<p><strong>One feature or dimension</strong><br>
+For a single feature <span class="math inline">\(x\)</span> and <span class="math inline">\(N_k\)</span> samples <span class="math inline">\(x_{k,1},x_{k,2},\dots, x_{k,N}\)</span> for class <span class="math inline">\(C_k\)</span>, the mean <span class="math inline">\(\mu_k\)</span>:</p>
+<p><span class="math display">\[
+\mu_k = \frac{1}{N_k}\sum_{i=1}^{N_k} x_{k,i}
+\]</span></p>
+<p>and variance <span class="math inline">\(\sigma^2\)</span> is calculated as the variance within-class variance <span class="math inline">\(\sigma_k^2\)</span> for each class</p>
+<p><span class="math display">\[
+\sigma_k^2 = \frac{1}{N_k-1}\sum_{i=1}^{N_k}(x_{k,i}-\mu_k)^2
+\]</span></p>
+<p>and then the pooled variance <span class="math inline">\(\sigma^2\)</span> is calculated by averaging these variances, weighted by the degrees of freedom in each class:</p>
+<p><span class="math display">\[
+\sigma^2 = \frac{1}{n-\mathcal{C}}\sum_{k=1}^{\mathcal{C}}\sum_{i=1}^{N_k}(x_{k,i}-\mu_k)^2
+\]</span></p>
+<p>where, <span class="math inline">\(n\)</span> is the total number of samples accross all classes, <span class="math inline">\(\mathcal{C}\)</span> is the number of classes, and <span class="math inline">\(x_{k,i}\)</span> are samples from each class <span class="math inline">\(C_k\)</span>.</p>
+<p><strong>For multi-dimensional data</strong></p>
+<p>If we have <span class="math inline">\(d\)</span> features (e.g., if <span class="math inline">\(\mathbf{x}\)</span> is a <span class="math inline">\(d-\)</span>dimensional vector), we calculate the mean vector <span class="math inline">\(\boldsymbol{\mu}_k\)</span> for each feature across the <span class="math inline">\(N_k\)</span> samples in class <span class="math inline">\(C_k\)</span> as follows</p>
+<p><span class="math display">\[
+\boldsymbol{\mu}_k = \frac{1}{N_k}\sum_{i=1}^{N_k}\mathbf{x}_{k,i}
+\]</span></p>
+<p>and the covariance matrix for each class <span class="math inline">\(C_k\)</span>:</p>
+<p><span class="math display">\[
+\Sigma_k = \frac{1}{N_k}\sum_{i=1}^{N_k} (\mathbf{x}_{k,i}-\boldsymbol{\mu}_k)(\mathbf{x}_{k,i}-\boldsymbol{\mu}_k)^T
+\]</span></p>
+<p>Therefore, the pooled variance</p>
+<p><span class="math display">\[
+\Sigma = \frac{1}{n-\mathcal{C}}\sum_{k=1}^{\mathcal{C}}\sum_{i=1}^{N_k} (\mathbf{x}_{k,i}-\boldsymbol{\mu}_k)(\mathbf{x}_{k,i}-\boldsymbol{\mu}_k)^T
+\]</span></p>
+</section>
+<section id="log-likelihood-ratio" class="level4">
+<h4 class="anchored" data-anchor-id="log-likelihood-ratio">Log Likelihood Ratio</h4>
+<p style="text-align: justify">
+For simplicity, let’s say we have only two classes <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span>. To derive a decision boundary, we take the ratio of the posterior probabilities for two classes <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span>, and then take the logarithm. The rationality behind this approach is when we divide a relatively bigger number by a smaller number we get a larger number and smaller number if we reverse the divison. Since we are working with the probabilities, therefore, we take logarithm.
+</p>
+<p><span class="math display">\[\begin{align*}
+\log\left(\frac{P(C_1 | \mathbf{x})}{P(C_2 | \mathbf{x})}\right) &amp;= \log\left(\frac{P(\mathbf{x} | C_1) P(C_1)}{P(\mathbf{x} | C_2) P(C_2)}\right)\\
+&amp; =\log\left(\frac{P(\mathbf{x} | C_1)}{P(\mathbf{x} | C_2)}\right) + \log\left(\frac{P(C_1)}{P(C_2)}\right)
+\end{align*}\]</span></p>
+<p>Using the Gaussian likelihood assumption, we expand the terms <span class="math inline">\(P(\mathbf{x} | C_1)\)</span> and <span class="math inline">\(P(\mathbf{x} | C_2)\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+\log\left(\frac{P(\mathbf{x} | C_1)}{P(\mathbf{x} | C_2)}\right) &amp;=\log{\left(\frac{\frac{1}{(2\pi)^{\frac{d}{2}}\sqrt{|\Sigma|}}e^{-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu}_1)^T\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu}_1)}}{\frac{1}{(2\pi)^{\frac{d}{2}}\sqrt{|\Sigma|}}e^{-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu}_2)^T\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu}_2)}}\right)}\\
+&amp;= -\frac{1}{2} \left[ (\mathbf{x} - \boldsymbol{\mu}_1)^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu}_1) - (\mathbf{x} - \boldsymbol{\mu}_2)^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu}_2) \right]\\
+&amp; = -\frac{1}{2} \left[\mathbf{x}^T\Sigma^{-1}\mathbf{x} - 2 \mathbf{x}^T\Sigma^{-1}\boldsymbol{\mu}_1 + \boldsymbol{\mu}_1^T\Sigma^{-1}\boldsymbol{\mu_1} - \mathbf{x}^T\Sigma^{-1}\mathbf{x} + 2 \mathbf{x}^T\Sigma^{-1}\boldsymbol{\mu}_2 - \boldsymbol{\mu}_2^T\Sigma^{-1}\boldsymbol{\mu_2}\right]\\
+&amp; = -\frac{1}{2} \left[ - 2 \mathbf{x}^T\Sigma^{-1}\boldsymbol{\mu}_1 + \boldsymbol{\mu}_1^T\Sigma^{-1}\boldsymbol{\mu_1}  + 2 \mathbf{x}^T\Sigma^{-1}\boldsymbol{\mu}_2 - \boldsymbol{\mu}_2^T\Sigma^{-1}\boldsymbol{\mu_2}\right]\\
+&amp; = \mathbf{x}^T\Sigma^{-1}(\boldsymbol{\mu}_1-\boldsymbol{\mu}_2)-\frac{1}{2}(\boldsymbol{\mu}_1^T\Sigma^{-1}\boldsymbol{\mu}_1+\boldsymbol{\mu}_2^T\Sigma^{-1}\boldsymbol{\mu}_2)\\
+&amp; = \mathbf{x}^T\mathbf{w}+\text{constant};\hspace{4mm}\text{where, }\hspace{4mm}\mathbf{w} = \Sigma^{-1} (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)\\
+\end{align*}\]</span></p>
+<p>Therefore, we can write</p>
+<p><span class="math display">\[
+\log\left(\frac{P(\mathbf{x} | C_1)}{P(\mathbf{x} | C_2)}\right) = \mathbf{w}^T\mathbf{x}+\text{constant}
+\]</span></p>
+<p>since <span class="math inline">\(\mathbf{w}^T\mathbf{x}=\mathbf{x}^T\mathbf{w}\)</span>, as inner product is commutative. This is the linear projection vector <span class="math inline">\(\mathbf{w}\)</span> that LDA uses.</p>
+</section>
+<section id="fishers-discriminant-ratio" class="level4">
+<h4 class="anchored" data-anchor-id="fishers-discriminant-ratio">Fisher’s Discriminant Ratio</h4>
+<p style="text-align:justify">
+Now, we derive the Fisher’s Discriminant Ratio. The goal is to find a projection <span class="math inline">\(\mathbf{w}\)</span> that maximizes the separation between classes (between-class variance) and minimizes the spread within each class (within-class variance).
+</p>
+<ul>
+<li><strong>Between-class scatter</strong> <span class="math inline">\(S_B\)</span> is defined as:</li>
+</ul>
+<p><span class="math display">\[
+S_B = (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)(\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)^T
+\]</span></p>
+<ul>
+<li><strong>Within-class scatter</strong> <span class="math inline">\(S_W\)</span> is the covariance matrix <span class="math inline">\(\Sigma\)</span>, assuming equal covariance for both classes.</li>
+</ul>
+<p>The Fisher’s discriminant ratio is the objective function to maximize:</p>
+<p><span class="math display">\[
+J(\mathbf{w}) = \frac{\mathbf{w}^T S_B \mathbf{w}}{\mathbf{w}^T S_W \mathbf{w}}
+\]</span></p>
+<p>Substituting <span class="math inline">\(S_B\)</span> and <span class="math inline">\(S_W\)</span> into this expression, we get:</p>
+<p><span class="math display">\[
+J(\mathbf{w}) = \frac{\mathbf{w}^T (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)(\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)^T \mathbf{w}}{\mathbf{w}^T \Sigma \mathbf{w}}
+\]</span></p>
+<p>Thus, maximizing this ratio gives the direction <span class="math inline">\(\mathbf{w} = \Sigma^{-1} (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)\)</span>, which is the same as the result from the Bayesian classification.</p>
+</section>
+<section id="summary" class="level4">
+<h4 class="anchored" data-anchor-id="summary">Summary</h4>
+<p>The Fisher’s Discriminant Ratio arises as a byproduct of maximizing the posterior probability ratios between two classes under Gaussian assumptions. It captures the optimal linear projection to maximize the separation between classes (via between-class scatter) and minimize the spread within classes (via within-class scatter).</p>
+</section>
+</section>
+<section id="quadratic-discriminant-analysis-qda" class="level3">
+<h3 class="anchored" data-anchor-id="quadratic-discriminant-analysis-qda">Quadratic Discriminant Analysis (QDA)</h3>
+<p style="text-align: justify">
+Unlike LDA, we allow each class <span class="math inline">\(C_k\)</span> to have its own covariance matrix <span class="math inline">\(\Sigma_k\)</span>, leading to a more flexible model capable of handling classes with different shapes and orientations in feature space. Here’s how we can derive the discriminant function for QDA.
+</p>
+<section id="discriminant-function-for-qda" class="level4">
+<h4 class="anchored" data-anchor-id="discriminant-function-for-qda">Discriminant Function for QDA</h4>
+<p>In QDA, we aim to classify a sample <span class="math inline">\(\mathbf{x}\)</span> based on the probability that it belongs to class <span class="math inline">\(C_k\)</span>, given by <span class="math inline">\(P(C_k|\mathbf{x})\)</span>. Using Bayes’ theorem, we have:</p>
+<p><span class="math display">\[
+P(C_k | \mathbf{x}) = \frac{P(\mathbf{x} | C_k) P(C_k)}{P(\mathbf{x})}
+\]</span></p>
+<p>Since we’re primarily interested in maximizing this value to classify <span class="math inline">\(\mathbf{x}\)</span>, we can focus on maximizing the posterior probability <span class="math inline">\(P(\mathbf{x} | C_k) P(C_k)\)</span>.</p>
+</section>
+<section id="likelihood-of-mathbfx-in-class-c_k" class="level4">
+<h4 class="anchored" data-anchor-id="likelihood-of-mathbfx-in-class-c_k">Likelihood of <span class="math inline">\(\mathbf{x}\)</span> in Class <span class="math inline">\(C_k\)</span></h4>
+<p>Assuming that the feature vector <span class="math inline">\(\mathbf{x}\)</span> follows a Gaussian distribution within each class <span class="math inline">\(C_k\)</span>, the likelihood <span class="math inline">\(P(\mathbf{x} | C_k)\)</span> is given by:</p>
+<p><span class="math display">\[
+P(\mathbf{x} | C_k) = \frac{1}{(2 \pi)^{d/2} |\Sigma_k|^{1/2}} \exp \left( -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k) \right)
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{\mu}_k\)</span> is the mean vector for class <span class="math inline">\(C_k\)</span>,</li>
+<li><span class="math inline">\(\Sigma_k\)</span> is the covariance matrix for class <span class="math inline">\(C_k\)</span>,</li>
+<li><span class="math inline">\(d\)</span> is the dimensionality of <span class="math inline">\(\mathbf{x}\)</span>.</li>
+</ul>
+</section>
+<section id="log-of-the-posterior-quadratic-discriminant" class="level4">
+<h4 class="anchored" data-anchor-id="log-of-the-posterior-quadratic-discriminant">Log of the Posterior (Quadratic Discriminant)</h4>
+<p>To simplify the computation, we take the logarithm of the posterior probability. Ignoring constant terms that do not depend on <span class="math inline">\(k\)</span>, we have:</p>
+<p><span class="math display">\[
+\ln P(\mathbf{x} | C_k) P(C_k) = -\frac{1}{2} \left( (\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k) + \ln |\Sigma_k| \right) + \ln P(C_k)
+\]</span></p>
+<p>The discriminant function for QDA can then be expressed as:</p>
+<p><span class="math display">\[
+\delta_k(\mathbf{x}) = -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k) - \frac{1}{2} \ln |\Sigma_k| + \ln P(C_k)
+\]</span></p>
+</section>
+<section id="expanding-the-quadratic-term" class="level4">
+<h4 class="anchored" data-anchor-id="expanding-the-quadratic-term">Expanding the Quadratic Term</h4>
+<p>Let’s expand the quadratic term:</p>
+<p><span class="math display">\[
+(\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k)
+\]</span></p>
+<p>Expanding this gives:</p>
+<p><span class="math display">\[
+(\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k) = \mathbf{x}^T \Sigma_k^{-1} \mathbf{x} - 2 \mathbf{x}^T \Sigma_k^{-1} \boldsymbol{\mu}_k + \boldsymbol{\mu}_k^T \Sigma_k^{-1} \boldsymbol{\mu}_k
+\]</span></p>
+<p>Substituting this expansion into the discriminant function:</p>
+<p><span class="math display">\[
+\delta_k(\mathbf{x}) = -\frac{1}{2} \left( \mathbf{x}^T \Sigma_k^{-1} \mathbf{x} - 2 \mathbf{x}^T \Sigma_k^{-1} \boldsymbol{\mu}_k + \boldsymbol{\mu}_k^T \Sigma_k^{-1} \boldsymbol{\mu}_k \right) - \frac{1}{2} \ln |\Sigma_k| + \ln P(C_k)
+\]</span></p>
+</section>
+<section id="final-form-of-the-qda-discriminant-function" class="level4">
+<h4 class="anchored" data-anchor-id="final-form-of-the-qda-discriminant-function">Final Form of the QDA Discriminant Function</h4>
+<p>Rearranging terms, we get:</p>
+<p><span class="math display">\[
+\delta_k(\mathbf{x}) = -\frac{1}{2} \mathbf{x}^T \Sigma_k^{-1} \mathbf{x} + \mathbf{x}^T \Sigma_k^{-1} \boldsymbol{\mu}_k - \frac{1}{2} \boldsymbol{\mu}_k^T \Sigma_k^{-1} \boldsymbol{\mu}_k - \frac{1}{2} \ln |\Sigma_k| + \ln P(C_k)
+\]</span></p>
+</section>
+<section id="key-points-in-qda" class="level4">
+<h4 class="anchored" data-anchor-id="key-points-in-qda">Key Points in QDA</h4>
+<ul>
+<li><strong>Quadratic term</strong>: Unlike LDA, QDA includes a quadratic term in <span class="math inline">\(\mathbf{x}\)</span>, <span class="math inline">\(-\frac{1}{2} \mathbf{x}^T \Sigma_k^{-1} \mathbf{x}\)</span>, which allows QDA to model classes with different covariances.</li>
+<li><strong>Linear term</strong>: <span class="math inline">\(\mathbf{x}^T \Sigma_k^{-1} \boldsymbol{\mu}_k\)</span> is a linear term in <span class="math inline">\(\mathbf{x}\)</span>.</li>
+<li><strong>Constant term</strong>: The remaining terms <span class="math inline">\(-\frac{1}{2} \boldsymbol{\mu}_k^T \Sigma_k^{-1} \boldsymbol{\mu}_k - \frac{1}{2} \ln |\Sigma_k| + \ln P(C_k)\)</span> are independent of <span class="math inline">\(\mathbf{x}\)</span>.</li>
+</ul>
+<p>Because of the quadratic term, the decision boundaries in QDA are generally <strong>quadratic surfaces</strong>, allowing it to handle more complex class separations than LDA, which has linear boundaries.</p>
+</section>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li><strong>“The Elements of Statistical Learning” by Trevor Hastie, Robert Tibshirani, and Jerome Friedman</strong>
+<ul>
+<li>This book is an excellent resource for both Linear and Quadratic Discriminant Analysis, including mathematical derivations, explanations of Gaussian discriminant analysis, and the context for using LDA and QDA.</li>
+<li>See Chapter 4: Linear Methods for Classification.</li>
+</ul></li>
+<li><strong>“Pattern Recognition and Machine Learning” by Christopher M. Bishop</strong>
+<ul>
+<li>Bishop’s book offers a clear introduction to probabilistic classification, Bayes theorem, and discriminant analysis.</li>
+<li>See Chapter 4: Linear Models for Classification.</li>
+</ul></li>
+<li><strong>“Machine Learning: A Probabilistic Perspective” by Kevin P. Murphy</strong>
+<ul>
+<li>This text provides derivations and explanations of LDA and QDA from a probabilistic and Bayesian perspective.</li>
+<li>See Chapter 7: Linear Discriminant Analysis.</li>
+</ul></li>
+<li><strong>“Applied Multivariate Statistical Analysis” by Richard A. Johnson and Dean W. Wichern</strong>
+<ul>
+<li>This book goes deeper into the statistical foundation behind discriminant analysis, including pooled variance, unbiased estimators, and the assumptions behind LDA and QDA.</li>
+<li>See Chapter 11: Discrimination and Classification.</li>
+</ul></li>
+<li><strong>“Introduction to the Theory of Statistics” by Alexander M. Mood, Franklin A. Graybill, and Duane C. Boes</strong>
+<ul>
+<li>This text provides a theoretical foundation on statistical concepts, including unbiased estimators and quadratic forms, which underlie LDA and QDA derivations.</li>
+<li>Relevant for concepts of unbiased estimation and quadratic forms.</li>
+</ul></li>
+</ol>
+<hr>
+<p><strong>Share on</strong></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#1877F2; text-decoration: none;"></a></p><a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#1877F2; text-decoration: none;">
+<p><i class="fa-brands fa-facebook fa-3x" aria-label="facebook"></i></p>
+</a><p><a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#1877F2; text-decoration: none;"></a></p>
+</div><div class="column" style="width:33%;">
+<p><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#0077B5; text-decoration: none;"></a></p><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#0077B5; text-decoration: none;">
+<p><i class="fa-brands fa-linkedin fa-3x" aria-label="linkedin"></i></p>
+</a><p><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#0077B5; text-decoration: none;"></a></p>
+</div><div class="column" style="width:33%;">
+<p><a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#1DA1F2; text-decoration: none;"></a></p><a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#1DA1F2; text-decoration: none;">
+<p><i class="fa-brands fa-twitter fa-3x" aria-label="twitter"></i></p>
+</a><p><a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#1DA1F2; text-decoration: none;"></a></p>
+</div>
+</div>
+<script src="https://giscus.app/client.js" data-repo="mrislambd/mrislambd.github.io" data-repo-id="R_kgDOMV8crA" data-category="Announcements" data-category-id="DIC_kwDOMV8crM4CjbQW" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<div id="fb-root">
+
+</div>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"></script>
+<div class="fb-comments" data-href="https://mrislambd.github.io/dsandml/bayesianclassification/" data-width="800" data-numposts="5">
+
+</div>
+<p><strong>You may also like</strong></p>
 
 
 
 <!-- -->
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1729722112767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1212">
-<a href="../../jobandintern/bayesianinference/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1730176738905" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../jobandintern/bayesianinference/pancake.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="Bayeslearn.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Bayesian Inference in Machine Learning: Part 1
+Classification using Naive Bayes algorithm
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+11 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Rafiq Islam
 </div>
 <div class="listing-date">
-Sunday, July 28, 2024
+Thursday, October 10, 2024
 </div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726012800000" data-listing-file-modified-sort="1729722112767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1221">
-<a href="../../jobandintern/dsa/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1730176738901" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5383">
+<a href="../../dsandml/lda/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="../../jobandintern/dsa/dsa.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="../../dsandml/lda/lda.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Data Structure and Algorithms: Basic Programming Hacks
+Classification: Linear Discriminant Analysis (LDA)
 </h5>
 <div class="listing-reading-time card-text text-muted">
-7 min
+27 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Rafiq Islam
 </div>
 <div class="listing-date">
-Wednesday, September 11, 2024
+Thursday, October 17, 2024
 </div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Computational Mathematics,Number Theory" data-listing-date-sort="1723334400000" data-listing-file-modified-sort="1729722112767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
-<a href="../../jobandintern/montecarlo1/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1730176738901" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
+<a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="../../jobandintern/montecarlo1/mc1.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="../../dsandml/logreg/logreg.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Monte-Carlo Methods: PRNGs
+Classification: Logistic Regression - A Comprehensive Guide with Mathematical Derivation and Python Code
 </h5>
 <div class="listing-reading-time card-text text-muted">
-10 min
+9 min
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Rafiq Islam
 </div>
 <div class="listing-date">
-Sunday, August 11, 2024
+Monday, October 7, 2024
 </div>
 </div>
 </div>
@@ -384,13 +772,13 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{islam2024,
   author = {Islam, Rafiq},
-  title = {Probabilistic {Classification} - {Bayesian} {Classification}},
+  title = {Bayesian {Probabilistic} {Models} for {Classification}},
   date = {2024-10-22},
   url = {https://mrislambd.github.io/dsandml/bayesianclassification/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-islam2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Islam, Rafiq. 2024. <span>“Probabilistic Classification - Bayesian
+Islam, Rafiq. 2024. <span>“Bayesian Probabilistic Models for
 Classification.”</span> October 22, 2024. <a href="https://mrislambd.github.io/dsandml/bayesianclassification/">https://mrislambd.github.io/dsandml/bayesianclassification/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1008,22 +1396,487 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Probabilistic Classification - Bayesian Classification"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-10-22"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Rafiq Islam"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Machine Learning, Data Science, Bayesian Inference, Bayesian Statistics, Statistics]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span><span class="co"> true</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">lightbox:</span><span class="co"> true</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">search:</span><span class="co"> true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co"> </span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: "/../../jobandintern"</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    max-items: 3</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    categories: false</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: full</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    fields: [image, date, title, author, reading-time]</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Bayesian Probabilistic Models for Classification"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-10-22"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Rafiq Islam"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Machine Learning, Data Science, Bayesian Inference, Bayesian Statistics, Statistics]</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span><span class="co"> true</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">lightbox:</span><span class="co"> true</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> Bayeslearn.png</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="an">search:</span><span class="co"> true</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co"> </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: "/../../dsandml"</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">    max-items: 3</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">    categories: true</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: full</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">    fields: [image, date, title, author, reading-time]</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">    html: default</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">    ipynb: default</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">    docx: </span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">      toc: true</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">      adsense:</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">        enable-ads: false</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">    epub:</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">      toc: true</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">      adsense:</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">        enable-ads: false</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">    pdf: </span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">      toc: true</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">      pdf-engine: pdflatex</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">      adsense:</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">        enable-ads: false</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co">      number-sections: false</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">      colorlinks: true</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co">      cite-method: biblatex</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 4</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">---</span>  </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction  </span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>&lt;div style="text-align: justify;"&gt;</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>Bayesian inference is a powerful statistical method that applies the principles of Bayes's theorem to update the probability of a hypothesis as more evidence or information becomes available. It is widely used in various fields including machine learning, to make predictions and decisions under uncertainty.  </span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>Bayes's theorem is based on the definition of conditional probability. For two events $A$ and $B$ with $\mathbb{P}(B) \neq 0$, we define the conditional probability of occurring $A$ given that $B$ has already occurred.  </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align: center</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib_venn <span class="im">import</span> venn2</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>set1 <span class="op">=</span> {<span class="st">'A'</span>,<span class="st">'B'</span>,<span class="st">'C'</span>,<span class="st">'D'</span>}</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>set2 <span class="op">=</span> {<span class="st">'C'</span>,<span class="st">'D'</span>,<span class="st">'E'</span>,<span class="st">'F'</span>}</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>venn <span class="op">=</span> venn2([set1,set2], (<span class="st">'$A$'</span>,<span class="st">'$B$'</span>))</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Change colors of the circles</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>venn.get_patch_by_id(<span class="st">'10'</span>).set_color(<span class="st">'#1f77b4'</span>) <span class="co"># Blue</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>venn.get_patch_by_id(<span class="st">'01'</span>).set_color(<span class="st">'#ff7f0e'</span>) <span class="co"># Orange</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>venn.get_patch_by_id(<span class="st">'11'</span>).set_color(<span class="st">'#2ca02c'</span>) <span class="co"># Green</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>venn.get_label_by_id(<span class="st">'10'</span>).set_text(<span class="st">'$A</span><span class="ch">\\</span><span class="st">cap B</span><span class="ch">\'</span><span class="st">$'</span>)</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>venn.get_label_by_id(<span class="st">'01'</span>).set_text(<span class="st">'$B</span><span class="ch">\\</span><span class="st">cap A</span><span class="ch">\'</span><span class="st">$'</span>)</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>venn.get_label_by_id(<span class="st">'11'</span>).set_text(<span class="st">'$A</span><span class="ch">\\</span><span class="st">cap B$'</span>) </span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> patch <span class="kw">in</span> venn.patches:</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    patch.set_alpha(<span class="fl">0.7</span>)</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>plt.gca().set_facecolor(<span class="st">'#2e2e2e'</span>)</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">3</span>))</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Save and show the plot</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>$\mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}$  </span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>Similarly, the conditional probability of occuring $B$ given that $A$ has already occured with $\mathbb{P}(A) \ne 0$ is  </span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>\mathbb{P}(B|A)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)}</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>From this equation, we can derive that the joint probability of $A\cap B$ is </span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>\mathbb{P}(A\cap B) = \mathbb{P}(B | A) \mathbb{P} (A) = \mathbb{P}(A | B) \mathbb{P} (B) </span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bayes's Theorem  </span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### For Two Events or Random Variables</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>Bayes's theorem is based on these conditional probabilities. It states that the likelihood of occuring the event $A$ given that the event $B$ has occured is given as  </span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>\mathbb{P}(A | B) = \frac{\mathbb{P}(B | A)\mathbb{P}(A)}{\mathbb{P}(B)} = \frac{\mathbb{P}(B | A)\mathbb{P}(A)}{\mathbb{P}(B\cap A)+\mathbb{P}(B\cap A^c)} = \frac{\mathbb{P}(B | A)\mathbb{P}(A)}{\mathbb{P}(B | A)\mathbb{P}(A)+\mathbb{P}(A | B)\mathbb{P}(B)}</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>where, in Bayesin terminology,  </span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbb{P}(A|B)$ is called *&lt;span style="color: red"&gt;posterior probability&lt;/span&gt;* of $A$ given the event $B$ or simply, *&lt;span style="color: red"&gt;posterior distribution.&lt;/span&gt;*   </span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbb{P}(B|A)$ is the likelihood: the probability of evidence $B$ given that $A$ is true.  </span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbb{P}(A)$ or $\mathbb{P}(B)$ are the probabilities of occuring $A$ and $B$ respectively, without any dependence on each other.  </span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbb{P}(A)$ is called the *prior* probability or prior distribution and $\mathbb{P}(B)$ is called the marginal likelihood or marginal probabilities.  </span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>For two continuous random variable $X$ and $Y$, the conditional probability density function of $X$ given the occurence of the value $y$ of $Y$ can be given as  </span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>f_{X|Y} (x | y) =\frac{f_{X,Y}(x,y)}{f_Y(y)}</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>or the otherway around,  </span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>f_{Y|X} (y | x) =\frac{f_{X,Y}(x,y)}{f_X(x)}</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>Therefore, the continuous version of Bayes's theorem is given as follows  </span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>f_{Y|X}(y) = \frac{f_{X|Y}(x)f_Y(y)}{f_X(x)}</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Generalization of Bayes's Theorem  </span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>For $n$ disjoint set of discrete events $B_1,B_2\dots, B_n$ where $\Omega = \cup_{i}^{n}B_i$ and for any event $A\in \Omega$, we will have  </span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>\mathbb{P}(A) = \sum_{i=1}^{n}\mathbb{P}(A\cap B_i)</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>and this is true by the <span class="co">[</span><span class="ot">law of total probability</span><span class="co">](https://en.wikipedia.org/wiki/Law_of_total_probability)</span>{style="text-decoration:none"}.</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: asis</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align: center</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> patches</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(rc<span class="op">=</span>{<span class="st">'axes.facecolor'</span>: <span class="st">'#f4f4f4'</span>, <span class="st">'figure.facecolor'</span>:<span class="st">'#f4f4f4'</span>})</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> patches.Rectangle((<span class="dv">0</span>,<span class="dv">0</span>), <span class="dv">18</span>,<span class="dv">10</span>, linewidth <span class="op">=</span> <span class="fl">1.5</span>, </span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>edgecolor <span class="op">=</span> <span class="st">'black'</span>, facecolor <span class="op">=</span> <span class="st">'#f4f4f4'</span>)</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>ax.add_patch(omega)</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>):</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>    bi <span class="op">=</span> patches.Rectangle((i<span class="op">*</span><span class="dv">3</span>,<span class="dv">0</span>),<span class="dv">3</span>,<span class="dv">10</span>,linewidth <span class="op">=</span> <span class="fl">1.5</span>, </span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>    edgecolor <span class="op">=</span> <span class="st">'black'</span>, facecolor <span class="op">=</span> <span class="st">'#f4f4f4'</span>)</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>    ax.add_patch(bi)</span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> patches.Ellipse((<span class="dv">9</span>,<span class="dv">5</span>),<span class="dv">11</span>,<span class="dv">4</span>,linewidth <span class="op">=</span> <span class="fl">1.5</span>, </span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>                    edgecolor <span class="op">=</span> <span class="st">'black'</span>, facecolor <span class="op">=</span> <span class="st">'lightgreen'</span>)</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>ax.add_patch(a)</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">8</span>,<span class="fl">6.2</span>, <span class="vs">r'$A$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>,<span class="dv">19</span>)</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>,<span class="dv">10</span>)</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">'equal'</span>)</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">'off'</span>)</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">9</span>,<span class="fl">10.5</span>, <span class="vs">r'$\Omega$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">1</span>,<span class="dv">1</span>, <span class="vs">r'$B_</span><span class="sc">{1}</span><span class="vs">$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">4</span>,<span class="dv">1</span>, <span class="vs">r'$B_</span><span class="sc">{2}</span><span class="vs">$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">7</span>,<span class="dv">1</span>, <span class="vs">r'$B_</span><span class="sc">{3}</span><span class="vs">$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">10</span>,<span class="dv">1</span>, <span class="vs">r'$\dots$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">13</span>,<span class="dv">1</span>, <span class="vs">r'$B_{n-1}$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">16</span>,<span class="dv">1</span>, <span class="vs">r'$B_</span><span class="sc">{n}</span><span class="vs">$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span>  </span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>Then the Bayes's rule extends to the following  </span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>\mathbb{P}(B_i|A) = \frac{\mathbb{P}(A|B_i)\mathbb{P}(B_i)}{\mathbb{P}(A)}=\frac{\mathbb{P}(A|B_i)\mathbb{P}(B_i)}{\sum_{i=1}^{n}\mathbb{P}(A|B_i)\mathbb{P}(B_i)}</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>The continuous version would be </span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>f_{Y=y|X=x}(y|x) = \frac{f_{X|Y=y}(x)f_Y(y)}{\sum_{i=1}^{n}\int_{-\infty}^{\infty}f_{X|Y=y}(x|u)f_{Y}(u)du}</span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Probabilistic Models  </span></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt;</span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>Bayes's theorem gets us the posterior probability given the data with a prior. Therefore, for classification tasks in machine learning, we can use Bayesin style models for classification by maximizing the numerator and minimizing the denominator in the previous equation, for any given class. For instance, say we have a $d-$ dimensional data collected as a random matrix $X$ and the response variable $y$ is a categorical one with $c$ categories. Then for a given data vector $X'$, the posterior distibution that it falls for category $j$ is given as  </span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>&lt;/p&gt;  </span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>\mathbb{P}(y=j|X=X')=\frac{\pi_j f_j(X')}{\sum_{i=1}^{c}\pi_i f_i(X')}</span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a>where,  </span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$f_i(X)$ is the probability density function of the features conditioned on $y$ being class $i$  </span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\pi_i =\mathbb{P}(y=i)$  </span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>We can estimate $\pi_i$ as the fraction of observations which belong to class $i$.  </span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a><span class="fu">### Linear Discriminant Analysis (LDA)  </span></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt;</span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>To connect Linear Discriminant Analysis (LDA) with the Bayesian probabilistic classification, we start by considering the Bayes Theorem and the assumptions made in LDA. We adapt the Bayes theorem for classification as follows&lt;/p&gt;  </span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a>P(C_k | \mathbf{x}) = \frac{P(\mathbf{x} | C_k) P(C_k)}{P(\mathbf{x})}</span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>Where:</span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$P(C_k | \mathbf{x})$ is the posterior probability that $\mathbf{x}$ belongs to class $C_k$,</span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$P(\mathbf{x} | C_k)$ is the likelihood (the probability of observing $\mathbf{x}$ given class $C_k$),</span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$P(C_k)$ is the prior probability of class $C_k$,</span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$P(\mathbf{x})$ is the marginal likelihood (normalizing constant).</span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Gaussian Assumption in LDA</span></span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a>LDA assumes that:</span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The likelihood for each class follows a Gaussian distribution with a common covariance matrix $\Sigma$, i.e.,</span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a>P(\mathbf{x} | C_k) = \frac{1}{(2\pi)^{d/2} |\Sigma|^{1/2}} \exp\left(-\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu}_k)\right)</span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a>where $\boldsymbol{\mu}_k$ is the mean of class $C_k$ and $\Sigma$ is the shared covariance matrix. Now let's talk about $\boldsymbol{\mu}_k$ and $\Sigma$.  </span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a>**One feature or dimension**  </span>
+<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a>For a single feature $x$ and $N_k$ samples $x_{k,1},x_{k,2},\dots, x_{k,N}$ for class $C_k$, the mean $\mu_k$: </span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a>\mu_k = \frac{1}{N_k}\sum_{i=1}^{N_k} x_{k,i}</span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a>and variance $\sigma^2$ is calculated as the variance within-class variance $\sigma_k^2$ for each class  </span>
+<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a>\sigma_k^2 = \frac{1}{N_k-1}\sum_{i=1}^{N_k}(x_{k,i}-\mu_k)^2</span>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a>and then the pooled variance $\sigma^2$ is calculated by averaging these variances, weighted by the degrees of freedom in each class:  </span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a>\sigma^2 = \frac{1}{n-\mathcal{C}}\sum_{k=1}^{\mathcal{C}}\sum_{i=1}^{N_k}(x_{k,i}-\mu_k)^2</span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a>where, $n$ is the total number of samples accross all classes, $\mathcal{C}$ is the number of classes, and $x_{k,i}$ are samples from each class $C_k$.  </span>
+<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a>**For multi-dimensional data**  </span>
+<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a>If we have $d$ features (e.g., if $\mathbf{x}$ is a $d-$dimensional vector), we calculate the mean vector $\boldsymbol{\mu}_k$ for each feature across the $N_k$ samples in class $C_k$ as follows  </span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a>\boldsymbol{\mu}_k = \frac{1}{N_k}\sum_{i=1}^{N_k}\mathbf{x}_{k,i}</span>
+<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a>and the covariance matrix for each class $C_k$:  </span>
+<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a>\Sigma_k = \frac{1}{N_k}\sum_{i=1}^{N_k} (\mathbf{x}_{k,i}-\boldsymbol{\mu}_k)(\mathbf{x}_{k,i}-\boldsymbol{\mu}_k)^T</span>
+<span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a>Therefore, the pooled variance  </span>
+<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a>\Sigma = \frac{1}{n-\mathcal{C}}\sum_{k=1}^{\mathcal{C}}\sum_{i=1}^{N_k} (\mathbf{x}_{k,i}-\boldsymbol{\mu}_k)(\mathbf{x}_{k,i}-\boldsymbol{\mu}_k)^T</span>
+<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-272"><a href="#cb2-272" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Log Likelihood Ratio  </span></span>
+<span id="cb2-273"><a href="#cb2-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-274"><a href="#cb2-274" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt;</span>
+<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a>For simplicity, let's say we have only two classes $C_1$ and $C_2$. To derive a decision boundary, we take the ratio of the posterior probabilities for two classes $C_1$ and $C_2$, and then take the logarithm. The rationality behind this approach is when we divide a relatively bigger number by a smaller number we get a larger number and smaller number if we reverse the divison. Since we are working with the probabilities, therefore, we take logarithm.&lt;/p&gt; </span>
+<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a>\log\left(\frac{P(C_1 | \mathbf{x})}{P(C_2 | \mathbf{x})}\right) &amp;= \log\left(\frac{P(\mathbf{x} | C_1) P(C_1)}{P(\mathbf{x} | C_2) P(C_2)}\right)<span class="sc">\\</span></span>
+<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a>&amp; =\log\left(\frac{P(\mathbf{x} | C_1)}{P(\mathbf{x} | C_2)}\right) + \log\left(\frac{P(C_1)}{P(C_2)}\right)</span>
+<span id="cb2-280"><a href="#cb2-280" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb2-281"><a href="#cb2-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-282"><a href="#cb2-282" aria-hidden="true" tabindex="-1"></a>Using the Gaussian likelihood assumption, we expand the terms $P(\mathbf{x} | C_1)$ and $P(\mathbf{x} | C_2)$:</span>
+<span id="cb2-283"><a href="#cb2-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-284"><a href="#cb2-284" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb2-285"><a href="#cb2-285" aria-hidden="true" tabindex="-1"></a>\log\left(\frac{P(\mathbf{x} | C_1)}{P(\mathbf{x} | C_2)}\right) &amp;=\log{\left(\frac{\frac{1}{(2\pi)^{\frac{d}{2}}\sqrt{|\Sigma|}}e^{-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu}_1)^T\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu}_1)}}{\frac{1}{(2\pi)^{\frac{d}{2}}\sqrt{|\Sigma|}}e^{-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu}_2)^T\Sigma^{-1}(\mathbf{x}-\boldsymbol{\mu}_2)}}\right)}<span class="sc">\\</span></span>
+<span id="cb2-286"><a href="#cb2-286" aria-hidden="true" tabindex="-1"></a>&amp;= -\frac{1}{2} \left<span class="co">[</span><span class="ot"> (\mathbf{x} - \boldsymbol{\mu}_1)^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu}_1) - (\mathbf{x} - \boldsymbol{\mu}_2)^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu}_2) \right</span><span class="co">]</span><span class="sc">\\</span></span>
+<span id="cb2-287"><a href="#cb2-287" aria-hidden="true" tabindex="-1"></a>&amp; = -\frac{1}{2} \left<span class="co">[</span><span class="ot">\mathbf{x}^T\Sigma^{-1}\mathbf{x} - 2 \mathbf{x}^T\Sigma^{-1}\boldsymbol{\mu}_1 + \boldsymbol{\mu}_1^T\Sigma^{-1}\boldsymbol{\mu_1} - \mathbf{x}^T\Sigma^{-1}\mathbf{x} + 2 \mathbf{x}^T\Sigma^{-1}\boldsymbol{\mu}_2 - \boldsymbol{\mu}_2^T\Sigma^{-1}\boldsymbol{\mu_2}\right</span><span class="co">]</span><span class="sc">\\</span></span>
+<span id="cb2-288"><a href="#cb2-288" aria-hidden="true" tabindex="-1"></a>&amp; = -\frac{1}{2} \left<span class="co">[</span><span class="ot"> - 2 \mathbf{x}^T\Sigma^{-1}\boldsymbol{\mu}_1 + \boldsymbol{\mu}_1^T\Sigma^{-1}\boldsymbol{\mu_1}  + 2 \mathbf{x}^T\Sigma^{-1}\boldsymbol{\mu}_2 - \boldsymbol{\mu}_2^T\Sigma^{-1}\boldsymbol{\mu_2}\right</span><span class="co">]</span><span class="sc">\\</span></span>
+<span id="cb2-289"><a href="#cb2-289" aria-hidden="true" tabindex="-1"></a>&amp; = \mathbf{x}^T\Sigma^{-1}(\boldsymbol{\mu}_1-\boldsymbol{\mu}_2)-\frac{1}{2}(\boldsymbol{\mu}_1^T\Sigma^{-1}\boldsymbol{\mu}_1+\boldsymbol{\mu}_2^T\Sigma^{-1}\boldsymbol{\mu}_2)<span class="sc">\\</span></span>
+<span id="cb2-290"><a href="#cb2-290" aria-hidden="true" tabindex="-1"></a>&amp; = \mathbf{x}^T\mathbf{w}+\text{constant};\hspace{4mm}\text{where, }\hspace{4mm}\mathbf{w} = \Sigma^{-1} (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)<span class="sc">\\</span></span>
+<span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a>\end{align*}  </span>
+<span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a>Therefore, we can write</span>
+<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a>\log\left(\frac{P(\mathbf{x} | C_1)}{P(\mathbf{x} | C_2)}\right) = \mathbf{w}^T\mathbf{x}+\text{constant}</span>
+<span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb2-298"><a href="#cb2-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-299"><a href="#cb2-299" aria-hidden="true" tabindex="-1"></a>since $\mathbf{w}^T\mathbf{x}=\mathbf{x}^T\mathbf{w}$, as inner product is commutative. This is the linear projection vector $\mathbf{w}$ that LDA uses.</span>
+<span id="cb2-300"><a href="#cb2-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-301"><a href="#cb2-301" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Fisher's Discriminant Ratio</span></span>
+<span id="cb2-302"><a href="#cb2-302" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align:justify"&gt;</span>
+<span id="cb2-303"><a href="#cb2-303" aria-hidden="true" tabindex="-1"></a>Now, we derive the Fisher’s Discriminant Ratio. The goal is to find a projection $\mathbf{w}$ that maximizes the separation between classes (between-class variance) and minimizes the spread within each class (within-class variance). &lt;/p&gt;</span>
+<span id="cb2-304"><a href="#cb2-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-305"><a href="#cb2-305" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Between-class scatter** $S_B$ is defined as:</span>
+<span id="cb2-306"><a href="#cb2-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-307"><a href="#cb2-307" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-308"><a href="#cb2-308" aria-hidden="true" tabindex="-1"></a>S_B = (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)(\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)^T</span>
+<span id="cb2-309"><a href="#cb2-309" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-310"><a href="#cb2-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-311"><a href="#cb2-311" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Within-class scatter** $S_W$ is the covariance matrix $\Sigma$, assuming equal covariance for both classes.</span>
+<span id="cb2-312"><a href="#cb2-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-313"><a href="#cb2-313" aria-hidden="true" tabindex="-1"></a>The Fisher’s discriminant ratio is the objective function to maximize:</span>
+<span id="cb2-314"><a href="#cb2-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-315"><a href="#cb2-315" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-316"><a href="#cb2-316" aria-hidden="true" tabindex="-1"></a>J(\mathbf{w}) = \frac{\mathbf{w}^T S_B \mathbf{w}}{\mathbf{w}^T S_W \mathbf{w}}</span>
+<span id="cb2-317"><a href="#cb2-317" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-318"><a href="#cb2-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-319"><a href="#cb2-319" aria-hidden="true" tabindex="-1"></a>Substituting $S_B$ and $S_W$ into this expression, we get:</span>
+<span id="cb2-320"><a href="#cb2-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-321"><a href="#cb2-321" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-322"><a href="#cb2-322" aria-hidden="true" tabindex="-1"></a>J(\mathbf{w}) = \frac{\mathbf{w}^T (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)(\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)^T \mathbf{w}}{\mathbf{w}^T \Sigma \mathbf{w}}</span>
+<span id="cb2-323"><a href="#cb2-323" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-324"><a href="#cb2-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-325"><a href="#cb2-325" aria-hidden="true" tabindex="-1"></a>Thus, maximizing this ratio gives the direction $\mathbf{w} = \Sigma^{-1} (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)$, which is the same as the result from the Bayesian classification.</span>
+<span id="cb2-326"><a href="#cb2-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-327"><a href="#cb2-327" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Summary</span></span>
+<span id="cb2-328"><a href="#cb2-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-329"><a href="#cb2-329" aria-hidden="true" tabindex="-1"></a>The Fisher's Discriminant Ratio arises as a byproduct of maximizing the posterior probability ratios between two classes under Gaussian assumptions. It captures the optimal linear projection to maximize the separation between classes (via between-class scatter) and minimize the spread within classes (via within-class scatter).</span>
+<span id="cb2-330"><a href="#cb2-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-331"><a href="#cb2-331" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quadratic Discriminant Analysis (QDA)  </span></span>
+<span id="cb2-332"><a href="#cb2-332" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt;</span>
+<span id="cb2-333"><a href="#cb2-333" aria-hidden="true" tabindex="-1"></a>Unlike LDA, we allow each class $C_k$ to have its own covariance matrix $\Sigma_k$, leading to a more flexible model capable of handling classes with different shapes and orientations in feature space. Here’s how we can derive the discriminant function for QDA.&lt;/p&gt;</span>
+<span id="cb2-334"><a href="#cb2-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-335"><a href="#cb2-335" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Discriminant Function for QDA</span></span>
+<span id="cb2-336"><a href="#cb2-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-337"><a href="#cb2-337" aria-hidden="true" tabindex="-1"></a>In QDA, we aim to classify a sample $\mathbf{x}$ based on the probability that it belongs to class $C_k$, given by $P(C_k|\mathbf{x})$. Using Bayes’ theorem, we have:</span>
+<span id="cb2-338"><a href="#cb2-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-339"><a href="#cb2-339" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-340"><a href="#cb2-340" aria-hidden="true" tabindex="-1"></a>P(C_k | \mathbf{x}) = \frac{P(\mathbf{x} | C_k) P(C_k)}{P(\mathbf{x})}</span>
+<span id="cb2-341"><a href="#cb2-341" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-342"><a href="#cb2-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-343"><a href="#cb2-343" aria-hidden="true" tabindex="-1"></a>Since we’re primarily interested in maximizing this value to classify $\mathbf{x}$, we can focus on maximizing the posterior probability $P(\mathbf{x} | C_k) P(C_k)$.</span>
+<span id="cb2-344"><a href="#cb2-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-345"><a href="#cb2-345" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Likelihood of $\mathbf{x}$ in Class $C_k$</span></span>
+<span id="cb2-346"><a href="#cb2-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-347"><a href="#cb2-347" aria-hidden="true" tabindex="-1"></a>Assuming that the feature vector $\mathbf{x}$ follows a Gaussian distribution within each class $C_k$, the likelihood $P(\mathbf{x} | C_k)$ is given by:</span>
+<span id="cb2-348"><a href="#cb2-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-349"><a href="#cb2-349" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-350"><a href="#cb2-350" aria-hidden="true" tabindex="-1"></a>P(\mathbf{x} | C_k) = \frac{1}{(2 \pi)^{d/2} |\Sigma_k|^{1/2}} \exp \left( -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k) \right)</span>
+<span id="cb2-351"><a href="#cb2-351" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-352"><a href="#cb2-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-353"><a href="#cb2-353" aria-hidden="true" tabindex="-1"></a>where:</span>
+<span id="cb2-354"><a href="#cb2-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-355"><a href="#cb2-355" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\boldsymbol{\mu}_k$ is the mean vector for class $C_k$,</span>
+<span id="cb2-356"><a href="#cb2-356" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\Sigma_k$ is the covariance matrix for class $C_k$,</span>
+<span id="cb2-357"><a href="#cb2-357" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$d$ is the dimensionality of $\mathbf{x}$.</span>
+<span id="cb2-358"><a href="#cb2-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-359"><a href="#cb2-359" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Log of the Posterior (Quadratic Discriminant)</span></span>
+<span id="cb2-360"><a href="#cb2-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-361"><a href="#cb2-361" aria-hidden="true" tabindex="-1"></a>To simplify the computation, we take the logarithm of the posterior probability. Ignoring constant terms that do not depend on $k$, we have:</span>
+<span id="cb2-362"><a href="#cb2-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-363"><a href="#cb2-363" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-364"><a href="#cb2-364" aria-hidden="true" tabindex="-1"></a>\ln P(\mathbf{x} | C_k) P(C_k) = -\frac{1}{2} \left( (\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k) + \ln |\Sigma_k| \right) + \ln P(C_k)</span>
+<span id="cb2-365"><a href="#cb2-365" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-366"><a href="#cb2-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-367"><a href="#cb2-367" aria-hidden="true" tabindex="-1"></a>The discriminant function for QDA can then be expressed as:</span>
+<span id="cb2-368"><a href="#cb2-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-369"><a href="#cb2-369" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-370"><a href="#cb2-370" aria-hidden="true" tabindex="-1"></a>\delta_k(\mathbf{x}) = -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k) - \frac{1}{2} \ln |\Sigma_k| + \ln P(C_k)</span>
+<span id="cb2-371"><a href="#cb2-371" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-372"><a href="#cb2-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-373"><a href="#cb2-373" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Expanding the Quadratic Term</span></span>
+<span id="cb2-374"><a href="#cb2-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-375"><a href="#cb2-375" aria-hidden="true" tabindex="-1"></a>Let’s expand the quadratic term:</span>
+<span id="cb2-376"><a href="#cb2-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-377"><a href="#cb2-377" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-378"><a href="#cb2-378" aria-hidden="true" tabindex="-1"></a>(\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k)</span>
+<span id="cb2-379"><a href="#cb2-379" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-380"><a href="#cb2-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-381"><a href="#cb2-381" aria-hidden="true" tabindex="-1"></a>Expanding this gives:</span>
+<span id="cb2-382"><a href="#cb2-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-383"><a href="#cb2-383" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-384"><a href="#cb2-384" aria-hidden="true" tabindex="-1"></a>(\mathbf{x} - \boldsymbol{\mu}_k)^T \Sigma_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k) = \mathbf{x}^T \Sigma_k^{-1} \mathbf{x} - 2 \mathbf{x}^T \Sigma_k^{-1} \boldsymbol{\mu}_k + \boldsymbol{\mu}_k^T \Sigma_k^{-1} \boldsymbol{\mu}_k</span>
+<span id="cb2-385"><a href="#cb2-385" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-386"><a href="#cb2-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-387"><a href="#cb2-387" aria-hidden="true" tabindex="-1"></a>Substituting this expansion into the discriminant function:</span>
+<span id="cb2-388"><a href="#cb2-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-389"><a href="#cb2-389" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-390"><a href="#cb2-390" aria-hidden="true" tabindex="-1"></a>\delta_k(\mathbf{x}) = -\frac{1}{2} \left( \mathbf{x}^T \Sigma_k^{-1} \mathbf{x} - 2 \mathbf{x}^T \Sigma_k^{-1} \boldsymbol{\mu}_k + \boldsymbol{\mu}_k^T \Sigma_k^{-1} \boldsymbol{\mu}_k \right) - \frac{1}{2} \ln |\Sigma_k| + \ln P(C_k)</span>
+<span id="cb2-391"><a href="#cb2-391" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-392"><a href="#cb2-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-393"><a href="#cb2-393" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Final Form of the QDA Discriminant Function</span></span>
+<span id="cb2-394"><a href="#cb2-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-395"><a href="#cb2-395" aria-hidden="true" tabindex="-1"></a>Rearranging terms, we get:</span>
+<span id="cb2-396"><a href="#cb2-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-397"><a href="#cb2-397" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-398"><a href="#cb2-398" aria-hidden="true" tabindex="-1"></a>\delta_k(\mathbf{x}) = -\frac{1}{2} \mathbf{x}^T \Sigma_k^{-1} \mathbf{x} + \mathbf{x}^T \Sigma_k^{-1} \boldsymbol{\mu}_k - \frac{1}{2} \boldsymbol{\mu}_k^T \Sigma_k^{-1} \boldsymbol{\mu}_k - \frac{1}{2} \ln |\Sigma_k| + \ln P(C_k)</span>
+<span id="cb2-399"><a href="#cb2-399" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-400"><a href="#cb2-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-401"><a href="#cb2-401" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Key Points in QDA</span></span>
+<span id="cb2-402"><a href="#cb2-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-403"><a href="#cb2-403" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Quadratic term**: Unlike LDA, QDA includes a quadratic term in $\mathbf{x}$, $-\frac{1}{2} \mathbf{x}^T \Sigma_k^{-1} \mathbf{x}$, which allows QDA to model classes with different covariances.</span>
+<span id="cb2-404"><a href="#cb2-404" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Linear term**: $\mathbf{x}^T \Sigma_k^{-1} \boldsymbol{\mu}_k$ is a linear term in $\mathbf{x}$.</span>
+<span id="cb2-405"><a href="#cb2-405" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Constant term**: The remaining terms $-\frac{1}{2} \boldsymbol{\mu}_k^T \Sigma_k^{-1} \boldsymbol{\mu}_k - \frac{1}{2} \ln |\Sigma_k| + \ln P(C_k)$ are independent of $\mathbf{x}$.</span>
+<span id="cb2-406"><a href="#cb2-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-407"><a href="#cb2-407" aria-hidden="true" tabindex="-1"></a>Because of the quadratic term, the decision boundaries in QDA are generally **quadratic surfaces**, allowing it to handle more complex class separations than LDA, which has linear boundaries.  </span>
+<span id="cb2-408"><a href="#cb2-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-409"><a href="#cb2-409" aria-hidden="true" tabindex="-1"></a><span class="fu">## References  </span></span>
+<span id="cb2-410"><a href="#cb2-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-411"><a href="#cb2-411" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**"The Elements of Statistical Learning" by Trevor Hastie, Robert Tibshirani, and Jerome Friedman**  </span>
+<span id="cb2-412"><a href="#cb2-412" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>This book is an excellent resource for both Linear and Quadratic Discriminant Analysis, including mathematical derivations, explanations of Gaussian discriminant analysis, and the context for using LDA and QDA. </span>
+<span id="cb2-413"><a href="#cb2-413" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>See Chapter 4: Linear Methods for Classification.</span>
+<span id="cb2-414"><a href="#cb2-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-415"><a href="#cb2-415" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**"Pattern Recognition and Machine Learning" by Christopher M. Bishop**  </span>
+<span id="cb2-416"><a href="#cb2-416" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Bishop's book offers a clear introduction to probabilistic classification, Bayes theorem, and discriminant analysis.</span>
+<span id="cb2-417"><a href="#cb2-417" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>See Chapter 4: Linear Models for Classification.</span>
+<span id="cb2-418"><a href="#cb2-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-419"><a href="#cb2-419" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**"Machine Learning: A Probabilistic Perspective" by Kevin P. Murphy**  </span>
+<span id="cb2-420"><a href="#cb2-420" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>This text provides derivations and explanations of LDA and QDA from a probabilistic and Bayesian perspective.</span>
+<span id="cb2-421"><a href="#cb2-421" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>See Chapter 7: Linear Discriminant Analysis.</span>
+<span id="cb2-422"><a href="#cb2-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-423"><a href="#cb2-423" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**"Applied Multivariate Statistical Analysis" by Richard A. Johnson and Dean W. Wichern**  </span>
+<span id="cb2-424"><a href="#cb2-424" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>This book goes deeper into the statistical foundation behind discriminant analysis, including pooled variance, unbiased estimators, and the assumptions behind LDA and QDA.</span>
+<span id="cb2-425"><a href="#cb2-425" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>See Chapter 11: Discrimination and Classification.</span>
+<span id="cb2-426"><a href="#cb2-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-427"><a href="#cb2-427" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**"Introduction to the Theory of Statistics" by Alexander M. Mood, Franklin A. Graybill, and Duane C. Boes**  </span>
+<span id="cb2-428"><a href="#cb2-428" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>This text provides a theoretical foundation on statistical concepts, including unbiased estimators and quadratic forms, which underlie LDA and QDA derivations.</span>
+<span id="cb2-429"><a href="#cb2-429" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Relevant for concepts of unbiased estimation and quadratic forms.</span>
+<span id="cb2-430"><a href="#cb2-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-431"><a href="#cb2-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-432"><a href="#cb2-432" aria-hidden="true" tabindex="-1"></a>---  </span>
+<span id="cb2-433"><a href="#cb2-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-434"><a href="#cb2-434" aria-hidden="true" tabindex="-1"></a>**Share on**  </span>
+<span id="cb2-435"><a href="#cb2-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-436"><a href="#cb2-436" aria-hidden="true" tabindex="-1"></a>::::{.columns}</span>
+<span id="cb2-437"><a href="#cb2-437" aria-hidden="true" tabindex="-1"></a>:::{.column width="33%"}</span>
+<span id="cb2-438"><a href="#cb2-438" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#1877F2; text-decoration: none;"&gt;</span>
+<span id="cb2-439"><a href="#cb2-439" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-440"><a href="#cb2-440" aria-hidden="true" tabindex="-1"></a>{{&lt; fa brands facebook size=3x &gt;}}</span>
+<span id="cb2-441"><a href="#cb2-441" aria-hidden="true" tabindex="-1"></a>&lt;/a&gt;</span>
+<span id="cb2-442"><a href="#cb2-442" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-443"><a href="#cb2-443" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-444"><a href="#cb2-444" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-445"><a href="#cb2-445" aria-hidden="true" tabindex="-1"></a>:::{.column width="33%"}</span>
+<span id="cb2-446"><a href="#cb2-446" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#0077B5; text-decoration: none;"&gt;</span>
+<span id="cb2-447"><a href="#cb2-447" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-448"><a href="#cb2-448" aria-hidden="true" tabindex="-1"></a>{{&lt; fa brands linkedin size=3x &gt;}}</span>
+<span id="cb2-449"><a href="#cb2-449" aria-hidden="true" tabindex="-1"></a>&lt;/a&gt;</span>
+<span id="cb2-450"><a href="#cb2-450" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-451"><a href="#cb2-451" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-452"><a href="#cb2-452" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-453"><a href="#cb2-453" aria-hidden="true" tabindex="-1"></a>:::{.column width="33%"}</span>
+<span id="cb2-454"><a href="#cb2-454" aria-hidden="true" tabindex="-1"></a>&lt;a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/bayesianclassification/" target="_blank" style="color:#1DA1F2; text-decoration: none;"&gt;</span>
+<span id="cb2-455"><a href="#cb2-455" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-456"><a href="#cb2-456" aria-hidden="true" tabindex="-1"></a>{{&lt; fa brands twitter size=3x &gt;}}</span>
+<span id="cb2-457"><a href="#cb2-457" aria-hidden="true" tabindex="-1"></a>&lt;/a&gt;</span>
+<span id="cb2-458"><a href="#cb2-458" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-459"><a href="#cb2-459" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-460"><a href="#cb2-460" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb2-461"><a href="#cb2-461" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-462"><a href="#cb2-462" aria-hidden="true" tabindex="-1"></a>&lt;script src="https://giscus.app/client.js"</span>
+<span id="cb2-463"><a href="#cb2-463" aria-hidden="true" tabindex="-1"></a>        data-repo="mrislambd/mrislambd.github.io" </span>
+<span id="cb2-464"><a href="#cb2-464" aria-hidden="true" tabindex="-1"></a>        data-repo-id="R_kgDOMV8crA"</span>
+<span id="cb2-465"><a href="#cb2-465" aria-hidden="true" tabindex="-1"></a>        data-category="Announcements"</span>
+<span id="cb2-466"><a href="#cb2-466" aria-hidden="true" tabindex="-1"></a>        data-category-id="DIC_kwDOMV8crM4CjbQW"</span>
+<span id="cb2-467"><a href="#cb2-467" aria-hidden="true" tabindex="-1"></a>        data-mapping="pathname"</span>
+<span id="cb2-468"><a href="#cb2-468" aria-hidden="true" tabindex="-1"></a>        data-strict="0"</span>
+<span id="cb2-469"><a href="#cb2-469" aria-hidden="true" tabindex="-1"></a>        data-reactions-enabled="1"</span>
+<span id="cb2-470"><a href="#cb2-470" aria-hidden="true" tabindex="-1"></a>        data-emit-metadata="0"</span>
+<span id="cb2-471"><a href="#cb2-471" aria-hidden="true" tabindex="-1"></a>        data-input-position="bottom"</span>
+<span id="cb2-472"><a href="#cb2-472" aria-hidden="true" tabindex="-1"></a>        data-theme="light"</span>
+<span id="cb2-473"><a href="#cb2-473" aria-hidden="true" tabindex="-1"></a>        data-lang="en"</span>
+<span id="cb2-474"><a href="#cb2-474" aria-hidden="true" tabindex="-1"></a>        crossorigin="anonymous"</span>
+<span id="cb2-475"><a href="#cb2-475" aria-hidden="true" tabindex="-1"></a>        async&gt;</span>
+<span id="cb2-476"><a href="#cb2-476" aria-hidden="true" tabindex="-1"></a>&lt;/script&gt;</span>
+<span id="cb2-477"><a href="#cb2-477" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-478"><a href="#cb2-478" aria-hidden="true" tabindex="-1"></a>&lt;div id="fb-root"&gt;&lt;/div&gt;</span>
+<span id="cb2-479"><a href="#cb2-479" aria-hidden="true" tabindex="-1"></a>&lt;script async defer crossorigin="anonymous"</span>
+<span id="cb2-480"><a href="#cb2-480" aria-hidden="true" tabindex="-1"></a> src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v20.0"&gt;&lt;/script&gt;</span>
+<span id="cb2-481"><a href="#cb2-481" aria-hidden="true" tabindex="-1"></a>&lt;div class="fb-comments" data-href="https://mrislambd.github.io/dsandml/bayesianclassification/" data-width="800" data-numposts="5"&gt;&lt;/div&gt;</span>
+<span id="cb2-482"><a href="#cb2-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-483"><a href="#cb2-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-484"><a href="#cb2-484" aria-hidden="true" tabindex="-1"></a>**You may also like**</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1067,6 +1920,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

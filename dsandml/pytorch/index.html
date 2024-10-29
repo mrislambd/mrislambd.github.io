@@ -185,7 +185,7 @@ window.Quarto = {
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -221,10 +221,25 @@ window.Quarto = {
     <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
-<span class="menu-text">Blog</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-blog" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Blog</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-blog">    
+        <li>
+    <a class="dropdown-item" href="../../posts/machinelearning/index.html">
+ <span class="dropdown-text">Data Science and Machine Learning</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../posts/jobandintern/index.html">
+ <span class="dropdown-text">Job and Intern</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog.html">
+ <span class="dropdown-text">All Other Blogs</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/mohammad-rafiqul-islam/" target="_blank"> <i class="bi bi-linkedin" role="img">
 </i> 
@@ -251,9 +266,8 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -263,6 +277,10 @@ window.Quarto = {
   </ul></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(29)</span></div><div class="category" data-category="Algorithmic Complexity">Algorithmic Complexity <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Applied Mathematics">Applied Mathematics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Artificial Intelligence">Artificial Intelligence <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Computational Mathematics">Computational Mathematics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Computer Science">Computer Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Linear Algebra">Linear Algebra <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Math Biology">Math Biology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Mathematical Modeling">Mathematical Modeling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Mathematics">Mathematics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="News">News <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Optimization">Optimization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Programming">Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Stochastic Gradient Descent">Stochastic Gradient Descent <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Technology">Technology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Website">Website <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -307,7 +325,7 @@ window.Quarto = {
 
 <section id="introduction-to-tensors" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-to-tensors">Introduction to Tensors</h2>
-<div id="01086a6a" class="cell" data-execution_count="1">
+<div id="67c6966c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -321,7 +339,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="creating-tensors">Creating Tensors</h3>
 <ul>
 <li><p>Scaler</p>
-<div id="57262b4c" class="cell" data-execution_count="2">
+<div id="48cb398a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> torch.tensor(<span class="dv">7</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(scaler)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(scaler.ndim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -331,7 +349,7 @@ window.Quarto = {
 </div>
 </div></li>
 <li><p>Vector</p>
-<div id="d331ac01" class="cell" data-execution_count="3">
+<div id="8faa32bd" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>vec <span class="op">=</span> torch.tensor([<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vec.ndim)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vec.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -341,7 +359,7 @@ torch.Size([3])</code></pre>
 </div>
 </div></li>
 <li><p>Matrix</p>
-<div id="6e45224b" class="cell" data-execution_count="4">
+<div id="6d54945e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>MAT <span class="op">=</span> torch.tensor([[<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                    [<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">6</span>]])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>MAT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -351,7 +369,7 @@ torch.Size([3])</code></pre>
 </div>
 </div></li>
 <li><p>Tensor</p>
-<div id="ff89e431" class="cell" data-execution_count="5">
+<div id="38ac40dd" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>TEN <span class="op">=</span> torch.tensor([[[<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>],</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                     [<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>]]])</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>TEN.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -370,7 +388,7 @@ torch.Size([3])</code></pre>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1729722112791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1730176738945" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -395,7 +413,7 @@ Friday, September 20, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1729722112779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1730176738933" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -420,7 +438,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1729722112803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1730176738961" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
