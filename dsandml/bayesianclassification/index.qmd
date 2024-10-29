@@ -48,30 +48,44 @@ Bayes's theorem is based on the definition of conditional probability. For two e
 ```{python}
 #| code-fold: true
 #| echo: false
+#| output: asis
 #| fig-align: center
 import matplotlib.pyplot as plt
 from matplotlib_venn import venn2
+from matplotlib.patches import Rectangle
 
-set1 = {'A','B','C','D'}
-set2 = {'C','D','E','F'}
+# Define two sets
+set1 = {'A', 'B', 'C', 'D'}
+set2 = {'C', 'D', 'E', 'F'}
 
-venn = venn2([set1,set2], ('$A$','$B$'))
+# Create the Venn diagram
+fig, ax = plt.subplots(figsize=(6, 4))
+venn = venn2([set1, set2], ('$A$', '$B$'))
 
 # Change colors of the circles
-venn.get_patch_by_id('10').set_color('#1f77b4') # Blue
-venn.get_patch_by_id('01').set_color('#ff7f0e') # Orange
-venn.get_patch_by_id('11').set_color('#2ca02c') # Green
+venn.get_patch_by_id('10').set_color('#1f77b4')  # Blue
+venn.get_patch_by_id('01').set_color('#ff7f0e')  # Orange
+venn.get_patch_by_id('11').set_color('#2ca02c')  # Green
 
-venn.get_label_by_id('10').set_text('$A\\cap B\'$')
-venn.get_label_by_id('01').set_text('$B\\cap A\'$')
-venn.get_label_by_id('11').set_text('$A\\cap B$') 
+# Add custom labels
+venn.get_label_by_id('10').set_text('$A \\cap B\'$')
+venn.get_label_by_id('01').set_text('$B \\cap A\'$')
+venn.get_label_by_id('11').set_text('$A \\cap B$') 
 
+# Set transparency of patches
 for patch in venn.patches:
     patch.set_alpha(0.7)
 
-plt.gca().set_facecolor('#2e2e2e')
-plt.figure(figsize=(4,3))
-# Save and show the plot
+# Set background color of the axes
+ax.set_facecolor('#2e2e2e')
+
+# Add a thick black border around the entire plot area
+ax.add_patch(Rectangle(
+    (0.0, 0.0), 1, 1, transform=ax.transAxes,  # Coordinates are relative to the axes
+    fill=False, color="black", linewidth=3
+))
+
+# Display the plot
 plt.show()
 ```
 
