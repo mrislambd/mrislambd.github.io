@@ -185,3 +185,4 @@ seaborn==0.13.2
 statsmodels==0.14.2
 imbalanced-learn
 tensorflow
+matplotlib_venn
