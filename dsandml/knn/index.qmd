@@ -11,9 +11,29 @@ listing:
     contents: "/../../dsandml"
     max-items: 3
     type: grid
-    categories: false
+    categories: true
     date-format: full
     fields: [image, date, title, author, reading-time]
+format: 
+    html: default
+    ipynb: default
+    docx: 
+      toc: true
+      adsense:
+        enable-ads: false
+    epub:
+      toc: true
+      adsense:
+        enable-ads: false
+    pdf: 
+      toc: true
+      pdf-engine: pdflatex
+      adsense:
+        enable-ads: false
+      number-sections: false
+      colorlinks: true
+      cite-method: biblatex
+toc-depth: 4
 ---  
 
 ## Introduction: Non-parametric Models 
