@@ -419,6 +419,7 @@
   {
     "listing": "/dsandml/svm/index.html",
     "items": [
+      "/dsandml/bayesianclassification/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/lda/index.html",
       "/dsandml/logreg/index.html",
@@ -434,7 +435,6 @@
       "/dsandml/regularization/index.html",
       "/dsandml/multiplelinreg/index.html",
       "/dsandml/polyreg/index.html",
-      "/dsandml/bayesianclassification/index.html",
       "/dsandml/pytorch/index.html",
       "/dsandml/simplelinreg/index.html",
       "/dsandml/decisiontree/index.html",

@@ -186,3 +186,4 @@ statsmodels==0.14.2
 imbalanced-learn
 tensorflow
 matplotlib_venn
+plotly
