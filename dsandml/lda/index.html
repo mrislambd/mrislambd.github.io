@@ -310,7 +310,7 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(158)</span></div><div class="category" data-category="Algorithms">Algorithms <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Artificial Intelligence">Artificial Intelligence <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Bayesian Inference">Bayesian Inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Bayesian Statistics">Bayesian Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Engineering">Data Engineering <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Programming">Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(4)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(162)</span></div><div class="category" data-category="Algorithms">Algorithms <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Artificial Intelligence">Artificial Intelligence <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Bayesian Inference">Bayesian Inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Bayesian Statistics">Bayesian Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Engineering">Data Engineering <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Programming">Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(4)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -679,7 +679,7 @@ y_{41} &amp; y_{42}
 <section id="step-6-visualizing-the-results" class="level3">
 <h3 class="anchored" data-anchor-id="step-6-visualizing-the-results">Step 6: Visualizing the Results</h3>
 <p>If we were to plot the projected data in this new 2D space, we would see the observations from different classes are better separated, which is the ultimate goal of LDA. The two axes of this 2D space correspond to the two linear discriminants that maximize the separation between the classes.</p>
-<div id="7268f177" class="cell" data-execution_count="1">
+<div id="e681e6a9" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -749,7 +749,7 @@ y_{41} &amp; y_{42}
 <section id="python-code-example" class="level2">
 <h2 class="anchored" data-anchor-id="python-code-example">Python Code Example</h2>
 <p>Let’s now revisit the Python code, with an understanding of the math behind LDA. First build our own classifier</p>
-<div id="4cf9df58" class="cell" data-execution_count="2">
+<div id="67500b49" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CustomLDA:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,n_components <span class="op">=</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
@@ -872,7 +872,7 @@ y_{41} &amp; y_{42}
 <span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [(i<span class="op">/</span>total) <span class="cf">for</span> i <span class="kw">in</span> <span class="va">self</span>.eigenvalues[:<span class="va">self</span>.n_components]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next we apply both the custom classifier and the classifier from the <code>scikit-learn</code> library.</p>
-<div id="d139942e" class="cell" data-execution_count="3">
+<div id="0dff8ce5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
@@ -937,7 +937,7 @@ Casting complex values to real discards the imaginary part
 </div>
 </div>
 <p>Next, apply LDA as a classifiers for the actual classification</p>
-<div id="d7b9dbab" class="cell" data-execution_count="4">
+<div id="247928bc" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lda_classifier1 <span class="op">=</span> LDA()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>lda_classifier1.fit(X_train, y_train)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y_pred1 <span class="op">=</span> lda_classifier1.predict(X_test)</span>
@@ -957,7 +957,7 @@ custom LDA Classifier Accuracy: 95.56%</code></pre>
 </div>
 </div>
 <p>Not too bad, huh! Let’s see the confusion matrix for our custom classifier</p>
-<div id="a169154b" class="cell" data-execution_count="5">
+<div id="9fbffc07" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>conf_mat <span class="op">=</span> confusion_matrix(y_test, y_pred2)</span>
@@ -1035,7 +1035,7 @@ For the mathematical explanation, I used generative AI to produce the matrices a
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1729555200000" data-listing-file-modified-sort="1730943822088" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2300">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1729555200000" data-listing-file-modified-sort="1731023919728" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2300">
 <a href="../../dsandml/bayesianclassification/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1060,7 +1060,7 @@ Tuesday, October 22, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1730943822100" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<div class="g-col-1" data-index="1" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1731023919740" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
 <a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="../bayesianclassification/Bayeslearn.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -1083,7 +1083,7 @@ Thursday, October 10, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1730943822096" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1731023919736" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1737">
 <a href="../../dsandml/logreg/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2510,7 +2510,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

@@ -310,7 +310,7 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(170)</span></div><div class="category" data-category="Algorithms">Algorithms <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Artificial Intelligence">Artificial Intelligence <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Bayesian Inference">Bayesian Inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Bayesian Statistics">Bayesian Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Engineering">Data Engineering <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Programming">Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(4)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(174)</span></div><div class="category" data-category="Algorithms">Algorithms <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Artificial Intelligence">Artificial Intelligence <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Bayesian Inference">Bayesian Inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Bayesian Statistics">Bayesian Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Engineering">Data Engineering <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(20)</span></div><div class="category" data-category="Programming">Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(4)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -359,7 +359,7 @@ In any classification problem, the goal is to build a model that accurately pred
 <h3 class="anchored" data-anchor-id="confusion-matrix">Confusion Matrix</h3>
 <p>A confusion matrix is a tabular summary of the performance of a classification algorithm. It shows the number of correct and incorrect predictions broken down by each class.</p>
 <p>For a binary classification, the confusion matrix looks like this:</p>
-<div id="e36c4076" class="cell" data-execution_count="1">
+<div id="fe826551" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -533,7 +533,7 @@ The ROC-AUC curve helps visualize the performance of a classification model by p
 <p>Let’s use a real dataset and compute these metrics using Python. In python the actual confusion matrix looks like this<br>
 <img src="../../dsandml/classificationmetrics/confmat1.png" class="img-fluid" alt="Confusion matrix"></p>
 <p>We’ll use the <code>breast cancer</code> dataset from <code>sklearn</code>, which is a binary classification problem where the task is to predict whether a tumor is malignant or benign.</p>
-<div id="fd9f1b3a" class="cell" data-execution_count="2">
+<div id="eb5ce050" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_breast_cancer</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
@@ -576,7 +576,7 @@ The ROC-AUC curve helps visualize the performance of a classification model by p
 </div>
 </div>
 <p>Next, Compute Accuracy, Precision, Recall, F1 Score, ROC-AUC</p>
-<div id="e3297d21" class="cell" data-execution_count="3">
+<div id="0febdee0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tn <span class="op">=</span> cm[<span class="dv">0</span>,<span class="dv">0</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fp <span class="op">=</span> cm[<span class="dv">0</span>,<span class="dv">1</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fn <span class="op">=</span> cm[<span class="dv">1</span>,<span class="dv">0</span>]</span>
@@ -609,7 +609,7 @@ ROC-AUC score=0.9968</code></pre>
 </div>
 </div>
 <p>Plot ROC curve. ROC curve is found from plotting <em>True Positive Rate (TPRs)</em> against <em>False Positive Rate (FPRs)</em> for different cutoffs of probability values. To plot the ROC curve using the built-in function from <code>sklearn</code> we do the following:</p>
-<div id="161a839d" class="cell" data-execution_count="4">
+<div id="c118a6ae" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fpr, tpr, thresholds <span class="op">=</span> roc_curve(y_test, y_pred_proba)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.plot(fpr, tpr, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="ss">f'ROC Curve (AUC = </span><span class="sc">{</span>roc_auc<span class="sc">:.4f}</span><span class="ss">)'</span>)</span>
@@ -630,7 +630,7 @@ ROC-AUC score=0.9968</code></pre>
 </div>
 </div>
 <p>To build our own</p>
-<div id="e9230b06" class="cell" data-execution_count="5">
+<div id="61364371" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cutoff_values <span class="op">=</span> np.arange(<span class="dv">0</span>,<span class="fl">0.99</span>,<span class="fl">0.001</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>true_pos_rates <span class="op">=</span> []</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>false_pos_rates <span class="op">=</span> []</span>
@@ -665,7 +665,7 @@ ROC-AUC score=0.9968</code></pre>
 </div>
 </div>
 <p>Next, precision-recall score</p>
-<div id="ecdd041c" class="cell" data-execution_count="6">
+<div id="ef5eb966" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cutoff_values <span class="op">=</span> np.arange(<span class="dv">0</span>,<span class="fl">0.99</span>,<span class="fl">0.001</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>precisions <span class="op">=</span> []</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>recalls <span class="op">=</span> []</span>
@@ -723,7 +723,7 @@ ROC-AUC score=0.9968</code></pre>
 For classification problems, the decision threshold is crucial, especially for metrics like ROC-AUC. Often, models use a default threshold of 0.5 to classify whether an instance belongs to the positive class or not, but you can adjust this threshold to prioritize recall over precision or vice versa. You could add a section showing how adjusting the threshold can change model performance.
 </p>
 <p>Here’s an additional Python example showing how to adjust thresholds:</p>
-<div id="1553023a" class="cell" data-execution_count="7">
+<div id="bd3e796d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust threshold</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>threshold <span class="op">=</span> <span class="fl">0.4</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>y_pred_thresholded <span class="op">=</span> (y_pred_proba <span class="op">&gt;=</span> threshold).astype(<span class="bu">int</span>)</span>
@@ -750,7 +750,7 @@ New F1 Score: 0.9727</code></pre>
 Class imbalance can skew metrics like accuracy. A discussion on how to handle imbalance through methods such as resampling (oversampling/undersampling) or using techniques like SMOTE (Synthetic Minority Over-sampling Technique) could provide further depth.
 </p>
 <p>For example:</p>
-<div id="2f2aa891" class="cell" data-execution_count="8">
+<div id="b5b26162" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.over_sampling <span class="im">import</span> SMOTE</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Handling class imbalance using SMOTE</span></span>
@@ -783,7 +783,7 @@ Resampled Recall: 0.9722</code></pre>
 <p style="text-align: justify">
 While the ROC curve is useful, the <strong>Precision-Recall (PR) curve</strong> is often more informative when dealing with imbalanced datasets because it focuses on the performance of the positive class. Including a section on this can enhance the evaluation process.
 </p>
-<div id="7bc59ad2" class="cell" data-execution_count="9">
+<div id="4cf096ed" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> precision_recall_curve</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Precision-Recall curve</span></span>
@@ -814,7 +814,7 @@ While the ROC curve is useful, the <strong>Precision-Recall (PR) curve</strong> 
 <li><p><strong>Cohen’s Kappa</strong> measures agreement between observed accuracy and expected accuracy.</p></li>
 <li><p><strong>Matthews Correlation Coefficient (MCC)</strong> provides a balanced metric even when classes are imbalanced. It considers true and false positives and negatives, giving a correlation-like score between predictions and actuals.</p></li>
 </ul>
-<div id="f9b9e810" class="cell" data-execution_count="10">
+<div id="338f898e" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> cohen_kappa_score, matthews_corrcoef</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>kappa <span class="op">=</span> cohen_kappa_score(y_test, y_pred)</span>
@@ -872,7 +872,7 @@ MCC: 0.9372</code></pre>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1729555200000" data-listing-file-modified-sort="1730943822088" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2300">
+<div class="g-col-1" data-index="0" data-categories="Machine Learning,Data Science,Bayesian Inference,Bayesian Statistics,Statistics" data-listing-date-sort="1729555200000" data-listing-file-modified-sort="1731023919728" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2300">
 <a href="../../dsandml/bayesianclassification/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -897,7 +897,7 @@ Tuesday, October 22, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1730943822100" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
+<div class="g-col-1" data-index="1" data-categories="Statistics,Data Science,Data Engineering,Machine Learning,Artificial Intelligence" data-listing-date-sort="1728518400000" data-listing-file-modified-sort="1731023919740" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
 <a href="../../dsandml/naivebayes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="../bayesianclassification/Bayeslearn.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -920,7 +920,7 @@ Thursday, October 10, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1730943822096" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5383">
+<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Artificial Intelligence,Data Engineering" data-listing-date-sort="1729123200000" data-listing-file-modified-sort="1731023919736" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5383">
 <a href="../../dsandml/lda/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2115,7 +2115,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
