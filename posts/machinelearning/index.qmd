@@ -31,7 +31,7 @@ Data science involves extracting knowledge from structured and unstructured data
 
 - **[Web srcaping](/dsandml/datacollection/index.qmd){target="_blank" style="text-decoration:none"}:** Data collection through Webscraping  
 - API integration  
-- Data Lakes, Data Warehouses  
+- Data Lakes, Data Warehouse  
 
 #### Data Cleaning \& Preprocessing  
 
