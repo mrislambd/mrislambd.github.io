@@ -189,3 +189,5 @@ matplotlib_venn
 plotly
 pandas_datareader
 cufflinks
+yfinance
+-e ./mywebstyle
