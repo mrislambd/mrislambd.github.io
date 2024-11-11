@@ -13,6 +13,7 @@
 <lastBuildDate>Wed, 23 Oct 2024 04:00:00 GMT</lastBuildDate>
 <item>
   <title>বাংলা ভাষায় আমার লেখা || My Blog in Benglali Language</title>
+  <dc:creator>মোহাম্মদ রকিবুল ইসলাম</dc:creator>
   <link>https://mrislambd.github.io/posts/bengalitrial/</link>
   <description><![CDATA[ 
 
@@ -21,7 +22,9 @@
 
 <section id="আপনক-সবগতম" class="level2">
 <h2 class="anchored" data-anchor-id="আপনক-সবগতম">আপনাকে স্বাগতম</h2>
-<p>“বাংলায় ব্লগিং করতে পারলে ভালই হতো” এমন ভাবনা থেকেই ঘাটাঘটি শুরু করলাম কিভাবে নিজের ব্লগে বাংলায় লিখতে পারি। বাংলায় মনের ভাব প্রকাশের অসংখ্য মাধ্যম রয়েছে। সামাজিক যোগাযোগের মাধ্যম, পত্রিকা, কিংবা অন্যান্য প্রতিষ্ঠিত ব্লগ। কিন্তু নিজের ব্লগে নিজে বাংলায় লিখতে পারবো কিনা তা নিয়ে একটু সংশয় ছিল কারিগরি দিকটা নিয়ে। কোয়ার্তো দিয়ে আমার এই ব্লগ সাইট বানানো। তাই কোয়ার্তোর ওয়েবসাইট ঘাঁটতে ঘাঁটতে আজ পেয়ে গেলাম কিভাবে ইউনিকোড দিয়ে লিখা যায়। এখন থেকে মাঝে মধ্যেই এখানে বাংলায় পোষ্ট করবো। দেখা যাক।</p>
+<p style="text-align: justify">
+“বাংলায় ব্লগিং করতে পারলে ভালই হতো” এমন ভাবনা থেকেই ঘাটাঘটি শুরু করলাম কিভাবে নিজের ব্লগে বাংলায় লিখতে পারি। বাংলায় মনের ভাব প্রকাশের অসংখ্য মাধ্যম রয়েছে। সামাজিক যোগাযোগের মাধ্যম, পত্রিকা, কিংবা অন্যান্য প্রতিষ্ঠিত ব্লগ। কিন্তু নিজের ব্লগে নিজে বাংলায় লিখতে পারবো কিনা তা নিয়ে একটু সংশয় ছিল কারিগরি দিকটা নিয়ে। কোয়ার্তো দিয়ে আমার এই ব্লগ সাইট বানানো। তাই কোয়ার্তোর ওয়েবসাইট ঘাঁটতে ঘাঁটতে আজ পেয়ে গেলাম কিভাবে ইউনিকোড দিয়ে লিখা যায়। এখন থেকে মাঝে মধ্যেই এখানে বাংলায় পোষ্ট করবো। দেখা যাক।
+</p>
 
 
 
@@ -90,27 +93,11 @@ This page is my personal repository of most common and useful machine learning a
 </section>
 <section id="data-cleaning-preprocessing" class="level4">
 <h4 class="anchored" data-anchor-id="data-cleaning-preprocessing">Data Cleaning &amp; Preprocessing</h4>
-<ul>
-<li>Handling Missing Values<br>
-</li>
-<li>Data Transformation<br>
-</li>
-<li>Feature Engineering and Selection<br>
-</li>
-<li>Encoding Categorical Variables<br>
-</li>
-<li>Handling Outliers</li>
-</ul>
+<p>This involves <em><a href="../../codepages/titanic/index.html#handling-missing-data" target="_blank" style="text-decoration:none">Handling Missing Values, Data Transformation</a>, <a href="../../dsandml/eda/index.html#feature-engineering" target="_blank" style="text-decoration:none">Feature Engineering</a>, <a href="../../codepages/titanic/index.html" target="_blank" style="text-decoration:none">Encoding Categorical Variables</a>, Handling Outliers</em></p>
 </section>
 <section id="exploratory-data-analysis-eda" class="level4">
 <h4 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h4>
-<ul>
-<li>Descriptive Statistics<br>
-</li>
-<li>Data Visualization<br>
-</li>
-<li>Identifying Patterns, Trends, Correlations</li>
-</ul>
+<p>This usually includes the <em><a href="../../dsandml/eda/index.html#discriptive-statistics" target="_blank" style="text-decoration:none">Descriptive Statistics</a>, <a href="../../dsandml/dataviz/index.html" target="_blank" style="text-decoration:none">Data Visualization, Identifying Patterns, Trends, Correlations</a></em> of the features and labels.</p>
 </section>
 <section id="statistical-methods" class="level4">
 <h4 class="anchored" data-anchor-id="statistical-methods">Statistical Methods</h4>
@@ -1984,7 +1971,7 @@ data-layout="button_count" data-size="small"&gt;&lt;a target="_blank"
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1729716475167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1731110305617" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1690">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">

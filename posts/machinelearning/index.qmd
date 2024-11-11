@@ -35,17 +35,11 @@ Data science involves extracting knowledge from structured and unstructured data
 
 #### Data Cleaning \& Preprocessing  
 
-- Handling Missing Values  
-- Data Transformation  
-- Feature Engineering and Selection  
-- Encoding Categorical Variables  
-- Handling Outliers  
+This involves *[Handling Missing Values, Data Transformation](/codepages/titanic/index.qmd#handling-missing-data){target="_blank" style="text-decoration:none"}, [Feature Engineering](/dsandml/eda/index.qmd#feature-engineering){target="_blank" style="text-decoration:none"}, [Encoding Categorical Variables](/codepages/titanic/index.qmd){target="_blank" style="text-decoration:none"}, Handling Outliers*  
 
 #### Exploratory Data Analysis (EDA)  
 
-- Descriptive Statistics  
-- Data Visualization  
-- Identifying Patterns, Trends, Correlations  
+This usually includes the *[Descriptive Statistics](/dsandml/eda/index.qmd#discriptive-statistics){target="_blank" style="text-decoration:none"}, [Data Visualization, Identifying Patterns, Trends, Correlations](/dsandml/dataviz/index.qmd){target="_blank" style="text-decoration:none"}* of the features and labels.  
   
 #### Statistical Methods  
 
