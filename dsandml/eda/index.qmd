@@ -129,7 +129,7 @@ df['date'] = df['timeStamp'].apply(lambda time: time.date())
 df.groupby('date').count()['twp'].plot()
 ```  
 
-Now to see for each reason  
+Now to see for each reason 
 
 ```{python}
 
