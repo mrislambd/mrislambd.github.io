@@ -9,14 +9,6 @@ lightbox: true
 format:
     html: default
     ipynb: default
-    pdf: 
-      toc: true
-      pdf-engine: pdflatex
-      adsense:
-        enable-ads: false
-      number-sections: false
-      colorlinks: true
-      cite-method: biblatex
 toc-depth: 4
 ---
 
