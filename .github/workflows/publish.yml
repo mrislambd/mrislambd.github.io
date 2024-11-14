@@ -44,6 +44,16 @@ jobs:
       - run: pip install jupyter
       - run: pip install -r requirements.txt
 
+      - name: Configure Kaggle API
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          mkdir -p ~/.kaggle
+          echo "{\"username\":\"$KAGGLE_USERNAME\",\"key\":\"$KAGGLE_KEY\"}" > ~/.kaggle/kaggle.json
+          chmod 600 ~/.kaggle/kaggle.json
+
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:

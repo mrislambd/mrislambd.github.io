@@ -191,3 +191,4 @@ pandas_datareader
 cufflinks
 yfinance
 -e ./mywebstyle
+kaggle
