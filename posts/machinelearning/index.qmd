@@ -127,6 +127,14 @@ This usually includes the *[Descriptive Statistics](/dsandml/eda/index.qmd#discr
 - [Random Forest Classification](/dsandml/randomforest/index.qmd){target="_blank" style="text-decoration:none"}  
 - [KNN Classification](/dsandml/knn/index.qmd){target="_blank" style="text-decoration:none"}  
 - Perceptron
+:::  
+
+:::{.column width="33%"}
+##### Ensemble Methods  
+
+- [Bagging: Decision Tree Classification](/dsandml/decisiontree/index.qmd){target="_blank" style="text-decoration:none"}  
+- [Bagging: Random Forest Classification](/dsandml/randomforest/index.qmd){target="_blank" style="text-decoration:none"}  
+- [Boosting: Adaptive Boosting](/dsandml/adaboost/index.qmd){target="_blank" style="text-decoration:none"}  
 :::
 ::::  
 

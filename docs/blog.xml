@@ -209,6 +209,18 @@ This page is my personal repository of most common and useful machine learning a
 <li>Perceptron</li>
 </ul>
 </section>
+</div><div class="column" style="width:33%;">
+<section id="ensemble-methods" class="level5">
+<h5 class="anchored" data-anchor-id="ensemble-methods">Ensemble Methods</h5>
+<ul>
+<li><a href="../../dsandml/decisiontree/index.html" target="_blank" style="text-decoration:none">Bagging: Decision Tree Classification</a><br>
+</li>
+<li><a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Bagging: Random Forest Classification</a><br>
+</li>
+<li><a href="../../dsandml/adaboost/index.html" target="_blank" style="text-decoration:none">Boosting: Adaptive Boosting</a><br>
+</li>
+</ul>
+</section>
 </div>
 </div>
 </section>
@@ -322,8 +334,8 @@ This page is my personal repository of most common and useful machine learning a
 <li><strong>Model Interpretability:</strong> SHAP (Shapley values), LIME (Local Interpretable Model-agnostic Explanations)</li>
 </ul>
 </section>
-<section id="ensemble-methods" class="level4">
-<h4 class="anchored" data-anchor-id="ensemble-methods">Ensemble Methods</h4>
+<section id="ensemble-methods-1" class="level4">
+<h4 class="anchored" data-anchor-id="ensemble-methods-1">Ensemble Methods</h4>
 <ul>
 <li><strong>Bagging:</strong> <a href="../../dsandml/randomforest/index.html" target="_blank" style="text-decoration:none">Random Forest</a>, Bootstrap Aggregating<br>
 </li>
