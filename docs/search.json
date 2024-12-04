@@ -865,7 +865,7 @@
     "href": "research.html#current-research",
     "title": "",
     "section": "Current Research",
-    "text": "Current Research\n\nHigher order Langevin dynamics: General \\(n\\)th order Langevin dynamics\n\nGeneralized Exact First-Order Algorightm (EXTRA) stochastic gradient Langevin dynamics (EXTRA SGLD).\n\nReflected Underdamped Langevin Monte Carlo dynamics"
+    "text": "Current Research\n\nHigher order Langevin dynamics: General \\(n\\)th order Langevin dynamics\n\nReflected Underdamped Langevin Monte Carlo dynamics"
   },
   {
     "objectID": "research.html#research-interest",
@@ -879,7 +879,7 @@
     "href": "research.html#publications",
     "title": "",
     "section": "Publications",
-    "text": "Publications\n\n\n\n Google Scholar\n ResearchGate\n Orcid\n\n\n\n\nGJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies \nMostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management.\nComparison of Financial Models for Stock Price Prediction \nIslam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management."
+    "text": "Publications\n\n\n\n Google Scholar\n ResearchGate\n Orcid\n\n\n\n\nGeneralized EXTRA stochastic gradient Langevin dynamics\nMert, Gurbuzbalaban; Islam, Mohammad Rafiqul; Wang, Xiaoyu; Zhu, Lingjiong (2024) “Generalized EXTRA stochastic gradient Langevin dynamics.” arXiv preprint arXiv.2412.01993\nGJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies \nMostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) “GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies.” Journal of Risk and Financial Management.\nComparison of Financial Models for Stock Price Prediction \nIslam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management."
   },
   {
     "objectID": "research.html#course-projects",
@@ -928,7 +928,7 @@
     "href": "cv.html#publications",
     "title": "CV",
     "section": "Publications",
-    "text": "Publications\n\nGJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies \nMostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management.\nComparison of Financial Models for Stock Price Prediction \nIslam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management."
+    "text": "Publications\n\nGeneralized EXTRA stochastic gradient Langevin dynamics\nMert, Gurbuzbalaban; Islam, Mohammad Rafiqul; Wang, Xiaoyu; Zhu, Lingjiong (2024) “Generalized EXTRA stochastic gradient Langevin dynamics.” arXiv preprint arXiv.2412.01993\n\nGJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies \nMostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) “GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies.” Journal of Risk and Financial Management.\nComparison of Financial Models for Stock Price Prediction \nIslam, Mohammad R.; Nguyen, N. (2020) “Comparison of financial models for stock price prediction.” Journal of Risk and Financial Management."
   },
   {
     "objectID": "cv.html#talks-and-presentations",
@@ -1657,5 +1657,19 @@
     "title": "Boosting Algorithm: Adaptive Boosting Method (AdaBoost)",
     "section": "Reference",
     "text": "Reference\n\nHastie, Trevor, Robert Tibshirani, and Jerome Friedman. “The elements of statistical learning: data mining, inference, and prediction.” (2017).\n\nShare on\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou may also like"
+  },
+  {
+    "objectID": "publication/pub3/index.html",
+    "href": "publication/pub3/index.html",
+    "title": "Generalized EXTRA stochastic gradient Langevin dynamics",
+    "section": "",
+    "text": "Langevin algorithms are popular Markov Chain Monte Carlo methods for Bayesian learning, particularly when the aim is to sample from the posterior distribution of a parametric model, given the input data and the prior distribution over the model parameters. Their stochastic versions such as stochastic gradient Langevin dynamics (SGLD) allow iterative learning based on randomly sampled mini-batches of large datasets and are scalable to large datasets. However, when data is decentralized across a network of agents subject to communication and privacy constraints, standard SGLD algorithms cannot be applied. Instead, we employ decentralized SGLD (DE-SGLD) algorithms, where Bayesian learning is performed collaboratively by a network of agents without sharing individual data. Nonetheless, existing DE-SGLD algorithms induce a bias at every agent that can negatively impact performance; this bias persists even when using full batches and is attributable to network effects. Motivated by the EXTRA algorithm and its generalizations for decentralized optimization, we propose the generalized EXTRA stochastic gradient Langevin dynamics, which eliminates this bias in the full-batch setting. Moreover, we show that, in the mini-batch setting, our algorithm provides performance bounds that significantly improve upon those of standard DE-SGLD algorithms in the literature. Our numerical results also demonstrate the efficiency of the proposed approach.\n\nDownload the pre-print from arXiv.org\nShare on\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to topCitationBibTeX citation:@article{gurbuzbalaban2024,\n  author = {Gurbuzbalaban, Mert and Rafiqul Islam, Mohammad and Wang,\n    Xiaoyu and Zhu, Lingjiong},\n  title = {Generalized {EXTRA} Stochastic Gradient {Langevin} Dynamics},\n  journal = {arXiv preprint},\n  date = {2024-12-02},\n  url = {https://mrislambd.github.io/publication/pub3/},\n  doi = {10.48550/arXiv.2412.01993},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nGurbuzbalaban, Mert, Mohammad Rafiqul Islam, Xiaoyu Wang, and Lingjiong\nZhu. 2024. “Generalized EXTRA Stochastic Gradient Langevin\nDynamics.” arXiv Preprint, December. https://doi.org/10.48550/arXiv.2412.01993."
+  },
+  {
+    "objectID": "publication/pub2/index.html",
+    "href": "publication/pub2/index.html",
+    "title": "GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies",
+    "section": "",
+    "text": "Cryptocurrencies are currently traded worldwide, with hundreds of different currencies in existence and even more on the way. This study implements some statistical and machine learning approaches for cryptocurrency investments. First, we implement GJR-GARCH over the GARCH model to estimate the volatility of ten popular cryptocurrencies based on market capitalization: Bitcoin, Bitcoin Cash, Bitcoin SV, Chainlink, EOS, Ethereum, Litecoin, TETHER, Tezos, and XRP. Then, we use Monte Carlo simulations to generate the conditional variance of the cryptocurrencies using the GJR-GARCH model, and calculate the value at risk (VaR) of the simulations. We also estimate the tail-risk using VaR backtesting. Finally, we use an artificial neural network (ANN) for predicting the prices of the ten cryptocurrencies. The graphical analysis and mean square errors (MSEs) from the ANN models confirmed that the predicted prices are close to the market prices. For some cryptocurrencies, the ANN models perform better than traditional ARIMA models.\n\nDownload the paper from here\nShare on\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to topCitationBibTeX citation:@article{mostafa2021,\n  author = {Mostafa, Fahad and Saha, Pritam and Rafiqul Islam, Mohammad\n    and Nguyen, Nguyet},\n  title = {GJR-GARCH {Volatility} {Modeling} Under {NIG} and {ANN} for\n    {Predicting} {Top} {Cryptocurrencies}},\n  journal = {Journal of Risk and Financial Management},\n  date = {2021-09-03},\n  url = {https://mrislambd.github.io/publication/pub2/},\n  doi = {10.3390/jrfm14090421},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nMostafa, Fahad, Pritam Saha, Mohammad Rafiqul Islam, and Nguyet Nguyen.\n2021. “GJR-GARCH Volatility Modeling Under NIG and ANN for\nPredicting Top Cryptocurrencies.” Journal of Risk and\nFinancial Management, September. https://doi.org/10.3390/jrfm14090421."
   }
 ]

@@ -80,8 +80,10 @@ cv:
 
 ## Publications
 
-- <a href="/publication/pub2/index.qmd" style="text-decoration:none">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
-  Mostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) "Comparison of financial models for stock price prediction." *Journal of Risk and Financial Management*.
+- <a href="/publication/pub3/index.qmd" target="_blank" style="text-decoration:none">Generalized EXTRA stochastic gradient Langevin dynamics</a>  
+  Mert, Gurbuzbalaban; Islam, Mohammad Rafiqul; Wang, Xiaoyu; Zhu, Lingjiong  (2024) "Generalized EXTRA stochastic gradient Langevin dynamics." *arXiv preprint arXiv.2412.01993*  
+- <a href="/publication/pub2/index.qmd" target="_blank" style="text-decoration:none">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
+  Mostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) "GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies." *Journal of Risk and Financial Management*.
 - <a href="/publication/pub1/index.qmd" style="text-decoration:none">Comparison of Financial Models for Stock Price Prediction </a>  
   Islam, Mohammad R.; Nguyen, N. (2020) "Comparison of financial models for stock price prediction." *Journal of Risk and Financial Management*. 
 
