@@ -694,5 +694,15 @@
       "/dsandml/decisiontree/index.html",
       "/dsandml/kmeans/index.html"
     ]
+  },
+  {
+    "listing": "/jobandintern/optionprice/index.html",
+    "items": [
+      "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/dsa/index.html",
+      "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/probability/index.html",
+      "/jobandintern/statisticaltalk/index.html"
+    ]
   }
 ]
