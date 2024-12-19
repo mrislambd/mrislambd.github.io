@@ -27,12 +27,11 @@ format:
         enable-ads: false
     pdf: 
       toc: true
-      pdf-engine: pdflatex
+      pdf-engine: xelatex
       adsense:
         enable-ads: false
       number-sections: false
       colorlinks: true
-      cite-method: biblatex
 toc-depth: 4
 ---   
 
