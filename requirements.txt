@@ -192,3 +192,5 @@ cufflinks
 yfinance
 -e ./mywebstyle
 kaggle
+math
+mpl_toolkits.mplot3d
