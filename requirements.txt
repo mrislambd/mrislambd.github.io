@@ -192,4 +192,3 @@ cufflinks
 yfinance
 -e ./mywebstyle
 kaggle
-mpl_toolkits
