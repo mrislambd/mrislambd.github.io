@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/dsandml/simplelinreg/index.html</loc>
-    <lastmod>2024-11-04T20:57:52.837Z</lastmod>
+    <lastmod>2024-12-18T21:54:25.658Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/dsandml/polyreg/index.html</loc>
@@ -199,5 +199,9 @@
   <url>
     <loc>https://mrislambd.github.io/jobandintern/optionprice/index.html</loc>
     <lastmod>2024-12-13T01:49:12.334Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/jobandintern/correlationandregression/index.html</loc>
+    <lastmod>2024-12-19T20:08:34.475Z</lastmod>
   </url>
 </urlset>
