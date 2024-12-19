@@ -192,4 +192,4 @@ cufflinks
 yfinance
 -e ./mywebstyle
 kaggle
-mpl_toolkits.mplot3d
+mpl_toolkits
