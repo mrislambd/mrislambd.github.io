@@ -117,7 +117,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     const options = {
       valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 18,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
@@ -336,7 +337,7 @@ window.Quarto = {
 <p align="center">
 <img src="../../_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400">
 </p>
-<div id="9d60c78c" class="cell" data-execution_count="1">
+<div id="9d64a156" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -354,7 +355,7 @@ window.Quarto = {
 </div>
 <section id="linked-list" class="level2">
 <h2 class="anchored" data-anchor-id="linked-list">Linked List</h2>
-<div id="eec7691f" class="cell" data-execution_count="2">
+<div id="7478cf89" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Node:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value, <span class="bu">next</span><span class="op">=</span><span class="va">None</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.value <span class="op">=</span> value</span>
@@ -383,7 +384,7 @@ window.Quarto = {
 <p align="center">
 <img src="../../jobandintern/dsa/ll1.png" alt="Post under construction" width="450" height="350">
 </p>
-<div id="522a0135" class="cell" data-execution_count="3">
+<div id="46d9665d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse(head):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    prev <span class="op">=</span> <span class="va">None</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    curr <span class="op">=</span> head </span>
@@ -411,7 +412,7 @@ Reversed List
 </section>
 <section id="reverse-a-linked-list-type-ii" class="level3">
 <h3 class="anchored" data-anchor-id="reverse-a-linked-list-type-ii">2. Reverse a linked list: Type II</h3>
-<div id="1d63af27" class="cell" data-execution_count="4">
+<div id="09075a15" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse_in_between(head, left, right):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    dummy <span class="op">=</span> Node(<span class="dv">0</span>, head)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    leftPrev <span class="op">=</span> dummy</span>
@@ -461,7 +462,7 @@ Reversed List between 2 and 4
 <p style="text-align: justify">
 One way to solve this problem is using brute force solution, that is using two nested loops. But this method takes the time complexity of <span class="math inline">\(O(n\times m)\)</span> given that the lenght of set A is <span class="math inline">\(n\)</span> and set B is <span class="math inline">\(m\)</span>. And here is how it is:
 </p>
-<div id="ec72e29f" class="cell" data-execution_count="5">
+<div id="dc53b630" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intersection_of_two_sets(A,B):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    set_A <span class="op">=</span> <span class="bu">set</span>(A)</span>
@@ -481,7 +482,7 @@ One way to solve this problem is using brute force solution, that is using two n
 </div>
 </div>
 <p><strong>Hash Map Approach:</strong> In hash map approach, we can solve the same problem but in this case the time and space complexity is <span class="math inline">\(O(n+m)\)</span></p>
-<div id="44d8f90c" class="cell" data-execution_count="6">
+<div id="987d71a0" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intersection_of_two_sets(A,B):</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    set_A <span class="op">=</span> <span class="bu">set</span>(A)</span>
@@ -500,7 +501,7 @@ One way to solve this problem is using brute force solution, that is using two n
 </div>
 <p>The reason we’re getting <span class="math inline">\([8,6]\)</span> instead of <span class="math inline">\([6,8]\)</span> is because sets in Python are unordered collections, meaning that when you convert the lists <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> to sets, the order of elements is not preserved. So, when we iterate over <code>set_A</code> or <code>set_A</code>, the order can change.</p>
 <p><strong>Better Approach:</strong> If we want to maintain the order of the elements in the original list <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>, we can iterate over the original list directly rather than converting it to a set. Here’s how:</p>
-<div id="0db93229" class="cell" data-execution_count="7">
+<div id="b1cb91bd" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intersection_of_two_sets(A, B):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    set_B <span class="op">=</span> <span class="bu">set</span>(B)  </span>
@@ -522,7 +523,7 @@ Say we have an array of size <span class="math inline">\(n\)</span>. We want to 
 </p>
 <p><strong>Solution</strong></p>
 <p><code>nlargest</code> and <code>nsmallest</code> are two functions from the <code>heapq</code> library that returns <span class="math inline">\(n\)</span> largest and <span class="math inline">\(n\)</span> smallest numbers in decreasing and increasing order, respectively. For example,</p>
-<div id="55c2642b" class="cell" data-execution_count="8">
+<div id="096283a3" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> heapq</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]</span>
@@ -542,7 +543,7 @@ For set [-3, -4, 3, 5]
 </div>
 </div>
 <p>Now if all the elements are positive, then the maximum product of <span class="math inline">\(k=3\)</span> elements would just be the product of the largest three element. However, if the set contains negative numbers like the one in the example, product of the smallest two negative numbers and the first element from the <code>nlargest</code> element that would be the largest.</p>
-<div id="b29f9f24" class="cell" data-execution_count="9">
+<div id="dc4bf06e" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> max_of_three_element_product(arr):</span>
@@ -562,7 +563,7 @@ Max product of 3 elements from set B=[-3, -4, 3, 5] is 60</code></pre>
 </section>
 <section id="find-the-k-nearest-points-from-a-given-point" class="level3">
 <h3 class="anchored" data-anchor-id="find-the-k-nearest-points-from-a-given-point">3. Find the <span class="math inline">\(k\)</span> nearest points from a given point</h3>
-<div id="b4f9cd2c" class="cell" data-execution_count="10">
+<div id="ca08c92c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> knearest(points: <span class="bu">list</span>[<span class="bu">list</span>[<span class="bu">int</span>]], k: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">list</span>[<span class="bu">int</span>]]:</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    dis <span class="op">=</span> []</span>
@@ -610,7 +611,7 @@ Max product of 3 elements from set B=[-3, -4, 3, 5] is 60</code></pre>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TWFjaGluZSUyMExlYXJuaW5nJTJDRGF0YSUyMFNjaWVuY2UlMkNCYXllc2lhbiUyMEluZmVyZW5jZSUyQ0JheWVzaWFuJTIwU3RhdGlzdGljcyUyQ1N0YXRpc3RpY3M=" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1734054636182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1212">
+<div class="g-col-1" data-index="0" data-categories="TWFjaGluZSUyMExlYXJuaW5nJTJDRGF0YSUyMFNjaWVuY2UlMkNCYXllc2lhbiUyMEluZmVyZW5jZSUyQ0JheWVzaWFuJTIwU3RhdGlzdGljcyUyQ1N0YXRpc3RpY3M=" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1734641455725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1212">
 <a href="../../jobandintern/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -635,7 +636,32 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNOdW1iZXIlMjBUaGVvcnk=" data-listing-date-sort="1723334400000" data-listing-file-modified-sort="1734054636184" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNBcnRpZmljaWFsJTIwSW50ZWxsaWdlbmNlJTJDU3RhdGlzdGljcw==" data-listing-date-sort="1734480000000" data-listing-file-modified-sort="1734641455726" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3623">
+<a href="../../jobandintern/correlationandregression/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../../jobandintern/correlationandregression/corr.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Correlation, Bivariate, and Regression Analysis
+</h5>
+<div class="listing-reading-time card-text text-muted">
+19 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, December 18, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNOdW1iZXIlMjBUaGVvcnk=" data-listing-date-sort="1723334400000" data-listing-file-modified-sort="1734641455728" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
 <a href="../../jobandintern/montecarlo1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -654,31 +680,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Sunday, August 11, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="UHJvZ3JhbW1pbmclMkNGaW5hbmNlJTJDRmluYW5jaWFsJTIwTWF0aGVtYXRpY3MlMkNQcmljaW5nJTJDSGVkZ2luZw==" data-listing-date-sort="1699747200000" data-listing-file-modified-sort="1734054636187" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3012">
-<a href="../../jobandintern/optionprice/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../jobandintern/optionprice/bsm.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Pricing Derivatives Using Black-Scholes-Merton Model
-</h5>
-<div class="listing-reading-time card-text text-muted">
-16 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Sunday, November 12, 2023
 </div>
 </div>
 </div>
