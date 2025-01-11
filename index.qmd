@@ -8,9 +8,11 @@
     <a href='https://fsu.edu' target='_blank' style='text-decoration:none'>Florida State University</a><br>
     <br>
     <span style='font-size: 1.1em; font-weight: bold; margin-top: 50px; margin-bottom: 50px;'>Contact</span>  
-    Email: <a href="mailto:mislam@math.fsu.edu" style="text-decoration:none"> mislam@math.fsu.edu</a>  
+    Email: <a href="mailto:rislam@fsu.edu" style="text-decoration:none"> rislam@fsu.edu</a>  
     Office: <a href="https://maps.app.goo.gl/p25RvKR6jiecRYsG9" target="_blank" style="text-decoration:none"> James J. Love Building: Room 331A</a>  
-    Office Hours: On appointments
+    Office Hours: <br>
+    Monday and Wednesday 12:00 pm -1:00 pm <br>
+    Tuesday 11:30 am - 12:30 pm
 </p>  
 
 <br>
