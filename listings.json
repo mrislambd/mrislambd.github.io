@@ -2,6 +2,7 @@
   {
     "listing": "/teaching.html",
     "items": [
+      "/teaching/sp25.html",
       "/teaching/sp24.html",
       "/teaching/fall23.html",
       "/teaching/sp23.html",
@@ -558,6 +559,7 @@
       "/portfolio/dsp/titanic/index.html",
       "/portfolio/spd/webapp/index.html",
       "/portfolio/spd/desgld/index.html",
+      "/teaching/sp25.html",
       "/teaching/sp24.html",
       "/teaching/fall23.html",
       "/teaching/sp23.html",
