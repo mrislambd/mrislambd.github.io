@@ -558,6 +558,7 @@
       "/portfolio/dsp/titanic/index.html",
       "/portfolio/spd/webapp/index.html",
       "/portfolio/spd/desgld/index.html",
+      "/teaching/sp25.html",
       "/teaching/sp24.html",
       "/teaching/fall23.html",
       "/teaching/sp23.html",
@@ -740,6 +741,18 @@
       "/dsandml/svm/index.html",
       "/dsandml/decisiontree/index.html",
       "/dsandml/kmeans/index.html"
+    ]
+  },
+  {
+    "listing": "/teaching.html",
+    "items": [
+      "/teaching/sp25.html",
+      "/teaching/sp24.html",
+      "/teaching/fall23.html",
+      "/teaching/sp23.html",
+      "/teaching/fall22.html",
+      "/teaching/fall21.html",
+      "/teaching/f18-f21.html"
     ]
   }
 ]
