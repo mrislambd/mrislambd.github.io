@@ -550,6 +550,7 @@
   {
     "listing": "/portfolio.html",
     "items": [
+      "/portfolio/dsp/autoloan/index.html",
       "/portfolio/dsp/nlp-sales/index.html",
       "/portfolio/dsp/medicalcost/index.html",
       "/portfolio/dsp/dp-nlp/index.html",

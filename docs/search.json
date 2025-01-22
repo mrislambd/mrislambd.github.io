@@ -963,7 +963,7 @@
     "href": "portfolio.html#data-science-and-machine-learning-projects",
     "title": "",
     "section": "Data Science and Machine Learning Projects",
-    "text": "Data Science and Machine Learning Projects\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nPredicting Product Success Using Customer Reviews and Sales Data\n\n\n\nFriday, October 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInsurance Cost Forecast by using Linear Regression\n\n\n\nFriday, August 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDisease diagnosis using classification and NLP\n\n\n\nTuesday, June 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLendingclub’s loan default prediction\n\n\n\nThursday, February 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature Selection: A linear regression approach to find the impact of the features of e-commerce sales data\n\n\n\nTuesday, August 30, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClassification Probelm: Predict the chance of survival of a voager on Titanic based on the voager’s information\n\n\n\nFriday, October 15, 2021\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Data Science and Machine Learning Projects\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nAuto Loan Decision Model\n\n\n\nWednesday, November 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPredicting Product Success Using Customer Reviews and Sales Data\n\n\n\nFriday, October 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInsurance Cost Forecast by using Linear Regression\n\n\n\nFriday, August 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDisease diagnosis using classification and NLP\n\n\n\nTuesday, June 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLendingclub’s loan default prediction\n\n\n\nThursday, February 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature Selection: A linear regression approach to find the impact of the features of e-commerce sales data\n\n\n\nTuesday, August 30, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClassification Probelm: Predict the chance of survival of a voager on Titanic based on the voager’s information\n\n\n\nFriday, October 15, 2021\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "portfolio.html#software-package-and-development",
@@ -1790,5 +1790,61 @@
     "title": "Teaching",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\nSpring 2025: MAC2311 Calculus With Analytic Geometry I\n\n\n\n\n\n\n\nSpring 2024: MAP4170 Introduction to Actuarial Mathematics\n\n\n\n\n\n\n\nFall 2023: MAP4170 Introduction to Actuarial Mathematics\n\n\n\n\n\n\n\nSpring 2023: MAC1140 PreCalculus Algebra\n\n\n\n\n\n\n\nFall 2022: MAC2311 Calculus and Analytic Geometry I\n\n\n\n\n\n\n\nFall 2021 and Spring 2022: PreCalculus and Algebra\n\n\n\n\n\n\n\nFall 2018 to Spring 2020: College Algebra, Trigonometry\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "portfolio/dsp/autoloan/index.html",
+    "href": "portfolio/dsp/autoloan/index.html",
+    "title": "Auto Loan Decision Model",
+    "section": "",
+    "text": "Report Presentation"
+  },
+  {
+    "objectID": "portfolio/dsp/autoloan/index.html#objective",
+    "href": "portfolio/dsp/autoloan/index.html#objective",
+    "title": "Auto Loan Decision Model",
+    "section": "Objective",
+    "text": "Objective\n\nThe Auto Loan Credit Decisioning Model project aimed to enhance the application decision process for auto loans by leveraging machine learning techniques to classify applicants into approved or rejected categories. The project focused on improving prediction accuracy and ensuring fairness across demographic groups while addressing challenges like class imbalance and missing data."
+  },
+  {
+    "objectID": "portfolio/dsp/autoloan/index.html#data-overview",
+    "href": "portfolio/dsp/autoloan/index.html#data-overview",
+    "title": "Auto Loan Decision Model",
+    "section": "Data Overview",
+    "text": "Data Overview\n\nDataset: Auto loan account data with 21,000 training records and 5,400 test records.\nFeatures: 43 columns, including borrower creditworthiness, loan application attributes, and demographics.\nTarget Variable: ‘Bad Flag’ (binary), indicating ‘Poor Credit Quality’ (95.5%) or ‘Good Credit Quality’ (4.5%).\nChallenges: Significant class imbalance and high proportion of missing values in several predictors."
+  },
+  {
+    "objectID": "portfolio/dsp/autoloan/index.html#methodology",
+    "href": "portfolio/dsp/autoloan/index.html#methodology",
+    "title": "Auto Loan Decision Model",
+    "section": "Methodology",
+    "text": "Methodology\n\nExploratory Data Analysis (EDA):\n\nInvestigated class distributions and correlations with the target variable.\nAddressed missing values using mode and median imputations based on feature types.\nAnalyzed key predictors such as FICO scores, loan-to-value ratios, and credit utilization rates.\n\nModel Development:\n\nBuilt models using Logistic Regression, Decision Tree, and Random Forest classifiers.\nConducted hyperparameter tuning via GridSearchCV for optimal model settings.\nAddressed class imbalance with resampling techniques like SMOTE.\n\nEvaluation Metrics:\n\nPrioritized ROC-AUC, F1-Score, and classification reports over accuracy to account for imbalanced data."
+  },
+  {
+    "objectID": "portfolio/dsp/autoloan/index.html#results",
+    "href": "portfolio/dsp/autoloan/index.html#results",
+    "title": "Auto Loan Decision Model",
+    "section": "Results",
+    "text": "Results\n\nBest Model: Random Forest Classifier with an ROC-AUC score of 0.8078.\nPerformance:\n\nTest data accuracy: 94.08%\nPrecision (Class 0): 96.16%\nRecall (Class 0): 97.70%\n\nFairness Analysis:\n\nGender-neutral approval rates.\nNo significant racial bias in decisions."
+  },
+  {
+    "objectID": "portfolio/dsp/autoloan/index.html#key-insights",
+    "href": "portfolio/dsp/autoloan/index.html#key-insights",
+    "title": "Auto Loan Decision Model",
+    "section": "Key Insights",
+    "text": "Key Insights\n\nFICO scores, loan-to-value ratios, and credit utilization rates were strong predictors of credit quality.\nHigher class imbalance and overfitting issues were observed with resampling techniques."
+  },
+  {
+    "objectID": "portfolio/dsp/autoloan/index.html#innovations",
+    "href": "portfolio/dsp/autoloan/index.html#innovations",
+    "title": "Auto Loan Decision Model",
+    "section": "Innovations",
+    "text": "Innovations\n\nImplemented Local Interpretable Model-agnostic Explanations (LIME) for model transparency, allowing stakeholders to understand prediction outcomes."
+  },
+  {
+    "objectID": "portfolio/dsp/autoloan/index.html#conclusion",
+    "href": "portfolio/dsp/autoloan/index.html#conclusion",
+    "title": "Auto Loan Decision Model",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe Random Forest Classifier demonstrated strong predictive performance and fairness, providing a reliable foundation for auto loan decisioning. Opportunities for further improvements include advanced resampling methods, enhanced feature engineering, and exploring models like XGBoost or LightGBM for better results.\nKeywords: Auto Loan, Predictive Modeling, Random Forest, Class Imbalance, Machine Learning, LIME."
   }
 ]
