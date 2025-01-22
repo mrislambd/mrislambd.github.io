@@ -367,7 +367,7 @@ window.Quarto = {
 <li>For <span class="math inline">\(t &gt; s\)</span>, <span class="math inline">\(B_t - B_s \sim N(0, t-s)\)</span> (normally distributed with mean 0 and variance <span class="math inline">\(t-s\)</span>).</li>
 <li><span class="math inline">\(B_t\)</span> has continuous paths almost surely.</li>
 </ul>
-<div id="c81cf250" class="cell" data-execution_count="1">
+<div id="8ae173d2" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mywebstyle <span class="im">import</span> plot_style</span>
@@ -624,7 +624,7 @@ d_1 = \frac{\ln(\frac{S}{K}) + (r - q + \frac{\sigma^2}{2})T}{\sigma \sqrt{T}}, 
 <li><span class="math inline">\(\sigma\)</span>: Volatility of the stock.</li>
 <li><span class="math inline">\(N(\cdot)\)</span>: Cumulative distribution function of the standard normal distribution.</li>
 </ul>
-<div id="148d7a4e" class="cell" data-execution_count="2">
+<div id="2d588dfb" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
@@ -736,7 +736,7 @@ d_1 = \frac{\ln(\frac{S}{K}) + (r - q + \frac{\sigma^2}{2})T}{\sigma \sqrt{T}}, 
 <p style="text-align: justify">
 Say, we want to price a call option on an equity with spot price <span class="math inline">\(S_0 = 450\)</span> with dividend yield <span class="math inline">\(q=1.4\%\)</span>, and volatility <span class="math inline">\(14\%\)</span>. The strike price of the call is <span class="math inline">\(K=470\)</span>, with time to maturity in years <span class="math inline">\(T=0.23\)</span> and the risk free rate <span class="math inline">\(r = 0.05\)</span>.<br> <br> Next, we want to see the asymptotic behavior of the call option if the strike price <span class="math inline">\(K\rightarrow 0\)</span> with interest rate 0.<br> <br> Next, we want to price a put option on the same equity but strike price <span class="math inline">\(K=500\)</span>, time to maturity in years <span class="math inline">\(T=0.26\)</span> and interest rate is 0.<br> <br> Finally, we want to check if the put-call parity relationship is hold. <br> <br> In each case, we consider <span class="math inline">\(h=0.01\)</span> a bump or small change in the stock price.
 </p>
-<div id="f203578c" class="cell" data-execution_count="3">
+<div id="9c42eb22" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    eq <span class="op">=</span> Equity(<span class="dv">450</span>, <span class="fl">0.014</span>, <span class="fl">0.14</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    option_call <span class="op">=</span> EquityOption(<span class="dv">470</span>, <span class="fl">0.23</span>, <span class="st">"call"</span>)</span>
@@ -804,7 +804,7 @@ True</code></pre>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TWFjaGluZSUyMExlYXJuaW5nJTJDRGF0YSUyMFNjaWVuY2UlMkNCYXllc2lhbiUyMEluZmVyZW5jZSUyQ0JheWVzaWFuJTIwU3RhdGlzdGljcyUyQ1N0YXRpc3RpY3M=" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1736558332135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1212">
+<div class="g-col-1" data-index="0" data-categories="TWFjaGluZSUyMExlYXJuaW5nJTJDRGF0YSUyMFNjaWVuY2UlMkNCYXllc2lhbiUyMEluZmVyZW5jZSUyQ0JheWVzaWFuJTIwU3RhdGlzdGljcyUyQ1N0YXRpc3RpY3M=" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1737518522664" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1212">
 <a href="../../jobandintern/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -829,7 +829,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNBcnRpZmljaWFsJTIwSW50ZWxsaWdlbmNlJTJDU3RhdGlzdGljcw==" data-listing-date-sort="1734480000000" data-listing-file-modified-sort="1736558332136" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3623">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNBcnRpZmljaWFsJTIwSW50ZWxsaWdlbmNlJTJDU3RhdGlzdGljcw==" data-listing-date-sort="1734480000000" data-listing-file-modified-sort="1737518522665" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3623">
 <a href="../../jobandintern/correlationandregression/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -854,7 +854,7 @@ Wednesday, December 18, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="UHJvZ3JhbW1pbmclMkNDb21wdXRlciUyMFNjaWVuY2UlMkNEU0ElMkNBbGdvcml0aG1z" data-listing-date-sort="1726012800000" data-listing-file-modified-sort="1736558332137" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1232">
+<div class="g-col-1" data-index="2" data-categories="UHJvZ3JhbW1pbmclMkNDb21wdXRlciUyMFNjaWVuY2UlMkNEU0ElMkNBbGdvcml0aG1z" data-listing-date-sort="1726012800000" data-listing-file-modified-sort="1737518522666" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1232">
 <a href="../../jobandintern/dsa/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">

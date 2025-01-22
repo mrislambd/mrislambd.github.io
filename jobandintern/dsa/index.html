@@ -337,7 +337,7 @@ window.Quarto = {
 <p align="center">
 <img src="../../_assets/images/uc.jpeg" alt="Post under construction" width="400" height="400">
 </p>
-<div id="e5b4f7a9" class="cell" data-execution_count="1">
+<div id="d3b28a66" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -355,7 +355,7 @@ window.Quarto = {
 </div>
 <section id="linked-list" class="level2">
 <h2 class="anchored" data-anchor-id="linked-list">Linked List</h2>
-<div id="b7346118" class="cell" data-execution_count="2">
+<div id="38c69664" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Node:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value, <span class="bu">next</span><span class="op">=</span><span class="va">None</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.value <span class="op">=</span> value</span>
@@ -384,7 +384,7 @@ window.Quarto = {
 <p align="center">
 <img src="../../jobandintern/dsa/ll1.png" alt="Post under construction" width="450" height="350">
 </p>
-<div id="ec70dbef" class="cell" data-execution_count="3">
+<div id="25ea7afa" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse(head):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    prev <span class="op">=</span> <span class="va">None</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    curr <span class="op">=</span> head </span>
@@ -412,7 +412,7 @@ Reversed List
 </section>
 <section id="reverse-a-linked-list-type-ii" class="level3">
 <h3 class="anchored" data-anchor-id="reverse-a-linked-list-type-ii">2. Reverse a linked list: Type II</h3>
-<div id="e1d7735c" class="cell" data-execution_count="4">
+<div id="02fa8d80" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse_in_between(head, left, right):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    dummy <span class="op">=</span> Node(<span class="dv">0</span>, head)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    leftPrev <span class="op">=</span> dummy</span>
@@ -462,7 +462,7 @@ Reversed List between 2 and 4
 <p style="text-align: justify">
 One way to solve this problem is using brute force solution, that is using two nested loops. But this method takes the time complexity of <span class="math inline">\(O(n\times m)\)</span> given that the lenght of set A is <span class="math inline">\(n\)</span> and set B is <span class="math inline">\(m\)</span>. And here is how it is:
 </p>
-<div id="e2d1e58e" class="cell" data-execution_count="5">
+<div id="030f892a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intersection_of_two_sets(A,B):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    set_A <span class="op">=</span> <span class="bu">set</span>(A)</span>
@@ -482,7 +482,7 @@ One way to solve this problem is using brute force solution, that is using two n
 </div>
 </div>
 <p><strong>Hash Map Approach:</strong> In hash map approach, we can solve the same problem but in this case the time and space complexity is <span class="math inline">\(O(n+m)\)</span></p>
-<div id="86a8c336" class="cell" data-execution_count="6">
+<div id="04f0cb19" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intersection_of_two_sets(A,B):</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    set_A <span class="op">=</span> <span class="bu">set</span>(A)</span>
@@ -495,13 +495,13 @@ One way to solve this problem is using brute force solution, that is using two n
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>]</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(intersection_of_two_sets(A,B))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time required: 0.000003 seconds
+<pre><code>Time required: 0.000010 seconds
 [8, 6]</code></pre>
 </div>
 </div>
 <p>The reason we’re getting <span class="math inline">\([8,6]\)</span> instead of <span class="math inline">\([6,8]\)</span> is because sets in Python are unordered collections, meaning that when you convert the lists <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> to sets, the order of elements is not preserved. So, when we iterate over <code>set_A</code> or <code>set_A</code>, the order can change.</p>
 <p><strong>Better Approach:</strong> If we want to maintain the order of the elements in the original list <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>, we can iterate over the original list directly rather than converting it to a set. Here’s how:</p>
-<div id="4d9c37af" class="cell" data-execution_count="7">
+<div id="442f98ca" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> intersection_of_two_sets(A, B):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    set_B <span class="op">=</span> <span class="bu">set</span>(B)  </span>
@@ -523,7 +523,7 @@ Say we have an array of size <span class="math inline">\(n\)</span>. We want to 
 </p>
 <p><strong>Solution</strong></p>
 <p><code>nlargest</code> and <code>nsmallest</code> are two functions from the <code>heapq</code> library that returns <span class="math inline">\(n\)</span> largest and <span class="math inline">\(n\)</span> smallest numbers in decreasing and increasing order, respectively. For example,</p>
-<div id="dfe0a71f" class="cell" data-execution_count="8">
+<div id="6d7fd978" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> heapq</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]</span>
@@ -543,7 +543,7 @@ For set [-3, -4, 3, 5]
 </div>
 </div>
 <p>Now if all the elements are positive, then the maximum product of <span class="math inline">\(k=3\)</span> elements would just be the product of the largest three element. However, if the set contains negative numbers like the one in the example, product of the smallest two negative numbers and the first element from the <code>nlargest</code> element that would be the largest.</p>
-<div id="31973fa2" class="cell" data-execution_count="9">
+<div id="95342e95" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> max_of_three_element_product(arr):</span>
@@ -563,7 +563,7 @@ Max product of 3 elements from set B=[-3, -4, 3, 5] is 60</code></pre>
 </section>
 <section id="find-the-k-nearest-points-from-a-given-point" class="level3">
 <h3 class="anchored" data-anchor-id="find-the-k-nearest-points-from-a-given-point">3. Find the <span class="math inline">\(k\)</span> nearest points from a given point</h3>
-<div id="e2110334" class="cell" data-execution_count="10">
+<div id="8f1959d2" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="at">@time_required</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> knearest(points: <span class="bu">list</span>[<span class="bu">list</span>[<span class="bu">int</span>]], k: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">list</span>[<span class="bu">int</span>]]:</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    dis <span class="op">=</span> []</span>
@@ -576,7 +576,7 @@ Max product of 3 elements from set B=[-3, -4, 3, 5] is 60</code></pre>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(knearest(pts,k))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time required: 0.000011 seconds
+<pre><code>Time required: 0.000010 seconds
 [[-1, -1], [2, -1], [-2, 2]]</code></pre>
 </div>
 </div>
@@ -611,7 +611,7 @@ Max product of 3 elements from set B=[-3, -4, 3, 5] is 60</code></pre>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TWFjaGluZSUyMExlYXJuaW5nJTJDRGF0YSUyMFNjaWVuY2UlMkNCYXllc2lhbiUyMEluZmVyZW5jZSUyQ0JheWVzaWFuJTIwU3RhdGlzdGljcyUyQ1N0YXRpc3RpY3M=" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1736558332135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1212">
+<div class="g-col-1" data-index="0" data-categories="TWFjaGluZSUyMExlYXJuaW5nJTJDRGF0YSUyMFNjaWVuY2UlMkNCYXllc2lhbiUyMEluZmVyZW5jZSUyQ0JheWVzaWFuJTIwU3RhdGlzdGljcyUyQ1N0YXRpc3RpY3M=" data-listing-date-sort="1722124800000" data-listing-file-modified-sort="1737518522664" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1212">
 <a href="../../jobandintern/bayesianinference/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -636,7 +636,7 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNBcnRpZmljaWFsJTIwSW50ZWxsaWdlbmNlJTJDU3RhdGlzdGljcw==" data-listing-date-sort="1734480000000" data-listing-file-modified-sort="1736558332136" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3623">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNBcnRpZmljaWFsJTIwSW50ZWxsaWdlbmNlJTJDU3RhdGlzdGljcw==" data-listing-date-sort="1734480000000" data-listing-file-modified-sort="1737518522665" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3623">
 <a href="../../jobandintern/correlationandregression/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -661,7 +661,7 @@ Wednesday, December 18, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNOdW1iZXIlMjBUaGVvcnk=" data-listing-date-sort="1723334400000" data-listing-file-modified-sort="1736558332137" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
+<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNOdW1iZXIlMjBUaGVvcnk=" data-listing-date-sort="1723334400000" data-listing-file-modified-sort="1737518522667" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
 <a href="../../jobandintern/montecarlo1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
