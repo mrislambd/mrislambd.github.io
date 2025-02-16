@@ -640,6 +640,7 @@
     "listing": "/dsandml/dataviz/index.html",
     "items": [
       "/dsandml/bayesianclassification/index.html",
+      "/dsandml/adaboost/index.html",
       "/dsandml/naivebayes/index.html",
       "/dsandml/lda/index.html",
       "/dsandml/logreg/index.html",

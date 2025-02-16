@@ -104,12 +104,6 @@ Next, we create the timeseries plot of the closing prices
 df.xs(key='Close', axis=1, level='Price').plot(figsize=(9,5))
 ```
 
-```{python}
-import plotly
-import cufflinks as cf
-cf.go_offline()
-df.xs(key='Close', axis=1, level='Price').iplot()
-```
 
 ### Trend  
 
