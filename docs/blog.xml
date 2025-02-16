@@ -551,7 +551,32 @@ This page is my personal repository of most common and useful machine learning a
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence,Statistics,Probability" data-listing-date-sort="1724126400000" data-listing-file-modified-sort="1739674617139" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="../../posts/jobandintern/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/posts/jobandintern/job.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Basic Statistics and Probability
+</h5>
+<div class="listing-reading-time card-text text-muted">
+1 min
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Tuesday, August 20, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -576,7 +601,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="g-col-1" data-index="2" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
 <a href="../../posts/socialshare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -595,31 +620,6 @@ Rafiq Islam
 </div>
 <div class="listing-date">
 Wednesday, July 17, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726718400000" data-listing-file-modified-sort="1729717132854" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
-<a href="../../posts/sgd/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://mrislambd.github.io/posts/sgd/sgd.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Implementation of Gradient Descent (GD) and Stochastic Gradient Descent (SGD)
-</h5>
-<div class="listing-reading-time card-text text-muted">
-8 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Thursday, September 19, 2024
 </div>
 </div>
 </div>
@@ -1385,7 +1385,7 @@ font-style: inherit;">'#f4f4f4'</span>)</span>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1729716475167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1686">
+<div class="g-col-1" data-index="0" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1733182622113" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1713">
 <a href="../../posts/machinelearning/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1485,7 +1485,7 @@ Stochastic Gradient Descent (SGD).”</span> September 19, 2024. <a href="https:
   <media:content url="https://mrislambd.github.io/posts/sgd/sgd.png" medium="image" type="image/png" height="103" width="144"/>
 </item>
 <item>
-  <title>Internship and Full Time Job Preparation Review</title>
+  <title>Basic Statistics and Probability</title>
   <dc:creator>Rafiq Islam</dc:creator>
   <link>https://mrislambd.github.io/posts/jobandintern/</link>
   <description><![CDATA[ 
@@ -1523,7 +1523,29 @@ Sunday, July 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1729793052523" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1232">
+<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence,Statistics" data-listing-date-sort="1734498000000" data-listing-file-modified-sort="1734641386289" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3623">
+<a href="../../jobandintern/correlationandregression/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/jobandintern/correlationandregression/corr.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Correlation, Bivariate, and Regression Analysis
+</h5>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Wednesday, December 18, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Programming,Computer Science,DSA,Algorithms" data-listing-date-sort="1726027200000" data-listing-file-modified-sort="1729793052523" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1232">
 <a href="../../jobandintern/dsa/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1545,7 +1567,7 @@ Wednesday, September 11, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Computational Mathematics,Number Theory" data-listing-date-sort="1723348800000" data-listing-file-modified-sort="1726870918561" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
+<div class="g-col-1" data-index="3" data-categories="Data Science,Computational Mathematics,Number Theory" data-listing-date-sort="1723348800000" data-listing-file-modified-sort="1726870918561" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
 <a href="../../jobandintern/montecarlo1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1567,7 +1589,29 @@ Sunday, August 11, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Probability,Statistics" data-listing-date-sort="1724299200000" data-listing-file-modified-sort="1726870001086" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="415">
+<div class="g-col-1" data-index="4" data-categories="Programming,Finance,Financial Mathematics,Pricing,Hedging" data-listing-date-sort="1699765200000" data-listing-file-modified-sort="1734054552334" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3012">
+<a href="../../jobandintern/optionprice/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://mrislambd.github.io/jobandintern/optionprice/bsm.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Pricing Derivatives Using Black-Scholes-Merton Model
+</h5>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Sunday, November 12, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="Probability,Statistics" data-listing-date-sort="1724299200000" data-listing-file-modified-sort="1726870001086" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="415">
 <a href="../../jobandintern/probability/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1589,7 +1633,7 @@ Thursday, August 22, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Data Science,Machine Learning,Artificial Intelligence,Statistics" data-listing-date-sort="1725508800000" data-listing-file-modified-sort="1726870022359" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
+<div class="g-col-1" data-index="6" data-categories="Data Science,Machine Learning,Artificial Intelligence,Statistics" data-listing-date-sort="1725508800000" data-listing-file-modified-sort="1726870022359" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
 <a href="../../jobandintern/statisticaltalk/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1611,7 +1655,20 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1723155969000">
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1734641414999">
+<a href="../../jobandintern/.DS_Store" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1723155969000">
 <a href="../../jobandintern/bayesianinference/pancake.jpeg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1624,7 +1681,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1722212776330">
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1722212776330">
 <a href="../../jobandintern/bayesianinference/ven.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1637,7 +1694,20 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1726072605000">
+<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1734587031891">
+<a href="../../jobandintern/correlationandregression/corr.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1726072605000">
 <a href="../../jobandintern/dsa/dsa.jpeg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1650,7 +1720,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1726689396000">
+<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1726689396000">
 <a href="../../jobandintern/dsa/ll1.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1663,7 +1733,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1723362531421">
+<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1723362531421">
 <a href="../../jobandintern/montecarlo1/mc1.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1676,7 +1746,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1726099646345">
+<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1726099646345">
 <a href="../../jobandintern/montecarlo1/pi.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1689,7 +1759,20 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1724359503386">
+<div class="g-col-1" data-index="15" data-listing-file-modified-sort="1734053518926">
+<a href="../../jobandintern/optionprice/bsm.png" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1724359503386">
 <a href="../../jobandintern/probability/prob.png" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1702,7 +1785,7 @@ Thursday, September 5, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1726096329000">
+<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1726096329000">
 <a href="../../jobandintern/statisticaltalk/stat.jpeg" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -1723,6 +1806,8 @@ No matching items
   <category>Data Science</category>
   <category>Machine Learning</category>
   <category>Artificial Intelligence</category>
+  <category>Statistics</category>
+  <category>Probability</category>
   <guid>https://mrislambd.github.io/posts/jobandintern/</guid>
   <pubDate>Tue, 20 Aug 2024 04:00:00 GMT</pubDate>
   <media:content url="https://mrislambd.github.io/posts/jobandintern/job.jpeg" medium="image" type="image/jpeg"/>

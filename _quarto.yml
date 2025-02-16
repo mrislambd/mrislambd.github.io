@@ -32,9 +32,11 @@ website:
         menu: 
           - text: "Data Science and Machine Learning"
             href: posts/machinelearning/index.qmd
-          - text: "Job and Intern"
+          - text: "Data Structure and Algorithm"
+            href: https://mrislambd.github.io/letscode/
+          - text: "Statistics and Probability"
             href: posts/jobandintern/index.qmd
-          - text: "All Other Blogs"
+          - text: "Other Blogs"
             href: blog.qmd
       - icon: linkedin
         href: https://www.linkedin.com/in/mohammad-rafiqul-islam/

@@ -1,8 +1,8 @@
 ---
-title: "Internship and Full Time Job Preparation Review"
+title: "Basic Statistics and Probability"
 date: "2024-08-20"
 author: Rafiq Islam
-categories: [Data Science, Machine Learning, Artificial Intelligence]
+categories: [Data Science, Machine Learning, Artificial Intelligence, Statistics, Probability]
 search: true
 lightbox: true
 image: job.jpeg

@@ -520,10 +520,10 @@
   {
     "listing": "/posts/machinelearning/index.html",
     "items": [
+      "/posts/jobandintern/index.html",
       "/posts/eigen/index.html",
       "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
-      "/posts/jobandintern/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
@@ -593,7 +593,9 @@
     "listing": "/jobandintern/dsa/index.html",
     "items": [
       "/jobandintern/bayesianinference/index.html",
+      "/jobandintern/correlationandregression/index.html",
       "/jobandintern/montecarlo1/index.html",
+      "/jobandintern/optionprice/index.html",
       "/jobandintern/probability/index.html",
       "/jobandintern/statisticaltalk/index.html"
     ]
@@ -754,6 +756,22 @@
       "/teaching/fall22.html",
       "/teaching/fall21.html",
       "/teaching/f18-f21.html"
+    ]
+  },
+  {
+    "listing": "/posts/sgd/index.html",
+    "items": [
+      "/posts/machinelearning/index.html",
+      "/posts/eigen/index.html",
+      "/posts/socialshare/index.html",
+      "/posts/jobandintern/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/welcome/index.html",
+      "/posts/bengalitrial/index.html"
     ]
   }
 ]
