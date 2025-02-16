@@ -1,0 +1,336 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Data Visualization\"\n",
+        "date: \"2024-11-08\"\n",
+        "author: Rafiq Islam\n",
+        "categories: [Data Science, Machine Learning, Artificial Intelligence, Data Engineering]\n",
+        "citation: true\n",
+        "search: true\n",
+        "lightbox: true\n",
+        "listing: \n",
+        "    contents: \"/../../dsandml\"\n",
+        "    max-items: 3\n",
+        "    type: grid\n",
+        "    categories: true\n",
+        "    date-format: full\n",
+        "    fields: [image, date, title, author, reading-time]  \n",
+        "format: \n",
+        "    html: default\n",
+        "    ipynb: default\n",
+        "toc-depth: 4\n",
+        "---  \n",
+        "\n",
+        "\n",
+        "For this data visualization project we use top 5 bank stock price data.  \n"
+      ],
+      "id": "c30ae4c7"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import yfinance as yf\n",
+        "import numpy as np\n",
+        "import seaborn as sns\n",
+        "import matplotlib.pyplot as plt\n",
+        "from mywebstyle import plot_style\n",
+        "plot_style('#f4f4f4')"
+      ],
+      "id": "184c3cc4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Data  \n"
+      ],
+      "id": "e1a83612"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "start = pd.to_datetime('2020-01-01')\n",
+        "end = pd.to_datetime('today')\n",
+        "df = yf.download(['WFC','BAC','JPM','C','GS'], start=start, end=end)\n",
+        "df.index = df.index.date\n",
+        "df.tail()"
+      ],
+      "id": "5a7488a7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Now we compute the maximum closing prices of all these 5 banks during this time period  \n"
+      ],
+      "id": "066928d9"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "df.xs(key='Close', axis=1, level='Price').max()"
+      ],
+      "id": "836e77a7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Now we compute the returns for each of the stock \n"
+      ],
+      "id": "86a7cc98"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Retrieve the 'Close' prices for each ticker directly\n",
+        "close_prices = df.xs(key='Close', axis=1, level=0)\n",
+        "\n",
+        "# Calculate the daily percentage change (returns) for all tickers\n",
+        "returns = close_prices.pct_change()\n",
+        "returns.index = pd.to_datetime(returns.index)\n",
+        "\n",
+        "# Display the first few rows of returns\n",
+        "returns.head()"
+      ],
+      "id": "207cf190",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Visualization  \n",
+        "\n",
+        "Let's create a pairplot of the returns  \n"
+      ],
+      "id": "190d0f44"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sns.pairplot(returns[1:])"
+      ],
+      "id": "125cdd85",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Now to check the maximum and minimum return and on what dates that happened  \n"
+      ],
+      "id": "507d76a8"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print('Minimum Return')\n",
+        "print(' ')\n",
+        "print(returns.idxmin())\n",
+        "print(' ')\n",
+        "print('Maximum Return')\n",
+        "print(' ')\n",
+        "print(returns.idxmax())"
+      ],
+      "id": "26436eb7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "To find which bank is more risky we can simply check the standard deviations of the returns of each bank  \n"
+      ],
+      "id": "fe17b7cc"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "returns.std()"
+      ],
+      "id": "de7bec0c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "It seems like CITI na groop has the maximum value in the standared deviations. \n",
+        "\n",
+        "\n",
+        "Now let's check the distribution of Wells Fargo's return in 2023  \n"
+      ],
+      "id": "e55ffc66"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "return_2023_wf = returns.loc['2023-01-01':'2023-12-31','WFC']\n",
+        "sns.displot(return_2023_wf, color='blue', bins=80, kde=True)"
+      ],
+      "id": "70e4e659",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Next, we create the timeseries plot of the closing prices  \n"
+      ],
+      "id": "e6e2ab6d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "df.xs(key='Close', axis=1, level='Price').plot(figsize=(9,5))"
+      ],
+      "id": "d6a075e4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Trend  \n",
+        "\n",
+        "Next we plot moving average for Wells Fargo  \n"
+      ],
+      "id": "9afa738c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "wfc = df['Close']['WFC']\n",
+        "start_date = pd.to_datetime('2023-10-10').date()\n",
+        "end_date = pd.to_datetime('2024-10-20').date()\n",
+        "wfc.loc[start_date:end_date].rolling(window=30).mean().plot(\n",
+        "    figsize=(9,5),label='30 Day Avg'\n",
+        "    )\n",
+        "wfc.loc[start_date:end_date].plot(\n",
+        "    label='WFC Close',figsize=(9,5)\n",
+        "    )\n",
+        "plt.legend()"
+      ],
+      "id": "264411d8",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Price Movement Correlation  \n"
+      ],
+      "id": "df1f9867"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sns.heatmap(df.xs(key='Close', axis=1, level='Price').corr(), annot=True)"
+      ],
+      "id": "c749ef27",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Share on**  \n",
+        "\n",
+        "::::{.columns}\n",
+        ":::{.column width=\"33%\"}\n",
+        "<a href=\"https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/dsandml/dataviz/\" target=\"_blank\" style=\"color:#1877F2; text-decoration: none;\">\n",
+        " \n",
+        "\n",
+        "{{< fa brands facebook size=3x >}}\n",
+        "\n",
+        "</a>\n",
+        " \n",
+        ":::\n",
+        " \n",
+        ":::{.column width=\"33%\"}\n",
+        "<a href=\"https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/dsandml/dataviz/\" target=\"_blank\" style=\"color:#0077B5; text-decoration: none;\">\n",
+        " \n",
+        "\n",
+        "{{< fa brands linkedin size=3x >}}\n",
+        "\n",
+        "</a>\n",
+        " \n",
+        ":::\n",
+        " \n",
+        ":::{.column width=\"33%\"}\n",
+        "<a href=\"https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/dsandml/dataviz/\" target=\"_blank\" style=\"color:#1DA1F2; text-decoration: none;\">\n",
+        " \n",
+        "\n",
+        "{{< fa brands twitter size=3x >}}\n",
+        "\n",
+        "</a>\n",
+        " \n",
+        ":::\n",
+        "::::\n",
+        " \n",
+        "<script src=\"https://giscus.app/client.js\"\n",
+        "        data-repo=\"mrislambd/mrislambd.github.io\" \n",
+        "        data-repo-id=\"R_kgDOMV8crA\"\n",
+        "        data-category=\"Announcements\"\n",
+        "        data-category-id=\"DIC_kwDOMV8crM4CjbQW\"\n",
+        "        data-mapping=\"pathname\"\n",
+        "        data-strict=\"0\"\n",
+        "        data-reactions-enabled=\"1\"\n",
+        "        data-emit-metadata=\"0\"\n",
+        "        data-input-position=\"bottom\"\n",
+        "        data-theme=\"light\"\n",
+        "        data-lang=\"en\"\n",
+        "        crossorigin=\"anonymous\"\n",
+        "        async>\n",
+        "</script>\n",
+        " \n",
+        "<div id=\"fb-root\"></div>\n",
+        "<script async defer crossorigin=\"anonymous\"\n",
+        " src=\"https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0\"></script>\n",
+        "<div class=\"fb-comments\" data-href=\"https://mrislambd.github.io/dsandml/dataviz/\" data-width=\"750\" data-numposts=\"5\"></div>"
+      ],
+      "id": "a109dde7"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/macpc/Library/CloudStorage/OneDrive-FloridaStateUniversity/OnlineLearning/python_environments/pytorch-env/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

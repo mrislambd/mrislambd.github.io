@@ -128,26 +128,7 @@ plt.legend()
 sns.heatmap(df.xs(key='Close', axis=1, level='Price').corr(), annot=True)
 ```  
 
-### Techniqal Analysis Plots  
 
-**Candle PLot**  
-```{python}
-wfc = df[['Open', 'High', 'Low', 'Close']].xs('WFC', level=1, axis=1)
-
-# Define start and end dates
-start_date = pd.to_datetime('2023-10-10').date()
-end_date = pd.to_datetime('2024-10-20').date()
-
-wfc_filtered = wfc.loc[start_date:end_date]
-wfc_filtered.iplot(kind='candle')
-
-```  
-
-**Bollinger Plot**  
-
-```{python}
-wfc_filtered['Close'].ta_plot(study='boll')
-```
 
 **Share on**  
 
