@@ -31,11 +31,11 @@ website:
       - text: Blog
         menu: 
           - text: "Data Science and Machine Learning"
-            href: posts/machinelearning/index.qmd
+            href: https://mrislambd.github.io/dsandml/
           - text: "Data Structure and Algorithm"
             href: https://mrislambd.github.io/letscode/
           - text: "Statistics and Probability"
-            href: posts/jobandintern/index.qmd
+            href: https://mrislambd.github.io/statandprob/
           - text: "Other Blogs"
             href: blog.qmd
       - icon: linkedin

@@ -114,9 +114,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -224,7 +224,7 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-blog">    
         <li>
-    <a class="dropdown-item" href="./posts/machinelearning/index.html">
+    <a class="dropdown-item" href="https://mrislambd.github.io/dsandml/">
  <span class="dropdown-text">Data Science and Machine Learning</span></a>
   </li>  
         <li>
@@ -232,7 +232,7 @@ window.Quarto = {
  <span class="dropdown-text">Data Structure and Algorithm</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./posts/jobandintern/index.html">
+    <a class="dropdown-item" href="https://mrislambd.github.io/statandprob/">
  <span class="dropdown-text">Statistics and Probability</span></a>
   </li>  
         <li>
@@ -273,7 +273,7 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Algorithmic Complexity">Algorithmic Complexity <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Applied Mathematics">Applied Mathematics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Artificial Intelligence">Artificial Intelligence <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Computational Mathematics">Computational Mathematics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Computer Science">Computer Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Linear Algebra">Linear Algebra <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Math Biology">Math Biology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Mathematical Modeling">Mathematical Modeling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Mathematics">Mathematics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="News">News <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Optimization">Optimization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Probability">Probability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Programming">Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Stochastic Gradient Descent">Stochastic Gradient Descent <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Technology">Technology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Website">Website <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="Algorithmic Complexity">Algorithmic Complexity</div><div class="category" data-category="Applied Mathematics">Applied Mathematics</div><div class="category" data-category="Computational Mathematics">Computational Mathematics</div><div class="category" data-category="Computer Science">Computer Science</div><div class="category" data-category="Data Science">Data Science</div><div class="category" data-category="Linear Algebra">Linear Algebra</div><div class="category" data-category="Machine Learning">Machine Learning</div><div class="category" data-category="Math Biology">Math Biology</div><div class="category" data-category="Mathematical Modeling">Mathematical Modeling</div><div class="category" data-category="Mathematics">Mathematics</div><div class="category" data-category="News">News</div><div class="category" data-category="Optimization">Optimization</div><div class="category" data-category="Programming">Programming</div><div class="category" data-category="Stochastic Gradient Descent">Stochastic Gradient Descent</div><div class="category" data-category="Technology">Technology</div><div class="category" data-category="Website">Website</div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -303,7 +303,7 @@ window.Quarto = {
 <!-- -->
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
@@ -319,309 +319,398 @@ window.Quarto = {
          <option value="listing-date-sort" data-direction="desc">
           Date - Newest
         </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
      </select>
   </div>
 </div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1729656000000" data-listing-file-modified-sort="1731026618330" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="82">
-<a href="./posts/bengalitrial/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/bengalitrial/ben.svg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-বাংলা ভাষায় আমার লেখা || My Blog in Benglali Language
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="thumbnail">
+<p><a href="./posts/eigen/index.html" class="no-external"></a></p><a href="./posts/eigen/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/eigen/lin3.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/eigen/index.html" class="no-external"></a></p>
 </div>
-<div class="card-attribution card-text-small justify">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/eigen/index.html" class="no-external">Generalized eigenvectors and eigenspaces</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/eigen/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Linear Algebra'); return false;">
+Linear Algebra
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Mathematics'); return false;">
+Mathematics
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/eigen/index.html" class="no-external">
+Definition: Let <span class="math inline">\(\alpha\in End(V)\)</span> and <span class="math inline">\(\lambda\in spec(\alpha)\)</span>. A non-zero vector <span class="math inline">\(v\)</span> is called a generalized eigenvector vector of <span class="math inline">\(\alpha\)</span> associated with <span class="math inline">\(\lam…</span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/eigen/index.html" class="no-external">
+<div class="listing-date">
+Jan 25, 2021
+</div>
+<div class="listing-author">
+Rafiq Islam
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
+<div class="thumbnail">
+<p><a href="./posts/socialshare/index.html" class="no-external"></a></p><a href="./posts/socialshare/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/socialshare/ss.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/socialshare/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/socialshare/index.html" class="no-external">How to generate social share buttons</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/socialshare/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('News'); return false;">
+News
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Technology'); return false;">
+Technology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Website'); return false;">
+Website
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/socialshare/index.html" class="no-external">
+If you want to share any blog posts on social media, you can have a share button at the bottom of each post so that the reader can easily share this on their preferred…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/socialshare/index.html" class="no-external">
+<div class="listing-date">
+Jul 17, 2024
+</div>
+<div class="listing-author">
+Rafiq Islam
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726718400000" data-listing-file-modified-sort="1729717132854" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="thumbnail">
+<p><a href="./posts/sgd/index.html" class="no-external"></a></p><a href="./posts/sgd/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/sgd/sgd.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/sgd/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/sgd/index.html" class="no-external">Implementation of Gradient Descent (GD) and Stochastic Gradient Descent (SGD)</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/sgd/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Science'); return false;">
+Data Science
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
+Machine Learning
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Stochastic Gradient Descent'); return false;">
+Stochastic Gradient Descent
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Optimization'); return false;">
+Optimization
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/sgd/index.html" class="no-external">
+ <br> GIF Credit: gbhat.com<br>
+<br> Gradient Descent is an optimization algorithm used to minimize the cost function. The cost function <span class="math inline">\(f(\beta)\)</span> measures how well a model with…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><br><br><span class="math inline"></span><span class="math inline"></span><br><span class="math display"></span></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/sgd/index.html" class="no-external">
+<div class="listing-date">
+Sep 19, 2024
+</div>
+<div class="listing-author">
+Rafiq Islam
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636434000000" data-listing-file-modified-sort="1721274577000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="thumbnail">
+<p><a href="./posts/lu/index.html" class="no-external"></a></p><a href="./posts/lu/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/lu/lu.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/lu/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/lu/index.html" class="no-external">LU Factorization of a Full rank Matrix using Fortran</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/lu/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Science'); return false;">
+Data Science
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
+Machine Learning
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Computational Mathematics'); return false;">
+Computational Mathematics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Algorithmic Complexity'); return false;">
+Algorithmic Complexity
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Programming'); return false;">
+Programming
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Computer Science'); return false;">
+Computer Science
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/lu/index.html" class="no-external"><strong>Share on</strong></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/lu/index.html" class="no-external">
+<div class="listing-date">
+Nov 9, 2021
+</div>
+<div class="listing-author">
+Rafiq Islam
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611205200000" data-listing-file-modified-sort="1723161143287" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
+<div class="thumbnail">
+<p><a href="./posts/matrixrep/index.html" class="no-external"></a></p><a href="./posts/matrixrep/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/matrixrep/lin2.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/matrixrep/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/matrixrep/index.html" class="no-external">Matrix Representation: Change of Basis</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/matrixrep/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Linear Algebra'); return false;">
+Linear Algebra
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Mathematics'); return false;">
+Mathematics
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/matrixrep/index.html" class="no-external">
+Let <span class="math inline">\(\alpha: \mathcal{P}_2(\mathbb{R}) \longrightarrow M_{2\times 2}(\mathbb{R})\)</span> be defined by
+</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/matrixrep/index.html" class="no-external">
+<div class="listing-date">
+Jan 21, 2021
+</div>
+<div class="listing-author">
+Rafiq Islam
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity" data-listing-date-sort="1719806400000" data-listing-file-modified-sort="1723166583964" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
+<div class="thumbnail">
+<p><a href="./posts/matmul/index.html" class="no-external"></a></p><a href="./posts/matmul/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/matmul/matmul.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/matmul/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/matmul/index.html" class="no-external">Matrix multiplication: Let’s make it less expensive!</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/matmul/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Science'); return false;">
+Data Science
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
+Machine Learning
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Computational Mathematics'); return false;">
+Computational Mathematics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Algorithmic Complexity'); return false;">
+Algorithmic Complexity
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/matmul/index.html" class="no-external">Have you ever wondered why your code takes forever to run? Sometimes a simple code may take significant time because of an inefficient implementation approach. Let’s take a…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/matmul/index.html" class="no-external">
+<div class="listing-date">
+Jul 1, 2024
+</div>
+<div class="listing-author">
+Rafiq Islam
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="Applied Mathematics,Math Biology,Mathematical Modeling" data-listing-date-sort="1614056400000" data-listing-file-modified-sort="1721256542000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589">
+<div class="thumbnail">
+<p><a href="./posts/mathbiology/index.html" class="no-external"></a></p><a href="./posts/mathbiology/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/mathbiology/b1.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/mathbiology/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/mathbiology/index.html" class="no-external">Modeling viral disease</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/mathbiology/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Applied Mathematics'); return false;">
+Applied Mathematics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Math Biology'); return false;">
+Math Biology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Mathematical Modeling'); return false;">
+Mathematical Modeling
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/mathbiology/index.html" class="no-external">Consider the spreading of a highly communicable disease on an isolated island with population size <span class="math inline">\(N\)</span>. A portion of the population travels abroad and returns to the…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/mathbiology/index.html" class="no-external">
+<div class="listing-date">
+Feb 23, 2021
+</div>
+<div class="listing-author">
+Rafiq Islam
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611464400000" data-listing-file-modified-sort="1723161312205" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1033">
+<div class="thumbnail">
+<p><a href="./posts/someproofs/index.html" class="no-external"></a></p><a href="./posts/someproofs/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/someproofs/lin1.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/someproofs/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/someproofs/index.html" class="no-external">Some Linear Algebra Proofs</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/someproofs/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Linear Algebra'); return false;">
+Linear Algebra
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Mathematics'); return false;">
+Mathematics
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/someproofs/index.html" class="no-external"><strong>Proof</strong>: To prove this, we will use two known properties of matrices.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/someproofs/index.html" class="no-external">
+<div class="listing-date">
+Jan 24, 2021
+</div>
+<div class="listing-author">
+Rafiq Islam
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="News" data-listing-date-sort="1720756800000" data-listing-file-modified-sort="1721459923000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="88">
+<div class="thumbnail">
+<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/welcome/ada.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/welcome/index.html" class="no-external">Welcome to my blog</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/welcome/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('News'); return false;">
+News
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/welcome/index.html" class="no-external">Here is a demo picture</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/welcome/index.html" class="no-external">
+<div class="listing-date">
+Jul 12, 2024
+</div>
+<div class="listing-author">
+Rafiq Islam
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1729656000000" data-listing-file-modified-sort="1731026618330" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="82">
+<div class="thumbnail">
+<p><a href="./posts/bengalitrial/index.html" class="no-external"></a></p><a href="./posts/bengalitrial/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/bengalitrial/ben.svg" class="thumbnail-image"></p>
+</a><p><a href="./posts/bengalitrial/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/bengalitrial/index.html" class="no-external">বাংলা ভাষায় আমার লেখা || My Blog in Benglali Language</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/bengalitrial/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/bengalitrial/index.html" class="no-external">
+“বাংলায় ব্লগিং করতে পারলে ভালই হতো” এমন ভাবনা থেকেই ঘাটাঘটি শুরু করলাম কিভাবে নিজের ব্লগে বাংলায় লিখতে পারি। বাংলায় মনের ভাব প্রকাশের অসংখ্য মাধ্যম রয়েছে। সামাজিক যোগাযোগের…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/bengalitrial/index.html" class="no-external">
+<div class="listing-date">
+Oct 23, 2024
+</div>
 <div class="listing-author">
 মোহাম্মদ রকিবুল ইসলাম
 </div>
-<div class="listing-date">
-Wednesday, October 23, 2024
-</div>
-</div>
-</div>
-</div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Data Science,Machine Learning,Artificial Intelligence" data-listing-date-sort="1726804800000" data-listing-file-modified-sort="1733182622113" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1713">
-<a href="./posts/machinelearning/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/machinelearning/ml.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Data Science &amp; Machine Learning Basics
-</h5>
-<div class="listing-reading-time card-text text-muted">
-9 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Friday, September 20, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Data Science,Machine Learning,Stochastic Gradient Descent,Optimization" data-listing-date-sort="1726718400000" data-listing-file-modified-sort="1729717132854" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
-<a href="./posts/sgd/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/sgd/sgd.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Implementation of Gradient Descent (GD) and Stochastic Gradient Descent (SGD)
-</h5>
-<div class="listing-reading-time card-text text-muted">
-8 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Thursday, September 19, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Data Science,Machine Learning,Artificial Intelligence,Statistics,Probability" data-listing-date-sort="1724126400000" data-listing-file-modified-sort="1739674617139" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a href="./posts/jobandintern/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/jobandintern/job.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Basic Statistics and Probability
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Tuesday, August 20, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="News,Technology,Website" data-listing-date-sort="1721188800000" data-listing-file-modified-sort="1723165412401" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="./posts/socialshare/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/socialshare/ss.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-How to generate social share buttons
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Wednesday, July 17, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="News" data-listing-date-sort="1720756800000" data-listing-file-modified-sort="1721459923000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="88">
-<a href="./posts/welcome/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/welcome/ada.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Welcome to my blog
-</h5>
-<div class="listing-reading-time card-text text-muted">
-1 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Friday, July 12, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity" data-listing-date-sort="1719806400000" data-listing-file-modified-sort="1723166583964" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
-<a href="./posts/matmul/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/matmul/matmul.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Matrix multiplication: Let’s make it less expensive!
-</h5>
-<div class="listing-reading-time card-text text-muted">
-6 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Monday, July 1, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="Data Science,Machine Learning,Computational Mathematics,Algorithmic Complexity,Programming,Computer Science" data-listing-date-sort="1636434000000" data-listing-file-modified-sort="1721274577000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
-<a href="./posts/lu/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/lu/lu.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-LU Factorization of a Full rank Matrix using Fortran
-</h5>
-<div class="listing-reading-time card-text text-muted">
-26 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Tuesday, November 9, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="Applied Mathematics,Math Biology,Mathematical Modeling" data-listing-date-sort="1614056400000" data-listing-file-modified-sort="1721256542000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589">
-<a href="./posts/mathbiology/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/mathbiology/b1.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Modeling viral disease
-</h5>
-<div class="listing-reading-time card-text text-muted">
-3 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Tuesday, February 23, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="9" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611550800000" data-listing-file-modified-sort="1721279787000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
-<a href="./posts/eigen/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/eigen/lin3.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Generalized eigenvectors and eigenspaces
-</h5>
-<div class="listing-reading-time card-text text-muted">
-2 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Monday, January 25, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="10" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611464400000" data-listing-file-modified-sort="1723161312205" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1033">
-<a href="./posts/someproofs/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/someproofs/lin1.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Some Linear Algebra Proofs
-</h5>
-<div class="listing-reading-time card-text text-muted">
-6 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Sunday, January 24, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="11" data-categories="Linear Algebra,Mathematics" data-listing-date-sort="1611205200000" data-listing-file-modified-sort="1723161143287" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
-<a href="./posts/matrixrep/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/matrixrep/lin2.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Matrix Representation: Change of Basis
-</h5>
-<div class="listing-reading-time card-text text-muted">
-3 min
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Rafiq Islam
-</div>
-<div class="listing-date">
-Thursday, January 21, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">
@@ -1247,18 +1336,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Blog</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span><span class="co"> </span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: posts</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    sort: "date desc"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    categories: true</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: full</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    fields: [image, date, title, author, reading-time]</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    sort-ui: [title, date]</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    feed: true</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>&lt;script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>     crossorigin="anonymous"&gt;&lt;/script&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    sort-ui: true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    feed: true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    categories: unnumbered</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>&lt;script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>     crossorigin="anonymous"&gt;&lt;/script&gt; </span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

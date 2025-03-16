@@ -3,11 +3,11 @@ listing:
   - id: ds-projects
     contents: "/portfolio/dsp"
     type: grid
-    sort: "date desc"
-    date-format: full
-    fields: [image, date, title]
-    sort-ui: [title, date]
+    grid-columns: 2
+    grid-item-align: center
+    sort-ui: true
     feed: true
+    
   - id: spd-projects
     contents: "/portfolio/spd"
     type: grid

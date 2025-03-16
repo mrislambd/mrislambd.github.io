@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mrislambd.github.io/blog.html</loc>
-    <lastmod>2024-08-29T16:23:33.036Z</lastmod>
+    <lastmod>2025-03-16T04:24:33.085Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/dsandml/multiclass/index.html</loc>
@@ -94,15 +94,15 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/research.html</loc>
-    <lastmod>2024-12-04T03:56:19.150Z</lastmod>
+    <lastmod>2025-03-16T04:11:03.430Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/cv.html</loc>
-    <lastmod>2025-01-11T01:07:38.397Z</lastmod>
+    <lastmod>2025-03-16T04:19:41.957Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/portfolio.html</loc>
-    <lastmod>2024-09-02T03:06:45.644Z</lastmod>
+    <lastmod>2025-03-16T04:16:48.190Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/jobandintern/index.html</loc>
@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/index.html</loc>
-    <lastmod>2025-01-11T01:03:20.644Z</lastmod>
+    <lastmod>2025-03-16T04:01:14.554Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/jobandintern/bayesianinference/index.html</loc>
@@ -219,5 +219,13 @@
   <url>
     <loc>https://mrislambd.github.io/posts/sgd/index.html</loc>
     <lastmod>2024-10-23T20:58:52.854Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/research/extrasgld/index.html</loc>
+    <lastmod>2025-03-16T04:09:29.467Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/research/rulmc/index.html</loc>
+    <lastmod>2025-03-16T04:08:08.624Z</lastmod>
   </url>
 </urlset>

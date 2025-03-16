@@ -1,11 +1,18 @@
 ---
 listing: 
-  contents: talks
-  type: table
-  sort: "date desc"
-  filter-ui: false
-  sort-ui: false
-  fields: [date,title]
+  - id: phdrs
+    contents: "/research/"
+    type: grid
+    grid-columns: 2
+    grid-item-align: center
+    image-lazy-loading: true
+  - id: tandp
+    contents: "/talks/"
+    type: table
+    sort: "date desc"
+    filter-ui: false
+    sort-ui: false
+    fields: [date,title]
 ---  
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
@@ -13,38 +20,12 @@ listing:
 
 ## Current Research  
 
-- Higher order Langevin dynamics: General $n$th order Langevin dynamics  
-- Reflected Underdamped Langevin Monte Carlo dynamics  
-  
-
-
-## Research Interest 
-- Machine Learning: Centralized and Decentralized Stochastic Gradient Descent (SGD);Algorithmic Stability in SGD; Differential Privacy in machine learning algorithms
-- Applied Data Science
-- Financial Mathematics
+::: {#phdrs}
+:::
 
 ## Publications
 
-
-```{=html}
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <a href='https://scholar.google.com/citations?user=gTz5r68AAAAJ&hl=en' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/gs.png' height='15' width='15' alt='Google Scholar' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Google Scholar</span></a>
-      </td>
-      <td>
-        <a href='https://www.researchgate.net/profile/Mohammad-Rafiqul-Islam-5' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/rg.png' height='15' width='15' alt='ResearchGate' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> ResearchGate</span></a>
-      </td>
-      <td>
-        <a href='https://orcid.org/0000-0002-4376-8971' target='_blank' style='display: inline-block; vertical-align: middle;'><img src='/_assets/images/orcid.png' height='15' width='15' alt='Orcid' style='margin-right: 5px;'></span><span style='display: inline-block; vertical-align: middle;'> Orcid</span></a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-```
-
-- <a href="/publication/pub3/index.qmd" target="_blank" style="text-decoration:none">Generalized EXTRA stochastic gradient Langevin dynamics</a>  
+- <a href="/research/extrsgld/index.qmd" target="_blank" style="text-decoration:none">Generalized EXTRA stochastic gradient Langevin dynamics</a>  
   Mert, Gurbuzbalaban; Islam, Mohammad Rafiqul; Wang, Xiaoyu; Zhu, Lingjiong  (2024) "Generalized EXTRA stochastic gradient Langevin dynamics." *arXiv preprint arXiv.2412.01993*
 - <a href="/publication/pub2/index.qmd" target="_blank" style="text-decoration:none">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
   Mostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) "GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies." *Journal of Risk and Financial Management*.

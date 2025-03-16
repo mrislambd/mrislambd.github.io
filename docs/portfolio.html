@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
@@ -280,16 +280,20 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-blog">    
         <li>
-    <a class="dropdown-item" href="./posts/machinelearning/index.html">
+    <a class="dropdown-item" href="https://mrislambd.github.io/dsandml/">
  <span class="dropdown-text">Data Science and Machine Learning</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./posts/jobandintern/index.html">
- <span class="dropdown-text">Job and Intern</span></a>
+    <a class="dropdown-item" href="https://mrislambd.github.io/letscode/">
+ <span class="dropdown-text">Data Structure and Algorithm</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://mrislambd.github.io/statandprob/">
+ <span class="dropdown-text">Statistics and Probability</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./blog.html">
- <span class="dropdown-text">All Other Blogs</span></a>
+ <span class="dropdown-text">Other Blogs</span></a>
   </li>  
     </ul>
   </li>
@@ -358,13 +362,16 @@ window.Quarto = {
          <option value="listing-date-sort" data-direction="desc">
           Date - Newest
         </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
      </select>
   </div>
 </div>
-<div class="list grid quarto-listing-cols-3">
+<div class="list grid quarto-listing-cols-2">
 <div class="g-col-1" data-index="0" data-listing-date-sort="1732078800000" data-listing-file-modified-sort="1737518355858" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="369">
 <a href="./portfolio/dsp/autoloan/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
+<div class="quarto-grid-item card h-100 card-center">
 <p class="card-img-top">
 <img loading="lazy" src="./portfolio/dsp/autoloan/auto.webp" class="thumbnail-image card-img" style="height: 150px;">
 </p>
@@ -372,113 +379,26 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 Auto Loan Decision Model
 </h5>
-<div class="card-attribution card-text-small end">
+<div class="card-text listing-description">
+
+Report Presentation
+
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
 <div class="listing-date">
-Wednesday, November 20, 2024
+Nov 20, 2024
 </div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1728619200000" data-listing-file-modified-sort="1728664641532" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
-<a href="./portfolio/dsp/nlp-sales/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./portfolio/dsp/nlp-sales/amazon.webp" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Predicting Product Success Using Customer Reviews and Sales Data
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Friday, October 11, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1724990400000" data-listing-file-modified-sort="1726555599244" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="487">
-<a href="./portfolio/dsp/medicalcost/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./portfolio/dsp/medicalcost/ins.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Insurance Cost Forecast by using Linear Regression
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Friday, August 30, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1718683200000" data-listing-file-modified-sort="1721599088000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="131">
-<a href="./portfolio/dsp/dp-nlp/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./portfolio/dsp/dp-nlp/dpnlp.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Disease diagnosis using classification and NLP
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Tuesday, June 18, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1677128400000" data-listing-file-modified-sort="1731369859231" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="876">
-<a href="./portfolio/dsp/lendingclub/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./portfolio/dsp/lendingclub/lending.webp" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Lendingclub’s loan default prediction
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Thursday, February 23, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-date-sort="1661832000000" data-listing-file-modified-sort="1731299890364" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="460">
-<a href="./portfolio/dsp/ecommerce/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./portfolio/dsp/ecommerce/ecom.webp" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Feature Selection: A linear regression approach to find the impact of the features of e-commerce sales data
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Tuesday, August 30, 2022
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-date-sort="1634270400000" data-listing-file-modified-sort="1731300927683" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
+<div class="g-col-1" data-index="1" data-listing-date-sort="1634270400000" data-listing-file-modified-sort="1731300927683" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
 <a href="./portfolio/dsp/titanic/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
+<div class="quarto-grid-item card h-100 card-center">
 <p class="card-img-top">
 <img loading="lazy" src="./portfolio/dsp/titanic/titan.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
@@ -486,9 +406,151 @@ Tuesday, August 30, 2022
 <h5 class="no-anchor card-title listing-title">
 Classification Probelm: Predict the chance of survival of a voager on Titanic based on the voager’s information
 </h5>
-<div class="card-attribution card-text-small end">
+<div class="card-text listing-description">
+
+Notebook
+
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
 <div class="listing-date">
-Friday, October 15, 2021
+Oct 15, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-sort="1718683200000" data-listing-file-modified-sort="1721599088000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="131">
+<a href="./portfolio/dsp/dp-nlp/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-center">
+<p class="card-img-top">
+<img loading="lazy" src="./portfolio/dsp/dp-nlp/dpnlp.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Disease diagnosis using classification and NLP
+</h5>
+<div class="card-text listing-description">
+<strong>Team Members</strong><br>
+Rebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rebecca Ceppas de Castro, Fulya Tastan, Philip Barron, Mohammad Rafiqul Islam, Nina Adhikari, Viraj Meruliya
+</div>
+<div class="listing-date">
+Jun 18, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-date-sort="1661832000000" data-listing-file-modified-sort="1731299890364" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="460">
+<a href="./portfolio/dsp/ecommerce/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-center">
+<p class="card-img-top">
+<img loading="lazy" src="./portfolio/dsp/ecommerce/ecom.webp" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Feature Selection: A linear regression approach to find the impact of the features of e-commerce sales data
+</h5>
+<div class="card-text listing-description">
+
+Notebook
+
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Aug 30, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-date-sort="1724990400000" data-listing-file-modified-sort="1726555599244" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="487">
+<a href="./portfolio/dsp/medicalcost/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-center">
+<p class="card-img-top">
+<img loading="lazy" src="./portfolio/dsp/medicalcost/ins.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Insurance Cost Forecast by using Linear Regression
+</h5>
+<div class="card-text listing-description">
+
+Notebook GitHub WebApp
+
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Aug 30, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-date-sort="1677128400000" data-listing-file-modified-sort="1731369859231" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="876">
+<a href="./portfolio/dsp/lendingclub/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-center">
+<p class="card-img-top">
+<img loading="lazy" src="./portfolio/dsp/lendingclub/lending.webp" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lendingclub’s loan default prediction
+</h5>
+<div class="card-text listing-description">
+
+Notebook
+
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Feb 23, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-date-sort="1728619200000" data-listing-file-modified-sort="1728664641532" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
+<a href="./portfolio/dsp/nlp-sales/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-center">
+<p class="card-img-top">
+<img loading="lazy" src="./portfolio/dsp/nlp-sales/amazon.webp" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Predicting Product Success Using Customer Reviews and Sales Data
+</h5>
+<div class="card-text listing-description">
+
+Notebook GitHub (Private until finished)
+
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Rafiq Islam
+</div>
+<div class="listing-date">
+Oct 11, 2024
 </div>
 </div>
 </div>
@@ -1265,11 +1327,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">  - id: ds-projects</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: "/portfolio/dsp"</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    sort: "date desc"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    date-format: full</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    fields: [image, date, title]</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    sort-ui: [title, date]</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    feed: true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    grid-columns: 2</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    grid-item-align: center</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    sort-ui: true</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    feed: true</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - id: spd-projects</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    contents: "/portfolio/spd"</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    type: grid</span></span>
