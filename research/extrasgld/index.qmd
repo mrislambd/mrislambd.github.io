@@ -34,8 +34,21 @@ different network structures on Breast Cancer data set. The plots are from a ran
 node.
 </p>    
 
-{{< ai  arxiv size=2x >}}  <a href="https://arxiv.org/abs/2412.01993" style="text-decoration:none" target="_blank">Click here for the preprint. </a>
+```{=html}
+<div class="text-center">
+    <a class="arxiv-button" href="https://arxiv.org/abs/2412.01993" target="_blank">
+        <img src="/_assets/images/arxiv.png" alt="View on arXiv">
+    </a>
 
+    <a class="pdf-button" href="/_assets/documents/2412.01993v1.pdf" target="_blank">
+        <img src="/_assets/images/pdf1.png" alt="Download a PDF">
+    </a>
+</div>
+```
+
+---
+
+**Share on**
 
 ::::{.columns}
 :::{.column width="33%"}

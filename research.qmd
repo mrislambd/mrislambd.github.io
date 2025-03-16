@@ -25,7 +25,7 @@ listing:
 
 ## Publications
 
-- <a href="/research/extrsgld/index.qmd" target="_blank" style="text-decoration:none">Generalized EXTRA stochastic gradient Langevin dynamics</a>  
+- <a href="/research/extrasgld/index.qmd" target="_blank" style="text-decoration:none">Generalized EXTRA stochastic gradient Langevin dynamics</a>  
   Mert, Gurbuzbalaban; Islam, Mohammad Rafiqul; Wang, Xiaoyu; Zhu, Lingjiong  (2024) "Generalized EXTRA stochastic gradient Langevin dynamics." *arXiv preprint arXiv.2412.01993*
 - <a href="/publication/pub2/index.qmd" target="_blank" style="text-decoration:none">GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies </a>  
   Mostafa, F; Saha, P; Islam, Mohammad R.; Nguyen, N. (2020) "GJR-GARCH Volatility Modeling under NIG and ANN for Predicting Top Cryptocurrencies." *Journal of Risk and Financial Management*.

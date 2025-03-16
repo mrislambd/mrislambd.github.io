@@ -3,37 +3,15 @@ title: CV
 excerpt: My current CV
 date: 2024-07-13
 published-title: CV last updated
-cv:
-  pdf: "/_assets/documents/CV.pdf"
 ---
 
-```{css echo=FALSE}
-.embed-container {
-    position: relative;
-    padding-bottom: 129%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-}
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-```
-
 ```{=html}
-<p class="text-center">
-  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf`" target="_blank">
-    Download a PDF
-  </a>
-</p>
-```  
+<div class="text-center">
+    <a class="cv-download" href="/_assets/documents/CV.pdf" target="_blank">
+        Download a PDF
+    </a>
+</div>
+```
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
      crossorigin="anonymous"></script>

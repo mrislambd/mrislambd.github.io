@@ -26,7 +26,18 @@ google-scholar: true
     Cryptocurrencies are currently traded worldwide, with hundreds of different currencies in existence and even more on the way. This study implements some statistical and machine learning approaches for cryptocurrency investments. First, we implement GJR-GARCH over the GARCH model to estimate the volatility of ten popular cryptocurrencies based on market capitalization: Bitcoin, Bitcoin Cash, Bitcoin SV, Chainlink, EOS, Ethereum, Litecoin, TETHER, Tezos, and XRP. Then, we use Monte Carlo simulations to generate the conditional variance of the cryptocurrencies using the GJR-GARCH model, and calculate the value at risk (VaR) of the simulations. We also estimate the tail-risk using VaR backtesting. Finally, we use an artificial neural network (ANN) for predicting the prices of the ten cryptocurrencies. The graphical analysis and mean square errors (MSEs) from the ANN models confirmed that the predicted prices are close to the market prices. For some cryptocurrencies, the ANN models perform better than traditional ARIMA models.
 </p>
 
-Download the paper from [here](/publication/pub2/paper2.pdf){target="_blank" style="text-decoration:none"}  
+```{=html}
+<div class="text-center">
+    <a class="pdf-button" href="/publication/pub2/paper2.pdf" target="_blank">
+        <img src="/_assets/images/pdf1.png" alt="Download a PDF">
+    </a>
+    <a class="mdpi-button" href="https://www.mdpi.com/1911-8074/14/9/421" target="_blank">
+        <img src="/_assets/images/mdpi.png" alt="MDPI Journal">
+    </a>
+</div>
+```
+
+---
 
 **Share on**  
 

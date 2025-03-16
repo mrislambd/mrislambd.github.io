@@ -65,3 +65,120 @@ pre {
   border-radius: 4px;
 }
 
+
+.cv-download {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #007BFF; /* Bootstrap Blue */
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cv-download:hover {
+  background-color: #0056b3; /* Darker Blue on Hover */
+}
+
+/* Centering the Button */
+.text-center {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.arxiv-button, .mdpi-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust to control button size */
+  height: 50px;
+  padding: 5px; /* Reduce padding to remove white spaces */
+  border: 2px solid #f4f4f4; /* ArXiv color */
+  border-radius: 8px; /* Rounded corners */
+  transition: all 0.3s ease-in-out;
+  background-color: #f4f4f4; /* White background */
+}
+
+
+.pdf-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust to control button size */
+  height: auto;
+  padding: 5px; /* Reduce padding to remove white spaces */
+  border: 2px solid #f4f4f4; /* ArXiv color */
+  border-radius: 8px; /* Rounded corners */
+  transition: all 0.3s ease-in-out;
+  background-color: #f4f4f4; /* White background */
+}
+
+.arxiv-button:hover, .pdf-button:hover, .mdpi-button:hover{
+  background-color: #f8f8f8; /* Light gray on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.arxiv-button, .mdpi-button img {
+  width: 100%; /* Makes the image span the full button */
+  height: 100%;
+  object-fit: contain; /* Ensures image fits inside without distortion */
+  border-radius: 8px; /* Soft rounding for images */
+}
+
+
+.pdf-button img {
+  width: 100%; /* Makes the image span the full button */
+  height: 100%;
+  object-fit: contain; /* Ensures image fits inside without distortion */
+  border-radius: 3px; /* Soft rounding for images */
+}
+
+
+@media screen and (max-width: 768px) { /* Apply styles for screens smaller than 768px */
+    
+  /* Make columns stack instead of staying side by side */
+  .columns {
+      display: flex;
+      flex-direction: column; /* Stack elements */
+      align-items: center; /* Center-align content */
+      text-align: center; /* Center text */
+  }
+
+  .column {
+      width: 100% !important; /* Make each column take full width */
+  }
+
+  /* Adjust profile image size for small screens */
+  .oval-image {
+      width: 140px; /* Reduce size for mobile */
+      height: 140px;
+      margin-top: 10px; /* Reduce top margin */
+  }
+
+  /* Reduce padding and font size */
+  .cv-download, .arxiv-button, .pdf-button {
+      width: 80%; /* Make buttons responsive */
+      max-width: 200px; /* Limit width */
+  }
+
+  .cv-download, .pdf-button, .arxiv-button, .mdpi-button {
+      padding: 8px;
+      font-size: 14px;
+  }
+
+  /* Make sure images inside buttons are resized properly */
+  .arxiv-button img, .pdf-button img {
+      width: 80%; /* Make images fit inside button */
+      height: auto;
+  }
+
+  /* Reduce margins to prevent overlapping */
+  .text-center {
+      margin-top: 10px;
+  }
+}

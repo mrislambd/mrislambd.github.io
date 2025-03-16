@@ -1,10 +1,9 @@
-  
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6878992848042528"
      crossorigin="anonymous"></script>  
 
 :::: {.columns}
 ::: {.column width="35%"}
-<img align="center" src='/_assets/images/profile.png' class='oval-image' alt='Profile Picture' style='align-right; margin-left: 25px; margin-bottom: 10px;'>  
+<img align="center" src='/_assets/images/profile.png' class='oval-image' alt='Profile Picture' style='align-right; margin-left: 2px; margin-bottom: 5px; margin-top: 30px'>  
 
 ## Rafiq Islam  
 Ph.D. Candidate in Mathematics  
