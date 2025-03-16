@@ -13,13 +13,11 @@
     "listing": "/posts/someproofs/index.html",
     "items": [
       "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
-      "/posts/welcome/index.html",
       "/posts/bengalitrial/index.html"
     ]
   },
@@ -27,13 +25,11 @@
     "listing": "/posts/mathbiology/index.html",
     "items": [
       "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/someproofs/index.html",
-      "/posts/welcome/index.html",
       "/posts/bengalitrial/index.html"
     ]
   },
@@ -41,27 +37,11 @@
     "listing": "/posts/matrixrep/index.html",
     "items": [
       "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
       "/posts/lu/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
       "/posts/someproofs/index.html",
-      "/posts/welcome/index.html",
-      "/posts/bengalitrial/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/eigen/index.html",
-    "items": [
-      "/posts/socialshare/index.html",
-      "/posts/sgd/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/someproofs/index.html",
-      "/posts/welcome/index.html",
       "/posts/bengalitrial/index.html"
     ]
   },
@@ -105,24 +85,8 @@
     ]
   },
   {
-    "listing": "/posts/socialshare/index.html",
+    "listing": "/posts/eigen/index.html",
     "items": [
-      "/posts/eigen/index.html",
-      "/posts/sgd/index.html",
-      "/posts/lu/index.html",
-      "/posts/matrixrep/index.html",
-      "/posts/matmul/index.html",
-      "/posts/mathbiology/index.html",
-      "/posts/someproofs/index.html",
-      "/posts/welcome/index.html",
-      "/posts/bengalitrial/index.html"
-    ]
-  },
-  {
-    "listing": "/posts/welcome/index.html",
-    "items": [
-      "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
@@ -136,13 +100,11 @@
     "listing": "/posts/matmul/index.html",
     "items": [
       "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/mathbiology/index.html",
       "/posts/someproofs/index.html",
-      "/posts/welcome/index.html",
       "/posts/bengalitrial/index.html"
     ]
   },
@@ -150,13 +112,11 @@
     "listing": "/posts/lu/index.html",
     "items": [
       "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
       "/posts/someproofs/index.html",
-      "/posts/welcome/index.html",
       "/posts/bengalitrial/index.html"
     ]
   },
@@ -164,13 +124,11 @@
     "listing": "/posts/sgd/index.html",
     "items": [
       "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
       "/posts/someproofs/index.html",
-      "/posts/welcome/index.html",
       "/posts/bengalitrial/index.html"
     ]
   },
@@ -178,14 +136,12 @@
     "listing": "/blog.html",
     "items": [
       "/posts/eigen/index.html",
-      "/posts/socialshare/index.html",
       "/posts/sgd/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
       "/posts/mathbiology/index.html",
       "/posts/someproofs/index.html",
-      "/posts/welcome/index.html",
       "/posts/bengalitrial/index.html"
     ]
   }
