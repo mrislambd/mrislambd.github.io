@@ -3,7 +3,6 @@ title: CV
 excerpt: My current CV
 date: 2024-07-13
 published-title: CV last updated
-engine: knitr 
 cv:
   pdf: "/_assets/documents/CV.pdf"
 ---
