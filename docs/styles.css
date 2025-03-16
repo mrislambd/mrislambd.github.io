@@ -156,7 +156,7 @@ pre {
   /* Adjust profile image size for small screens */
   .oval-image {
       width: 140px; /* Reduce size for mobile */
-      height: 140px;
+      height: 171px;
       margin-top: 10px; /* Reduce top margin */
   }
 
