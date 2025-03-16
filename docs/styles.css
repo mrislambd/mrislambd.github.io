@@ -123,7 +123,7 @@ pre {
   transform: scale(1.1); /* Slight zoom effect */
 }
 
-.arxiv-button, .mdpi-button img {
+.arxiv-button img, .mdpi-button img {
   width: 100%; /* Makes the image span the full button */
   height: 100%;
   object-fit: contain; /* Ensures image fits inside without distortion */
