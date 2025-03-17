@@ -342,7 +342,7 @@ window.Quarto = {
 <section id="gradient-descent" class="level2">
 <h2 class="anchored" data-anchor-id="gradient-descent">Gradient Descent</h2>
 <p style="text-align: justify">
-<img align="right" height="350" width="450" src="../../dsandml/multiplelinreg/gradient_descent.gif" alt="Collected from gbhat.com" style="margin-left: 20px; margin-bottom: 20px"> <br> GIF Credit: <a href="https://gbhat.com/machine_learning/gradient_descent_anim.html" target="_blank" style="text-decoration:none">gbhat.com</a><br>
+<img align="right" height="350" width="450" src="../../_assets/images/gradient_descent.gif" alt="Collected from gbhat.com" style="margin-left: 20px; margin-bottom: 20px"> <br> GIF Credit: <a href="https://gbhat.com/machine_learning/gradient_descent_anim.html" target="_blank" style="text-decoration:none">gbhat.com</a><br>
 <br> Gradient Descent is an optimization algorithm used to minimize the cost function. The cost function <span class="math inline">\(f(\beta)\)</span> measures how well a model with parameters <span class="math inline">\(\beta\)</span> fits the data. The goal is to find the values of <span class="math inline">\(\beta\)</span> that minimize this cost function. In terms of the iterative method, we want to find <span class="math inline">\(\beta_{k+1}\)</span> and <span class="math inline">\(\beta_k\)</span> such that <span class="math inline">\(f(\beta_{k+1})&lt;f(\beta_k)\)</span>. <br> <br> For a small change in <span class="math inline">\(\beta\)</span>, we can approximate <span class="math inline">\(f(\beta)\)</span> using Taylor series expansion<br>
 <span class="math display">\[f(\beta_{k+1})=f(\beta_k +\Delta\beta_k)\approx f(\beta_k)+\nabla f(\beta_k)^T \Delta \beta_k+\text{higher-order terms}\]</span>
 </p>
@@ -400,7 +400,7 @@ Let’s imagine a hypothetical scenario, Walmart Inc.&nbsp;wants to explore thei
 <span class="math display">\[d=\sqrt{(x_1-x_2)^2+(y_1-y_2)}\]</span></p>
 <p>Assume that <span class="math inline">\(P=(x,y)\)</span> is the coordinate of Walmart. So for a total of <span class="math inline">\(n\)</span> such points the total distance <span class="math inline">\(D\)</span> from the point <span class="math inline">\(P\)</span> is a function of two variable <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> of the following form</p>
 <p><span class="math display">\[D=f(x,y)=\sum_{i=1}^{n}\sqrt{(x-x_i)^2+(y-y_i)^2}\]</span></p>
-<div id="5c93912f" class="cell" data-execution_count="1">
+<div id="119560f9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
@@ -449,7 +449,7 @@ Let’s imagine a hypothetical scenario, Walmart Inc.&nbsp;wants to explore thei
 <p>Next, how do we control the numerical stability of the algorithm? We need to decrease the step size at each iteration which. This is called the <code>rate of decay</code>. We also need a termination factor or <code>tolerance</code> level that determines if we can stop the iteration. Sometimes, for a deep down convex function, the process oscillates back and forth around a range of values. In this case, applying a <code>damping factor</code> increases the chance for a smooth convergence.</p>
 <section id="gradient-descent-gd" class="level3">
 <h3 class="anchored" data-anchor-id="gradient-descent-gd">Gradient Descent (GD)</h3>
-<div id="31c1410b" class="cell" data-execution_count="2">
+<div id="a84515d7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -565,7 +565,7 @@ Let’s imagine a hypothetical scenario, Walmart Inc.&nbsp;wants to explore thei
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742172843877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742174289164" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -590,7 +590,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742172843884" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742174289171" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -615,7 +615,7 @@ Tuesday, November 9, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611187200000" data-listing-file-modified-sort="1742172843887" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
+<div class="g-col-1" data-index="2" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611187200000" data-listing-file-modified-sort="1742174289174" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
 <a href="../../posts/matrixrep/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1289,7 +1289,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gradient Descent  </span></span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>&lt;p style="text-align: justify"&gt;</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    &lt;img align="right" height=350 width=450 src="/dsandml/multiplelinreg/gradient_descent.gif" alt="Collected from gbhat.com" style="margin-left: 20px; margin-bottom: 20px"/&gt;</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    &lt;img align="right" height=350 width=450 src="/_assets/images/gradient_descent.gif" alt="Collected from gbhat.com" style="margin-left: 20px; margin-bottom: 20px"/&gt;</span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;</span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    GIF Credit: &lt;a href="https://gbhat.com/machine_learning/gradient_descent_anim.html" target="_blank" style="text-decoration:none"&gt;gbhat.com&lt;/a&gt;    </span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;</span>
