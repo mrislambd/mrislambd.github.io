@@ -34,7 +34,7 @@
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1742170040778" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1742172843147" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <a href="../../banglablog/welcomepost/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <!-- img(9CEB782EFEE6)[progressive=false, height=150px]:listing:banglablog/welcomepost/index.html -->
@@ -123,7 +123,7 @@ Let’s imagine a hypothetical scenario, Walmart Inc.&nbsp;wants to explore thei
 <img src="https://latex.codecogs.com/png.latex?d=%5Csqrt%7B(x_1-x_2)%5E2+(y_1-y_2)%7D"></p>
 <p>Assume that <img src="https://latex.codecogs.com/png.latex?P=(x,y)"> is the coordinate of Walmart. So for a total of <img src="https://latex.codecogs.com/png.latex?n"> such points the total distance <img src="https://latex.codecogs.com/png.latex?D"> from the point <img src="https://latex.codecogs.com/png.latex?P"> is a function of two variable <img src="https://latex.codecogs.com/png.latex?x"> and <img src="https://latex.codecogs.com/png.latex?y"> of the following form</p>
 <p><img src="https://latex.codecogs.com/png.latex?D=f(x,y)=%5Csum_%7Bi=1%7D%5E%7Bn%7D%5Csqrt%7B(x-x_i)%5E2+(y-y_i)%5E2%7D"></p>
-<div id="5140c4d0" class="cell" data-execution_count="1">
+<div id="5c93912f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -253,7 +253,7 @@ font-style: inherit;">'sgd.png'</span>)</span>
 <p>Next, how do we control the numerical stability of the algorithm? We need to decrease the step size at each iteration which. This is called the <code>rate of decay</code>. We also need a termination factor or <code>tolerance</code> level that determines if we can stop the iteration. Sometimes, for a deep down convex function, the process oscillates back and forth around a range of values. In this case, applying a <code>damping factor</code> increases the chance for a smooth convergence.</p>
 <section id="gradient-descent-gd" class="level3">
 <h3 class="anchored" data-anchor-id="gradient-descent-gd">Gradient Descent (GD)</h3>
-<div id="7046f556" class="cell" data-execution_count="2">
+<div id="31c1410b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -810,7 +810,7 @@ font-style: inherit;">'#f4f4f4'</span>)</span>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742170041505" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742172843877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -835,7 +835,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742170041513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742172843884" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -860,7 +860,7 @@ Tuesday, November 9, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611187200000" data-listing-file-modified-sort="1742170041515" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
+<div class="g-col-1" data-index="2" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611187200000" data-listing-file-modified-sort="1742172843887" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
 <a href="../../posts/matrixrep/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1141,7 +1141,7 @@ font-style: inherit;">0.001841</span> seconds</span></code></pre></div>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742170041505" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742172843877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1166,7 +1166,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742170041524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742172843896" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1191,7 +1191,7 @@ Thursday, September 19, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742170041513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742172843884" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2074,7 +2074,7 @@ c
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742170041505" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742172843877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2099,7 +2099,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742170041524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742172843896" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2124,7 +2124,7 @@ Thursday, September 19, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611187200000" data-listing-file-modified-sort="1742170041515" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
+<div class="g-col-1" data-index="2" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611187200000" data-listing-file-modified-sort="1742172843887" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
 <a href="../../posts/matrixrep/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2295,7 +2295,7 @@ So, <img src="https://latex.codecogs.com/png.latex?X(12)%5Capprox%204945"></p>
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742170041505" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742172843877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2320,7 +2320,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742170041524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742172843896" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2345,7 +2345,7 @@ Thursday, September 19, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742170041513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742172843884" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2496,7 +2496,7 @@ Hence, <img src="https://latex.codecogs.com/png.latex?%5C%7Bv,(%5Calpha-%5Clambd
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742170041524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="0" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742172843896" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2521,7 +2521,7 @@ Thursday, September 19, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742170041513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742172843884" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2546,7 +2546,7 @@ Tuesday, November 9, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611187200000" data-listing-file-modified-sort="1742170041515" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
+<div class="g-col-1" data-index="2" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611187200000" data-listing-file-modified-sort="1742172843887" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="580">
 <a href="../../posts/matrixrep/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2895,7 +2895,7 @@ Now,
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742170041505" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742172843877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2920,7 +2920,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742170041524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742172843896" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -2945,7 +2945,7 @@ Thursday, September 19, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742170041513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742172843884" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3187,7 +3187,7 @@ and
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742170041505" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<div class="g-col-1" data-index="0" data-categories="TGluZWFyJTIwQWxnZWJyYSUyQ01hdGhlbWF0aWNz" data-listing-date-sort="1611532800000" data-listing-file-modified-sort="1742172843877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
 <a href="../../posts/eigen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3212,7 +3212,7 @@ Monday, January 25, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742170041524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
+<div class="g-col-1" data-index="1" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNTdG9jaGFzdGljJTIwR3JhZGllbnQlMjBEZXNjZW50JTJDT3B0aW1pemF0aW9u" data-listing-date-sort="1726704000000" data-listing-file-modified-sort="1742172843896" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1473">
 <a href="../../posts/sgd/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -3237,7 +3237,7 @@ Thursday, September 19, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742170041513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
+<div class="g-col-1" data-index="2" data-categories="RGF0YSUyMFNjaWVuY2UlMkNNYWNoaW5lJTIwTGVhcm5pbmclMkNDb21wdXRhdGlvbmFsJTIwTWF0aGVtYXRpY3MlMkNBbGdvcml0aG1pYyUyMENvbXBsZXhpdHklMkNQcm9ncmFtbWluZyUyQ0NvbXB1dGVyJTIwU2NpZW5jZQ==" data-listing-date-sort="1636416000000" data-listing-file-modified-sort="1742172843884" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5076">
 <a href="../../posts/lu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
