@@ -162,7 +162,7 @@ pre {
 
   /* Reduce padding and font size */
   .cv-download, .arxiv-button, .pdf-button {
-      width: 80%; /* Make buttons responsive */
+      width: 20%; /* Make buttons responsive */
       max-width: 200px; /* Limit width */
   }
 
