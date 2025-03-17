@@ -6,6 +6,7 @@ listing:
     grid-columns: 2
     grid-item-align: center
     image-lazy-loading: true
+    fields: [title, image, author,date]
   - id: tandp
     contents: "/talks/"
     type: table
