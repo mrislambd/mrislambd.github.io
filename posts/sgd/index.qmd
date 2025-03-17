@@ -88,7 +88,132 @@ Where:
 - $\nabla f_{i_k}(\beta_k)$ is the gradient of the cost function with respect to the parameter $\beta_k$, evaluated only at the data point indexed by $i_k$.
 
 
-## Implementation  
+## Implementation of GD  
+
+### In 1D  
+
+Assume that we have a function $f(x)=x^2-3x+\frac{13}{4}$ which we want to minimize. Meaning, we want to find $x$ that minimizes the function.  
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+from mywebstyle import plot_style
+
+# Apply custom plot style
+plot_style('#f4f4f4')
+
+# Generate data
+x = np.linspace(-2, 5, 1000)
+y = x**2 - 3*x + (13/4)
+
+# Create plot
+plt.plot(x, y, label='$y = x^2 - 3x + 13/4$')
+plt.plot(x,2*x-3, label="y'=2x-3")
+plt.ylim(-4,14)
+# Add X and Y axes
+plt.axhline(0, color='black', linewidth=1)  
+plt.axvline(0, color='black', linewidth=1)  
+
+# Show grid and legend
+plt.grid(True, linestyle='--', alpha=0.9)
+
+plt.legend()
+
+# Show plot
+plt.show()
+
+```  
+
+Next, let's implement the GD[^1]  
+
+```{python}
+# Define the function
+def f(x):
+    return x**2-3*x+(13/4)
+# Define the gradient function 
+def grad_f(x):
+    return 2*x-3
+
+# Take a random guess from the domain
+local_min = np.random.choice(x)
+print('Initial guess: ',local_min )
+
+# Hyper-parameters 
+learning_rate = 0.01
+training_epochs = 200
+
+model_params = np.zeros((training_epochs,2))
+for i in range(training_epochs):
+    grad = grad_f(local_min)
+    local_min =local_min - learning_rate*grad 
+    model_params[i,:] = [local_min, grad]
+
+print('Empirical/estimated local minimum:',local_min)
+
+fig, axs = plt.subplots(1,2, figsize=(8.5,3.8))
+for i in range(2):
+    axs[i].plot(model_params[:,i],'-')
+    axs[i].set_xlabel('Iteration')
+    axs[i].set_title(f'Final estimated Min: {local_min:.5f}')
+axs[0].set_ylabel('Local Min')
+axs[1].set_ylabel('Derivative')
+plt.show()
+```
+
+Alternatively, if we want to set a tolerance, this is how we set that
+```{python}
+# Take a random guess from the domain
+local_min = np.random.choice(x)
+print('Initial guess:', local_min)
+
+# Hyper-parameters 
+learning_rate = 0.01
+tolerance = 1e-2  # Stop if gradient is smaller than this value
+
+# Lists to store optimization progress
+local_min_vals = []
+grad_vals = []
+iteration = 0  # Track the number of iterations
+
+# Gradient Descent Loop (Runs until gradient is small enough)
+while True:
+    grad = grad_f(local_min)
+    # Stop when gradient is smaller than tolerance
+    if abs(grad) < tolerance:
+        print(f"Stopping at iteration {iteration} (grad={grad:.5f})")
+        break
+    # Update local minimum
+    local_min = local_min - learning_rate * grad  
+    # Store values
+    local_min_vals.append(local_min)
+    grad_vals.append(grad)
+    iteration += 1  # Increment iteration count
+
+print('Empirical/estimated local minimum:', local_min)
+
+# Convert lists to numpy arrays
+local_min_vals = np.array(local_min_vals)
+grad_vals = np.array(grad_vals)
+
+# Plot Results
+fig, axs = plt.subplots(1, 2, figsize=(8.5, 3.8))
+
+axs[0].plot(local_min_vals, '.', label="Local Min Estimate")
+axs[0].set_xlabel('Iteration')
+axs[0].set_ylabel('Local Min')
+axs[0].legend()
+
+axs[1].plot(grad_vals, '.', label="Gradient Value")
+axs[1].set_xlabel('Iteration')
+axs[1].set_ylabel('Derivative')
+axs[1].legend()
+
+plt.suptitle(f'Final estimated Min: {local_min:.5f}')
+plt.show()
+
+```
+### In 2D
 
 <p style="text-align:justify">
 Let's imagine a hypothetical scenario, Walmart Inc. wants to explore their business in a new twon. They want to have their store in location so that the total distance of the store from all the houses in the neighborhood is the smallest possible. If they have the data of $n$ houses with corresponding coordinates of the houses, return the optimized location for the store.
@@ -103,9 +228,11 @@ $$D=f(x,y)=\sum_{i=1}^{n}\sqrt{(x-x_i)^2+(y-y_i)^2}$$
 
 
 ```{python}
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+import plotly.offline as iplot
+import plotly as py
+py.offline.init_notebook_mode(connected=True)
+import plotly.graph_objects as go
+
 
 def f(x,y, c, d):
     return np.sqrt((x-c)**2+(y-d)**2)
@@ -114,20 +241,21 @@ x = np.linspace(-10,10, 400)
 y = np.linspace(-10,10, 400)
 x, y = np.meshgrid(x,y)
 
-c, d = 0,0
+c, d = 0,1
 
 z = f(x, y, c, d)
 
-fig = plt.figure()
-ax = fig.add_subplot(111, projection ='3d')
-ax.plot_surface(x, y, z, cmap= 'viridis')
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
-plt.gca().set_facecolor('#f4f4f4') 
-plt.gcf().patch.set_facecolor('#f4f4f4')
-plt.savefig('sgd.png')
-plt.show()
+fig = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
+fig.update_layout(
+    title='3D plot',
+    scene=dict(
+        xaxis_title = 'x',
+        yaxis_title = 'y',
+        zaxis_title = 'z'
+    )
+)
+
+fig.show()
 ```
 
 all we need to do is to minimize the function $f(x,y)$ and to do that we need to calculate the gradient vector which is the partial derivative of $f(x,y)$ with respect to $x$ and $y$. So, 
@@ -231,37 +359,64 @@ plt.show()
 
 ```  
 
-Testing  
 
-```{python}
+## Implementation of SGD  
 
-```
+Personally, I think this [webpage](https://sebastianraschka.com/faq/docs/sgd-methods.html){target="_blank" style="text-decoration:none"} is one of the best resources for learning how to implement SGD.
 
 
+[^1]: The implementation is taken from the the Udemy course [A Deep Understanding of Deep Learning](https://www.udemy.com/course/deeplearning_x/?couponCode=ST11MT170325G3){target="_blank" style="text-decoration:none"}
+
+---
 
 **Share on**  
 
+::::{.columns}
+:::{.column width="33%"}
+<a href="https://www.facebook.com/sharer.php?u=https://mrislambd.github.io/posts/sgd/" target="_blank" style="color:#1877F2; text-decoration: none;">
+ 
+{{< fa brands facebook size=3x >}}
+</a>
+ 
+:::
+ 
+:::{.column width="33%"}
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://mrislambd.github.io/posts/sgd/" target="_blank" style="color:#0077B5; text-decoration: none;">
+ 
+{{< fa brands linkedin size=3x >}}
+</a>
+ 
+:::
+ 
+:::{.column width="33%"}
+<a href="https://www.twitter.com/intent/tweet?url=https://mrislambd.github.io/posts/sgd/" target="_blank" style="color:#1DA1F2; text-decoration: none;">
+ 
+{{< fa brands twitter size=3x >}}
+</a>
+ 
+:::
+::::
+ 
+<script src="https://giscus.app/client.js"
+        data-repo="mrislambd/mrislambd.github.io" 
+        data-repo-id="R_kgDOMV8crA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMV8crM4CjbQW"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+ 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
- 
-<div class="share-buttons">
-<div class="fb-share-button" data-href="https://mrislambd.github.io/posts/sgd/"
-data-layout="button_count" data-size="small"><a target="_blank" 
- href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmrislambd.github.io%2Fposts%2Fsgd%2F&amp;src=sdkpreparse" 
- class="fb-xfbml-parse-ignore">Share</a></div>
-
-<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="https://mrislambd.github.io/posts/sgd/"></script> 
- 
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" 
- data-url="https://mrislambd.github.io/posts/sgd/" data-show-count="true">Tweet</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-
-<div class="fb-comments" data-href="https://mrislambd.github.io/posts/sgd/"
- data-width="" data-numposts="5"></div>
-
+<div class="fb-comments" data-href="https://mrislambd.github.io/posts/sgd/" data-width="750" data-numposts="5"></div>
 
 
 **You may also like**  
