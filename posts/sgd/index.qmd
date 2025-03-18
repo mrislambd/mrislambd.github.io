@@ -212,7 +212,126 @@ axs[1].legend()
 plt.suptitle(f'Final estimated Min: {local_min:.5f}')
 plt.show()
 
+```  
+
+#### Parametric variation  
+
+Let's consider a different problem, $f(x)=-e^{-\frac{x^2}{10}}(0.2x\cos x+\sin x)$. We want to find the $x$ values and optimal hyper-parameters that minimizes $f(x)$.  
+
+```{python}
+x = np.linspace(-3*np.pi, 3*np.pi, 400)
+y = -np.exp(-(x**2/10))*(0.2*x*np.cos(x)+np.sin(x))
+
+dy = np.exp(-(x**2/10))*((0.04*x**2-1.2)*np.cos(x)+0.4*x*np.sin(x))
+plt.plot(x,y, x, dy)
+plt.legend(['f(x)','df'])
+plt.show()
+```  
+
+Clearly, the global minimum is somewhere in between 0 to 2.5, maybe around 1.25. Now let's apply GD with varying parameters  
+
+```{python}
+def f(x):
+    f = -np.exp(-(x**2/10))*(0.2*x*np.cos(x)+np.sin(x))
+    return f
+def df(x):
+    ddx_of_f = np.exp(-(x**2/10))*((0.04*x**2-1.2)*np.cos(x)+0.4*x*np.sin(x))
+    return ddx_of_f
+
+learning_rate = 0.003
+training_epochs = 1000
+local_min = np.random.choice(x,1)
+print('The chosen initial point: ', local_min)
+
+for i in range(training_epochs):
+    grad = df(local_min)
+    local_min = local_min - learning_rate*grad 
+
+plt.plot(x,f(x), x, df(x),'--')
+plt.plot(local_min, df(local_min),'ro')
+plt.plot(local_min, f(local_min),'ro')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend(['f(x)','df','f(x) min'])
+plt.title('Iterated local min at x = %s'%local_min[0])
+plt.show()
 ```
+
+Now let's see how we can pick the right initial point
+
+```{python}
+# Vary the starting point 
+starting_points = np.linspace(-5,5,50)
+stopping_points = np.zeros(len(starting_points))
+
+training_epochs = 1000
+learning_rate = 0.01
+for idx, local_min in enumerate(starting_points):
+    for i in range(training_epochs):
+        grad = df(local_min)
+        local_min = local_min - learning_rate * grad 
+    stopping_points[idx] = local_min
+plt.plot(starting_points, stopping_points, 's-')
+plt.xlabel('Starting points')
+plt.ylabel('Stopping points')
+plt.show()
+```  
+
+Based on this, if we start with any point roughly between $(-1,3.5)$ we will end up with the global minimum. However, points outside this interval may take the iterative process to other local minima.  
+
+```{python}
+# varying learning rates 
+lrs = np.linspace(1e-10, 1e-2, 30)
+stopping_points = np.zeros(len(lrs))
+
+training_epochs = 1000
+
+for idx, lr  in enumerate(lrs):
+    # fixed initial point 
+    local_min = -0.03
+    for i in range(training_epochs):
+        grad = df(local_min)
+        local_min = local_min - lr*grad 
+    stopping_points[idx] = local_min
+plt.plot(lrs, stopping_points, 's-')
+plt.xlabel('learning rates')
+plt.ylabel('Stopping points')
+plt.show()
+```
+
+So this suggests that a learning rate between 0.003 to 0.005 is a good start.  
+
+```{python}
+lrs = np.linspace(1e-10, 1e-2, 30)
+training_epochs = np.round(np.linspace(10,1000,50))
+
+stopping_points = np.zeros((len(lrs), len(training_epochs)))
+
+for lr_idx, lr in enumerate(lrs):
+    for tr_idx, tr_epoch in enumerate(training_epochs):
+        local_min = -0.03
+        
+        for i in range(int(tr_epoch)):
+            grad = df(local_min)
+            local_min = local_min - lr * grad 
+
+        stopping_points[lr_idx, tr_idx] = local_min
+plt.imshow(stopping_points, extent=[lrs[0], lrs[-1],\
+     training_epochs[0], training_epochs[-1]], aspect='auto',\
+        vmin=0, vmax=1.5)
+plt.xlabel('learning rate')
+plt.ylabel('training epochs')
+plt.colorbar()
+plt.show()
+
+plt.plot(lrs, stopping_points)
+plt.xlabel('learning rate')
+plt.ylabel('Iterated solution')
+plt.title('Each line is a training epoch N')
+plt.show
+```
+
+
 ### In 2D
 
 <p style="text-align:justify">
@@ -276,8 +395,6 @@ Then the algorithm
 where, the $\eta$ is the step size or learning rate that scales the size of the move towards the opposite of the gradient direction.  
 
 Next, how do we control the numerical stability of the algorithm? We need to decrease the step size at each iteration which. This is called the `rate of decay`. We also need a termination factor or `tolerance` level that determines if we can stop the iteration. Sometimes, for a deep down convex function, the process oscillates back and forth around a range of values. In this case, applying a `damping factor` increases the chance for a smooth convergence. 
-
-### Gradient Descent (GD)
 
 ```{python}
 #| code-fold: false
