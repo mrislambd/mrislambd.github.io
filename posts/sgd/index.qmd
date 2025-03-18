@@ -241,7 +241,7 @@ x = np.linspace(-10,10, 400)
 y = np.linspace(-10,10, 400)
 x, y = np.meshgrid(x,y)
 
-c, d = 0,1
+c, d = 0,0
 
 z = f(x, y, c, d)
 
@@ -359,6 +359,76 @@ plt.show()
 
 ```  
 
+Different approach[^1]  
+
+```{python}
+import sympy as sym 
+sym.init_printing()
+from IPython.display import display, Math
+from matplotlib_inline.backend_inline import set_matplotlib_formats
+set_matplotlib_formats('svg') 
+
+
+def distance_function(x,y,c,d):
+    x,y = np.meshgrid(x,y)
+    z = np.sqrt((x-c)**2+(y-d)**2)
+    return z
+
+c,d = 0,0
+x = np.linspace(-5,5, 400)
+y = np.linspace(-5,5, 400)
+z = distance_function(x,y,c,d)
+
+plt.imshow(z, extent=[x[0],x[-1], y[0],y[-1]],vmin=-5, vmax=5, origin='lower')
+plt.show()
+```  
+
+So, the minimum is in the center of the deep color area. Let's compute the derivatives using `sympy` library  
+
+```{python}
+sx, sy = sym.symbols('sx,sy')
+sz = sym.sqrt((sx-c)**2+(sy-d)**2)
+
+df_sx = sym.lambdify((sx,sy), sym.diff(sz, sx), 'sympy')
+df_sy = sym.lambdify((sx,sy), sym.diff(sz, sy), 'sympy')
+
+display(Math(f"\\frac{{\\partial f}}{{\\partial x}}={sym.latex(sym.diff(sz,sx))}\
+     \\text{{ and }}  \\frac{{\\partial f}}{{\\partial x}}\\mid_{{(1,1)}} = {df_sx(1,1).evalf()}"))
+display(Math(f"\\frac{{\\partial f}}{{\\partial y}}={sym.latex(sym.diff(sz,sy))} \
+     \\text{{ and }}  \\frac{{\\partial f}}{{\\partial y}}\\mid_{{(1,1)}} = {df_sy(1,1).evalf()}"))
+```  
+
+Now let's implement the GD  
+
+```{python}
+# Let's pick a random starting point(uniformly distributed between -2 and 2)
+local_min = np.random.rand(2)*4-2
+start_point = local_min[:] # make a copy
+
+learning_rate = 0.01
+training_epochs = 1000
+
+trajectory = np.zeros((training_epochs,2))
+
+for i in range(training_epochs):
+    grad = np.array([
+        df_sx(local_min[0],local_min[1]).evalf(),
+        df_sy(local_min[0],local_min[1]).evalf()
+    ])
+    local_min = local_min - learning_rate*grad
+    trajectory[i,:] = local_min
+
+print('Starting point ',start_point)
+print('Local min found ',local_min)
+
+plt.imshow(z, extent=[x[0],x[-1], y[0],y[-1]],vmin=-5, vmax=5, origin='lower')
+plt.plot(start_point[0], start_point[1], 'bs')
+plt.plot(local_min[0],local_min[1],'rs')
+plt.plot(trajectory[:,0],trajectory[:,1], 'b', linewidth=3)
+plt.legend(['random start', 'local min'])
+plt.colorbar()
+plt.show()
+```
 
 ## Implementation of SGD  
 
