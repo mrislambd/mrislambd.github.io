@@ -323,7 +323,10 @@ plt.xlabel('learning rate')
 plt.ylabel('training epochs')
 plt.colorbar()
 plt.show()
+```  
 
+We know that the expected minimum at $x \approx 1.17$ so the color corresponding to this is light. Therefore, if we choose a very small learning rate and/or a larger training epoch then we end up to the darker area which is not a good approximation. 
+```{python}
 plt.plot(lrs, stopping_points)
 plt.xlabel('learning rate')
 plt.ylabel('Iterated solution')
