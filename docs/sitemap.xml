@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mrislambd.github.io/blog.html</loc>
-    <lastmod>2025-03-16T04:24:33.085Z</lastmod>
+    <lastmod>2025-03-16T04:24:33.000Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/dsandml/multiclass/index.html</loc>
@@ -94,7 +94,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/research.html</loc>
-    <lastmod>2025-03-17T00:53:20.677Z</lastmod>
+    <lastmod>2025-07-23T18:00:31.285Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/cv.html</loc>
@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/portfolio.html</loc>
-    <lastmod>2025-03-16T04:16:48.190Z</lastmod>
+    <lastmod>2025-03-16T04:16:48.000Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/jobandintern/index.html</loc>
@@ -218,7 +218,7 @@
   </url>
   <url>
     <loc>https://mrislambd.github.io/posts/sgd/index.html</loc>
-    <lastmod>2025-03-18T21:00:30.725Z</lastmod>
+    <lastmod>2025-03-18T21:01:17.000Z</lastmod>
   </url>
   <url>
     <loc>https://mrislambd.github.io/research/extrasgld/index.html</loc>
@@ -231,5 +231,9 @@
   <url>
     <loc>https://mrislambd.github.io/publication/pub1/index.html</loc>
     <lastmod>2025-03-16T22:36:13.977Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mrislambd.github.io/research/holmc/index.html</loc>
+    <lastmod>2025-07-23T18:09:23.440Z</lastmod>
   </url>
 </urlset>

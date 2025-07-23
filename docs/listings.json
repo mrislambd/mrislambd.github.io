@@ -538,8 +538,9 @@
   {
     "listing": "/research.html",
     "items": [
-      "/research/extrasgld/index.html",
+      "/research/holmc/index.html",
       "/research/rulmc/index.html",
+      "/research/extrasgld/index.html",
       "/talks/2023-11-20-candi.html",
       "/talks/2023-10-05-st-op.html",
       "/talks/2020-04-26-project.html"
@@ -761,6 +762,19 @@
     "listing": "/posts/sgd/index.html",
     "items": [
       "/posts/eigen/index.html",
+      "/posts/lu/index.html",
+      "/posts/matrixrep/index.html",
+      "/posts/matmul/index.html",
+      "/posts/mathbiology/index.html",
+      "/posts/someproofs/index.html",
+      "/posts/bengalitrial/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/webtemplate/index.html",
+    "items": [
+      "/posts/eigen/index.html",
+      "/posts/sgd/index.html",
       "/posts/lu/index.html",
       "/posts/matrixrep/index.html",
       "/posts/matmul/index.html",
