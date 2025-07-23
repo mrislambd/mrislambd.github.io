@@ -20,6 +20,8 @@ jobs:
       - name: Install TinyTeX
         run: |
           quarto install tinytex
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Install Python and Dependencies
         uses: actions/setup-python@v4
